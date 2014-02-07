@@ -1,6 +1,5 @@
 Project-Starphish
 =================
-Ken Vinton
 Stefanos Loss
 Michael Petruzzello
 
