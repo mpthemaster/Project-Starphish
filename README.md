@@ -2,5 +2,6 @@ Project-Starphish
 =================
 Ken Vinton
 Stefanos Loss
+Michael Petruzzello
 
-A database for clients and a daily behavior tracking application that can be visualized with charts and graphs. This is being developed for Project Starphish/New Light in Clarion County.
+A database for clients and a daily behaviour tracking application that can be visualized with graphs and charts. This is being developed for Project Starphish/New Light in Clarion County.
