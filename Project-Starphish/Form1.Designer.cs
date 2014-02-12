@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("ABC1");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("2/10/14", new System.Windows.Forms.TreeNode[] {
-            treeNode19});
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("ABC1");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("ABC2");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("2/13/14", new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("ABC1");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("ABC2");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("ABC3");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("2/14/14", new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode25,
-            treeNode26});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ABC1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("2/10/14", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("ABC1");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("ABC2");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("2/13/14", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("ABC1");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("ABC2");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("ABC3");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("2/14/14", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8});
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
@@ -106,35 +106,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.checkBox21 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox47 = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
@@ -150,11 +125,7 @@
             this.removeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -165,13 +136,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -182,7 +148,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1114, 649);
+            this.tabControl1.Size = new System.Drawing.Size(830, 649);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -201,7 +167,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1106, 623);
+            this.tabPage1.Size = new System.Drawing.Size(822, 623);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Client";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -773,7 +739,6 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox12);
-            this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.treeView1);
             this.tabPage2.Controls.Add(this.textBox45);
             this.tabPage2.Controls.Add(this.textBox44);
@@ -784,343 +749,109 @@
             this.tabPage2.Controls.Add(this.dateTimePicker1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1106, 623);
+            this.tabPage2.Size = new System.Drawing.Size(822, 623);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Behavior";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
+            // groupBox12
             // 
-            this.groupBox7.Controls.Add(this.groupBox11);
-            this.groupBox7.Controls.Add(this.groupBox10);
-            this.groupBox7.Controls.Add(this.groupBox9);
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.textBox46);
-            this.groupBox7.Location = new System.Drawing.Point(130, 93);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(968, 258);
-            this.groupBox7.TabIndex = 9;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Antecedent";
+            this.groupBox12.Controls.Add(this.listBox5);
+            this.groupBox12.Controls.Add(this.comboBox4);
+            this.groupBox12.Controls.Add(this.textBox49);
+            this.groupBox12.Controls.Add(this.comboBox3);
+            this.groupBox12.Location = new System.Drawing.Point(168, 107);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(610, 258);
+            this.groupBox12.TabIndex = 10;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Behaviors";
             // 
-            // groupBox11
+            // comboBox4
             // 
-            this.groupBox11.Controls.Add(this.checkBox21);
-            this.groupBox11.Controls.Add(this.checkBox13);
-            this.groupBox11.Controls.Add(this.checkBox18);
-            this.groupBox11.Controls.Add(this.checkBox19);
-            this.groupBox11.Controls.Add(this.checkBox20);
-            this.groupBox11.Controls.Add(this.checkBox14);
-            this.groupBox11.Controls.Add(this.checkBox15);
-            this.groupBox11.Controls.Add(this.checkBox16);
-            this.groupBox11.Controls.Add(this.checkBox17);
-            this.groupBox11.Location = new System.Drawing.Point(605, 19);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(346, 233);
-            this.groupBox11.TabIndex = 4;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "*Possible Triggers";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.comboBox4.Location = new System.Drawing.Point(224, 46);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 3;
+            this.comboBox4.Text = "Severity";
             // 
-            // checkBox21
+            // textBox49
             // 
-            this.checkBox21.AutoSize = true;
-            this.checkBox21.Location = new System.Drawing.Point(6, 203);
-            this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(148, 17);
-            this.checkBox21.TabIndex = 8;
-            this.checkBox21.Text = "Argument with housemate";
-            this.checkBox21.UseVisualStyleBackColor = true;
+            this.textBox49.Location = new System.Drawing.Point(351, 20);
+            this.textBox49.Name = "textBox49";
+            this.textBox49.Size = new System.Drawing.Size(100, 20);
+            this.textBox49.TabIndex = 2;
+            this.textBox49.Text = "Other";
             // 
-            // checkBox13
+            // comboBox3
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(6, 180);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(183, 17);
-            this.checkBox13.TabIndex = 7;
-            this.checkBox13.Text = "Performing activities of daily living";
-            this.checkBox13.UseVisualStyleBackColor = true;
-            // 
-            // checkBox18
-            // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(6, 157);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(71, 17);
-            this.checkBox18.TabIndex = 6;
-            this.checkBox18.Text = "Shopping";
-            this.checkBox18.UseVisualStyleBackColor = true;
-            // 
-            // checkBox19
-            // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(6, 134);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(113, 17);
-            this.checkBox19.TabIndex = 5;
-            this.checkBox19.Text = "Suggested activity";
-            this.checkBox19.UseVisualStyleBackColor = true;
-            // 
-            // checkBox20
-            // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Location = new System.Drawing.Point(6, 111);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(266, 17);
-            this.checkBox20.TabIndex = 4;
-            this.checkBox20.Text = "Medical (Procedure, medication, illness, conditions)";
-            this.checkBox20.UseVisualStyleBackColor = true;
-            // 
-            // checkBox14
-            // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(6, 88);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(99, 17);
-            this.checkBox14.TabIndex = 3;
-            this.checkBox14.Text = "Disrupted sleep";
-            this.checkBox14.UseVisualStyleBackColor = true;
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(6, 65);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(144, 17);
-            this.checkBox15.TabIndex = 2;
-            this.checkBox15.Text = "Too many people around";
-            this.checkBox15.UseVisualStyleBackColor = true;
-            // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(6, 42);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(107, 17);
-            this.checkBox16.TabIndex = 1;
-            this.checkBox16.Text = "Unfamiliar people";
-            this.checkBox16.UseVisualStyleBackColor = true;
-            // 
-            // checkBox17
-            // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(6, 19);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(176, 17);
-            this.checkBox17.TabIndex = 0;
-            this.checkBox17.Text = "Noise in the home or community";
-            this.checkBox17.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.checkBox12);
-            this.groupBox10.Controls.Add(this.textBox48);
-            this.groupBox10.Controls.Add(this.checkBox5);
-            this.groupBox10.Controls.Add(this.checkBox9);
-            this.groupBox10.Controls.Add(this.checkBox10);
-            this.groupBox10.Controls.Add(this.checkBox11);
-            this.groupBox10.Location = new System.Drawing.Point(433, 19);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(166, 166);
-            this.groupBox10.TabIndex = 3;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Level of Interaction";
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(6, 111);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(52, 17);
-            this.checkBox12.TabIndex = 5;
-            this.checkBox12.Text = "Other";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // textBox48
-            // 
-            this.textBox48.Location = new System.Drawing.Point(6, 134);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(104, 20);
-            this.textBox48.TabIndex = 4;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 88);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(159, 17);
-            this.checkBox5.TabIndex = 3;
-            this.checkBox5.Text = "Group with unfamiliar people";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(6, 65);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(147, 17);
-            this.checkBox9.TabIndex = 2;
-            this.checkBox9.Text = "Group with familiar people";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(6, 42);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(112, 17);
-            this.checkBox10.TabIndex = 1;
-            this.checkBox10.Text = "Increased Staffing";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(6, 19);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(98, 17);
-            this.checkBox11.TabIndex = 0;
-            this.checkBox11.Text = "Normal Staffing";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.checkBox6);
-            this.groupBox9.Controls.Add(this.checkBox7);
-            this.groupBox9.Controls.Add(this.checkBox8);
-            this.groupBox9.Location = new System.Drawing.Point(346, 19);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(81, 150);
-            this.groupBox9.TabIndex = 2;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Severity";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(6, 65);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(60, 17);
-            this.checkBox6.TabIndex = 2;
-            this.checkBox6.Text = "Severe";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(6, 42);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(71, 17);
-            this.checkBox7.TabIndex = 1;
-            this.checkBox7.Text = "Moderate";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(6, 19);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(45, 17);
-            this.checkBox8.TabIndex = 0;
-            this.checkBox8.Text = "Mild";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.textBox47);
-            this.groupBox8.Controls.Add(this.checkBox4);
-            this.groupBox8.Controls.Add(this.checkBox3);
-            this.groupBox8.Controls.Add(this.checkBox2);
-            this.groupBox8.Controls.Add(this.checkBox1);
-            this.groupBox8.Location = new System.Drawing.Point(224, 19);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(116, 150);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Setting";
-            // 
-            // textBox47
-            // 
-            this.textBox47.Location = new System.Drawing.Point(6, 111);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(104, 20);
-            this.textBox47.TabIndex = 4;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 88);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(52, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Other";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 65);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(55, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Family";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 42);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(77, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Community";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Home";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox46
-            // 
-            this.textBox46.Location = new System.Drawing.Point(6, 19);
-            this.textBox46.Multiline = true;
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(212, 180);
-            this.textBox46.TabIndex = 0;
-            this.textBox46.Text = "Description";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Arguing",
+            "Bedwetting",
+            "Complaining",
+            "Sadness",
+            "Destructiveness",
+            "Encopresis",
+            "Fearfulness",
+            "Fighting",
+            "Interrupting",
+            "Irritability",
+            "Jealousy",
+            "Lying",
+            "Nervous / Jittery",
+            "Pant Wetting",
+            "Sexual Behavior - Social Comp",
+            "Sexual Behavior - Excessive",
+            "Short Attention Span",
+            "Sleep Problems",
+            "Sluggishness",
+            "Swearing",
+            "Teasing",
+            "Worried",
+            "Competitiveness",
+            "Drug / Alcohol Abuse",
+            "Elopement",
+            "Mean Talk",
+            "Skipping Meals",
+            "Other"});
+            this.comboBox3.Location = new System.Drawing.Point(224, 19);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 1;
+            this.comboBox3.Text = "Behaviors";
             // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(3, 8);
             this.treeView1.Name = "treeView1";
-            treeNode19.Name = "Node3";
-            treeNode19.Text = "ABC1";
-            treeNode20.Name = "Node0";
-            treeNode20.Text = "2/10/14";
-            treeNode21.Name = "Node4";
-            treeNode21.Text = "ABC1";
-            treeNode22.Name = "Node5";
-            treeNode22.Text = "ABC2";
-            treeNode23.Name = "Node1";
-            treeNode23.Text = "2/13/14";
-            treeNode24.Name = "Node6";
-            treeNode24.Text = "ABC1";
-            treeNode25.Name = "Node7";
-            treeNode25.Text = "ABC2";
-            treeNode26.Name = "Node8";
-            treeNode26.Text = "ABC3";
-            treeNode27.Name = "Node2";
-            treeNode27.Text = "2/14/14";
+            treeNode1.Name = "Node3";
+            treeNode1.Text = "ABC1";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "2/10/14";
+            treeNode3.Name = "Node4";
+            treeNode3.Text = "ABC1";
+            treeNode4.Name = "Node5";
+            treeNode4.Text = "ABC2";
+            treeNode5.Name = "Node1";
+            treeNode5.Text = "2/13/14";
+            treeNode6.Name = "Node6";
+            treeNode6.Text = "ABC1";
+            treeNode7.Name = "Node7";
+            treeNode7.Text = "ABC2";
+            treeNode8.Name = "Node8";
+            treeNode8.Text = "ABC3";
+            treeNode9.Name = "Node2";
+            treeNode9.Text = "2/14/14";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode20,
-            treeNode23,
-            treeNode27});
+            treeNode2,
+            treeNode5,
+            treeNode9});
             this.treeView1.Size = new System.Drawing.Size(121, 290);
             this.treeView1.TabIndex = 8;
             // 
@@ -1185,7 +916,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1106, 623);
+            this.tabPage3.Size = new System.Drawing.Size(822, 623);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1197,7 +928,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1126, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(853, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1236,92 +967,19 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // groupBox12
+            // listBox5
             // 
-            this.groupBox12.Controls.Add(this.comboBox4);
-            this.groupBox12.Controls.Add(this.textBox49);
-            this.groupBox12.Controls.Add(this.comboBox3);
-            this.groupBox12.Controls.Add(this.textBox51);
-            this.groupBox12.Location = new System.Drawing.Point(12, 362);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(968, 258);
-            this.groupBox12.TabIndex = 10;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Behaviors";
-            // 
-            // textBox51
-            // 
-            this.textBox51.Location = new System.Drawing.Point(6, 19);
-            this.textBox51.Multiline = true;
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(212, 180);
-            this.textBox51.TabIndex = 0;
-            this.textBox51.Text = "Description";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Arguing",
-            "Bedwetting",
-            "Complaining",
-            "Sadness",
-            "Destructiveness",
-            "Encopresis",
-            "Fearfulness",
-            "Fighting",
-            "Interrupting",
-            "Irritability",
-            "Jealousy",
-            "Lying",
-            "Nervous / Jittery",
-            "Pant Wetting",
-            "Sexual Behavior - Social Comp",
-            "Sexual Behavior - Excessive",
-            "Short Attention Span",
-            "Sleep Problems",
-            "Sluggishness",
-            "Swearing",
-            "Teasing",
-            "Worried",
-            "Competitiveness",
-            "Drug / Alcohol Abuse",
-            "Elopement",
-            "Mean Talk",
-            "Skipping Meals",
-            "Other"});
-            this.comboBox3.Location = new System.Drawing.Point(224, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 1;
-            this.comboBox3.Text = "Behaviors";
-            // 
-            // textBox49
-            // 
-            this.textBox49.Location = new System.Drawing.Point(351, 20);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(100, 20);
-            this.textBox49.TabIndex = 2;
-            this.textBox49.Text = "Other";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.comboBox4.Location = new System.Drawing.Point(224, 46);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 3;
-            this.comboBox4.Text = "Severity";
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.Location = new System.Drawing.Point(6, 20);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(158, 225);
+            this.listBox5.TabIndex = 4;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 678);
+            this.ClientSize = new System.Drawing.Size(853, 678);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormMain";
@@ -1344,20 +1002,10 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1443,40 +1091,11 @@
         private System.Windows.Forms.TextBox textBox43;
         private System.Windows.Forms.TextBox textBox41;
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox46;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox47;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.TextBox textBox48;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.CheckBox checkBox21;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox51;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox49;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ListBox listBox5;
     }
 }
 
