@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Arguing");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Hourly");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Arguing - Severe");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Lethargic - Mild");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Daily", new System.Windows.Forms.TreeNode[] {
-            treeNode23,
-            treeNode24});
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Weekly");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Hope / Optimism");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
-            treeNode28});
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Humor");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Citizenship");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
-            treeNode31,
-            treeNode32});
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Arguing");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Uncompleted", new System.Windows.Forms.TreeNode[] {
-            treeNode35});
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
-            treeNode37});
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Arguing");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Hourly");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Arguing - Severe");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Lethargic - Mild");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Daily", new System.Windows.Forms.TreeNode[] {
+            treeNode42,
+            treeNode43});
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Weekly");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Less Often");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Hope / Optimism");
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
+            treeNode47});
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Strengths of Will");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Humor");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Citizenship");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
+            treeNode50,
+            treeNode51});
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Arguing");
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Uncompleted", new System.Windows.Forms.TreeNode[] {
+            treeNode54});
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
+            treeNode56});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -76,6 +76,12 @@
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
@@ -88,13 +94,8 @@
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox41 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -124,13 +125,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -187,6 +181,7 @@
             this.textBox44 = new System.Windows.Forms.TextBox();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.button29 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -236,21 +231,24 @@
             this.removeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -456,6 +454,63 @@
             this.textBox36.TabIndex = 28;
             this.textBox36.Text = "16214";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox24);
+            this.groupBox2.Controls.Add(this.listBox2);
+            this.groupBox2.Controls.Add(this.textBox23);
+            this.groupBox2.Controls.Add(this.textBox21);
+            this.groupBox2.Controls.Add(this.textBox22);
+            this.groupBox2.Location = new System.Drawing.Point(525, 425);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(280, 124);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Emergency Contacts";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(139, 71);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(97, 20);
+            this.textBox24.TabIndex = 29;
+            this.textBox24.Text = "(###)-867-5309";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Items.AddRange(new object[] {
+            "EC#1",
+            "EC#2"});
+            this.listBox2.Location = new System.Drawing.Point(13, 19);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(120, 95);
+            this.listBox2.TabIndex = 0;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(299, 45);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(52, 20);
+            this.textBox23.TabIndex = 28;
+            this.textBox23.Text = "16214";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(139, 19);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(100, 20);
+            this.textBox21.TabIndex = 26;
+            this.textBox21.Text = "Name";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(139, 45);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(154, 20);
+            this.textBox22.TabIndex = 27;
+            this.textBox22.Text = "111 Hollywood Dr., Clarion, PA";
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.textBox33);
@@ -567,63 +622,6 @@
             this.textBox28.TabIndex = 27;
             this.textBox28.Text = "111 Hollywood Dr., Clarion, PA";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox24);
-            this.groupBox2.Controls.Add(this.listBox2);
-            this.groupBox2.Controls.Add(this.textBox23);
-            this.groupBox2.Controls.Add(this.textBox21);
-            this.groupBox2.Controls.Add(this.textBox22);
-            this.groupBox2.Location = new System.Drawing.Point(525, 425);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(280, 124);
-            this.groupBox2.TabIndex = 25;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Emergency Contacts";
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(139, 71);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(97, 20);
-            this.textBox24.TabIndex = 29;
-            this.textBox24.Text = "(###)-867-5309";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Items.AddRange(new object[] {
-            "EC#1",
-            "EC#2"});
-            this.listBox2.Location = new System.Drawing.Point(13, 19);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
-            this.listBox2.TabIndex = 0;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(299, 45);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(52, 20);
-            this.textBox23.TabIndex = 28;
-            this.textBox23.Text = "16214";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(139, 19);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(100, 20);
-            this.textBox21.TabIndex = 26;
-            this.textBox21.Text = "Name";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(139, 45);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(154, 20);
-            this.textBox22.TabIndex = 27;
-            this.textBox22.Text = "111 Hollywood Dr., Clarion, PA";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox41);
@@ -654,6 +652,14 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Demographics";
+            // 
+            // textBox41
+            // 
+            this.textBox41.Location = new System.Drawing.Point(20, 71);
+            this.textBox41.Name = "textBox41";
+            this.textBox41.Size = new System.Drawing.Size(100, 20);
+            this.textBox41.TabIndex = 24;
+            this.textBox41.Text = "Admittance Date";
             // 
             // textBox2
             // 
@@ -877,7 +883,6 @@
             this.groupBox12.Controls.Add(this.button6);
             this.groupBox12.Controls.Add(this.listBox5);
             this.groupBox12.Controls.Add(this.dataGridView1);
-            this.groupBox12.Controls.Add(this.numericUpDown1);
             this.groupBox12.Controls.Add(this.button9);
             this.groupBox12.Controls.Add(this.button8);
             this.groupBox12.Controls.Add(this.dateTimePicker1);
@@ -885,14 +890,14 @@
             this.groupBox12.Controls.Add(this.comboBox3);
             this.groupBox12.Location = new System.Drawing.Point(3, 3);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(816, 614);
+            this.groupBox12.Size = new System.Drawing.Size(1081, 614);
             this.groupBox12.TabIndex = 10;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Behaviors";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(6, 23);
+            this.button6.Location = new System.Drawing.Point(112, 20);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(82, 23);
             this.button6.TabIndex = 24;
@@ -921,87 +926,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(38, 257);
+            this.dataGridView1.Location = new System.Drawing.Point(149, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(719, 351);
+            this.dataGridView1.Size = new System.Drawing.Size(926, 556);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Shift";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Staff Name(s)";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle5.NullValue = "Occurred";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column4.HeaderText = "Arguing";
-            this.Column4.Items.AddRange(new object[] {
-            "Occurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle6.NullValue = "Moderate";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column5.HeaderText = "Physical Aggression";
-            this.Column5.Items.AddRange(new object[] {
-            "Ocurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Daily Total";
-            this.Column6.Name = "Column6";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(383, 119);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(45, 20);
-            this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(94, 23);
+            this.button9.Location = new System.Drawing.Point(200, 20);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 23);
             this.button9.TabIndex = 6;
@@ -1010,7 +942,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(277, 201);
+            this.button8.Location = new System.Drawing.Point(6, 20);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(100, 23);
             this.button8.TabIndex = 5;
@@ -1019,14 +951,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(247, 19);
+            this.dateTimePicker1.Location = new System.Drawing.Point(398, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // textBox49
             // 
-            this.textBox49.Location = new System.Drawing.Point(383, 148);
+            this.textBox49.Location = new System.Drawing.Point(21, 284);
             this.textBox49.Name = "textBox49";
             this.textBox49.Size = new System.Drawing.Size(100, 20);
             this.textBox49.TabIndex = 2;
@@ -1071,7 +1003,7 @@
             "Mean Talk",
             "Skipping Meals",
             "Other"});
-            this.comboBox3.Location = new System.Drawing.Point(256, 147);
+            this.comboBox3.Location = new System.Drawing.Point(6, 257);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 1;
@@ -1399,13 +1331,13 @@
             // 
             this.treeView2.Location = new System.Drawing.Point(6, 53);
             this.treeView2.Name = "treeView2";
-            treeNode20.Name = "Node0";
-            treeNode20.Text = "Arguing";
-            treeNode21.Name = "Node1";
-            treeNode21.Text = "Lethargic";
+            treeNode39.Name = "Node0";
+            treeNode39.Text = "Arguing";
+            treeNode40.Name = "Node1";
+            treeNode40.Text = "Lethargic";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode20,
-            treeNode21});
+            treeNode39,
+            treeNode40});
             this.treeView2.Size = new System.Drawing.Size(127, 198);
             this.treeView2.TabIndex = 28;
             // 
@@ -1439,23 +1371,23 @@
             // 
             this.treeView3.Location = new System.Drawing.Point(6, 80);
             this.treeView3.Name = "treeView3";
-            treeNode22.Name = "Node0";
-            treeNode22.Text = "Hourly";
-            treeNode23.Name = "Node4";
-            treeNode23.Text = "Arguing - Severe";
-            treeNode24.Name = "Node5";
-            treeNode24.Text = "Lethargic - Mild";
-            treeNode25.Name = "Node1";
-            treeNode25.Text = "Daily";
-            treeNode26.Name = "Node2";
-            treeNode26.Text = "Weekly";
-            treeNode27.Name = "Node3";
-            treeNode27.Text = "Less Often";
+            treeNode41.Name = "Node0";
+            treeNode41.Text = "Hourly";
+            treeNode42.Name = "Node4";
+            treeNode42.Text = "Arguing - Severe";
+            treeNode43.Name = "Node5";
+            treeNode43.Text = "Lethargic - Mild";
+            treeNode44.Name = "Node1";
+            treeNode44.Text = "Daily";
+            treeNode45.Name = "Node2";
+            treeNode45.Text = "Weekly";
+            treeNode46.Name = "Node3";
+            treeNode46.Text = "Less Often";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode22,
-            treeNode25,
-            treeNode26,
-            treeNode27});
+            treeNode41,
+            treeNode44,
+            treeNode45,
+            treeNode46});
             this.treeView3.Size = new System.Drawing.Size(170, 203);
             this.treeView3.TabIndex = 28;
             // 
@@ -1693,25 +1625,25 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(6, 52);
             this.treeView1.Name = "treeView1";
-            treeNode28.Name = "Node1";
-            treeNode28.Text = "Hope / Optimism";
-            treeNode29.Name = "Node0";
-            treeNode29.Text = "Strengths of Emotion";
-            treeNode30.Name = "Node2";
-            treeNode30.Text = "Strengths of Will";
-            treeNode31.Name = "Node5";
-            treeNode31.Text = "Humor";
-            treeNode32.Name = "Node6";
-            treeNode32.Text = "Citizenship";
-            treeNode33.Name = "Node3";
-            treeNode33.Text = "Rational and Civic Strengths";
-            treeNode34.Name = "Node4";
-            treeNode34.Text = "Strengths of Tolerance";
+            treeNode47.Name = "Node1";
+            treeNode47.Text = "Hope / Optimism";
+            treeNode48.Name = "Node0";
+            treeNode48.Text = "Strengths of Emotion";
+            treeNode49.Name = "Node2";
+            treeNode49.Text = "Strengths of Will";
+            treeNode50.Name = "Node5";
+            treeNode50.Text = "Humor";
+            treeNode51.Name = "Node6";
+            treeNode51.Text = "Citizenship";
+            treeNode52.Name = "Node3";
+            treeNode52.Text = "Rational and Civic Strengths";
+            treeNode53.Name = "Node4";
+            treeNode53.Text = "Strengths of Tolerance";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode29,
-            treeNode30,
-            treeNode33,
-            treeNode34});
+            treeNode48,
+            treeNode49,
+            treeNode52,
+            treeNode53});
             this.treeView1.Size = new System.Drawing.Size(165, 147);
             this.treeView1.TabIndex = 0;
             // 
@@ -1757,6 +1689,15 @@
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "SI new form (cont.)";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(379, 6);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(127, 13);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Shaun Burke Interviewed";
             // 
             // groupBox11
             // 
@@ -2267,17 +2208,17 @@
             // 
             this.treeView4.Location = new System.Drawing.Point(6, 73);
             this.treeView4.Name = "treeView4";
-            treeNode35.Name = "Node2";
-            treeNode35.Text = "Arguing";
-            treeNode36.Name = "Node0";
-            treeNode36.Text = "Uncompleted";
-            treeNode37.Name = "Node3";
-            treeNode37.Text = "Lethargic";
-            treeNode38.Name = "Node1";
-            treeNode38.Text = "Completed";
+            treeNode54.Name = "Node2";
+            treeNode54.Text = "Arguing";
+            treeNode55.Name = "Node0";
+            treeNode55.Text = "Uncompleted";
+            treeNode56.Name = "Node3";
+            treeNode56.Text = "Lethargic";
+            treeNode57.Name = "Node1";
+            treeNode57.Text = "Completed";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode38});
+            treeNode55,
+            treeNode57});
             this.treeView4.Size = new System.Drawing.Size(167, 281);
             this.treeView4.TabIndex = 62;
             // 
@@ -2354,22 +2295,62 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // textBox41
+            // Column1
             // 
-            this.textBox41.Location = new System.Drawing.Point(20, 71);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(100, 20);
-            this.textBox41.TabIndex = 24;
-            this.textBox41.Text = "Admittance Date";
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column1.HeaderText = "Date";
+            this.Column1.Name = "Column1";
             // 
-            // label23
+            // Column2
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(379, 6);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(127, 13);
-            this.label23.TabIndex = 8;
-            this.label23.Text = "Shaun Burke Interviewed";
+            this.Column2.HeaderText = "Shift";
+            this.Column2.Items.AddRange(new object[] {
+            "7a-3p",
+            "3p-11p",
+            "11p-7a"});
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Staff Name(s)";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle8.NullValue = "Occurred";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column4.HeaderText = "Arguing";
+            this.Column4.Items.AddRange(new object[] {
+            "Occurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle9.NullValue = "Moderate";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column5.HeaderText = "Physical Aggression";
+            this.Column5.Items.AddRange(new object[] {
+            "Ocurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Daily Total";
+            this.Column6.Name = "Column6";
             // 
             // FormMain
             // 
@@ -2388,19 +2369,18 @@
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -2552,7 +2532,6 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox listBox5;
@@ -2597,15 +2576,15 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.TextBox textBox41;
+        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.Label label23;
     }
 }
 
