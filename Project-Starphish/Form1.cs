@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GUI
 {
@@ -16,7 +17,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        bool done = false;
         private void btnGraphs1_Click(object sender, EventArgs e)
         {
             if (radNum1.Checked)
@@ -50,26 +51,44 @@ namespace GUI
                 };
                 startCharts(tags);
             }
-            else if (radNum3.Checked)
-            {
-                Dictionary<string, int> tags = new Dictionary<string, int>() 
-                { 
-                    { "Physical Aggression", 16 },
-                    { "Verbal Aggression", 24 },
-                    { "Short attention span", 11 },
-                    { "Irritability", 51 },
-                    { "Skipping meals", 178 }
-                };
-                startCharts(tags);
-            }
 
+            if (!done)
+            {
+                chartTest2.Series.Add("TrendLine");
+                chartTest2.Series["TrendLine"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                chartTest2.Series["TrendLine"].BorderWidth = 3;
+                chartTest2.Series["TrendLine"].Color = Color.Red;
+                // Line of best fit is linear
+                chartTest3.Series.Add("TrendLine");
+                chartTest3.Series["TrendLine"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                chartTest3.Series["TrendLine"].BorderWidth = 3;
+                chartTest3.Series["TrendLine"].Color = Color.Red;
+                // Line of best fit is linear
+            }
+            string typeRegression = "Linear";//"Exponential";//
+            // The number of days for Forecasting
+            string forecasting = "1";
+            // Show Error as a range chart.
+            string error = "false";
+            // Show Forecasting Error as a range chart.
+            string forecastingError = "false";
+            // Formula parameters
+            string parameters = typeRegression + ',' + forecasting + ',' + error + ',' + forecastingError;
+            chartTest2.Series[0].Sort(PointSortOrder.Ascending, "X");
+            // Create Forecasting Series.
+            chartTest2.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTest2.Series[0], chartTest2.Series["TrendLine"]);
+
+            chartTest3.Series[0].Sort(PointSortOrder.Ascending, "X");
+            // Create Forecasting Series.
+            chartTest3.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTest3.Series[0], chartTest3.Series["TrendLine"]);
             
+            done = true;//shitty code
             
         }
 
         private void chkNumbers_CheckedChanged(object sender, EventArgs e)
         {
-            if (chartTest1.Series[0].IsValueShownAsLabel == false)
+            if (chkNumbers.Checked)
             {
                 chartTest1.Series[0].IsValueShownAsLabel = true;
                 chartTest2.Series[0].IsValueShownAsLabel = true;

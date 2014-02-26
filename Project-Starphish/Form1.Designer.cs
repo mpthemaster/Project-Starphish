@@ -28,58 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Allergies");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
-            treeNode23});
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Hourly");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Arguing - Severe");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Lethargic - Mild");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Daily", new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode28});
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Weekly");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Hope / Optimism");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
-            treeNode32});
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Humor");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Citizenship");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
-            treeNode35,
-            treeNode36});
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Arguing");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Uncompleted", new System.Windows.Forms.TreeNode[] {
-            treeNode39});
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
-            treeNode41});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Allergies");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Hourly");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Arguing - Severe");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Lethargic - Mild");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Daily", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Weekly");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Less Often");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Hope / Optimism");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Strengths of Will");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Humor");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Citizenship");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
+            treeNode14,
+            treeNode15});
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Arguing");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Uncompleted", new System.Windows.Forms.TreeNode[] {
+            treeNode18});
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
+            treeNode20});
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -160,6 +160,11 @@
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.radNum1 = new System.Windows.Forms.RadioButton();
+            this.radNum2 = new System.Windows.Forms.RadioButton();
+            this.chkNumbers = new System.Windows.Forms.CheckBox();
+            this.btnGraphs1 = new System.Windows.Forms.Button();
             this.chartTest4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTest3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTest2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -285,12 +290,6 @@
             this.removeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGraphs1 = new System.Windows.Forms.Button();
-            this.chkNumbers = new System.Windows.Forms.CheckBox();
-            this.radNum1 = new System.Windows.Forms.RadioButton();
-            this.radNum2 = new System.Windows.Forms.RadioButton();
-            this.radNum3 = new System.Windows.Forms.RadioButton();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -304,6 +303,7 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTest4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTest3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTest2)).BeginInit();
@@ -325,7 +325,6 @@
             this.tabPage6.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1001,9 +1000,9 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.HeaderText = "Date";
             this.Column1.Name = "Column1";
             // 
@@ -1025,8 +1024,8 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle5.NullValue = "Occurred";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.NullValue = "Occurred";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "Arguing";
             this.Column4.Items.AddRange(new object[] {
             "Occurred",
@@ -1039,8 +1038,8 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle6.NullValue = "Moderate";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.NullValue = "Moderate";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column5.HeaderText = "Physical Aggression";
             this.Column5.Items.AddRange(new object[] {
             "Ocurred",
@@ -1150,66 +1149,121 @@
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.radNum1);
+            this.groupBox17.Controls.Add(this.radNum2);
+            this.groupBox17.Location = new System.Drawing.Point(48, 144);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(110, 80);
+            this.groupBox17.TabIndex = 11;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Graph data";
+            // 
+            // radNum1
+            // 
+            this.radNum1.AutoSize = true;
+            this.radNum1.Checked = true;
+            this.radNum1.Location = new System.Drawing.Point(23, 19);
+            this.radNum1.Name = "radNum1";
+            this.radNum1.Size = new System.Drawing.Size(57, 17);
+            this.radNum1.TabIndex = 8;
+            this.radNum1.TabStop = true;
+            this.radNum1.Text = "Data 1";
+            this.radNum1.UseVisualStyleBackColor = true;
+            // 
+            // radNum2
+            // 
+            this.radNum2.AutoSize = true;
+            this.radNum2.Location = new System.Drawing.Point(23, 51);
+            this.radNum2.Name = "radNum2";
+            this.radNum2.Size = new System.Drawing.Size(57, 17);
+            this.radNum2.TabIndex = 9;
+            this.radNum2.TabStop = true;
+            this.radNum2.Text = "Data 2";
+            this.radNum2.UseVisualStyleBackColor = true;
+            // 
+            // chkNumbers
+            // 
+            this.chkNumbers.AutoSize = true;
+            this.chkNumbers.Location = new System.Drawing.Point(60, 91);
+            this.chkNumbers.Name = "chkNumbers";
+            this.chkNumbers.Size = new System.Drawing.Size(68, 17);
+            this.chkNumbers.TabIndex = 7;
+            this.chkNumbers.Text = "Numbers";
+            this.chkNumbers.UseVisualStyleBackColor = true;
+            this.chkNumbers.CheckedChanged += new System.EventHandler(this.chkNumbers_CheckedChanged);
+            // 
+            // btnGraphs1
+            // 
+            this.btnGraphs1.Location = new System.Drawing.Point(48, 53);
+            this.btnGraphs1.Name = "btnGraphs1";
+            this.btnGraphs1.Size = new System.Drawing.Size(89, 23);
+            this.btnGraphs1.TabIndex = 4;
+            this.btnGraphs1.Text = "Show graphs";
+            this.btnGraphs1.UseVisualStyleBackColor = true;
+            this.btnGraphs1.Click += new System.EventHandler(this.btnGraphs1_Click);
+            // 
             // chartTest4
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartTest4.ChartAreas.Add(chartArea6);
-            legend5.Name = "Legend1";
-            this.chartTest4.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chartTest4.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTest4.Legends.Add(legend1);
             this.chartTest4.Location = new System.Drawing.Point(643, 317);
             this.chartTest4.Name = "chartTest4";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartTest4.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTest4.Series.Add(series1);
             this.chartTest4.Size = new System.Drawing.Size(392, 300);
             this.chartTest4.TabIndex = 3;
             this.chartTest4.Text = "chartTest4";
             // 
             // chartTest3
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartTest3.ChartAreas.Add(chartArea7);
-            legend6.Name = "Legend1";
-            this.chartTest3.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.chartTest3.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartTest3.Legends.Add(legend2);
             this.chartTest3.Location = new System.Drawing.Point(204, 317);
             this.chartTest3.Name = "chartTest3";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartTest3.Series.Add(series7);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartTest3.Series.Add(series2);
             this.chartTest3.Size = new System.Drawing.Size(368, 300);
             this.chartTest3.TabIndex = 2;
             this.chartTest3.Text = "chartTest3";
             // 
             // chartTest2
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartTest2.ChartAreas.Add(chartArea8);
-            legend7.Name = "Legend1";
-            this.chartTest2.Legends.Add(legend7);
+            chartArea3.Name = "ChartArea1";
+            this.chartTest2.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartTest2.Legends.Add(legend3);
             this.chartTest2.Location = new System.Drawing.Point(643, 0);
             this.chartTest2.Name = "chartTest2";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartTest2.Series.Add(series8);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartTest2.Series.Add(series3);
             this.chartTest2.Size = new System.Drawing.Size(392, 300);
             this.chartTest2.TabIndex = 1;
             this.chartTest2.Text = "chartTest2";
             // 
             // chartTest1
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartTest1.ChartAreas.Add(chartArea9);
-            legend8.Name = "Legend1";
-            this.chartTest1.Legends.Add(legend8);
+            chartArea4.Name = "ChartArea1";
+            this.chartTest1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartTest1.Legends.Add(legend4);
             this.chartTest1.Location = new System.Drawing.Point(204, 11);
             this.chartTest1.Name = "chartTest1";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartTest1.Series.Add(series9);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartTest1.Series.Add(series4);
             this.chartTest1.Size = new System.Drawing.Size(368, 300);
             this.chartTest1.TabIndex = 0;
             this.chartTest1.Text = "chartTest1";
@@ -1244,47 +1298,47 @@
             // 
             // chart1
             // 
-            chartArea10.Area3DStyle.IsRightAngleAxes = false;
-            chartArea10.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea10.Area3DStyle.Rotation = 10;
-            chartArea10.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea10);
+            chartArea5.Area3DStyle.IsRightAngleAxes = false;
+            chartArea5.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea5.Area3DStyle.Rotation = 10;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
             this.chart1.Location = new System.Drawing.Point(6, 17);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series10.ChartArea = "ChartArea1";
-            series10.IsXValueIndexed = true;
-            series10.Name = "Series1";
-            dataPoint6.AxisLabel = "Attention";
-            dataPoint6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataPoint6.IsValueShownAsLabel = false;
-            dataPoint6.IsVisibleInLegend = true;
-            dataPoint6.Label = "2.75";
-            dataPoint6.LabelAngle = 0;
-            dataPoint6.LabelBorderColor = System.Drawing.Color.Transparent;
-            dataPoint6.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint6.LabelBorderWidth = 1;
-            dataPoint6.LegendText = "";
-            dataPoint7.AxisLabel = "Escape";
-            dataPoint7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataPoint7.Label = "2";
-            dataPoint8.AxisLabel = "Non-Social";
-            dataPoint8.Color = System.Drawing.Color.Gray;
-            dataPoint8.Label = "1.6";
-            dataPoint9.AxisLabel = "Physical";
-            dataPoint9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataPoint9.Label = "1.2";
-            dataPoint10.AxisLabel = "Tangible";
-            dataPoint10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataPoint10.Label = "1.6";
-            series10.Points.Add(dataPoint6);
-            series10.Points.Add(dataPoint7);
-            series10.Points.Add(dataPoint8);
-            series10.Points.Add(dataPoint9);
-            series10.Points.Add(dataPoint10);
-            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series10);
+            series5.ChartArea = "ChartArea1";
+            series5.IsXValueIndexed = true;
+            series5.Name = "Series1";
+            dataPoint1.AxisLabel = "Attention";
+            dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataPoint1.IsValueShownAsLabel = false;
+            dataPoint1.IsVisibleInLegend = true;
+            dataPoint1.Label = "2.75";
+            dataPoint1.LabelAngle = 0;
+            dataPoint1.LabelBorderColor = System.Drawing.Color.Transparent;
+            dataPoint1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint1.LabelBorderWidth = 1;
+            dataPoint1.LegendText = "";
+            dataPoint2.AxisLabel = "Escape";
+            dataPoint2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint2.Label = "2";
+            dataPoint3.AxisLabel = "Non-Social";
+            dataPoint3.Color = System.Drawing.Color.Gray;
+            dataPoint3.Label = "1.6";
+            dataPoint4.AxisLabel = "Physical";
+            dataPoint4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataPoint4.Label = "1.2";
+            dataPoint5.AxisLabel = "Tangible";
+            dataPoint5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataPoint5.Label = "1.6";
+            series5.Points.Add(dataPoint1);
+            series5.Points.Add(dataPoint2);
+            series5.Points.Add(dataPoint3);
+            series5.Points.Add(dataPoint4);
+            series5.Points.Add(dataPoint5);
+            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(374, 208);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1723,17 +1777,17 @@
             // 
             this.treeView2.Location = new System.Drawing.Point(6, 53);
             this.treeView2.Name = "treeView2";
-            treeNode22.Name = "Node1";
-            treeNode22.Text = "Allergies";
-            treeNode23.Name = "Node0";
-            treeNode23.Text = "Physiological Causes of Behavior";
-            treeNode24.Name = "Node0";
-            treeNode24.Text = "Arguing";
-            treeNode25.Name = "Node1";
-            treeNode25.Text = "Lethargic";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Allergies";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "Physiological Causes of Behavior";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "Arguing";
+            treeNode4.Name = "Node1";
+            treeNode4.Text = "Lethargic";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode25});
+            treeNode3,
+            treeNode4});
             this.treeView2.Size = new System.Drawing.Size(127, 198);
             this.treeView2.TabIndex = 28;
             // 
@@ -1767,23 +1821,23 @@
             // 
             this.treeView3.Location = new System.Drawing.Point(6, 80);
             this.treeView3.Name = "treeView3";
-            treeNode26.Name = "Node0";
-            treeNode26.Text = "Hourly";
-            treeNode27.Name = "Node4";
-            treeNode27.Text = "Arguing - Severe";
-            treeNode28.Name = "Node5";
-            treeNode28.Text = "Lethargic - Mild";
-            treeNode29.Name = "Node1";
-            treeNode29.Text = "Daily";
-            treeNode30.Name = "Node2";
-            treeNode30.Text = "Weekly";
-            treeNode31.Name = "Node3";
-            treeNode31.Text = "Less Often";
+            treeNode5.Name = "Node0";
+            treeNode5.Text = "Hourly";
+            treeNode6.Name = "Node4";
+            treeNode6.Text = "Arguing - Severe";
+            treeNode7.Name = "Node5";
+            treeNode7.Text = "Lethargic - Mild";
+            treeNode8.Name = "Node1";
+            treeNode8.Text = "Daily";
+            treeNode9.Name = "Node2";
+            treeNode9.Text = "Weekly";
+            treeNode10.Name = "Node3";
+            treeNode10.Text = "Less Often";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode26,
-            treeNode29,
-            treeNode30,
-            treeNode31});
+            treeNode5,
+            treeNode8,
+            treeNode9,
+            treeNode10});
             this.treeView3.Size = new System.Drawing.Size(170, 203);
             this.treeView3.TabIndex = 28;
             // 
@@ -2021,25 +2075,25 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(6, 52);
             this.treeView1.Name = "treeView1";
-            treeNode32.Name = "Node1";
-            treeNode32.Text = "Hope / Optimism";
-            treeNode33.Name = "Node0";
-            treeNode33.Text = "Strengths of Emotion";
-            treeNode34.Name = "Node2";
-            treeNode34.Text = "Strengths of Will";
-            treeNode35.Name = "Node5";
-            treeNode35.Text = "Humor";
-            treeNode36.Name = "Node6";
-            treeNode36.Text = "Citizenship";
-            treeNode37.Name = "Node3";
-            treeNode37.Text = "Rational and Civic Strengths";
-            treeNode38.Name = "Node4";
-            treeNode38.Text = "Strengths of Tolerance";
+            treeNode11.Name = "Node1";
+            treeNode11.Text = "Hope / Optimism";
+            treeNode12.Name = "Node0";
+            treeNode12.Text = "Strengths of Emotion";
+            treeNode13.Name = "Node2";
+            treeNode13.Text = "Strengths of Will";
+            treeNode14.Name = "Node5";
+            treeNode14.Text = "Humor";
+            treeNode15.Name = "Node6";
+            treeNode15.Text = "Citizenship";
+            treeNode16.Name = "Node3";
+            treeNode16.Text = "Rational and Civic Strengths";
+            treeNode17.Name = "Node4";
+            treeNode17.Text = "Strengths of Tolerance";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode33,
-            treeNode34,
-            treeNode37,
-            treeNode38});
+            treeNode12,
+            treeNode13,
+            treeNode16,
+            treeNode17});
             this.treeView1.Size = new System.Drawing.Size(165, 147);
             this.treeView1.TabIndex = 0;
             // 
@@ -2614,17 +2668,17 @@
             // 
             this.treeView4.Location = new System.Drawing.Point(6, 73);
             this.treeView4.Name = "treeView4";
-            treeNode39.Name = "Node2";
-            treeNode39.Text = "Arguing";
-            treeNode40.Name = "Node0";
-            treeNode40.Text = "Uncompleted";
-            treeNode41.Name = "Node3";
-            treeNode41.Text = "Lethargic";
-            treeNode42.Name = "Node1";
-            treeNode42.Text = "Completed";
+            treeNode18.Name = "Node2";
+            treeNode18.Text = "Arguing";
+            treeNode19.Name = "Node0";
+            treeNode19.Text = "Uncompleted";
+            treeNode20.Name = "Node3";
+            treeNode20.Text = "Lethargic";
+            treeNode21.Name = "Node1";
+            treeNode21.Text = "Completed";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode40,
-            treeNode42});
+            treeNode19,
+            treeNode21});
             this.treeView4.Size = new System.Drawing.Size(167, 281);
             this.treeView4.TabIndex = 62;
             // 
@@ -2701,73 +2755,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // btnGraphs1
-            // 
-            this.btnGraphs1.Location = new System.Drawing.Point(48, 53);
-            this.btnGraphs1.Name = "btnGraphs1";
-            this.btnGraphs1.Size = new System.Drawing.Size(89, 23);
-            this.btnGraphs1.TabIndex = 4;
-            this.btnGraphs1.Text = "Show graphs";
-            this.btnGraphs1.UseVisualStyleBackColor = true;
-            this.btnGraphs1.Click += new System.EventHandler(this.btnGraphs1_Click);
-            // 
-            // chkNumbers
-            // 
-            this.chkNumbers.AutoSize = true;
-            this.chkNumbers.Location = new System.Drawing.Point(60, 91);
-            this.chkNumbers.Name = "chkNumbers";
-            this.chkNumbers.Size = new System.Drawing.Size(68, 17);
-            this.chkNumbers.TabIndex = 7;
-            this.chkNumbers.Text = "Numbers";
-            this.chkNumbers.UseVisualStyleBackColor = true;
-            this.chkNumbers.CheckedChanged += new System.EventHandler(this.chkNumbers_CheckedChanged);
-            // 
-            // radNum1
-            // 
-            this.radNum1.AutoSize = true;
-            this.radNum1.Checked = true;
-            this.radNum1.Location = new System.Drawing.Point(23, 19);
-            this.radNum1.Name = "radNum1";
-            this.radNum1.Size = new System.Drawing.Size(57, 17);
-            this.radNum1.TabIndex = 8;
-            this.radNum1.TabStop = true;
-            this.radNum1.Text = "Data 1";
-            this.radNum1.UseVisualStyleBackColor = true;
-            // 
-            // radNum2
-            // 
-            this.radNum2.AutoSize = true;
-            this.radNum2.Location = new System.Drawing.Point(23, 51);
-            this.radNum2.Name = "radNum2";
-            this.radNum2.Size = new System.Drawing.Size(57, 17);
-            this.radNum2.TabIndex = 9;
-            this.radNum2.TabStop = true;
-            this.radNum2.Text = "Data 2";
-            this.radNum2.UseVisualStyleBackColor = true;
-            // 
-            // radNum3
-            // 
-            this.radNum3.AutoSize = true;
-            this.radNum3.Location = new System.Drawing.Point(23, 83);
-            this.radNum3.Name = "radNum3";
-            this.radNum3.Size = new System.Drawing.Size(57, 17);
-            this.radNum3.TabIndex = 10;
-            this.radNum3.TabStop = true;
-            this.radNum3.Text = "Data 3";
-            this.radNum3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.radNum3);
-            this.groupBox17.Controls.Add(this.radNum1);
-            this.groupBox17.Controls.Add(this.radNum2);
-            this.groupBox17.Location = new System.Drawing.Point(48, 144);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(110, 114);
-            this.groupBox17.TabIndex = 11;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Graph data";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2799,6 +2786,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTest4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTest3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTest2)).EndInit();
@@ -2827,8 +2816,6 @@
             this.groupBox11.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3043,7 +3030,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTest1;
         private System.Windows.Forms.CheckBox chkNumbers;
         private System.Windows.Forms.Button btnGraphs1;
-        private System.Windows.Forms.RadioButton radNum3;
         private System.Windows.Forms.RadioButton radNum2;
         private System.Windows.Forms.RadioButton radNum1;
         private System.Windows.Forms.GroupBox groupBox17;
