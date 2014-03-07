@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
@@ -78,9 +69,6 @@
             System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Lethargic");
             System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
             treeNode21});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -146,24 +134,22 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.radNum1 = new System.Windows.Forms.RadioButton();
-            this.radNum2 = new System.Windows.Forms.RadioButton();
-            this.chkNumbers = new System.Windows.Forms.CheckBox();
-            this.btnGraphs1 = new System.Windows.Forms.Button();
-            this.chartTest4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartTest3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartTest2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartTest1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -219,6 +205,8 @@
             this.textBox50 = new System.Windows.Forms.TextBox();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.button30 = new System.Windows.Forms.Button();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.button14 = new System.Windows.Forms.Button();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
@@ -284,15 +272,6 @@
             this.removeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button30 = new System.Windows.Forms.Button();
-            this.textBox45 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -305,12 +284,6 @@
             this.tabPage2.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest1)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -966,6 +939,13 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Behaviors";
             // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(604, 19);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker3.TabIndex = 25;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(112, 20);
@@ -1001,6 +981,63 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(926, 556);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "Date";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Shift";
+            this.Column2.Items.AddRange(new object[] {
+            "7a-3p",
+            "3p-11p",
+            "11p-7a"});
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle2.NullValue = "Occurred";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.HeaderText = "Arguing";
+            this.Column4.Items.AddRange(new object[] {
+            "Not Occurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle3.NullValue = "Moderate";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column5.HeaderText = "Physical Aggression";
+            this.Column5.Items.AddRange(new object[] {
+            "Not Ocurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Shift Total";
+            this.Column6.Name = "Column6";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Staff Name(s)";
+            this.Column3.Name = "Column3";
             // 
             // button9
             // 
@@ -1077,138 +1114,12 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox17);
-            this.tabPage3.Controls.Add(this.chkNumbers);
-            this.tabPage3.Controls.Add(this.btnGraphs1);
-            this.tabPage3.Controls.Add(this.chartTest4);
-            this.tabPage3.Controls.Add(this.chartTest3);
-            this.tabPage3.Controls.Add(this.chartTest2);
-            this.tabPage3.Controls.Add(this.chartTest1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1087, 623);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.radNum1);
-            this.groupBox17.Controls.Add(this.radNum2);
-            this.groupBox17.Location = new System.Drawing.Point(48, 144);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(110, 80);
-            this.groupBox17.TabIndex = 11;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Graph data";
-            // 
-            // radNum1
-            // 
-            this.radNum1.AutoSize = true;
-            this.radNum1.Checked = true;
-            this.radNum1.Location = new System.Drawing.Point(23, 19);
-            this.radNum1.Name = "radNum1";
-            this.radNum1.Size = new System.Drawing.Size(57, 17);
-            this.radNum1.TabIndex = 8;
-            this.radNum1.TabStop = true;
-            this.radNum1.Text = "Data 1";
-            this.radNum1.UseVisualStyleBackColor = true;
-            // 
-            // radNum2
-            // 
-            this.radNum2.AutoSize = true;
-            this.radNum2.Location = new System.Drawing.Point(23, 51);
-            this.radNum2.Name = "radNum2";
-            this.radNum2.Size = new System.Drawing.Size(57, 17);
-            this.radNum2.TabIndex = 9;
-            this.radNum2.TabStop = true;
-            this.radNum2.Text = "Data 2";
-            this.radNum2.UseVisualStyleBackColor = true;
-            // 
-            // chkNumbers
-            // 
-            this.chkNumbers.AutoSize = true;
-            this.chkNumbers.Location = new System.Drawing.Point(60, 91);
-            this.chkNumbers.Name = "chkNumbers";
-            this.chkNumbers.Size = new System.Drawing.Size(68, 17);
-            this.chkNumbers.TabIndex = 7;
-            this.chkNumbers.Text = "Numbers";
-            this.chkNumbers.UseVisualStyleBackColor = true;
-            this.chkNumbers.CheckedChanged += new System.EventHandler(this.chkNumbers_CheckedChanged);
-            // 
-            // btnGraphs1
-            // 
-            this.btnGraphs1.Location = new System.Drawing.Point(48, 53);
-            this.btnGraphs1.Name = "btnGraphs1";
-            this.btnGraphs1.Size = new System.Drawing.Size(89, 23);
-            this.btnGraphs1.TabIndex = 4;
-            this.btnGraphs1.Text = "Show graphs";
-            this.btnGraphs1.UseVisualStyleBackColor = true;
-            this.btnGraphs1.Click += new System.EventHandler(this.btnGraphs1_Click);
-            // 
-            // chartTest4
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartTest4.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartTest4.Legends.Add(legend1);
-            this.chartTest4.Location = new System.Drawing.Point(643, 317);
-            this.chartTest4.Name = "chartTest4";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartTest4.Series.Add(series1);
-            this.chartTest4.Size = new System.Drawing.Size(392, 300);
-            this.chartTest4.TabIndex = 3;
-            this.chartTest4.Text = "chartTest4";
-            // 
-            // chartTest3
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartTest3.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartTest3.Legends.Add(legend2);
-            this.chartTest3.Location = new System.Drawing.Point(204, 317);
-            this.chartTest3.Name = "chartTest3";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartTest3.Series.Add(series2);
-            this.chartTest3.Size = new System.Drawing.Size(368, 300);
-            this.chartTest3.TabIndex = 2;
-            this.chartTest3.Text = "chartTest3";
-            // 
-            // chartTest2
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chartTest2.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartTest2.Legends.Add(legend3);
-            this.chartTest2.Location = new System.Drawing.Point(643, 0);
-            this.chartTest2.Name = "chartTest2";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartTest2.Series.Add(series3);
-            this.chartTest2.Size = new System.Drawing.Size(392, 300);
-            this.chartTest2.TabIndex = 1;
-            this.chartTest2.Text = "chartTest2";
-            // 
-            // chartTest1
-            // 
-            chartArea4.Name = "ChartArea1";
-            this.chartTest1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartTest1.Legends.Add(legend4);
-            this.chartTest1.Location = new System.Drawing.Point(204, 11);
-            this.chartTest1.Name = "chartTest1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartTest1.Series.Add(series4);
-            this.chartTest1.Size = new System.Drawing.Size(368, 300);
-            this.chartTest1.TabIndex = 0;
-            this.chartTest1.Text = "chartTest1";
             // 
             // tabPage4
             // 
@@ -1240,17 +1151,17 @@
             // 
             // chart1
             // 
-            chartArea5.Area3DStyle.IsRightAngleAxes = false;
-            chartArea5.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea5.Area3DStyle.Rotation = 10;
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea1.Area3DStyle.IsRightAngleAxes = false;
+            chartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea1.Area3DStyle.Rotation = 10;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(6, 17);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ChartArea = "ChartArea1";
-            series5.IsXValueIndexed = true;
-            series5.Name = "Series1";
+            series1.ChartArea = "ChartArea1";
+            series1.IsXValueIndexed = true;
+            series1.Name = "Series1";
             dataPoint1.AxisLabel = "Attention";
             dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
             dataPoint1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -1274,13 +1185,13 @@
             dataPoint5.AxisLabel = "Tangible";
             dataPoint5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             dataPoint5.Label = "1.6";
-            series5.Points.Add(dataPoint1);
-            series5.Points.Add(dataPoint2);
-            series5.Points.Add(dataPoint3);
-            series5.Points.Add(dataPoint4);
-            series5.Points.Add(dataPoint5);
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series5);
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            series1.Points.Add(dataPoint5);
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(374, 208);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1904,6 +1815,23 @@
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Part 1: Strengths";
+            // 
+            // textBox45
+            // 
+            this.textBox45.Location = new System.Drawing.Point(258, 133);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(165, 20);
+            this.textBox45.TabIndex = 11;
+            this.textBox45.Text = "Other Strength";
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(177, 131);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(75, 23);
+            this.button30.TabIndex = 10;
+            this.button30.Text = "Add";
+            this.button30.UseVisualStyleBackColor = true;
             // 
             // comboBox7
             // 
@@ -2686,87 +2614,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(604, 19);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 25;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Shift";
-            this.Column2.Items.AddRange(new object[] {
-            "7a-3p",
-            "3p-11p",
-            "11p-7a"});
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle2.NullValue = "Occurred";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "Arguing";
-            this.Column4.Items.AddRange(new object[] {
-            "Not Occurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle3.NullValue = "Moderate";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column5.HeaderText = "Physical Aggression";
-            this.Column5.Items.AddRange(new object[] {
-            "Not Ocurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Shift Total";
-            this.Column6.Name = "Column6";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Staff Name(s)";
-            this.Column3.Name = "Column3";
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(177, 131);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 23);
-            this.button30.TabIndex = 10;
-            this.button30.Text = "Add";
-            this.button30.UseVisualStyleBackColor = true;
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(258, 133);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(165, 20);
-            this.textBox45.TabIndex = 11;
-            this.textBox45.Text = "Other Strength";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2796,14 +2643,6 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTest1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -3030,15 +2869,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTest4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTest3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTest2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTest1;
-        private System.Windows.Forms.CheckBox chkNumbers;
-        private System.Windows.Forms.Button btnGraphs1;
-        private System.Windows.Forms.RadioButton radNum2;
-        private System.Windows.Forms.RadioButton radNum1;
-        private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
