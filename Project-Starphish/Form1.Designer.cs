@@ -29,50 +29,59 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Allergies");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
-            treeNode23});
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
-            treeNode24});
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Hourly");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Arguing - Severe");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Lethargic - Mild");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Daily", new System.Windows.Forms.TreeNode[] {
-            treeNode28,
-            treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Weekly");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Hope / Optimism");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
-            treeNode33});
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Humor");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Citizenship");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode37});
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Other Strengths");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Arguing");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Uncompleted", new System.Windows.Forms.TreeNode[] {
-            treeNode41});
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
-            treeNode43});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Allergies");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
+            treeNode45});
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
+            treeNode46});
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Hourly");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Arguing - Severe");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Lethargic - Mild");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Daily", new System.Windows.Forms.TreeNode[] {
+            treeNode50,
+            treeNode51});
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Weekly");
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Less Often");
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Hope / Optimism");
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
+            treeNode55});
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Strengths of Will");
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Humor");
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Citizenship");
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
+            treeNode58,
+            treeNode59});
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
+            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Other Strengths");
+            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Arguing");
+            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Uncompleted", new System.Windows.Forms.TreeNode[] {
+            treeNode63});
+            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
+            treeNode65});
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -138,16 +147,31 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.comboBox35 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox34 = new System.Windows.Forms.ComboBox();
+            this.listBox7 = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -270,23 +294,11 @@
             this.removeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
-            this.comboBox34 = new System.Windows.Forms.ComboBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.comboBox35 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.comboBox36 = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button31 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -300,6 +312,7 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -317,7 +330,9 @@
             this.tabPage6.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -336,6 +351,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button31);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button4);
@@ -360,7 +376,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(530, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(280, 254);
+            this.pictureBox1.Size = new System.Drawing.Size(280, 206);
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
@@ -958,6 +974,28 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Behaviors";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(810, 20);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.TabIndex = 27;
+            this.checkBox1.Text = "Use Custom Dates";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Last Month",
+            "Last Quarter"});
+            this.comboBox4.Location = new System.Drawing.Point(942, 16);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 26;
+            this.comboBox4.Text = "Last Month";
+            // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.Location = new System.Drawing.Point(604, 19);
@@ -1000,6 +1038,63 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(926, 556);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column1.HeaderText = "Date";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Shift";
+            this.Column2.Items.AddRange(new object[] {
+            "7a-3p",
+            "3p-11p",
+            "11p-7a"});
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle8.NullValue = "Not Occurred";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column4.HeaderText = "Arguing";
+            this.Column4.Items.AddRange(new object[] {
+            "Not Occurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle9.NullValue = "Moderate";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column5.HeaderText = "Physical Aggression";
+            this.Column5.Items.AddRange(new object[] {
+            "Not Ocurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Shift Total";
+            this.Column6.Name = "Column6";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Staff Name(s)";
+            this.Column3.Name = "Column3";
             // 
             // button9
             // 
@@ -1076,7 +1171,9 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.comboBox36);
+            this.tabPage3.Controls.Add(this.chart5);
+            this.tabPage3.Controls.Add(this.chart4);
+            this.tabPage3.Controls.Add(this.chart3);
             this.tabPage3.Controls.Add(this.chart2);
             this.tabPage3.Controls.Add(this.checkBox2);
             this.tabPage3.Controls.Add(this.comboBox35);
@@ -1090,6 +1187,85 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // chart2
+            // 
+            chartArea11.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea11);
+            this.chart2.Location = new System.Drawing.Point(151, 64);
+            this.chart2.Name = "chart2";
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.Name = "Series1";
+            this.chart2.Series.Add(series11);
+            this.chart2.Size = new System.Drawing.Size(381, 255);
+            this.chart2.TabIndex = 32;
+            this.chart2.Text = "chart2";
+            title9.Name = "Title1";
+            title9.Text = "Total Behaviors";
+            this.chart2.Titles.Add(title9);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(643, 20);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(114, 17);
+            this.checkBox2.TabIndex = 31;
+            this.checkBox2.Text = "Use Custom Dates";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox35
+            // 
+            this.comboBox35.FormattingEnabled = true;
+            this.comboBox35.Items.AddRange(new object[] {
+            "Last Month",
+            "Last Quarter"});
+            this.comboBox35.Location = new System.Drawing.Point(777, 18);
+            this.comboBox35.Name = "comboBox35";
+            this.comboBox35.Size = new System.Drawing.Size(121, 21);
+            this.comboBox35.TabIndex = 30;
+            this.comboBox35.Text = "Last Month";
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(437, 19);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker4.TabIndex = 29;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(231, 19);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker5.TabIndex = 28;
+            this.dateTimePicker5.Value = new System.DateTime(2014, 3, 4, 0, 0, 0, 0);
+            // 
+            // comboBox34
+            // 
+            this.comboBox34.FormattingEnabled = true;
+            this.comboBox34.Items.AddRange(new object[] {
+            "Graph All Behaviors",
+            "Graph Top 5 Behaviors",
+            "Graph Custom Selection"});
+            this.comboBox34.Location = new System.Drawing.Point(3, 18);
+            this.comboBox34.Name = "comboBox34";
+            this.comboBox34.Size = new System.Drawing.Size(142, 21);
+            this.comboBox34.TabIndex = 1;
+            this.comboBox34.Text = "Graph Custom Selection";
+            // 
+            // listBox7
+            // 
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.Items.AddRange(new object[] {
+            "Arguing",
+            "Lethargic"});
+            this.listBox7.Location = new System.Drawing.Point(3, 45);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBox7.Size = new System.Drawing.Size(142, 212);
+            this.listBox7.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -1121,47 +1297,47 @@
             // 
             // chart1
             // 
-            chartArea4.Area3DStyle.IsRightAngleAxes = false;
-            chartArea4.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea4.Area3DStyle.Rotation = 10;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
+            chartArea12.Area3DStyle.IsRightAngleAxes = false;
+            chartArea12.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea12.Area3DStyle.Rotation = 10;
+            chartArea12.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea12);
             this.chart1.Location = new System.Drawing.Point(6, 17);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series4.ChartArea = "ChartArea1";
-            series4.IsXValueIndexed = true;
-            series4.Name = "Series1";
-            dataPoint6.AxisLabel = "Attention";
-            dataPoint6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataPoint6.IsValueShownAsLabel = false;
-            dataPoint6.IsVisibleInLegend = true;
-            dataPoint6.Label = "2.75";
-            dataPoint6.LabelAngle = 0;
-            dataPoint6.LabelBorderColor = System.Drawing.Color.Transparent;
-            dataPoint6.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint6.LabelBorderWidth = 1;
-            dataPoint6.LegendText = "";
-            dataPoint7.AxisLabel = "Escape";
-            dataPoint7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataPoint7.Label = "2";
-            dataPoint8.AxisLabel = "Non-Social";
-            dataPoint8.Color = System.Drawing.Color.Gray;
-            dataPoint8.Label = "1.6";
-            dataPoint9.AxisLabel = "Physical";
-            dataPoint9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataPoint9.Label = "1.2";
-            dataPoint10.AxisLabel = "Tangible";
-            dataPoint10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataPoint10.Label = "1.6";
-            series4.Points.Add(dataPoint6);
-            series4.Points.Add(dataPoint7);
-            series4.Points.Add(dataPoint8);
-            series4.Points.Add(dataPoint9);
-            series4.Points.Add(dataPoint10);
-            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series4);
+            series12.ChartArea = "ChartArea1";
+            series12.IsXValueIndexed = true;
+            series12.Name = "Series1";
+            dataPoint11.AxisLabel = "Attention";
+            dataPoint11.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataPoint11.IsValueShownAsLabel = false;
+            dataPoint11.IsVisibleInLegend = true;
+            dataPoint11.Label = "2.75";
+            dataPoint11.LabelAngle = 0;
+            dataPoint11.LabelBorderColor = System.Drawing.Color.Transparent;
+            dataPoint11.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint11.LabelBorderWidth = 1;
+            dataPoint11.LegendText = "";
+            dataPoint12.AxisLabel = "Escape";
+            dataPoint12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint12.Label = "2";
+            dataPoint13.AxisLabel = "Non-Social";
+            dataPoint13.Color = System.Drawing.Color.Gray;
+            dataPoint13.Label = "1.6";
+            dataPoint14.AxisLabel = "Physical";
+            dataPoint14.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataPoint14.Label = "1.2";
+            dataPoint15.AxisLabel = "Tangible";
+            dataPoint15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataPoint15.Label = "1.6";
+            series12.Points.Add(dataPoint11);
+            series12.Points.Add(dataPoint12);
+            series12.Points.Add(dataPoint13);
+            series12.Points.Add(dataPoint14);
+            series12.Points.Add(dataPoint15);
+            series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series12);
             this.chart1.Size = new System.Drawing.Size(374, 208);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1600,17 +1776,17 @@
             // 
             this.treeView2.Location = new System.Drawing.Point(6, 53);
             this.treeView2.Name = "treeView2";
-            treeNode23.Name = "Node1";
-            treeNode23.Text = "Allergies";
-            treeNode24.Name = "Node0";
-            treeNode24.Text = "Physiological Causes of Behavior";
-            treeNode25.Name = "Node0";
-            treeNode25.Text = "Arguing";
-            treeNode26.Name = "Node1";
-            treeNode26.Text = "Lethargic";
+            treeNode45.Name = "Node1";
+            treeNode45.Text = "Allergies";
+            treeNode46.Name = "Node0";
+            treeNode46.Text = "Physiological Causes of Behavior";
+            treeNode47.Name = "Node0";
+            treeNode47.Text = "Arguing";
+            treeNode48.Name = "Node1";
+            treeNode48.Text = "Lethargic";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode25,
-            treeNode26});
+            treeNode47,
+            treeNode48});
             this.treeView2.Size = new System.Drawing.Size(127, 198);
             this.treeView2.TabIndex = 28;
             // 
@@ -1644,23 +1820,23 @@
             // 
             this.treeView3.Location = new System.Drawing.Point(6, 80);
             this.treeView3.Name = "treeView3";
-            treeNode27.Name = "Node0";
-            treeNode27.Text = "Hourly";
-            treeNode28.Name = "Node4";
-            treeNode28.Text = "Arguing - Severe";
-            treeNode29.Name = "Node5";
-            treeNode29.Text = "Lethargic - Mild";
-            treeNode30.Name = "Node1";
-            treeNode30.Text = "Daily";
-            treeNode31.Name = "Node2";
-            treeNode31.Text = "Weekly";
-            treeNode32.Name = "Node3";
-            treeNode32.Text = "Less Often";
+            treeNode49.Name = "Node0";
+            treeNode49.Text = "Hourly";
+            treeNode50.Name = "Node4";
+            treeNode50.Text = "Arguing - Severe";
+            treeNode51.Name = "Node5";
+            treeNode51.Text = "Lethargic - Mild";
+            treeNode52.Name = "Node1";
+            treeNode52.Text = "Daily";
+            treeNode53.Name = "Node2";
+            treeNode53.Text = "Weekly";
+            treeNode54.Name = "Node3";
+            treeNode54.Text = "Less Often";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode30,
-            treeNode31,
-            treeNode32});
+            treeNode49,
+            treeNode52,
+            treeNode53,
+            treeNode54});
             this.treeView3.Size = new System.Drawing.Size(170, 203);
             this.treeView3.TabIndex = 28;
             // 
@@ -1911,28 +2087,28 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(6, 52);
             this.treeView1.Name = "treeView1";
-            treeNode33.Name = "Node1";
-            treeNode33.Text = "Hope / Optimism";
-            treeNode34.Name = "Node0";
-            treeNode34.Text = "Strengths of Emotion";
-            treeNode35.Name = "Node2";
-            treeNode35.Text = "Strengths of Will";
-            treeNode36.Name = "Node5";
-            treeNode36.Text = "Humor";
-            treeNode37.Name = "Node6";
-            treeNode37.Text = "Citizenship";
-            treeNode38.Name = "Node3";
-            treeNode38.Text = "Rational and Civic Strengths";
-            treeNode39.Name = "Node4";
-            treeNode39.Text = "Strengths of Tolerance";
-            treeNode40.Name = "Node0";
-            treeNode40.Text = "Other Strengths";
+            treeNode55.Name = "Node1";
+            treeNode55.Text = "Hope / Optimism";
+            treeNode56.Name = "Node0";
+            treeNode56.Text = "Strengths of Emotion";
+            treeNode57.Name = "Node2";
+            treeNode57.Text = "Strengths of Will";
+            treeNode58.Name = "Node5";
+            treeNode58.Text = "Humor";
+            treeNode59.Name = "Node6";
+            treeNode59.Text = "Citizenship";
+            treeNode60.Name = "Node3";
+            treeNode60.Text = "Rational and Civic Strengths";
+            treeNode61.Name = "Node4";
+            treeNode61.Text = "Strengths of Tolerance";
+            treeNode62.Name = "Node0";
+            treeNode62.Text = "Other Strengths";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode34,
-            treeNode35,
-            treeNode38,
-            treeNode39,
-            treeNode40});
+            treeNode56,
+            treeNode57,
+            treeNode60,
+            treeNode61,
+            treeNode62});
             this.treeView1.Size = new System.Drawing.Size(165, 147);
             this.treeView1.TabIndex = 0;
             // 
@@ -2497,17 +2673,17 @@
             // 
             this.treeView4.Location = new System.Drawing.Point(6, 73);
             this.treeView4.Name = "treeView4";
-            treeNode41.Name = "Node2";
-            treeNode41.Text = "Arguing";
-            treeNode42.Name = "Node0";
-            treeNode42.Text = "Uncompleted";
-            treeNode43.Name = "Node3";
-            treeNode43.Text = "Lethargic";
-            treeNode44.Name = "Node1";
-            treeNode44.Text = "Completed";
+            treeNode63.Name = "Node2";
+            treeNode63.Text = "Arguing";
+            treeNode64.Name = "Node0";
+            treeNode64.Text = "Uncompleted";
+            treeNode65.Name = "Node3";
+            treeNode65.Text = "Lethargic";
+            treeNode66.Name = "Node1";
+            treeNode66.Text = "Completed";
             this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode42,
-            treeNode44});
+            treeNode64,
+            treeNode66});
             this.treeView4.Size = new System.Drawing.Size(167, 281);
             this.treeView4.TabIndex = 62;
             // 
@@ -2561,13 +2737,13 @@
             // addClientToolStripMenuItem
             // 
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
-            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.addClientToolStripMenuItem.Text = "Add Client";
             // 
             // removeClientToolStripMenuItem
             // 
             this.removeClientToolStripMenuItem.Name = "removeClientToolStripMenuItem";
-            this.removeClientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeClientToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.removeClientToolStripMenuItem.Text = "Remove Client";
             // 
             // helpToolStripMenuItem
@@ -2581,184 +2757,75 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Last Month",
-            "Last Quarter"});
-            this.comboBox4.Location = new System.Drawing.Point(942, 16);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 26;
-            this.comboBox4.Text = "Last Month";
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Shift";
-            this.Column2.Items.AddRange(new object[] {
-            "7a-3p",
-            "3p-11p",
-            "11p-7a"});
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle5.NullValue = "Not Occurred";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column4.HeaderText = "Arguing";
-            this.Column4.Items.AddRange(new object[] {
-            "Not Occurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle6.NullValue = "Moderate";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column5.HeaderText = "Physical Aggression";
-            this.Column5.Items.AddRange(new object[] {
-            "Not Ocurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Shift Total";
-            this.Column6.Name = "Column6";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Staff Name(s)";
-            this.Column3.Name = "Column3";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(810, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 17);
-            this.checkBox1.TabIndex = 27;
-            this.checkBox1.Text = "Use Custom Dates";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // listBox7
-            // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.Items.AddRange(new object[] {
-            "Arguing",
-            "Lethargic"});
-            this.listBox7.Location = new System.Drawing.Point(3, 45);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox7.Size = new System.Drawing.Size(142, 212);
-            this.listBox7.TabIndex = 0;
-            // 
-            // comboBox34
-            // 
-            this.comboBox34.FormattingEnabled = true;
-            this.comboBox34.Items.AddRange(new object[] {
-            "Graph All Behaviors",
-            "Graph Top 5 Behaviors",
-            "Graph Custom Selection"});
-            this.comboBox34.Location = new System.Drawing.Point(3, 18);
-            this.comboBox34.Name = "comboBox34";
-            this.comboBox34.Size = new System.Drawing.Size(142, 21);
-            this.comboBox34.TabIndex = 1;
-            this.comboBox34.Text = "Graph Custom Selection";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(643, 20);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(114, 17);
-            this.checkBox2.TabIndex = 31;
-            this.checkBox2.Text = "Use Custom Dates";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox35
-            // 
-            this.comboBox35.FormattingEnabled = true;
-            this.comboBox35.Items.AddRange(new object[] {
-            "Last Month",
-            "Last Quarter"});
-            this.comboBox35.Location = new System.Drawing.Point(777, 18);
-            this.comboBox35.Name = "comboBox35";
-            this.comboBox35.Size = new System.Drawing.Size(121, 21);
-            this.comboBox35.TabIndex = 30;
-            this.comboBox35.Text = "Last Month";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(437, 19);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 29;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(231, 19);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker5.TabIndex = 28;
-            this.dateTimePicker5.Value = new System.DateTime(2014, 3, 4, 0, 0, 0, 0);
-            // 
-            // chart2
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            this.chart2.Location = new System.Drawing.Point(298, 111);
-            this.chart2.Name = "chart2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            this.chart2.Series.Add(series3);
-            this.chart2.Size = new System.Drawing.Size(409, 296);
-            this.chart2.TabIndex = 32;
-            this.chart2.Text = "chart2";
-            title2.Name = "Title1";
-            title2.Text = "Total Behaviors";
-            this.chart2.Titles.Add(title2);
-            // 
-            // comboBox36
-            // 
-            this.comboBox36.FormattingEnabled = true;
-            this.comboBox36.Items.AddRange(new object[] {
-            "Pie Chart",
-            "Line Graph",
-            "Pyramid"});
-            this.comboBox36.Location = new System.Drawing.Point(442, 84);
-            this.comboBox36.Name = "comboBox36";
-            this.comboBox36.Size = new System.Drawing.Size(121, 21);
-            this.comboBox36.TabIndex = 33;
-            this.comboBox36.Text = "Line Graph";
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // chart3
+            // 
+            chartArea13.Area3DStyle.Enable3D = true;
+            chartArea13.Area3DStyle.Inclination = 60;
+            chartArea13.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea13);
+            this.chart3.Location = new System.Drawing.Point(624, 64);
+            this.chart3.Name = "chart3";
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series13.Name = "Series1";
+            this.chart3.Series.Add(series13);
+            this.chart3.Size = new System.Drawing.Size(381, 255);
+            this.chart3.TabIndex = 33;
+            this.chart3.Text = "chart3";
+            title10.Name = "Title1";
+            title10.Text = "# Daily Occurences";
+            this.chart3.Titles.Add(title10);
+            // 
+            // chart4
+            // 
+            chartArea14.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea14);
+            this.chart4.Location = new System.Drawing.Point(151, 325);
+            this.chart4.Name = "chart4";
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series14.Name = "Series1";
+            this.chart4.Series.Add(series14);
+            this.chart4.Size = new System.Drawing.Size(381, 255);
+            this.chart4.TabIndex = 34;
+            this.chart4.Text = "chart4";
+            title11.Name = "Title1";
+            title11.Text = "Sum of Arguing";
+            this.chart4.Titles.Add(title11);
+            // 
+            // chart5
+            // 
+            chartArea15.Name = "ChartArea1";
+            this.chart5.ChartAreas.Add(chartArea15);
+            this.chart5.Location = new System.Drawing.Point(624, 325);
+            this.chart5.Name = "chart5";
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            series15.Name = "Series1";
+            this.chart5.Series.Add(series15);
+            this.chart5.Size = new System.Drawing.Size(381, 255);
+            this.chart5.TabIndex = 35;
+            this.chart5.Text = "chart5";
+            title12.Name = "Title1";
+            title12.Text = "# Daily Occurences";
+            this.chart5.Titles.Add(title12);
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(617, 239);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(97, 23);
+            this.button31.TabIndex = 36;
+            this.button31.Text = "Select Image";
+            this.button31.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -2791,6 +2858,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -2816,7 +2884,9 @@
             this.groupBox11.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3036,8 +3106,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.ComboBox comboBox36;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
+        private System.Windows.Forms.Button button31;
     }
 }
 
