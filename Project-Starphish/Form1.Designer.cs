@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
@@ -82,6 +80,12 @@
             System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Lethargic");
             System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
             treeNode21});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -185,23 +189,16 @@
             this.listClients = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.chkUseCustomDates = new System.Windows.Forms.CheckBox();
+            this.comboPickDailyBehaviorTime = new System.Windows.Forms.ComboBox();
+            this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.lstClientsDailyBehaviors = new System.Windows.Forms.ListBox();
+            this.dataGridViewDailyBehaviorTracking = new System.Windows.Forms.DataGridView();
+            this.btnRemoveDailyBehavior = new System.Windows.Forms.Button();
+            this.btnAddDailyBehavior = new System.Windows.Forms.Button();
+            this.datePickerBegin = new System.Windows.Forms.DateTimePicker();
+            this.txtDailyBehaviorOther = new System.Windows.Forms.TextBox();
+            this.comboDailyBehaviors = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -337,6 +334,20 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnShift = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnArguing = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnPhysicalAggression = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnShiftTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStaffNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSaveDailyBehavior = new System.Windows.Forms.Button();
+            this.btnEditDailyBehavior = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -348,7 +359,7 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
@@ -1343,17 +1354,24 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.checkBox1);
-            this.groupBox12.Controls.Add(this.comboBox4);
-            this.groupBox12.Controls.Add(this.dateTimePicker3);
-            this.groupBox12.Controls.Add(this.button6);
-            this.groupBox12.Controls.Add(this.listBox5);
-            this.groupBox12.Controls.Add(this.dataGridView1);
-            this.groupBox12.Controls.Add(this.button9);
-            this.groupBox12.Controls.Add(this.button8);
-            this.groupBox12.Controls.Add(this.dateTimePicker1);
-            this.groupBox12.Controls.Add(this.textBox49);
-            this.groupBox12.Controls.Add(this.comboBox3);
+            this.groupBox12.Controls.Add(this.btnSaveDailyBehavior);
+            this.groupBox12.Controls.Add(this.btnEditDailyBehavior);
+            this.groupBox12.Controls.Add(this.label66);
+            this.groupBox12.Controls.Add(this.label65);
+            this.groupBox12.Controls.Add(this.label64);
+            this.groupBox12.Controls.Add(this.label63);
+            this.groupBox12.Controls.Add(this.label62);
+            this.groupBox12.Controls.Add(this.label61);
+            this.groupBox12.Controls.Add(this.chkUseCustomDates);
+            this.groupBox12.Controls.Add(this.comboPickDailyBehaviorTime);
+            this.groupBox12.Controls.Add(this.datePickerEnd);
+            this.groupBox12.Controls.Add(this.lstClientsDailyBehaviors);
+            this.groupBox12.Controls.Add(this.dataGridViewDailyBehaviorTracking);
+            this.groupBox12.Controls.Add(this.btnRemoveDailyBehavior);
+            this.groupBox12.Controls.Add(this.btnAddDailyBehavior);
+            this.groupBox12.Controls.Add(this.datePickerBegin);
+            this.groupBox12.Controls.Add(this.txtDailyBehaviorOther);
+            this.groupBox12.Controls.Add(this.comboDailyBehaviors);
             this.groupBox12.Location = new System.Drawing.Point(3, 3);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(1081, 614);
@@ -1361,166 +1379,115 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Behaviors";
             // 
-            // checkBox1
+            // chkUseCustomDates
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(810, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 17);
-            this.checkBox1.TabIndex = 27;
-            this.checkBox1.Text = "Use Custom Dates";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkUseCustomDates.AutoSize = true;
+            this.chkUseCustomDates.Location = new System.Drawing.Point(834, 29);
+            this.chkUseCustomDates.Name = "chkUseCustomDates";
+            this.chkUseCustomDates.Size = new System.Drawing.Size(114, 17);
+            this.chkUseCustomDates.TabIndex = 27;
+            this.chkUseCustomDates.Text = "Use Custom Dates";
+            this.chkUseCustomDates.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // comboPickDailyBehaviorTime
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboPickDailyBehaviorTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPickDailyBehaviorTime.FormattingEnabled = true;
+            this.comboPickDailyBehaviorTime.Items.AddRange(new object[] {
             "Last Month",
             "Last Quarter"});
-            this.comboBox4.Location = new System.Drawing.Point(942, 16);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 26;
-            this.comboBox4.Text = "Last Month";
+            this.comboPickDailyBehaviorTime.Location = new System.Drawing.Point(954, 25);
+            this.comboPickDailyBehaviorTime.Name = "comboPickDailyBehaviorTime";
+            this.comboPickDailyBehaviorTime.Size = new System.Drawing.Size(121, 21);
+            this.comboPickDailyBehaviorTime.TabIndex = 26;
             // 
-            // dateTimePicker3
+            // datePickerEnd
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(604, 19);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 25;
+            this.datePickerEnd.CustomFormat = "MMMMyyyy";
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerEnd.Location = new System.Drawing.Point(628, 26);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.Size = new System.Drawing.Size(200, 20);
+            this.datePickerEnd.TabIndex = 25;
             // 
-            // button6
+            // lstClientsDailyBehaviors
             // 
-            this.button6.Location = new System.Drawing.Point(112, 20);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(82, 23);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "Edit Behavior";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // listBox5
-            // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Items.AddRange(new object[] {
+            this.lstClientsDailyBehaviors.FormattingEnabled = true;
+            this.lstClientsDailyBehaviors.Items.AddRange(new object[] {
             "Arguing",
             "Lethargic"});
-            this.listBox5.Location = new System.Drawing.Point(6, 52);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(137, 199);
-            this.listBox5.TabIndex = 23;
+            this.lstClientsDailyBehaviors.Location = new System.Drawing.Point(6, 65);
+            this.lstClientsDailyBehaviors.Name = "lstClientsDailyBehaviors";
+            this.lstClientsDailyBehaviors.Size = new System.Drawing.Size(137, 199);
+            this.lstClientsDailyBehaviors.TabIndex = 23;
             // 
-            // dataGridView1
+            // dataGridViewDailyBehaviorTracking
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(149, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(926, 556);
-            this.dataGridView1.TabIndex = 10;
+            this.dataGridViewDailyBehaviorTracking.AllowUserToOrderColumns = true;
+            this.dataGridViewDailyBehaviorTracking.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridViewDailyBehaviorTracking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewDailyBehaviorTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnDate,
+            this.ColumnShift,
+            this.ColumnArguing,
+            this.ColumnPhysicalAggression,
+            this.ColumnShiftTotal,
+            this.ColumnStaffNames});
+            this.dataGridViewDailyBehaviorTracking.Location = new System.Drawing.Point(149, 52);
+            this.dataGridViewDailyBehaviorTracking.Name = "dataGridViewDailyBehaviorTracking";
+            this.dataGridViewDailyBehaviorTracking.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDailyBehaviorTracking.Size = new System.Drawing.Size(926, 556);
+            this.dataGridViewDailyBehaviorTracking.TabIndex = 10;
             // 
-            // Column1
+            // btnRemoveDailyBehavior
             // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
+            this.btnRemoveDailyBehavior.Location = new System.Drawing.Point(20, 270);
+            this.btnRemoveDailyBehavior.Name = "btnRemoveDailyBehavior";
+            this.btnRemoveDailyBehavior.Size = new System.Drawing.Size(112, 23);
+            this.btnRemoveDailyBehavior.TabIndex = 6;
+            this.btnRemoveDailyBehavior.Text = "Remove Behavior";
+            this.btnRemoveDailyBehavior.UseVisualStyleBackColor = true;
             // 
-            // Column2
+            // btnAddDailyBehavior
             // 
-            this.Column2.HeaderText = "Shift";
-            this.Column2.Items.AddRange(new object[] {
-            "7a-3p",
-            "3p-11p",
-            "11p-7a"});
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnAddDailyBehavior.Location = new System.Drawing.Point(6, 23);
+            this.btnAddDailyBehavior.Name = "btnAddDailyBehavior";
+            this.btnAddDailyBehavior.Size = new System.Drawing.Size(100, 23);
+            this.btnAddDailyBehavior.TabIndex = 5;
+            this.btnAddDailyBehavior.Text = "Add Behavior";
+            this.btnAddDailyBehavior.UseVisualStyleBackColor = true;
             // 
-            // Column4
+            // datePickerBegin
             // 
-            dataGridViewCellStyle2.NullValue = "Not Occurred";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "Arguing";
-            this.Column4.Items.AddRange(new object[] {
-            "Not Occurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.datePickerBegin.CustomFormat = "MMMM,yyyy";
+            this.datePickerBegin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerBegin.Location = new System.Drawing.Point(400, 26);
+            this.datePickerBegin.Name = "datePickerBegin";
+            this.datePickerBegin.Size = new System.Drawing.Size(200, 20);
+            this.datePickerBegin.TabIndex = 0;
+            this.datePickerBegin.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
             // 
-            // Column5
+            // txtDailyBehaviorOther
             // 
-            dataGridViewCellStyle3.NullValue = "Moderate";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column5.HeaderText = "Physical Aggression";
-            this.Column5.Items.AddRange(new object[] {
-            "Not Ocurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.txtDailyBehaviorOther.Location = new System.Drawing.Point(239, 26);
+            this.txtDailyBehaviorOther.Name = "txtDailyBehaviorOther";
+            this.txtDailyBehaviorOther.Size = new System.Drawing.Size(100, 20);
+            this.txtDailyBehaviorOther.TabIndex = 2;
+            this.txtDailyBehaviorOther.Text = "Other";
             // 
-            // Column6
+            // comboDailyBehaviors
             // 
-            this.Column6.HeaderText = "Shift Total";
-            this.Column6.Name = "Column6";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Staff Name(s)";
-            this.Column3.Name = "Column3";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(200, 20);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(112, 23);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Remove Behavior";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(6, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 23);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Add Behavior";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(398, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Value = new System.DateTime(2014, 3, 4, 0, 0, 0, 0);
-            // 
-            // textBox49
-            // 
-            this.textBox49.Location = new System.Drawing.Point(21, 284);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(100, 20);
-            this.textBox49.TabIndex = 2;
-            this.textBox49.Text = "Other";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboDailyBehaviors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboDailyBehaviors.FormattingEnabled = true;
+            this.comboDailyBehaviors.Items.AddRange(new object[] {
             "Arguing",
             "Bedwetting",
             "Competitiveness",
@@ -1550,11 +1517,10 @@
             "Swearing",
             "Verbal Aggression",
             "Other"});
-            this.comboBox3.Location = new System.Drawing.Point(6, 257);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 1;
-            this.comboBox3.Text = "Behaviors";
+            this.comboDailyBehaviors.Location = new System.Drawing.Point(112, 25);
+            this.comboDailyBehaviors.Name = "comboDailyBehaviors";
+            this.comboDailyBehaviors.Size = new System.Drawing.Size(121, 21);
+            this.comboDailyBehaviors.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -3212,6 +3178,149 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(473, 10);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(55, 13);
+            this.label61.TabIndex = 28;
+            this.label61.Text = "Start Date";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(702, 10);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(52, 13);
+            this.label62.TabIndex = 29;
+            this.label62.Text = "End Date";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(606, 29);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(16, 13);
+            this.label63.TabIndex = 30;
+            this.label63.Text = "to";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(127, 9);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(91, 13);
+            this.label64.TabIndex = 31;
+            this.label64.Text = "Select a Behavior";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(947, 9);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(134, 13);
+            this.label65.TabIndex = 32;
+            this.label65.Text = "Pick a Daily Behavior Time";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(16, 49);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(116, 13);
+            this.label66.TabIndex = 33;
+            this.label66.Text = "Client\'s Daily Behaviors";
+            // 
+            // ColumnDate
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnDate.HeaderText = "Date";
+            this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
+            // 
+            // ColumnShift
+            // 
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnShift.HeaderText = "Shift";
+            this.ColumnShift.Items.AddRange(new object[] {
+            "7a-3p",
+            "3p-11p",
+            "11p-7a"});
+            this.ColumnShift.Name = "ColumnShift";
+            this.ColumnShift.ReadOnly = true;
+            this.ColumnShift.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnArguing
+            // 
+            this.ColumnArguing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.NullValue = "Not Occurred";
+            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColumnArguing.HeaderText = "Arguing";
+            this.ColumnArguing.Items.AddRange(new object[] {
+            "Not Occurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.ColumnArguing.Name = "ColumnArguing";
+            this.ColumnArguing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnArguing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnPhysicalAggression
+            // 
+            this.ColumnPhysicalAggression.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.NullValue = "Moderate";
+            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColumnPhysicalAggression.HeaderText = "Physical Aggression";
+            this.ColumnPhysicalAggression.Items.AddRange(new object[] {
+            "Not Ocurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.ColumnPhysicalAggression.Name = "ColumnPhysicalAggression";
+            this.ColumnPhysicalAggression.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnPhysicalAggression.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnShiftTotal
+            // 
+            this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnShiftTotal.HeaderText = "Shift Total";
+            this.ColumnShiftTotal.Name = "ColumnShiftTotal";
+            // 
+            // ColumnStaffNames
+            // 
+            this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ColumnStaffNames.HeaderText = "Staff Name(s)";
+            this.ColumnStaffNames.MinimumWidth = 100;
+            this.ColumnStaffNames.Name = "ColumnStaffNames";
+            // 
+            // btnSaveDailyBehavior
+            // 
+            this.btnSaveDailyBehavior.Location = new System.Drawing.Point(6, 585);
+            this.btnSaveDailyBehavior.Name = "btnSaveDailyBehavior";
+            this.btnSaveDailyBehavior.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveDailyBehavior.TabIndex = 36;
+            this.btnSaveDailyBehavior.Text = "Save";
+            this.btnSaveDailyBehavior.UseVisualStyleBackColor = true;
+            // 
+            // btnEditDailyBehavior
+            // 
+            this.btnEditDailyBehavior.Location = new System.Drawing.Point(6, 556);
+            this.btnEditDailyBehavior.Name = "btnEditDailyBehavior";
+            this.btnEditDailyBehavior.Size = new System.Drawing.Size(75, 23);
+            this.btnEditDailyBehavior.TabIndex = 35;
+            this.btnEditDailyBehavior.Text = "Edit";
+            this.btnEditDailyBehavior.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3240,7 +3349,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
@@ -3338,12 +3447,12 @@
         private System.Windows.Forms.ListBox lstISP;
         private System.Windows.Forms.Button btnSaveClient;
         private System.Windows.Forms.Button btnEditClient;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePickerBegin;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox49;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox txtDailyBehaviorOther;
+        private System.Windows.Forms.ComboBox comboDailyBehaviors;
+        private System.Windows.Forms.Button btnRemoveDailyBehavior;
+        private System.Windows.Forms.Button btnAddDailyBehavior;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ListBox listBox6;
         private System.Windows.Forms.TabPage tabPage5;
@@ -3394,9 +3503,8 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.DataGridView dataGridViewDailyBehaviorTracking;
+        private System.Windows.Forms.ListBox lstClientsDailyBehaviors;
         private System.Windows.Forms.TreeView treeView3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
@@ -3462,17 +3570,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker datePickerEnd;
         private System.Windows.Forms.TextBox textBox45;
         private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox comboPickDailyBehaviorTime;
+        private System.Windows.Forms.CheckBox chkUseCustomDates;
         private System.Windows.Forms.ListBox listBox7;
         private System.Windows.Forms.ComboBox comboBox34;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -3534,6 +3636,20 @@
         private System.Windows.Forms.Button btnAddEmergencyContact;
         private System.Windows.Forms.Button btnRemoveNextOfKin;
         private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnShift;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnArguing;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnPhysicalAggression;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnShiftTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStaffNames;
+        private System.Windows.Forms.Button btnSaveDailyBehavior;
+        private System.Windows.Forms.Button btnEditDailyBehavior;
     }
 }
 
