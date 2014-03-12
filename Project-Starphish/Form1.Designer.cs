@@ -84,32 +84,59 @@
             treeNode21});
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.btnAddEmergencyContact = new System.Windows.Forms.Button();
+            this.btnRemoveEmergencyContact = new System.Windows.Forms.Button();
+            this.label58 = new System.Windows.Forms.Label();
+            this.txtEmergencyContactTelephoneNum = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.lstEmergencyContacts = new System.Windows.Forms.ListBox();
+            this.txtEmergencyContactName = new System.Windows.Forms.TextBox();
+            this.txtEmergencyContactAddress = new System.Windows.Forms.TextBox();
             this.btnSelectImage = new System.Windows.Forms.Button();
             this.picClient = new System.Windows.Forms.PictureBox();
             this.btnSaveClient = new System.Windows.Forms.Button();
             this.btnEditClient = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.btnViewISP = new System.Windows.Forms.Button();
+            this.btnRemoveISP = new System.Windows.Forms.Button();
+            this.btnAddISP = new System.Windows.Forms.Button();
+            this.lstISP = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.txt = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.txtProgramSpecialistName = new System.Windows.Forms.TextBox();
+            this.txtProgramSpecialistPhoneNum = new System.Windows.Forms.TextBox();
+            this.txtProgramCoordinatorName = new System.Windows.Forms.TextBox();
+            this.txtProgramCoordinatorTelephoneNum = new System.Windows.Forms.TextBox();
+            this.txtSiteSupervisorName = new System.Windows.Forms.TextBox();
+            this.txtSiteSupervisorTelephoneNum = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtCountyResponsible = new System.Windows.Forms.TextBox();
+            this.txtSupportsCoordinatorTelephoneNum = new System.Windows.Forms.TextBox();
+            this.txtSupportsCoordinatorName = new System.Windows.Forms.TextBox();
+            this.txtSupportsCoordinatorAddress = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.btnRemoveNextOfKin = new System.Windows.Forms.Button();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txtNextOfKinTelephoneNum = new System.Windows.Forms.TextBox();
+            this.btnAddNextOfKin = new System.Windows.Forms.Button();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.lstNextOfKin = new System.Windows.Forms.ListBox();
+            this.txtNextOfKinName = new System.Windows.Forms.TextBox();
+            this.txtNextOfKinAddress = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -306,34 +333,13 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.listBox8 = new System.Windows.Forms.ListBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClient)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -365,7 +371,6 @@
             this.tabPage6.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -405,6 +410,101 @@
             this.tabPage1.Text = "Client";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.btnAddEmergencyContact);
+            this.groupBox17.Controls.Add(this.btnRemoveEmergencyContact);
+            this.groupBox17.Controls.Add(this.label58);
+            this.groupBox17.Controls.Add(this.txtEmergencyContactTelephoneNum);
+            this.groupBox17.Controls.Add(this.label59);
+            this.groupBox17.Controls.Add(this.label60);
+            this.groupBox17.Controls.Add(this.lstEmergencyContacts);
+            this.groupBox17.Controls.Add(this.txtEmergencyContactName);
+            this.groupBox17.Controls.Add(this.txtEmergencyContactAddress);
+            this.groupBox17.Location = new System.Drawing.Point(811, 193);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(270, 176);
+            this.groupBox17.TabIndex = 50;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Emergency Contacts";
+            // 
+            // btnAddEmergencyContact
+            // 
+            this.btnAddEmergencyContact.Location = new System.Drawing.Point(107, 19);
+            this.btnAddEmergencyContact.Name = "btnAddEmergencyContact";
+            this.btnAddEmergencyContact.Size = new System.Drawing.Size(75, 23);
+            this.btnAddEmergencyContact.TabIndex = 52;
+            this.btnAddEmergencyContact.Text = "Add Contact";
+            this.btnAddEmergencyContact.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveEmergencyContact
+            // 
+            this.btnRemoveEmergencyContact.Location = new System.Drawing.Point(6, 19);
+            this.btnRemoveEmergencyContact.Name = "btnRemoveEmergencyContact";
+            this.btnRemoveEmergencyContact.Size = new System.Drawing.Size(95, 23);
+            this.btnRemoveEmergencyContact.TabIndex = 51;
+            this.btnRemoveEmergencyContact.Text = "Remove Contact";
+            this.btnRemoveEmergencyContact.UseVisualStyleBackColor = true;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(129, 87);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(68, 13);
+            this.label58.TabIndex = 49;
+            this.label58.Text = "Telephone #";
+            // 
+            // txtEmergencyContactTelephoneNum
+            // 
+            this.txtEmergencyContactTelephoneNum.Location = new System.Drawing.Point(132, 103);
+            this.txtEmergencyContactTelephoneNum.Name = "txtEmergencyContactTelephoneNum";
+            this.txtEmergencyContactTelephoneNum.Size = new System.Drawing.Size(93, 20);
+            this.txtEmergencyContactTelephoneNum.TabIndex = 48;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(6, 134);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(45, 13);
+            this.label59.TabIndex = 34;
+            this.label59.Text = "Address";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(129, 48);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(35, 13);
+            this.label60.TabIndex = 33;
+            this.label60.Text = "Name";
+            // 
+            // lstEmergencyContacts
+            // 
+            this.lstEmergencyContacts.FormattingEnabled = true;
+            this.lstEmergencyContacts.Items.AddRange(new object[] {
+            "EC#1",
+            "EC#2"});
+            this.lstEmergencyContacts.Location = new System.Drawing.Point(6, 48);
+            this.lstEmergencyContacts.Name = "lstEmergencyContacts";
+            this.lstEmergencyContacts.Size = new System.Drawing.Size(120, 82);
+            this.lstEmergencyContacts.TabIndex = 0;
+            // 
+            // txtEmergencyContactName
+            // 
+            this.txtEmergencyContactName.Location = new System.Drawing.Point(132, 64);
+            this.txtEmergencyContactName.Name = "txtEmergencyContactName";
+            this.txtEmergencyContactName.Size = new System.Drawing.Size(131, 20);
+            this.txtEmergencyContactName.TabIndex = 26;
+            // 
+            // txtEmergencyContactAddress
+            // 
+            this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 150);
+            this.txtEmergencyContactAddress.Name = "txtEmergencyContactAddress";
+            this.txtEmergencyContactAddress.Size = new System.Drawing.Size(186, 20);
+            this.txtEmergencyContactAddress.TabIndex = 27;
+            // 
             // btnSelectImage
             // 
             this.btnSelectImage.Location = new System.Drawing.Point(622, 223);
@@ -424,7 +524,7 @@
             // 
             // btnSaveClient
             // 
-            this.btnSaveClient.Location = new System.Drawing.Point(96, 388);
+            this.btnSaveClient.Location = new System.Drawing.Point(96, 387);
             this.btnSaveClient.Name = "btnSaveClient";
             this.btnSaveClient.Size = new System.Drawing.Size(75, 23);
             this.btnSaveClient.TabIndex = 34;
@@ -442,54 +542,54 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.button1);
-            this.groupBox6.Controls.Add(this.listBox4);
-            this.groupBox6.Location = new System.Drawing.Point(860, 323);
+            this.groupBox6.Controls.Add(this.btnViewISP);
+            this.groupBox6.Controls.Add(this.btnRemoveISP);
+            this.groupBox6.Controls.Add(this.btnAddISP);
+            this.groupBox6.Controls.Add(this.lstISP);
+            this.groupBox6.Location = new System.Drawing.Point(844, 375);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(224, 124);
             this.groupBox6.TabIndex = 31;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ISP";
             // 
-            // button3
+            // btnViewISP
             // 
-            this.button3.Location = new System.Drawing.Point(139, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "View ISP";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnViewISP.Location = new System.Drawing.Point(139, 48);
+            this.btnViewISP.Name = "btnViewISP";
+            this.btnViewISP.Size = new System.Drawing.Size(75, 23);
+            this.btnViewISP.TabIndex = 31;
+            this.btnViewISP.Text = "View ISP";
+            this.btnViewISP.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRemoveISP
             // 
-            this.button2.Location = new System.Drawing.Point(139, 77);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Remove ISP";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRemoveISP.Location = new System.Drawing.Point(139, 77);
+            this.btnRemoveISP.Name = "btnRemoveISP";
+            this.btnRemoveISP.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveISP.TabIndex = 30;
+            this.btnRemoveISP.Text = "Remove ISP";
+            this.btnRemoveISP.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAddISP
             // 
-            this.button1.Location = new System.Drawing.Point(139, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Add ISP";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddISP.Location = new System.Drawing.Point(139, 19);
+            this.btnAddISP.Name = "btnAddISP";
+            this.btnAddISP.Size = new System.Drawing.Size(75, 23);
+            this.btnAddISP.TabIndex = 29;
+            this.btnAddISP.Text = "Add ISP";
+            this.btnAddISP.UseVisualStyleBackColor = true;
             // 
-            // listBox4
+            // lstISP
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Items.AddRange(new object[] {
+            this.lstISP.FormattingEnabled = true;
+            this.lstISP.Items.AddRange(new object[] {
             "2/10/14",
             "5/08/12"});
-            this.listBox4.Location = new System.Drawing.Point(13, 19);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(120, 95);
-            this.listBox4.TabIndex = 0;
+            this.lstISP.Location = new System.Drawing.Point(13, 19);
+            this.lstISP.Name = "lstISP";
+            this.lstISP.Size = new System.Drawing.Size(120, 95);
+            this.lstISP.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -499,12 +599,12 @@
             this.groupBox5.Controls.Add(this.label51);
             this.groupBox5.Controls.Add(this.label50);
             this.groupBox5.Controls.Add(this.label49);
-            this.groupBox5.Controls.Add(this.textBox39);
-            this.groupBox5.Controls.Add(this.textBox40);
-            this.groupBox5.Controls.Add(this.textBox37);
-            this.groupBox5.Controls.Add(this.textBox38);
-            this.groupBox5.Controls.Add(this.txt);
-            this.groupBox5.Controls.Add(this.textBox35);
+            this.groupBox5.Controls.Add(this.txtProgramSpecialistName);
+            this.groupBox5.Controls.Add(this.txtProgramSpecialistPhoneNum);
+            this.groupBox5.Controls.Add(this.txtProgramCoordinatorName);
+            this.groupBox5.Controls.Add(this.txtProgramCoordinatorTelephoneNum);
+            this.groupBox5.Controls.Add(this.txtSiteSupervisorName);
+            this.groupBox5.Controls.Add(this.txtSiteSupervisorTelephoneNum);
             this.groupBox5.Location = new System.Drawing.Point(533, 252);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(253, 135);
@@ -512,47 +612,101 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "New Light Support";
             // 
-            // textBox39
+            // label54
             // 
-            this.textBox39.Location = new System.Drawing.Point(6, 110);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(134, 20);
-            this.textBox39.TabIndex = 34;
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(143, 94);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(68, 13);
+            this.label54.TabIndex = 49;
+            this.label54.Text = "Telephone #";
             // 
-            // textBox40
+            // label53
             // 
-            this.textBox40.Location = new System.Drawing.Point(146, 110);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(97, 20);
-            this.textBox40.TabIndex = 33;
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(143, 55);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(68, 13);
+            this.label53.TabIndex = 48;
+            this.label53.Text = "Telephone #";
             // 
-            // textBox37
+            // label52
             // 
-            this.textBox37.Location = new System.Drawing.Point(6, 71);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(134, 20);
-            this.textBox37.TabIndex = 32;
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(143, 16);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(68, 13);
+            this.label52.TabIndex = 47;
+            this.label52.Text = "Telephone #";
             // 
-            // textBox38
+            // label51
             // 
-            this.textBox38.Location = new System.Drawing.Point(146, 71);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(97, 20);
-            this.textBox38.TabIndex = 31;
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(3, 94);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(125, 13);
+            this.label51.TabIndex = 46;
+            this.label51.Text = "Program Specialist Name";
             // 
-            // txt
+            // label50
             // 
-            this.txt.Location = new System.Drawing.Point(6, 32);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(134, 20);
-            this.txt.TabIndex = 30;
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(3, 55);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(134, 13);
+            this.label50.TabIndex = 45;
+            this.label50.Text = "Program Coordinator Name";
             // 
-            // textBox35
+            // label49
             // 
-            this.textBox35.Location = new System.Drawing.Point(146, 32);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(97, 20);
-            this.textBox35.TabIndex = 29;
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(3, 16);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(109, 13);
+            this.label49.TabIndex = 44;
+            this.label49.Text = "Site Supervisor Name";
+            // 
+            // txtProgramSpecialistName
+            // 
+            this.txtProgramSpecialistName.Location = new System.Drawing.Point(6, 110);
+            this.txtProgramSpecialistName.Name = "txtProgramSpecialistName";
+            this.txtProgramSpecialistName.Size = new System.Drawing.Size(134, 20);
+            this.txtProgramSpecialistName.TabIndex = 34;
+            // 
+            // txtProgramSpecialistPhoneNum
+            // 
+            this.txtProgramSpecialistPhoneNum.Location = new System.Drawing.Point(146, 110);
+            this.txtProgramSpecialistPhoneNum.Name = "txtProgramSpecialistPhoneNum";
+            this.txtProgramSpecialistPhoneNum.Size = new System.Drawing.Size(97, 20);
+            this.txtProgramSpecialistPhoneNum.TabIndex = 33;
+            // 
+            // txtProgramCoordinatorName
+            // 
+            this.txtProgramCoordinatorName.Location = new System.Drawing.Point(6, 71);
+            this.txtProgramCoordinatorName.Name = "txtProgramCoordinatorName";
+            this.txtProgramCoordinatorName.Size = new System.Drawing.Size(134, 20);
+            this.txtProgramCoordinatorName.TabIndex = 32;
+            // 
+            // txtProgramCoordinatorTelephoneNum
+            // 
+            this.txtProgramCoordinatorTelephoneNum.Location = new System.Drawing.Point(146, 71);
+            this.txtProgramCoordinatorTelephoneNum.Name = "txtProgramCoordinatorTelephoneNum";
+            this.txtProgramCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
+            this.txtProgramCoordinatorTelephoneNum.TabIndex = 31;
+            // 
+            // txtSiteSupervisorName
+            // 
+            this.txtSiteSupervisorName.Location = new System.Drawing.Point(6, 32);
+            this.txtSiteSupervisorName.Name = "txtSiteSupervisorName";
+            this.txtSiteSupervisorName.Size = new System.Drawing.Size(134, 20);
+            this.txtSiteSupervisorName.TabIndex = 30;
+            // 
+            // txtSiteSupervisorTelephoneNum
+            // 
+            this.txtSiteSupervisorTelephoneNum.Location = new System.Drawing.Point(146, 32);
+            this.txtSiteSupervisorTelephoneNum.Name = "txtSiteSupervisorTelephoneNum";
+            this.txtSiteSupervisorTelephoneNum.Size = new System.Drawing.Size(97, 20);
+            this.txtSiteSupervisorTelephoneNum.TabIndex = 29;
             // 
             // groupBox4
             // 
@@ -560,10 +714,10 @@
             this.groupBox4.Controls.Add(this.label47);
             this.groupBox4.Controls.Add(this.label46);
             this.groupBox4.Controls.Add(this.label45);
-            this.groupBox4.Controls.Add(this.textBox33);
-            this.groupBox4.Controls.Add(this.textBox29);
-            this.groupBox4.Controls.Add(this.textBox31);
-            this.groupBox4.Controls.Add(this.textBox32);
+            this.groupBox4.Controls.Add(this.txtCountyResponsible);
+            this.groupBox4.Controls.Add(this.txtSupportsCoordinatorTelephoneNum);
+            this.groupBox4.Controls.Add(this.txtSupportsCoordinatorName);
+            this.groupBox4.Controls.Add(this.txtSupportsCoordinatorAddress);
             this.groupBox4.Location = new System.Drawing.Point(533, 393);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(305, 99);
@@ -571,74 +725,164 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "County Responsible";
             // 
-            // textBox33
+            // label48
             // 
-            this.textBox33.Location = new System.Drawing.Point(6, 32);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(100, 20);
-            this.textBox33.TabIndex = 30;
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(196, 55);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(68, 13);
+            this.label48.TabIndex = 47;
+            this.label48.Text = "Telephone #";
             // 
-            // textBox29
+            // label47
             // 
-            this.textBox29.Location = new System.Drawing.Point(199, 71);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(97, 20);
-            this.textBox29.TabIndex = 29;
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(3, 55);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(45, 13);
+            this.label47.TabIndex = 46;
+            this.label47.Text = "Address";
             // 
-            // textBox31
+            // label46
             // 
-            this.textBox31.Location = new System.Drawing.Point(112, 32);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(134, 20);
-            this.textBox31.TabIndex = 26;
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(109, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(137, 13);
+            this.label46.TabIndex = 45;
+            this.label46.Text = "Supports Coordinator Name";
             // 
-            // textBox32
+            // label45
             // 
-            this.textBox32.Location = new System.Drawing.Point(6, 71);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(187, 20);
-            this.textBox32.TabIndex = 27;
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(3, 16);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(101, 13);
+            this.label45.TabIndex = 44;
+            this.label45.Text = "County Responsible";
+            // 
+            // txtCountyResponsible
+            // 
+            this.txtCountyResponsible.Location = new System.Drawing.Point(6, 32);
+            this.txtCountyResponsible.Name = "txtCountyResponsible";
+            this.txtCountyResponsible.Size = new System.Drawing.Size(100, 20);
+            this.txtCountyResponsible.TabIndex = 30;
+            // 
+            // txtSupportsCoordinatorTelephoneNum
+            // 
+            this.txtSupportsCoordinatorTelephoneNum.Location = new System.Drawing.Point(199, 71);
+            this.txtSupportsCoordinatorTelephoneNum.Name = "txtSupportsCoordinatorTelephoneNum";
+            this.txtSupportsCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
+            this.txtSupportsCoordinatorTelephoneNum.TabIndex = 29;
+            // 
+            // txtSupportsCoordinatorName
+            // 
+            this.txtSupportsCoordinatorName.Location = new System.Drawing.Point(112, 32);
+            this.txtSupportsCoordinatorName.Name = "txtSupportsCoordinatorName";
+            this.txtSupportsCoordinatorName.Size = new System.Drawing.Size(134, 20);
+            this.txtSupportsCoordinatorName.TabIndex = 26;
+            // 
+            // txtSupportsCoordinatorAddress
+            // 
+            this.txtSupportsCoordinatorAddress.Location = new System.Drawing.Point(6, 71);
+            this.txtSupportsCoordinatorAddress.Name = "txtSupportsCoordinatorAddress";
+            this.txtSupportsCoordinatorAddress.Size = new System.Drawing.Size(187, 20);
+            this.txtSupportsCoordinatorAddress.TabIndex = 27;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnRemoveNextOfKin);
             this.groupBox3.Controls.Add(this.label57);
-            this.groupBox3.Controls.Add(this.textBox25);
+            this.groupBox3.Controls.Add(this.txtNextOfKinTelephoneNum);
+            this.groupBox3.Controls.Add(this.btnAddNextOfKin);
             this.groupBox3.Controls.Add(this.label56);
             this.groupBox3.Controls.Add(this.label55);
-            this.groupBox3.Controls.Add(this.listBox3);
-            this.groupBox3.Controls.Add(this.textBox27);
-            this.groupBox3.Controls.Add(this.textBox28);
+            this.groupBox3.Controls.Add(this.lstNextOfKin);
+            this.groupBox3.Controls.Add(this.txtNextOfKinName);
+            this.groupBox3.Controls.Add(this.txtNextOfKinAddress);
             this.groupBox3.Location = new System.Drawing.Point(811, 11);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(270, 150);
+            this.groupBox3.Size = new System.Drawing.Size(270, 176);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Next of Kin";
             // 
-            // listBox3
+            // btnRemoveNextOfKin
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Items.AddRange(new object[] {
+            this.btnRemoveNextOfKin.Location = new System.Drawing.Point(6, 19);
+            this.btnRemoveNextOfKin.Name = "btnRemoveNextOfKin";
+            this.btnRemoveNextOfKin.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveNextOfKin.TabIndex = 51;
+            this.btnRemoveNextOfKin.Text = "Remove Kin";
+            this.btnRemoveNextOfKin.UseVisualStyleBackColor = true;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(129, 87);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(68, 13);
+            this.label57.TabIndex = 49;
+            this.label57.Text = "Telephone #";
+            // 
+            // txtNextOfKinTelephoneNum
+            // 
+            this.txtNextOfKinTelephoneNum.Location = new System.Drawing.Point(132, 103);
+            this.txtNextOfKinTelephoneNum.Name = "txtNextOfKinTelephoneNum";
+            this.txtNextOfKinTelephoneNum.Size = new System.Drawing.Size(93, 20);
+            this.txtNextOfKinTelephoneNum.TabIndex = 48;
+            // 
+            // btnAddNextOfKin
+            // 
+            this.btnAddNextOfKin.Location = new System.Drawing.Point(91, 19);
+            this.btnAddNextOfKin.Name = "btnAddNextOfKin";
+            this.btnAddNextOfKin.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNextOfKin.TabIndex = 50;
+            this.btnAddNextOfKin.Text = "Add Kin";
+            this.btnAddNextOfKin.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(3, 133);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(45, 13);
+            this.label56.TabIndex = 34;
+            this.label56.Text = "Address";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(129, 48);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(35, 13);
+            this.label55.TabIndex = 33;
+            this.label55.Text = "Name";
+            // 
+            // lstNextOfKin
+            // 
+            this.lstNextOfKin.FormattingEnabled = true;
+            this.lstNextOfKin.Items.AddRange(new object[] {
             "NOK#1",
             "NOK#2"});
-            this.listBox3.Location = new System.Drawing.Point(6, 19);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(120, 82);
-            this.listBox3.TabIndex = 0;
+            this.lstNextOfKin.Location = new System.Drawing.Point(6, 48);
+            this.lstNextOfKin.Name = "lstNextOfKin";
+            this.lstNextOfKin.Size = new System.Drawing.Size(120, 82);
+            this.lstNextOfKin.TabIndex = 0;
             // 
-            // textBox27
+            // txtNextOfKinName
             // 
-            this.textBox27.Location = new System.Drawing.Point(132, 32);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(131, 20);
-            this.textBox27.TabIndex = 26;
+            this.txtNextOfKinName.Location = new System.Drawing.Point(132, 64);
+            this.txtNextOfKinName.Name = "txtNextOfKinName";
+            this.txtNextOfKinName.Size = new System.Drawing.Size(131, 20);
+            this.txtNextOfKinName.TabIndex = 26;
             // 
-            // textBox28
+            // txtNextOfKinAddress
             // 
-            this.textBox28.Location = new System.Drawing.Point(6, 120);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(186, 20);
-            this.textBox28.TabIndex = 27;
+            this.txtNextOfKinAddress.Location = new System.Drawing.Point(6, 149);
+            this.txtNextOfKinAddress.Name = "txtNextOfKinAddress";
+            this.txtNextOfKinAddress.Size = new System.Drawing.Size(186, 20);
+            this.txtNextOfKinAddress.TabIndex = 27;
             // 
             // groupBox1
             // 
@@ -692,6 +936,15 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Demographics";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(3, 435);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(124, 13);
+            this.label44.TabIndex = 46;
+            this.label44.Text = "Managed Care Company";
             // 
             // label43
             // 
@@ -2916,7 +3169,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addClientToolStripMenuItem,
-            this.removeClientToolStripMenuItem});
+            this.removeClientToolStripMenuItem,
+            this.saveAllToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -2932,6 +3186,12 @@
             this.removeClientToolStripMenuItem.Name = "removeClientToolStripMenuItem";
             this.removeClientToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.removeClientToolStripMenuItem.Text = "Remove Client";
+            // 
+            // saveAllToolStripMenuItem
+            // 
+            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
+            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.saveAllToolStripMenuItem.Text = "Save All";
             // 
             // helpToolStripMenuItem
             // 
@@ -2952,214 +3212,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(3, 435);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(124, 13);
-            this.label44.TabIndex = 46;
-            this.label44.Text = "Managed Care Company";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(3, 16);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(101, 13);
-            this.label45.TabIndex = 44;
-            this.label45.Text = "County Responsible";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(109, 16);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(137, 13);
-            this.label46.TabIndex = 45;
-            this.label46.Text = "Supports Coordinator Name";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(3, 55);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(45, 13);
-            this.label47.TabIndex = 46;
-            this.label47.Text = "Address";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(196, 55);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(68, 13);
-            this.label48.TabIndex = 47;
-            this.label48.Text = "Telephone #";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(3, 16);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(109, 13);
-            this.label49.TabIndex = 44;
-            this.label49.Text = "Site Supervisor Name";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(3, 55);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(134, 13);
-            this.label50.TabIndex = 45;
-            this.label50.Text = "Program Coordinator Name";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(3, 94);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(125, 13);
-            this.label51.TabIndex = 46;
-            this.label51.Text = "Program Specialist Name";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(143, 16);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(68, 13);
-            this.label52.TabIndex = 47;
-            this.label52.Text = "Telephone #";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(143, 55);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(68, 13);
-            this.label53.TabIndex = 48;
-            this.label53.Text = "Telephone #";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(143, 94);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(68, 13);
-            this.label54.TabIndex = 49;
-            this.label54.Text = "Telephone #";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(129, 16);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(35, 13);
-            this.label55.TabIndex = 33;
-            this.label55.Text = "Name";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(6, 104);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(45, 13);
-            this.label56.TabIndex = 34;
-            this.label56.Text = "Address";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(129, 55);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(68, 13);
-            this.label57.TabIndex = 49;
-            this.label57.Text = "Telephone #";
-            // 
-            // textBox25
-            // 
-            this.textBox25.Location = new System.Drawing.Point(132, 71);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(93, 20);
-            this.textBox25.TabIndex = 48;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.label58);
-            this.groupBox17.Controls.Add(this.textBox23);
-            this.groupBox17.Controls.Add(this.label59);
-            this.groupBox17.Controls.Add(this.label60);
-            this.groupBox17.Controls.Add(this.listBox8);
-            this.groupBox17.Controls.Add(this.textBox26);
-            this.groupBox17.Controls.Add(this.textBox30);
-            this.groupBox17.Location = new System.Drawing.Point(811, 167);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(270, 150);
-            this.groupBox17.TabIndex = 50;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Emergency Contacts";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(129, 55);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(68, 13);
-            this.label58.TabIndex = 49;
-            this.label58.Text = "Telephone #";
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(132, 71);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(93, 20);
-            this.textBox23.TabIndex = 48;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(6, 104);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(45, 13);
-            this.label59.TabIndex = 34;
-            this.label59.Text = "Address";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(129, 16);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(35, 13);
-            this.label60.TabIndex = 33;
-            this.label60.Text = "Name";
-            // 
-            // listBox8
-            // 
-            this.listBox8.FormattingEnabled = true;
-            this.listBox8.Items.AddRange(new object[] {
-            "EC#1",
-            "EC#2"});
-            this.listBox8.Location = new System.Drawing.Point(6, 19);
-            this.listBox8.Name = "listBox8";
-            this.listBox8.Size = new System.Drawing.Size(120, 82);
-            this.listBox8.TabIndex = 0;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(132, 32);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(131, 20);
-            this.textBox26.TabIndex = 26;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Location = new System.Drawing.Point(6, 120);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(186, 20);
-            this.textBox30.TabIndex = 27;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3173,6 +3225,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClient)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -3218,8 +3272,6 @@
             this.groupBox11.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3261,29 +3313,29 @@
         private System.Windows.Forms.TextBox txtInsuranceCarrier;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.ListBox lstNextOfKin;
+        private System.Windows.Forms.TextBox txtNextOfKinName;
+        private System.Windows.Forms.TextBox txtNextOfKinAddress;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox txtCountyResponsible;
+        private System.Windows.Forms.TextBox txtSupportsCoordinatorTelephoneNum;
+        private System.Windows.Forms.TextBox txtSupportsCoordinatorName;
+        private System.Windows.Forms.TextBox txtSupportsCoordinatorAddress;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox txt;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox txtProgramSpecialistName;
+        private System.Windows.Forms.TextBox txtProgramSpecialistPhoneNum;
+        private System.Windows.Forms.TextBox txtProgramCoordinatorName;
+        private System.Windows.Forms.TextBox txtProgramCoordinatorTelephoneNum;
+        private System.Windows.Forms.TextBox txtSiteSupervisorName;
+        private System.Windows.Forms.TextBox txtSiteSupervisorTelephoneNum;
         private System.Windows.Forms.PictureBox picClient;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Button btnViewISP;
+        private System.Windows.Forms.Button btnRemoveISP;
+        private System.Windows.Forms.Button btnAddISP;
+        private System.Windows.Forms.ListBox lstISP;
         private System.Windows.Forms.Button btnSaveClient;
         private System.Windows.Forms.Button btnEditClient;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -3466,17 +3518,22 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox txtNextOfKinTelephoneNum;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox txtEmergencyContactTelephoneNum;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.ListBox listBox8;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.ListBox lstEmergencyContacts;
+        private System.Windows.Forms.TextBox txtEmergencyContactName;
+        private System.Windows.Forms.TextBox txtEmergencyContactAddress;
+        private System.Windows.Forms.Button btnRemoveEmergencyContact;
+        private System.Windows.Forms.Button btnAddNextOfKin;
+        private System.Windows.Forms.Button btnAddEmergencyContact;
+        private System.Windows.Forms.Button btnRemoveNextOfKin;
+        private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
     }
 }
 
