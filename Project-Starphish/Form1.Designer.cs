@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
@@ -80,12 +86,6 @@
             System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Lethargic");
             System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
             treeNode21});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -189,27 +189,37 @@
             this.listClients = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.chkUseCustomDates = new System.Windows.Forms.CheckBox();
-            this.comboPickDailyBehaviorTime = new System.Windows.Forms.ComboBox();
-            this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.btnSaveDailyBehavior = new System.Windows.Forms.Button();
+            this.btnEditDailyBehavior = new System.Windows.Forms.Button();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.chkUseCustomDatesDailyBehavior = new System.Windows.Forms.CheckBox();
+            this.comboPickTimeDailyBehavior = new System.Windows.Forms.ComboBox();
+            this.datePickerEndDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.lstClientsDailyBehaviors = new System.Windows.Forms.ListBox();
             this.dataGridViewDailyBehaviorTracking = new System.Windows.Forms.DataGridView();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnShift = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnArguing = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnPhysicalAggression = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnShiftTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStaffNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRemoveDailyBehavior = new System.Windows.Forms.Button();
             this.btnAddDailyBehavior = new System.Windows.Forms.Button();
-            this.datePickerBegin = new System.Windows.Forms.DateTimePicker();
+            this.datePickerBeginDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.txtDailyBehaviorOther = new System.Windows.Forms.TextBox();
             this.comboDailyBehaviors = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.comboBox35 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox34 = new System.Windows.Forms.ComboBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.chartPyramidOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartSumOfBehaviors = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartPieDailyOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartTotalBehaviors = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.comboBehaviorsToGraph = new System.Windows.Forms.ComboBox();
+            this.listBehaviorsToGraph = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -334,20 +344,15 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnShift = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnArguing = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnPhysicalAggression = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnShiftTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStaffNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSaveDailyBehavior = new System.Windows.Forms.Button();
-            this.btnEditDailyBehavior = new System.Windows.Forms.Button();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.chkUseCustomDatesGraphs = new System.Windows.Forms.CheckBox();
+            this.comboPickTimeGraphs = new System.Windows.Forms.ComboBox();
+            this.datePickerEndGraphs = new System.Windows.Forms.DateTimePicker();
+            this.datePickerBeginGraphs = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -361,10 +366,10 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPyramidOccurences)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSumOfBehaviors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPieDailyOccurences)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -1362,14 +1367,14 @@
             this.groupBox12.Controls.Add(this.label63);
             this.groupBox12.Controls.Add(this.label62);
             this.groupBox12.Controls.Add(this.label61);
-            this.groupBox12.Controls.Add(this.chkUseCustomDates);
-            this.groupBox12.Controls.Add(this.comboPickDailyBehaviorTime);
-            this.groupBox12.Controls.Add(this.datePickerEnd);
+            this.groupBox12.Controls.Add(this.chkUseCustomDatesDailyBehavior);
+            this.groupBox12.Controls.Add(this.comboPickTimeDailyBehavior);
+            this.groupBox12.Controls.Add(this.datePickerEndDailyBehavior);
             this.groupBox12.Controls.Add(this.lstClientsDailyBehaviors);
             this.groupBox12.Controls.Add(this.dataGridViewDailyBehaviorTracking);
             this.groupBox12.Controls.Add(this.btnRemoveDailyBehavior);
             this.groupBox12.Controls.Add(this.btnAddDailyBehavior);
-            this.groupBox12.Controls.Add(this.datePickerBegin);
+            this.groupBox12.Controls.Add(this.datePickerBeginDailyBehavior);
             this.groupBox12.Controls.Add(this.txtDailyBehaviorOther);
             this.groupBox12.Controls.Add(this.comboDailyBehaviors);
             this.groupBox12.Location = new System.Drawing.Point(3, 3);
@@ -1379,36 +1384,108 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Behaviors";
             // 
-            // chkUseCustomDates
+            // btnSaveDailyBehavior
             // 
-            this.chkUseCustomDates.AutoSize = true;
-            this.chkUseCustomDates.Location = new System.Drawing.Point(834, 29);
-            this.chkUseCustomDates.Name = "chkUseCustomDates";
-            this.chkUseCustomDates.Size = new System.Drawing.Size(114, 17);
-            this.chkUseCustomDates.TabIndex = 27;
-            this.chkUseCustomDates.Text = "Use Custom Dates";
-            this.chkUseCustomDates.UseVisualStyleBackColor = true;
+            this.btnSaveDailyBehavior.Location = new System.Drawing.Point(6, 585);
+            this.btnSaveDailyBehavior.Name = "btnSaveDailyBehavior";
+            this.btnSaveDailyBehavior.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveDailyBehavior.TabIndex = 36;
+            this.btnSaveDailyBehavior.Text = "Save";
+            this.btnSaveDailyBehavior.UseVisualStyleBackColor = true;
             // 
-            // comboPickDailyBehaviorTime
+            // btnEditDailyBehavior
             // 
-            this.comboPickDailyBehaviorTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPickDailyBehaviorTime.FormattingEnabled = true;
-            this.comboPickDailyBehaviorTime.Items.AddRange(new object[] {
+            this.btnEditDailyBehavior.Location = new System.Drawing.Point(6, 556);
+            this.btnEditDailyBehavior.Name = "btnEditDailyBehavior";
+            this.btnEditDailyBehavior.Size = new System.Drawing.Size(75, 23);
+            this.btnEditDailyBehavior.TabIndex = 35;
+            this.btnEditDailyBehavior.Text = "Edit";
+            this.btnEditDailyBehavior.UseVisualStyleBackColor = true;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(16, 49);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(116, 13);
+            this.label66.TabIndex = 33;
+            this.label66.Text = "Client\'s Daily Behaviors";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(947, 9);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(134, 13);
+            this.label65.TabIndex = 32;
+            this.label65.Text = "Pick a Daily Behavior Time";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(127, 9);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(91, 13);
+            this.label64.TabIndex = 31;
+            this.label64.Text = "Select a Behavior";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(606, 29);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(16, 13);
+            this.label63.TabIndex = 30;
+            this.label63.Text = "to";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(702, 10);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(52, 13);
+            this.label62.TabIndex = 29;
+            this.label62.Text = "End Date";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(473, 10);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(55, 13);
+            this.label61.TabIndex = 28;
+            this.label61.Text = "Start Date";
+            // 
+            // chkUseCustomDatesDailyBehavior
+            // 
+            this.chkUseCustomDatesDailyBehavior.AutoSize = true;
+            this.chkUseCustomDatesDailyBehavior.Location = new System.Drawing.Point(834, 29);
+            this.chkUseCustomDatesDailyBehavior.Name = "chkUseCustomDatesDailyBehavior";
+            this.chkUseCustomDatesDailyBehavior.Size = new System.Drawing.Size(114, 17);
+            this.chkUseCustomDatesDailyBehavior.TabIndex = 27;
+            this.chkUseCustomDatesDailyBehavior.Text = "Use Custom Dates";
+            this.chkUseCustomDatesDailyBehavior.UseVisualStyleBackColor = true;
+            // 
+            // comboPickTimeDailyBehavior
+            // 
+            this.comboPickTimeDailyBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPickTimeDailyBehavior.FormattingEnabled = true;
+            this.comboPickTimeDailyBehavior.Items.AddRange(new object[] {
             "Last Month",
             "Last Quarter"});
-            this.comboPickDailyBehaviorTime.Location = new System.Drawing.Point(954, 25);
-            this.comboPickDailyBehaviorTime.Name = "comboPickDailyBehaviorTime";
-            this.comboPickDailyBehaviorTime.Size = new System.Drawing.Size(121, 21);
-            this.comboPickDailyBehaviorTime.TabIndex = 26;
+            this.comboPickTimeDailyBehavior.Location = new System.Drawing.Point(954, 25);
+            this.comboPickTimeDailyBehavior.Name = "comboPickTimeDailyBehavior";
+            this.comboPickTimeDailyBehavior.Size = new System.Drawing.Size(121, 21);
+            this.comboPickTimeDailyBehavior.TabIndex = 26;
             // 
-            // datePickerEnd
+            // datePickerEndDailyBehavior
             // 
-            this.datePickerEnd.CustomFormat = "MMMMyyyy";
-            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerEnd.Location = new System.Drawing.Point(628, 26);
-            this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.Size = new System.Drawing.Size(200, 20);
-            this.datePickerEnd.TabIndex = 25;
+            this.datePickerEndDailyBehavior.CustomFormat = "MMMMyyyy";
+            this.datePickerEndDailyBehavior.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerEndDailyBehavior.Location = new System.Drawing.Point(628, 26);
+            this.datePickerEndDailyBehavior.Name = "datePickerEndDailyBehavior";
+            this.datePickerEndDailyBehavior.Size = new System.Drawing.Size(200, 20);
+            this.datePickerEndDailyBehavior.TabIndex = 25;
             // 
             // lstClientsDailyBehaviors
             // 
@@ -1447,6 +1524,77 @@
             this.dataGridViewDailyBehaviorTracking.Size = new System.Drawing.Size(926, 556);
             this.dataGridViewDailyBehaviorTracking.TabIndex = 10;
             // 
+            // ColumnDate
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnDate.HeaderText = "Date";
+            this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
+            // 
+            // ColumnShift
+            // 
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnShift.HeaderText = "Shift";
+            this.ColumnShift.Items.AddRange(new object[] {
+            "7a-3p",
+            "3p-11p",
+            "11p-7a"});
+            this.ColumnShift.Name = "ColumnShift";
+            this.ColumnShift.ReadOnly = true;
+            this.ColumnShift.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnArguing
+            // 
+            this.ColumnArguing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.NullValue = "Not Occurred";
+            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColumnArguing.HeaderText = "Arguing";
+            this.ColumnArguing.Items.AddRange(new object[] {
+            "Not Occurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.ColumnArguing.Name = "ColumnArguing";
+            this.ColumnArguing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnArguing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnPhysicalAggression
+            // 
+            this.ColumnPhysicalAggression.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.NullValue = "Moderate";
+            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColumnPhysicalAggression.HeaderText = "Physical Aggression";
+            this.ColumnPhysicalAggression.Items.AddRange(new object[] {
+            "Not Ocurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.ColumnPhysicalAggression.Name = "ColumnPhysicalAggression";
+            this.ColumnPhysicalAggression.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnPhysicalAggression.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnShiftTotal
+            // 
+            this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnShiftTotal.HeaderText = "Shift Total";
+            this.ColumnShiftTotal.Name = "ColumnShiftTotal";
+            // 
+            // ColumnStaffNames
+            // 
+            this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ColumnStaffNames.HeaderText = "Staff Name(s)";
+            this.ColumnStaffNames.MinimumWidth = 100;
+            this.ColumnStaffNames.Name = "ColumnStaffNames";
+            // 
             // btnRemoveDailyBehavior
             // 
             this.btnRemoveDailyBehavior.Location = new System.Drawing.Point(20, 270);
@@ -1465,15 +1613,15 @@
             this.btnAddDailyBehavior.Text = "Add Behavior";
             this.btnAddDailyBehavior.UseVisualStyleBackColor = true;
             // 
-            // datePickerBegin
+            // datePickerBeginDailyBehavior
             // 
-            this.datePickerBegin.CustomFormat = "MMMM,yyyy";
-            this.datePickerBegin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerBegin.Location = new System.Drawing.Point(400, 26);
-            this.datePickerBegin.Name = "datePickerBegin";
-            this.datePickerBegin.Size = new System.Drawing.Size(200, 20);
-            this.datePickerBegin.TabIndex = 0;
-            this.datePickerBegin.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
+            this.datePickerBeginDailyBehavior.CustomFormat = "MMMM,yyyy";
+            this.datePickerBeginDailyBehavior.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerBeginDailyBehavior.Location = new System.Drawing.Point(400, 26);
+            this.datePickerBeginDailyBehavior.Name = "datePickerBeginDailyBehavior";
+            this.datePickerBeginDailyBehavior.Size = new System.Drawing.Size(200, 20);
+            this.datePickerBeginDailyBehavior.TabIndex = 0;
+            this.datePickerBeginDailyBehavior.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
             // 
             // txtDailyBehaviorOther
             // 
@@ -1524,16 +1672,21 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.chart5);
-            this.tabPage3.Controls.Add(this.chart4);
-            this.tabPage3.Controls.Add(this.chart3);
-            this.tabPage3.Controls.Add(this.chart2);
-            this.tabPage3.Controls.Add(this.checkBox2);
-            this.tabPage3.Controls.Add(this.comboBox35);
-            this.tabPage3.Controls.Add(this.dateTimePicker4);
-            this.tabPage3.Controls.Add(this.dateTimePicker5);
-            this.tabPage3.Controls.Add(this.comboBox34);
-            this.tabPage3.Controls.Add(this.listBox7);
+            this.tabPage3.Controls.Add(this.label68);
+            this.tabPage3.Controls.Add(this.label69);
+            this.tabPage3.Controls.Add(this.label70);
+            this.tabPage3.Controls.Add(this.label71);
+            this.tabPage3.Controls.Add(this.chkUseCustomDatesGraphs);
+            this.tabPage3.Controls.Add(this.comboPickTimeGraphs);
+            this.tabPage3.Controls.Add(this.datePickerEndGraphs);
+            this.tabPage3.Controls.Add(this.datePickerBeginGraphs);
+            this.tabPage3.Controls.Add(this.label67);
+            this.tabPage3.Controls.Add(this.chartPyramidOccurences);
+            this.tabPage3.Controls.Add(this.chartSumOfBehaviors);
+            this.tabPage3.Controls.Add(this.chartPieDailyOccurences);
+            this.tabPage3.Controls.Add(this.chartTotalBehaviors);
+            this.tabPage3.Controls.Add(this.comboBehaviorsToGraph);
+            this.tabPage3.Controls.Add(this.listBehaviorsToGraph);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1087, 623);
@@ -1541,137 +1694,100 @@
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // chart5
+            // chartPyramidOccurences
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart5.ChartAreas.Add(chartArea1);
-            this.chart5.Location = new System.Drawing.Point(624, 325);
-            this.chart5.Name = "chart5";
+            this.chartPyramidOccurences.ChartAreas.Add(chartArea1);
+            this.chartPyramidOccurences.Location = new System.Drawing.Point(624, 325);
+            this.chartPyramidOccurences.Name = "chartPyramidOccurences";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
             series1.Name = "Series1";
-            this.chart5.Series.Add(series1);
-            this.chart5.Size = new System.Drawing.Size(381, 255);
-            this.chart5.TabIndex = 35;
-            this.chart5.Text = "chart5";
+            this.chartPyramidOccurences.Series.Add(series1);
+            this.chartPyramidOccurences.Size = new System.Drawing.Size(381, 255);
+            this.chartPyramidOccurences.TabIndex = 35;
+            this.chartPyramidOccurences.Text = "chart5";
             title1.Name = "Title1";
             title1.Text = "# Daily Occurences";
-            this.chart5.Titles.Add(title1);
+            this.chartPyramidOccurences.Titles.Add(title1);
             // 
-            // chart4
+            // chartSumOfBehaviors
             // 
             chartArea2.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea2);
-            this.chart4.Location = new System.Drawing.Point(151, 325);
-            this.chart4.Name = "chart4";
+            this.chartSumOfBehaviors.ChartAreas.Add(chartArea2);
+            this.chartSumOfBehaviors.Location = new System.Drawing.Point(151, 325);
+            this.chartSumOfBehaviors.Name = "chartSumOfBehaviors";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Name = "Series1";
-            this.chart4.Series.Add(series2);
-            this.chart4.Size = new System.Drawing.Size(381, 255);
-            this.chart4.TabIndex = 34;
-            this.chart4.Text = "chart4";
+            this.chartSumOfBehaviors.Series.Add(series2);
+            this.chartSumOfBehaviors.Size = new System.Drawing.Size(381, 255);
+            this.chartSumOfBehaviors.TabIndex = 34;
+            this.chartSumOfBehaviors.Text = "chart4";
             title2.Name = "Title1";
             title2.Text = "Sum of Arguing";
-            this.chart4.Titles.Add(title2);
+            this.chartSumOfBehaviors.Titles.Add(title2);
             // 
-            // chart3
+            // chartPieDailyOccurences
             // 
             chartArea3.Area3DStyle.Enable3D = true;
             chartArea3.Area3DStyle.Inclination = 60;
             chartArea3.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea3);
-            this.chart3.Location = new System.Drawing.Point(624, 64);
-            this.chart3.Name = "chart3";
+            this.chartPieDailyOccurences.ChartAreas.Add(chartArea3);
+            this.chartPieDailyOccurences.Location = new System.Drawing.Point(624, 64);
+            this.chartPieDailyOccurences.Name = "chartPieDailyOccurences";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series3.Name = "Series1";
-            this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(381, 255);
-            this.chart3.TabIndex = 33;
-            this.chart3.Text = "chart3";
+            this.chartPieDailyOccurences.Series.Add(series3);
+            this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
+            this.chartPieDailyOccurences.TabIndex = 33;
+            this.chartPieDailyOccurences.Text = "chart3";
             title3.Name = "Title1";
             title3.Text = "# Daily Occurences";
-            this.chart3.Titles.Add(title3);
+            this.chartPieDailyOccurences.Titles.Add(title3);
             // 
-            // chart2
+            // chartTotalBehaviors
             // 
             chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            this.chart2.Location = new System.Drawing.Point(151, 64);
-            this.chart2.Name = "chart2";
+            this.chartTotalBehaviors.ChartAreas.Add(chartArea4);
+            this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
+            this.chartTotalBehaviors.Name = "chartTotalBehaviors";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
-            this.chart2.Size = new System.Drawing.Size(381, 255);
-            this.chart2.TabIndex = 32;
-            this.chart2.Text = "chart2";
+            this.chartTotalBehaviors.Series.Add(series4);
+            this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
+            this.chartTotalBehaviors.TabIndex = 32;
+            this.chartTotalBehaviors.Text = "chart2";
             title4.Name = "Title1";
             title4.Text = "Total Behaviors";
-            this.chart2.Titles.Add(title4);
+            this.chartTotalBehaviors.Titles.Add(title4);
             // 
-            // checkBox2
+            // comboBehaviorsToGraph
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(643, 20);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(114, 17);
-            this.checkBox2.TabIndex = 31;
-            this.checkBox2.Text = "Use Custom Dates";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox35
-            // 
-            this.comboBox35.FormattingEnabled = true;
-            this.comboBox35.Items.AddRange(new object[] {
-            "Last Month",
-            "Last Quarter"});
-            this.comboBox35.Location = new System.Drawing.Point(777, 18);
-            this.comboBox35.Name = "comboBox35";
-            this.comboBox35.Size = new System.Drawing.Size(121, 21);
-            this.comboBox35.TabIndex = 30;
-            this.comboBox35.Text = "Last Month";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(437, 19);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 29;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(231, 19);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker5.TabIndex = 28;
-            this.dateTimePicker5.Value = new System.DateTime(2014, 3, 4, 0, 0, 0, 0);
-            // 
-            // comboBox34
-            // 
-            this.comboBox34.FormattingEnabled = true;
-            this.comboBox34.Items.AddRange(new object[] {
+            this.comboBehaviorsToGraph.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBehaviorsToGraph.FormattingEnabled = true;
+            this.comboBehaviorsToGraph.Items.AddRange(new object[] {
             "Graph All Behaviors",
             "Graph Top 5 Behaviors",
             "Graph Custom Selection"});
-            this.comboBox34.Location = new System.Drawing.Point(3, 18);
-            this.comboBox34.Name = "comboBox34";
-            this.comboBox34.Size = new System.Drawing.Size(142, 21);
-            this.comboBox34.TabIndex = 1;
-            this.comboBox34.Text = "Graph Custom Selection";
+            this.comboBehaviorsToGraph.Location = new System.Drawing.Point(3, 34);
+            this.comboBehaviorsToGraph.Name = "comboBehaviorsToGraph";
+            this.comboBehaviorsToGraph.Size = new System.Drawing.Size(142, 21);
+            this.comboBehaviorsToGraph.TabIndex = 1;
             // 
-            // listBox7
+            // listBehaviorsToGraph
             // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.Items.AddRange(new object[] {
+            this.listBehaviorsToGraph.FormattingEnabled = true;
+            this.listBehaviorsToGraph.Items.AddRange(new object[] {
             "Arguing",
             "Lethargic"});
-            this.listBox7.Location = new System.Drawing.Point(3, 45);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox7.Size = new System.Drawing.Size(142, 212);
-            this.listBox7.TabIndex = 0;
+            this.listBehaviorsToGraph.Location = new System.Drawing.Point(3, 61);
+            this.listBehaviorsToGraph.Name = "listBehaviorsToGraph";
+            this.listBehaviorsToGraph.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBehaviorsToGraph.Size = new System.Drawing.Size(142, 212);
+            this.listBehaviorsToGraph.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -3178,148 +3294,91 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label61
+            // label67
             // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(473, 10);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(55, 13);
-            this.label61.TabIndex = 28;
-            this.label61.Text = "Start Date";
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(25, 18);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(98, 13);
+            this.label67.TabIndex = 36;
+            this.label67.Text = "Behaviors to Graph";
             // 
-            // label62
+            // label68
             // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(702, 10);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(52, 13);
-            this.label62.TabIndex = 29;
-            this.label62.Text = "End Date";
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(812, 17);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(137, 13);
+            this.label68.TabIndex = 44;
+            this.label68.Text = "Pick a Behavior Time frame";
             // 
-            // label63
+            // label69
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(606, 29);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(16, 13);
-            this.label63.TabIndex = 30;
-            this.label63.Text = "to";
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(472, 37);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(16, 13);
+            this.label69.TabIndex = 43;
+            this.label69.Text = "to";
             // 
-            // label64
+            // label70
             // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(127, 9);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(91, 13);
-            this.label64.TabIndex = 31;
-            this.label64.Text = "Select a Behavior";
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(568, 18);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(52, 13);
+            this.label70.TabIndex = 42;
+            this.label70.Text = "End Date";
             // 
-            // label65
+            // label71
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(947, 9);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(134, 13);
-            this.label65.TabIndex = 32;
-            this.label65.Text = "Pick a Daily Behavior Time";
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(339, 18);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(55, 13);
+            this.label71.TabIndex = 41;
+            this.label71.Text = "Start Date";
             // 
-            // label66
+            // chkUseCustomDatesGraphs
             // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(16, 49);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(116, 13);
-            this.label66.TabIndex = 33;
-            this.label66.Text = "Client\'s Daily Behaviors";
+            this.chkUseCustomDatesGraphs.AutoSize = true;
+            this.chkUseCustomDatesGraphs.Location = new System.Drawing.Point(700, 37);
+            this.chkUseCustomDatesGraphs.Name = "chkUseCustomDatesGraphs";
+            this.chkUseCustomDatesGraphs.Size = new System.Drawing.Size(114, 17);
+            this.chkUseCustomDatesGraphs.TabIndex = 40;
+            this.chkUseCustomDatesGraphs.Text = "Use Custom Dates";
+            this.chkUseCustomDatesGraphs.UseVisualStyleBackColor = true;
             // 
-            // ColumnDate
+            // comboPickTimeGraphs
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnDate.HeaderText = "Date";
-            this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.ReadOnly = true;
+            this.comboPickTimeGraphs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPickTimeGraphs.FormattingEnabled = true;
+            this.comboPickTimeGraphs.Items.AddRange(new object[] {
+            "Last Month",
+            "Last Quarter"});
+            this.comboPickTimeGraphs.Location = new System.Drawing.Point(820, 33);
+            this.comboPickTimeGraphs.Name = "comboPickTimeGraphs";
+            this.comboPickTimeGraphs.Size = new System.Drawing.Size(121, 21);
+            this.comboPickTimeGraphs.TabIndex = 39;
             // 
-            // ColumnShift
+            // datePickerEndGraphs
             // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnShift.HeaderText = "Shift";
-            this.ColumnShift.Items.AddRange(new object[] {
-            "7a-3p",
-            "3p-11p",
-            "11p-7a"});
-            this.ColumnShift.Name = "ColumnShift";
-            this.ColumnShift.ReadOnly = true;
-            this.ColumnShift.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.datePickerEndGraphs.CustomFormat = "MMMMyyyy";
+            this.datePickerEndGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerEndGraphs.Location = new System.Drawing.Point(494, 34);
+            this.datePickerEndGraphs.Name = "datePickerEndGraphs";
+            this.datePickerEndGraphs.Size = new System.Drawing.Size(200, 20);
+            this.datePickerEndGraphs.TabIndex = 38;
             // 
-            // ColumnArguing
+            // datePickerBeginGraphs
             // 
-            this.ColumnArguing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.NullValue = "Not Occurred";
-            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColumnArguing.HeaderText = "Arguing";
-            this.ColumnArguing.Items.AddRange(new object[] {
-            "Not Occurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.ColumnArguing.Name = "ColumnArguing";
-            this.ColumnArguing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnArguing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnPhysicalAggression
-            // 
-            this.ColumnPhysicalAggression.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.NullValue = "Moderate";
-            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnPhysicalAggression.HeaderText = "Physical Aggression";
-            this.ColumnPhysicalAggression.Items.AddRange(new object[] {
-            "Not Ocurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.ColumnPhysicalAggression.Name = "ColumnPhysicalAggression";
-            this.ColumnPhysicalAggression.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnPhysicalAggression.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnShiftTotal
-            // 
-            this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColumnShiftTotal.HeaderText = "Shift Total";
-            this.ColumnShiftTotal.Name = "ColumnShiftTotal";
-            // 
-            // ColumnStaffNames
-            // 
-            this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ColumnStaffNames.HeaderText = "Staff Name(s)";
-            this.ColumnStaffNames.MinimumWidth = 100;
-            this.ColumnStaffNames.Name = "ColumnStaffNames";
-            // 
-            // btnSaveDailyBehavior
-            // 
-            this.btnSaveDailyBehavior.Location = new System.Drawing.Point(6, 585);
-            this.btnSaveDailyBehavior.Name = "btnSaveDailyBehavior";
-            this.btnSaveDailyBehavior.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveDailyBehavior.TabIndex = 36;
-            this.btnSaveDailyBehavior.Text = "Save";
-            this.btnSaveDailyBehavior.UseVisualStyleBackColor = true;
-            // 
-            // btnEditDailyBehavior
-            // 
-            this.btnEditDailyBehavior.Location = new System.Drawing.Point(6, 556);
-            this.btnEditDailyBehavior.Name = "btnEditDailyBehavior";
-            this.btnEditDailyBehavior.Size = new System.Drawing.Size(75, 23);
-            this.btnEditDailyBehavior.TabIndex = 35;
-            this.btnEditDailyBehavior.Text = "Edit";
-            this.btnEditDailyBehavior.UseVisualStyleBackColor = true;
+            this.datePickerBeginGraphs.CustomFormat = "MMMM,yyyy";
+            this.datePickerBeginGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerBeginGraphs.Location = new System.Drawing.Point(266, 34);
+            this.datePickerBeginGraphs.Name = "datePickerBeginGraphs";
+            this.datePickerBeginGraphs.Size = new System.Drawing.Size(200, 20);
+            this.datePickerBeginGraphs.TabIndex = 37;
+            this.datePickerBeginGraphs.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
             // 
             // FormMain
             // 
@@ -3352,10 +3411,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPyramidOccurences)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSumOfBehaviors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPieDailyOccurences)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -3447,7 +3506,7 @@
         private System.Windows.Forms.ListBox lstISP;
         private System.Windows.Forms.Button btnSaveClient;
         private System.Windows.Forms.Button btnEditClient;
-        private System.Windows.Forms.DateTimePicker datePickerBegin;
+        private System.Windows.Forms.DateTimePicker datePickerBeginDailyBehavior;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox txtDailyBehaviorOther;
         private System.Windows.Forms.ComboBox comboDailyBehaviors;
@@ -3570,22 +3629,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DateTimePicker datePickerEnd;
+        private System.Windows.Forms.DateTimePicker datePickerEndDailyBehavior;
         private System.Windows.Forms.TextBox textBox45;
         private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.ComboBox comboPickDailyBehaviorTime;
-        private System.Windows.Forms.CheckBox chkUseCustomDates;
-        private System.Windows.Forms.ListBox listBox7;
-        private System.Windows.Forms.ComboBox comboBox34;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.ComboBox comboBox35;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.ComboBox comboPickTimeDailyBehavior;
+        private System.Windows.Forms.CheckBox chkUseCustomDatesDailyBehavior;
+        private System.Windows.Forms.ListBox listBehaviorsToGraph;
+        private System.Windows.Forms.ComboBox comboBehaviorsToGraph;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTotalBehaviors;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSumOfBehaviors;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPieDailyOccurences;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPyramidOccurences;
         private System.Windows.Forms.Button btnSelectImage;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
@@ -3650,6 +3705,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStaffNames;
         private System.Windows.Forms.Button btnSaveDailyBehavior;
         private System.Windows.Forms.Button btnEditDailyBehavior;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.CheckBox chkUseCustomDatesGraphs;
+        private System.Windows.Forms.ComboBox comboPickTimeGraphs;
+        private System.Windows.Forms.DateTimePicker datePickerEndGraphs;
+        private System.Windows.Forms.DateTimePicker datePickerBeginGraphs;
     }
 }
 
