@@ -214,6 +214,15 @@
             this.txtDailyBehaviorOther = new System.Windows.Forms.TextBox();
             this.comboDailyBehaviors = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.chkUseCustomDatesGraphs = new System.Windows.Forms.CheckBox();
+            this.comboPickTimeGraphs = new System.Windows.Forms.ComboBox();
+            this.datePickerEndGraphs = new System.Windows.Forms.DateTimePicker();
+            this.datePickerBeginGraphs = new System.Windows.Forms.DateTimePicker();
+            this.label67 = new System.Windows.Forms.Label();
             this.chartPyramidOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartSumOfBehaviors = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPieDailyOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -222,9 +231,9 @@
             this.listBehaviorsToGraph = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartQABFAnalysis = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAntecedents = new System.Windows.Forms.DataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -232,21 +241,20 @@
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBehaviorsStaffInterviews = new System.Windows.Forms.DataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStrengths = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.btnViewInterview = new System.Windows.Forms.Button();
+            this.btnRemoveInterview = new System.Windows.Forms.Button();
+            this.btnAddInterview = new System.Windows.Forms.Button();
+            this.lstInterviews = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -344,15 +352,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.chkUseCustomDatesGraphs = new System.Windows.Forms.CheckBox();
-            this.comboPickTimeGraphs = new System.Windows.Forms.ComboBox();
-            this.datePickerEndGraphs = new System.Windows.Forms.DateTimePicker();
-            this.datePickerBeginGraphs = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -372,13 +371,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartQABFAnalysis)).BeginInit();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAntecedents)).BeginInit();
             this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBehaviorsStaffInterviews)).BeginInit();
             this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -1694,6 +1693,92 @@
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(812, 17);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(137, 13);
+            this.label68.TabIndex = 44;
+            this.label68.Text = "Pick a Behavior Time frame";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(472, 37);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(16, 13);
+            this.label69.TabIndex = 43;
+            this.label69.Text = "to";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(568, 18);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(52, 13);
+            this.label70.TabIndex = 42;
+            this.label70.Text = "End Date";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(339, 18);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(55, 13);
+            this.label71.TabIndex = 41;
+            this.label71.Text = "Start Date";
+            // 
+            // chkUseCustomDatesGraphs
+            // 
+            this.chkUseCustomDatesGraphs.AutoSize = true;
+            this.chkUseCustomDatesGraphs.Location = new System.Drawing.Point(700, 37);
+            this.chkUseCustomDatesGraphs.Name = "chkUseCustomDatesGraphs";
+            this.chkUseCustomDatesGraphs.Size = new System.Drawing.Size(114, 17);
+            this.chkUseCustomDatesGraphs.TabIndex = 40;
+            this.chkUseCustomDatesGraphs.Text = "Use Custom Dates";
+            this.chkUseCustomDatesGraphs.UseVisualStyleBackColor = true;
+            // 
+            // comboPickTimeGraphs
+            // 
+            this.comboPickTimeGraphs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPickTimeGraphs.FormattingEnabled = true;
+            this.comboPickTimeGraphs.Items.AddRange(new object[] {
+            "Last Month",
+            "Last Quarter"});
+            this.comboPickTimeGraphs.Location = new System.Drawing.Point(820, 33);
+            this.comboPickTimeGraphs.Name = "comboPickTimeGraphs";
+            this.comboPickTimeGraphs.Size = new System.Drawing.Size(121, 21);
+            this.comboPickTimeGraphs.TabIndex = 39;
+            // 
+            // datePickerEndGraphs
+            // 
+            this.datePickerEndGraphs.CustomFormat = "MMMMyyyy";
+            this.datePickerEndGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerEndGraphs.Location = new System.Drawing.Point(494, 34);
+            this.datePickerEndGraphs.Name = "datePickerEndGraphs";
+            this.datePickerEndGraphs.Size = new System.Drawing.Size(200, 20);
+            this.datePickerEndGraphs.TabIndex = 38;
+            // 
+            // datePickerBeginGraphs
+            // 
+            this.datePickerBeginGraphs.CustomFormat = "MMMM,yyyy";
+            this.datePickerBeginGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePickerBeginGraphs.Location = new System.Drawing.Point(266, 34);
+            this.datePickerBeginGraphs.Name = "datePickerBeginGraphs";
+            this.datePickerBeginGraphs.Size = new System.Drawing.Size(200, 20);
+            this.datePickerBeginGraphs.TabIndex = 37;
+            this.datePickerBeginGraphs.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(25, 18);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(98, 13);
+            this.label67.TabIndex = 36;
+            this.label67.Text = "Behaviors to Graph";
+            // 
             // chartPyramidOccurences
             // 
             chartArea1.Name = "ChartArea1";
@@ -1795,11 +1880,10 @@
             this.tabPage4.Controls.Add(this.groupBox15);
             this.tabPage4.Controls.Add(this.groupBox14);
             this.tabPage4.Controls.Add(this.groupBox13);
-            this.tabPage4.Controls.Add(this.button19);
-            this.tabPage4.Controls.Add(this.button18);
-            this.tabPage4.Controls.Add(this.button17);
-            this.tabPage4.Controls.Add(this.button16);
-            this.tabPage4.Controls.Add(this.listBox6);
+            this.tabPage4.Controls.Add(this.btnViewInterview);
+            this.tabPage4.Controls.Add(this.btnRemoveInterview);
+            this.tabPage4.Controls.Add(this.btnAddInterview);
+            this.tabPage4.Controls.Add(this.lstInterviews);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1087, 623);
@@ -1809,7 +1893,7 @@
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.chart1);
+            this.groupBox16.Controls.Add(this.chartQABFAnalysis);
             this.groupBox16.Location = new System.Drawing.Point(698, 386);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(386, 231);
@@ -1817,16 +1901,16 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "QABF Analysis";
             // 
-            // chart1
+            // chartQABFAnalysis
             // 
             chartArea5.Area3DStyle.IsRightAngleAxes = false;
             chartArea5.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
             chartArea5.Area3DStyle.Rotation = 10;
             chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            this.chart1.Location = new System.Drawing.Point(6, 17);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chartQABFAnalysis.ChartAreas.Add(chartArea5);
+            this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
+            this.chartQABFAnalysis.Name = "chartQABFAnalysis";
+            this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series5.ChartArea = "ChartArea1";
             series5.IsXValueIndexed = true;
             series5.Name = "Series1";
@@ -1859,90 +1943,99 @@
             series5.Points.Add(dataPoint4);
             series5.Points.Add(dataPoint5);
             series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(374, 208);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chartQABFAnalysis.Series.Add(series5);
+            this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
+            this.chartQABFAnalysis.TabIndex = 0;
+            this.chartQABFAnalysis.Text = "chart1";
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.dataGridView4);
-            this.groupBox15.Location = new System.Drawing.Point(12, 403);
+            this.groupBox15.Controls.Add(this.dataGridViewAntecedents);
+            this.groupBox15.Location = new System.Drawing.Point(12, 386);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(680, 186);
             this.groupBox15.TabIndex = 7;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Antecedents";
             // 
-            // dataGridView4
+            // dataGridViewAntecedents
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewAntecedents.AllowUserToOrderColumns = true;
+            this.dataGridViewAntecedents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAntecedents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column14,
             this.Column15,
             this.Column16,
             this.Column17,
             this.Column18,
             this.Column19});
-            this.dataGridView4.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(666, 150);
-            this.dataGridView4.TabIndex = 0;
+            this.dataGridViewAntecedents.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewAntecedents.Name = "dataGridViewAntecedents";
+            this.dataGridViewAntecedents.ReadOnly = true;
+            this.dataGridViewAntecedents.Size = new System.Drawing.Size(666, 150);
+            this.dataGridViewAntecedents.TabIndex = 0;
             // 
             // Column14
             // 
             this.Column14.HeaderText = "Behavior";
             this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
             // 
             // Column15
             // 
             this.Column15.HeaderText = "Antecedent Total";
             this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
             // 
             // Column16
             // 
             this.Column16.HeaderText = "Physiological Causes";
             this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "Environmental Causes";
             this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "Psychological Causes";
             this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "Social Causes";
             this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.dataGridView3);
-            this.groupBox14.Location = new System.Drawing.Point(507, 72);
+            this.groupBox14.Controls.Add(this.dataGridViewBehaviorsStaffInterviews);
+            this.groupBox14.Location = new System.Drawing.Point(501, 72);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(577, 301);
             this.groupBox14.TabIndex = 6;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Behaviors";
             // 
-            // dataGridView3
+            // dataGridViewBehaviorsStaffInterviews
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewBehaviorsStaffInterviews.AllowUserToOrderColumns = true;
+            this.dataGridViewBehaviorsStaffInterviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBehaviorsStaffInterviews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column9,
             this.Column12,
             this.Column13,
             this.Column10,
             this.Column11});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(565, 276);
-            this.dataGridView3.TabIndex = 0;
+            this.dataGridViewBehaviorsStaffInterviews.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewBehaviorsStaffInterviews.Name = "dataGridViewBehaviorsStaffInterviews";
+            this.dataGridViewBehaviorsStaffInterviews.ReadOnly = true;
+            this.dataGridViewBehaviorsStaffInterviews.Size = new System.Drawing.Size(565, 276);
+            this.dataGridViewBehaviorsStaffInterviews.TabIndex = 0;
             // 
             // Column9
             // 
@@ -1976,25 +2069,26 @@
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.dataGridView2);
+            this.groupBox13.Controls.Add(this.dataGridViewStrengths);
             this.groupBox13.Location = new System.Drawing.Point(183, 72);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(296, 301);
+            this.groupBox13.Size = new System.Drawing.Size(282, 301);
             this.groupBox13.TabIndex = 5;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Strengths";
             // 
-            // dataGridView2
+            // dataGridViewStrengths
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewStrengths.AllowUserToOrderColumns = true;
+            this.dataGridViewStrengths.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStrengths.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
             this.Column8});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(266, 260);
-            this.dataGridView2.TabIndex = 6;
+            this.dataGridViewStrengths.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewStrengths.Name = "dataGridViewStrengths";
+            this.dataGridViewStrengths.ReadOnly = true;
+            this.dataGridViewStrengths.Size = new System.Drawing.Size(266, 260);
+            this.dataGridViewStrengths.TabIndex = 6;
             // 
             // Column7
             // 
@@ -2008,53 +2102,44 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
-            // button19
+            // btnViewInterview
             // 
-            this.button19.Location = new System.Drawing.Point(107, 43);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(107, 23);
-            this.button19.TabIndex = 4;
-            this.button19.Text = "View Interview";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnViewInterview.Location = new System.Drawing.Point(41, 43);
+            this.btnViewInterview.Name = "btnViewInterview";
+            this.btnViewInterview.Size = new System.Drawing.Size(107, 23);
+            this.btnViewInterview.TabIndex = 4;
+            this.btnViewInterview.Text = "View Interview";
+            this.btnViewInterview.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // btnRemoveInterview
             // 
-            this.button18.Location = new System.Drawing.Point(109, 14);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(105, 23);
-            this.button18.TabIndex = 3;
-            this.button18.Text = "Remove Interview";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnRemoveInterview.Location = new System.Drawing.Point(109, 14);
+            this.btnRemoveInterview.Name = "btnRemoveInterview";
+            this.btnRemoveInterview.Size = new System.Drawing.Size(105, 23);
+            this.btnRemoveInterview.TabIndex = 3;
+            this.btnRemoveInterview.Text = "Remove Interview";
+            this.btnRemoveInterview.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnAddInterview
             // 
-            this.button17.Location = new System.Drawing.Point(12, 43);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(89, 23);
-            this.button17.TabIndex = 2;
-            this.button17.Text = "Edit Interview";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnAddInterview.Location = new System.Drawing.Point(12, 14);
+            this.btnAddInterview.Name = "btnAddInterview";
+            this.btnAddInterview.Size = new System.Drawing.Size(91, 23);
+            this.btnAddInterview.TabIndex = 1;
+            this.btnAddInterview.Text = "Add Interview";
+            this.btnAddInterview.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // lstInterviews
             // 
-            this.button16.Location = new System.Drawing.Point(12, 14);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(91, 23);
-            this.button16.TabIndex = 1;
-            this.button16.Text = "Add Interview";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // listBox6
-            // 
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Items.AddRange(new object[] {
+            this.lstInterviews.FormattingEnabled = true;
+            this.lstInterviews.Items.AddRange(new object[] {
             "Shaun Burke - 2/10/14",
             "Joe Sue - 2/14/14"});
-            this.listBox6.Location = new System.Drawing.Point(12, 72);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox6.Size = new System.Drawing.Size(165, 303);
-            this.listBox6.TabIndex = 0;
+            this.lstInterviews.Location = new System.Drawing.Point(12, 72);
+            this.lstInterviews.Name = "lstInterviews";
+            this.lstInterviews.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lstInterviews.Size = new System.Drawing.Size(165, 303);
+            this.lstInterviews.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -3294,92 +3379,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(25, 18);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(98, 13);
-            this.label67.TabIndex = 36;
-            this.label67.Text = "Behaviors to Graph";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(812, 17);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(137, 13);
-            this.label68.TabIndex = 44;
-            this.label68.Text = "Pick a Behavior Time frame";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(472, 37);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(16, 13);
-            this.label69.TabIndex = 43;
-            this.label69.Text = "to";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(568, 18);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(52, 13);
-            this.label70.TabIndex = 42;
-            this.label70.Text = "End Date";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(339, 18);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(55, 13);
-            this.label71.TabIndex = 41;
-            this.label71.Text = "Start Date";
-            // 
-            // chkUseCustomDatesGraphs
-            // 
-            this.chkUseCustomDatesGraphs.AutoSize = true;
-            this.chkUseCustomDatesGraphs.Location = new System.Drawing.Point(700, 37);
-            this.chkUseCustomDatesGraphs.Name = "chkUseCustomDatesGraphs";
-            this.chkUseCustomDatesGraphs.Size = new System.Drawing.Size(114, 17);
-            this.chkUseCustomDatesGraphs.TabIndex = 40;
-            this.chkUseCustomDatesGraphs.Text = "Use Custom Dates";
-            this.chkUseCustomDatesGraphs.UseVisualStyleBackColor = true;
-            // 
-            // comboPickTimeGraphs
-            // 
-            this.comboPickTimeGraphs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPickTimeGraphs.FormattingEnabled = true;
-            this.comboPickTimeGraphs.Items.AddRange(new object[] {
-            "Last Month",
-            "Last Quarter"});
-            this.comboPickTimeGraphs.Location = new System.Drawing.Point(820, 33);
-            this.comboPickTimeGraphs.Name = "comboPickTimeGraphs";
-            this.comboPickTimeGraphs.Size = new System.Drawing.Size(121, 21);
-            this.comboPickTimeGraphs.TabIndex = 39;
-            // 
-            // datePickerEndGraphs
-            // 
-            this.datePickerEndGraphs.CustomFormat = "MMMMyyyy";
-            this.datePickerEndGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerEndGraphs.Location = new System.Drawing.Point(494, 34);
-            this.datePickerEndGraphs.Name = "datePickerEndGraphs";
-            this.datePickerEndGraphs.Size = new System.Drawing.Size(200, 20);
-            this.datePickerEndGraphs.TabIndex = 38;
-            // 
-            // datePickerBeginGraphs
-            // 
-            this.datePickerBeginGraphs.CustomFormat = "MMMM,yyyy";
-            this.datePickerBeginGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerBeginGraphs.Location = new System.Drawing.Point(266, 34);
-            this.datePickerBeginGraphs.Name = "datePickerBeginGraphs";
-            this.datePickerBeginGraphs.Size = new System.Drawing.Size(200, 20);
-            this.datePickerBeginGraphs.TabIndex = 37;
-            this.datePickerBeginGraphs.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3417,13 +3416,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartQABFAnalysis)).EndInit();
             this.groupBox15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAntecedents)).EndInit();
             this.groupBox14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBehaviorsStaffInterviews)).EndInit();
             this.groupBox13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -3513,7 +3512,7 @@
         private System.Windows.Forms.Button btnRemoveDailyBehavior;
         private System.Windows.Forms.Button btnAddDailyBehavior;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.ListBox lstInterviews;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -3531,10 +3530,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox textBox44;
         private System.Windows.Forms.TextBox textBox43;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnViewInterview;
+        private System.Windows.Forms.Button btnRemoveInterview;
+        private System.Windows.Forms.Button btnAddInterview;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.ComboBox comboBox11;
@@ -3609,18 +3607,18 @@
         private System.Windows.Forms.TextBox txtAdmittanceDate;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewStrengths;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewBehaviorsStaffInterviews;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dataGridViewAntecedents;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
@@ -3628,7 +3626,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartQABFAnalysis;
         private System.Windows.Forms.DateTimePicker datePickerEndDailyBehavior;
         private System.Windows.Forms.TextBox textBox45;
         private System.Windows.Forms.Button button30;
