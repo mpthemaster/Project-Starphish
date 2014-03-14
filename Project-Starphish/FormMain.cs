@@ -17,5 +17,14 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Opens up a blank Staff Interview form.
+        /// </summary>
+        private void btnAddInterview_Click(object sender, EventArgs e)
+        {
+            FormStaffInterview staffInterview = new FormStaffInterview();
+            staffInterview.Show();
+        }
     }
 }

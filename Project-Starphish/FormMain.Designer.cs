@@ -29,63 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Allergies");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Hourly");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Arguing - Severe");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Lethargic - Mild");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Daily", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Weekly");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Hope / Optimism");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Humor");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Citizenship");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
-            treeNode14,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Other Strengths");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Arguing");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Uncompleted", new System.Windows.Forms.TreeNode[] {
-            treeNode19});
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Completed", new System.Windows.Forms.TreeNode[] {
-            treeNode21});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -101,7 +70,6 @@
             this.btnSelectImage = new System.Windows.Forms.Button();
             this.picClient = new System.Windows.Forms.PictureBox();
             this.btnSaveClient = new System.Windows.Forms.Button();
-            this.btnEditClient = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnViewISP = new System.Windows.Forms.Button();
             this.btnRemoveISP = new System.Windows.Forms.Button();
@@ -190,7 +158,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.btnSaveDailyBehavior = new System.Windows.Forms.Button();
-            this.btnEditDailyBehavior = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
@@ -255,95 +222,6 @@
             this.btnRemoveInterview = new System.Windows.Forms.Button();
             this.btnAddInterview = new System.Windows.Forms.Button();
             this.lstInterviews = new System.Windows.Forms.ListBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.textBox47 = new System.Windows.Forms.TextBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.button26 = new System.Windows.Forms.Button();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
-            this.button27 = new System.Windows.Forms.Button();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
-            this.button28 = new System.Windows.Forms.Button();
-            this.treeView2 = new System.Windows.Forms.TreeView();
-            this.button24 = new System.Windows.Forms.Button();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.treeView3 = new System.Windows.Forms.TreeView();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.button30 = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.textBox46 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.label23 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.button29 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.comboBox25 = new System.Windows.Forms.ComboBox();
-            this.comboBox26 = new System.Windows.Forms.ComboBox();
-            this.comboBox27 = new System.Windows.Forms.ComboBox();
-            this.comboBox28 = new System.Windows.Forms.ComboBox();
-            this.comboBox29 = new System.Windows.Forms.ComboBox();
-            this.comboBox30 = new System.Windows.Forms.ComboBox();
-            this.comboBox31 = new System.Windows.Forms.ComboBox();
-            this.comboBox32 = new System.Windows.Forms.ComboBox();
-            this.comboBox33 = new System.Windows.Forms.ComboBox();
-            this.comboBox24 = new System.Windows.Forms.ComboBox();
-            this.comboBox23 = new System.Windows.Forms.ComboBox();
-            this.comboBox22 = new System.Windows.Forms.ComboBox();
-            this.comboBox21 = new System.Windows.Forms.ComboBox();
-            this.comboBox20 = new System.Windows.Forms.ComboBox();
-            this.comboBox19 = new System.Windows.Forms.ComboBox();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
-            this.comboBox17 = new System.Windows.Forms.ComboBox();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.treeView4 = new System.Windows.Forms.TreeView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -352,6 +230,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label72 = new System.Windows.Forms.Label();
+            this.txtRaceOther = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -378,13 +258,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBehaviorsStaffInterviews)).BeginInit();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -394,8 +267,6 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -408,7 +279,6 @@
             this.tabPage1.Controls.Add(this.btnSelectImage);
             this.tabPage1.Controls.Add(this.picClient);
             this.tabPage1.Controls.Add(this.btnSaveClient);
-            this.tabPage1.Controls.Add(this.btnEditClient);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
@@ -539,21 +409,13 @@
             // 
             // btnSaveClient
             // 
-            this.btnSaveClient.Location = new System.Drawing.Point(96, 387);
+            this.btnSaveClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveClient.Location = new System.Drawing.Point(6, 491);
             this.btnSaveClient.Name = "btnSaveClient";
-            this.btnSaveClient.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveClient.Size = new System.Drawing.Size(217, 126);
             this.btnSaveClient.TabIndex = 34;
             this.btnSaveClient.Text = "Save";
             this.btnSaveClient.UseVisualStyleBackColor = true;
-            // 
-            // btnEditClient
-            // 
-            this.btnEditClient.Location = new System.Drawing.Point(15, 387);
-            this.btnEditClient.Name = "btnEditClient";
-            this.btnEditClient.Size = new System.Drawing.Size(75, 23);
-            this.btnEditClient.TabIndex = 33;
-            this.btnEditClient.Text = "Edit";
-            this.btnEditClient.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -901,6 +763,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtRaceOther);
             this.groupBox1.Controls.Add(this.label44);
             this.groupBox1.Controls.Add(this.label43);
             this.groupBox1.Controls.Add(this.label42);
@@ -1358,8 +1221,8 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.label72);
             this.groupBox12.Controls.Add(this.btnSaveDailyBehavior);
-            this.groupBox12.Controls.Add(this.btnEditDailyBehavior);
             this.groupBox12.Controls.Add(this.label66);
             this.groupBox12.Controls.Add(this.label65);
             this.groupBox12.Controls.Add(this.label64);
@@ -1385,21 +1248,13 @@
             // 
             // btnSaveDailyBehavior
             // 
-            this.btnSaveDailyBehavior.Location = new System.Drawing.Point(6, 585);
+            this.btnSaveDailyBehavior.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveDailyBehavior.Location = new System.Drawing.Point(6, 488);
             this.btnSaveDailyBehavior.Name = "btnSaveDailyBehavior";
-            this.btnSaveDailyBehavior.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveDailyBehavior.Size = new System.Drawing.Size(137, 126);
             this.btnSaveDailyBehavior.TabIndex = 36;
             this.btnSaveDailyBehavior.Text = "Save";
             this.btnSaveDailyBehavior.UseVisualStyleBackColor = true;
-            // 
-            // btnEditDailyBehavior
-            // 
-            this.btnEditDailyBehavior.Location = new System.Drawing.Point(6, 556);
-            this.btnEditDailyBehavior.Name = "btnEditDailyBehavior";
-            this.btnEditDailyBehavior.Size = new System.Drawing.Size(75, 23);
-            this.btnEditDailyBehavior.TabIndex = 35;
-            this.btnEditDailyBehavior.Text = "Edit";
-            this.btnEditDailyBehavior.UseVisualStyleBackColor = true;
             // 
             // label66
             // 
@@ -1502,14 +1357,14 @@
             this.dataGridViewDailyBehaviorTracking.AllowUserToOrderColumns = true;
             this.dataGridViewDailyBehaviorTracking.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridViewDailyBehaviorTracking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewDailyBehaviorTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
             this.ColumnShift,
@@ -1525,17 +1380,17 @@
             // 
             // ColumnDate
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.Format = "d";
+            dataGridViewCellStyle16.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle16;
             this.ColumnDate.HeaderText = "Date";
             this.ColumnDate.Name = "ColumnDate";
             this.ColumnDate.ReadOnly = true;
             // 
             // ColumnShift
             // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle17;
             this.ColumnShift.HeaderText = "Shift";
             this.ColumnShift.Items.AddRange(new object[] {
             "7a-3p",
@@ -1549,8 +1404,8 @@
             // ColumnArguing
             // 
             this.ColumnArguing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.NullValue = "Not Occurred";
-            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle18.NullValue = "Not Occurred";
+            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle18;
             this.ColumnArguing.HeaderText = "Arguing";
             this.ColumnArguing.Items.AddRange(new object[] {
             "Not Occurred",
@@ -1564,8 +1419,8 @@
             // ColumnPhysicalAggression
             // 
             this.ColumnPhysicalAggression.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.NullValue = "Moderate";
-            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle19.NullValue = "Moderate";
+            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle19;
             this.ColumnPhysicalAggression.HeaderText = "Physical Aggression";
             this.ColumnPhysicalAggression.Items.AddRange(new object[] {
             "Not Ocurred",
@@ -1579,24 +1434,24 @@
             // ColumnShiftTotal
             // 
             this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle20.Format = "N0";
+            dataGridViewCellStyle20.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle20;
             this.ColumnShiftTotal.HeaderText = "Shift Total";
             this.ColumnShiftTotal.Name = "ColumnShiftTotal";
             // 
             // ColumnStaffNames
             // 
             this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle21;
             this.ColumnStaffNames.HeaderText = "Staff Name(s)";
             this.ColumnStaffNames.MinimumWidth = 100;
             this.ColumnStaffNames.Name = "ColumnStaffNames";
             // 
             // btnRemoveDailyBehavior
             // 
-            this.btnRemoveDailyBehavior.Location = new System.Drawing.Point(20, 270);
+            this.btnRemoveDailyBehavior.Location = new System.Drawing.Point(18, 270);
             this.btnRemoveDailyBehavior.Name = "btnRemoveDailyBehavior";
             this.btnRemoveDailyBehavior.Size = new System.Drawing.Size(112, 23);
             this.btnRemoveDailyBehavior.TabIndex = 6;
@@ -1628,7 +1483,6 @@
             this.txtDailyBehaviorOther.Name = "txtDailyBehaviorOther";
             this.txtDailyBehaviorOther.Size = new System.Drawing.Size(100, 20);
             this.txtDailyBehaviorOther.TabIndex = 2;
-            this.txtDailyBehaviorOther.Text = "Other";
             // 
             // comboDailyBehaviors
             // 
@@ -1781,73 +1635,73 @@
             // 
             // chartPyramidOccurences
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartPyramidOccurences.ChartAreas.Add(chartArea1);
+            chartArea11.Name = "ChartArea1";
+            this.chartPyramidOccurences.ChartAreas.Add(chartArea11);
             this.chartPyramidOccurences.Location = new System.Drawing.Point(624, 325);
             this.chartPyramidOccurences.Name = "chartPyramidOccurences";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
-            series1.Name = "Series1";
-            this.chartPyramidOccurences.Series.Add(series1);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            series11.Name = "Series1";
+            this.chartPyramidOccurences.Series.Add(series11);
             this.chartPyramidOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPyramidOccurences.TabIndex = 35;
             this.chartPyramidOccurences.Text = "chart5";
-            title1.Name = "Title1";
-            title1.Text = "# Daily Occurences";
-            this.chartPyramidOccurences.Titles.Add(title1);
+            title9.Name = "Title1";
+            title9.Text = "# Daily Occurences";
+            this.chartPyramidOccurences.Titles.Add(title9);
             // 
             // chartSumOfBehaviors
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartSumOfBehaviors.ChartAreas.Add(chartArea2);
+            chartArea12.Name = "ChartArea1";
+            this.chartSumOfBehaviors.ChartAreas.Add(chartArea12);
             this.chartSumOfBehaviors.Location = new System.Drawing.Point(151, 325);
             this.chartSumOfBehaviors.Name = "chartSumOfBehaviors";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.chartSumOfBehaviors.Series.Add(series2);
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Name = "Series1";
+            this.chartSumOfBehaviors.Series.Add(series12);
             this.chartSumOfBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartSumOfBehaviors.TabIndex = 34;
             this.chartSumOfBehaviors.Text = "chart4";
-            title2.Name = "Title1";
-            title2.Text = "Sum of Arguing";
-            this.chartSumOfBehaviors.Titles.Add(title2);
+            title10.Name = "Title1";
+            title10.Text = "Sum of Arguing";
+            this.chartSumOfBehaviors.Titles.Add(title10);
             // 
             // chartPieDailyOccurences
             // 
-            chartArea3.Area3DStyle.Enable3D = true;
-            chartArea3.Area3DStyle.Inclination = 60;
-            chartArea3.Name = "ChartArea1";
-            this.chartPieDailyOccurences.ChartAreas.Add(chartArea3);
+            chartArea13.Area3DStyle.Enable3D = true;
+            chartArea13.Area3DStyle.Inclination = 60;
+            chartArea13.Name = "ChartArea1";
+            this.chartPieDailyOccurences.ChartAreas.Add(chartArea13);
             this.chartPieDailyOccurences.Location = new System.Drawing.Point(624, 64);
             this.chartPieDailyOccurences.Name = "chartPieDailyOccurences";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Name = "Series1";
-            this.chartPieDailyOccurences.Series.Add(series3);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series13.Name = "Series1";
+            this.chartPieDailyOccurences.Series.Add(series13);
             this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPieDailyOccurences.TabIndex = 33;
             this.chartPieDailyOccurences.Text = "chart3";
-            title3.Name = "Title1";
-            title3.Text = "# Daily Occurences";
-            this.chartPieDailyOccurences.Titles.Add(title3);
+            title11.Name = "Title1";
+            title11.Text = "# Daily Occurences";
+            this.chartPieDailyOccurences.Titles.Add(title11);
             // 
             // chartTotalBehaviors
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartTotalBehaviors.ChartAreas.Add(chartArea4);
+            chartArea14.Name = "ChartArea1";
+            this.chartTotalBehaviors.ChartAreas.Add(chartArea14);
             this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Name = "Series1";
-            this.chartTotalBehaviors.Series.Add(series4);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series14.Name = "Series1";
+            this.chartTotalBehaviors.Series.Add(series14);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartTotalBehaviors.TabIndex = 32;
             this.chartTotalBehaviors.Text = "chart2";
-            title4.Name = "Title1";
-            title4.Text = "Total Behaviors";
-            this.chartTotalBehaviors.Titles.Add(title4);
+            title12.Name = "Title1";
+            title12.Text = "Total Behaviors";
+            this.chartTotalBehaviors.Titles.Add(title12);
             // 
             // comboBehaviorsToGraph
             // 
@@ -1903,47 +1757,47 @@
             // 
             // chartQABFAnalysis
             // 
-            chartArea5.Area3DStyle.IsRightAngleAxes = false;
-            chartArea5.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea5.Area3DStyle.Rotation = 10;
-            chartArea5.Name = "ChartArea1";
-            this.chartQABFAnalysis.ChartAreas.Add(chartArea5);
+            chartArea15.Area3DStyle.IsRightAngleAxes = false;
+            chartArea15.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea15.Area3DStyle.Rotation = 10;
+            chartArea15.Name = "ChartArea1";
+            this.chartQABFAnalysis.ChartAreas.Add(chartArea15);
             this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
             this.chartQABFAnalysis.Name = "chartQABFAnalysis";
             this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ChartArea = "ChartArea1";
-            series5.IsXValueIndexed = true;
-            series5.Name = "Series1";
-            dataPoint1.AxisLabel = "Attention";
-            dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataPoint1.IsValueShownAsLabel = false;
-            dataPoint1.IsVisibleInLegend = true;
-            dataPoint1.Label = "2.75";
-            dataPoint1.LabelAngle = 0;
-            dataPoint1.LabelBorderColor = System.Drawing.Color.Transparent;
-            dataPoint1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint1.LabelBorderWidth = 1;
-            dataPoint1.LegendText = "";
-            dataPoint2.AxisLabel = "Escape";
-            dataPoint2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataPoint2.Label = "2";
-            dataPoint3.AxisLabel = "Non-Social";
-            dataPoint3.Color = System.Drawing.Color.Gray;
-            dataPoint3.Label = "1.6";
-            dataPoint4.AxisLabel = "Physical";
-            dataPoint4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataPoint4.Label = "1.2";
-            dataPoint5.AxisLabel = "Tangible";
-            dataPoint5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataPoint5.Label = "1.6";
-            series5.Points.Add(dataPoint1);
-            series5.Points.Add(dataPoint2);
-            series5.Points.Add(dataPoint3);
-            series5.Points.Add(dataPoint4);
-            series5.Points.Add(dataPoint5);
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chartQABFAnalysis.Series.Add(series5);
+            series15.ChartArea = "ChartArea1";
+            series15.IsXValueIndexed = true;
+            series15.Name = "Series1";
+            dataPoint11.AxisLabel = "Attention";
+            dataPoint11.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataPoint11.IsValueShownAsLabel = false;
+            dataPoint11.IsVisibleInLegend = true;
+            dataPoint11.Label = "2.75";
+            dataPoint11.LabelAngle = 0;
+            dataPoint11.LabelBorderColor = System.Drawing.Color.Transparent;
+            dataPoint11.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint11.LabelBorderWidth = 1;
+            dataPoint11.LegendText = "";
+            dataPoint12.AxisLabel = "Escape";
+            dataPoint12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint12.Label = "2";
+            dataPoint13.AxisLabel = "Non-Social";
+            dataPoint13.Color = System.Drawing.Color.Gray;
+            dataPoint13.Label = "1.6";
+            dataPoint14.AxisLabel = "Physical";
+            dataPoint14.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataPoint14.Label = "1.2";
+            dataPoint15.AxisLabel = "Tangible";
+            dataPoint15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataPoint15.Label = "1.6";
+            series15.Points.Add(dataPoint11);
+            series15.Points.Add(dataPoint12);
+            series15.Points.Add(dataPoint13);
+            series15.Points.Add(dataPoint14);
+            series15.Points.Add(dataPoint15);
+            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chartQABFAnalysis.Series.Add(series15);
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
             this.chartQABFAnalysis.TabIndex = 0;
             this.chartQABFAnalysis.Text = "chart1";
@@ -2128,6 +1982,7 @@
             this.btnAddInterview.TabIndex = 1;
             this.btnAddInterview.Text = "Add Interview";
             this.btnAddInterview.UseVisualStyleBackColor = true;
+            this.btnAddInterview.Click += new System.EventHandler(this.btnAddInterview_Click);
             // 
             // lstInterviews
             // 
@@ -2140,1186 +1995,6 @@
             this.lstInterviews.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstInterviews.Size = new System.Drawing.Size(165, 303);
             this.lstInterviews.TabIndex = 0;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.label4);
-            this.tabPage5.Controls.Add(this.groupBox7);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1087, 623);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "SI new form";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(379, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Shaun Burke Interviewed";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.groupBox10);
-            this.groupBox7.Controls.Add(this.groupBox9);
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.textBox46);
-            this.groupBox7.Controls.Add(this.dateTimePicker2);
-            this.groupBox7.Controls.Add(this.textBox44);
-            this.groupBox7.Controls.Add(this.textBox43);
-            this.groupBox7.Location = new System.Drawing.Point(6, 21);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(810, 596);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Specific Report";
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.textBox51);
-            this.groupBox10.Controls.Add(this.textBox52);
-            this.groupBox10.Controls.Add(this.textBox48);
-            this.groupBox10.Controls.Add(this.textBox47);
-            this.groupBox10.Controls.Add(this.comboBox12);
-            this.groupBox10.Controls.Add(this.button23);
-            this.groupBox10.Controls.Add(this.comboBox13);
-            this.groupBox10.Controls.Add(this.button26);
-            this.groupBox10.Controls.Add(this.comboBox14);
-            this.groupBox10.Controls.Add(this.button27);
-            this.groupBox10.Controls.Add(this.comboBox15);
-            this.groupBox10.Controls.Add(this.button28);
-            this.groupBox10.Controls.Add(this.treeView2);
-            this.groupBox10.Controls.Add(this.button24);
-            this.groupBox10.Location = new System.Drawing.Point(6, 314);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(482, 257);
-            this.groupBox10.TabIndex = 6;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Part 3: Antecedents";
-            // 
-            // textBox51
-            // 
-            this.textBox51.Location = new System.Drawing.Point(357, 139);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(100, 20);
-            this.textBox51.TabIndex = 39;
-            this.textBox51.Text = "Other";
-            // 
-            // textBox52
-            // 
-            this.textBox52.Location = new System.Drawing.Point(357, 112);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(100, 20);
-            this.textBox52.TabIndex = 38;
-            this.textBox52.Text = "Other";
-            // 
-            // textBox48
-            // 
-            this.textBox48.Location = new System.Drawing.Point(357, 82);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(100, 20);
-            this.textBox48.TabIndex = 37;
-            this.textBox48.Text = "Other";
-            // 
-            // textBox47
-            // 
-            this.textBox47.Location = new System.Drawing.Point(357, 55);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(100, 20);
-            this.textBox47.TabIndex = 28;
-            this.textBox47.Text = "Other";
-            // 
-            // comboBox12
-            // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
-            "Being Stared At",
-            "Change in Staff",
-            "Criticism",
-            "Danger",
-            "Demands",
-            "Disapproval",
-            "Disruption",
-            "Frequent Change",
-            "Lack of Social Attention",
-            "Not Having Choices",
-            "Presence of Specific Person(s)",
-            "Relocation",
-            "Sexual Provocation",
-            "Teasing by Others",
-            "Tone of Voice",
-            "Too Little To Do",
-            "Too Much To Do",
-            "Other"});
-            this.comboBox12.Location = new System.Drawing.Point(220, 138);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(131, 21);
-            this.comboBox12.TabIndex = 36;
-            this.comboBox12.Text = "Social Causes";
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(139, 136);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 23);
-            this.button23.TabIndex = 35;
-            this.button23.Text = "Add";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Items.AddRange(new object[] {
-            "Anxiety",
-            "Assertiveness",
-            "Attitudes",
-            "Beliefs",
-            "Boredom",
-            "Dominance",
-            "Fear",
-            "How Thoughts Are Processed",
-            "Loneliness",
-            "Phobias",
-            "Personality Traits",
-            "Sex Drive",
-            "Shyness",
-            "Submissiveness",
-            "Suspiciousness",
-            "Vengeance",
-            "Worry",
-            "Other"});
-            this.comboBox13.Location = new System.Drawing.Point(220, 111);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(131, 21);
-            this.comboBox13.TabIndex = 34;
-            this.comboBox13.Text = "Psychological Causes";
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(139, 109);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 23);
-            this.button26.TabIndex = 33;
-            this.button26.Text = "Add";
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // comboBox14
-            // 
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Items.AddRange(new object[] {
-            "Air Quality",
-            "Close Proximity to Others",
-            "Humidity",
-            "Lightening",
-            "Limited Physical Space",
-            "Noise",
-            "Smells",
-            "Temperature",
-            "Uncomfortable Furniture",
-            "Other"});
-            this.comboBox14.Location = new System.Drawing.Point(220, 82);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(131, 21);
-            this.comboBox14.TabIndex = 32;
-            this.comboBox14.Text = "Environmental Causes";
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(139, 80);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 31;
-            this.button27.Text = "Add";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // comboBox15
-            // 
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Items.AddRange(new object[] {
-            "Allergies",
-            "Arthritis",
-            "Attention Deficit",
-            "Constipation",
-            "Delusions",
-            "Dementia",
-            "Ear Aches",
-            "Energy  - Too Little",
-            "Energy - Too Much",
-            "Fractures",
-            "Hallucinations",
-            "Headaches",
-            "Hunger",
-            "Hyperactivity",
-            "Itching",
-            "Medication Side Effects",
-            "Medication Reactions",
-            "Pain",
-            "Premenstrual Syndrome",
-            "Seizures",
-            "Sex Drive",
-            "Thirst",
-            "Tobacco Craving",
-            "Other"});
-            this.comboBox15.Location = new System.Drawing.Point(220, 55);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(131, 21);
-            this.comboBox15.TabIndex = 30;
-            this.comboBox15.Text = "Physiological Causes";
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(139, 53);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(75, 23);
-            this.button28.TabIndex = 29;
-            this.button28.Text = "Add";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // treeView2
-            // 
-            this.treeView2.Location = new System.Drawing.Point(6, 53);
-            this.treeView2.Name = "treeView2";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Allergies";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Physiological Causes of Behavior";
-            treeNode3.Name = "Node0";
-            treeNode3.Text = "Arguing";
-            treeNode4.Name = "Node1";
-            treeNode4.Text = "Lethargic";
-            this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
-            this.treeView2.Size = new System.Drawing.Size(127, 198);
-            this.treeView2.TabIndex = 28;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(6, 24);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(127, 23);
-            this.button24.TabIndex = 24;
-            this.button24.Text = "Remove Antecedent";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.treeView3);
-            this.groupBox9.Controls.Add(this.comboBox11);
-            this.groupBox9.Controls.Add(this.button20);
-            this.groupBox9.Controls.Add(this.button21);
-            this.groupBox9.Controls.Add(this.button22);
-            this.groupBox9.Controls.Add(this.comboBox9);
-            this.groupBox9.Controls.Add(this.textBox50);
-            this.groupBox9.Controls.Add(this.comboBox10);
-            this.groupBox9.Location = new System.Drawing.Point(441, 19);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(363, 289);
-            this.groupBox9.TabIndex = 5;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Part 2: Behaviors";
-            // 
-            // treeView3
-            // 
-            this.treeView3.Location = new System.Drawing.Point(6, 80);
-            this.treeView3.Name = "treeView3";
-            treeNode5.Name = "Node0";
-            treeNode5.Text = "Hourly";
-            treeNode6.Name = "Node4";
-            treeNode6.Text = "Arguing - Severe";
-            treeNode7.Name = "Node5";
-            treeNode7.Text = "Lethargic - Mild";
-            treeNode8.Name = "Node1";
-            treeNode8.Text = "Daily";
-            treeNode9.Name = "Node2";
-            treeNode9.Text = "Weekly";
-            treeNode10.Name = "Node3";
-            treeNode10.Text = "Less Often";
-            this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode8,
-            treeNode9,
-            treeNode10});
-            this.treeView3.Size = new System.Drawing.Size(170, 203);
-            this.treeView3.TabIndex = 28;
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Items.AddRange(new object[] {
-            "Hourly",
-            "Daily",
-            "Weekly",
-            "Less Often"});
-            this.comboBox11.Location = new System.Drawing.Point(255, 53);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(100, 21);
-            this.comboBox11.TabIndex = 27;
-            this.comboBox11.Text = "Frequency";
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(6, 22);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(93, 23);
-            this.button20.TabIndex = 26;
-            this.button20.Text = "Edit Behavior";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(6, 51);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(112, 23);
-            this.button21.TabIndex = 24;
-            this.button21.Text = "Remove Behavior";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(204, 84);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(100, 23);
-            this.button22.TabIndex = 23;
-            this.button22.Text = "Add Behavior";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.comboBox9.Location = new System.Drawing.Point(139, 53);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(110, 21);
-            this.comboBox9.TabIndex = 21;
-            this.comboBox9.Text = "Severity";
-            // 
-            // textBox50
-            // 
-            this.textBox50.Location = new System.Drawing.Point(255, 24);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(100, 20);
-            this.textBox50.TabIndex = 19;
-            this.textBox50.Text = "Other";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
-            "Arguing",
-            "Bedwetting",
-            "Competitiveness",
-            "Complaining",
-            "Crying / Sadness",
-            "Destructiveness",
-            "Drug / Alcohol Abuse",
-            "Elopement",
-            "Encopresis",
-            "Fearfulness",
-            "Fighting",
-            "Interrupting",
-            "Irritability",
-            "Jealousy",
-            "Lethargic",
-            "Lying",
-            "Mean Talk / Teasing",
-            "Nervous / Jittery / Pacing",
-            "Pant Wetting",
-            "Physical Aggression",
-            "Poor Personal Space",
-            "Sexual Behavior",
-            "Short Attention Span",
-            "SIB",
-            "Skipping Meals",
-            "Sleep Problems",
-            "Swearing",
-            "Verbal Aggression",
-            "Other"});
-            this.comboBox10.Location = new System.Drawing.Point(139, 22);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(110, 21);
-            this.comboBox10.TabIndex = 18;
-            this.comboBox10.Text = "Behaviors";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.textBox45);
-            this.groupBox8.Controls.Add(this.button30);
-            this.groupBox8.Controls.Add(this.comboBox7);
-            this.groupBox8.Controls.Add(this.button14);
-            this.groupBox8.Controls.Add(this.comboBox8);
-            this.groupBox8.Controls.Add(this.button15);
-            this.groupBox8.Controls.Add(this.comboBox6);
-            this.groupBox8.Controls.Add(this.button13);
-            this.groupBox8.Controls.Add(this.comboBox5);
-            this.groupBox8.Controls.Add(this.button12);
-            this.groupBox8.Controls.Add(this.button11);
-            this.groupBox8.Controls.Add(this.treeView1);
-            this.groupBox8.Location = new System.Drawing.Point(6, 103);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(429, 205);
-            this.groupBox8.TabIndex = 4;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Part 1: Strengths";
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(258, 133);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(165, 20);
-            this.textBox45.TabIndex = 11;
-            this.textBox45.Text = "Other Strength";
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(177, 131);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 23);
-            this.button30.TabIndex = 10;
-            this.button30.Text = "Add";
-            this.button30.UseVisualStyleBackColor = true;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
-            "Honesty",
-            "Temperence",
-            "Self-Control",
-            "Wisdom",
-            "Spirituality"});
-            this.comboBox7.Location = new System.Drawing.Point(258, 102);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(165, 21);
-            this.comboBox7.TabIndex = 9;
-            this.comboBox7.Text = "Strengths of Tolerance";
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(177, 102);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 8;
-            this.button14.Text = "Add";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
-            "Kindness",
-            "Responsibility",
-            "Humor",
-            "Capacity to love / be loved",
-            "Citizenship",
-            "Humane Leadership"});
-            this.comboBox8.Location = new System.Drawing.Point(258, 75);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(165, 21);
-            this.comboBox8.TabIndex = 7;
-            this.comboBox8.Text = "Rational and Civic Strengths";
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(177, 75);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 6;
-            this.button15.Text = "Add";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "Courage",
-            "Industry",
-            "Perserverance",
-            "Integrity"});
-            this.comboBox6.Location = new System.Drawing.Point(258, 48);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(165, 21);
-            this.comboBox6.TabIndex = 5;
-            this.comboBox6.Text = "Strengths of Will";
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(177, 46);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "Add";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Awe / Wonder / Gratitude",
-            "Hope / Optimism",
-            "Love of Life / Zest",
-            "Future-minded"});
-            this.comboBox5.Location = new System.Drawing.Point(258, 21);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(165, 21);
-            this.comboBox5.TabIndex = 3;
-            this.comboBox5.Text = "Strengths of Emotion";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(177, 19);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "Add";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(6, 23);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(101, 23);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Remove Strength";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(6, 52);
-            this.treeView1.Name = "treeView1";
-            treeNode11.Name = "Node1";
-            treeNode11.Text = "Hope / Optimism";
-            treeNode12.Name = "Node0";
-            treeNode12.Text = "Strengths of Emotion";
-            treeNode13.Name = "Node2";
-            treeNode13.Text = "Strengths of Will";
-            treeNode14.Name = "Node5";
-            treeNode14.Text = "Humor";
-            treeNode15.Name = "Node6";
-            treeNode15.Text = "Citizenship";
-            treeNode16.Name = "Node3";
-            treeNode16.Text = "Rational and Civic Strengths";
-            treeNode17.Name = "Node4";
-            treeNode17.Text = "Strengths of Tolerance";
-            treeNode18.Name = "Node0";
-            treeNode18.Text = "Other Strengths";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode13,
-            treeNode16,
-            treeNode17,
-            treeNode18});
-            this.treeView1.Size = new System.Drawing.Size(165, 147);
-            this.treeView1.TabIndex = 0;
-            // 
-            // textBox46
-            // 
-            this.textBox46.Location = new System.Drawing.Point(112, 67);
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(100, 20);
-            this.textBox46.TabIndex = 3;
-            this.textBox46.Text = "Staff Role";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(123, 38);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 2;
-            // 
-            // textBox44
-            // 
-            this.textBox44.Location = new System.Drawing.Point(6, 67);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(100, 20);
-            this.textBox44.TabIndex = 1;
-            this.textBox44.Text = "Staff Interviewed";
-            // 
-            // textBox43
-            // 
-            this.textBox43.Location = new System.Drawing.Point(6, 41);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(100, 20);
-            this.textBox43.TabIndex = 0;
-            this.textBox43.Text = "Interviewer";
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.label23);
-            this.tabPage6.Controls.Add(this.groupBox11);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1087, 623);
-            this.tabPage6.TabIndex = 6;
-            this.tabPage6.Text = "SI new form (cont.)";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(379, 6);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(127, 13);
-            this.label23.TabIndex = 8;
-            this.label23.Text = "Shaun Burke Interviewed";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.button29);
-            this.groupBox11.Controls.Add(this.label22);
-            this.groupBox11.Controls.Add(this.button25);
-            this.groupBox11.Controls.Add(this.button10);
-            this.groupBox11.Controls.Add(this.label20);
-            this.groupBox11.Controls.Add(this.label19);
-            this.groupBox11.Controls.Add(this.label18);
-            this.groupBox11.Controls.Add(this.label21);
-            this.groupBox11.Controls.Add(this.comboBox25);
-            this.groupBox11.Controls.Add(this.comboBox26);
-            this.groupBox11.Controls.Add(this.comboBox27);
-            this.groupBox11.Controls.Add(this.comboBox28);
-            this.groupBox11.Controls.Add(this.comboBox29);
-            this.groupBox11.Controls.Add(this.comboBox30);
-            this.groupBox11.Controls.Add(this.comboBox31);
-            this.groupBox11.Controls.Add(this.comboBox32);
-            this.groupBox11.Controls.Add(this.comboBox33);
-            this.groupBox11.Controls.Add(this.comboBox24);
-            this.groupBox11.Controls.Add(this.comboBox23);
-            this.groupBox11.Controls.Add(this.comboBox22);
-            this.groupBox11.Controls.Add(this.comboBox21);
-            this.groupBox11.Controls.Add(this.comboBox20);
-            this.groupBox11.Controls.Add(this.comboBox19);
-            this.groupBox11.Controls.Add(this.comboBox18);
-            this.groupBox11.Controls.Add(this.comboBox17);
-            this.groupBox11.Controls.Add(this.comboBox16);
-            this.groupBox11.Controls.Add(this.label12);
-            this.groupBox11.Controls.Add(this.label13);
-            this.groupBox11.Controls.Add(this.label14);
-            this.groupBox11.Controls.Add(this.label15);
-            this.groupBox11.Controls.Add(this.label16);
-            this.groupBox11.Controls.Add(this.label17);
-            this.groupBox11.Controls.Add(this.label9);
-            this.groupBox11.Controls.Add(this.label10);
-            this.groupBox11.Controls.Add(this.label11);
-            this.groupBox11.Controls.Add(this.label8);
-            this.groupBox11.Controls.Add(this.label7);
-            this.groupBox11.Controls.Add(this.button7);
-            this.groupBox11.Controls.Add(this.treeView4);
-            this.groupBox11.Controls.Add(this.label6);
-            this.groupBox11.Controls.Add(this.label2);
-            this.groupBox11.Controls.Add(this.label5);
-            this.groupBox11.Location = new System.Drawing.Point(22, 22);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(783, 595);
-            this.groupBox11.TabIndex = 7;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Part 4: QABF";
-            // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(6, 44);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(75, 23);
-            this.button29.TabIndex = 100;
-            this.button29.Text = "Edit";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(372, 516);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 13);
-            this.label22.TabIndex = 99;
-            this.label22.Text = "Page 1";
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(482, 511);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(89, 23);
-            this.button25.TabIndex = 98;
-            this.button25.Text = "Next Page";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(224, 511);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(89, 23);
-            this.button10.TabIndex = 97;
-            this.button10.Text = "Previous Page";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(295, 481);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(419, 13);
-            this.label20.TabIndex = 96;
-            this.label20.Text = "18. Engages in the behavior in a highly repetitive manner, ignoring his/her surro" +
-    "undings.";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(295, 454);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(343, 13);
-            this.label19.TabIndex = 95;
-            this.label19.Text = "17. Engages in the behavior to try to get people to leave him/her alone.";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(295, 427);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(292, 13);
-            this.label18.TabIndex = 94;
-            this.label18.Text = "16. Engages in the behavior to try to get a reaction from you.";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(295, 400);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(359, 13);
-            this.label21.TabIndex = 93;
-            this.label21.Text = "15. Engages in the behavior when you have something that he/she wants.";
-            // 
-            // comboBox25
-            // 
-            this.comboBox25.FormattingEnabled = true;
-            this.comboBox25.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox25.Location = new System.Drawing.Point(179, 478);
-            this.comboBox25.Name = "comboBox25";
-            this.comboBox25.Size = new System.Drawing.Size(110, 21);
-            this.comboBox25.TabIndex = 92;
-            this.comboBox25.Text = "Score";
-            // 
-            // comboBox26
-            // 
-            this.comboBox26.FormattingEnabled = true;
-            this.comboBox26.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox26.Location = new System.Drawing.Point(179, 451);
-            this.comboBox26.Name = "comboBox26";
-            this.comboBox26.Size = new System.Drawing.Size(110, 21);
-            this.comboBox26.TabIndex = 91;
-            this.comboBox26.Text = "Score";
-            // 
-            // comboBox27
-            // 
-            this.comboBox27.FormattingEnabled = true;
-            this.comboBox27.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox27.Location = new System.Drawing.Point(179, 424);
-            this.comboBox27.Name = "comboBox27";
-            this.comboBox27.Size = new System.Drawing.Size(110, 21);
-            this.comboBox27.TabIndex = 90;
-            this.comboBox27.Text = "Score";
-            // 
-            // comboBox28
-            // 
-            this.comboBox28.FormattingEnabled = true;
-            this.comboBox28.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox28.Location = new System.Drawing.Point(179, 397);
-            this.comboBox28.Name = "comboBox28";
-            this.comboBox28.Size = new System.Drawing.Size(110, 21);
-            this.comboBox28.TabIndex = 89;
-            this.comboBox28.Text = "Score";
-            // 
-            // comboBox29
-            // 
-            this.comboBox29.FormattingEnabled = true;
-            this.comboBox29.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox29.Location = new System.Drawing.Point(179, 370);
-            this.comboBox29.Name = "comboBox29";
-            this.comboBox29.Size = new System.Drawing.Size(110, 21);
-            this.comboBox29.TabIndex = 88;
-            this.comboBox29.Text = "Score";
-            // 
-            // comboBox30
-            // 
-            this.comboBox30.FormattingEnabled = true;
-            this.comboBox30.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox30.Location = new System.Drawing.Point(179, 343);
-            this.comboBox30.Name = "comboBox30";
-            this.comboBox30.Size = new System.Drawing.Size(110, 21);
-            this.comboBox30.TabIndex = 87;
-            this.comboBox30.Text = "Score";
-            // 
-            // comboBox31
-            // 
-            this.comboBox31.FormattingEnabled = true;
-            this.comboBox31.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox31.Location = new System.Drawing.Point(179, 316);
-            this.comboBox31.Name = "comboBox31";
-            this.comboBox31.Size = new System.Drawing.Size(110, 21);
-            this.comboBox31.TabIndex = 86;
-            this.comboBox31.Text = "Score";
-            // 
-            // comboBox32
-            // 
-            this.comboBox32.FormattingEnabled = true;
-            this.comboBox32.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox32.Location = new System.Drawing.Point(179, 289);
-            this.comboBox32.Name = "comboBox32";
-            this.comboBox32.Size = new System.Drawing.Size(110, 21);
-            this.comboBox32.TabIndex = 85;
-            this.comboBox32.Text = "Score";
-            // 
-            // comboBox33
-            // 
-            this.comboBox33.FormattingEnabled = true;
-            this.comboBox33.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox33.Location = new System.Drawing.Point(179, 262);
-            this.comboBox33.Name = "comboBox33";
-            this.comboBox33.Size = new System.Drawing.Size(110, 21);
-            this.comboBox33.TabIndex = 84;
-            this.comboBox33.Text = "Score";
-            // 
-            // comboBox24
-            // 
-            this.comboBox24.FormattingEnabled = true;
-            this.comboBox24.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox24.Location = new System.Drawing.Point(179, 235);
-            this.comboBox24.Name = "comboBox24";
-            this.comboBox24.Size = new System.Drawing.Size(110, 21);
-            this.comboBox24.TabIndex = 83;
-            this.comboBox24.Text = "Score";
-            // 
-            // comboBox23
-            // 
-            this.comboBox23.FormattingEnabled = true;
-            this.comboBox23.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox23.Location = new System.Drawing.Point(179, 208);
-            this.comboBox23.Name = "comboBox23";
-            this.comboBox23.Size = new System.Drawing.Size(110, 21);
-            this.comboBox23.TabIndex = 82;
-            this.comboBox23.Text = "Score";
-            // 
-            // comboBox22
-            // 
-            this.comboBox22.FormattingEnabled = true;
-            this.comboBox22.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox22.Location = new System.Drawing.Point(179, 181);
-            this.comboBox22.Name = "comboBox22";
-            this.comboBox22.Size = new System.Drawing.Size(110, 21);
-            this.comboBox22.TabIndex = 81;
-            this.comboBox22.Text = "Score";
-            // 
-            // comboBox21
-            // 
-            this.comboBox21.FormattingEnabled = true;
-            this.comboBox21.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox21.Location = new System.Drawing.Point(179, 154);
-            this.comboBox21.Name = "comboBox21";
-            this.comboBox21.Size = new System.Drawing.Size(110, 21);
-            this.comboBox21.TabIndex = 80;
-            this.comboBox21.Text = "Score";
-            // 
-            // comboBox20
-            // 
-            this.comboBox20.FormattingEnabled = true;
-            this.comboBox20.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox20.Location = new System.Drawing.Point(179, 127);
-            this.comboBox20.Name = "comboBox20";
-            this.comboBox20.Size = new System.Drawing.Size(110, 21);
-            this.comboBox20.TabIndex = 79;
-            this.comboBox20.Text = "Score";
-            // 
-            // comboBox19
-            // 
-            this.comboBox19.FormattingEnabled = true;
-            this.comboBox19.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox19.Location = new System.Drawing.Point(179, 100);
-            this.comboBox19.Name = "comboBox19";
-            this.comboBox19.Size = new System.Drawing.Size(110, 21);
-            this.comboBox19.TabIndex = 78;
-            this.comboBox19.Text = "Score";
-            // 
-            // comboBox18
-            // 
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox18.Location = new System.Drawing.Point(179, 73);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(110, 21);
-            this.comboBox18.TabIndex = 77;
-            this.comboBox18.Text = "Score";
-            // 
-            // comboBox17
-            // 
-            this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox17.Location = new System.Drawing.Point(179, 46);
-            this.comboBox17.Name = "comboBox17";
-            this.comboBox17.Size = new System.Drawing.Size(110, 21);
-            this.comboBox17.TabIndex = 76;
-            this.comboBox17.Text = "Score";
-            // 
-            // comboBox16
-            // 
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Items.AddRange(new object[] {
-            "Doesn\'t Apply",
-            "Never",
-            "Rarely",
-            "Some",
-            "Often"});
-            this.comboBox16.Location = new System.Drawing.Point(179, 19);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(110, 21);
-            this.comboBox16.TabIndex = 75;
-            this.comboBox16.Text = "Score";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(295, 373);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(394, 13);
-            this.label12.TabIndex = 74;
-            this.label12.Text = "14. Engages in the behavior when there is something bothering him/her physically." +
-    "";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(295, 346);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(311, 13);
-            this.label13.TabIndex = 73;
-            this.label13.Text = "13. Engages in the behavior because there is nothing else to do.";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(295, 319);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(357, 13);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "12. Engages in the behavior when he/she does not want to do something.";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(295, 292);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(308, 13);
-            this.label15.TabIndex = 71;
-            this.label15.Text = "11. Engages in the behavior to draw attention to himself/herself.";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(295, 265);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(357, 13);
-            this.label16.TabIndex = 70;
-            this.label16.Text = "10. Engages in the behavior when you take something away from him/her.";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(295, 238);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(297, 13);
-            this.label17.TabIndex = 69;
-            this.label17.Text = "9. Engages in the behavior more frequently when he/she is ill.";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(295, 211);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(341, 13);
-            this.label9.TabIndex = 68;
-            this.label9.Text = "8. Engages in the behavior even if he/she thinks no one is in the room.";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(295, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(452, 13);
-            this.label10.TabIndex = 67;
-            this.label10.Text = "7. Engages in the behavior when asked to do something (get dressed, brush teeth, " +
-    "work, etc.).";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(295, 157);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(330, 13);
-            this.label11.TabIndex = 66;
-            this.label11.Text = "6. Engages in the behavior because he/she likes to be reprimanded.";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(295, 130);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(445, 13);
-            this.label8.TabIndex = 65;
-            this.label8.Text = "5. Engages in the behavior to get access to items such as preferred toys, food, o" +
-    "r beverages.";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(295, 103);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(262, 13);
-            this.label7.TabIndex = 64;
-            this.label7.Text = "4. Engages in the behavior because he/she is in pain.";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(360, 555);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 63;
-            this.button7.Text = "Save";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // treeView4
-            // 
-            this.treeView4.Location = new System.Drawing.Point(6, 73);
-            this.treeView4.Name = "treeView4";
-            treeNode19.Name = "Node2";
-            treeNode19.Text = "Arguing";
-            treeNode20.Name = "Node0";
-            treeNode20.Text = "Uncompleted";
-            treeNode21.Name = "Node3";
-            treeNode21.Text = "Lethargic";
-            treeNode22.Name = "Node1";
-            treeNode22.Text = "Completed";
-            this.treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode20,
-            treeNode22});
-            this.treeView4.Size = new System.Drawing.Size(167, 281);
-            this.treeView4.TabIndex = 62;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(295, 76);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(276, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "3. Engages in the behavior as a form of \"self-stimulation\".";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(295, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 13);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "2. Engages in behavior to escape work or learning situations.";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(295, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 13);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "1. Engages in the behavior to get attention.";
             // 
             // menuStrip1
             // 
@@ -3379,6 +2054,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(273, 9);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(33, 13);
+            this.label72.TabIndex = 37;
+            this.label72.Text = "Other";
+            // 
+            // txtRaceOther
+            // 
+            this.txtRaceOther.Location = new System.Drawing.Point(198, 227);
+            this.txtRaceOther.Name = "txtRaceOther";
+            this.txtRaceOther.Size = new System.Drawing.Size(94, 20);
+            this.txtRaceOther.TabIndex = 47;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3423,20 +2114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBehaviorsStaffInterviews)).EndInit();
             this.groupBox13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -3504,7 +2181,6 @@
         private System.Windows.Forms.Button btnAddISP;
         private System.Windows.Forms.ListBox lstISP;
         private System.Windows.Forms.Button btnSaveClient;
-        private System.Windows.Forms.Button btnEditClient;
         private System.Windows.Forms.DateTimePicker datePickerBeginDailyBehavior;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox txtDailyBehaviorOther;
@@ -3513,99 +2189,12 @@
         private System.Windows.Forms.Button btnAddDailyBehavior;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ListBox lstInterviews;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.TextBox textBox46;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.TextBox textBox43;
         private System.Windows.Forms.Button btnViewInterview;
         private System.Windows.Forms.Button btnRemoveInterview;
         private System.Windows.Forms.Button btnAddInterview;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.TextBox textBox50;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.ComboBox comboBox14;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.ComboBox comboBox15;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.TreeView treeView2;
-        private System.Windows.Forms.TextBox textBox51;
-        private System.Windows.Forms.TextBox textBox52;
-        private System.Windows.Forms.TextBox textBox48;
-        private System.Windows.Forms.TextBox textBox47;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridViewDailyBehaviorTracking;
         private System.Windows.Forms.ListBox lstClientsDailyBehaviors;
-        private System.Windows.Forms.TreeView treeView3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TreeView treeView4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox25;
-        private System.Windows.Forms.ComboBox comboBox26;
-        private System.Windows.Forms.ComboBox comboBox27;
-        private System.Windows.Forms.ComboBox comboBox28;
-        private System.Windows.Forms.ComboBox comboBox29;
-        private System.Windows.Forms.ComboBox comboBox30;
-        private System.Windows.Forms.ComboBox comboBox31;
-        private System.Windows.Forms.ComboBox comboBox32;
-        private System.Windows.Forms.ComboBox comboBox33;
-        private System.Windows.Forms.ComboBox comboBox24;
-        private System.Windows.Forms.ComboBox comboBox23;
-        private System.Windows.Forms.ComboBox comboBox22;
-        private System.Windows.Forms.ComboBox comboBox21;
-        private System.Windows.Forms.ComboBox comboBox20;
-        private System.Windows.Forms.ComboBox comboBox19;
-        private System.Windows.Forms.ComboBox comboBox18;
-        private System.Windows.Forms.ComboBox comboBox17;
-        private System.Windows.Forms.ComboBox comboBox16;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button29;
         private System.Windows.Forms.TextBox txtAdmittanceDate;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.DataGridView dataGridViewStrengths;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -3628,8 +2217,6 @@
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartQABFAnalysis;
         private System.Windows.Forms.DateTimePicker datePickerEndDailyBehavior;
-        private System.Windows.Forms.TextBox textBox45;
-        private System.Windows.Forms.Button button30;
         private System.Windows.Forms.ComboBox comboPickTimeDailyBehavior;
         private System.Windows.Forms.CheckBox chkUseCustomDatesDailyBehavior;
         private System.Windows.Forms.ListBox listBehaviorsToGraph;
@@ -3702,7 +2289,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnShiftTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStaffNames;
         private System.Windows.Forms.Button btnSaveDailyBehavior;
-        private System.Windows.Forms.Button btnEditDailyBehavior;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label69;
@@ -3712,6 +2298,8 @@
         private System.Windows.Forms.ComboBox comboPickTimeGraphs;
         private System.Windows.Forms.DateTimePicker datePickerEndGraphs;
         private System.Windows.Forms.DateTimePicker datePickerBeginGraphs;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.TextBox txtRaceOther;
     }
 }
 

@@ -16,5 +16,14 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Displays all uncompleted and completed QABFs in a new form.
+        /// </summary>
+        private void btnQABFs_Click(object sender, EventArgs e)
+        {
+            FormQABF formQABF = new FormQABF();
+            formQABF.ShowDialog();
+        }
     }
 }

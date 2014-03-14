@@ -52,6 +52,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQABF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQABF.Designer.cs">
+      <DependentUpon>FormQABF.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStaffInterview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQABF.resx">
+      <DependentUpon>FormQABF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStaffInterview.resx">
       <DependentUpon>FormStaffInterview.cs</DependentUpon>
