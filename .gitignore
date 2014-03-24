@@ -1,6 +1,6 @@
 *.config
 *.settings
-Project-Starphish/Properties/Settings.Designer.cs/
+Project-Starphish/Properties/Settings.Designer.cs
 
 
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
