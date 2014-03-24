@@ -183,6 +183,13 @@
             this.txtDailyBehaviorOther = new System.Windows.Forms.TextBox();
             this.comboDailyBehaviors = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.radUseTimeFrames = new System.Windows.Forms.RadioButton();
+            this.radUseCustomQuarters = new System.Windows.Forms.RadioButton();
+            this.radUseCustomDates = new System.Windows.Forms.RadioButton();
+            this.chkQuarter4 = new System.Windows.Forms.CheckBox();
+            this.chkQuarter3 = new System.Windows.Forms.CheckBox();
+            this.chkQuarter2 = new System.Windows.Forms.CheckBox();
+            this.chkQuarter1 = new System.Windows.Forms.CheckBox();
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
@@ -231,13 +238,9 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.chkQuarter1 = new System.Windows.Forms.CheckBox();
-            this.chkQuarter2 = new System.Windows.Forms.CheckBox();
-            this.chkQuarter3 = new System.Windows.Forms.CheckBox();
-            this.chkQuarter4 = new System.Windows.Forms.CheckBox();
-            this.radUseCustomDates = new System.Windows.Forms.RadioButton();
-            this.radUseCustomQuarters = new System.Windows.Forms.RadioButton();
-            this.radUseTimeFrames = new System.Windows.Forms.RadioButton();
+            this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectStarphishDataSet = new GUI.ProjectStarphishDataSet();
+            this.pERSONTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSONTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -265,6 +268,8 @@
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -422,6 +427,7 @@
             this.btnSaveClient.TabIndex = 34;
             this.btnSaveClient.Text = "Save";
             this.btnSaveClient.UseVisualStyleBackColor = true;
+            this.btnSaveClient.Click += new System.EventHandler(this.btnSaveClient_Click);
             // 
             // groupBox6
             // 
@@ -1035,6 +1041,7 @@
             // 
             // txtLastName
             // 
+            this.txtLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "LNAME", true));
             this.txtLastName.Location = new System.Drawing.Point(6, 32);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(79, 20);
@@ -1575,6 +1582,78 @@
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // radUseTimeFrames
+            // 
+            this.radUseTimeFrames.AutoSize = true;
+            this.radUseTimeFrames.Checked = true;
+            this.radUseTimeFrames.Location = new System.Drawing.Point(437, 11);
+            this.radUseTimeFrames.Name = "radUseTimeFrames";
+            this.radUseTimeFrames.Size = new System.Drawing.Size(107, 17);
+            this.radUseTimeFrames.TabIndex = 51;
+            this.radUseTimeFrames.TabStop = true;
+            this.radUseTimeFrames.Text = "Use Time Frames";
+            this.radUseTimeFrames.UseVisualStyleBackColor = true;
+            // 
+            // radUseCustomQuarters
+            // 
+            this.radUseCustomQuarters.AutoSize = true;
+            this.radUseCustomQuarters.Location = new System.Drawing.Point(684, 34);
+            this.radUseCustomQuarters.Name = "radUseCustomQuarters";
+            this.radUseCustomQuarters.Size = new System.Drawing.Size(125, 17);
+            this.radUseCustomQuarters.TabIndex = 50;
+            this.radUseCustomQuarters.Text = "Use Custom Quarters";
+            this.radUseCustomQuarters.UseVisualStyleBackColor = true;
+            // 
+            // radUseCustomDates
+            // 
+            this.radUseCustomDates.AutoSize = true;
+            this.radUseCustomDates.Location = new System.Drawing.Point(437, 34);
+            this.radUseCustomDates.Name = "radUseCustomDates";
+            this.radUseCustomDates.Size = new System.Drawing.Size(113, 17);
+            this.radUseCustomDates.TabIndex = 49;
+            this.radUseCustomDates.Text = "Use Custom Dates";
+            this.radUseCustomDates.UseVisualStyleBackColor = true;
+            // 
+            // chkQuarter4
+            // 
+            this.chkQuarter4.AutoSize = true;
+            this.chkQuarter4.Location = new System.Drawing.Point(903, 36);
+            this.chkQuarter4.Name = "chkQuarter4";
+            this.chkQuarter4.Size = new System.Drawing.Size(79, 17);
+            this.chkQuarter4.TabIndex = 48;
+            this.chkQuarter4.Text = "4th Quarter";
+            this.chkQuarter4.UseVisualStyleBackColor = true;
+            // 
+            // chkQuarter3
+            // 
+            this.chkQuarter3.AutoSize = true;
+            this.chkQuarter3.Location = new System.Drawing.Point(903, 13);
+            this.chkQuarter3.Name = "chkQuarter3";
+            this.chkQuarter3.Size = new System.Drawing.Size(79, 17);
+            this.chkQuarter3.TabIndex = 47;
+            this.chkQuarter3.Text = "3rd Quarter";
+            this.chkQuarter3.UseVisualStyleBackColor = true;
+            // 
+            // chkQuarter2
+            // 
+            this.chkQuarter2.AutoSize = true;
+            this.chkQuarter2.Location = new System.Drawing.Point(815, 36);
+            this.chkQuarter2.Name = "chkQuarter2";
+            this.chkQuarter2.Size = new System.Drawing.Size(82, 17);
+            this.chkQuarter2.TabIndex = 46;
+            this.chkQuarter2.Text = "2nd Quarter";
+            this.chkQuarter2.UseVisualStyleBackColor = true;
+            // 
+            // chkQuarter1
+            // 
+            this.chkQuarter1.AutoSize = true;
+            this.chkQuarter1.Location = new System.Drawing.Point(815, 13);
+            this.chkQuarter1.Name = "chkQuarter1";
+            this.chkQuarter1.Size = new System.Drawing.Size(78, 17);
+            this.chkQuarter1.TabIndex = 45;
+            this.chkQuarter1.Text = "1st Quarter";
+            this.chkQuarter1.UseVisualStyleBackColor = true;
+            // 
             // label68
             // 
             this.label68.AutoSize = true;
@@ -2041,6 +2120,7 @@
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
             this.addClientToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.addClientToolStripMenuItem.Text = "Add Client";
+            this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
             // removeClientToolStripMenuItem
             // 
@@ -2073,77 +2153,19 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // chkQuarter1
+            // pERSONBindingSource
             // 
-            this.chkQuarter1.AutoSize = true;
-            this.chkQuarter1.Location = new System.Drawing.Point(815, 13);
-            this.chkQuarter1.Name = "chkQuarter1";
-            this.chkQuarter1.Size = new System.Drawing.Size(78, 17);
-            this.chkQuarter1.TabIndex = 45;
-            this.chkQuarter1.Text = "1st Quarter";
-            this.chkQuarter1.UseVisualStyleBackColor = true;
+            this.pERSONBindingSource.DataMember = "PERSON";
+            this.pERSONBindingSource.DataSource = this.projectStarphishDataSet;
             // 
-            // chkQuarter2
+            // projectStarphishDataSet
             // 
-            this.chkQuarter2.AutoSize = true;
-            this.chkQuarter2.Location = new System.Drawing.Point(815, 36);
-            this.chkQuarter2.Name = "chkQuarter2";
-            this.chkQuarter2.Size = new System.Drawing.Size(82, 17);
-            this.chkQuarter2.TabIndex = 46;
-            this.chkQuarter2.Text = "2nd Quarter";
-            this.chkQuarter2.UseVisualStyleBackColor = true;
+            this.projectStarphishDataSet.DataSetName = "ProjectStarphishDataSet";
+            this.projectStarphishDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // chkQuarter3
+            // pERSONTableAdapter
             // 
-            this.chkQuarter3.AutoSize = true;
-            this.chkQuarter3.Location = new System.Drawing.Point(903, 13);
-            this.chkQuarter3.Name = "chkQuarter3";
-            this.chkQuarter3.Size = new System.Drawing.Size(79, 17);
-            this.chkQuarter3.TabIndex = 47;
-            this.chkQuarter3.Text = "3rd Quarter";
-            this.chkQuarter3.UseVisualStyleBackColor = true;
-            // 
-            // chkQuarter4
-            // 
-            this.chkQuarter4.AutoSize = true;
-            this.chkQuarter4.Location = new System.Drawing.Point(903, 36);
-            this.chkQuarter4.Name = "chkQuarter4";
-            this.chkQuarter4.Size = new System.Drawing.Size(79, 17);
-            this.chkQuarter4.TabIndex = 48;
-            this.chkQuarter4.Text = "4th Quarter";
-            this.chkQuarter4.UseVisualStyleBackColor = true;
-            // 
-            // radUseCustomDates
-            // 
-            this.radUseCustomDates.AutoSize = true;
-            this.radUseCustomDates.Location = new System.Drawing.Point(437, 34);
-            this.radUseCustomDates.Name = "radUseCustomDates";
-            this.radUseCustomDates.Size = new System.Drawing.Size(113, 17);
-            this.radUseCustomDates.TabIndex = 49;
-            this.radUseCustomDates.Text = "Use Custom Dates";
-            this.radUseCustomDates.UseVisualStyleBackColor = true;
-            // 
-            // radUseCustomQuarters
-            // 
-            this.radUseCustomQuarters.AutoSize = true;
-            this.radUseCustomQuarters.Location = new System.Drawing.Point(684, 34);
-            this.radUseCustomQuarters.Name = "radUseCustomQuarters";
-            this.radUseCustomQuarters.Size = new System.Drawing.Size(125, 17);
-            this.radUseCustomQuarters.TabIndex = 50;
-            this.radUseCustomQuarters.Text = "Use Custom Quarters";
-            this.radUseCustomQuarters.UseVisualStyleBackColor = true;
-            // 
-            // radUseTimeFrames
-            // 
-            this.radUseTimeFrames.AutoSize = true;
-            this.radUseTimeFrames.Checked = true;
-            this.radUseTimeFrames.Location = new System.Drawing.Point(437, 11);
-            this.radUseTimeFrames.Name = "radUseTimeFrames";
-            this.radUseTimeFrames.Size = new System.Drawing.Size(107, 17);
-            this.radUseTimeFrames.TabIndex = 51;
-            this.radUseTimeFrames.TabStop = true;
-            this.radUseTimeFrames.Text = "Use Time Frames";
-            this.radUseTimeFrames.UseVisualStyleBackColor = true;
+            this.pERSONTableAdapter.ClearBeforeFill = true;
             // 
             // FormMain
             // 
@@ -2155,6 +2177,7 @@
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Sky Pie - Michael Petruzzello";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -2191,6 +2214,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2381,6 +2406,9 @@
         private System.Windows.Forms.CheckBox chkQuarter3;
         private System.Windows.Forms.CheckBox chkQuarter2;
         private System.Windows.Forms.CheckBox chkQuarter1;
+        private ProjectStarphishDataSet projectStarphishDataSet;
+        private System.Windows.Forms.BindingSource pERSONBindingSource;
+        private ProjectStarphishDataSetTableAdapters.PERSONTableAdapter pERSONTableAdapter;
     }
 }
 
