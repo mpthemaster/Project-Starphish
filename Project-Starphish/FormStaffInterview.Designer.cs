@@ -42,17 +42,11 @@
             treeNode7});
             System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Weekly");
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Hope / Optimism");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Strengths of Emotion", new System.Windows.Forms.TreeNode[] {
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Humor");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Citizenship");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths", new System.Windows.Forms.TreeNode[] {
-            treeNode14,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Other Strengths");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Strengths of Emotion");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Strengths of Will");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Other Strengths");
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -63,7 +57,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtSocialCauseOther = new System.Windows.Forms.TextBox();
-            this.txtPsyhologicalCauseOther = new System.Windows.Forms.TextBox();
+            this.txtPsychologicalCauseOther = new System.Windows.Forms.TextBox();
             this.txtEnvironmentalCauseOther = new System.Windows.Forms.TextBox();
             this.txtPhysiologicalCauseOther = new System.Windows.Forms.TextBox();
             this.comboSocialCause = new System.Windows.Forms.ComboBox();
@@ -91,7 +85,7 @@
             this.comboBehavior = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboOtherStrength = new System.Windows.Forms.TextBox();
+            this.txtOtherStrength = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -133,7 +127,7 @@
             this.groupBox10.Controls.Add(this.label14);
             this.groupBox10.Controls.Add(this.label13);
             this.groupBox10.Controls.Add(this.txtSocialCauseOther);
-            this.groupBox10.Controls.Add(this.txtPsyhologicalCauseOther);
+            this.groupBox10.Controls.Add(this.txtPsychologicalCauseOther);
             this.groupBox10.Controls.Add(this.txtEnvironmentalCauseOther);
             this.groupBox10.Controls.Add(this.txtPhysiologicalCauseOther);
             this.groupBox10.Controls.Add(this.comboSocialCause);
@@ -146,9 +140,9 @@
             this.groupBox10.Controls.Add(this.btnAddPhysiologicalCause);
             this.groupBox10.Controls.Add(this.treeViewAntecedents);
             this.groupBox10.Controls.Add(this.btnRemoveAntecedents);
-            this.groupBox10.Location = new System.Drawing.Point(173, 358);
+            this.groupBox10.Location = new System.Drawing.Point(154, 358);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(553, 257);
+            this.groupBox10.Size = new System.Drawing.Size(600, 257);
             this.groupBox10.TabIndex = 6;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Part 3: Antecedents";
@@ -156,7 +150,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(440, 18);
+            this.label20.Location = new System.Drawing.Point(491, 18);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(33, 13);
             this.label20.TabIndex = 47;
@@ -165,7 +159,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(440, 60);
+            this.label19.Location = new System.Drawing.Point(491, 60);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(33, 13);
             this.label19.TabIndex = 46;
@@ -174,7 +168,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(440, 100);
+            this.label18.Location = new System.Drawing.Point(491, 103);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(33, 13);
             this.label18.TabIndex = 45;
@@ -183,7 +177,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(440, 142);
+            this.label17.Location = new System.Drawing.Point(491, 145);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(33, 13);
             this.label17.TabIndex = 44;
@@ -227,28 +221,32 @@
             // 
             // txtSocialCauseOther
             // 
-            this.txtSocialCauseOther.Location = new System.Drawing.Point(443, 158);
+            this.txtSocialCauseOther.Enabled = false;
+            this.txtSocialCauseOther.Location = new System.Drawing.Point(494, 161);
             this.txtSocialCauseOther.Name = "txtSocialCauseOther";
             this.txtSocialCauseOther.Size = new System.Drawing.Size(100, 20);
             this.txtSocialCauseOther.TabIndex = 39;
             // 
-            // txtPsyhologicalCauseOther
+            // txtPsychologicalCauseOther
             // 
-            this.txtPsyhologicalCauseOther.Location = new System.Drawing.Point(443, 116);
-            this.txtPsyhologicalCauseOther.Name = "txtPsyhologicalCauseOther";
-            this.txtPsyhologicalCauseOther.Size = new System.Drawing.Size(100, 20);
-            this.txtPsyhologicalCauseOther.TabIndex = 38;
+            this.txtPsychologicalCauseOther.Enabled = false;
+            this.txtPsychologicalCauseOther.Location = new System.Drawing.Point(494, 119);
+            this.txtPsychologicalCauseOther.Name = "txtPsychologicalCauseOther";
+            this.txtPsychologicalCauseOther.Size = new System.Drawing.Size(100, 20);
+            this.txtPsychologicalCauseOther.TabIndex = 38;
             // 
             // txtEnvironmentalCauseOther
             // 
-            this.txtEnvironmentalCauseOther.Location = new System.Drawing.Point(443, 76);
+            this.txtEnvironmentalCauseOther.Enabled = false;
+            this.txtEnvironmentalCauseOther.Location = new System.Drawing.Point(494, 76);
             this.txtEnvironmentalCauseOther.Name = "txtEnvironmentalCauseOther";
             this.txtEnvironmentalCauseOther.Size = new System.Drawing.Size(100, 20);
             this.txtEnvironmentalCauseOther.TabIndex = 37;
             // 
             // txtPhysiologicalCauseOther
             // 
-            this.txtPhysiologicalCauseOther.Location = new System.Drawing.Point(443, 34);
+            this.txtPhysiologicalCauseOther.Enabled = false;
+            this.txtPhysiologicalCauseOther.Location = new System.Drawing.Point(494, 34);
             this.txtPhysiologicalCauseOther.Name = "txtPhysiologicalCauseOther";
             this.txtPhysiologicalCauseOther.Size = new System.Drawing.Size(100, 20);
             this.txtPhysiologicalCauseOther.TabIndex = 28;
@@ -278,8 +276,9 @@
             "Other"});
             this.comboSocialCause.Location = new System.Drawing.Point(306, 160);
             this.comboSocialCause.Name = "comboSocialCause";
-            this.comboSocialCause.Size = new System.Drawing.Size(131, 21);
+            this.comboSocialCause.Size = new System.Drawing.Size(182, 21);
             this.comboSocialCause.TabIndex = 36;
+            this.comboSocialCause.SelectedIndexChanged += new System.EventHandler(this.comboSocialCause_SelectedIndexChanged);
             // 
             // btnAddSocialCause
             // 
@@ -315,8 +314,9 @@
             "Other"});
             this.comboPsychologicalCause.Location = new System.Drawing.Point(306, 118);
             this.comboPsychologicalCause.Name = "comboPsychologicalCause";
-            this.comboPsychologicalCause.Size = new System.Drawing.Size(131, 21);
+            this.comboPsychologicalCause.Size = new System.Drawing.Size(182, 21);
             this.comboPsychologicalCause.TabIndex = 34;
+            this.comboPsychologicalCause.SelectedIndexChanged += new System.EventHandler(this.comboPsychologicalCause_SelectedIndexChanged);
             // 
             // btnAddPsychologicalCause
             // 
@@ -344,8 +344,9 @@
             "Other"});
             this.comboEnvironmentalCause.Location = new System.Drawing.Point(306, 76);
             this.comboEnvironmentalCause.Name = "comboEnvironmentalCause";
-            this.comboEnvironmentalCause.Size = new System.Drawing.Size(131, 21);
+            this.comboEnvironmentalCause.Size = new System.Drawing.Size(182, 21);
             this.comboEnvironmentalCause.TabIndex = 32;
+            this.comboEnvironmentalCause.SelectedIndexChanged += new System.EventHandler(this.comboEnvironmentalCause_SelectedIndexChanged);
             // 
             // btnAddEnvironmentalCause
             // 
@@ -387,8 +388,9 @@
             "Other"});
             this.comboPhysiologicalCause.Location = new System.Drawing.Point(306, 34);
             this.comboPhysiologicalCause.Name = "comboPhysiologicalCause";
-            this.comboPhysiologicalCause.Size = new System.Drawing.Size(131, 21);
+            this.comboPhysiologicalCause.Size = new System.Drawing.Size(182, 21);
             this.comboPhysiologicalCause.TabIndex = 30;
+            this.comboPhysiologicalCause.SelectedIndexChanged += new System.EventHandler(this.comboPhysiologicalCause_SelectedIndexChanged);
             // 
             // btnAddPhysiologicalCause
             // 
@@ -563,6 +565,7 @@
             // 
             // txtBehaviorOther
             // 
+            this.txtBehaviorOther.Enabled = false;
             this.txtBehaviorOther.Location = new System.Drawing.Point(298, 64);
             this.txtBehaviorOther.Name = "txtBehaviorOther";
             this.txtBehaviorOther.Size = new System.Drawing.Size(100, 20);
@@ -606,11 +609,12 @@
             this.comboBehavior.Name = "comboBehavior";
             this.comboBehavior.Size = new System.Drawing.Size(110, 21);
             this.comboBehavior.TabIndex = 18;
+            this.comboBehavior.SelectedIndexChanged += new System.EventHandler(this.comboBehavior_SelectedIndexChanged);
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.label9);
-            this.groupBox8.Controls.Add(this.comboOtherStrength);
+            this.groupBox8.Controls.Add(this.txtOtherStrength);
             this.groupBox8.Controls.Add(this.label7);
             this.groupBox8.Controls.Add(this.label8);
             this.groupBox8.Controls.Add(this.label6);
@@ -642,12 +646,12 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "Other Strengths";
             // 
-            // comboOtherStrength
+            // txtOtherStrength
             // 
-            this.comboOtherStrength.Location = new System.Drawing.Point(258, 200);
-            this.comboOtherStrength.Name = "comboOtherStrength";
-            this.comboOtherStrength.Size = new System.Drawing.Size(165, 20);
-            this.comboOtherStrength.TabIndex = 11;
+            this.txtOtherStrength.Location = new System.Drawing.Point(258, 200);
+            this.txtOtherStrength.Name = "txtOtherStrength";
+            this.txtOtherStrength.Size = new System.Drawing.Size(165, 20);
+            this.txtOtherStrength.TabIndex = 11;
             // 
             // label7
             // 
@@ -684,6 +688,7 @@
             this.btnAddOtherStrength.TabIndex = 10;
             this.btnAddOtherStrength.Text = "Add";
             this.btnAddOtherStrength.UseVisualStyleBackColor = true;
+            this.btnAddOtherStrength.Click += new System.EventHandler(this.btnAddOtherStrength_Click);
             // 
             // comboStrengthOfTolerance
             // 
@@ -708,6 +713,7 @@
             this.btnAddStrengthOfTolerance.TabIndex = 8;
             this.btnAddStrengthOfTolerance.Text = "Add";
             this.btnAddStrengthOfTolerance.UseVisualStyleBackColor = true;
+            this.btnAddStrengthOfTolerance.Click += new System.EventHandler(this.btnAddStrengthOfTolerance_Click);
             // 
             // label4
             // 
@@ -742,6 +748,7 @@
             this.btnAddRationalCivicStrength.TabIndex = 6;
             this.btnAddRationalCivicStrength.Text = "Add";
             this.btnAddRationalCivicStrength.UseVisualStyleBackColor = true;
+            this.btnAddRationalCivicStrength.Click += new System.EventHandler(this.btnAddRationalCivicStrength_Click);
             // 
             // comboStrengthOfWill
             // 
@@ -765,6 +772,7 @@
             this.btnAddStrengthOfWill.TabIndex = 4;
             this.btnAddStrengthOfWill.Text = "Add";
             this.btnAddStrengthOfWill.UseVisualStyleBackColor = true;
+            this.btnAddStrengthOfWill.Click += new System.EventHandler(this.btnAddStrengthOfWill_Click);
             // 
             // comboStrengthOfEmotion
             // 
@@ -788,6 +796,7 @@
             this.btnAddStrengthOfEmotion.TabIndex = 2;
             this.btnAddStrengthOfEmotion.Text = "Add";
             this.btnAddStrengthOfEmotion.UseVisualStyleBackColor = true;
+            this.btnAddStrengthOfEmotion.Click += new System.EventHandler(this.btnAddStrengthOfEmotion_Click);
             // 
             // btnRemoveStrength
             // 
@@ -802,28 +811,22 @@
             // 
             this.treeViewStrengths.Location = new System.Drawing.Point(6, 52);
             this.treeViewStrengths.Name = "treeViewStrengths";
-            treeNode11.Name = "Node1";
-            treeNode11.Text = "Hope / Optimism";
-            treeNode12.Name = "NodeStrengthsOfEmotion";
-            treeNode12.Text = "Strengths of Emotion";
-            treeNode13.Name = "NodeStrengthsOfWill";
-            treeNode13.Text = "Strengths of Will";
-            treeNode14.Name = "Node5";
-            treeNode14.Text = "Humor";
-            treeNode15.Name = "Node6";
-            treeNode15.Text = "Citizenship";
-            treeNode16.Name = "NodeRationalCivicStrengths";
-            treeNode16.Text = "Rational and Civic Strengths";
-            treeNode17.Name = "NodeStrengthsOfTolerance";
-            treeNode17.Text = "Strengths of Tolerance";
-            treeNode18.Name = "NodeOtherStrengths";
-            treeNode18.Text = "Other Strengths";
+            treeNode11.Name = "NodeStrengthsOfEmotion";
+            treeNode11.Text = "Strengths of Emotion";
+            treeNode12.Name = "NodeStrengthsOfWill";
+            treeNode12.Text = "Strengths of Will";
+            treeNode13.Name = "NodeRationalCivicStrengths";
+            treeNode13.Text = "Rational and Civic Strengths";
+            treeNode14.Name = "NodeStrengthsOfTolerance";
+            treeNode14.Text = "Strengths of Tolerance";
+            treeNode15.Name = "NodeOtherStrengths";
+            treeNode15.Text = "Other Strengths";
             this.treeViewStrengths.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode11,
             treeNode12,
             treeNode13,
-            treeNode16,
-            treeNode17,
-            treeNode18});
+            treeNode14,
+            treeNode15});
             this.treeViewStrengths.Size = new System.Drawing.Size(165, 168);
             this.treeViewStrengths.TabIndex = 0;
             // 
@@ -893,10 +896,10 @@
             // 
             // btnQABFs
             // 
-            this.btnQABFs.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQABFs.Location = new System.Drawing.Point(727, 358);
+            this.btnQABFs.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQABFs.Location = new System.Drawing.Point(760, 358);
             this.btnQABFs.Name = "btnQABFs";
-            this.btnQABFs.Size = new System.Drawing.Size(118, 251);
+            this.btnQABFs.Size = new System.Drawing.Size(90, 262);
             this.btnQABFs.TabIndex = 17;
             this.btnQABFs.Text = "QABFs";
             this.btnQABFs.UseVisualStyleBackColor = true;
@@ -907,7 +910,7 @@
             this.btnSaveStaffInterview.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveStaffInterview.Location = new System.Drawing.Point(12, 494);
             this.btnSaveStaffInterview.Name = "btnSaveStaffInterview";
-            this.btnSaveStaffInterview.Size = new System.Drawing.Size(155, 126);
+            this.btnSaveStaffInterview.Size = new System.Drawing.Size(136, 126);
             this.btnSaveStaffInterview.TabIndex = 64;
             this.btnSaveStaffInterview.Text = "Save";
             this.btnSaveStaffInterview.UseVisualStyleBackColor = true;
@@ -930,6 +933,7 @@
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.txtStaffIntervieweeName);
             this.Controls.Add(this.txtInterviewerName);
+            this.MaximizeBox = false;
             this.Name = "FormStaffInterview";
             this.Text = "Sky Pie - Staff Interview for Michael Petruzzello";
             this.groupBox10.ResumeLayout(false);
@@ -947,7 +951,7 @@
 
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox txtSocialCauseOther;
-        private System.Windows.Forms.TextBox txtPsyhologicalCauseOther;
+        private System.Windows.Forms.TextBox txtPsychologicalCauseOther;
         private System.Windows.Forms.TextBox txtEnvironmentalCauseOther;
         private System.Windows.Forms.TextBox txtPhysiologicalCauseOther;
         private System.Windows.Forms.ComboBox comboSocialCause;
@@ -970,7 +974,7 @@
         private System.Windows.Forms.TextBox txtBehaviorOther;
         private System.Windows.Forms.ComboBox comboBehavior;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox comboOtherStrength;
+        private System.Windows.Forms.TextBox txtOtherStrength;
         private System.Windows.Forms.Button btnAddOtherStrength;
         private System.Windows.Forms.ComboBox comboStrengthOfTolerance;
         private System.Windows.Forms.Button btnAddStrengthOfTolerance;
