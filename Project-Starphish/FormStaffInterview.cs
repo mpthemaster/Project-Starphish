@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class FormStaffInterview : Form
     {
+        //All behaviors that have been added in an interview.
+        private List<Behavior> behaviors = new List<Behavior>();
+
         public FormStaffInterview()
         {
             InitializeComponent();
@@ -164,6 +161,7 @@ namespace GUI
             {
                 otherStrengths.Nodes.Add(newOther, newOther);
                 otherStrengths.ExpandAll();
+                txtOtherStrength.Text = "";
             }
             else
                 MessageBox.Show("This Other Strength has already been added.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -183,10 +181,158 @@ namespace GUI
 
         private void btnAddBehavior_Click(object sender, EventArgs e)
         {
+            bool behaviorAdded; //For whether a behavior was successfully added to the treeview.
+
+            //If the user is supposed to have entered a custom behavior and hasn't, alert the user and stop the behavior from being added.
             if (txtBehaviorOther.Enabled && txtBehaviorOther.Text == "")
             {
                 MessageBox.Show("You must enter or pick a behavior name.", "Error - Missing Behavior Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBehaviorOther.Focus();
+                return;
             }
+
+            //Gets info from the user about the behavior and sets it.
+            string name, severity, frequency;
+            severity = (string)comboBehaviorSeverity.SelectedItem;
+            frequency = (string)comboBehaviorFrequency.SelectedItem;
+
+            if (txtBehaviorOther.Enabled)
+                name = txtBehaviorOther.Text;
+            else
+                name = (string)comboBehavior.SelectedItem;
+
+            Behavior tempBehavior = new Behavior(name, severity, frequency);
+            behaviors.Add(tempBehavior);
+
+            //Figures out what parent node this behavior should be attached to in the treeview.
+            switch (tempBehavior.Frequency)
+            {
+                case "Hourly":
+                    behaviorAdded = addBehaviorToHourly(tempBehavior);
+                    break;
+
+                case "Daily":
+                    behaviorAdded = addBehaviorToDaily(tempBehavior);
+                    break;
+
+                case "Weekly":
+                    behaviorAdded = addBehaviorToWeekly(tempBehavior);
+                    break;
+
+                case "Less Often":
+                    behaviorAdded = addBehaviorToLessOften(tempBehavior);
+                    break;
+
+                default:
+                    MessageBox.Show("A non-existent frequncy has been chosen!");
+                    behaviorAdded = false;
+                    break;
+            }
+
+            //If the behavior was successfully added, clear the comboboxes and textbox.
+            if (behaviorAdded)
+            {
+                comboBehaviorSeverity.SelectedIndex = 0;
+                comboBehaviorFrequency.SelectedIndex = 0;
+                comboBehavior.SelectedIndex = 0;
+                txtBehaviorOther.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// Adds the behavior as a child of Less Often.
+        /// </summary>
+        /// <param name="behavior">The behavior to add.</param>
+        /// <returns>Whether the behavior was successfully added.</returns>
+        private bool addBehaviorToLessOften(Behavior behavior)
+        {
+            TreeNode hourlyBehavior = treeViewBehaviors.Nodes[3];
+            string newBehavior = behavior.Name;
+
+            if (!isBehaviorExisting(newBehavior))
+            {
+                hourlyBehavior.Nodes.Add(newBehavior, newBehavior + " - " + behavior.Severity);
+                hourlyBehavior.ExpandAll();
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Adds the behavior as a child of Weekly.
+        /// </summary>
+        /// <param name="behavior">The behavior to add.</param>
+        /// <returns>Whether the behavior was successfully added.</returns>
+        private bool addBehaviorToWeekly(Behavior behavior)
+        {
+            TreeNode hourlyBehavior = treeViewBehaviors.Nodes[2];
+            string newBehavior = behavior.Name;
+
+            if (!isBehaviorExisting(newBehavior))
+            {
+                hourlyBehavior.Nodes.Add(newBehavior, newBehavior + " - " + behavior.Severity);
+                hourlyBehavior.ExpandAll();
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Adds the behavior as a child of Dayly.
+        /// </summary>
+        /// <param name="behavior">The behavior to add.</param>
+        /// <returns>Whether the behavior was successfully added.</returns>
+        private bool addBehaviorToDaily(Behavior behavior)
+        {
+            TreeNode hourlyBehavior = treeViewBehaviors.Nodes[1];
+            string newBehavior = behavior.Name;
+
+            if (!isBehaviorExisting(newBehavior))
+            {
+                hourlyBehavior.Nodes.Add(newBehavior, newBehavior + " - " + behavior.Severity);
+                hourlyBehavior.ExpandAll();
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Adds the behavior as a child of Hourly.
+        /// </summary>
+        /// <param name="behavior">The behavior to add.</param>
+        /// <returns>Whether the behavior was successfully added.</returns>
+        private bool addBehaviorToHourly(Behavior behavior)
+        {
+            TreeNode hourlyBehavior = treeViewBehaviors.Nodes[0];
+            string newBehavior = behavior.Name;
+
+            if (!isBehaviorExisting(newBehavior))
+            {
+                hourlyBehavior.Nodes.Add(newBehavior, newBehavior + " - " + behavior.Severity);
+                hourlyBehavior.ExpandAll();
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks if a behavior already exists.
+        /// </summary>
+        /// <param name="behaviorName">The behavior to check for.</param>
+        /// <returns>Whether the behavior already exists.</returns>
+        private bool isBehaviorExisting(string behaviorName)
+        {
+            //Foreach parent node in the treeview,
+            //  Check If the user-entered behavior is already one of its children,
+            //      Alert the user to this issue and return true.
+            //Else the user-entered behavior doesn't exist, so return false.
+            foreach (TreeNode node in treeViewBehaviors.Nodes)
+                if (node.Nodes.ContainsKey(behaviorName))
+                {
+                    MessageBox.Show("This Behavior has already been added.", "Error - Duplicate Behavior", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            return false;
         }
     }
 }
