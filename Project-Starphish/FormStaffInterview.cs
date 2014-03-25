@@ -168,5 +168,25 @@ namespace GUI
             else
                 MessageBox.Show("This Other Strength has already been added.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
+
+        private void btnRemoveStrength_Click(object sender, EventArgs e)
+        {
+            TreeNode nodeToRemove = treeViewStrengths.SelectedNode;
+
+            //If the node to remove isn't a top level node (e.g. "Strength of Emotions"), then remove it.
+            //Else display an error message to let the user know.
+            if (nodeToRemove.Parent != null)
+                nodeToRemove.Remove();
+            else
+                MessageBox.Show("Category names cannot be removed.", "Error - Illegal Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnAddBehavior_Click(object sender, EventArgs e)
+        {
+            if (txtBehaviorOther.Enabled && txtBehaviorOther.Text == "")
+            {
+                MessageBox.Show("You must enter or pick a behavior name.", "Error - Missing Behavior Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
