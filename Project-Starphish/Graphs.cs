@@ -13,7 +13,7 @@ namespace GUI
         bool firstTime = true;
 
         /// <summary>
-        /// The function that starts the graphing
+        /// The function that starts the graphing tab
         /// </summary>
         private void mainGraph()
         {
@@ -29,8 +29,6 @@ namespace GUI
 
                 //likewise, the list box for custom behaviors is disabled by default
                 listBehaviorsToGraph.Enabled = false;
-
-                
 
                 createGraphs();
                 firstTime = false;
@@ -60,8 +58,8 @@ namespace GUI
             }
             else if (radUseCustomDates.Checked)
             {
-                DateTime result = datePickerBeginGraphs.Value;
-                MessageBox.Show(result.ToString());
+                DateTime result = datePickerBeginGraphs.Value.Date;
+                MessageBox.Show(result.ToShortDateString());
             }
             else if (radUseCustomQuarters.Checked)
             {
