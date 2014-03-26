@@ -36,9 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
@@ -47,6 +44,12 @@
             System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
@@ -182,7 +185,6 @@
             this.txtDailyBehaviorOther = new System.Windows.Forms.TextBox();
             this.comboDailyBehaviors = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnGenerateGraphs = new System.Windows.Forms.Button();
             this.radUseTimeFrames = new System.Windows.Forms.RadioButton();
             this.radUseCustomQuarters = new System.Windows.Forms.RadioButton();
             this.radUseCustomDates = new System.Windows.Forms.RadioButton();
@@ -198,6 +200,7 @@
             this.datePickerEndGraphs = new System.Windows.Forms.DateTimePicker();
             this.datePickerBeginGraphs = new System.Windows.Forms.DateTimePicker();
             this.label67 = new System.Windows.Forms.Label();
+            this.chartPyramidOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartSumOfBehaviors = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPieDailyOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTotalBehaviors = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -253,6 +256,7 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPyramidOccurences)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSumOfBehaviors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPieDailyOccurences)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).BeginInit();
@@ -1558,7 +1562,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btnGenerateGraphs);
             this.tabPage3.Controls.Add(this.radUseTimeFrames);
             this.tabPage3.Controls.Add(this.radUseCustomQuarters);
             this.tabPage3.Controls.Add(this.radUseCustomDates);
@@ -1574,6 +1577,7 @@
             this.tabPage3.Controls.Add(this.datePickerEndGraphs);
             this.tabPage3.Controls.Add(this.datePickerBeginGraphs);
             this.tabPage3.Controls.Add(this.label67);
+            this.tabPage3.Controls.Add(this.chartPyramidOccurences);
             this.tabPage3.Controls.Add(this.chartSumOfBehaviors);
             this.tabPage3.Controls.Add(this.chartPieDailyOccurences);
             this.tabPage3.Controls.Add(this.chartTotalBehaviors);
@@ -1586,17 +1590,6 @@
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btnGenerateGraphs
-            // 
-            this.btnGenerateGraphs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateGraphs.Location = new System.Drawing.Point(4, 326);
-            this.btnGenerateGraphs.Name = "btnGenerateGraphs";
-            this.btnGenerateGraphs.Size = new System.Drawing.Size(141, 83);
-            this.btnGenerateGraphs.TabIndex = 52;
-            this.btnGenerateGraphs.Text = "Generate Graphs";
-            this.btnGenerateGraphs.UseVisualStyleBackColor = true;
-            this.btnGenerateGraphs.Click += new System.EventHandler(this.btnGenerateGraphs_Click);
-            // 
             // radUseTimeFrames
             // 
             this.radUseTimeFrames.AutoSize = true;
@@ -1608,7 +1601,6 @@
             this.radUseTimeFrames.TabStop = true;
             this.radUseTimeFrames.Text = "Use Time Frames";
             this.radUseTimeFrames.UseVisualStyleBackColor = true;
-            this.radUseTimeFrames.Click += new System.EventHandler(this.radUseTimeFrames_Click);
             // 
             // radUseCustomQuarters
             // 
@@ -1619,7 +1611,6 @@
             this.radUseCustomQuarters.TabIndex = 50;
             this.radUseCustomQuarters.Text = "Use Custom Quarters";
             this.radUseCustomQuarters.UseVisualStyleBackColor = true;
-            this.radUseCustomQuarters.Click += new System.EventHandler(this.radUseCustomQuarters_Click);
             // 
             // radUseCustomDates
             // 
@@ -1630,7 +1621,6 @@
             this.radUseCustomDates.TabIndex = 49;
             this.radUseCustomDates.Text = "Use Custom Dates";
             this.radUseCustomDates.UseVisualStyleBackColor = true;
-            this.radUseCustomDates.Click += new System.EventHandler(this.radUseCustomDates_Click);
             // 
             // chkQuarter4
             // 
@@ -1738,7 +1728,7 @@
             this.datePickerBeginGraphs.Name = "datePickerBeginGraphs";
             this.datePickerBeginGraphs.Size = new System.Drawing.Size(200, 20);
             this.datePickerBeginGraphs.TabIndex = 37;
-            this.datePickerBeginGraphs.Value = new System.DateTime(2014, 3, 26, 0, 0, 0, 0);
+            this.datePickerBeginGraphs.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
             // 
             // label67
             // 
@@ -1749,58 +1739,75 @@
             this.label67.TabIndex = 36;
             this.label67.Text = "Behaviors to Graph";
             // 
-            // chartSumOfBehaviors
+            // chartPyramidOccurences
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartSumOfBehaviors.ChartAreas.Add(chartArea5);
-            this.chartSumOfBehaviors.Location = new System.Drawing.Point(151, 325);
-            this.chartSumOfBehaviors.Name = "chartSumOfBehaviors";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Name = "Series1";
-            this.chartSumOfBehaviors.Series.Add(series5);
-            this.chartSumOfBehaviors.Size = new System.Drawing.Size(381, 255);
-            this.chartSumOfBehaviors.TabIndex = 34;
-            this.chartSumOfBehaviors.Text = "chart4";
-            title4.Name = "Title1";
-            title4.Text = "Sum of Arguing";
-            this.chartSumOfBehaviors.Titles.Add(title4);
-            // 
-            // chartPieDailyOccurences
-            // 
-            chartArea6.Area3DStyle.Enable3D = true;
-            chartArea6.Area3DStyle.Inclination = 60;
             chartArea6.Name = "ChartArea1";
-            this.chartPieDailyOccurences.ChartAreas.Add(chartArea6);
-            this.chartPieDailyOccurences.Location = new System.Drawing.Point(624, 64);
-            this.chartPieDailyOccurences.Name = "chartPieDailyOccurences";
+            this.chartPyramidOccurences.ChartAreas.Add(chartArea6);
+            this.chartPyramidOccurences.Location = new System.Drawing.Point(624, 325);
+            this.chartPyramidOccurences.Name = "chartPyramidOccurences";
             series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
             series6.Name = "Series1";
-            this.chartPieDailyOccurences.Series.Add(series6);
-            this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
-            this.chartPieDailyOccurences.TabIndex = 33;
-            this.chartPieDailyOccurences.Text = "chart3";
+            this.chartPyramidOccurences.Series.Add(series6);
+            this.chartPyramidOccurences.Size = new System.Drawing.Size(381, 255);
+            this.chartPyramidOccurences.TabIndex = 35;
+            this.chartPyramidOccurences.Text = "chart5";
             title5.Name = "Title1";
             title5.Text = "# Daily Occurences";
-            this.chartPieDailyOccurences.Titles.Add(title5);
+            this.chartPyramidOccurences.Titles.Add(title5);
             // 
-            // chartTotalBehaviors
+            // chartSumOfBehaviors
             // 
             chartArea7.Name = "ChartArea1";
-            this.chartTotalBehaviors.ChartAreas.Add(chartArea7);
-            this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
-            this.chartTotalBehaviors.Name = "chartTotalBehaviors";
+            this.chartSumOfBehaviors.ChartAreas.Add(chartArea7);
+            this.chartSumOfBehaviors.Location = new System.Drawing.Point(151, 325);
+            this.chartSumOfBehaviors.Name = "chartSumOfBehaviors";
             series7.ChartArea = "ChartArea1";
             series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series7.Name = "Series1";
-            this.chartTotalBehaviors.Series.Add(series7);
+            this.chartSumOfBehaviors.Series.Add(series7);
+            this.chartSumOfBehaviors.Size = new System.Drawing.Size(381, 255);
+            this.chartSumOfBehaviors.TabIndex = 34;
+            this.chartSumOfBehaviors.Text = "chart4";
+            title6.Name = "Title1";
+            title6.Text = "Sum of Arguing";
+            this.chartSumOfBehaviors.Titles.Add(title6);
+            // 
+            // chartPieDailyOccurences
+            // 
+            chartArea8.Area3DStyle.Enable3D = true;
+            chartArea8.Area3DStyle.Inclination = 60;
+            chartArea8.Name = "ChartArea1";
+            this.chartPieDailyOccurences.ChartAreas.Add(chartArea8);
+            this.chartPieDailyOccurences.Location = new System.Drawing.Point(624, 64);
+            this.chartPieDailyOccurences.Name = "chartPieDailyOccurences";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Name = "Series1";
+            this.chartPieDailyOccurences.Series.Add(series8);
+            this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
+            this.chartPieDailyOccurences.TabIndex = 33;
+            this.chartPieDailyOccurences.Text = "chart3";
+            title7.Name = "Title1";
+            title7.Text = "# Daily Occurences";
+            this.chartPieDailyOccurences.Titles.Add(title7);
+            // 
+            // chartTotalBehaviors
+            // 
+            chartArea9.Name = "ChartArea1";
+            this.chartTotalBehaviors.ChartAreas.Add(chartArea9);
+            this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
+            this.chartTotalBehaviors.Name = "chartTotalBehaviors";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Name = "Series1";
+            this.chartTotalBehaviors.Series.Add(series9);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartTotalBehaviors.TabIndex = 32;
             this.chartTotalBehaviors.Text = "chart2";
-            title6.Name = "Title1";
-            title6.Text = "Total Behaviors";
-            this.chartTotalBehaviors.Titles.Add(title6);
+            title8.Name = "Title1";
+            title8.Text = "Total Behaviors";
+            this.chartTotalBehaviors.Titles.Add(title8);
             // 
             // comboBehaviorsToGraph
             // 
@@ -1814,7 +1821,6 @@
             this.comboBehaviorsToGraph.Name = "comboBehaviorsToGraph";
             this.comboBehaviorsToGraph.Size = new System.Drawing.Size(142, 21);
             this.comboBehaviorsToGraph.TabIndex = 1;
-            this.comboBehaviorsToGraph.SelectedIndexChanged += new System.EventHandler(this.comboBehaviorsToGraph_SelectedIndexChanged);
             // 
             // listBehaviorsToGraph
             // 
@@ -1857,17 +1863,17 @@
             // 
             // chartQABFAnalysis
             // 
-            chartArea8.Area3DStyle.IsRightAngleAxes = false;
-            chartArea8.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea8.Area3DStyle.Rotation = 10;
-            chartArea8.Name = "ChartArea1";
-            this.chartQABFAnalysis.ChartAreas.Add(chartArea8);
+            chartArea10.Area3DStyle.IsRightAngleAxes = false;
+            chartArea10.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea10.Area3DStyle.Rotation = 10;
+            chartArea10.Name = "ChartArea1";
+            this.chartQABFAnalysis.ChartAreas.Add(chartArea10);
             this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
             this.chartQABFAnalysis.Name = "chartQABFAnalysis";
             this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series8.ChartArea = "ChartArea1";
-            series8.IsXValueIndexed = true;
-            series8.Name = "Series1";
+            series10.ChartArea = "ChartArea1";
+            series10.IsXValueIndexed = true;
+            series10.Name = "Series1";
             dataPoint6.AxisLabel = "Attention";
             dataPoint6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
             dataPoint6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -1891,13 +1897,13 @@
             dataPoint10.AxisLabel = "Tangible";
             dataPoint10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             dataPoint10.Label = "1.6";
-            series8.Points.Add(dataPoint6);
-            series8.Points.Add(dataPoint7);
-            series8.Points.Add(dataPoint8);
-            series8.Points.Add(dataPoint9);
-            series8.Points.Add(dataPoint10);
-            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chartQABFAnalysis.Series.Add(series8);
+            series10.Points.Add(dataPoint6);
+            series10.Points.Add(dataPoint7);
+            series10.Points.Add(dataPoint8);
+            series10.Points.Add(dataPoint9);
+            series10.Points.Add(dataPoint10);
+            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chartQABFAnalysis.Series.Add(series10);
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
             this.chartQABFAnalysis.TabIndex = 0;
             this.chartQABFAnalysis.Text = "chart1";
@@ -2193,6 +2199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPyramidOccurences)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSumOfBehaviors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPieDailyOccurences)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).EndInit();
@@ -2316,6 +2323,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSumOfBehaviors;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPieDailyOccurences;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPyramidOccurences;
         private System.Windows.Forms.Button btnSelectImage;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
@@ -2399,7 +2407,6 @@
         private ProjectStarphishDataSet projectStarphishDataSet;
         private System.Windows.Forms.BindingSource pERSONBindingSource;
         private ProjectStarphishDataSetTableAdapters.PERSONTableAdapter pERSONTableAdapter;
-        private System.Windows.Forms.Button btnGenerateGraphs;
     }
 }
 
