@@ -246,9 +246,12 @@ namespace GUI
                     break;
             }
 
-            //If the behavior was successfully added, clear the comboboxes and textbox.
+            //If the behavior was successfully added, clear the comboboxes and textbox and add it to the other treeview.
             if (behaviorAdded)
+            {
                 resetBehaviorInputs();
+                treeViewAntecedents.Nodes.Add(tempBehavior.Name, tempBehavior.Name);
+            }
         }
 
         /// <summary>
@@ -367,6 +370,7 @@ namespace GUI
             if (nodeToRemove.Parent != null)
             {
                 nodeToRemove.Remove();
+                treeViewAntecedents.Nodes.RemoveByKey(nodeToRemove.Name);
 
                 //Foreach behavior in the behaviors list,
                 //  Check If  it matches the behavior to remove and remove it if it does.
@@ -447,6 +451,46 @@ namespace GUI
                     comboBehaviorSeverity.SelectedIndex = comboBehaviorSeverity.Items.IndexOf(behaviorSeverity);
                     break;
                 }
+        }
+
+        private void btnAddPhysiologicalCause_Click(object sender, EventArgs e)
+        {
+            //If the selected node is a behavior and not a child of a behavior, add the physiological cause to the treeview.
+            if (treeViewAntecedents.SelectedNode.Parent == null)
+            {
+                const string cause = "Physiological Causes";
+                TreeNodeCollection behaviorNodes = treeViewAntecedents.SelectedNode.Nodes;
+
+                //If this cause already exists for the specified behavior, check if the cause has already been added.
+                //Else the cause doesn't exist for the specified behavior, so add it.
+                if (behaviorNodes.ContainsKey(cause))
+                {
+                    //If the cause has already been added, display an error message to the user and return.
+                    if (behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.ContainsKey((string)comboPhysiologicalCause.SelectedItem))
+                    {
+                        MessageBox.Show("The selected Physiological Cause has already been added.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                    behaviorNodes.Add(cause, cause);
+
+                // behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add()
+
+                treeViewAntecedents.SelectedNode.ExpandAll();
+            }
+        }
+
+        private void btnAddEnvironmentalCause_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAddPsychologicalCause_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAddSocialCause_Click(object sender, EventArgs e)
+        {
         }
     }
 }

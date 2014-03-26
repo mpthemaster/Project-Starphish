@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Allergies");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Hourly");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Daily");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Weekly");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Strengths of Emotion");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Other Strengths");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Allergies");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
+            treeNode40});
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
+            treeNode41});
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Hourly");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Daily");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Weekly");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Less Often");
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Strengths of Emotion");
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Strengths of Will");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Other Strengths");
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -283,6 +283,7 @@
             this.btnAddSocialCause.TabIndex = 35;
             this.btnAddSocialCause.Text = "Add";
             this.btnAddSocialCause.UseVisualStyleBackColor = true;
+            this.btnAddSocialCause.Click += new System.EventHandler(this.btnAddSocialCause_Click);
             // 
             // comboPsychologicalCause
             // 
@@ -321,6 +322,7 @@
             this.btnAddPsychologicalCause.TabIndex = 33;
             this.btnAddPsychologicalCause.Text = "Add";
             this.btnAddPsychologicalCause.UseVisualStyleBackColor = true;
+            this.btnAddPsychologicalCause.Click += new System.EventHandler(this.btnAddPsychologicalCause_Click);
             // 
             // comboEnvironmentalCause
             // 
@@ -351,6 +353,7 @@
             this.btnAddEnvironmentalCause.TabIndex = 31;
             this.btnAddEnvironmentalCause.Text = "Add";
             this.btnAddEnvironmentalCause.UseVisualStyleBackColor = true;
+            this.btnAddEnvironmentalCause.Click += new System.EventHandler(this.btnAddEnvironmentalCause_Click);
             // 
             // comboPhysiologicalCause
             // 
@@ -395,22 +398,23 @@
             this.btnAddPhysiologicalCause.TabIndex = 29;
             this.btnAddPhysiologicalCause.Text = "Add";
             this.btnAddPhysiologicalCause.UseVisualStyleBackColor = true;
+            this.btnAddPhysiologicalCause.Click += new System.EventHandler(this.btnAddPhysiologicalCause_Click);
             // 
             // treeViewAntecedents
             // 
             this.treeViewAntecedents.Location = new System.Drawing.Point(6, 53);
             this.treeViewAntecedents.Name = "treeViewAntecedents";
-            treeNode14.Name = "Node1";
-            treeNode14.Text = "Allergies";
-            treeNode15.Name = "Node0";
-            treeNode15.Text = "Physiological Causes of Behavior";
-            treeNode16.Name = "Node0";
-            treeNode16.Text = "Arguing";
-            treeNode17.Name = "Node1";
-            treeNode17.Text = "Lethargic";
+            treeNode40.Name = "Node1";
+            treeNode40.Text = "Allergies";
+            treeNode41.Name = "Node0";
+            treeNode41.Text = "Physiological Causes of Behavior";
+            treeNode42.Name = "Node0";
+            treeNode42.Text = "Arguing";
+            treeNode43.Name = "Node1";
+            treeNode43.Text = "Lethargic";
             this.treeViewAntecedents.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17});
+            treeNode42,
+            treeNode43});
             this.treeViewAntecedents.Size = new System.Drawing.Size(213, 198);
             this.treeViewAntecedents.TabIndex = 28;
             // 
@@ -483,19 +487,19 @@
             // 
             this.treeViewBehaviors.Location = new System.Drawing.Point(6, 48);
             this.treeViewBehaviors.Name = "treeViewBehaviors";
-            treeNode18.Name = "NodeHourly";
-            treeNode18.Text = "Hourly";
-            treeNode19.Name = "NodeDaily";
-            treeNode19.Text = "Daily";
-            treeNode20.Name = "NodeWeekly";
-            treeNode20.Text = "Weekly";
-            treeNode21.Name = "NodeLessOften";
-            treeNode21.Text = "Less Often";
+            treeNode44.Name = "NodeHourly";
+            treeNode44.Text = "Hourly";
+            treeNode45.Name = "NodeDaily";
+            treeNode45.Text = "Daily";
+            treeNode46.Name = "NodeWeekly";
+            treeNode46.Text = "Weekly";
+            treeNode47.Name = "NodeLessOften";
+            treeNode47.Text = "Less Often";
             this.treeViewBehaviors.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode18,
-            treeNode19,
-            treeNode20,
-            treeNode21});
+            treeNode44,
+            treeNode45,
+            treeNode46,
+            treeNode47});
             this.treeViewBehaviors.Size = new System.Drawing.Size(170, 203);
             this.treeViewBehaviors.TabIndex = 28;
             this.treeViewBehaviors.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewBehaviors_AfterSelect);
@@ -797,22 +801,22 @@
             // 
             this.treeViewStrengths.Location = new System.Drawing.Point(6, 52);
             this.treeViewStrengths.Name = "treeViewStrengths";
-            treeNode22.Name = "NodeStrengthsOfEmotion";
-            treeNode22.Text = "Strengths of Emotion";
-            treeNode23.Name = "NodeStrengthsOfWill";
-            treeNode23.Text = "Strengths of Will";
-            treeNode24.Name = "NodeRationalCivicStrengths";
-            treeNode24.Text = "Rational and Civic Strengths";
-            treeNode25.Name = "NodeStrengthsOfTolerance";
-            treeNode25.Text = "Strengths of Tolerance";
-            treeNode26.Name = "NodeOtherStrengths";
-            treeNode26.Text = "Other Strengths";
+            treeNode48.Name = "NodeStrengthsOfEmotion";
+            treeNode48.Text = "Strengths of Emotion";
+            treeNode49.Name = "NodeStrengthsOfWill";
+            treeNode49.Text = "Strengths of Will";
+            treeNode50.Name = "NodeRationalCivicStrengths";
+            treeNode50.Text = "Rational and Civic Strengths";
+            treeNode51.Name = "NodeStrengthsOfTolerance";
+            treeNode51.Text = "Strengths of Tolerance";
+            treeNode52.Name = "NodeOtherStrengths";
+            treeNode52.Text = "Other Strengths";
             this.treeViewStrengths.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode22,
-            treeNode23,
-            treeNode24,
-            treeNode25,
-            treeNode26});
+            treeNode48,
+            treeNode49,
+            treeNode50,
+            treeNode51,
+            treeNode52});
             this.treeViewStrengths.Size = new System.Drawing.Size(165, 168);
             this.treeViewStrengths.TabIndex = 0;
             // 
