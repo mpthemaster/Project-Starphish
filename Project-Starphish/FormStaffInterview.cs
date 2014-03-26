@@ -182,6 +182,7 @@ namespace GUI
         private void btnAddBehavior_Click(object sender, EventArgs e)
         {
             bool behaviorAdded; //For whether a behavior was successfully added to the treeview.
+            Behavior tempBehavior; //The behavior to create or update.
 
             //If the user is supposed to have entered a custom behavior and hasn't, alert the user and stop the behavior from being added.
             if (txtBehaviorOther.Enabled && txtBehaviorOther.Text == "")
@@ -196,12 +197,28 @@ namespace GUI
             severity = (string)comboBehaviorSeverity.SelectedItem;
             frequency = (string)comboBehaviorFrequency.SelectedItem;
 
+            //Figures out where to get the behavior's name from.
             if (txtBehaviorOther.Enabled)
                 name = txtBehaviorOther.Text;
             else
                 name = (string)comboBehavior.SelectedItem;
 
-            Behavior tempBehavior = new Behavior(name, severity, frequency);
+            tempBehavior = new Behavior(name, severity, frequency);
+
+            //If the behavior is being updated, delete it from the behaviors list and from the nodes. It will just be added as new to everything to avoid different problems.
+            if (btnAddBehavior.Text == "Save Behavior")
+            {
+                foreach (Behavior behavior in behaviors)
+                {
+                    if (behavior.Name == treeViewBehaviors.SelectedNode.Name)
+                    {
+                        behaviors.Remove(behavior);
+                        treeViewBehaviors.Nodes.Remove(treeViewBehaviors.SelectedNode);
+                        break;
+                    }
+                }
+            }
+
             behaviors.Add(tempBehavior);
 
             //Figures out what parent node this behavior should be attached to in the treeview.
@@ -224,19 +241,25 @@ namespace GUI
                     break;
 
                 default:
-                    MessageBox.Show("A non-existent frequncy has been chosen!");
+                    MessageBox.Show("A non-existent frequency has been chosen!");
                     behaviorAdded = false;
                     break;
             }
 
             //If the behavior was successfully added, clear the comboboxes and textbox.
             if (behaviorAdded)
-            {
-                comboBehaviorSeverity.SelectedIndex = 0;
-                comboBehaviorFrequency.SelectedIndex = 0;
-                comboBehavior.SelectedIndex = 0;
-                txtBehaviorOther.Text = "";
-            }
+                resetBehaviorInputs();
+        }
+
+        /// <summary>
+        /// Resets all Part II Behavior inputs to their default values.
+        /// </summary>
+        private void resetBehaviorInputs()
+        {
+            comboBehaviorSeverity.SelectedIndex = 0;
+            comboBehaviorFrequency.SelectedIndex = 0;
+            comboBehavior.SelectedIndex = 0;
+            txtBehaviorOther.Text = "";
         }
 
         /// <summary>
@@ -333,6 +356,97 @@ namespace GUI
                     return true;
                 }
             return false;
+        }
+
+        private void btnRemoveBehavior_Click(object sender, EventArgs e)
+        {
+            TreeNode nodeToRemove = treeViewBehaviors.SelectedNode;
+
+            //If the node to remove isn't a top level node (e.g. "Hourly"), then remove it.
+            //Else display an error message to let the user know.
+            if (nodeToRemove.Parent != null)
+            {
+                nodeToRemove.Remove();
+
+                //Foreach behavior in the behaviors list,
+                //  Check If  it matches the behavior to remove and remove it if it does.
+                foreach (Behavior behavior in behaviors)
+                    if (behavior.Name == nodeToRemove.Name)
+                    {
+                        behaviors.Remove(behavior);
+                        return;
+                    }
+            }
+            else
+                MessageBox.Show("Category names cannot be removed.", "Error - Illegal Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void treeViewBehaviors_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            resetBehaviorInputs();
+            //If the user selected a node that is a behavior, enable it to be removed and edited.
+            //Else the user selected a root node (e.g. "Hourly"), and should not be able to remove it, but can now add a new behavior (behavior inputs are cleared).
+            if (treeViewBehaviors.SelectedNode.Parent != null)
+            {
+                btnRemoveBehavior.Enabled = true;
+                btnAddBehavior.Text = "Save Behavior";
+
+                //Foreach behavior in the behaviors list,
+                //  Check If  it matches the behavior the currently selected behavior and load up its info so that it can be modified.
+                foreach (Behavior behavior in behaviors)
+                    if (behavior.Name == treeViewBehaviors.SelectedNode.Name)
+                    {
+                        displayBehaviorInfo(behavior);
+                        return;
+                    }
+            }
+            else
+            {
+                btnRemoveBehavior.Enabled = false;
+                btnAddBehavior.Text = "Add Behavior";
+            }
+        }
+
+        /// <summary>
+        /// Displays a selected behavior's information to the user. This enables the user to review and modify any previously added behaviors.
+        /// </summary>
+        /// <param name="behavior">The behavior to have its info displayed to the user.</param>
+        private void displayBehaviorInfo(Behavior behavior)
+        {
+            bool otherName = true; //Keeps track of whether the name of the behavior was custom or from the combobox.
+
+            //Search the name combobox and see if the name of the behavior is in there.
+            //If it is, select that on the combox.
+            foreach (Object behaviorName in comboBehavior.Items)
+                if ((string)behaviorName == behavior.Name)
+                {
+                    otherName = false;
+                    comboBehavior.SelectedIndex = comboBehavior.Items.IndexOf(behaviorName);
+                    break;
+                }
+
+            //If the combobox didn't contain the behavior's name, set the combobox to other and set the name in the custom name textbox.
+            if (otherName)
+            {
+                comboBehavior.SelectedIndex = comboBehavior.Items.Count - 1;
+                txtBehaviorOther.Text = behavior.Name;
+            }
+
+            //Search the frequency combobox and set its selectedindex to match that of the behavior's frequency.
+            foreach (Object behaviorFrequency in comboBehaviorFrequency.Items)
+                if ((string)behaviorFrequency == behavior.Frequency)
+                {
+                    comboBehaviorFrequency.SelectedIndex = comboBehaviorFrequency.Items.IndexOf(behaviorFrequency);
+                    break;
+                }
+
+            //Search the severity combobox and set its selectedindex to match that of the behavior's severity.
+            foreach (Object behaviorSeverity in comboBehaviorSeverity.Items)
+                if ((string)behaviorSeverity == behavior.Severity)
+                {
+                    comboBehaviorSeverity.SelectedIndex = comboBehaviorSeverity.Items.IndexOf(behaviorSeverity);
+                    break;
+                }
         }
     }
 }

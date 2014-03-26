@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Allergies");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Lethargic");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Hourly");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Daily");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Weekly");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Strengths of Emotion");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Other Strengths");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Allergies");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Physiological Causes of Behavior", new System.Windows.Forms.TreeNode[] {
+            treeNode14});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Arguing", new System.Windows.Forms.TreeNode[] {
+            treeNode15});
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Lethargic");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Hourly");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Daily");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Weekly");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Less Often");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Strengths of Emotion");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Strengths of Will");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Other Strengths");
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -73,7 +73,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.treeViewBehaviors = new System.Windows.Forms.TreeView();
             this.comboBehaviorFrequency = new System.Windows.Forms.ComboBox();
-            this.btnEditBehavior = new System.Windows.Forms.Button();
             this.btnRemoveBehavior = new System.Windows.Forms.Button();
             this.btnAddBehavior = new System.Windows.Forms.Button();
             this.comboBehaviorSeverity = new System.Windows.Forms.ComboBox();
@@ -401,17 +400,17 @@
             // 
             this.treeViewAntecedents.Location = new System.Drawing.Point(6, 53);
             this.treeViewAntecedents.Name = "treeViewAntecedents";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Allergies";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Physiological Causes of Behavior";
-            treeNode3.Name = "Node0";
-            treeNode3.Text = "Arguing";
-            treeNode4.Name = "Node1";
-            treeNode4.Text = "Lethargic";
+            treeNode14.Name = "Node1";
+            treeNode14.Text = "Allergies";
+            treeNode15.Name = "Node0";
+            treeNode15.Text = "Physiological Causes of Behavior";
+            treeNode16.Name = "Node0";
+            treeNode16.Text = "Arguing";
+            treeNode17.Name = "Node1";
+            treeNode17.Text = "Lethargic";
             this.treeViewAntecedents.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
+            treeNode16,
+            treeNode17});
             this.treeViewAntecedents.Size = new System.Drawing.Size(213, 198);
             this.treeViewAntecedents.TabIndex = 28;
             // 
@@ -432,7 +431,6 @@
             this.groupBox9.Controls.Add(this.label10);
             this.groupBox9.Controls.Add(this.treeViewBehaviors);
             this.groupBox9.Controls.Add(this.comboBehaviorFrequency);
-            this.groupBox9.Controls.Add(this.btnEditBehavior);
             this.groupBox9.Controls.Add(this.btnRemoveBehavior);
             this.groupBox9.Controls.Add(this.btnAddBehavior);
             this.groupBox9.Controls.Add(this.comboBehaviorSeverity);
@@ -448,7 +446,7 @@
             // label72
             // 
             this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(295, 48);
+            this.label72.Location = new System.Drawing.Point(295, 16);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(33, 13);
             this.label72.TabIndex = 38;
@@ -457,7 +455,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(295, 87);
+            this.label12.Location = new System.Drawing.Point(295, 55);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 13);
             this.label12.TabIndex = 31;
@@ -466,7 +464,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(179, 88);
+            this.label11.Location = new System.Drawing.Point(179, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 13);
             this.label11.TabIndex = 30;
@@ -475,7 +473,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(179, 48);
+            this.label10.Location = new System.Drawing.Point(179, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 13);
             this.label10.TabIndex = 29;
@@ -485,21 +483,22 @@
             // 
             this.treeViewBehaviors.Location = new System.Drawing.Point(6, 48);
             this.treeViewBehaviors.Name = "treeViewBehaviors";
-            treeNode5.Name = "NodeHourly";
-            treeNode5.Text = "Hourly";
-            treeNode6.Name = "NodeDaily";
-            treeNode6.Text = "Daily";
-            treeNode7.Name = "NodeWeekly";
-            treeNode7.Text = "Weekly";
-            treeNode8.Name = "NodeLessOften";
-            treeNode8.Text = "Less Often";
+            treeNode18.Name = "NodeHourly";
+            treeNode18.Text = "Hourly";
+            treeNode19.Name = "NodeDaily";
+            treeNode19.Text = "Daily";
+            treeNode20.Name = "NodeWeekly";
+            treeNode20.Text = "Weekly";
+            treeNode21.Name = "NodeLessOften";
+            treeNode21.Text = "Less Often";
             this.treeViewBehaviors.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8});
+            treeNode18,
+            treeNode19,
+            treeNode20,
+            treeNode21});
             this.treeViewBehaviors.Size = new System.Drawing.Size(170, 203);
             this.treeViewBehaviors.TabIndex = 28;
+            this.treeViewBehaviors.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewBehaviors_AfterSelect);
             // 
             // comboBehaviorFrequency
             // 
@@ -510,32 +509,25 @@
             "Daily",
             "Weekly",
             "Less Often"});
-            this.comboBehaviorFrequency.Location = new System.Drawing.Point(298, 104);
+            this.comboBehaviorFrequency.Location = new System.Drawing.Point(298, 72);
             this.comboBehaviorFrequency.Name = "comboBehaviorFrequency";
             this.comboBehaviorFrequency.Size = new System.Drawing.Size(100, 21);
             this.comboBehaviorFrequency.TabIndex = 27;
             // 
-            // btnEditBehavior
-            // 
-            this.btnEditBehavior.Location = new System.Drawing.Point(124, 19);
-            this.btnEditBehavior.Name = "btnEditBehavior";
-            this.btnEditBehavior.Size = new System.Drawing.Size(93, 23);
-            this.btnEditBehavior.TabIndex = 26;
-            this.btnEditBehavior.Text = "Edit Behavior";
-            this.btnEditBehavior.UseVisualStyleBackColor = true;
-            // 
             // btnRemoveBehavior
             // 
+            this.btnRemoveBehavior.Enabled = false;
             this.btnRemoveBehavior.Location = new System.Drawing.Point(6, 19);
             this.btnRemoveBehavior.Name = "btnRemoveBehavior";
             this.btnRemoveBehavior.Size = new System.Drawing.Size(112, 23);
             this.btnRemoveBehavior.TabIndex = 24;
             this.btnRemoveBehavior.Text = "Remove Behavior";
             this.btnRemoveBehavior.UseVisualStyleBackColor = true;
+            this.btnRemoveBehavior.Click += new System.EventHandler(this.btnRemoveBehavior_Click);
             // 
             // btnAddBehavior
             // 
-            this.btnAddBehavior.Location = new System.Drawing.Point(182, 130);
+            this.btnAddBehavior.Location = new System.Drawing.Point(182, 98);
             this.btnAddBehavior.Name = "btnAddBehavior";
             this.btnAddBehavior.Size = new System.Drawing.Size(100, 23);
             this.btnAddBehavior.TabIndex = 23;
@@ -551,7 +543,7 @@
             "Mild",
             "Moderate",
             "Severe"});
-            this.comboBehaviorSeverity.Location = new System.Drawing.Point(182, 104);
+            this.comboBehaviorSeverity.Location = new System.Drawing.Point(182, 72);
             this.comboBehaviorSeverity.Name = "comboBehaviorSeverity";
             this.comboBehaviorSeverity.Size = new System.Drawing.Size(110, 21);
             this.comboBehaviorSeverity.TabIndex = 21;
@@ -559,7 +551,7 @@
             // txtBehaviorOther
             // 
             this.txtBehaviorOther.Enabled = false;
-            this.txtBehaviorOther.Location = new System.Drawing.Point(298, 64);
+            this.txtBehaviorOther.Location = new System.Drawing.Point(298, 32);
             this.txtBehaviorOther.Name = "txtBehaviorOther";
             this.txtBehaviorOther.Size = new System.Drawing.Size(100, 20);
             this.txtBehaviorOther.TabIndex = 19;
@@ -598,7 +590,7 @@
             "Swearing",
             "Verbal Aggression",
             "Other"});
-            this.comboBehavior.Location = new System.Drawing.Point(182, 64);
+            this.comboBehavior.Location = new System.Drawing.Point(182, 32);
             this.comboBehavior.Name = "comboBehavior";
             this.comboBehavior.Size = new System.Drawing.Size(110, 21);
             this.comboBehavior.TabIndex = 18;
@@ -805,22 +797,22 @@
             // 
             this.treeViewStrengths.Location = new System.Drawing.Point(6, 52);
             this.treeViewStrengths.Name = "treeViewStrengths";
-            treeNode9.Name = "NodeStrengthsOfEmotion";
-            treeNode9.Text = "Strengths of Emotion";
-            treeNode10.Name = "NodeStrengthsOfWill";
-            treeNode10.Text = "Strengths of Will";
-            treeNode11.Name = "NodeRationalCivicStrengths";
-            treeNode11.Text = "Rational and Civic Strengths";
-            treeNode12.Name = "NodeStrengthsOfTolerance";
-            treeNode12.Text = "Strengths of Tolerance";
-            treeNode13.Name = "NodeOtherStrengths";
-            treeNode13.Text = "Other Strengths";
+            treeNode22.Name = "NodeStrengthsOfEmotion";
+            treeNode22.Text = "Strengths of Emotion";
+            treeNode23.Name = "NodeStrengthsOfWill";
+            treeNode23.Text = "Strengths of Will";
+            treeNode24.Name = "NodeRationalCivicStrengths";
+            treeNode24.Text = "Rational and Civic Strengths";
+            treeNode25.Name = "NodeStrengthsOfTolerance";
+            treeNode25.Text = "Strengths of Tolerance";
+            treeNode26.Name = "NodeOtherStrengths";
+            treeNode26.Text = "Other Strengths";
             this.treeViewStrengths.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13});
+            treeNode22,
+            treeNode23,
+            treeNode24,
+            treeNode25,
+            treeNode26});
             this.treeViewStrengths.Size = new System.Drawing.Size(165, 168);
             this.treeViewStrengths.TabIndex = 0;
             // 
@@ -961,7 +953,6 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TreeView treeViewBehaviors;
         private System.Windows.Forms.ComboBox comboBehaviorFrequency;
-        private System.Windows.Forms.Button btnEditBehavior;
         private System.Windows.Forms.Button btnRemoveBehavior;
         private System.Windows.Forms.Button btnAddBehavior;
         private System.Windows.Forms.ComboBox comboBehaviorSeverity;
