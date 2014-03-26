@@ -456,11 +456,16 @@ namespace GUI
         private void btnAddPhysiologicalCause_Click(object sender, EventArgs e)
         {
             //If the selected node is a behavior and not a child of a behavior, add the physiological cause to the treeview.
-            if (treeViewAntecedents.SelectedNode.Parent == null)
+            if (treeViewAntecedents.SelectedNode != null && treeViewAntecedents.SelectedNode.Parent == null)
             {
                 const string cause = "Physiological Causes";
                 TreeNodeCollection behaviorNodes = treeViewAntecedents.SelectedNode.Nodes;
-                string selectedCause = (string)comboPhysiologicalCause.SelectedItem;
+                string selectedCause;
+
+                if (comboPhysiologicalCause.SelectedIndex != comboPhysiologicalCause.Items.Count - 1)
+                    selectedCause = (string)comboPhysiologicalCause.SelectedItem;
+                else
+                    selectedCause = txtPhysiologicalCauseOther.Text;
 
                 //If this cause already exists for the specified behavior, check if the cause has already been added.
                 //Else the cause doesn't exist for the specified behavior, so add it.
@@ -480,6 +485,8 @@ namespace GUI
                 behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
                 treeViewAntecedents.SelectedNode.ExpandAll();
             }
+            else
+                MessageBox.Show("A behavior needs to be selected before a Physiological Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnAddEnvironmentalCause_Click(object sender, EventArgs e)
