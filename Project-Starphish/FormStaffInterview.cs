@@ -460,13 +460,14 @@ namespace GUI
             {
                 const string cause = "Physiological Causes";
                 TreeNodeCollection behaviorNodes = treeViewAntecedents.SelectedNode.Nodes;
+                string selectedCause = (string)comboPhysiologicalCause.SelectedItem;
 
                 //If this cause already exists for the specified behavior, check if the cause has already been added.
                 //Else the cause doesn't exist for the specified behavior, so add it.
                 if (behaviorNodes.ContainsKey(cause))
                 {
                     //If the cause has already been added, display an error message to the user and return.
-                    if (behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.ContainsKey((string)comboPhysiologicalCause.SelectedItem))
+                    if (behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.ContainsKey(selectedCause))
                     {
                         MessageBox.Show("The selected Physiological Cause has already been added.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -475,8 +476,8 @@ namespace GUI
                 else
                     behaviorNodes.Add(cause, cause);
 
-                // behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add()
-
+                //Add and show the new node (cause) in the treeview.
+                behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
                 treeViewAntecedents.SelectedNode.ExpandAll();
             }
         }
