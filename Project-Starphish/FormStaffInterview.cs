@@ -462,6 +462,8 @@ namespace GUI
                 TreeNodeCollection behaviorNodes = treeViewAntecedents.SelectedNode.Nodes;
                 string selectedCause;
 
+                //If a custom Cause wasn't used, get the cause from the combobox.
+                //Else a custom Cause was entered by the user, so get it from the textbox.
                 if (comboPhysiologicalCause.SelectedIndex != comboPhysiologicalCause.Items.Count - 1)
                     selectedCause = (string)comboPhysiologicalCause.SelectedItem;
                 else
@@ -491,14 +493,116 @@ namespace GUI
 
         private void btnAddEnvironmentalCause_Click(object sender, EventArgs e)
         {
+            //If the selected node is a behavior and not a child of a behavior, add the cause to the treeview.
+            if (treeViewAntecedents.SelectedNode != null && treeViewAntecedents.SelectedNode.Parent == null)
+            {
+                const string cause = "Environmental Causes";
+                TreeNodeCollection behaviorNodes = treeViewAntecedents.SelectedNode.Nodes;
+                string selectedCause;
+
+                //If a custom Cause wasn't used, get the cause from the combobox.
+                //Else a custom Cause was entered by the user, so get it from the textbox.
+                if (comboEnvironmentalCause.SelectedIndex != comboEnvironmentalCause.Items.Count - 1)
+                    selectedCause = (string)comboEnvironmentalCause.SelectedItem;
+                else
+                    selectedCause = txtEnvironmentalCauseOther.Text;
+
+                //If this cause already exists for the specified behavior, check if the cause has already been added.
+                //Else the cause doesn't exist for the specified behavior, so add it.
+                if (behaviorNodes.ContainsKey(cause))
+                {
+                    //If the cause has already been added, display an error message to the user and return.
+                    if (behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.ContainsKey(selectedCause))
+                    {
+                        MessageBox.Show("The selected Environmental Cause has already been added.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                    behaviorNodes.Add(cause, cause);
+
+                //Add and show the new node (cause) in the treeview.
+                behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
+                treeViewAntecedents.SelectedNode.ExpandAll();
+            }
+            else
+                MessageBox.Show("A behavior needs to be selected before an Environmental Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnAddPsychologicalCause_Click(object sender, EventArgs e)
         {
+            //If the selected node is a behavior and not a child of a behavior, add the cause to the treeview.
+            if (treeViewAntecedents.SelectedNode != null && treeViewAntecedents.SelectedNode.Parent == null)
+            {
+                const string cause = "Psychological Causes";
+                TreeNodeCollection behaviorNodes = treeViewAntecedents.SelectedNode.Nodes;
+                string selectedCause;
+
+                //If a custom Cause wasn't used, get the cause from the combobox.
+                //Else a custom Cause was entered by the user, so get it from the textbox.
+                if (comboPsychologicalCause.SelectedIndex != comboPsychologicalCause.Items.Count - 1)
+                    selectedCause = (string)comboPsychologicalCause.SelectedItem;
+                else
+                    selectedCause = txtPsychologicalCauseOther.Text;
+
+                //If this cause already exists for the specified behavior, check if the cause has already been added.
+                //Else the cause doesn't exist for the specified behavior, so add it.
+                if (behaviorNodes.ContainsKey(cause))
+                {
+                    //If the cause has already been added, display an error message to the user and return.
+                    if (behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.ContainsKey(selectedCause))
+                    {
+                        MessageBox.Show("The selected Psychological Cause has already been added.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                    behaviorNodes.Add(cause, cause);
+
+                //Add and show the new node (cause) in the treeview.
+                behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
+                treeViewAntecedents.SelectedNode.ExpandAll();
+            }
+            else
+                MessageBox.Show("A behavior needs to be selected before a Psychological Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnAddSocialCause_Click(object sender, EventArgs e)
         {
+            //If the selected node is a behavior and not a child of a behavior, add the cause to the treeview.
+            if (treeViewAntecedents.SelectedNode != null && treeViewAntecedents.SelectedNode.Parent == null)
+            {
+                const string cause = "Social Causes";
+                TreeNodeCollection behaviorNodes = treeViewAntecedents.SelectedNode.Nodes;
+                string selectedCause;
+
+                //If a custom Cause wasn't used, get the cause from the combobox.
+                //Else a custom Cause was entered by the user, so get it from the textbox.
+                if (comboSocialCause.SelectedIndex != comboSocialCause.Items.Count - 1)
+                    selectedCause = (string)comboSocialCause.SelectedItem;
+                else
+                    selectedCause = txtSocialCauseOther.Text;
+
+                //If this cause already exists for the specified behavior, check if the cause has already been added.
+                //Else the cause doesn't exist for the specified behavior, so add it.
+                if (behaviorNodes.ContainsKey(cause))
+                {
+                    //If the cause has already been added, display an error message to the user and return.
+                    if (behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.ContainsKey(selectedCause))
+                    {
+                        MessageBox.Show("The selected Social Cause has already been added.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                    behaviorNodes.Add(cause, cause);
+
+                //Add and show the new node (cause) in the treeview.
+                behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
+                treeViewAntecedents.SelectedNode.ExpandAll();
+            }
+            else
+                MessageBox.Show("A behavior needs to be selected before a Social Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
