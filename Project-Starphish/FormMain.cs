@@ -97,9 +97,10 @@ namespace GUI
 
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
-           //ignore this for now, still working on getting it to work. What we need to do here is check what was selected and look through
-           //the databse to find the value selected. From there we'll probably set our global ssn variable and then proceed to fill in the form
+            //ignore this for now, still working on getting it to work. What we need to do here is check what was selected and look through
+            //the databse to find the value selected. From there we'll probably set our global ssn variable and then proceed to fill in the form
         }
+
         private DataTable retrieveNames(SqlConnection connection)
         {
             //This gets all the columns from the database and places them in a datatable for easier access by the gui
@@ -114,7 +115,7 @@ namespace GUI
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
         {
             //if (tabControl1.SelectedIndex == 0)
-           // if (tabControl1.SelectedIndex == 1)
+            // if (tabControl1.SelectedIndex == 1)
             if (tabControl1.SelectedIndex == 2)
                 mainGraph();
             //if (tabControl1.SelectedIndex == 3)
