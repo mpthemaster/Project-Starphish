@@ -241,6 +241,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pERSONTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSONTableAdapter();
+            this.btnGenerateGraphs = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -1565,6 +1566,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnGenerateGraphs);
             this.tabPage3.Controls.Add(this.radUseTimeFrames);
             this.tabPage3.Controls.Add(this.radUseCustomQuarters);
             this.tabPage3.Controls.Add(this.radUseCustomDates);
@@ -1604,6 +1606,7 @@
             this.radUseTimeFrames.TabStop = true;
             this.radUseTimeFrames.Text = "Use Time Frames";
             this.radUseTimeFrames.UseVisualStyleBackColor = true;
+            this.radUseTimeFrames.Click += new System.EventHandler(this.radUseTimeFrames_Click);
             // 
             // radUseCustomQuarters
             // 
@@ -1614,6 +1617,7 @@
             this.radUseCustomQuarters.TabIndex = 50;
             this.radUseCustomQuarters.Text = "Use Custom Quarters";
             this.radUseCustomQuarters.UseVisualStyleBackColor = true;
+            this.radUseCustomQuarters.Click += new System.EventHandler(this.radUseCustomQuarters_Click);
             // 
             // radUseCustomDates
             // 
@@ -1624,6 +1628,7 @@
             this.radUseCustomDates.TabIndex = 49;
             this.radUseCustomDates.Text = "Use Custom Dates";
             this.radUseCustomDates.UseVisualStyleBackColor = true;
+            this.radUseCustomDates.Click += new System.EventHandler(this.radUseCustomDates_Click);
             // 
             // chkQuarter4
             // 
@@ -1824,6 +1829,7 @@
             this.comboBehaviorsToGraph.Name = "comboBehaviorsToGraph";
             this.comboBehaviorsToGraph.Size = new System.Drawing.Size(142, 21);
             this.comboBehaviorsToGraph.TabIndex = 1;
+            this.comboBehaviorsToGraph.SelectedIndexChanged += new System.EventHandler(this.comboBehaviorsToGraph_SelectedIndexChanged);
             // 
             // listBehaviorsToGraph
             // 
@@ -2168,6 +2174,17 @@
             // 
             this.pERSONTableAdapter.ClearBeforeFill = true;
             // 
+            // btnGenerateGraphs
+            // 
+            this.btnGenerateGraphs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateGraphs.Location = new System.Drawing.Point(3, 325);
+            this.btnGenerateGraphs.Name = "btnGenerateGraphs";
+            this.btnGenerateGraphs.Size = new System.Drawing.Size(142, 89);
+            this.btnGenerateGraphs.TabIndex = 52;
+            this.btnGenerateGraphs.Text = "Generate Graphs";
+            this.btnGenerateGraphs.UseVisualStyleBackColor = true;
+            this.btnGenerateGraphs.Click += new System.EventHandler(this.btnGenerateGraphs_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2410,6 +2427,7 @@
         private ProjectStarphishDataSet projectStarphishDataSet;
         private System.Windows.Forms.BindingSource pERSONBindingSource;
         private ProjectStarphishDataSetTableAdapters.PERSONTableAdapter pERSONTableAdapter;
+        private System.Windows.Forms.Button btnGenerateGraphs;
     }
 }
 
