@@ -84,5 +84,14 @@ namespace GUI
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             pERSONBindingSource.MoveLast();
         }
+
+        private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            //if (tabControl1.SelectedIndex == 0)
+           // if (tabControl1.SelectedIndex == 1)
+            if (tabControl1.SelectedIndex == 2)
+                mainGraph();
+            //if (tabControl1.SelectedIndex == 3)
+        }
     }
 }

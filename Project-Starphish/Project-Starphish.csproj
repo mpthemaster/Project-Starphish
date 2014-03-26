@@ -65,6 +65,9 @@
     <Compile Include="FormStaffInterview.Designer.cs">
       <DependentUpon>FormStaffInterview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Graphs.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectStarphishDataSet.cs">
       <DependentUpon>ProjectStarphishDataSet.xsd</DependentUpon>

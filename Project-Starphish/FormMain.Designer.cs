@@ -133,6 +133,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAdmittanceDate = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
+            this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectStarphishDataSet = new GUI.ProjectStarphishDataSet();
             this.txtManagedCareCompany = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtPolicyNum = new System.Windows.Forms.TextBox();
@@ -183,6 +185,7 @@
             this.txtDailyBehaviorOther = new System.Windows.Forms.TextBox();
             this.comboDailyBehaviors = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnGenerateGraphs = new System.Windows.Forms.Button();
             this.radUseTimeFrames = new System.Windows.Forms.RadioButton();
             this.radUseCustomQuarters = new System.Windows.Forms.RadioButton();
             this.radUseCustomDates = new System.Windows.Forms.RadioButton();
@@ -238,8 +241,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectStarphishDataSet = new GUI.ProjectStarphishDataSet();
             this.pERSONTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSONTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -250,6 +251,8 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).BeginInit();
@@ -268,8 +271,6 @@
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -283,6 +284,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1095, 649);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -1047,6 +1049,16 @@
             this.txtLastName.Size = new System.Drawing.Size(79, 20);
             this.txtLastName.TabIndex = 3;
             // 
+            // pERSONBindingSource
+            // 
+            this.pERSONBindingSource.DataMember = "PERSON";
+            this.pERSONBindingSource.DataSource = this.projectStarphishDataSet;
+            // 
+            // projectStarphishDataSet
+            // 
+            this.projectStarphishDataSet.DataSetName = "ProjectStarphishDataSet";
+            this.projectStarphishDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtManagedCareCompany
             // 
             this.txtManagedCareCompany.Location = new System.Drawing.Point(6, 451);
@@ -1554,6 +1566,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnGenerateGraphs);
             this.tabPage3.Controls.Add(this.radUseTimeFrames);
             this.tabPage3.Controls.Add(this.radUseCustomQuarters);
             this.tabPage3.Controls.Add(this.radUseCustomDates);
@@ -1582,6 +1595,17 @@
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnGenerateGraphs
+            // 
+            this.btnGenerateGraphs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateGraphs.Location = new System.Drawing.Point(3, 336);
+            this.btnGenerateGraphs.Name = "btnGenerateGraphs";
+            this.btnGenerateGraphs.Size = new System.Drawing.Size(142, 66);
+            this.btnGenerateGraphs.TabIndex = 52;
+            this.btnGenerateGraphs.Text = "Generate Graphs";
+            this.btnGenerateGraphs.UseVisualStyleBackColor = true;
+            this.btnGenerateGraphs.Click += new System.EventHandler(this.btnGenerateGraphs_Click);
+            // 
             // radUseTimeFrames
             // 
             this.radUseTimeFrames.AutoSize = true;
@@ -1593,6 +1617,7 @@
             this.radUseTimeFrames.TabStop = true;
             this.radUseTimeFrames.Text = "Use Time Frames";
             this.radUseTimeFrames.UseVisualStyleBackColor = true;
+            this.radUseTimeFrames.Click += new System.EventHandler(this.radUseTimeFrames_Click);
             // 
             // radUseCustomQuarters
             // 
@@ -1603,6 +1628,7 @@
             this.radUseCustomQuarters.TabIndex = 50;
             this.radUseCustomQuarters.Text = "Use Custom Quarters";
             this.radUseCustomQuarters.UseVisualStyleBackColor = true;
+            this.radUseCustomQuarters.Click += new System.EventHandler(this.radUseCustomQuarters_Click);
             // 
             // radUseCustomDates
             // 
@@ -1613,6 +1639,7 @@
             this.radUseCustomDates.TabIndex = 49;
             this.radUseCustomDates.Text = "Use Custom Dates";
             this.radUseCustomDates.UseVisualStyleBackColor = true;
+            this.radUseCustomDates.Click += new System.EventHandler(this.radUseCustomDates_Click);
             // 
             // chkQuarter4
             // 
@@ -1813,6 +1840,7 @@
             this.comboBehaviorsToGraph.Name = "comboBehaviorsToGraph";
             this.comboBehaviorsToGraph.Size = new System.Drawing.Size(142, 21);
             this.comboBehaviorsToGraph.TabIndex = 1;
+            this.comboBehaviorsToGraph.SelectedIndexChanged += new System.EventHandler(this.comboBehaviorsToGraph_SelectedIndexChanged);
             // 
             // listBehaviorsToGraph
             // 
@@ -2153,16 +2181,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // pERSONBindingSource
-            // 
-            this.pERSONBindingSource.DataMember = "PERSON";
-            this.pERSONBindingSource.DataSource = this.projectStarphishDataSet;
-            // 
-            // projectStarphishDataSet
-            // 
-            this.projectStarphishDataSet.DataSetName = "ProjectStarphishDataSet";
-            this.projectStarphishDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pERSONTableAdapter
             // 
             this.pERSONTableAdapter.ClearBeforeFill = true;
@@ -2193,6 +2211,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
@@ -2214,8 +2234,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2409,6 +2427,7 @@
         private ProjectStarphishDataSet projectStarphishDataSet;
         private System.Windows.Forms.BindingSource pERSONBindingSource;
         private ProjectStarphishDataSetTableAdapters.PERSONTableAdapter pERSONTableAdapter;
+        private System.Windows.Forms.Button btnGenerateGraphs;
     }
 }
 
