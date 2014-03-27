@@ -24,7 +24,6 @@ namespace GUI
             comboPhysiologicalCause.SelectedIndex = 0;
             comboPsychologicalCause.SelectedIndex = 0;
             comboEnvironmentalCause.SelectedIndex = 0;
-            comboSocialCause.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -603,6 +602,36 @@ namespace GUI
             }
             else
                 MessageBox.Show("A behavior needs to be selected before a Social Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnRemoveAntecedents_Click(object sender, EventArgs e)
+        {
+            //If a Cause or Category is selected, allow it to be removed.
+            //Else display an error message.
+            if (treeViewAntecedents.SelectedNode != null && treeViewAntecedents.SelectedNode.Parent != null)
+            {
+                //If a Cause is selected, remove it.
+                //Else a Category and all its children are being selected to be removed, so display a warning message.
+                if (treeViewAntecedents.SelectedNode.Parent.Parent != null)
+                {
+                    //If the Antecedent category will contain no more Causes after this cause is removed, then remove the category as well as its child.
+                    //Else there are other causes within this Antecedent category, so only remove the selected cause.
+                    if (treeViewAntecedents.SelectedNode.Parent.Nodes.Count == 1)
+                        treeViewAntecedents.SelectedNode.Parent.Remove();
+                    else
+                        treeViewAntecedents.SelectedNode.Remove();
+                }
+                else
+                {
+                    //If the user agrees that he or she would like to remove the antecdent category and all of its causes, do so.
+                    //Else do nothing.
+                    if (MessageBox.Show("You have selected to remove an Antecedent Category and all of its causes. Press yes if you wish to remove them.",
+                        "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                        treeViewAntecedents.SelectedNode.Remove();
+                }
+            }
+            else
+                MessageBox.Show("An Antecedent needs to be selected before it can be removed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

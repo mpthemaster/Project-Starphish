@@ -409,6 +409,7 @@
             this.btnRemoveAntecedents.TabIndex = 24;
             this.btnRemoveAntecedents.Text = "Remove Antecedent";
             this.btnRemoveAntecedents.UseVisualStyleBackColor = true;
+            this.btnRemoveAntecedents.Click += new System.EventHandler(this.btnRemoveAntecedents_Click);
             // 
             // groupBox9
             // 
