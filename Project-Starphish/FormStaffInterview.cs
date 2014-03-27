@@ -15,6 +15,7 @@ namespace GUI
         //All behaviors that have been added in an interview.
         private List<Behavior> behaviors = new List<Behavior>();
 
+        private string theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
         private int personId; //The ID of Shaun Burke's client.
         private bool newInterview; //Whether this is a new interview (putting a new row into the table) or retreiving an interview from the database.
 
@@ -69,14 +70,14 @@ namespace GUI
             retrieveInterviewData();
         }
 
+        //DONT FORGET TO USE PROECTION AGAINST INFORMATION THAT ISN'T ENTERED.
         private void btnSaveStaffInterview_Click(object sender, EventArgs e)
         {
             //Connect to the database.
-            string theConnectionString, statement;
+            string statement;
             SqlConnection connection;
             SqlCommand command;
 
-            theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
             connection = new SqlConnection(theConnectionString);
 
             //If this is a new interview, create a new entry in the database,
@@ -93,15 +94,59 @@ namespace GUI
                 command.Parameters.AddWithValue("@STAFF_ROLE", txtStaffRole.Text);
                 command.Parameters.AddWithValue("@INTERVIEWER", txtInterviewerName.Text);
                 command.ExecuteNonQuery();
-                connection.Close();
 
                 //Now save an entry into the STAFF_INTERVIEW_STRENGTH table.
-                statement = "INSERT INTO STAFF_INTERVIEW_STRENGTH (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, STRENGTH, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @STRENGTH, @CATEGORY)";
+                statement = "INSERT INTO STAFF_INTERVIEW_STRENGTH (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STRENGTH, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STRENGTH, @CATEGORY)";
+                command = new SqlCommand(statement, connection);
                 foreach (TreeNode parentNode in treeViewStrengths.Nodes)
                     foreach (TreeNode childNode in parentNode.Nodes)
                     {
-
+                        command.Parameters.AddWithValue("@PERSON_ID", personId);
+                        command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                        command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                        command.Parameters.AddWithValue("@STRENGTH", childNode.Name);
+                        command.Parameters.AddWithValue("@CATEGORY", parentNode.Name);
+                        command.ExecuteNonQuery();
+                        command.Parameters.Clear();
                     }
+
+                //Now save an entry into the STAFF_INTERVIEW_BEHAVIOR table.
+                statement = "INSERT INTO STAFF_INTERVIEW_BEHAVIOR (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, SEVERITY, FREQUENCY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @SEVERITY, @FREQUENCY)";
+                command = new SqlCommand(statement, connection);
+                foreach (Behavior behavior in behaviors)
+                {
+                    command.Parameters.AddWithValue("@PERSON_ID", personId);
+                    command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                    command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                    command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
+                    command.Parameters.AddWithValue("@SEVERITY", behavior.Severity);
+                    command.Parameters.AddWithValue("@FREQUENCY", behavior.Frequency);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                }
+
+                //Now save an entry into the STAFF_INTERVIEW_ANTECEDENT table.
+                statement = "INSERT INTO STAFF_INTERVIEW_ANTECEDENT (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, ANTECEDENT, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @ANTECEDENT, @CATEGORY)";
+                command = new SqlCommand(statement, connection);
+                foreach (Behavior behavior in behaviors)
+                {
+                    Dictionary<string, string>.KeyCollection keys = behavior.Antecedents.Keys;
+                    foreach (string key in keys)
+                    {
+                        command.Parameters.AddWithValue("@PERSON_ID", personId);
+                        command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                        command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                        command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
+                        command.Parameters.AddWithValue("@ANTECEDENT", key);
+                        command.Parameters.AddWithValue("@CATEGORY", behavior.Antecedents[key]);
+                        command.ExecuteNonQuery();
+                        command.Parameters.Clear();
+                    }
+                }
+
+                //Now save an rntry into the STAFF_INTERVIEW_QABF table.
+
+                connection.Close();
             }
             else
             {
@@ -586,9 +631,26 @@ namespace GUI
                 //Add and show the new node (cause) in the treeview.
                 behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
                 treeViewAntecedents.SelectedNode.ExpandAll();
+
+                addToBehaviorsAntecedentsList(cause, selectedCause);
             }
             else
                 MessageBox.Show("A behavior needs to be selected before a Physiological Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        /// <summary>
+        /// Add to the behavior's list of antecedents.
+        /// </summary>
+        /// <param name="cause"The type of cause.></param>
+        /// <param name="selectedCause">The cause itself.</param>
+        private void addToBehaviorsAntecedentsList(string cause, string selectedCause)
+        {
+            foreach (Behavior behavior in behaviors)
+                if (behavior.Name == treeViewAntecedents.SelectedNode.Name)
+                {
+                    behavior.Antecedents.Add(selectedCause, cause);
+                    break;
+                }
         }
 
         private void btnAddEnvironmentalCause_Click(object sender, EventArgs e)
@@ -624,6 +686,8 @@ namespace GUI
                 //Add and show the new node (cause) in the treeview.
                 behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
                 treeViewAntecedents.SelectedNode.ExpandAll();
+
+                addToBehaviorsAntecedentsList(cause, selectedCause);
             }
             else
                 MessageBox.Show("A behavior needs to be selected before an Environmental Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -662,6 +726,8 @@ namespace GUI
                 //Add and show the new node (cause) in the treeview.
                 behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
                 treeViewAntecedents.SelectedNode.ExpandAll();
+
+                addToBehaviorsAntecedentsList(cause, selectedCause);
             }
             else
                 MessageBox.Show("A behavior needs to be selected before a Psychological Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -700,6 +766,8 @@ namespace GUI
                 //Add and show the new node (cause) in the treeview.
                 behaviorNodes[behaviorNodes.IndexOfKey(cause)].Nodes.Add(selectedCause, selectedCause);
                 treeViewAntecedents.SelectedNode.ExpandAll();
+
+                addToBehaviorsAntecedentsList(cause, selectedCause);
             }
             else
                 MessageBox.Show("A behavior needs to be selected before a Social Cause can be added to it.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -715,6 +783,14 @@ namespace GUI
                 //Else a Category and all its children are being selected to be removed, so display a warning message.
                 if (treeViewAntecedents.SelectedNode.Parent.Parent != null)
                 {
+                    //Remove an antecendent from the behavior's list of antecedents.
+                    foreach (Behavior behavior in behaviors)
+                        if (behavior.Name == treeViewAntecedents.SelectedNode.Parent.Parent.Name)
+                        {
+                            behavior.Antecedents.Remove(treeViewAntecedents.SelectedNode.Name);
+                            break;
+                        }
+
                     //If the Antecedent category will contain no more Causes after this cause is removed, then remove the category as well as its child.
                     //Else there are other causes within this Antecedent category, so only remove the selected cause.
                     if (treeViewAntecedents.SelectedNode.Parent.Nodes.Count == 1)
@@ -728,7 +804,18 @@ namespace GUI
                     //Else do nothing.
                     if (MessageBox.Show("You have selected to remove an Antecedent Category and all of its causes. Press yes if you wish to remove them.",
                         "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        //Remove all the behavior's selected antecendents from the behavior's list of antecedents.
+                        foreach (Behavior behavior in behaviors)
+                            if (behavior.Name == treeViewAntecedents.SelectedNode.Parent.Name)
+                            {
+                                foreach (TreeNode node in treeViewAntecedents.SelectedNode.Nodes)
+                                    behavior.Antecedents.Remove(node.Name);
+                                break;
+                            }
+
                         treeViewAntecedents.SelectedNode.Remove();
+                    }
                 }
             }
             else

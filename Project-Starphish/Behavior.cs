@@ -1,4 +1,5 @@
 ﻿//Holds information about a behavior.
+using System.Collections.Generic;
 
 namespace GUI
 {
@@ -9,6 +10,8 @@ namespace GUI
         public string Severity { get; set; }
 
         public string Frequency { get; set; }
+
+        public Dictionary<string, string> Antecedents;
 
         /// <summary>
         /// Creates a new behavior.
@@ -21,6 +24,7 @@ namespace GUI
             this.Name = name;
             this.Severity = severity;
             this.Frequency = frequency;
+            Antecedents = new Dictionary<string, string>();
         }
     }
 }
