@@ -185,7 +185,6 @@
             this.txtDailyBehaviorOther = new System.Windows.Forms.TextBox();
             this.comboDailyBehaviors = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnGenerateGraphs = new System.Windows.Forms.Button();
             this.radUseTimeFrames = new System.Windows.Forms.RadioButton();
             this.radUseCustomQuarters = new System.Windows.Forms.RadioButton();
             this.radUseCustomDates = new System.Windows.Forms.RadioButton();
@@ -284,7 +283,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1095, 649);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -1232,14 +1230,11 @@
             // listClients
             // 
             this.listClients.FormattingEnabled = true;
-            this.listClients.Items.AddRange(new object[] {
-            "Ken \'Dark Souls\' Vinton",
-            "Michael \'Total War\' Petruzzello",
-            "Stefanos \'Stephanos\' Loss"});
             this.listClients.Location = new System.Drawing.Point(6, 53);
             this.listClients.Name = "listClients";
             this.listClients.Size = new System.Drawing.Size(217, 329);
             this.listClients.TabIndex = 0;
+            this.listClients.SelectedIndexChanged += new System.EventHandler(this.listClients_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -1566,7 +1561,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btnGenerateGraphs);
             this.tabPage3.Controls.Add(this.radUseTimeFrames);
             this.tabPage3.Controls.Add(this.radUseCustomQuarters);
             this.tabPage3.Controls.Add(this.radUseCustomDates);
@@ -1595,17 +1589,6 @@
             this.tabPage3.Text = "Graphs";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btnGenerateGraphs
-            // 
-            this.btnGenerateGraphs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateGraphs.Location = new System.Drawing.Point(3, 336);
-            this.btnGenerateGraphs.Name = "btnGenerateGraphs";
-            this.btnGenerateGraphs.Size = new System.Drawing.Size(142, 66);
-            this.btnGenerateGraphs.TabIndex = 52;
-            this.btnGenerateGraphs.Text = "Generate Graphs";
-            this.btnGenerateGraphs.UseVisualStyleBackColor = true;
-            this.btnGenerateGraphs.Click += new System.EventHandler(this.btnGenerateGraphs_Click);
-            // 
             // radUseTimeFrames
             // 
             this.radUseTimeFrames.AutoSize = true;
@@ -1617,7 +1600,6 @@
             this.radUseTimeFrames.TabStop = true;
             this.radUseTimeFrames.Text = "Use Time Frames";
             this.radUseTimeFrames.UseVisualStyleBackColor = true;
-            this.radUseTimeFrames.Click += new System.EventHandler(this.radUseTimeFrames_Click);
             // 
             // radUseCustomQuarters
             // 
@@ -1628,7 +1610,6 @@
             this.radUseCustomQuarters.TabIndex = 50;
             this.radUseCustomQuarters.Text = "Use Custom Quarters";
             this.radUseCustomQuarters.UseVisualStyleBackColor = true;
-            this.radUseCustomQuarters.Click += new System.EventHandler(this.radUseCustomQuarters_Click);
             // 
             // radUseCustomDates
             // 
@@ -1639,7 +1620,6 @@
             this.radUseCustomDates.TabIndex = 49;
             this.radUseCustomDates.Text = "Use Custom Dates";
             this.radUseCustomDates.UseVisualStyleBackColor = true;
-            this.radUseCustomDates.Click += new System.EventHandler(this.radUseCustomDates_Click);
             // 
             // chkQuarter4
             // 
@@ -1840,7 +1820,6 @@
             this.comboBehaviorsToGraph.Name = "comboBehaviorsToGraph";
             this.comboBehaviorsToGraph.Size = new System.Drawing.Size(142, 21);
             this.comboBehaviorsToGraph.TabIndex = 1;
-            this.comboBehaviorsToGraph.SelectedIndexChanged += new System.EventHandler(this.comboBehaviorsToGraph_SelectedIndexChanged);
             // 
             // listBehaviorsToGraph
             // 
@@ -2427,7 +2406,6 @@
         private ProjectStarphishDataSet projectStarphishDataSet;
         private System.Windows.Forms.BindingSource pERSONBindingSource;
         private ProjectStarphishDataSetTableAdapters.PERSONTableAdapter pERSONTableAdapter;
-        private System.Windows.Forms.Button btnGenerateGraphs;
     }
 }
 
