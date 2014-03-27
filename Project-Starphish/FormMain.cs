@@ -286,6 +286,7 @@ namespace GUI
 
         private void removeClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
         }
 
         private void saveAllToolStripMenuItem_Click(object sender, EventArgs e)
