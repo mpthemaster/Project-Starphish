@@ -75,6 +75,14 @@ namespace GUI
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectStarphishDataSet.EMERGENCY_CONTACT' table. You can move, or remove it, as needed.
+            this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
+            // TODO: This line of code loads data into the 'projectStarphishDataSet.NEXT_OF_KIN' table. You can move, or remove it, as needed.
+            this.nEXT_OF_KINTableAdapter.Fill(this.projectStarphishDataSet.NEXT_OF_KIN);
+            // TODO: This line of code loads data into the 'projectStarphishDataSet.COUNTY_RESPONSIBLE' table. You can move, or remove it, as needed.
+            this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
+            // TODO: This line of code loads data into the 'projectStarphishDataSet.NEW_LIGHT_SUPPORT' table. You can move, or remove it, as needed.
+            this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON' table. You can move, or remove it, as needed.
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
         }

@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea36 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title29 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea37 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title30 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea38 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title31 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea39 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title32 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea40 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint36 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint37 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint38 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint39 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint40 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -136,7 +136,6 @@
             this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectStarphishDataSet = new GUI.ProjectStarphishDataSet();
             this.txtManagedCareCompany = new System.Windows.Forms.TextBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtPolicyNum = new System.Windows.Forms.TextBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtInsuranceCarrier = new System.Windows.Forms.TextBox();
@@ -243,6 +242,16 @@
             this.pERSONTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSONTableAdapter();
             this.dialogFileOpenImage = new System.Windows.Forms.OpenFileDialog();
             this.dialogFileOpenISP = new System.Windows.Forms.OpenFileDialog();
+            this.tableAdapterManager = new GUI.ProjectStarphishDataSetTableAdapters.TableAdapterManager();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.nEW_LIGHT_SUPPORTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nEW_LIGHT_SUPPORTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter();
+            this.cOUNTY_RESPONSIBLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOUNTY_RESPONSIBLETableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.COUNTY_RESPONSIBLETableAdapter();
+            this.nEXT_OF_KINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nEXT_OF_KINTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter();
+            this.eMERGENCY_CONTACTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eMERGENCY_CONTACTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.EMERGENCY_CONTACTTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -272,6 +281,10 @@
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nEW_LIGHT_SUPPORTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOUNTY_RESPONSIBLEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nEXT_OF_KINBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMERGENCY_CONTACTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -358,6 +371,7 @@
             // 
             // txtEmergencyContactTelephoneNum
             // 
+            this.txtEmergencyContactTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "PHONE", true));
             this.txtEmergencyContactTelephoneNum.Location = new System.Drawing.Point(132, 103);
             this.txtEmergencyContactTelephoneNum.Name = "txtEmergencyContactTelephoneNum";
             this.txtEmergencyContactTelephoneNum.Size = new System.Drawing.Size(93, 20);
@@ -383,6 +397,7 @@
             // 
             // lstEmergencyContacts
             // 
+            this.lstEmergencyContacts.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.eMERGENCY_CONTACTBindingSource, "NAME", true));
             this.lstEmergencyContacts.FormattingEnabled = true;
             this.lstEmergencyContacts.Items.AddRange(new object[] {
             "EC#1",
@@ -394,6 +409,7 @@
             // 
             // txtEmergencyContactName
             // 
+            this.txtEmergencyContactName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "NAME", true));
             this.txtEmergencyContactName.Location = new System.Drawing.Point(132, 64);
             this.txtEmergencyContactName.Name = "txtEmergencyContactName";
             this.txtEmergencyContactName.Size = new System.Drawing.Size(131, 20);
@@ -401,6 +417,7 @@
             // 
             // txtEmergencyContactAddress
             // 
+            this.txtEmergencyContactAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "EC_ADDRESS", true));
             this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 150);
             this.txtEmergencyContactAddress.Name = "txtEmergencyContactAddress";
             this.txtEmergencyContactAddress.Size = new System.Drawing.Size(186, 20);
@@ -418,6 +435,7 @@
             // 
             // picClient
             // 
+            this.picClient.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.pERSONBindingSource, "PHOTO", true));
             this.picClient.Location = new System.Drawing.Point(530, 11);
             this.picClient.Name = "picClient";
             this.picClient.Size = new System.Drawing.Size(275, 206);
@@ -566,6 +584,7 @@
             // 
             // txtProgramSpecialistName
             // 
+            this.txtProgramSpecialistName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_SPECIALIST_NAME", true));
             this.txtProgramSpecialistName.Location = new System.Drawing.Point(6, 110);
             this.txtProgramSpecialistName.Name = "txtProgramSpecialistName";
             this.txtProgramSpecialistName.Size = new System.Drawing.Size(134, 20);
@@ -573,6 +592,7 @@
             // 
             // txtProgramSpecialistPhoneNum
             // 
+            this.txtProgramSpecialistPhoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_SPECIALIST_PHONE", true));
             this.txtProgramSpecialistPhoneNum.Location = new System.Drawing.Point(146, 110);
             this.txtProgramSpecialistPhoneNum.Name = "txtProgramSpecialistPhoneNum";
             this.txtProgramSpecialistPhoneNum.Size = new System.Drawing.Size(97, 20);
@@ -580,6 +600,7 @@
             // 
             // txtProgramCoordinatorName
             // 
+            this.txtProgramCoordinatorName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_COORDINATOR_NAME", true));
             this.txtProgramCoordinatorName.Location = new System.Drawing.Point(6, 71);
             this.txtProgramCoordinatorName.Name = "txtProgramCoordinatorName";
             this.txtProgramCoordinatorName.Size = new System.Drawing.Size(134, 20);
@@ -587,6 +608,7 @@
             // 
             // txtProgramCoordinatorTelephoneNum
             // 
+            this.txtProgramCoordinatorTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_COORDINATOR_PHONE", true));
             this.txtProgramCoordinatorTelephoneNum.Location = new System.Drawing.Point(146, 71);
             this.txtProgramCoordinatorTelephoneNum.Name = "txtProgramCoordinatorTelephoneNum";
             this.txtProgramCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
@@ -594,6 +616,7 @@
             // 
             // txtSiteSupervisorName
             // 
+            this.txtSiteSupervisorName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "SITE_SUPERVISOR_NAME", true));
             this.txtSiteSupervisorName.Location = new System.Drawing.Point(6, 32);
             this.txtSiteSupervisorName.Name = "txtSiteSupervisorName";
             this.txtSiteSupervisorName.Size = new System.Drawing.Size(134, 20);
@@ -601,6 +624,7 @@
             // 
             // txtSiteSupervisorTelephoneNum
             // 
+            this.txtSiteSupervisorTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "SITE_SUPERVISOR_PHONE", true));
             this.txtSiteSupervisorTelephoneNum.Location = new System.Drawing.Point(146, 32);
             this.txtSiteSupervisorTelephoneNum.Name = "txtSiteSupervisorTelephoneNum";
             this.txtSiteSupervisorTelephoneNum.Size = new System.Drawing.Size(97, 20);
@@ -661,6 +685,7 @@
             // 
             // txtCountyResponsible
             // 
+            this.txtCountyResponsible.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "COUNTY_NAME", true));
             this.txtCountyResponsible.Location = new System.Drawing.Point(6, 32);
             this.txtCountyResponsible.Name = "txtCountyResponsible";
             this.txtCountyResponsible.Size = new System.Drawing.Size(100, 20);
@@ -668,6 +693,7 @@
             // 
             // txtSupportsCoordinatorTelephoneNum
             // 
+            this.txtSupportsCoordinatorTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "SC_PHONE", true));
             this.txtSupportsCoordinatorTelephoneNum.Location = new System.Drawing.Point(199, 71);
             this.txtSupportsCoordinatorTelephoneNum.Name = "txtSupportsCoordinatorTelephoneNum";
             this.txtSupportsCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
@@ -675,6 +701,7 @@
             // 
             // txtSupportsCoordinatorName
             // 
+            this.txtSupportsCoordinatorName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "Supports_Coordinator_Name", true));
             this.txtSupportsCoordinatorName.Location = new System.Drawing.Point(112, 32);
             this.txtSupportsCoordinatorName.Name = "txtSupportsCoordinatorName";
             this.txtSupportsCoordinatorName.Size = new System.Drawing.Size(134, 20);
@@ -682,6 +709,7 @@
             // 
             // txtSupportsCoordinatorAddress
             // 
+            this.txtSupportsCoordinatorAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "Supports_Coordinator_Address", true));
             this.txtSupportsCoordinatorAddress.Location = new System.Drawing.Point(6, 71);
             this.txtSupportsCoordinatorAddress.Name = "txtSupportsCoordinatorAddress";
             this.txtSupportsCoordinatorAddress.Size = new System.Drawing.Size(187, 20);
@@ -726,6 +754,7 @@
             // 
             // txtNextOfKinTelephoneNum
             // 
+            this.txtNextOfKinTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "PHONE", true));
             this.txtNextOfKinTelephoneNum.Location = new System.Drawing.Point(132, 103);
             this.txtNextOfKinTelephoneNum.Name = "txtNextOfKinTelephoneNum";
             this.txtNextOfKinTelephoneNum.Size = new System.Drawing.Size(93, 20);
@@ -761,6 +790,7 @@
             // 
             // lstNextOfKin
             // 
+            this.lstNextOfKin.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.nEXT_OF_KINBindingSource, "NAME", true));
             this.lstNextOfKin.FormattingEnabled = true;
             this.lstNextOfKin.Items.AddRange(new object[] {
             "NOK#1",
@@ -772,6 +802,7 @@
             // 
             // txtNextOfKinName
             // 
+            this.txtNextOfKinName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "NAME", true));
             this.txtNextOfKinName.Location = new System.Drawing.Point(132, 64);
             this.txtNextOfKinName.Name = "txtNextOfKinName";
             this.txtNextOfKinName.Size = new System.Drawing.Size(131, 20);
@@ -779,6 +810,7 @@
             // 
             // txtNextOfKinAddress
             // 
+            this.txtNextOfKinAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "NOK_ADDRESS", true));
             this.txtNextOfKinAddress.Location = new System.Drawing.Point(6, 149);
             this.txtNextOfKinAddress.Name = "txtNextOfKinAddress";
             this.txtNextOfKinAddress.Size = new System.Drawing.Size(186, 20);
@@ -786,6 +818,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtFirstName);
             this.groupBox1.Controls.Add(this.txtRaceOther);
             this.groupBox1.Controls.Add(this.label44);
             this.groupBox1.Controls.Add(this.label43);
@@ -812,7 +845,6 @@
             this.groupBox1.Controls.Add(this.txtAdmittanceDate);
             this.groupBox1.Controls.Add(this.txtLastName);
             this.groupBox1.Controls.Add(this.txtManagedCareCompany);
-            this.groupBox1.Controls.Add(this.txtFirstName);
             this.groupBox1.Controls.Add(this.txtPolicyNum);
             this.groupBox1.Controls.Add(this.txtMiddleName);
             this.groupBox1.Controls.Add(this.txtInsuranceCarrier);
@@ -833,7 +865,7 @@
             this.groupBox1.Controls.Add(this.comboRace);
             this.groupBox1.Location = new System.Drawing.Point(229, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 479);
+            this.groupBox1.Size = new System.Drawing.Size(312, 491);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Demographics";
@@ -1045,6 +1077,7 @@
             // 
             // txtAdmittanceDate
             // 
+            this.txtAdmittanceDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "ADMITTANCE_DATE", true));
             this.txtAdmittanceDate.Location = new System.Drawing.Point(144, 71);
             this.txtAdmittanceDate.Name = "txtAdmittanceDate";
             this.txtAdmittanceDate.Size = new System.Drawing.Size(79, 20);
@@ -1070,20 +1103,15 @@
             // 
             // txtManagedCareCompany
             // 
+            this.txtManagedCareCompany.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "MANAGED_CARE_COMPANY", true));
             this.txtManagedCareCompany.Location = new System.Drawing.Point(6, 451);
             this.txtManagedCareCompany.Name = "txtManagedCareCompany";
             this.txtManagedCareCompany.Size = new System.Drawing.Size(137, 20);
             this.txtManagedCareCompany.TabIndex = 23;
             // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(91, 32);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(69, 20);
-            this.txtFirstName.TabIndex = 4;
-            // 
             // txtPolicyNum
             // 
+            this.txtPolicyNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "POLICY_NUM", true));
             this.txtPolicyNum.Location = new System.Drawing.Point(124, 412);
             this.txtPolicyNum.Name = "txtPolicyNum";
             this.txtPolicyNum.Size = new System.Drawing.Size(114, 20);
@@ -1091,6 +1119,7 @@
             // 
             // txtMiddleName
             // 
+            this.txtMiddleName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "MNAME", true));
             this.txtMiddleName.Location = new System.Drawing.Point(166, 32);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(72, 20);
@@ -1098,6 +1127,7 @@
             // 
             // txtInsuranceCarrier
             // 
+            this.txtInsuranceCarrier.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "INSURANCE_CARRIER", true));
             this.txtInsuranceCarrier.Location = new System.Drawing.Point(6, 412);
             this.txtInsuranceCarrier.Name = "txtInsuranceCarrier";
             this.txtInsuranceCarrier.Size = new System.Drawing.Size(112, 20);
@@ -1105,6 +1135,7 @@
             // 
             // txtAgencyName
             // 
+            this.txtAgencyName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "AGENCY_NAME", true));
             this.txtAgencyName.Location = new System.Drawing.Point(6, 71);
             this.txtAgencyName.Name = "txtAgencyName";
             this.txtAgencyName.Size = new System.Drawing.Size(132, 20);
@@ -1112,6 +1143,7 @@
             // 
             // txtMCINum
             // 
+            this.txtMCINum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "MCI", true));
             this.txtMCINum.Location = new System.Drawing.Point(118, 373);
             this.txtMCINum.Name = "txtMCINum";
             this.txtMCINum.Size = new System.Drawing.Size(100, 20);
@@ -1119,6 +1151,7 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "P_ADDRESS", true));
             this.txtAddress.Location = new System.Drawing.Point(6, 110);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(188, 20);
@@ -1126,6 +1159,7 @@
             // 
             // txtBSUNum
             // 
+            this.txtBSUNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "BSU", true));
             this.txtBSUNum.Location = new System.Drawing.Point(6, 373);
             this.txtBSUNum.Name = "txtBSUNum";
             this.txtBSUNum.Size = new System.Drawing.Size(106, 20);
@@ -1140,6 +1174,7 @@
             // 
             // txtIdentifyingMarks
             // 
+            this.txtIdentifyingMarks.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "IDENTIFYING_MARKS", true));
             this.txtIdentifyingMarks.Location = new System.Drawing.Point(6, 306);
             this.txtIdentifyingMarks.Multiline = true;
             this.txtIdentifyingMarks.Name = "txtIdentifyingMarks";
@@ -1148,6 +1183,7 @@
             // 
             // txtTelephoneNum
             // 
+            this.txtTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "PHONE", true));
             this.txtTelephoneNum.Location = new System.Drawing.Point(6, 149);
             this.txtTelephoneNum.Name = "txtTelephoneNum";
             this.txtTelephoneNum.Size = new System.Drawing.Size(97, 20);
@@ -1155,6 +1191,7 @@
             // 
             // txtHairColor
             // 
+            this.txtHairColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "HAIR_COLOR", true));
             this.txtHairColor.Location = new System.Drawing.Point(6, 267);
             this.txtHairColor.Name = "txtHairColor";
             this.txtHairColor.Size = new System.Drawing.Size(71, 20);
@@ -1162,6 +1199,7 @@
             // 
             // txtDateOfBirth
             // 
+            this.txtDateOfBirth.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "DATE_OF_BIRTH", true));
             this.txtDateOfBirth.Location = new System.Drawing.Point(6, 188);
             this.txtDateOfBirth.Name = "txtDateOfBirth";
             this.txtDateOfBirth.Size = new System.Drawing.Size(67, 20);
@@ -1169,6 +1207,7 @@
             // 
             // txtWeight
             // 
+            this.txtWeight.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "P_WEIGHT", true));
             this.txtWeight.Location = new System.Drawing.Point(124, 267);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(68, 20);
@@ -1176,6 +1215,7 @@
             // 
             // txtAge
             // 
+            this.txtAge.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "AGE", true));
             this.txtAge.Location = new System.Drawing.Point(79, 188);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(36, 20);
@@ -1183,6 +1223,7 @@
             // 
             // txtHeight
             // 
+            this.txtHeight.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "HEIGHT", true));
             this.txtHeight.Location = new System.Drawing.Point(83, 267);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(35, 20);
@@ -1190,6 +1231,7 @@
             // 
             // txtSocialSecurityNum
             // 
+            this.txtSocialSecurityNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "SSN", true));
             this.txtSocialSecurityNum.Location = new System.Drawing.Point(109, 149);
             this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
             this.txtSocialSecurityNum.Size = new System.Drawing.Size(84, 20);
@@ -1197,6 +1239,7 @@
             // 
             // comboGender
             // 
+            this.comboGender.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "GENDER", true));
             this.comboGender.DisplayMember = "Male";
             this.comboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboGender.FormattingEnabled = true;
@@ -1210,6 +1253,7 @@
             // 
             // comboRace
             // 
+            this.comboRace.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "RACE", true));
             this.comboRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRace.FormattingEnabled = true;
             this.comboRace.Items.AddRange(new object[] {
@@ -1411,14 +1455,14 @@
             this.dataGridViewDailyBehaviorTracking.AllowUserToOrderColumns = true;
             this.dataGridViewDailyBehaviorTracking.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridViewDailyBehaviorTracking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
             this.dataGridViewDailyBehaviorTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
             this.ColumnShift,
@@ -1434,17 +1478,17 @@
             // 
             // ColumnDate
             // 
-            dataGridViewCellStyle16.Format = "d";
-            dataGridViewCellStyle16.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle51.Format = "d";
+            dataGridViewCellStyle51.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle51;
             this.ColumnDate.HeaderText = "Date";
             this.ColumnDate.Name = "ColumnDate";
             this.ColumnDate.ReadOnly = true;
             // 
             // ColumnShift
             // 
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle52;
             this.ColumnShift.HeaderText = "Shift";
             this.ColumnShift.Items.AddRange(new object[] {
             "7a-3p",
@@ -1458,8 +1502,8 @@
             // ColumnArguing
             // 
             this.ColumnArguing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle18.NullValue = "Not Occurred";
-            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle53.NullValue = "Not Occurred";
+            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle53;
             this.ColumnArguing.HeaderText = "Arguing";
             this.ColumnArguing.Items.AddRange(new object[] {
             "Not Occurred",
@@ -1473,8 +1517,8 @@
             // ColumnPhysicalAggression
             // 
             this.ColumnPhysicalAggression.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle19.NullValue = "Moderate";
-            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle54.NullValue = "Moderate";
+            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle54;
             this.ColumnPhysicalAggression.HeaderText = "Physical Aggression";
             this.ColumnPhysicalAggression.Items.AddRange(new object[] {
             "Not Ocurred",
@@ -1488,17 +1532,17 @@
             // ColumnShiftTotal
             // 
             this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle20.Format = "N0";
-            dataGridViewCellStyle20.NullValue = "0";
-            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle55.Format = "N0";
+            dataGridViewCellStyle55.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle55;
             this.ColumnShiftTotal.HeaderText = "Shift Total";
             this.ColumnShiftTotal.Name = "ColumnShiftTotal";
             // 
             // ColumnStaffNames
             // 
             this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle56;
             this.ColumnStaffNames.HeaderText = "Staff Name(s)";
             this.ColumnStaffNames.MinimumWidth = 100;
             this.ColumnStaffNames.Name = "ColumnStaffNames";
@@ -1778,73 +1822,73 @@
             // 
             // chartPyramidOccurences
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chartPyramidOccurences.ChartAreas.Add(chartArea11);
+            chartArea36.Name = "ChartArea1";
+            this.chartPyramidOccurences.ChartAreas.Add(chartArea36);
             this.chartPyramidOccurences.Location = new System.Drawing.Point(624, 325);
             this.chartPyramidOccurences.Name = "chartPyramidOccurences";
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
-            series11.Name = "Series1";
-            this.chartPyramidOccurences.Series.Add(series11);
+            series36.ChartArea = "ChartArea1";
+            series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            series36.Name = "Series1";
+            this.chartPyramidOccurences.Series.Add(series36);
             this.chartPyramidOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPyramidOccurences.TabIndex = 35;
             this.chartPyramidOccurences.Text = "chart5";
-            title9.Name = "Title1";
-            title9.Text = "# Daily Occurences";
-            this.chartPyramidOccurences.Titles.Add(title9);
+            title29.Name = "Title1";
+            title29.Text = "# Daily Occurences";
+            this.chartPyramidOccurences.Titles.Add(title29);
             // 
             // chartSumOfBehaviors
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chartSumOfBehaviors.ChartAreas.Add(chartArea12);
+            chartArea37.Name = "ChartArea1";
+            this.chartSumOfBehaviors.ChartAreas.Add(chartArea37);
             this.chartSumOfBehaviors.Location = new System.Drawing.Point(151, 325);
             this.chartSumOfBehaviors.Name = "chartSumOfBehaviors";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.Name = "Series1";
-            this.chartSumOfBehaviors.Series.Add(series12);
+            series37.ChartArea = "ChartArea1";
+            series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series37.Name = "Series1";
+            this.chartSumOfBehaviors.Series.Add(series37);
             this.chartSumOfBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartSumOfBehaviors.TabIndex = 34;
             this.chartSumOfBehaviors.Text = "chart4";
-            title10.Name = "Title1";
-            title10.Text = "Sum of Arguing";
-            this.chartSumOfBehaviors.Titles.Add(title10);
+            title30.Name = "Title1";
+            title30.Text = "Sum of Arguing";
+            this.chartSumOfBehaviors.Titles.Add(title30);
             // 
             // chartPieDailyOccurences
             // 
-            chartArea13.Area3DStyle.Enable3D = true;
-            chartArea13.Area3DStyle.Inclination = 60;
-            chartArea13.Name = "ChartArea1";
-            this.chartPieDailyOccurences.ChartAreas.Add(chartArea13);
+            chartArea38.Area3DStyle.Enable3D = true;
+            chartArea38.Area3DStyle.Inclination = 60;
+            chartArea38.Name = "ChartArea1";
+            this.chartPieDailyOccurences.ChartAreas.Add(chartArea38);
             this.chartPieDailyOccurences.Location = new System.Drawing.Point(624, 64);
             this.chartPieDailyOccurences.Name = "chartPieDailyOccurences";
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series13.Name = "Series1";
-            this.chartPieDailyOccurences.Series.Add(series13);
+            series38.ChartArea = "ChartArea1";
+            series38.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series38.Name = "Series1";
+            this.chartPieDailyOccurences.Series.Add(series38);
             this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPieDailyOccurences.TabIndex = 33;
             this.chartPieDailyOccurences.Text = "chart3";
-            title11.Name = "Title1";
-            title11.Text = "# Daily Occurences";
-            this.chartPieDailyOccurences.Titles.Add(title11);
+            title31.Name = "Title1";
+            title31.Text = "# Daily Occurences";
+            this.chartPieDailyOccurences.Titles.Add(title31);
             // 
             // chartTotalBehaviors
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chartTotalBehaviors.ChartAreas.Add(chartArea14);
+            chartArea39.Name = "ChartArea1";
+            this.chartTotalBehaviors.ChartAreas.Add(chartArea39);
             this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series14.Name = "Series1";
-            this.chartTotalBehaviors.Series.Add(series14);
+            series39.ChartArea = "ChartArea1";
+            series39.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series39.Name = "Series1";
+            this.chartTotalBehaviors.Series.Add(series39);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartTotalBehaviors.TabIndex = 32;
             this.chartTotalBehaviors.Text = "chart2";
-            title12.Name = "Title1";
-            title12.Text = "Total Behaviors";
-            this.chartTotalBehaviors.Titles.Add(title12);
+            title32.Name = "Title1";
+            title32.Text = "Total Behaviors";
+            this.chartTotalBehaviors.Titles.Add(title32);
             // 
             // comboBehaviorsToGraph
             // 
@@ -1901,47 +1945,47 @@
             // 
             // chartQABFAnalysis
             // 
-            chartArea15.Area3DStyle.IsRightAngleAxes = false;
-            chartArea15.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea15.Area3DStyle.Rotation = 10;
-            chartArea15.Name = "ChartArea1";
-            this.chartQABFAnalysis.ChartAreas.Add(chartArea15);
+            chartArea40.Area3DStyle.IsRightAngleAxes = false;
+            chartArea40.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea40.Area3DStyle.Rotation = 10;
+            chartArea40.Name = "ChartArea1";
+            this.chartQABFAnalysis.ChartAreas.Add(chartArea40);
             this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
             this.chartQABFAnalysis.Name = "chartQABFAnalysis";
             this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series15.ChartArea = "ChartArea1";
-            series15.IsXValueIndexed = true;
-            series15.Name = "Series1";
-            dataPoint11.AxisLabel = "Attention";
-            dataPoint11.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataPoint11.IsValueShownAsLabel = false;
-            dataPoint11.IsVisibleInLegend = true;
-            dataPoint11.Label = "2.75";
-            dataPoint11.LabelAngle = 0;
-            dataPoint11.LabelBorderColor = System.Drawing.Color.Transparent;
-            dataPoint11.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint11.LabelBorderWidth = 1;
-            dataPoint11.LegendText = "";
-            dataPoint12.AxisLabel = "Escape";
-            dataPoint12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataPoint12.Label = "2";
-            dataPoint13.AxisLabel = "Non-Social";
-            dataPoint13.Color = System.Drawing.Color.Gray;
-            dataPoint13.Label = "1.6";
-            dataPoint14.AxisLabel = "Physical";
-            dataPoint14.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataPoint14.Label = "1.2";
-            dataPoint15.AxisLabel = "Tangible";
-            dataPoint15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataPoint15.Label = "1.6";
-            series15.Points.Add(dataPoint11);
-            series15.Points.Add(dataPoint12);
-            series15.Points.Add(dataPoint13);
-            series15.Points.Add(dataPoint14);
-            series15.Points.Add(dataPoint15);
-            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chartQABFAnalysis.Series.Add(series15);
+            series40.ChartArea = "ChartArea1";
+            series40.IsXValueIndexed = true;
+            series40.Name = "Series1";
+            dataPoint36.AxisLabel = "Attention";
+            dataPoint36.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint36.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataPoint36.IsValueShownAsLabel = false;
+            dataPoint36.IsVisibleInLegend = true;
+            dataPoint36.Label = "2.75";
+            dataPoint36.LabelAngle = 0;
+            dataPoint36.LabelBorderColor = System.Drawing.Color.Transparent;
+            dataPoint36.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint36.LabelBorderWidth = 1;
+            dataPoint36.LegendText = "";
+            dataPoint37.AxisLabel = "Escape";
+            dataPoint37.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint37.Label = "2";
+            dataPoint38.AxisLabel = "Non-Social";
+            dataPoint38.Color = System.Drawing.Color.Gray;
+            dataPoint38.Label = "1.6";
+            dataPoint39.AxisLabel = "Physical";
+            dataPoint39.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataPoint39.Label = "1.2";
+            dataPoint40.AxisLabel = "Tangible";
+            dataPoint40.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataPoint40.Label = "1.6";
+            series40.Points.Add(dataPoint36);
+            series40.Points.Add(dataPoint37);
+            series40.Points.Add(dataPoint38);
+            series40.Points.Add(dataPoint39);
+            series40.Points.Add(dataPoint40);
+            series40.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chartQABFAnalysis.Series.Add(series40);
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
             this.chartQABFAnalysis.TabIndex = 0;
             this.chartQABFAnalysis.Text = "chart1";
@@ -2213,6 +2257,67 @@
             // 
             this.dialogFileOpenISP.FileName = "openFileDialog1";
             // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BEHAVIORTableAdapter = null;
+            this.tableAdapterManager.COUNTY_RESPONSIBLETableAdapter = this.cOUNTY_RESPONSIBLETableAdapter;
+            this.tableAdapterManager.EMERGENCY_CONTACTTableAdapter = this.eMERGENCY_CONTACTTableAdapter;
+            this.tableAdapterManager.NEW_LIGHT_SUPPORTTableAdapter = this.nEW_LIGHT_SUPPORTTableAdapter;
+            this.tableAdapterManager.NEXT_OF_KINTableAdapter = this.nEXT_OF_KINTableAdapter;
+            this.tableAdapterManager.PERSON_ISPTableAdapter = null;
+            this.tableAdapterManager.PERSONTableAdapter = this.pERSONTableAdapter;
+            this.tableAdapterManager.STAFF_INTERVIEW_ANTECEDENTTableAdapter = null;
+            this.tableAdapterManager.STAFF_INTERVIEW_BEHAVIORTableAdapter = null;
+            this.tableAdapterManager.STAFF_INTERVIEW_QABFTableAdapter = null;
+            this.tableAdapterManager.STAFF_INTERVIEW_STRENGTHTableAdapter = null;
+            this.tableAdapterManager.STAFF_INTERVIEWTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = GUI.ProjectStarphishDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "FNAME", true));
+            this.txtFirstName.Location = new System.Drawing.Point(93, 32);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(67, 20);
+            this.txtFirstName.TabIndex = 48;
+            // 
+            // nEW_LIGHT_SUPPORTBindingSource
+            // 
+            this.nEW_LIGHT_SUPPORTBindingSource.DataMember = "NEW_LIGHT_SUPPORT_PERSON_FK";
+            this.nEW_LIGHT_SUPPORTBindingSource.DataSource = this.pERSONBindingSource;
+            // 
+            // nEW_LIGHT_SUPPORTTableAdapter
+            // 
+            this.nEW_LIGHT_SUPPORTTableAdapter.ClearBeforeFill = true;
+            // 
+            // cOUNTY_RESPONSIBLEBindingSource
+            // 
+            this.cOUNTY_RESPONSIBLEBindingSource.DataMember = "COUNTY_RESPONSIBLE_PERSON_FK";
+            this.cOUNTY_RESPONSIBLEBindingSource.DataSource = this.pERSONBindingSource;
+            // 
+            // cOUNTY_RESPONSIBLETableAdapter
+            // 
+            this.cOUNTY_RESPONSIBLETableAdapter.ClearBeforeFill = true;
+            // 
+            // nEXT_OF_KINBindingSource
+            // 
+            this.nEXT_OF_KINBindingSource.DataMember = "NEXT_OF_KIN_PERSON_FK";
+            this.nEXT_OF_KINBindingSource.DataSource = this.pERSONBindingSource;
+            // 
+            // nEXT_OF_KINTableAdapter
+            // 
+            this.nEXT_OF_KINTableAdapter.ClearBeforeFill = true;
+            // 
+            // eMERGENCY_CONTACTBindingSource
+            // 
+            this.eMERGENCY_CONTACTBindingSource.DataMember = "EMERGENCY_CONTACT_PERSON_FK";
+            this.eMERGENCY_CONTACTBindingSource.DataSource = this.pERSONBindingSource;
+            // 
+            // eMERGENCY_CONTACTTableAdapter
+            // 
+            this.eMERGENCY_CONTACTTableAdapter.ClearBeforeFill = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2262,6 +2367,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nEW_LIGHT_SUPPORTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOUNTY_RESPONSIBLEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nEXT_OF_KINBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMERGENCY_CONTACTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2281,7 +2390,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearchClient;
         private System.Windows.Forms.TextBox txtMiddleName;
-        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtZipCode;
         private System.Windows.Forms.TextBox txtAddress;
@@ -2457,6 +2565,16 @@
         private System.Windows.Forms.Button btnGenerateGraphs;
         private System.Windows.Forms.OpenFileDialog dialogFileOpenImage;
         private System.Windows.Forms.OpenFileDialog dialogFileOpenISP;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private ProjectStarphishDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter nEW_LIGHT_SUPPORTTableAdapter;
+        private System.Windows.Forms.BindingSource nEW_LIGHT_SUPPORTBindingSource;
+        private ProjectStarphishDataSetTableAdapters.COUNTY_RESPONSIBLETableAdapter cOUNTY_RESPONSIBLETableAdapter;
+        private System.Windows.Forms.BindingSource cOUNTY_RESPONSIBLEBindingSource;
+        private ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter nEXT_OF_KINTableAdapter;
+        private System.Windows.Forms.BindingSource nEXT_OF_KINBindingSource;
+        private ProjectStarphishDataSetTableAdapters.EMERGENCY_CONTACTTableAdapter eMERGENCY_CONTACTTableAdapter;
+        private System.Windows.Forms.BindingSource eMERGENCY_CONTACTBindingSource;
     }
 }
 
