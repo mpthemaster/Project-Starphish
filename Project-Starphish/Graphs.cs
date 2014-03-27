@@ -8,9 +8,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GUI
 {
-    public partial class FormMain : Form
+    public partial class FormMain
     {
-        bool firstTime = true;
+        private bool firstTime = true;
 
         /// <summary>
         /// The function that starts the graphing tab
@@ -33,11 +33,10 @@ namespace GUI
                 createGraphs();
                 firstTime = false;
             }
-            
         }
 
         /// <summary>
-        /// Checks to see which behaviors are selected to be graphed, how far 
+        /// Checks to see which behaviors are selected to be graphed, how far
         /// back the graph should go, and then calls the function to graph them
         /// </summary>
         private void getGraphRange()
@@ -50,7 +49,6 @@ namespace GUI
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 1)//last 60 days
                 {
-
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 2)//last quarter
                 {

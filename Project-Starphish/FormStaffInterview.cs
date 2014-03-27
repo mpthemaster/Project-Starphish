@@ -9,6 +9,9 @@ namespace GUI
         //All behaviors that have been added in an interview.
         private List<Behavior> behaviors = new List<Behavior>();
 
+        /// <summary>
+        /// Assumes a new staff interview is being created.
+        /// </summary>
         public FormStaffInterview()
         {
             InitializeComponent();
@@ -24,6 +27,45 @@ namespace GUI
             comboPhysiologicalCause.SelectedIndex = 0;
             comboPsychologicalCause.SelectedIndex = 0;
             comboEnvironmentalCause.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Assumes a staff interview with the specified person is being viewed.
+        /// </summary>
+        /// <param name="intervieweeName">The interviewee's name.</param>
+        public FormStaffInterview(string intervieweeName)
+        {
+            InitializeComponent();
+
+            //Gives the comboboxes default picked options.
+            comboStrengthOfEmotion.SelectedIndex = 0;
+            comboStrengthOfTolerance.SelectedIndex = 0;
+            comboStrengthOfWill.SelectedIndex = 0;
+            comboRationalCivicStrength.SelectedIndex = 0;
+            comboBehavior.SelectedIndex = 0;
+            comboBehaviorFrequency.SelectedIndex = 0;
+            comboBehaviorSeverity.SelectedIndex = 0;
+            comboPhysiologicalCause.SelectedIndex = 0;
+            comboPsychologicalCause.SelectedIndex = 0;
+            comboEnvironmentalCause.SelectedIndex = 0;
+
+            retrieveInterviewData();
+        }
+
+        private void retrieveInterviewData()
+        {
+        }
+
+        private void loadStrengths()
+        {
+        }
+
+        private void loadBehaviors()
+        {
+        }
+
+        private void loadAntecedents()
+        {
         }
 
         /// <summary>

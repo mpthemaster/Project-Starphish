@@ -98,5 +98,73 @@ namespace GUI
                 mainGraph();
             //if (tabControl1.SelectedIndex == 3)
         }
+
+        private void btnViewInterview_Click(object sender, EventArgs e)
+        {
+            FormStaffInterview staffInterview = new FormStaffInterview();
+            staffInterview.Show();
+        }
+
+        private void btnRemoveInterview_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lstInterviews_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridViewBehaviorsStaffInterviews_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void removeClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void saveAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnSelectImage_Click(object sender, EventArgs e)
+        {
+            //If the user doesn't cancel the image file selection, save it and display it picbox.
+            if (dialogFileOpenImage.ShowDialog() != DialogResult.Cancel)
+                ;
+        }
+
+        private void btnAddISP_Click(object sender, EventArgs e)
+        {
+            //If the user doesn't cancel the ISP file selection, save it and display it in the listbox.
+            if (dialogFileOpenImage.ShowDialog() != DialogResult.Cancel)
+                ;
+        }
+
+        private void btnViewISP_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnRemoveISP_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnRemoveNextOfKin_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAddNextOfKin_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnRemoveEmergencyContact_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAddEmergencyContact_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
