@@ -17,8 +17,12 @@ namespace GUI
     {
         private string theConnectionString;
         private string insertStatement;
+        private string insertStatementNLS;
+        private string insertStatementCR;
         private SqlConnection connection;
         private SqlCommand command;
+        private SqlCommand commandNLS;
+        private SqlCommand commandCR;
 
         public FormMain()
         {
@@ -26,8 +30,13 @@ namespace GUI
             theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
             //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
             insertStatement = "INSERT INTO PERSON (FNAME, MNAME, LNAME, IDENTIFYING_MARKS, PHOTO, AGENCY_NAME, P_ADDRESS, PHONE, ADMITTANCE_DATE, DATE_OF_BIRTH, AGE, GENDER, RACE, HAIR_COLOR, HEIGHT, P_WEIGHT, BSU, MCI, INSURANCE_CARRIER, POLICY_NUM, MANAGED_CARE_COMPANY, SSN) VALUES        (@FNAME, @MNAME, @LNAME, @IDENTIFYING_MARKS, @PHOTO, @AGENCY_NAME, @P_ADDRESS, @PHONE, @ADMITTANCE_DATE, @DATE_OF_BIRTH, @AGE, @GENDER, @RACE, @HAIR_COLOR, @HEIGHT, @P_WEIGHT, @BSU, @MCI, @INSURANCE_CARRIER, @POLICY_NUM, @MANAGED_CARE_COMPANY, @SSN)";
+            insertStatementNLS = "INSERT INTO NEW_LIGHT_SUPPORT (PERSON_ID, SITE_SUPERVISOR_NAME, SITE_SUPERVISOR_PHONE, PROGRAM_COORDINATOR_NAME, PROGRAM_COORDINATOR_PHONE, PROGRAM_SPECIALIST_NAME, PROGRAM_SPECIALIST_PHONE) VALUES        (@PERSON_ID, @SITE_SUPERVISOR_NAME, @SITE_SUPERVISOR_PHONE, @PROGRAM_COORDINATOR_NAME, @PROGRAM_COORDINATOR_PHONE, @PROGRAM_SPECIALIST_NAME, @PROGRAM_SPECIALIST_PHONE)";
+            insertStatementCR = "INSERT INTO COUNTY_RESPONSIBLE (PERSON_ID, SITE_SUPERVISOR_NAME, SITE_SUPERVISOR_PHONE, PROGRAM_COORDINATOR_NAME, PROGRAM_COORDINATOR_PHONE, PROGRAM_SPECIALIST_NAME, PROGRAM_SPECIALIST_PHONE) VALUES        (@PERSON_ID, @SITE_SUPERVISOR_NAME, @SITE_SUPERVISOR_PHONE, @PROGRAM_COORDINATOR_NAME, @PROGRAM_COORDINATOR_PHONE, @PROGRAM_SPECIALIST_NAME, @PROGRAM_SPECIALIST_PHONE)";
             connection = new SqlConnection(theConnectionString);
             command = new SqlCommand(insertStatement, connection);
+            commandNLS = new SqlCommand(insertStatementNLS, connection);
+            commandCR = new SqlCommand(insertStatementCR, connection);
+            
         }
 
         /// <summary>
@@ -66,7 +75,7 @@ namespace GUI
             command.Parameters.AddWithValue("@MCI", txtMCINum.Text);
             command.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
             command.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
-            command.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtFirstName.Text);
+            command.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtManagedCareCompany.Text);
             command.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
 
             command.ExecuteNonQuery();
