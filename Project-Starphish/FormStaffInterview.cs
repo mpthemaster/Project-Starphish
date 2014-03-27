@@ -1,5 +1,11 @@
-﻿using System;
+﻿/*
+ *  Remove and Add buttons for Parts I and III should be disabled and enabled as appropriate, though error code is in place if I don't have the time to do this.
+ */
+
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace GUI
@@ -9,12 +15,19 @@ namespace GUI
         //All behaviors that have been added in an interview.
         private List<Behavior> behaviors = new List<Behavior>();
 
+        private int personId; //The ID of Shaun Burke's client.
+        private bool newInterview; //Whether this is a new interview (putting a new row into the table) or retreiving an interview from the database.
+
         /// <summary>
         /// Assumes a new staff interview is being created.
         /// </summary>
-        public FormStaffInterview()
+        /// <param name="personId">The ID of the client that this interview is being conducted for.</param>
+        public FormStaffInterview(int personId)
         {
             InitializeComponent();
+
+            this.personId = personId;
+            newInterview = true;
 
             //Gives the comboboxes default picked options.
             comboStrengthOfEmotion.SelectedIndex = 0;
@@ -32,10 +45,14 @@ namespace GUI
         /// <summary>
         /// Assumes a staff interview with the specified person is being viewed.
         /// </summary>
+        /// <param name="personId">The ID of the client that this interview is being conducted for.</param>
         /// <param name="intervieweeName">The interviewee's name.</param>
-        public FormStaffInterview(string intervieweeName)
+        public FormStaffInterview(int personId, string intervieweeName)
         {
             InitializeComponent();
+
+            this.personId = personId;
+            newInterview = false;
 
             //Gives the comboboxes default picked options.
             comboStrengthOfEmotion.SelectedIndex = 0;
@@ -50,6 +67,40 @@ namespace GUI
             comboEnvironmentalCause.SelectedIndex = 0;
 
             retrieveInterviewData();
+        }
+
+        private void btnSaveStaffInterview_Click(object sender, EventArgs e)
+        {
+            //Connect to the database.
+            string theConnectionString, statement;
+            SqlConnection connection;
+            SqlCommand command;
+
+            theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
+            connection = new SqlConnection(theConnectionString);
+
+            //If this is a new interview, create a new entry in the database,
+            //Else this isn't a new interview, so update the current entry.
+            if (newInterview)
+            {
+                //First save an entry into the STAFF_INTERVIEW table.
+                statement = "INSERT INTO STAFF_INTERVIEW (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STAFF_ROLE, INTERVIEWER) VALUES        (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STAFF_ROLE, @INTERVIEWER)";
+                command = new SqlCommand(statement, connection);
+                connection.Open();
+                command.Parameters.AddWithValue("@PERSON_ID", personId);
+                command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                command.Parameters.AddWithValue("@STAFF_INTERVIEWED", "rawr");
+                command.Parameters.AddWithValue("@STAFF_ROLE", "rawr");
+                command.Parameters.AddWithValue("@INTERVIEWER", "rawr");
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            else
+            {
+                statement = "INSERT INTO PERSON (FNAME, MNAME, LNAME, IDENTIFYING_MARKS, PHOTO, AGENCY_NAME, P_ADDRESS, PHONE, ADMITTANCE_DATE, DATE_OF_BIRTH, AGE, GENDER, RACE, HAIR_COLOR, HEIGHT, P_WEIGHT, BSU, MCI, INSURANCE_CARRIER, POLICY_NUM, MANAGED_CARE_COMPANY, SSN) VALUES        (@FNAME, @MNAME, @LNAME, @IDENTIFYING_MARKS, @PHOTO, @AGENCY_NAME, @P_ADDRESS, @PHONE, @ADMITTANCE_DATE, @DATE_OF_BIRTH, @AGE, @GENDER, @RACE, @HAIR_COLOR, @HEIGHT, @P_WEIGHT, @BSU, @MCI, @INSURANCE_CARRIER, @POLICY_NUM, @MANAGED_CARE_COMPANY, @SSN)";
+                //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
+                command = new SqlCommand(statement, connection);
+            }
         }
 
         private void retrieveInterviewData()

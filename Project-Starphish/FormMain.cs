@@ -35,7 +35,7 @@ namespace GUI
         /// </summary>
         private void btnAddInterview_Click(object sender, EventArgs e)
         {
-            FormStaffInterview staffInterview = new FormStaffInterview();
+            FormStaffInterview staffInterview = new FormStaffInterview(1);
             staffInterview.Show();
         }
 
@@ -109,7 +109,7 @@ namespace GUI
 
         private void btnViewInterview_Click(object sender, EventArgs e)
         {
-            FormStaffInterview staffInterview = new FormStaffInterview();
+            FormStaffInterview staffInterview = new FormStaffInterview(1, "name");
             staffInterview.Show();
         }
 

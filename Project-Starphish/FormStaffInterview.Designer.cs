@@ -888,6 +888,7 @@
             this.btnSaveStaffInterview.TabIndex = 64;
             this.btnSaveStaffInterview.Text = "Save";
             this.btnSaveStaffInterview.UseVisualStyleBackColor = true;
+            this.btnSaveStaffInterview.Click += new System.EventHandler(this.btnSaveStaffInterview_Click);
             // 
             // FormStaffInterview
             // 
