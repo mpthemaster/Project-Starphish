@@ -49,23 +49,23 @@ namespace GUI
             command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
             command.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
             command.Parameters.AddWithValue("@LNAME", txtLastName.Text);
-            command.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtFirstName.Text);
+            command.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
             command.Parameters.AddWithValue("@PHOTO", ms.ToArray());
-            command.Parameters.AddWithValue("@AGENCY_NAME", txtFirstName.Text);
-            command.Parameters.AddWithValue("@P_ADDRESS", txtFirstName.Text);
-            command.Parameters.AddWithValue("@PHONE", txtAdmittanceDate.Text);
+            command.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
+            command.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
+            command.Parameters.AddWithValue("@PHONE", txtTelephoneNum.Text);
             command.Parameters.AddWithValue("@ADMITTANCE_DATE", txtAdmittanceDate.Text);
             command.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
-            command.Parameters.AddWithValue("@AGE", txtAdmittanceDate.Text);
-            command.Parameters.AddWithValue("@GENDER", txtFirstName.Text);
-            command.Parameters.AddWithValue("@RACE", txtFirstName.Text);
-            command.Parameters.AddWithValue("@HAIR_COLOR", txtFirstName.Text);
-            command.Parameters.AddWithValue("@HEIGHT", txtAdmittanceDate.Text);
-            command.Parameters.AddWithValue("@P_WEIGHT", txtAdmittanceDate.Text);
-            command.Parameters.AddWithValue("@BSU", txtAdmittanceDate.Text);
-            command.Parameters.AddWithValue("@MCI", txtAdmittanceDate.Text);
-            command.Parameters.AddWithValue("@INSURANCE_CARRIER", txtFirstName.Text);
-            command.Parameters.AddWithValue("@POLICY_NUM", txtAdmittanceDate.Text);
+            command.Parameters.AddWithValue("@AGE", txtAge.Text);
+            command.Parameters.AddWithValue("@GENDER", comboGender.Text);
+            command.Parameters.AddWithValue("@RACE", comboRace.Text);
+            command.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
+            command.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
+            command.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
+            command.Parameters.AddWithValue("@BSU", txtBSUNum.Text);
+            command.Parameters.AddWithValue("@MCI", txtMCINum.Text);
+            command.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
+            command.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
             command.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtFirstName.Text);
             command.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
 
@@ -95,7 +95,7 @@ namespace GUI
 
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //still working on this
+            //it won't compile without this now. Woo.
         }
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
