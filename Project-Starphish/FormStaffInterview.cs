@@ -89,11 +89,19 @@ namespace GUI
                 connection.Open();
                 command.Parameters.AddWithValue("@PERSON_ID", personId);
                 command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
-                command.Parameters.AddWithValue("@STAFF_INTERVIEWED", "rawr");
-                command.Parameters.AddWithValue("@STAFF_ROLE", "rawr");
-                command.Parameters.AddWithValue("@INTERVIEWER", "rawr");
+                command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                command.Parameters.AddWithValue("@STAFF_ROLE", txtStaffRole.Text);
+                command.Parameters.AddWithValue("@INTERVIEWER", txtInterviewerName.Text);
                 command.ExecuteNonQuery();
                 connection.Close();
+
+                //Now save an entry into the STAFF_INTERVIEW_STRENGTH table.
+                statement = "INSERT INTO STAFF_INTERVIEW_STRENGTH (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, STRENGTH, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @STRENGTH, @CATEGORY)";
+                foreach (TreeNode parentNode in treeViewStrengths.Nodes)
+                    foreach (TreeNode childNode in parentNode.Nodes)
+                    {
+
+                    }
             }
             else
             {
