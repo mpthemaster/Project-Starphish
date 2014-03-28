@@ -57,6 +57,7 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnModifyClient = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.btnAddEmergencyContact = new System.Windows.Forms.Button();
             this.btnRemoveEmergencyContact = new System.Windows.Forms.Button();
@@ -253,7 +254,6 @@
             this.eMERGENCY_CONTACTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.EMERGENCY_CONTACTTableAdapter();
             this.nEW_LIGHT_SUPPORTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter();
             this.nEXT_OF_KINTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter();
-            this.btnModifyClient = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -325,6 +325,16 @@
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Client";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnModifyClient
+            // 
+            this.btnModifyClient.Location = new System.Drawing.Point(235, 557);
+            this.btnModifyClient.Name = "btnModifyClient";
+            this.btnModifyClient.Size = new System.Drawing.Size(75, 23);
+            this.btnModifyClient.TabIndex = 51;
+            this.btnModifyClient.Text = "Modify";
+            this.btnModifyClient.UseVisualStyleBackColor = true;
+            this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
             // 
             // groupBox17
             // 
@@ -2325,16 +2335,6 @@
             // nEXT_OF_KINTableAdapter
             // 
             this.nEXT_OF_KINTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnModifyClient
-            // 
-            this.btnModifyClient.Location = new System.Drawing.Point(235, 557);
-            this.btnModifyClient.Name = "btnModifyClient";
-            this.btnModifyClient.Size = new System.Drawing.Size(75, 23);
-            this.btnModifyClient.TabIndex = 51;
-            this.btnModifyClient.Text = "Modify";
-            this.btnModifyClient.UseVisualStyleBackColor = true;
-            this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
             // 
             // FormMain
             // 
