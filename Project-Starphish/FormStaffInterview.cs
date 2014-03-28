@@ -125,44 +125,18 @@ namespace GUI
                 saveStrengths();
 
                 //Now save an entry into the STAFF_INTERVIEW_BEHAVIOR table.
-                statement = "INSERT INTO STAFF_INTERVIEW_BEHAVIOR (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, SEVERITY, FREQUENCY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @SEVERITY, @FREQUENCY)";
-                command = new SqlCommand(statement, connection);
-                foreach (Behavior behavior in behaviors)
-                {
-                    command.Parameters.AddWithValue("@PERSON_ID", personId);
-                    command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
-                    command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
-                    command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
-                    command.Parameters.AddWithValue("@SEVERITY", behavior.Severity);
-                    command.Parameters.AddWithValue("@FREQUENCY", behavior.Frequency);
-                    command.ExecuteNonQuery();
-                    command.Parameters.Clear();
-                }
+                saveBehaviors();
 
                 //Now save an entry into the STAFF_INTERVIEW_ANTECEDENT table.
-                statement = "INSERT INTO STAFF_INTERVIEW_ANTECEDENT (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, ANTECEDENT, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @ANTECEDENT, @CATEGORY)";
-                command = new SqlCommand(statement, connection);
-                foreach (Behavior behavior in behaviors)
-                {
-                    Dictionary<string, string>.KeyCollection keys = behavior.Antecedents.Keys;
-                    foreach (string key in keys)
-                    {
-                        command.Parameters.AddWithValue("@PERSON_ID", personId);
-                        command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
-                        command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
-                        command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
-                        command.Parameters.AddWithValue("@ANTECEDENT", key);
-                        command.Parameters.AddWithValue("@CATEGORY", behavior.Antecedents[key]);
-                        command.ExecuteNonQuery();
-                        command.Parameters.Clear();
-                    }
-                }
+                saveAntecedents();
 
                 //Now save an entry into the STAFF_INTERVIEW_QABF table.
             }
             else
             {
                 updateStrengths();
+                updateAntecedents();
+                updateBehaviors();
                 //statement =
                 //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
                 //command = new SqlCommand(statement, connection);
@@ -171,6 +145,9 @@ namespace GUI
             this.Close();
         }
 
+        /// <summary>
+        /// Saves all strengths from the node tree into the database.
+        /// </summary>
         private void saveStrengths()
         {
             //Connect to the database.
@@ -192,6 +169,61 @@ namespace GUI
                 }
         }
 
+        /// <summary>
+        /// Saves all behaviors and their information from the node tree into the database.
+        /// </summary>
+        private void saveBehaviors()
+        {
+            //Connect to the database.
+            string statement;
+            SqlCommand command;
+
+            statement = "INSERT INTO STAFF_INTERVIEW_BEHAVIOR (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, SEVERITY, FREQUENCY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @SEVERITY, @FREQUENCY)";
+            command = new SqlCommand(statement, connection);
+            foreach (Behavior behavior in behaviors)
+            {
+                command.Parameters.AddWithValue("@PERSON_ID", personId);
+                command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
+                command.Parameters.AddWithValue("@SEVERITY", behavior.Severity);
+                command.Parameters.AddWithValue("@FREQUENCY", behavior.Frequency);
+                command.ExecuteNonQuery();
+                command.Parameters.Clear();
+            }
+        }
+
+        /// <summary>
+        /// Saves all behaviors' antecedents from the node tree into the database.
+        /// </summary>
+        private void saveAntecedents()
+        {
+            //Connect to the database.
+            string statement;
+            SqlCommand command;
+
+            statement = "INSERT INTO STAFF_INTERVIEW_ANTECEDENT (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, ANTECEDENT, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @ANTECEDENT, @CATEGORY)";
+            command = new SqlCommand(statement, connection);
+            foreach (Behavior behavior in behaviors)
+            {
+                Dictionary<string, string>.KeyCollection keys = behavior.Antecedents.Keys;
+                foreach (string key in keys)
+                {
+                    command.Parameters.AddWithValue("@PERSON_ID", personId);
+                    command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                    command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                    command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
+                    command.Parameters.AddWithValue("@ANTECEDENT", key);
+                    command.Parameters.AddWithValue("@CATEGORY", behavior.Antecedents[key]);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets all the data from the database that pertains to the user-selected staff interview and displays it to the screen.
+        /// </summary>
         private void retrieveInterviewData()
         {
             //Connect to the database.
@@ -217,6 +249,7 @@ namespace GUI
             }
             reader.Close();
 
+            //Get the information from the rest of the Staff Interview and display it.
             loadStrengths();
             loadBehaviors();
             loadAntecedents();
@@ -353,7 +386,7 @@ namespace GUI
         }
 
         /// <summary>
-        /// Updates the database with the modified data by first deleting all existing records and then adding all the ones from the form in.
+        /// Updates the database's strengths data with the modified data by first deleting all existing records and then adding all the ones from the form in.
         /// </summary>
         private void updateStrengths()
         {
@@ -362,6 +395,30 @@ namespace GUI
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
             saveStrengths();
+        }
+
+        /// <summary>
+        /// Updates the database's antecedents data with the modified data by first deleting all existing records.
+        /// </summary>
+        private void updateAntecedents()
+        {
+            //Connect to the database.
+            string statement = "DELETE FROM STAFF_INTERVIEW_ANTECEDENT WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
+            SqlCommand command = new SqlCommand(statement, connection);
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Updates the database's behaviors data with the modified data by first deleting all existing records and then adding all the ones from the form in.
+        /// </summary>
+        private void updateBehaviors()
+        {
+            //Connect to the database.
+            string statement = "DELETE FROM STAFF_INTERVIEW_BEHAVIOR WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
+            SqlCommand command = new SqlCommand(statement, connection);
+            command.ExecuteNonQuery();
+            saveBehaviors();
+            saveAntecedents();
         }
 
         /// <summary>
