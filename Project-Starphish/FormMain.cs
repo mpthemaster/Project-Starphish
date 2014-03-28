@@ -108,6 +108,7 @@ namespace GUI
             commandCR.ExecuteNonQuery();
             
             connection.Close();
+            revertForm();
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -128,6 +129,29 @@ namespace GUI
         {
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             pERSONBindingSource.MoveLast();
+            clearForm();
+            listClients.ClearSelected();
+            listClients.Enabled = false;
+            txtSearchClient.Enabled = false;
+            btnRemoveNextOfKin.Enabled = false;
+            btnAddNextOfKin.Enabled = false;
+            lstNextOfKin.Enabled = false;
+            lstISP.Enabled = false;
+            lstEmergencyContacts.Enabled = false;
+            txtNextOfKinName.Enabled = false;
+            txtNextOfKinTelephoneNum.Enabled = false;
+            txtNextOfKinAddress.Enabled = false;
+            btnRemoveEmergencyContact.Enabled = false;
+            btnAddEmergencyContact.Enabled = false;
+            txtEmergencyContactName.Enabled = false;
+            txtEmergencyContactTelephoneNum.Enabled = false;
+            txtEmergencyContactAddress.Enabled = false;
+            btnAddISP.Enabled = false;
+            btnViewISP.Enabled = false;
+            btnRemoveISP.Enabled = false;
+            btnSaveClient.Enabled = true;
+            btnModifyClient.Enabled = false;
+            btnCancel.Enabled = true;   
         }
 
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,7 +161,7 @@ namespace GUI
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
         {
-            //if (tabControl1.SelectedIndex == 0)
+            //if (tabControl1.SelectedIndex == 0)               
             // if (tabControl1.SelectedIndex == 1)
             if (tabControl1.SelectedIndex == 2)
                 mainGraph();
@@ -193,6 +217,46 @@ namespace GUI
             commandCRUpdate.ExecuteNonQuery();
 
             connection.Close();
+        }
+
+        private void clearForm()
+        {
+            txtLastName.Text = "";
+            txtFirstName.Text = "";
+            txtMiddleName.Text = "";
+            txtAgencyName.Text = "";
+            txtAdmittanceDate.Text = "";
+            txtAddress.Text = "";
+            txtZipCode.Text = "";
+            txtTelephoneNum.Text = "";
+            txtSocialSecurityNum.Text = "";
+            txtDateOfBirth.Text = "";
+            txtAge.Text = "";
+            comboGender.SelectedIndex = 0;
+            comboRace.SelectedIndex = 0;
+            txtRaceOther.Text = "";
+            txtRaceOther.Enabled = false;
+            txtRaceOther.Visible = false;
+            txtHairColor.Text = "";
+            txtHeight.Text = "";
+            txtWeight.Text = "";
+            txtIdentifyingMarks.Text = "";
+            txtBSUNum.Text = "";
+            txtMCINum.Text = "";
+            txtInsuranceCarrier.Text = "";
+            txtPolicyNum.Text = "";
+            txtManagedCareCompany.Text = "";
+            picClient.Image = null;
+            txtSiteSupervisorName.Text = "";
+            txtSiteSupervisorTelephoneNum.Text = "";
+            txtProgramCoordinatorName.Text = "";
+            txtProgramCoordinatorTelephoneNum.Text = "";
+            txtProgramSpecialistName.Text = "";
+            txtProgramSpecialistPhoneNum.Text = "";
+            txtCountyResponsible.Text = "";
+            txtSupportsCoordinatorName.Text = "";
+            txtSupportsCoordinatorAddress.Text = "";
+            txtSupportsCoordinatorTelephoneNum.Text = "";
         }
 
         private void btnViewInterview_Click(object sender, EventArgs e)
@@ -261,6 +325,41 @@ namespace GUI
 
         private void btnAddEmergencyContact_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("This will delete all unsaved changes. Are you sure you wish to continue?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                revertForm();
+            }
+        }
+
+        private void revertForm()
+        {
+            clearForm();
+            listClients.ClearSelected();
+            listClients.Enabled = true;
+            txtSearchClient.Enabled = true;
+            btnRemoveNextOfKin.Enabled = true;
+            btnAddNextOfKin.Enabled = true;
+            lstNextOfKin.Enabled = true;
+            lstISP.Enabled = true;
+            lstEmergencyContacts.Enabled = true;
+            txtNextOfKinName.Enabled = true;
+            txtNextOfKinTelephoneNum.Enabled = true;
+            txtNextOfKinAddress.Enabled = true;
+            btnRemoveEmergencyContact.Enabled = true;
+            btnAddEmergencyContact.Enabled = true;
+            txtEmergencyContactName.Enabled = true;
+            txtEmergencyContactTelephoneNum.Enabled = true;
+            txtEmergencyContactAddress.Enabled = true;
+            btnAddISP.Enabled = true;
+            btnViewISP.Enabled = true;
+            btnRemoveISP.Enabled = true;
+            btnSaveClient.Enabled = false;
+            btnModifyClient.Enabled = true;
+            btnCancel.Enabled = false;
         }
     }
 }
