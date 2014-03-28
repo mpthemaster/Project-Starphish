@@ -1,5 +1,8 @@
 ﻿/*
  *  Remove and Add buttons for Parts I and III should be disabled and enabled as appropriate, though error code is in place if I don't have the time to do this.
+ *
+ * Possible Bug: While not causing any problems right now, it should be known that behaviors can have a frequency called "Less Often" while the parent node for that
+ *              is called "LessOften". Any comparisons of these two and this issue will need to be fixed.
  */
 
 using System;
@@ -15,8 +18,14 @@ namespace GUI
         //All behaviors that have been added in an interview.
         private List<Behavior> behaviors = new List<Behavior>();
 
-        private string theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
+        private const string theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
+        private SqlConnection connection = new SqlConnection(theConnectionString);
+
+        //Used for putting things into and getting out of the database.
         private int personId; //The ID of Shaun Burke's client.
+
+        private string intervieweeName; //The name of the interviewee.
+        private DateTime interviewDate; //The date of the interview.
         private bool newInterview; //Whether this is a new interview (putting a new row into the table) or retreiving an interview from the database.
 
         /// <summary>
@@ -30,17 +39,7 @@ namespace GUI
             this.personId = personId;
             newInterview = true;
 
-            //Gives the comboboxes default picked options.
-            comboStrengthOfEmotion.SelectedIndex = 0;
-            comboStrengthOfTolerance.SelectedIndex = 0;
-            comboStrengthOfWill.SelectedIndex = 0;
-            comboRationalCivicStrength.SelectedIndex = 0;
-            comboBehavior.SelectedIndex = 0;
-            comboBehaviorFrequency.SelectedIndex = 0;
-            comboBehaviorSeverity.SelectedIndex = 0;
-            comboPhysiologicalCause.SelectedIndex = 0;
-            comboPsychologicalCause.SelectedIndex = 0;
-            comboEnvironmentalCause.SelectedIndex = 0;
+            setToDefaultOptions();
         }
 
         /// <summary>
@@ -48,13 +47,24 @@ namespace GUI
         /// </summary>
         /// <param name="personId">The ID of the client that this interview is being conducted for.</param>
         /// <param name="intervieweeName">The interviewee's name.</param>
-        public FormStaffInterview(int personId, string intervieweeName)
+        public FormStaffInterview(int personId, string intervieweeName, DateTime interviewDate)
         {
             InitializeComponent();
 
             this.personId = personId;
+            this.intervieweeName = intervieweeName;
+            this.interviewDate = interviewDate;
             newInterview = false;
 
+            setToDefaultOptions();
+            retrieveInterviewData();
+        }
+
+        /// <summary>
+        /// Sets comboboxes to their default options.
+        /// </summary>
+        private void setToDefaultOptions()
+        {
             //Gives the comboboxes default picked options.
             comboStrengthOfEmotion.SelectedIndex = 0;
             comboStrengthOfTolerance.SelectedIndex = 0;
@@ -66,19 +76,22 @@ namespace GUI
             comboPhysiologicalCause.SelectedIndex = 0;
             comboPsychologicalCause.SelectedIndex = 0;
             comboEnvironmentalCause.SelectedIndex = 0;
-
-            retrieveInterviewData();
+            comboSocialCause.SelectedIndex = 0;
         }
 
-        //DONT FORGET TO USE PROECTION AGAINST INFORMATION THAT ISN'T ENTERED.
         private void btnSaveStaffInterview_Click(object sender, EventArgs e)
         {
             //Connect to the database.
             string statement;
-            SqlConnection connection;
             SqlCommand command;
 
-            connection = new SqlConnection(theConnectionString);
+            //Do from error checking first to make sure required fields are filled out.
+            if (txtStaffIntervieweeName.Text == "")
+            {
+                MessageBox.Show("Please enter the name of the person you are interviewing.", "Error - Interviewee Name Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtStaffIntervieweeName.Focus();
+                return;
+            }
 
             //If this is a new interview, create a new entry in the database,
             //Else this isn't a new interview, so update the current entry.
@@ -93,7 +106,19 @@ namespace GUI
                 command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
                 command.Parameters.AddWithValue("@STAFF_ROLE", txtStaffRole.Text);
                 command.Parameters.AddWithValue("@INTERVIEWER", txtInterviewerName.Text);
-                command.ExecuteNonQuery();
+
+                //Catches an error if an interview with the same keys tries to be added by the user.
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("An interview with " + txtStaffIntervieweeName.Text + " on " + datePickerStaffInterview.Value.ToShortDateString() + " has already been recorded. Either delete or modify the pre-existing interview.",
+                        "Fatal Error - Duplicate Interview", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                    return;
+                }
 
                 //Now save an entry into the STAFF_INTERVIEW_STRENGTH table.
                 statement = "INSERT INTO STAFF_INTERVIEW_STRENGTH (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STRENGTH, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STRENGTH, @CATEGORY)";
@@ -147,25 +172,130 @@ namespace GUI
                 //Now save an rntry into the STAFF_INTERVIEW_QABF table.
 
                 connection.Close();
+                this.Close();
             }
             else
             {
-                statement = "INSERT INTO PERSON (FNAME, MNAME, LNAME, IDENTIFYING_MARKS, PHOTO, AGENCY_NAME, P_ADDRESS, PHONE, ADMITTANCE_DATE, DATE_OF_BIRTH, AGE, GENDER, RACE, HAIR_COLOR, HEIGHT, P_WEIGHT, BSU, MCI, INSURANCE_CARRIER, POLICY_NUM, MANAGED_CARE_COMPANY, SSN) VALUES        (@FNAME, @MNAME, @LNAME, @IDENTIFYING_MARKS, @PHOTO, @AGENCY_NAME, @P_ADDRESS, @PHONE, @ADMITTANCE_DATE, @DATE_OF_BIRTH, @AGE, @GENDER, @RACE, @HAIR_COLOR, @HEIGHT, @P_WEIGHT, @BSU, @MCI, @INSURANCE_CARRIER, @POLICY_NUM, @MANAGED_CARE_COMPANY, @SSN)";
+                //statement = "INSERT INTO PERSON (FNAME, MNAME, LNAME, IDENTIFYING_MARKS, PHOTO, AGENCY_NAME, P_ADDRESS, PHONE, ADMITTANCE_DATE, DATE_OF_BIRTH, AGE, GENDER, RACE, HAIR_COLOR, HEIGHT, P_WEIGHT, BSU, MCI, INSURANCE_CARRIER, POLICY_NUM, MANAGED_CARE_COMPANY, SSN) VALUES        (@FNAME, @MNAME, @LNAME, @IDENTIFYING_MARKS, @PHOTO, @AGENCY_NAME, @P_ADDRESS, @PHONE, @ADMITTANCE_DATE, @DATE_OF_BIRTH, @AGE, @GENDER, @RACE, @HAIR_COLOR, @HEIGHT, @P_WEIGHT, @BSU, @MCI, @INSURANCE_CARRIER, @POLICY_NUM, @MANAGED_CARE_COMPANY, @SSN)";
                 //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
-                command = new SqlCommand(statement, connection);
+                //command = new SqlCommand(statement, connection);
             }
         }
 
         private void retrieveInterviewData()
         {
+            //Connect to the database.
+            SqlDataReader reader;
+            SqlCommand command;
+            string statement;
+
+            //Get the information from the Staff Interview and display it.
+            connection.Open();
+            statement = "SELECT PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STAFF_ROLE, INTERVIEWER FROM STAFF_INTERVIEW";
+            command = new SqlCommand(statement, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if ((int)reader["PERSON_ID"] == personId && ((DateTime)reader["INTERVIEW_DATE"]) == interviewDate && (string)reader["STAFF_INTERVIEWED"] == intervieweeName)
+                {
+                    datePickerStaffInterview.Value = (DateTime)reader["INTERVIEW_DATE"];
+                    txtStaffIntervieweeName.Text = (string)reader["STAFF_INTERVIEWED"];
+                    txtStaffRole.Text = (string)reader["STAFF_ROLE"];
+                    txtInterviewerName.Text = (string)reader["INTERVIEWER"];
+                }
+            }
+            reader.Close();
+
+            loadStrengths();
+            loadBehaviors();
+            connection.Close();
         }
 
+        /// <summary>
+        /// Loads and display's the specified staff interview's strengths.
+        /// </summary>
         private void loadStrengths()
         {
+            //Connect to the database.
+            SqlDataReader reader;
+            SqlCommand command;
+            string statement;
+
+            statement = "SELECT PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STRENGTH, CATEGORY FROM STAFF_INTERVIEW_STRENGTH";
+            command = new SqlCommand(statement, connection);
+            reader = command.ExecuteReader();
+
+            //Get all the category nodes for strengths.
+            TreeNode emotionStrengths = treeViewStrengths.Nodes[0];
+            TreeNode willStrengths = treeViewStrengths.Nodes[1];
+            TreeNode rationalStrengths = treeViewStrengths.Nodes[2];
+            TreeNode toleranceStrengths = treeViewStrengths.Nodes[3];
+            TreeNode otherStrengths = treeViewStrengths.Nodes[4];
+
+            //Get the information from the Staff Interview and display it.
+            while (reader.Read())
+                if ((int)reader["PERSON_ID"] == personId && ((DateTime)reader["INTERVIEW_DATE"]) == interviewDate && (string)reader["STAFF_INTERVIEWED"] == intervieweeName)
+                {
+                    string strengthName = (string)reader["STRENGTH"];
+                    string category = (string)reader["CATEGORY"];
+
+                    if (category == emotionStrengths.Name)
+                        emotionStrengths.Nodes.Add(strengthName, strengthName);
+                    else if (category == willStrengths.Name)
+                        willStrengths.Nodes.Add(strengthName, strengthName);
+                    else if (category == rationalStrengths.Name)
+                        rationalStrengths.Nodes.Add(strengthName, strengthName);
+                    else if (category == toleranceStrengths.Name)
+                        toleranceStrengths.Nodes.Add(strengthName, strengthName);
+                    else
+                        otherStrengths.Nodes.Add(strengthName, strengthName);
+                }
+            reader.Close();
         }
 
+        /// <summary>
+        /// Loads and displays the staff interview's behaviors.
+        /// </summary>
         private void loadBehaviors()
         {
+            //Connect to the database.
+            SqlDataReader reader;
+            SqlCommand command;
+            string statement;
+
+            statement = "SELECT PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, SEVERITY, FREQUENCY FROM STAFF_INTERVIEW_BEHAVIOR";
+            command = new SqlCommand(statement, connection);
+            reader = command.ExecuteReader();
+
+            //Get all the category nodes for behaviors.
+            TreeNode hourlyBehaviors = treeViewBehaviors.Nodes[0];
+            TreeNode dailyBehaviors = treeViewBehaviors.Nodes[1];
+            TreeNode weeklyBehaviors = treeViewBehaviors.Nodes[2];
+            TreeNode lessOftenBehaviors = treeViewBehaviors.Nodes[3];
+
+            //Get the information from the Staff Interview and display it.
+            while (reader.Read())
+                if ((int)reader["PERSON_ID"] == personId && ((DateTime)reader["INTERVIEW_DATE"]) == interviewDate && (string)reader["STAFF_INTERVIEWED"] == intervieweeName)
+                {
+                    string behaviorName = (string)reader["BEHAVIOR"];
+                    string behaviorSeverity = (string)reader["SEVERITY"];
+                    string behaviorFrequency = (string)reader["FREQUENCY"];
+
+                    //Figure out what category in the treeview that the behavior belongs to.
+                    if (behaviorFrequency == hourlyBehaviors.Name)
+                        hourlyBehaviors.Nodes.Add(behaviorName, behaviorName + " - " + behaviorSeverity);
+                    else if (behaviorFrequency == dailyBehaviors.Name)
+                        dailyBehaviors.Nodes.Add(behaviorName, behaviorName + " - " + behaviorSeverity);
+                    else if (behaviorFrequency == weeklyBehaviors.Name)
+                        weeklyBehaviors.Nodes.Add(behaviorName, behaviorName + " - " + behaviorSeverity);
+                    else
+                        lessOftenBehaviors.Nodes.Add(behaviorName, behaviorName + " - " + behaviorSeverity);
+
+                    //Add the behavior to the list.
+                    behaviors.Add(new Behavior(behaviorName, behaviorSeverity, behaviorFrequency));
+                }
+            reader.Close();
         }
 
         private void loadAntecedents()
@@ -364,8 +494,6 @@ namespace GUI
                 }
             }
 
-            behaviors.Add(tempBehavior);
-
             //Figures out what parent node this behavior should be attached to in the treeview.
             switch (tempBehavior.Frequency)
             {
@@ -396,6 +524,7 @@ namespace GUI
             {
                 resetBehaviorInputs();
                 treeViewAntecedents.Nodes.Add(tempBehavior.Name, tempBehavior.Name);
+                behaviors.Add(tempBehavior);
             }
         }
 

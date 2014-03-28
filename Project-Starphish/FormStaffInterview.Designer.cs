@@ -471,13 +471,13 @@
             // 
             this.treeViewBehaviors.Location = new System.Drawing.Point(6, 48);
             this.treeViewBehaviors.Name = "treeViewBehaviors";
-            treeNode1.Name = "NodeHourly";
+            treeNode1.Name = "Hourly";
             treeNode1.Text = "Hourly";
-            treeNode2.Name = "NodeDaily";
+            treeNode2.Name = "Daily";
             treeNode2.Text = "Daily";
-            treeNode3.Name = "NodeWeekly";
+            treeNode3.Name = "Weekly";
             treeNode3.Text = "Weekly";
-            treeNode4.Name = "NodeLessOften";
+            treeNode4.Name = "LessOften";
             treeNode4.Text = "Less Often";
             this.treeViewBehaviors.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,

@@ -45,10 +45,13 @@ namespace GUI
             command = new SqlCommand(insertStatement, connection);
             commandNLS = new SqlCommand(insertStatementNLS, connection);
             commandCR = new SqlCommand(insertStatementCR, connection);
+<<<<<<< HEAD
             commandUpdate = new SqlCommand(updateStatement, connection);
             commandNLSUpdate = new SqlCommand(updateStatementNLS, connection);
             commandCRUpdate = new SqlCommand(updateStatementCR, connection);
             
+=======
+>>>>>>> Staff Interview Viewing Part I and II implemented.
         }
 
         /// <summary>
@@ -198,7 +201,7 @@ namespace GUI
 
         private void btnViewInterview_Click(object sender, EventArgs e)
         {
-            FormStaffInterview staffInterview = new FormStaffInterview(1, "name");
+            FormStaffInterview staffInterview = new FormStaffInterview(1, "Michael", DateTime.Today);
             staffInterview.Show();
         }
 
