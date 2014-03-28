@@ -159,7 +159,7 @@ namespace GUI
 
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //it won't compile without this now. Woo.
+            personId = Convert.ToInt32(txtSocialSecurityNum.Text);
         }
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
