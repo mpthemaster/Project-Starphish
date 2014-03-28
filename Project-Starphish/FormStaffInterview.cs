@@ -93,6 +93,8 @@ namespace GUI
                 return;
             }
 
+            connection.Open();
+
             //If this is a new interview, create a new entry in the database,
             //Else this isn't a new interview, so update the current entry.
             if (newInterview)
@@ -100,7 +102,6 @@ namespace GUI
                 //First save an entry into the STAFF_INTERVIEW table.
                 statement = "INSERT INTO STAFF_INTERVIEW (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STAFF_ROLE, INTERVIEWER) VALUES        (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STAFF_ROLE, @INTERVIEWER)";
                 command = new SqlCommand(statement, connection);
-                connection.Open();
                 command.Parameters.AddWithValue("@PERSON_ID", personId);
                 command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
                 command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
@@ -121,19 +122,7 @@ namespace GUI
                 }
 
                 //Now save an entry into the STAFF_INTERVIEW_STRENGTH table.
-                statement = "INSERT INTO STAFF_INTERVIEW_STRENGTH (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STRENGTH, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STRENGTH, @CATEGORY)";
-                command = new SqlCommand(statement, connection);
-                foreach (TreeNode parentNode in treeViewStrengths.Nodes)
-                    foreach (TreeNode childNode in parentNode.Nodes)
-                    {
-                        command.Parameters.AddWithValue("@PERSON_ID", personId);
-                        command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
-                        command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
-                        command.Parameters.AddWithValue("@STRENGTH", childNode.Name);
-                        command.Parameters.AddWithValue("@CATEGORY", parentNode.Name);
-                        command.ExecuteNonQuery();
-                        command.Parameters.Clear();
-                    }
+                saveStrengths();
 
                 //Now save an entry into the STAFF_INTERVIEW_BEHAVIOR table.
                 statement = "INSERT INTO STAFF_INTERVIEW_BEHAVIOR (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, SEVERITY, FREQUENCY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @SEVERITY, @FREQUENCY)";
@@ -169,17 +158,38 @@ namespace GUI
                     }
                 }
 
-                //Now save an rntry into the STAFF_INTERVIEW_QABF table.
-
-                connection.Close();
-                this.Close();
+                //Now save an entry into the STAFF_INTERVIEW_QABF table.
             }
             else
             {
-                //statement = "INSERT INTO PERSON (FNAME, MNAME, LNAME, IDENTIFYING_MARKS, PHOTO, AGENCY_NAME, P_ADDRESS, PHONE, ADMITTANCE_DATE, DATE_OF_BIRTH, AGE, GENDER, RACE, HAIR_COLOR, HEIGHT, P_WEIGHT, BSU, MCI, INSURANCE_CARRIER, POLICY_NUM, MANAGED_CARE_COMPANY, SSN) VALUES        (@FNAME, @MNAME, @LNAME, @IDENTIFYING_MARKS, @PHOTO, @AGENCY_NAME, @P_ADDRESS, @PHONE, @ADMITTANCE_DATE, @DATE_OF_BIRTH, @AGE, @GENDER, @RACE, @HAIR_COLOR, @HEIGHT, @P_WEIGHT, @BSU, @MCI, @INSURANCE_CARRIER, @POLICY_NUM, @MANAGED_CARE_COMPANY, @SSN)";
+                updateStrengths();
+                //statement =
                 //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
                 //command = new SqlCommand(statement, connection);
             }
+            connection.Close();
+            this.Close();
+        }
+
+        private void saveStrengths()
+        {
+            //Connect to the database.
+            string statement;
+            SqlCommand command;
+
+            statement = "INSERT INTO STAFF_INTERVIEW_STRENGTH (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STRENGTH, CATEGORY) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STRENGTH, @CATEGORY)";
+            command = new SqlCommand(statement, connection);
+            foreach (TreeNode parentNode in treeViewStrengths.Nodes)
+                foreach (TreeNode childNode in parentNode.Nodes)
+                {
+                    command.Parameters.AddWithValue("@PERSON_ID", personId);
+                    command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                    command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                    command.Parameters.AddWithValue("@STRENGTH", childNode.Name);
+                    command.Parameters.AddWithValue("@CATEGORY", parentNode.Name);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                }
         }
 
         private void retrieveInterviewData()
@@ -340,6 +350,18 @@ namespace GUI
                         }
                 }
             reader.Close();
+        }
+
+        /// <summary>
+        /// Updates the database with the modified data by first deleting all existing records and then adding all the ones from the form in.
+        /// </summary>
+        private void updateStrengths()
+        {
+            //Connect to the database.
+            string statement = "DELETE FROM STAFF_INTERVIEW_STRENGTH WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
+            SqlCommand command = new SqlCommand(statement, connection);
+            command.ExecuteNonQuery();
+            saveStrengths();
         }
 
         /// <summary>
