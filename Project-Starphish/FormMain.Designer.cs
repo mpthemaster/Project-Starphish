@@ -1298,6 +1298,7 @@
             // txtSocialSecurityNum
             // 
             this.txtSocialSecurityNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "SSN", true));
+            this.txtSocialSecurityNum.Enabled = false;
             this.txtSocialSecurityNum.Location = new System.Drawing.Point(109, 149);
             this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
             this.txtSocialSecurityNum.Size = new System.Drawing.Size(84, 20);
