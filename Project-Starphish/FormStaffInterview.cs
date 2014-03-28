@@ -209,6 +209,7 @@ namespace GUI
 
             loadStrengths();
             loadBehaviors();
+            loadAntecedents();
             connection.Close();
         }
 
@@ -298,8 +299,47 @@ namespace GUI
             reader.Close();
         }
 
+        // <summary>
+        /// Loads and displays the staff interview's behaviors' antecedents.
+        /// </summary>
         private void loadAntecedents()
         {
+            //Connect to the database.
+            SqlDataReader reader;
+            SqlCommand command;
+            string statement;
+
+            statement = "SELECT PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, ANTECEDENT, CATEGORY FROM STAFF_INTERVIEW_ANTECEDENT";
+            command = new SqlCommand(statement, connection);
+            reader = command.ExecuteReader();
+
+            //Create all the category nodes for behaviors' antecedents and add their causes.
+            foreach (Behavior behavior in behaviors)
+                treeViewAntecedents.Nodes.Add(behavior.Name, behavior.Name);
+
+            //Get the information from the Staff Interview and display it.
+            while (reader.Read())
+                if ((int)reader["PERSON_ID"] == personId && ((DateTime)reader["INTERVIEW_DATE"]) == interviewDate && (string)reader["STAFF_INTERVIEWED"] == intervieweeName)
+                {
+                    string behaviorName = (string)reader["BEHAVIOR"];
+                    string behaviorAntecedent = (string)reader["ANTECEDENT"];
+                    string behaviorCategory = (string)reader["CATEGORY"];
+
+                    //Figure out what category in the treeview that the antecedent belongs to and add it.
+                    foreach (Behavior behavior in behaviors)
+                        if (behavior.Name == behaviorName)
+                        {
+                            behavior.Antecedents.Add(behaviorAntecedent, behaviorCategory);
+
+                            TreeNode[] behaviorNode = treeViewAntecedents.Nodes.Find(behaviorName, false);
+
+                            //If the cause's category doesn't exist, create it.
+                            if (!behaviorNode[0].Nodes.ContainsKey(behaviorCategory))
+                                behaviorNode[0].Nodes.Add(behaviorCategory, behaviorCategory);
+                            behaviorNode[0].Nodes[behaviorNode[0].Nodes.IndexOfKey(behaviorCategory)].Nodes.Add(behaviorAntecedent, behaviorAntecedent);
+                        }
+                }
+            reader.Close();
         }
 
         /// <summary>
