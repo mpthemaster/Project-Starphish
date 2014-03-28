@@ -15,6 +15,9 @@ namespace GUI
 {
     public partial class FormStaffInterview : Form
     {
+        //Allows the form to have its interview list box appropriately updated.
+        private FormMain form;
+
         //All behaviors that have been added in an interview.
         private List<Behavior> behaviors = new List<Behavior>();
 
@@ -32,13 +35,14 @@ namespace GUI
         /// Assumes a new staff interview is being created.
         /// </summary>
         /// <param name="personId">The ID of the client that this interview is being conducted for.</param>
-        public FormStaffInterview(int personId)
+        /// <param name="form">The main form of the program that this form returns to.</param>
+        public FormStaffInterview(int personId, FormMain form)
         {
             InitializeComponent();
 
             this.personId = personId;
             newInterview = true;
-
+            this.form = form;
             setToDefaultOptions();
         }
 
@@ -47,7 +51,8 @@ namespace GUI
         /// </summary>
         /// <param name="personId">The ID of the client that this interview is being conducted for.</param>
         /// <param name="intervieweeName">The interviewee's name.</param>
-        public FormStaffInterview(int personId, string intervieweeName, DateTime interviewDate)
+        /// <param name="form">The main form of the program that this form returns to.</param>
+        public FormStaffInterview(int personId, string intervieweeName, DateTime interviewDate, FormMain form)
         {
             InitializeComponent();
 
@@ -55,6 +60,7 @@ namespace GUI
             this.intervieweeName = intervieweeName;
             this.interviewDate = interviewDate;
             newInterview = false;
+            this.form = form;
 
             setToDefaultOptions();
             retrieveInterviewData();
@@ -142,6 +148,7 @@ namespace GUI
                 //command = new SqlCommand(statement, connection);
             }
             connection.Close();
+            form.mainStaffInterview();
             this.Close();
         }
 

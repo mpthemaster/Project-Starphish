@@ -2221,6 +2221,7 @@
             // 
             // btnViewInterview
             // 
+            this.btnViewInterview.Enabled = false;
             this.btnViewInterview.Location = new System.Drawing.Point(41, 43);
             this.btnViewInterview.Name = "btnViewInterview";
             this.btnViewInterview.Size = new System.Drawing.Size(107, 23);
@@ -2231,6 +2232,7 @@
             // 
             // btnRemoveInterview
             // 
+            this.btnRemoveInterview.Enabled = false;
             this.btnRemoveInterview.Location = new System.Drawing.Point(109, 14);
             this.btnRemoveInterview.Name = "btnRemoveInterview";
             this.btnRemoveInterview.Size = new System.Drawing.Size(105, 23);
@@ -2252,9 +2254,6 @@
             // lstInterviews
             // 
             this.lstInterviews.FormattingEnabled = true;
-            this.lstInterviews.Items.AddRange(new object[] {
-            "Shaun Burke - 2/10/14",
-            "Joe Sue - 2/14/14"});
             this.lstInterviews.Location = new System.Drawing.Point(12, 72);
             this.lstInterviews.Name = "lstInterviews";
             this.lstInterviews.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;

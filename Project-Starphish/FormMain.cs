@@ -52,15 +52,6 @@ namespace GUI
             commandCRUpdate = new SqlCommand(updateStatementCR, connection);
         }
 
-        /// <summary>
-        /// Opens up a blank Staff Interview form.
-        /// </summary>
-        private void btnAddInterview_Click(object sender, EventArgs e)
-        {
-            FormStaffInterview staffInterview = new FormStaffInterview(1);
-            staffInterview.Show();
-        }
-
         private void btnSaveClient_Click(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream();
@@ -262,17 +253,7 @@ namespace GUI
             txtSupportsCoordinatorTelephoneNum.Text = "";
         }
 
-        private void btnViewInterview_Click(object sender, EventArgs e)
-        {
-            FormStaffInterview staffInterview = new FormStaffInterview(1, "Michael", DateTime.Today);
-            staffInterview.Show();
-        }
-
         private void btnRemoveInterview_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lstInterviews_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
@@ -286,7 +267,6 @@ namespace GUI
 
         private void removeClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void saveAllToolStripMenuItem_Click(object sender, EventArgs e)
