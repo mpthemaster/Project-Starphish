@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class FormMain : Form
     {
+        private int personId;
         private string theConnectionString;
         private string insertStatement;
         private string insertStatementNLS;
@@ -107,7 +108,7 @@ namespace GUI
             command.ExecuteNonQuery();
             commandNLS.ExecuteNonQuery();
             commandCR.ExecuteNonQuery();
-            
+
             connection.Close();
             revertForm();
         }
@@ -163,11 +164,12 @@ namespace GUI
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
         {
-            //if (tabControl1.SelectedIndex == 0)               
+            //if (tabControl1.SelectedIndex == 0)
             // if (tabControl1.SelectedIndex == 1)
             if (tabControl1.SelectedIndex == 2)
                 mainGraph();
-            //if (tabControl1.SelectedIndex == 3)
+            if (tabControl1.SelectedIndex == 3)
+                mainStaffInterview();
         }
 
         private void btnModifyClient_Click(object sender, EventArgs e)
