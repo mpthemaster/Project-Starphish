@@ -127,6 +127,21 @@ namespace GUI
             personId = Convert.ToInt32(txtSocialSecurityNum.Text);
         }
 
+        //Delete the following after this is noticed and/or fixed.
+        /****************************************************************************************************************************************************
+         * BUG ALERT|  Error:   Originally crashed. I fixed that, but there is another issue. No selected client has its info updated.               |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|  Occurs: Add a new client, and then cancel.                                                                                    |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         * BUG ALERT|                                                                                                                                |BUG ALERT
+         ******************************************************************************************************************************************************/
+
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
@@ -160,10 +175,11 @@ namespace GUI
             txtSocialSecurityNum.Enabled = true;
         }
 
+        //Michael - I updated this to TryParse so that it doesn't fail when none is selected. This is a bug. Delete this when fixed.
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listClients.SelectedItem != null)
-                personId = Convert.ToInt32(txtSocialSecurityNum.Text);
+                int.TryParse(txtSocialSecurityNum.Text, out personId);
         }
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
