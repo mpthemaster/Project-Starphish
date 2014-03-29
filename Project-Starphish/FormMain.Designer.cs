@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -57,6 +51,12 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -182,12 +182,6 @@
             this.datePickerEndDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.lstClientsDailyBehaviors = new System.Windows.Forms.ListBox();
             this.dataGridViewDailyBehaviorTracking = new System.Windows.Forms.DataGridView();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnShift = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnArguing = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnPhysicalAggression = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnShiftTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStaffNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRemoveDailyBehavior = new System.Windows.Forms.Button();
             this.btnAddDailyBehavior = new System.Windows.Forms.Button();
             this.datePickerBeginDailyBehavior = new System.Windows.Forms.DateTimePicker();
@@ -257,6 +251,12 @@
             this.eMERGENCY_CONTACTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.EMERGENCY_CONTACTTableAdapter();
             this.nEW_LIGHT_SUPPORTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter();
             this.nEXT_OF_KINTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnShift = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnBehavior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSeverity = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnShiftTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStaffNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -1537,8 +1537,8 @@
             this.dataGridViewDailyBehaviorTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
             this.ColumnShift,
-            this.ColumnArguing,
-            this.ColumnPhysicalAggression,
+            this.ColumnBehavior,
+            this.ColumnSeverity,
             this.ColumnShiftTotal,
             this.ColumnStaffNames});
             this.dataGridViewDailyBehaviorTracking.Location = new System.Drawing.Point(149, 52);
@@ -1546,77 +1546,6 @@
             this.dataGridViewDailyBehaviorTracking.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDailyBehaviorTracking.Size = new System.Drawing.Size(926, 556);
             this.dataGridViewDailyBehaviorTracking.TabIndex = 10;
-            // 
-            // ColumnDate
-            // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnDate.HeaderText = "Date";
-            this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.ReadOnly = true;
-            // 
-            // ColumnShift
-            // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnShift.HeaderText = "Shift";
-            this.ColumnShift.Items.AddRange(new object[] {
-            "7a-3p",
-            "3p-11p",
-            "11p-7a"});
-            this.ColumnShift.Name = "ColumnShift";
-            this.ColumnShift.ReadOnly = true;
-            this.ColumnShift.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnArguing
-            // 
-            this.ColumnArguing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.NullValue = "Not Occurred";
-            this.ColumnArguing.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColumnArguing.HeaderText = "Arguing";
-            this.ColumnArguing.Items.AddRange(new object[] {
-            "Not Occurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.ColumnArguing.Name = "ColumnArguing";
-            this.ColumnArguing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnArguing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnPhysicalAggression
-            // 
-            this.ColumnPhysicalAggression.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.NullValue = "Moderate";
-            this.ColumnPhysicalAggression.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnPhysicalAggression.HeaderText = "Physical Aggression";
-            this.ColumnPhysicalAggression.Items.AddRange(new object[] {
-            "Not Ocurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.ColumnPhysicalAggression.Name = "ColumnPhysicalAggression";
-            this.ColumnPhysicalAggression.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnPhysicalAggression.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnShiftTotal
-            // 
-            this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColumnShiftTotal.HeaderText = "Shift Total";
-            this.ColumnShiftTotal.Name = "ColumnShiftTotal";
-            // 
-            // ColumnStaffNames
-            // 
-            this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ColumnStaffNames.HeaderText = "Staff Name(s)";
-            this.ColumnStaffNames.MinimumWidth = 100;
-            this.ColumnStaffNames.Name = "ColumnStaffNames";
             // 
             // btnRemoveDailyBehavior
             // 
@@ -2366,6 +2295,71 @@
             // 
             this.nEXT_OF_KINTableAdapter.ClearBeforeFill = true;
             // 
+            // ColumnDate
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnDate.HeaderText = "Date";
+            this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
+            // 
+            // ColumnShift
+            // 
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnShift.HeaderText = "Shift";
+            this.ColumnShift.Items.AddRange(new object[] {
+            "7a-3p",
+            "3p-11p",
+            "11p-7a"});
+            this.ColumnShift.Name = "ColumnShift";
+            this.ColumnShift.ReadOnly = true;
+            this.ColumnShift.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnBehavior
+            // 
+            this.ColumnBehavior.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.NullValue = "Not Occurred";
+            this.ColumnBehavior.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColumnBehavior.HeaderText = "Behavior";
+            this.ColumnBehavior.Name = "ColumnBehavior";
+            this.ColumnBehavior.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnSeverity
+            // 
+            this.ColumnSeverity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.NullValue = "Moderate";
+            this.ColumnSeverity.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColumnSeverity.HeaderText = "Severity";
+            this.ColumnSeverity.Items.AddRange(new object[] {
+            "Not Ocurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.ColumnSeverity.Name = "ColumnSeverity";
+            this.ColumnSeverity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnSeverity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnShiftTotal
+            // 
+            this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnShiftTotal.HeaderText = "Shift Total";
+            this.ColumnShiftTotal.Name = "ColumnShiftTotal";
+            // 
+            // ColumnStaffNames
+            // 
+            this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ColumnStaffNames.HeaderText = "Staff Name(s)";
+            this.ColumnStaffNames.MinimumWidth = 100;
+            this.ColumnStaffNames.Name = "ColumnStaffNames";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2584,12 +2578,6 @@
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnShift;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnArguing;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnPhysicalAggression;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnShiftTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStaffNames;
         private System.Windows.Forms.Button btnSaveDailyBehavior;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label68;
@@ -2627,6 +2615,12 @@
         private System.Windows.Forms.BindingSource nEXTOFKINPERSONFKBindingSource;
         private System.Windows.Forms.Button btnModifyClient;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnShift;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBehavior;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnSeverity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnShiftTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStaffNames;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,12 +19,47 @@ namespace GUI
         DateTime endDate = new DateTime();
 
 
+        private void retrieveDailyBehavior()
+        {
+            //Connect to the database.
+            SqlDataReader reader;
+            SqlCommand command;
+            string statement;
+
+            //Get the information from the Staff Interview and display it.
+            connection.Open();
+            statement = "SELECT PERSON_ID, BEHAVIOR, BEHAVIOR_DATE, BEHAVIOR_SHIFT FROM BEHAVIOR";
+            command = new SqlCommand(statement, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if ((int)reader["PERSON_ID"] == personId)
+                {
+                    string behaviorName = (string)reader["BEHAVIOR"];
+                    DateTime behaviorDate = (DateTime)reader["BEHAVIOR_DATE"];
+                    string behaviorShift = (string)reader["BEHAVIOR_SHIFT"];
+
+                    dailyBehaviors.Add(new DailyBehavior(behaviorName, "Severe", behaviorDate, behaviorShift, "Staff"));
+                }
+            }
+            reader.Close();
+            connection.Close();
+
+            foreach (DailyBehavior dailyBehavior in dailyBehaviors)
+            {
+                 MessageBox.Show(dailyBehavior.Behavior + dailyBehavior.Date.ToShortDateString() + dailyBehavior.Shift);
+             // listBehaviorsToGraph.Items.Contains
+            }
+        }
+
         /// <summary>
         /// The function that starts the graphing tab
         /// </summary>
         private void mainGraph()
         {
-            DailyBehavior temp = new DailyBehavior(5, "brooding", "mild", new DateTime(2014, 02, 20), "morning", "Kevin");
+            retrieveDailyBehavior();
+           /* DailyBehavior temp = new DailyBehavior(5, "brooding", "mild", new DateTime(2014, 02, 20), "morning", "Kevin");
             DailyBehavior temp2 = new DailyBehavior(5, "brooding", "severe", new DateTime(2014, 01, 30), "morning", "Kevin");
 
             DailyBehavior temp3 = new DailyBehavior(5, "throwing", "severe", new DateTime(2014, 02, 14), "morning", "Kevin");
@@ -37,7 +73,6 @@ namespace GUI
 
             DailyBehavior temp9 = new DailyBehavior(5, "not eating", "severe", new DateTime(2013, 12, 20), "morning", "Kevin");
             DailyBehavior temp10 = new DailyBehavior(5, "not eating", "severe", new DateTime(2013, 12, 25), "morning", "Kevin");
-
             DailyBehavior temp11 = new DailyBehavior(5, "whistling", "severe", new DateTime(2013, 01, 10), "morning", "Kevin");
             DailyBehavior temp12 = new DailyBehavior(5, "whistling", "severe", new DateTime(2014, 02, 04), "morning", "Kevin");
             DailyBehavior temp14 = new DailyBehavior(5, "whistling", "severe", new DateTime(2014, 02, 28), "morning", "Kevin");
@@ -66,7 +101,7 @@ namespace GUI
             dailyBehaviors.Add(temp13);
             dailyBehaviors.Add(temp);
             dailyBehaviors.Add(temp);
-            dailyBehaviors.Add(temp);
+            dailyBehaviors.Add(temp);*/
 
 
             int i = 0;

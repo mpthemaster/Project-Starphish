@@ -5,9 +5,6 @@ namespace GUI
 {
     internal class DailyBehavior
     {
-
-        public int SSN { get; set; }
-
         public string Behavior { get; set; }
 
         public string Severity { get; set; }
@@ -28,10 +25,8 @@ namespace GUI
         /// <param name="date">The date the behavior occured on.</param>
         /// <param name="shift">The shift the behavior occured on.</param>
         /// <param name="staff">The staff member on duty when the behavior occured.</param>
-        public DailyBehavior(int SSN, string Behavior, string severity, DateTime date, string shift, string staff)
+        public DailyBehavior(string Behavior, string severity, DateTime date, string shift, string staff)
         {
-
-            this.SSN = SSN;
             this.Severity = severity;
             this.Behavior = Behavior;
             this.Date = date;
