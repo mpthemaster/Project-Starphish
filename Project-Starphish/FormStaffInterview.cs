@@ -87,10 +87,6 @@ namespace GUI
 
         private void btnSaveStaffInterview_Click(object sender, EventArgs e)
         {
-            //Connect to the database.
-            string statement;
-            SqlCommand command;
-
             //Do from error checking first to make sure required fields are filled out.
             if (txtStaffIntervieweeName.Text == "")
             {

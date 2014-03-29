@@ -46,18 +46,29 @@ namespace GUI
             //Else the user hasn't selected anything, so don't display anything.
             if (lstInterviews.SelectedItem != null)
             {
-                string nameDate = (string)lstInterviews.SelectedItem;
-                int separatorIndex = nameDate.IndexOf('-');
-                string name = nameDate.Substring(0, separatorIndex - 1);
-                string dateInfo = nameDate.Substring(separatorIndex + 1);
-                string[] dateParts = dateInfo.Split('/');
-                DateTime date = new DateTime(int.Parse(dateParts[2]), int.Parse(dateParts[0]), int.Parse(dateParts[1]));
+                string name;
+                DateTime date;
+                getInterviewInfo(out name, out date);
 
                 FormStaffInterview staffInterview = new FormStaffInterview(personId, name, date, this);
                 staffInterview.Show();
             }
             else
                 MessageBox.Show("An interview needs to be selected before one can be viewed.", "Error - No Interview Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //Disable the remove and view buttons because no interview is selected now.
+            btnRemoveInterview.Enabled = false;
+            btnViewInterview.Enabled = false;
+        }
+
+        private void getInterviewInfo(out string name, out DateTime date)
+        {
+            string nameDate = (string)lstInterviews.SelectedItem;
+            int separatorIndex = nameDate.IndexOf('-');
+            name = nameDate.Substring(0, separatorIndex - 1);
+            string dateInfo = nameDate.Substring(separatorIndex + 1);
+            string[] dateParts = dateInfo.Split('/');
+            date = new DateTime(int.Parse(dateParts[2]), int.Parse(dateParts[0]), int.Parse(dateParts[1]));
         }
 
         /// <summary>
@@ -67,6 +78,10 @@ namespace GUI
         {
             FormStaffInterview staffInterview = new FormStaffInterview(personId, this);
             staffInterview.Show();
+
+            //Disable the remove and view buttons because no interview is selected now.
+            btnRemoveInterview.Enabled = false;
+            btnViewInterview.Enabled = false;
         }
 
         private void lstInterviews_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,6 +102,43 @@ namespace GUI
 
         private void btnRemoveInterview_Click(object sender, EventArgs e)
         {
+            //If a staff interview is selected and the user confirms the removal, then remove the staff interview.
+            if (lstInterviews.SelectedItem != null && MessageBox.Show("Are you sure you want to remove the selected staff interview? The data contained within cannot be retrieved after being removed.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                string name;
+                DateTime date;
+                getInterviewInfo(out name, out date);
+                connection.Open();
+
+                //Remove all strength data associated with the staff interview.
+                string statement = "DELETE FROM STAFF_INTERVIEW_STRENGTH WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                SqlCommand command = new SqlCommand(statement, connection);
+                command.ExecuteNonQuery();
+
+                //Remove all antecedent data associated with the staff interview.
+                statement = "DELETE FROM STAFF_INTERVIEW_ANTECEDENT WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                command = new SqlCommand(statement, connection);
+                command.ExecuteNonQuery();
+
+                //Remove all behavior data associated with the staff interview.
+                statement = "DELETE FROM STAFF_INTERVIEW_BEHAVIOR WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                command = new SqlCommand(statement, connection);
+                command.ExecuteNonQuery();
+
+                //Remove all interview data associated with the staff interview.
+                statement = "DELETE FROM STAFF_INTERVIEW WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                command = new SqlCommand(statement, connection);
+                command.ExecuteNonQuery();
+
+                connection.Close();
+                mainStaffInterview();
+
+                //Disable the remove and view buttons because no interview is selected now.
+                btnRemoveInterview.Enabled = false;
+                btnViewInterview.Enabled = false;
+            }
+            else
+                MessageBox.Show("An interview needs to be selected before one can be viewed.", "Error - No Interview Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
