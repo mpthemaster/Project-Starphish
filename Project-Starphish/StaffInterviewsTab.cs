@@ -55,10 +55,6 @@ namespace GUI
             }
             else
                 MessageBox.Show("An interview needs to be selected before one can be viewed.", "Error - No Interview Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //Disable the remove and view buttons because no interview is selected now.
-            btnRemoveInterview.Enabled = false;
-            btnViewInterview.Enabled = false;
         }
 
         private void getInterviewInfo(out string name, out DateTime date)
@@ -138,7 +134,7 @@ namespace GUI
                 btnViewInterview.Enabled = false;
             }
             else
-                MessageBox.Show("An interview needs to be selected before one can be viewed.", "Error - No Interview Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An interview needs to be selected before one can be removed.", "Error - No Interview Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
