@@ -57,7 +57,6 @@ namespace GUI
             MemoryStream ms = new MemoryStream();
             Image image = new Bitmap("test.bmp");
             image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-
             connection.Open();
             command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
             command.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
@@ -104,6 +103,10 @@ namespace GUI
             commandNLS.ExecuteNonQuery();
             commandCR.ExecuteNonQuery();
 
+            command.Parameters.Clear();
+            commandNLS.Parameters.Clear();
+            commandCR.Parameters.Clear();
+
             connection.Close();
             revertForm();
         }
@@ -120,6 +123,8 @@ namespace GUI
             this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON' table. You can move, or remove it, as needed.
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+            comboRace.SelectedIndex = 3;
+            personId = Convert.ToInt32(txtSocialSecurityNum.Text);
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,7 +159,8 @@ namespace GUI
 
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            personId = Convert.ToInt32(txtSocialSecurityNum.Text);
+            if( listClients.SelectedItem != null)
+                personId = Convert.ToInt32(txtSocialSecurityNum.Text);
         }
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
@@ -215,6 +221,10 @@ namespace GUI
             commandUpdate.ExecuteNonQuery();
             commandNLSUpdate.ExecuteNonQuery();
             commandCRUpdate.ExecuteNonQuery();
+
+            commandUpdate.Parameters.Clear();
+            commandNLSUpdate.Parameters.Clear();
+            commandCRUpdate.Parameters.Clear();
 
             connection.Close();
         }
