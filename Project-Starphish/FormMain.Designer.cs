@@ -947,6 +947,7 @@
             // 
             // txtRaceOther
             // 
+            this.txtRaceOther.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "RACE", true));
             this.txtRaceOther.Enabled = false;
             this.txtRaceOther.Location = new System.Drawing.Point(198, 227);
             this.txtRaceOther.Name = "txtRaceOther";
@@ -1333,6 +1334,7 @@
             this.comboRace.Name = "comboRace";
             this.comboRace.Size = new System.Drawing.Size(109, 21);
             this.comboRace.TabIndex = 13;
+            this.comboRace.SelectedIndexChanged += new System.EventHandler(this.comboRace_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -2366,8 +2368,9 @@
             // openClientPic
             // 
             this.openClientPic.FileName = "Open Client Pic";
+            this.openClientPic.Filter = "JPEG Compressed Image (*.jpg|*.jpg|GIF Image(*.gif|*.gif|Bitmap Image(*.bmp|*.bmp" +
+    "";
             this.openClientPic.Title = "Select a Client Picture";
-            this.openClientPic.Filter = "JPEG Compressed Image (*.jpg|*.jpg" + "|GIF Image(*.gif|*.gif" + "|Bitmap Image(*.bmp|*.bmp";
             this.openClientPic.FileOk += new System.ComponentModel.CancelEventHandler(this.openClientPic_FileOk);
             // 
             // FormMain

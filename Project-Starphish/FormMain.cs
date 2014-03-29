@@ -72,7 +72,10 @@ namespace GUI
             command.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
             command.Parameters.AddWithValue("@AGE", txtAge.Text);
             command.Parameters.AddWithValue("@GENDER", comboGender.Text);
-            command.Parameters.AddWithValue("@RACE", comboRace.Text);
+            if (comboRace.Text == "Other")
+                command.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
+            else
+                command.Parameters.AddWithValue("@RACE", comboRace.Text);
             command.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
             command.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
             command.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
@@ -181,7 +184,10 @@ namespace GUI
             commandUpdate.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
             commandUpdate.Parameters.AddWithValue("@AGE", txtAge.Text);
             commandUpdate.Parameters.AddWithValue("@GENDER", comboGender.Text);
-            commandUpdate.Parameters.AddWithValue("@RACE", comboRace.Text);
+            if (comboRace.Text == "Other")
+                commandUpdate.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
+            else
+                commandUpdate.Parameters.AddWithValue("@RACE", comboRace.Text);
             commandUpdate.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
             commandUpdate.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
             commandUpdate.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
@@ -352,6 +358,20 @@ namespace GUI
             Image image = new Bitmap(openClientPic.FileName);
             image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             picClient.BackgroundImage = new Bitmap(openClientPic.FileName);
+        }
+
+        private void comboRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboRace.Text == "Other")
+            {
+                txtRaceOther.Enabled = true;
+                txtRaceOther.Visible = true;
+            }
+            else
+            {
+                    txtRaceOther.Enabled = false;
+                    txtRaceOther.Visible = false;
+            }
         }
     }
 }
