@@ -30,6 +30,7 @@ namespace GUI
         private SqlCommand commandUpdate;
         private SqlCommand commandNLSUpdate;
         private SqlCommand commandCRUpdate;
+        MemoryStream ms = new MemoryStream();
 
         public FormMain()
         {
@@ -174,9 +175,6 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
-            MemoryStream ms = new MemoryStream();
-            Image image = new Bitmap("test.bmp");
-            image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
 
             connection.Open();
             commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
@@ -367,6 +365,13 @@ namespace GUI
             btnModifyClient.Enabled = true;
             btnCancel.Enabled = false;
             txtSocialSecurityNum.Enabled = false;
+        }
+
+        private void openClientPic_FileOk(object sender, CancelEventArgs e)
+        {
+            Image image = new Bitmap(openClientPic.FileName);
+            image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            picClient.BackgroundImage = new Bitmap(openClientPic.FileName);
         }
     }
 }
