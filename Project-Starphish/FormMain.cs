@@ -152,8 +152,11 @@ namespace GUI
             btnViewISP.Enabled = false;
             btnRemoveISP.Enabled = false;
             btnSaveClient.Enabled = true;
+            btnSaveClient.Visible = true;
             btnModifyClient.Enabled = false;
+            btnModifyClient.Visible = false;
             btnCancel.Enabled = true;
+            btnCancel.Visible = true;
             txtSocialSecurityNum.Enabled = true;
         }
 
@@ -358,16 +361,12 @@ namespace GUI
             btnViewISP.Enabled = true;
             btnRemoveISP.Enabled = true;
             btnSaveClient.Enabled = false;
+            btnSaveClient.Visible = false;
             btnModifyClient.Enabled = true;
+            btnModifyClient.Visible = true;
             btnCancel.Enabled = false;
+            btnCancel.Visible = false;
             txtSocialSecurityNum.Enabled = false;
-        }
-
-        private void openClientPic_FileOk(object sender, CancelEventArgs e)
-        {
-            Image image = new Bitmap(openClientPic.FileName);
-            image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            picClient.BackgroundImage = new Bitmap(openClientPic.FileName);
         }
 
         private void comboRace_SelectedIndexChanged(object sender, EventArgs e)

@@ -257,7 +257,6 @@
             this.eMERGENCY_CONTACTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.EMERGENCY_CONTACTTableAdapter();
             this.nEW_LIGHT_SUPPORTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter();
             this.nEXT_OF_KINTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter();
-            this.openClientPic = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -341,16 +340,17 @@
             this.btnCancel.TabIndex = 52;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnModifyClient
             // 
-            this.btnModifyClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifyClient.Location = new System.Drawing.Point(9, 481);
+            this.btnModifyClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifyClient.Location = new System.Drawing.Point(9, 573);
             this.btnModifyClient.Name = "btnModifyClient";
-            this.btnModifyClient.Size = new System.Drawing.Size(214, 39);
+            this.btnModifyClient.Size = new System.Drawing.Size(214, 44);
             this.btnModifyClient.TabIndex = 51;
-            this.btnModifyClient.Text = "Modify";
+            this.btnModifyClient.Text = "Save";
             this.btnModifyClient.UseVisualStyleBackColor = true;
             this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
             // 
@@ -499,6 +499,7 @@
             this.btnSaveClient.TabIndex = 34;
             this.btnSaveClient.Text = "Save";
             this.btnSaveClient.UseVisualStyleBackColor = true;
+            this.btnSaveClient.Visible = false;
             this.btnSaveClient.Click += new System.EventHandler(this.btnSaveClient_Click);
             // 
             // groupBox6
@@ -2365,14 +2366,6 @@
             // 
             this.nEXT_OF_KINTableAdapter.ClearBeforeFill = true;
             // 
-            // openClientPic
-            // 
-            this.openClientPic.FileName = "Open Client Pic";
-            this.openClientPic.Filter = "JPEG Compressed Image (*.jpg|*.jpg|GIF Image(*.gif|*.gif|Bitmap Image(*.bmp|*.bmp" +
-    "";
-            this.openClientPic.Title = "Select a Client Picture";
-            this.openClientPic.FileOk += new System.ComponentModel.CancelEventHandler(this.openClientPic_FileOk);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2634,7 +2627,6 @@
         private System.Windows.Forms.BindingSource nEXTOFKINPERSONFKBindingSource;
         private System.Windows.Forms.Button btnModifyClient;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.OpenFileDialog openClientPic;
     }
 }
 

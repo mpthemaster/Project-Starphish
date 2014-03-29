@@ -151,8 +151,8 @@ namespace GUI
             }
             else if (radUseCustomDates.Checked)
             {
-                startDate = datePickerBeginGraphs.Value.Date;
-                endDate = datePickerEndGraphs.Value.Date;
+                startDate = new DateTime(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month, 1);
+                endDate = new DateTime(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month, System.DateTime.DaysInMonth(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month));
             }
             else if (radUseCustomQuarters.Checked)
             {
@@ -167,7 +167,7 @@ namespace GUI
                     MessageBox.Show("Error: No Quarter was Selected");
 
                 if (chkQuarter1.Checked)
-                {
+                {           
                 }
                 if (chkQuarter2.Checked)
                 {
