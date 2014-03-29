@@ -105,51 +105,72 @@ namespace GUI
             //Else this isn't a new interview, so update the current entry.
             if (newInterview)
             {
-                //First save an entry into the STAFF_INTERVIEW table.
-                statement = "INSERT INTO STAFF_INTERVIEW (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STAFF_ROLE, INTERVIEWER) VALUES        (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STAFF_ROLE, @INTERVIEWER)";
-                command = new SqlCommand(statement, connection);
-                command.Parameters.AddWithValue("@PERSON_ID", personId);
-                command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
-                command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
-                command.Parameters.AddWithValue("@STAFF_ROLE", txtStaffRole.Text);
-                command.Parameters.AddWithValue("@INTERVIEWER", txtInterviewerName.Text);
+                //First try to save an entry into the STAFF_INTERVIEW table. If it fails, then a new interview was being made as a duplicate
+                if (saveStaffInterview())
+                {
+                    //Now save an entry into the STAFF_INTERVIEW_STRENGTH table.
+                    saveStrengths();
 
-                //Catches an error if an interview with the same keys tries to be added by the user.
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("An interview with " + txtStaffIntervieweeName.Text + " on " + datePickerStaffInterview.Value.ToShortDateString() + " has already been recorded. Either delete or modify the pre-existing interview.",
-                        "Fatal Error - Duplicate Interview", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //Now save an entry into the STAFF_INTERVIEW_BEHAVIOR table.
+                    saveBehaviors();
+
+                    //Now save an entry into the STAFF_INTERVIEW_ANTECEDENT table.
+                    saveAntecedents();
+
+                    //Now save an entry into the STAFF_INTERVIEW_QABF table.
+
                     connection.Close();
-                    return;
+                    form.mainStaffInterview();
+                    this.Close();
                 }
-
-                //Now save an entry into the STAFF_INTERVIEW_STRENGTH table.
-                saveStrengths();
-
-                //Now save an entry into the STAFF_INTERVIEW_BEHAVIOR table.
-                saveBehaviors();
-
-                //Now save an entry into the STAFF_INTERVIEW_ANTECEDENT table.
-                saveAntecedents();
-
-                //Now save an entry into the STAFF_INTERVIEW_QABF table.
             }
             else
             {
                 updateStrengths();
                 updateAntecedents();
                 updateBehaviors();
+                updateStaffInterview();
+
+                connection.Close();
+                form.mainStaffInterview();
+                this.Close();
                 //statement =
                 //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
                 //command = new SqlCommand(statement, connection);
             }
-            connection.Close();
-            form.mainStaffInterview();
-            this.Close();
+        }
+
+        /// <summary>
+        /// Saves all the generic staff interview data.
+        /// </summary>
+        /// <returns>Whether the save succeeded.</returns>
+        private bool saveStaffInterview()
+        {
+            //Connect to the database.
+            string statement;
+            SqlCommand command;
+
+            statement = "INSERT INTO STAFF_INTERVIEW (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, STAFF_ROLE, INTERVIEWER) VALUES        (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @STAFF_ROLE, @INTERVIEWER)";
+            command = new SqlCommand(statement, connection);
+            command.Parameters.AddWithValue("@PERSON_ID", personId);
+            command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+            command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+            command.Parameters.AddWithValue("@STAFF_ROLE", txtStaffRole.Text);
+            command.Parameters.AddWithValue("@INTERVIEWER", txtInterviewerName.Text);
+
+            //Catches an error if an interview with the same keys tries to be added by the user.
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An interview with " + txtStaffIntervieweeName.Text + " on " + datePickerStaffInterview.Value.ToShortDateString() + " has already been recorded. Either delete or modify the pre-existing interview.",
+                    "Fatal Error - Duplicate Interview", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                connection.Close();
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
@@ -401,7 +422,6 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_STRENGTH WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
-            saveStrengths();
         }
 
         /// <summary>
@@ -424,6 +444,19 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_BEHAVIOR WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Updates the database's behaviors data with the modified data by first deleting all existing records and then adding all the ones from the form in.
+        /// </summary>
+        private void updateStaffInterview()
+        {
+            //Connect to the database.
+            string statement = "DELETE FROM STAFF_INTERVIEW WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
+            SqlCommand command = new SqlCommand(statement, connection);
+            command.ExecuteNonQuery();
+            saveStaffInterview();
+            saveStrengths();
             saveBehaviors();
             saveAntecedents();
         }

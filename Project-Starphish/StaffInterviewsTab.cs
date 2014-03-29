@@ -84,5 +84,9 @@ namespace GUI
                 btnViewInterview.Enabled = false;
             }
         }
+
+        private void btnRemoveInterview_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

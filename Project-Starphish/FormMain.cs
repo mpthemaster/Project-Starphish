@@ -30,7 +30,7 @@ namespace GUI
         private SqlCommand commandUpdate;
         private SqlCommand commandNLSUpdate;
         private SqlCommand commandCRUpdate;
-        MemoryStream ms = new MemoryStream();
+        private MemoryStream ms = new MemoryStream();
 
         public FormMain()
         {
@@ -162,7 +162,7 @@ namespace GUI
 
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if( listClients.SelectedItem != null)
+            if (listClients.SelectedItem != null)
                 personId = Convert.ToInt32(txtSocialSecurityNum.Text);
         }
 
@@ -178,7 +178,6 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
-
             connection.Open();
             commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
             commandUpdate.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
@@ -270,10 +269,6 @@ namespace GUI
             txtSupportsCoordinatorName.Text = "";
             txtSupportsCoordinatorAddress.Text = "";
             txtSupportsCoordinatorTelephoneNum.Text = "";
-        }
-
-        private void btnRemoveInterview_Click(object sender, EventArgs e)
-        {
         }
 
         private void dataGridViewBehaviorsStaffInterviews_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -378,8 +373,8 @@ namespace GUI
             }
             else
             {
-                    txtRaceOther.Enabled = false;
-                    txtRaceOther.Visible = false;
+                txtRaceOther.Enabled = false;
+                txtRaceOther.Visible = false;
             }
         }
     }
