@@ -81,7 +81,8 @@ namespace GUI
             {
                 if (txtSocialSecurityNum.Text != "" && txtLastName.Text != "")
                 {
-                    picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    if(picClient.Image != null)
+                        picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                     connection.Open();
                     command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
                     command.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
@@ -231,6 +232,8 @@ namespace GUI
                                 picClient.Image = bmp;
                             }
                         }
+                        else if (picData == null || picData.Length == 0)
+                            picClient.Image = null;
                     }
                     commandGetPic.Parameters.Clear();
                     connection.Close();
