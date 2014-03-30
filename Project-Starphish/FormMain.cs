@@ -160,6 +160,7 @@ namespace GUI
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             comboRace.SelectedIndex = 3;
             personId = Convert.ToInt32(txtSocialSecurityNum.Text);
+            dialogFileOpenImage.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|Bitmap Files (*.bmp)|*.bmp";
         }
 
         //Delete the following after this is noticed and/or fixed.
