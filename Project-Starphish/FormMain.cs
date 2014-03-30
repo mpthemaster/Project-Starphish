@@ -29,6 +29,7 @@ namespace GUI
         private string updateStatementCR;
         private string deleteStatement;
         private string getPic;
+        private string addISP;
         private SqlConnection connection;
         private SqlCommand command;
         private SqlCommand commandInsertNOK;
@@ -42,7 +43,9 @@ namespace GUI
         private SqlCommand commandCRUpdate;
         private SqlCommand commandDelete;
         private SqlCommand commandGetPic;
+        private SqlCommand commandAddISP;
         private MemoryStream ms = new MemoryStream();
+        private int x;
 
         public FormMain()
         {
@@ -58,6 +61,7 @@ namespace GUI
             deleteNOK = "DELETE FROM NEXT_OF_KIN WHERE PERSON_ID = @PERSON_ID AND NAME = @NAME AND NOK_ADDRESS = @NOK_ADDRESS AND PHONE = @PHONE";
             insertEC = "INSERT INTO EMERGENCY_CONTACT (PERSON_ID, NAME, EC_ADDRESS, PHONE)VALUES (@PERSON_ID, @NAME, @EC_ADDRESS, @PHONE)";
             deleteEC = "DELETE FROM EMERGENCY_CONTACT WHERE PERSON_ID = @PERSON_ID AND NAME = @NAME AND EC_ADDRESS = @EC_ADDRESS AND PHONE = @PHONE";
+            addISP = "INSERT INTO PERSON_ISP (PERSON_ID, ISP)VALUES (@PERSON_ID, @ISP)";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
             getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
             connection = new SqlConnection(theConnectionString);
@@ -73,6 +77,7 @@ namespace GUI
             commandInsertEC = new SqlCommand(insertEC, connection);
             commandDeleteEC = new SqlCommand(deleteEC, connection);
             commandGetPic = new SqlCommand(getPic, connection);
+            commandAddISP = new SqlCommand(addISP, connection);
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)
@@ -385,8 +390,22 @@ namespace GUI
         private void btnAddISP_Click(object sender, EventArgs e)
         {
             //If the user doesn't cancel the ISP file selection, save it and display it in the listbox.
-            if (dialogFileOpenImage.ShowDialog() != DialogResult.Cancel)
-                ;
+            if (dialogFileOpenISP.ShowDialog() != DialogResult.Cancel)
+            {
+                FileStream st = new FileStream(dialogFileOpenISP.FileName, FileMode.Open);
+                byte[] buffer = new byte[st.Length];
+                st.Read(buffer, 0, (int)st.Length);
+                st.Close();
+                
+                connection.Open();
+                commandAddISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandAddISP.Parameters.AddWithValue("@ISP", buffer);
+                commandAddISP.ExecuteNonQuery();
+                commandAddISP.Parameters.Clear();
+                connection.Close();
+
+                this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
+            }
         }
 
         private void btnViewISP_Click(object sender, EventArgs e)
@@ -506,6 +525,55 @@ namespace GUI
                 txtRaceOther.Enabled = false;
                 txtRaceOther.Visible = false;
             }
+        }
+
+        private void txtSocialSecurityNum_TextChanged(object sender, EventArgs e)
+        {
+            if (!Int32.TryParse(txtSocialSecurityNum.Text, out x) && txtSocialSecurityNum.Text != "")
+            {
+                MessageBox.Show("Please only enter numbers in this field.");
+                txtSocialSecurityNum.Text = "";
+            }
+        }
+
+        private void txtAge_TextChanged(object sender, EventArgs e)
+        {
+            if (!Int32.TryParse(txtAge.Text, out x) && txtAge.Text != "")
+            {
+                MessageBox.Show("Please only enter numbers in this field.");
+                txtAge.Text = "";
+            }
+        }
+
+        private void txtBSUNum_TextChanged(object sender, EventArgs e)
+        {
+            if (!Int32.TryParse(txtBSUNum.Text, out x) && txtBSUNum.Text != "")
+            {
+                MessageBox.Show("Please only enter numbers in this field.");
+                txtBSUNum.Text = "";
+            }
+        }
+
+        private void txtMCINum_TextChanged(object sender, EventArgs e)
+        {
+            if (!Int32.TryParse(txtMCINum.Text, out x) && txtMCINum.Text != "")
+            {
+                MessageBox.Show("Please only enter numbers in this field.");
+                txtMCINum.Text = "";
+            }
+        }
+
+        private void txtPolicyNum_TextChanged(object sender, EventArgs e)
+        {
+            if (!Int32.TryParse(txtPolicyNum.Text, out x) && txtPolicyNum.Text != "")
+            {
+                MessageBox.Show("Please only enter numbers in this field.");
+                txtPolicyNum.Text = "";
+            }
+        }
+
+        private void txtSearchClient_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
