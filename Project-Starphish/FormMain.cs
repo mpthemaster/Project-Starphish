@@ -28,6 +28,7 @@ namespace GUI
         private string updateStatementNLS;
         private string updateStatementCR;
         private string deleteStatement;
+        private string getPic;
         private SqlConnection connection;
         private SqlCommand command;
         private SqlCommand commandInsertNOK;
@@ -40,6 +41,7 @@ namespace GUI
         private SqlCommand commandNLSUpdate;
         private SqlCommand commandCRUpdate;
         private SqlCommand commandDelete;
+        private SqlCommand commandGetPic;
         private MemoryStream ms = new MemoryStream();
 
         public FormMain()
@@ -57,6 +59,7 @@ namespace GUI
             insertEC = "INSERT INTO EMERGENCY_CONTACT (PERSON_ID, NAME, EC_ADDRESS, PHONE)VALUES (@PERSON_ID, @NAME, @EC_ADDRESS, @PHONE)";
             deleteEC = "DELETE FROM EMERGENCY_CONTACT WHERE PERSON_ID = @PERSON_ID AND NAME = @NAME AND EC_ADDRESS = @EC_ADDRESS AND PHONE = @PHONE";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
+            getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
             connection = new SqlConnection(theConnectionString);
             command = new SqlCommand(insertStatement, connection);
             commandNLS = new SqlCommand(insertStatementNLS, connection);
@@ -69,6 +72,7 @@ namespace GUI
             commandDeleteNOK = new SqlCommand(deleteNOK, connection);
             commandInsertEC = new SqlCommand(insertEC, connection);
             commandDeleteEC = new SqlCommand(deleteEC, connection);
+            commandGetPic = new SqlCommand(getPic, connection);
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)
@@ -77,6 +81,7 @@ namespace GUI
             {
                 if (txtSocialSecurityNum.Text != "" && txtLastName.Text != "")
                 {
+                    picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                     connection.Open();
                     command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
                     command.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
@@ -208,7 +213,30 @@ namespace GUI
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listClients.SelectedItem != null)
+            {
                 int.TryParse(txtSocialSecurityNum.Text, out personId);
+                commandGetPic.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
+                connection.Open();
+                using (SqlDataReader reader = commandGetPic.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        byte[] picData = reader["PHOTO"] as byte[] ?? null;
+
+                        if (picData != null && picData.Length > 0)
+                        {
+                            using (MemoryStream ms2 = new MemoryStream(picData))
+                            {
+                                System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(ms2);
+                                picClient.Image = bmp;
+                            }
+                        }
+                    }
+                    commandGetPic.Parameters.Clear();
+                    connection.Close();
+                }
+            }
+                
         }
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
@@ -223,6 +251,7 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
+            picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             connection.Open();
             commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
             commandUpdate.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
@@ -346,7 +375,7 @@ namespace GUI
         {
             //If the user doesn't cancel the image file selection, save it and display it picbox.
             if (dialogFileOpenImage.ShowDialog() != DialogResult.Cancel)
-                ;
+                picClient.Image = new Bitmap(dialogFileOpenImage.FileName);
         }
 
         private void btnAddISP_Click(object sender, EventArgs e)

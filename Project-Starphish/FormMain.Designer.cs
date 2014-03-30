@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint17 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint18 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint19 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint20 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -82,6 +82,7 @@
             this.btnRemoveISP = new System.Windows.Forms.Button();
             this.btnAddISP = new System.Windows.Forms.Button();
             this.lstISP = new System.Windows.Forms.ListBox();
+            this.pERSONISPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label54 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
@@ -115,7 +116,6 @@
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.lstNextOfKin = new System.Windows.Forms.ListBox();
-            this.nEXTOFKINPERSONFKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtNextOfKinName = new System.Windows.Forms.TextBox();
             this.txtNextOfKinAddress = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -242,6 +242,7 @@
             this.btnRemoveInterview = new System.Windows.Forms.Button();
             this.btnAddInterview = new System.Windows.Forms.Button();
             this.lstInterviews = new System.Windows.Forms.ListBox();
+            this.nEXTOFKINPERSONFKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -257,7 +258,6 @@
             this.eMERGENCY_CONTACTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.EMERGENCY_CONTACTTableAdapter();
             this.nEW_LIGHT_SUPPORTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter();
             this.nEXT_OF_KINTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter();
-            this.pERSONISPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pERSON_ISPTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSON_ISPTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -267,13 +267,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClient)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONISPBindingSource)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nEW_LIGHT_SUPPORTBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cOUNTY_RESPONSIBLEBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nEXT_OF_KINBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -292,8 +292,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBehaviorsStaffInterviews)).BeginInit();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONISPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -340,7 +340,7 @@
             this.btnCancel.Location = new System.Drawing.Point(9, 526);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(214, 41);
-            this.btnCancel.TabIndex = 52;
+            this.btnCancel.TabIndex = 50;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
@@ -352,7 +352,7 @@
             this.btnModifyClient.Location = new System.Drawing.Point(9, 573);
             this.btnModifyClient.Name = "btnModifyClient";
             this.btnModifyClient.Size = new System.Drawing.Size(214, 44);
-            this.btnModifyClient.TabIndex = 51;
+            this.btnModifyClient.TabIndex = 49;
             this.btnModifyClient.Text = "Save";
             this.btnModifyClient.UseVisualStyleBackColor = true;
             this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
@@ -380,7 +380,7 @@
             this.btnAddEmergencyContact.Location = new System.Drawing.Point(107, 19);
             this.btnAddEmergencyContact.Name = "btnAddEmergencyContact";
             this.btnAddEmergencyContact.Size = new System.Drawing.Size(75, 23);
-            this.btnAddEmergencyContact.TabIndex = 52;
+            this.btnAddEmergencyContact.TabIndex = 48;
             this.btnAddEmergencyContact.Text = "Add Contact";
             this.btnAddEmergencyContact.UseVisualStyleBackColor = true;
             this.btnAddEmergencyContact.Click += new System.EventHandler(this.btnAddEmergencyContact_Click);
@@ -390,7 +390,7 @@
             this.btnRemoveEmergencyContact.Location = new System.Drawing.Point(6, 19);
             this.btnRemoveEmergencyContact.Name = "btnRemoveEmergencyContact";
             this.btnRemoveEmergencyContact.Size = new System.Drawing.Size(95, 23);
-            this.btnRemoveEmergencyContact.TabIndex = 51;
+            this.btnRemoveEmergencyContact.TabIndex = 46;
             this.btnRemoveEmergencyContact.Text = "Remove Contact";
             this.btnRemoveEmergencyContact.UseVisualStyleBackColor = true;
             this.btnRemoveEmergencyContact.Click += new System.EventHandler(this.btnRemoveEmergencyContact_Click);
@@ -410,7 +410,7 @@
             this.txtEmergencyContactTelephoneNum.Location = new System.Drawing.Point(132, 103);
             this.txtEmergencyContactTelephoneNum.Name = "txtEmergencyContactTelephoneNum";
             this.txtEmergencyContactTelephoneNum.Size = new System.Drawing.Size(93, 20);
-            this.txtEmergencyContactTelephoneNum.TabIndex = 48;
+            this.txtEmergencyContactTelephoneNum.TabIndex = 38;
             // 
             // eMERGENCY_CONTACTBindingSource
             // 
@@ -462,7 +462,7 @@
             this.txtEmergencyContactName.Location = new System.Drawing.Point(132, 64);
             this.txtEmergencyContactName.Name = "txtEmergencyContactName";
             this.txtEmergencyContactName.Size = new System.Drawing.Size(131, 20);
-            this.txtEmergencyContactName.TabIndex = 26;
+            this.txtEmergencyContactName.TabIndex = 37;
             // 
             // txtEmergencyContactAddress
             // 
@@ -470,14 +470,14 @@
             this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 150);
             this.txtEmergencyContactAddress.Name = "txtEmergencyContactAddress";
             this.txtEmergencyContactAddress.Size = new System.Drawing.Size(186, 20);
-            this.txtEmergencyContactAddress.TabIndex = 27;
+            this.txtEmergencyContactAddress.TabIndex = 39;
             // 
             // btnSelectImage
             // 
             this.btnSelectImage.Location = new System.Drawing.Point(622, 223);
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new System.Drawing.Size(97, 23);
-            this.btnSelectImage.TabIndex = 36;
+            this.btnSelectImage.TabIndex = 33;
             this.btnSelectImage.Text = "Select Image";
             this.btnSelectImage.UseVisualStyleBackColor = true;
             this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
@@ -488,6 +488,7 @@
             this.picClient.Location = new System.Drawing.Point(530, 11);
             this.picClient.Name = "picClient";
             this.picClient.Size = new System.Drawing.Size(275, 206);
+            this.picClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picClient.TabIndex = 35;
             this.picClient.TabStop = false;
             // 
@@ -522,7 +523,7 @@
             this.btnViewISP.Location = new System.Drawing.Point(139, 48);
             this.btnViewISP.Name = "btnViewISP";
             this.btnViewISP.Size = new System.Drawing.Size(75, 23);
-            this.btnViewISP.TabIndex = 31;
+            this.btnViewISP.TabIndex = 42;
             this.btnViewISP.Text = "View ISP";
             this.btnViewISP.UseVisualStyleBackColor = true;
             this.btnViewISP.Click += new System.EventHandler(this.btnViewISP_Click);
@@ -532,7 +533,7 @@
             this.btnRemoveISP.Location = new System.Drawing.Point(139, 77);
             this.btnRemoveISP.Name = "btnRemoveISP";
             this.btnRemoveISP.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveISP.TabIndex = 30;
+            this.btnRemoveISP.TabIndex = 43;
             this.btnRemoveISP.Text = "Remove ISP";
             this.btnRemoveISP.UseVisualStyleBackColor = true;
             this.btnRemoveISP.Click += new System.EventHandler(this.btnRemoveISP_Click);
@@ -542,7 +543,7 @@
             this.btnAddISP.Location = new System.Drawing.Point(139, 19);
             this.btnAddISP.Name = "btnAddISP";
             this.btnAddISP.Size = new System.Drawing.Size(75, 23);
-            this.btnAddISP.TabIndex = 29;
+            this.btnAddISP.TabIndex = 40;
             this.btnAddISP.Text = "Add ISP";
             this.btnAddISP.UseVisualStyleBackColor = true;
             this.btnAddISP.Click += new System.EventHandler(this.btnAddISP_Click);
@@ -556,6 +557,11 @@
             this.lstISP.Name = "lstISP";
             this.lstISP.Size = new System.Drawing.Size(120, 95);
             this.lstISP.TabIndex = 0;
+            // 
+            // pERSONISPBindingSource
+            // 
+            this.pERSONISPBindingSource.DataMember = "PERSON_ISP";
+            this.pERSONISPBindingSource.DataSource = this.projectStarphishDataSet;
             // 
             // groupBox5
             // 
@@ -638,7 +644,7 @@
             this.txtProgramSpecialistName.Location = new System.Drawing.Point(6, 110);
             this.txtProgramSpecialistName.Name = "txtProgramSpecialistName";
             this.txtProgramSpecialistName.Size = new System.Drawing.Size(134, 20);
-            this.txtProgramSpecialistName.TabIndex = 34;
+            this.txtProgramSpecialistName.TabIndex = 27;
             // 
             // nEW_LIGHT_SUPPORTBindingSource
             // 
@@ -651,7 +657,7 @@
             this.txtProgramSpecialistPhoneNum.Location = new System.Drawing.Point(146, 110);
             this.txtProgramSpecialistPhoneNum.Name = "txtProgramSpecialistPhoneNum";
             this.txtProgramSpecialistPhoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtProgramSpecialistPhoneNum.TabIndex = 33;
+            this.txtProgramSpecialistPhoneNum.TabIndex = 28;
             // 
             // txtProgramCoordinatorName
             // 
@@ -659,7 +665,7 @@
             this.txtProgramCoordinatorName.Location = new System.Drawing.Point(6, 71);
             this.txtProgramCoordinatorName.Name = "txtProgramCoordinatorName";
             this.txtProgramCoordinatorName.Size = new System.Drawing.Size(134, 20);
-            this.txtProgramCoordinatorName.TabIndex = 32;
+            this.txtProgramCoordinatorName.TabIndex = 25;
             // 
             // txtProgramCoordinatorTelephoneNum
             // 
@@ -667,7 +673,7 @@
             this.txtProgramCoordinatorTelephoneNum.Location = new System.Drawing.Point(146, 71);
             this.txtProgramCoordinatorTelephoneNum.Name = "txtProgramCoordinatorTelephoneNum";
             this.txtProgramCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtProgramCoordinatorTelephoneNum.TabIndex = 31;
+            this.txtProgramCoordinatorTelephoneNum.TabIndex = 26;
             // 
             // txtSiteSupervisorName
             // 
@@ -675,7 +681,7 @@
             this.txtSiteSupervisorName.Location = new System.Drawing.Point(6, 32);
             this.txtSiteSupervisorName.Name = "txtSiteSupervisorName";
             this.txtSiteSupervisorName.Size = new System.Drawing.Size(134, 20);
-            this.txtSiteSupervisorName.TabIndex = 30;
+            this.txtSiteSupervisorName.TabIndex = 23;
             // 
             // txtSiteSupervisorTelephoneNum
             // 
@@ -683,7 +689,7 @@
             this.txtSiteSupervisorTelephoneNum.Location = new System.Drawing.Point(146, 32);
             this.txtSiteSupervisorTelephoneNum.Name = "txtSiteSupervisorTelephoneNum";
             this.txtSiteSupervisorTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtSiteSupervisorTelephoneNum.TabIndex = 29;
+            this.txtSiteSupervisorTelephoneNum.TabIndex = 24;
             // 
             // groupBox4
             // 
@@ -744,7 +750,7 @@
             this.txtCountyResponsible.Location = new System.Drawing.Point(6, 32);
             this.txtCountyResponsible.Name = "txtCountyResponsible";
             this.txtCountyResponsible.Size = new System.Drawing.Size(100, 20);
-            this.txtCountyResponsible.TabIndex = 30;
+            this.txtCountyResponsible.TabIndex = 29;
             // 
             // cOUNTY_RESPONSIBLEBindingSource
             // 
@@ -757,7 +763,7 @@
             this.txtSupportsCoordinatorTelephoneNum.Location = new System.Drawing.Point(199, 71);
             this.txtSupportsCoordinatorTelephoneNum.Name = "txtSupportsCoordinatorTelephoneNum";
             this.txtSupportsCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtSupportsCoordinatorTelephoneNum.TabIndex = 29;
+            this.txtSupportsCoordinatorTelephoneNum.TabIndex = 32;
             // 
             // txtSupportsCoordinatorName
             // 
@@ -765,7 +771,7 @@
             this.txtSupportsCoordinatorName.Location = new System.Drawing.Point(112, 32);
             this.txtSupportsCoordinatorName.Name = "txtSupportsCoordinatorName";
             this.txtSupportsCoordinatorName.Size = new System.Drawing.Size(134, 20);
-            this.txtSupportsCoordinatorName.TabIndex = 26;
+            this.txtSupportsCoordinatorName.TabIndex = 30;
             // 
             // txtSupportsCoordinatorAddress
             // 
@@ -773,7 +779,7 @@
             this.txtSupportsCoordinatorAddress.Location = new System.Drawing.Point(6, 71);
             this.txtSupportsCoordinatorAddress.Name = "txtSupportsCoordinatorAddress";
             this.txtSupportsCoordinatorAddress.Size = new System.Drawing.Size(187, 20);
-            this.txtSupportsCoordinatorAddress.TabIndex = 27;
+            this.txtSupportsCoordinatorAddress.TabIndex = 31;
             // 
             // groupBox3
             // 
@@ -798,7 +804,7 @@
             this.btnRemoveNextOfKin.Location = new System.Drawing.Point(6, 19);
             this.btnRemoveNextOfKin.Name = "btnRemoveNextOfKin";
             this.btnRemoveNextOfKin.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveNextOfKin.TabIndex = 51;
+            this.btnRemoveNextOfKin.TabIndex = 44;
             this.btnRemoveNextOfKin.Text = "Remove Kin";
             this.btnRemoveNextOfKin.UseVisualStyleBackColor = true;
             this.btnRemoveNextOfKin.Click += new System.EventHandler(this.btnRemoveNextOfKin_Click);
@@ -818,7 +824,7 @@
             this.txtNextOfKinTelephoneNum.Location = new System.Drawing.Point(132, 103);
             this.txtNextOfKinTelephoneNum.Name = "txtNextOfKinTelephoneNum";
             this.txtNextOfKinTelephoneNum.Size = new System.Drawing.Size(93, 20);
-            this.txtNextOfKinTelephoneNum.TabIndex = 48;
+            this.txtNextOfKinTelephoneNum.TabIndex = 35;
             // 
             // nEXT_OF_KINBindingSource
             // 
@@ -830,7 +836,7 @@
             this.btnAddNextOfKin.Location = new System.Drawing.Point(91, 19);
             this.btnAddNextOfKin.Name = "btnAddNextOfKin";
             this.btnAddNextOfKin.Size = new System.Drawing.Size(75, 23);
-            this.btnAddNextOfKin.TabIndex = 50;
+            this.btnAddNextOfKin.TabIndex = 45;
             this.btnAddNextOfKin.Text = "Add Kin";
             this.btnAddNextOfKin.UseVisualStyleBackColor = true;
             this.btnAddNextOfKin.Click += new System.EventHandler(this.btnAddNextOfKin_Click);
@@ -864,18 +870,13 @@
             this.lstNextOfKin.TabIndex = 0;
             this.lstNextOfKin.ValueMember = "PERSON_ID";
             // 
-            // nEXTOFKINPERSONFKBindingSource
-            // 
-            this.nEXTOFKINPERSONFKBindingSource.DataMember = "NEXT_OF_KIN_PERSON_FK";
-            this.nEXTOFKINPERSONFKBindingSource.DataSource = this.pERSONBindingSource;
-            // 
             // txtNextOfKinName
             // 
             this.txtNextOfKinName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "NAME", true));
             this.txtNextOfKinName.Location = new System.Drawing.Point(132, 64);
             this.txtNextOfKinName.Name = "txtNextOfKinName";
             this.txtNextOfKinName.Size = new System.Drawing.Size(131, 20);
-            this.txtNextOfKinName.TabIndex = 26;
+            this.txtNextOfKinName.TabIndex = 34;
             // 
             // txtNextOfKinAddress
             // 
@@ -883,7 +884,7 @@
             this.txtNextOfKinAddress.Location = new System.Drawing.Point(6, 149);
             this.txtNextOfKinAddress.Name = "txtNextOfKinAddress";
             this.txtNextOfKinAddress.Size = new System.Drawing.Size(186, 20);
-            this.txtNextOfKinAddress.TabIndex = 27;
+            this.txtNextOfKinAddress.TabIndex = 36;
             // 
             // groupBox1
             // 
@@ -945,7 +946,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(93, 32);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(67, 20);
-            this.txtFirstName.TabIndex = 48;
+            this.txtFirstName.TabIndex = 2;
             // 
             // txtRaceOther
             // 
@@ -1161,7 +1162,7 @@
             this.txtAdmittanceDate.Location = new System.Drawing.Point(144, 71);
             this.txtAdmittanceDate.Name = "txtAdmittanceDate";
             this.txtAdmittanceDate.Size = new System.Drawing.Size(79, 20);
-            this.txtAdmittanceDate.TabIndex = 24;
+            this.txtAdmittanceDate.TabIndex = 5;
             // 
             // txtLastName
             // 
@@ -1169,7 +1170,7 @@
             this.txtLastName.Location = new System.Drawing.Point(6, 32);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(79, 20);
-            this.txtLastName.TabIndex = 3;
+            this.txtLastName.TabIndex = 1;
             // 
             // txtManagedCareCompany
             // 
@@ -1177,7 +1178,7 @@
             this.txtManagedCareCompany.Location = new System.Drawing.Point(6, 451);
             this.txtManagedCareCompany.Name = "txtManagedCareCompany";
             this.txtManagedCareCompany.Size = new System.Drawing.Size(137, 20);
-            this.txtManagedCareCompany.TabIndex = 23;
+            this.txtManagedCareCompany.TabIndex = 22;
             // 
             // txtPolicyNum
             // 
@@ -1185,7 +1186,7 @@
             this.txtPolicyNum.Location = new System.Drawing.Point(124, 412);
             this.txtPolicyNum.Name = "txtPolicyNum";
             this.txtPolicyNum.Size = new System.Drawing.Size(114, 20);
-            this.txtPolicyNum.TabIndex = 22;
+            this.txtPolicyNum.TabIndex = 21;
             // 
             // txtMiddleName
             // 
@@ -1193,7 +1194,7 @@
             this.txtMiddleName.Location = new System.Drawing.Point(166, 32);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(72, 20);
-            this.txtMiddleName.TabIndex = 5;
+            this.txtMiddleName.TabIndex = 3;
             // 
             // txtInsuranceCarrier
             // 
@@ -1201,7 +1202,7 @@
             this.txtInsuranceCarrier.Location = new System.Drawing.Point(6, 412);
             this.txtInsuranceCarrier.Name = "txtInsuranceCarrier";
             this.txtInsuranceCarrier.Size = new System.Drawing.Size(112, 20);
-            this.txtInsuranceCarrier.TabIndex = 21;
+            this.txtInsuranceCarrier.TabIndex = 20;
             // 
             // txtAgencyName
             // 
@@ -1209,7 +1210,7 @@
             this.txtAgencyName.Location = new System.Drawing.Point(6, 71);
             this.txtAgencyName.Name = "txtAgencyName";
             this.txtAgencyName.Size = new System.Drawing.Size(132, 20);
-            this.txtAgencyName.TabIndex = 6;
+            this.txtAgencyName.TabIndex = 4;
             // 
             // txtMCINum
             // 
@@ -1217,7 +1218,7 @@
             this.txtMCINum.Location = new System.Drawing.Point(118, 373);
             this.txtMCINum.Name = "txtMCINum";
             this.txtMCINum.Size = new System.Drawing.Size(100, 20);
-            this.txtMCINum.TabIndex = 20;
+            this.txtMCINum.TabIndex = 19;
             // 
             // txtAddress
             // 
@@ -1225,7 +1226,7 @@
             this.txtAddress.Location = new System.Drawing.Point(6, 110);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(188, 20);
-            this.txtAddress.TabIndex = 7;
+            this.txtAddress.TabIndex = 6;
             // 
             // txtBSUNum
             // 
@@ -1233,14 +1234,14 @@
             this.txtBSUNum.Location = new System.Drawing.Point(6, 373);
             this.txtBSUNum.Name = "txtBSUNum";
             this.txtBSUNum.Size = new System.Drawing.Size(106, 20);
-            this.txtBSUNum.TabIndex = 19;
+            this.txtBSUNum.TabIndex = 18;
             // 
             // txtZipCode
             // 
             this.txtZipCode.Location = new System.Drawing.Point(200, 110);
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(38, 20);
-            this.txtZipCode.TabIndex = 8;
+            this.txtZipCode.TabIndex = 7;
             // 
             // txtIdentifyingMarks
             // 
@@ -1249,7 +1250,7 @@
             this.txtIdentifyingMarks.Multiline = true;
             this.txtIdentifyingMarks.Name = "txtIdentifyingMarks";
             this.txtIdentifyingMarks.Size = new System.Drawing.Size(232, 48);
-            this.txtIdentifyingMarks.TabIndex = 18;
+            this.txtIdentifyingMarks.TabIndex = 17;
             // 
             // txtTelephoneNum
             // 
@@ -1257,7 +1258,7 @@
             this.txtTelephoneNum.Location = new System.Drawing.Point(6, 149);
             this.txtTelephoneNum.Name = "txtTelephoneNum";
             this.txtTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtTelephoneNum.TabIndex = 9;
+            this.txtTelephoneNum.TabIndex = 8;
             // 
             // txtHairColor
             // 
@@ -1265,7 +1266,7 @@
             this.txtHairColor.Location = new System.Drawing.Point(6, 267);
             this.txtHairColor.Name = "txtHairColor";
             this.txtHairColor.Size = new System.Drawing.Size(71, 20);
-            this.txtHairColor.TabIndex = 17;
+            this.txtHairColor.TabIndex = 14;
             // 
             // txtDateOfBirth
             // 
@@ -1306,7 +1307,7 @@
             this.txtSocialSecurityNum.Location = new System.Drawing.Point(109, 149);
             this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
             this.txtSocialSecurityNum.Size = new System.Drawing.Size(84, 20);
-            this.txtSocialSecurityNum.TabIndex = 12;
+            this.txtSocialSecurityNum.TabIndex = 9;
             // 
             // comboGender
             // 
@@ -1320,7 +1321,7 @@
             this.comboGender.Location = new System.Drawing.Point(6, 227);
             this.comboGender.Name = "comboGender";
             this.comboGender.Size = new System.Drawing.Size(71, 21);
-            this.comboGender.TabIndex = 14;
+            this.comboGender.TabIndex = 12;
             // 
             // comboRace
             // 
@@ -1527,14 +1528,14 @@
             this.dataGridViewDailyBehaviorTracking.AllowUserToOrderColumns = true;
             this.dataGridViewDailyBehaviorTracking.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridViewDailyBehaviorTracking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDailyBehaviorTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
             this.ColumnShift,
@@ -1550,17 +1551,17 @@
             // 
             // ColumnDate
             // 
-            dataGridViewCellStyle23.Format = "d";
-            dataGridViewCellStyle23.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnDate.HeaderText = "Date";
             this.ColumnDate.Name = "ColumnDate";
             this.ColumnDate.ReadOnly = true;
             // 
             // ColumnShift
             // 
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnShift.HeaderText = "Shift";
             this.ColumnShift.Items.AddRange(new object[] {
             "7a-3p",
@@ -1574,8 +1575,8 @@
             // ColumnBehavior
             // 
             this.ColumnBehavior.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle25.NullValue = "Not Occurred";
-            this.ColumnBehavior.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle4.NullValue = "Not Occurred";
+            this.ColumnBehavior.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnBehavior.HeaderText = "Behavior";
             this.ColumnBehavior.Name = "ColumnBehavior";
             this.ColumnBehavior.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1583,8 +1584,8 @@
             // ColumnSeverity
             // 
             this.ColumnSeverity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle26.NullValue = "Moderate";
-            this.ColumnSeverity.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle5.NullValue = "Moderate";
+            this.ColumnSeverity.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnSeverity.HeaderText = "Severity";
             this.ColumnSeverity.Items.AddRange(new object[] {
             "Not Ocurred",
@@ -1598,17 +1599,17 @@
             // ColumnShiftTotal
             // 
             this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle27.Format = "N0";
-            dataGridViewCellStyle27.NullValue = "0";
-            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnShiftTotal.HeaderText = "Shift Total";
             this.ColumnShiftTotal.Name = "ColumnShiftTotal";
             // 
             // ColumnStaffNames
             // 
             this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnStaffNames.HeaderText = "Staff Name(s)";
             this.ColumnStaffNames.MinimumWidth = 100;
             this.ColumnStaffNames.Name = "ColumnStaffNames";
@@ -1888,79 +1889,79 @@
             // 
             // chartPyramidOccurences
             // 
-            chartArea16.Name = "ChartArea1";
-            this.chartPyramidOccurences.ChartAreas.Add(chartArea16);
-            legend7.Name = "Legend1";
-            this.chartPyramidOccurences.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chartPyramidOccurences.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartPyramidOccurences.Legends.Add(legend1);
             this.chartPyramidOccurences.Location = new System.Drawing.Point(624, 325);
             this.chartPyramidOccurences.Name = "chartPyramidOccurences";
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
-            series16.Legend = "Legend1";
-            series16.Name = "Series1";
-            this.chartPyramidOccurences.Series.Add(series16);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartPyramidOccurences.Series.Add(series1);
             this.chartPyramidOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPyramidOccurences.TabIndex = 35;
             this.chartPyramidOccurences.Text = "chart5";
-            title13.Name = "Title1";
-            title13.Text = "# Daily Occurences";
-            this.chartPyramidOccurences.Titles.Add(title13);
+            title1.Name = "Title1";
+            title1.Text = "# Daily Occurences";
+            this.chartPyramidOccurences.Titles.Add(title1);
             // 
             // chartSumOfBehaviors
             // 
-            chartArea17.Name = "ChartArea1";
-            this.chartSumOfBehaviors.ChartAreas.Add(chartArea17);
+            chartArea2.Name = "ChartArea1";
+            this.chartSumOfBehaviors.ChartAreas.Add(chartArea2);
             this.chartSumOfBehaviors.Location = new System.Drawing.Point(151, 325);
             this.chartSumOfBehaviors.Name = "chartSumOfBehaviors";
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series17.Name = "Series1";
-            this.chartSumOfBehaviors.Series.Add(series17);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.chartSumOfBehaviors.Series.Add(series2);
             this.chartSumOfBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartSumOfBehaviors.TabIndex = 34;
             this.chartSumOfBehaviors.Text = "chart4";
-            title14.Name = "Title1";
-            title14.Text = "Sum of Arguing";
-            this.chartSumOfBehaviors.Titles.Add(title14);
+            title2.Name = "Title1";
+            title2.Text = "Sum of Arguing";
+            this.chartSumOfBehaviors.Titles.Add(title2);
             // 
             // chartPieDailyOccurences
             // 
-            chartArea18.Area3DStyle.Enable3D = true;
-            chartArea18.Area3DStyle.Inclination = 60;
-            chartArea18.Name = "ChartArea1";
-            this.chartPieDailyOccurences.ChartAreas.Add(chartArea18);
-            legend8.Name = "Legend1";
-            this.chartPieDailyOccurences.Legends.Add(legend8);
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.Area3DStyle.Inclination = 60;
+            chartArea3.Name = "ChartArea1";
+            this.chartPieDailyOccurences.ChartAreas.Add(chartArea3);
+            legend2.Name = "Legend1";
+            this.chartPieDailyOccurences.Legends.Add(legend2);
             this.chartPieDailyOccurences.Location = new System.Drawing.Point(624, 64);
             this.chartPieDailyOccurences.Name = "chartPieDailyOccurences";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series18.Legend = "Legend1";
-            series18.Name = "Series1";
-            this.chartPieDailyOccurences.Series.Add(series18);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartPieDailyOccurences.Series.Add(series3);
             this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPieDailyOccurences.TabIndex = 33;
             this.chartPieDailyOccurences.Text = "chart3";
-            title15.Name = "Title1";
-            title15.Text = "# Daily Occurences";
-            this.chartPieDailyOccurences.Titles.Add(title15);
+            title3.Name = "Title1";
+            title3.Text = "# Daily Occurences";
+            this.chartPieDailyOccurences.Titles.Add(title3);
             // 
             // chartTotalBehaviors
             // 
-            chartArea19.Name = "ChartArea1";
-            this.chartTotalBehaviors.ChartAreas.Add(chartArea19);
+            chartArea4.Name = "ChartArea1";
+            this.chartTotalBehaviors.ChartAreas.Add(chartArea4);
             this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series19.Name = "Series1";
-            this.chartTotalBehaviors.Series.Add(series19);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Name = "Series1";
+            this.chartTotalBehaviors.Series.Add(series4);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartTotalBehaviors.TabIndex = 32;
             this.chartTotalBehaviors.Text = "chart2";
-            title16.Name = "Title1";
-            title16.Text = "Total Behaviors";
-            this.chartTotalBehaviors.Titles.Add(title16);
+            title4.Name = "Title1";
+            title4.Text = "Total Behaviors";
+            this.chartTotalBehaviors.Titles.Add(title4);
             // 
             // comboBehaviorsToGraph
             // 
@@ -2017,47 +2018,47 @@
             // 
             // chartQABFAnalysis
             // 
-            chartArea20.Area3DStyle.IsRightAngleAxes = false;
-            chartArea20.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea20.Area3DStyle.Rotation = 10;
-            chartArea20.Name = "ChartArea1";
-            this.chartQABFAnalysis.ChartAreas.Add(chartArea20);
+            chartArea5.Area3DStyle.IsRightAngleAxes = false;
+            chartArea5.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea5.Area3DStyle.Rotation = 10;
+            chartArea5.Name = "ChartArea1";
+            this.chartQABFAnalysis.ChartAreas.Add(chartArea5);
             this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
             this.chartQABFAnalysis.Name = "chartQABFAnalysis";
             this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series20.ChartArea = "ChartArea1";
-            series20.IsXValueIndexed = true;
-            series20.Name = "Series1";
-            dataPoint16.AxisLabel = "Attention";
-            dataPoint16.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataPoint16.IsValueShownAsLabel = false;
-            dataPoint16.IsVisibleInLegend = true;
-            dataPoint16.Label = "2.75";
-            dataPoint16.LabelAngle = 0;
-            dataPoint16.LabelBorderColor = System.Drawing.Color.Transparent;
-            dataPoint16.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint16.LabelBorderWidth = 1;
-            dataPoint16.LegendText = "";
-            dataPoint17.AxisLabel = "Escape";
-            dataPoint17.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataPoint17.Label = "2";
-            dataPoint18.AxisLabel = "Non-Social";
-            dataPoint18.Color = System.Drawing.Color.Gray;
-            dataPoint18.Label = "1.6";
-            dataPoint19.AxisLabel = "Physical";
-            dataPoint19.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataPoint19.Label = "1.2";
-            dataPoint20.AxisLabel = "Tangible";
-            dataPoint20.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataPoint20.Label = "1.6";
-            series20.Points.Add(dataPoint16);
-            series20.Points.Add(dataPoint17);
-            series20.Points.Add(dataPoint18);
-            series20.Points.Add(dataPoint19);
-            series20.Points.Add(dataPoint20);
-            series20.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chartQABFAnalysis.Series.Add(series20);
+            series5.ChartArea = "ChartArea1";
+            series5.IsXValueIndexed = true;
+            series5.Name = "Series1";
+            dataPoint1.AxisLabel = "Attention";
+            dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataPoint1.IsValueShownAsLabel = false;
+            dataPoint1.IsVisibleInLegend = true;
+            dataPoint1.Label = "2.75";
+            dataPoint1.LabelAngle = 0;
+            dataPoint1.LabelBorderColor = System.Drawing.Color.Transparent;
+            dataPoint1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint1.LabelBorderWidth = 1;
+            dataPoint1.LegendText = "";
+            dataPoint2.AxisLabel = "Escape";
+            dataPoint2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint2.Label = "2";
+            dataPoint3.AxisLabel = "Non-Social";
+            dataPoint3.Color = System.Drawing.Color.Gray;
+            dataPoint3.Label = "1.6";
+            dataPoint4.AxisLabel = "Physical";
+            dataPoint4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataPoint4.Label = "1.2";
+            dataPoint5.AxisLabel = "Tangible";
+            dataPoint5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataPoint5.Label = "1.6";
+            series5.Points.Add(dataPoint1);
+            series5.Points.Add(dataPoint2);
+            series5.Points.Add(dataPoint3);
+            series5.Points.Add(dataPoint4);
+            series5.Points.Add(dataPoint5);
+            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chartQABFAnalysis.Series.Add(series5);
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
             this.chartQABFAnalysis.TabIndex = 0;
             this.chartQABFAnalysis.Text = "chart1";
@@ -2259,6 +2260,11 @@
             this.lstInterviews.TabIndex = 0;
             this.lstInterviews.SelectedIndexChanged += new System.EventHandler(this.lstInterviews_SelectedIndexChanged);
             // 
+            // nEXTOFKINPERSONFKBindingSource
+            // 
+            this.nEXTOFKINPERSONFKBindingSource.DataMember = "NEXT_OF_KIN_PERSON_FK";
+            this.nEXTOFKINPERSONFKBindingSource.DataSource = this.pERSONBindingSource;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2361,11 +2367,6 @@
             // 
             this.nEXT_OF_KINTableAdapter.ClearBeforeFill = true;
             // 
-            // pERSONISPBindingSource
-            // 
-            this.pERSONISPBindingSource.DataMember = "PERSON_ISP";
-            this.pERSONISPBindingSource.DataSource = this.projectStarphishDataSet;
-            // 
             // pERSON_ISPTableAdapter
             // 
             this.pERSON_ISPTableAdapter.ClearBeforeFill = true;
@@ -2391,6 +2392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectStarphishDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClient)).EndInit();
             this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONISPBindingSource)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nEW_LIGHT_SUPPORTBindingSource)).EndInit();
@@ -2400,7 +2402,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nEXT_OF_KINBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -2422,9 +2423,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBehaviorsStaffInterviews)).EndInit();
             this.groupBox13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStrengths)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONISPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
