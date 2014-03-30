@@ -18,6 +18,10 @@ namespace GUI
         private int personId;
         private string theConnectionString;
         private string insertStatement;
+        private string insertNOK;
+        private string deleteNOK;
+        private string insertEC;
+        private string deleteEC;
         private string insertStatementNLS;
         private string insertStatementCR;
         private string updateStatement;
@@ -26,6 +30,10 @@ namespace GUI
         private string deleteStatement;
         private SqlConnection connection;
         private SqlCommand command;
+        private SqlCommand commandInsertNOK;
+        private SqlCommand commandDeleteNOK;
+        private SqlCommand commandInsertEC;
+        private SqlCommand commandDeleteEC;
         private SqlCommand commandNLS;
         private SqlCommand commandCR;
         private SqlCommand commandUpdate;
@@ -38,13 +46,16 @@ namespace GUI
         {
             InitializeComponent();
             theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
-            //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
             insertStatement = "INSERT INTO PERSON (FNAME, MNAME, LNAME, IDENTIFYING_MARKS, PHOTO, AGENCY_NAME, P_ADDRESS, ZIP, PHONE, ADMITTANCE_DATE, DATE_OF_BIRTH, AGE, GENDER, RACE, HAIR_COLOR, HEIGHT, P_WEIGHT, BSU, MCI, INSURANCE_CARRIER, POLICY_NUM, MANAGED_CARE_COMPANY, SSN) VALUES        (@FNAME, @MNAME, @LNAME, @IDENTIFYING_MARKS, @PHOTO, @AGENCY_NAME, @P_ADDRESS, @ZIP, @PHONE, @ADMITTANCE_DATE, @DATE_OF_BIRTH, @AGE, @GENDER, @RACE, @HAIR_COLOR, @HEIGHT, @P_WEIGHT, @BSU, @MCI, @INSURANCE_CARRIER, @POLICY_NUM, @MANAGED_CARE_COMPANY, @SSN)";
             insertStatementNLS = "INSERT INTO NEW_LIGHT_SUPPORT (PERSON_ID, SITE_SUPERVISOR_NAME, SITE_SUPERVISOR_PHONE, PROGRAM_COORDINATOR_NAME, PROGRAM_COORDINATOR_PHONE, PROGRAM_SPECIALIST_NAME, PROGRAM_SPECIALIST_PHONE) VALUES        (@PERSON_ID, @SITE_SUPERVISOR_NAME, @SITE_SUPERVISOR_PHONE, @PROGRAM_COORDINATOR_NAME, @PROGRAM_COORDINATOR_PHONE, @PROGRAM_SPECIALIST_NAME, @PROGRAM_SPECIALIST_PHONE)";
             insertStatementCR = "INSERT INTO COUNTY_RESPONSIBLE (PERSON_ID, COUNTY_NAME, Supports_Coordinator_Name, Supports_Coordinator_Address, SC_PHONE) VALUES        (@PERSON_ID, @COUNTY_NAME, @Supports_Coordinator_Name, @Supports_Coordinator_Address, @SC_PHONE)";
             updateStatement = "UPDATE PERSON SET FNAME = @FNAME, MNAME = @MNAME, LNAME = @LNAME, IDENTIFYING_MARKS = @IDENTIFYING_MARKS, PHOTO = @PHOTO, AGENCY_NAME = @AGENCY_NAME, P_ADDRESS = @P_ADDRESS, ZIP = @ZIP, PHONE = @PHONE, ADMITTANCE_DATE = @ADMITTANCE_DATE, DATE_OF_BIRTH = @DATE_OF_BIRTH, AGE = @AGE, GENDER = @GENDER, RACE = @RACE, HAIR_COLOR = @HAIR_COLOR, HEIGHT = @HEIGHT, P_WEIGHT = @P_WEIGHT, BSU = @BSU, MCI = @MCI, INSURANCE_CARRIER = @INSURANCE_CARRIER, POLICY_NUM = @POLICY_NUM, MANAGED_CARE_COMPANY = @MANAGED_CARE_COMPANY WHERE SSN = @SSN";
             updateStatementNLS = "UPDATE NEW_LIGHT_SUPPORT SET SITE_SUPERVISOR_NAME = @SITE_SUPERVISOR_NAME, SITE_SUPERVISOR_PHONE = @SITE_SUPERVISOR_PHONE, PROGRAM_COORDINATOR_NAME = @PROGRAM_COORDINATOR_NAME, PROGRAM_COORDINATOR_PHONE = @PROGRAM_COORDINATOR_PHONE, PROGRAM_SPECIALIST_NAME = @PROGRAM_SPECIALIST_NAME, PROGRAM_SPECIALIST_PHONE = @PROGRAM_SPECIALIST_PHONE WHERE PERSON_ID = @PERSON_ID";
             updateStatementCR = "UPDATE COUNTY_RESPONSIBLE SET COUNTY_NAME = @COUNTY_NAME, Supports_Coordinator_Name = @Supports_Coordinator_Name, Supports_Coordinator_Address = @Supports_Coordinator_Address, SC_PHONE = @SC_PHONE WHERE PERSON_ID = @PERSON_ID";
+            insertNOK = "INSERT INTO NEXT_OF_KIN (PERSON_ID, NAME, NOK_ADDRESS, PHONE)VALUES (@PERSON_ID, @NAME, @NOK_ADDRESS, @PHONE)";
+            deleteNOK = "DELETE FROM NEXT_OF_KIN WHERE PERSON_ID = @PERSON_ID AND NAME = @NAME AND NOK_ADDRESS = @NOK_ADDRESS AND PHONE = @PHONE";
+            insertEC = "INSERT INTO EMERGENCY_CONTACT (PERSON_ID, NAME, EC_ADDRESS, PHONE)VALUES (@PERSON_ID, @NAME, @EC_ADDRESS, @PHONE)";
+            deleteEC = "DELETE FROM EMERGENCY_CONTACT WHERE PERSON_ID = @PERSON_ID AND NAME = @NAME AND EC_ADDRESS = @EC_ADDRESS AND PHONE = @PHONE";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
             connection = new SqlConnection(theConnectionString);
             command = new SqlCommand(insertStatement, connection);
@@ -54,6 +65,10 @@ namespace GUI
             commandNLSUpdate = new SqlCommand(updateStatementNLS, connection);
             commandCRUpdate = new SqlCommand(updateStatementCR, connection);
             commandDelete = new SqlCommand(deleteStatement, connection);
+            commandInsertNOK = new SqlCommand(insertNOK, connection);
+            commandDeleteNOK = new SqlCommand(deleteNOK, connection);
+            commandInsertEC = new SqlCommand(insertEC, connection);
+            commandDeleteEC = new SqlCommand(deleteEC, connection);
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)
@@ -125,6 +140,8 @@ namespace GUI
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON_ISP' table. You can move, or remove it, as needed.
+            this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.EMERGENCY_CONTACT' table. You can move, or remove it, as needed.
             this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.NEXT_OF_KIN' table. You can move, or remove it, as needed.
@@ -349,18 +366,60 @@ namespace GUI
 
         private void btnRemoveNextOfKin_Click(object sender, EventArgs e)
         {
+            connection.Open();
+            commandDeleteNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+            commandDeleteNOK.Parameters.AddWithValue("@NAME", txtNextOfKinName.Text);
+            commandDeleteNOK.Parameters.AddWithValue("@NOK_ADDRESS", txtNextOfKinAddress.Text);
+            commandDeleteNOK.Parameters.AddWithValue("@PHONE", txtNextOfKinTelephoneNum.Text);
+            commandDeleteNOK.ExecuteNonQuery();
+            commandDeleteNOK.Parameters.Clear();
+            connection.Close();
+
+            this.nEXT_OF_KINTableAdapter.Fill(this.projectStarphishDataSet.NEXT_OF_KIN);
         }
 
         private void btnAddNextOfKin_Click(object sender, EventArgs e)
         {
+            connection.Open();
+            commandInsertNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+            commandInsertNOK.Parameters.AddWithValue("@NAME", txtNextOfKinName.Text);
+            commandInsertNOK.Parameters.AddWithValue("@NOK_ADDRESS", txtNextOfKinAddress.Text);
+            commandInsertNOK.Parameters.AddWithValue("@PHONE", txtNextOfKinTelephoneNum.Text);
+
+            commandInsertNOK.ExecuteNonQuery();
+            commandInsertNOK.Parameters.Clear();
+            connection.Close();
+
+            this.nEXT_OF_KINTableAdapter.Fill(this.projectStarphishDataSet.NEXT_OF_KIN);
         }
 
         private void btnRemoveEmergencyContact_Click(object sender, EventArgs e)
         {
+            connection.Open();
+            commandDeleteEC.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+            commandDeleteEC.Parameters.AddWithValue("@NAME", txtEmergencyContactName.Text);
+            commandDeleteEC.Parameters.AddWithValue("@EC_ADDRESS", txtEmergencyContactAddress.Text);
+            commandDeleteEC.Parameters.AddWithValue("@PHONE", txtEmergencyContactTelephoneNum.Text);
+            commandDeleteEC.ExecuteNonQuery();
+            commandDeleteEC.Parameters.Clear();
+            connection.Close();
+
+            this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
         }
 
         private void btnAddEmergencyContact_Click(object sender, EventArgs e)
         {
+            connection.Open();
+            commandInsertEC.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+            commandInsertEC.Parameters.AddWithValue("@NAME", txtEmergencyContactName.Text);
+            commandInsertEC.Parameters.AddWithValue("@EC_ADDRESS", txtEmergencyContactAddress.Text);
+            commandInsertEC.Parameters.AddWithValue("@PHONE", txtEmergencyContactTelephoneNum.Text);
+
+            commandInsertEC.ExecuteNonQuery();
+            commandInsertEC.Parameters.Clear();
+            connection.Close();
+
+            this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
