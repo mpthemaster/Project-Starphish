@@ -14,9 +14,15 @@ namespace GUI
     {
         private bool firstTime = true;
         private List<DailyBehavior> dailyBehaviors = new List<DailyBehavior>();
+        private List<TotalBehavior> totalBehaviors2 = new List<TotalBehavior>();
 
         DateTime startDate = new DateTime();
         DateTime endDate = new DateTime();
+
+        //a dictionary object to hold the relevant behaviors 
+        Dictionary<string, int> tags = new Dictionary<string, int>();
+
+        Dictionary<DateTime, int> totalBehaviors = new Dictionary<DateTime, int>();
 
 
         private void retrieveDailyBehavior()
@@ -40,7 +46,7 @@ namespace GUI
                     DateTime behaviorDate = (DateTime)reader["BEHAVIOR_DATE"];
                     string behaviorShift = (string)reader["BEHAVIOR_SHIFT"];
 
-                    dailyBehaviors.Add(new DailyBehavior(behaviorName, "Severe", behaviorDate, behaviorShift, "Staff"));
+                    dailyBehaviors.Add(new DailyBehavior(behaviorName, "Severe", behaviorDate, behaviorShift));
                 }
             }
             reader.Close();
@@ -48,8 +54,8 @@ namespace GUI
 
             foreach (DailyBehavior dailyBehavior in dailyBehaviors)
             {
-                 MessageBox.Show(dailyBehavior.Behavior + dailyBehavior.Date.ToShortDateString() + dailyBehavior.Shift);
-             // listBehaviorsToGraph.Items.Contains
+                // MessageBox.Show(dailyBehavior.Behavior + dailyBehavior.Date.ToShortDateString() + dailyBehavior.Shift);
+                // listBehaviorsToGraph.Items.Contains
             }
         }
 
@@ -59,58 +65,6 @@ namespace GUI
         private void mainGraph()
         {
             retrieveDailyBehavior();
-           /* DailyBehavior temp = new DailyBehavior(5, "brooding", "mild", new DateTime(2014, 02, 20), "morning", "Kevin");
-            DailyBehavior temp2 = new DailyBehavior(5, "brooding", "severe", new DateTime(2014, 01, 30), "morning", "Kevin");
-
-            DailyBehavior temp3 = new DailyBehavior(5, "throwing", "severe", new DateTime(2014, 02, 14), "morning", "Kevin");
-            DailyBehavior temp4 = new DailyBehavior(5, "throwing", "severe", new DateTime(2014, 03, 22), "morning", "Kevin");
-
-            DailyBehavior temp5 = new DailyBehavior(5, "raging", "severe", new DateTime(2014, 01, 15), "morning", "Kevin");
-            DailyBehavior temp6 = new DailyBehavior(5, "raging", "severe", new DateTime(2014, 03, 20), "morning", "Kevin");
-
-            DailyBehavior temp7 = new DailyBehavior(5, "eating", "severe", new DateTime(2014, 02, 20), "morning", "Kevin");
-            DailyBehavior temp8 = new DailyBehavior(5, "eating", "severe", new DateTime(2014, 01, 30), "morning", "Kevin");
-
-            DailyBehavior temp9 = new DailyBehavior(5, "not eating", "severe", new DateTime(2013, 12, 20), "morning", "Kevin");
-            DailyBehavior temp10 = new DailyBehavior(5, "not eating", "severe", new DateTime(2013, 12, 25), "morning", "Kevin");
-            DailyBehavior temp11 = new DailyBehavior(5, "whistling", "severe", new DateTime(2013, 01, 10), "morning", "Kevin");
-            DailyBehavior temp12 = new DailyBehavior(5, "whistling", "severe", new DateTime(2014, 02, 04), "morning", "Kevin");
-            DailyBehavior temp14 = new DailyBehavior(5, "whistling", "severe", new DateTime(2014, 02, 28), "morning", "Kevin");
-            DailyBehavior temp15 = new DailyBehavior(5, "whistling", "severe", new DateTime(2014, 03, 04), "morning", "Kevin");
-
-            DailyBehavior temp13 = new DailyBehavior(5, "gaming", "severe", new DateTime(2014, 03, 17), "morning", "Kevin");
-
-            // foreach(DailyBehavior DailyBehavior in dailyBehaviors)
-            //  {
-            //       dailyBehaviors.Add(DailyBehavior);
-            // }
-            dailyBehaviors.Add(temp);
-            dailyBehaviors.Add(temp2);
-            dailyBehaviors.Add(temp3);
-            dailyBehaviors.Add(temp14);
-            dailyBehaviors.Add(temp15);
-            dailyBehaviors.Add(temp4);
-            dailyBehaviors.Add(temp5);
-            dailyBehaviors.Add(temp6);
-            dailyBehaviors.Add(temp7);
-            dailyBehaviors.Add(temp8);
-            dailyBehaviors.Add(temp9);
-            dailyBehaviors.Add(temp10);
-            dailyBehaviors.Add(temp11);
-            dailyBehaviors.Add(temp12);
-            dailyBehaviors.Add(temp13);
-            dailyBehaviors.Add(temp);
-            dailyBehaviors.Add(temp);
-            dailyBehaviors.Add(temp);*/
-
-
-            int i = 0;
-            foreach (DailyBehavior DailyBehavior in dailyBehaviors)
-            {
-                //  MessageBox.Show(temp.Behavior);
-                i++;
-            }
-
 
             if (firstTime)
             {
@@ -125,6 +79,13 @@ namespace GUI
                 //likewise, the list box for custom behaviors is disabled by default
                 //because it defaults to use the top 5 behaviors
                 listBehaviorsToGraph.Enabled = false;
+
+                for (int i = 0; i < dailyBehaviors.Count; i++)
+                {
+                    //if the behavior is not already in the list box, add it
+                    if (!listBehaviorsToGraph.Items.Contains(dailyBehaviors[i].Behavior))
+                        listBehaviorsToGraph.Items.Add(dailyBehaviors[i].Behavior);
+                }
 
                 getGraphRange();
                 firstTime = false;
@@ -143,11 +104,15 @@ namespace GUI
                 {
                     startDate = DateTime.Today.AddDays(-30);
                     endDate = DateTime.Today;
+
+                    getBehaviors(startDate, endDate);
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 1)//last 60 days
                 {
                     startDate = DateTime.Today.AddDays(-60);
                     endDate = DateTime.Today;
+
+                    getBehaviors(startDate, endDate);
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 2)//current quarter
                 {
@@ -182,15 +147,20 @@ namespace GUI
                     {
                         startDate = new DateTime(DateTime.Today.Year, 04, 01);
                     }
+
+                    getBehaviors(startDate, endDate);
                 }
             }
             else if (radUseCustomDates.Checked)
             {
                 startDate = new DateTime(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month, 1);
-                endDate = new DateTime(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month, System.DateTime.DaysInMonth(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month));
+                endDate = new DateTime(datePickerEndGraphs.Value.Year, datePickerEndGraphs.Value.Month, System.DateTime.DaysInMonth(datePickerEndGraphs.Value.Year, datePickerEndGraphs.Value.Month));
+                getBehaviors(startDate, endDate);
             }
             else if (radUseCustomQuarters.Checked)
             {
+                int quarter = 0;
+
                 //The companies quarters are:
                 //Quarter 1: July to September
                 //Quarter 2: October - December
@@ -201,20 +171,89 @@ namespace GUI
                 if (!chkQuarter1.Checked && !chkQuarter2.Checked && !chkQuarter3.Checked && !chkQuarter4.Checked)
                     MessageBox.Show("Error: No Quarter was Selected");
 
+                //July August September
+                if (DateTime.Today.Month == 07 || DateTime.Today.Month == 08 || DateTime.Today.Month == 09)
+                {
+                    quarter = 1;
+                }
+
+                //October November December
+                else if (DateTime.Today.Month == 10 || DateTime.Today.Month == 11 || DateTime.Today.Month == 12)
+                {
+                    quarter = 2;
+                }
+
+                //January February or March
+                else if (DateTime.Today.Month == 01 || DateTime.Today.Month == 02 || DateTime.Today.Month == 03)
+                {
+                    quarter = 3;
+                }
+
+                //April May June
+                else if (DateTime.Today.Month == 04 || DateTime.Today.Month == 05 || DateTime.Today.Month == 06)
+                {
+                    quarter = 4;
+                }
+
+
                 if (chkQuarter1.Checked)
-                {           
+                {//July August September
+                    if (quarter == 1)
+                    {
+                        startDate = new DateTime(DateTime.Today.Year, 07, 01);
+                        endDate = DateTime.Today;
+                    }
+                    else
+                    {
+                        startDate = new DateTime(DateTime.Today.Year - 1, 07, 01);
+                        endDate = new DateTime(DateTime.Today.Year - 1, 09, DateTime.DaysInMonth(DateTime.Today.Year - 1, 09));
+                    }
+                    getBehaviors(startDate, endDate);
                 }
                 if (chkQuarter2.Checked)
                 {
+                    if (quarter == 2)
+                    {
+                        startDate = new DateTime(DateTime.Today.Year, 10, 01);
+                        endDate = DateTime.Today;
+                    }
+                    else
+                    {
+                        startDate = new DateTime(DateTime.Today.Year - 1, 10, 01);
+                        endDate = new DateTime(DateTime.Today.Year - 1, 12, DateTime.DaysInMonth(DateTime.Today.Year - 1, 12));
+                    }
+                    getBehaviors(startDate, endDate);
                 }
                 if (chkQuarter3.Checked)
                 {
+                    if (quarter == 3)
+                    {
+                        startDate = new DateTime(DateTime.Today.Year, 01, 01);
+                        endDate = DateTime.Today;
+                    }
+                    else
+                    {
+                        startDate = new DateTime(DateTime.Today.Year - 1, 1, 01);
+                        endDate = new DateTime(DateTime.Today.Year - 1, 3, DateTime.DaysInMonth(DateTime.Today.Year - 1, 3));
+                    }
+                    getBehaviors(startDate, endDate);
                 }
                 if (chkQuarter4.Checked)
                 {
+                    if (quarter == 4)
+                    {
+                        startDate = new DateTime(DateTime.Today.Year, 04, 01);
+                        endDate = DateTime.Today;
+                    }
+                    else
+                    {
+                        startDate = new DateTime(DateTime.Today.Year - 1, 4, 01);
+                        endDate = new DateTime(DateTime.Today.Year - 1, 6, DateTime.DaysInMonth(DateTime.Today.Year - 1, 6));
+                    }
+                    getBehaviors(startDate, endDate);
                 }
             }
-            getBehaviors(startDate, endDate);
+
         }
 
         /// <summary>
@@ -226,25 +265,44 @@ namespace GUI
         /// <param name="endDate">The end of the date range to be graphed</param>
         private void getBehaviors(DateTime startDate, DateTime endDate)
         {
+            DateTime currentDate = startDate;
 
-            //a dictionary object to hold the relevant behaviors 
-            Dictionary<string, int> tags = new Dictionary<string, int>();
+            //Adds every single date in the range to the totalBehaviors object
+            while (currentDate.CompareTo(endDate) == -1)
+            {
+                totalBehaviors.Add(currentDate, 0);
+                currentDate = currentDate.AddDays(1);
+            }
+
             for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior 
             {
                 //this checks to see if the behavior is between the allowed start and end date
-                if (dailyBehaviors[i].Date >= startDate && dailyBehaviors[i].Date <= endDate)
+                if ((dailyBehaviors[i].Date >= startDate) && (dailyBehaviors[i].Date <= endDate))
                 {
-                    //if the behavior has not yet been added, this will add it to the dictionary object
                     //if the same type of behavior already exists it will go to the else and increment it
                     if (tags.ContainsKey(dailyBehaviors[i].Behavior))
                         tags[dailyBehaviors[i].Behavior] = tags[dailyBehaviors[i].Behavior] + 1;
                     else
+                    {
+                        //if the behavior has not yet been added, this will add it to the dictionary object
                         tags.Add(dailyBehaviors[i].Behavior, 1);
+                    }
+                    if (comboBehaviorsToGraph.SelectedIndex == 0)//all behaviors
+                        totalBehaviors[dailyBehaviors[i].Date] = totalBehaviors[dailyBehaviors[i].Date] + 1;
+
                 }
             }
-            //The function to create the graphs, the behaviors are passed in the
-            //dictionary object 'tags'
-            createGraphs(tags);
+
+            if (comboBehaviorsToGraph.SelectedIndex == 1)//top 5 behaviors
+            {
+                for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior 
+                {
+                    //this checks to see if the behavior is between the allowed start and end date
+                    if ((dailyBehaviors[i].Date >= startDate) && (dailyBehaviors[i].Date <= endDate))
+                    {
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -252,31 +310,29 @@ namespace GUI
         /// so that information does not overlap, and graphs either every behavior, the top 5 behaviors,
         /// or whichever ones you specifically select
         /// </summary>
-        /// <param name="tags">The dictionary object with all the the behaviors in it, already filtered out
-        /// depending on the date range selected</param>
-        private void createGraphs(Dictionary<string, int> tags)
+        private void createGraphs()
         {
-            //sorts the dictionary by value
-            tags = tags.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-
             //This controls whether the charts have their values shown as numbers or not
             chartPieDailyOccurences.Series[0].IsValueShownAsLabel = true;
             chartPyramidOccurences.Series[0].IsValueShownAsLabel = true;
 
             if (comboBehaviorsToGraph.SelectedIndex == 0)//Graph all
             {
+                foreach (DateTime date in totalBehaviors.Keys)
+                {
+                    chartTotalBehaviors.Series[0].Points.AddXY(date.Month + "/" + date.Day, totalBehaviors[date]);
+                }
+
                 foreach (string tagname in tags.Keys)
                 {
                     chartPieDailyOccurences.Series[0].Points.AddXY(tagname, tags[tagname]);
-                }
-                foreach (string tagname in tags.Keys)
-                {
                     chartPyramidOccurences.Series[0].Points.AddXY(tagname, tags[tagname]);
                 }
             }
             else if (comboBehaviorsToGraph.SelectedIndex == 1)//top 5
             {
                 int count = 0;
+                tags = tags.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
                 foreach (string tagname in tags.Keys)
                 {
                     chartPyramidOccurences.Series[0].Points.AddXY(tagname, tags[tagname]);
@@ -288,8 +344,23 @@ namespace GUI
             }
             else if (comboBehaviorsToGraph.SelectedIndex == 2)//custom
             {
+                foreach (string tagname in tags.Keys)
+                {
+                    //for every selected item in the list box
+                    for (int i = 0; i < listBehaviorsToGraph.SelectedItems.Count; i++)
+                    {
+                        //If the selected item is the same as the behavior about to be printed
+                        if (listBehaviorsToGraph.SelectedItems[i].ToString() == tagname)
+                        {
+                            //Actually print it
+                            chartPyramidOccurences.Series[0].Points.AddXY(tagname, tags[tagname]);
+                            chartPieDailyOccurences.Series[0].Points.AddXY(tagname, tags[tagname]);
+                        }
+                    }
+                }
             }
-
+            chartPyramidOccurences.Series[0].Sort(PointSortOrder.Ascending);
+            chartPieDailyOccurences.Series[0].Sort(PointSortOrder.Ascending);
 
             ///////////////////////For calculating the Trend Line
             //chartTotalBehaviors.Series["TrendLine"].ChartType = SeriesChartType.Line;
@@ -355,8 +426,15 @@ namespace GUI
             //This clears all the previous data in the charts
             chartPieDailyOccurences.Series[0].Points.Clear();
             chartPyramidOccurences.Series[0].Points.Clear();
+            chartTotalBehaviors.Series[0].Points.Clear();
+            tags.Clear();
+            totalBehaviors.Clear();
 
             getGraphRange();
+
+            //The function to create the graphs, the behaviors are passed in the
+            //dictionary object 'tags'
+            createGraphs();
         }
 
         private void comboBehaviorsToGraph_SelectedIndexChanged(object sender, EventArgs e)

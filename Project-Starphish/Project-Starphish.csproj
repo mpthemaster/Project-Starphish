@@ -86,6 +86,7 @@
     <Compile Include="StaffInterviewsTab.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TotalBehavior.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
