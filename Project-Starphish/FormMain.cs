@@ -30,6 +30,7 @@ namespace GUI
         private string deleteStatement;
         private string getPic;
         private string addISP;
+        private string deleteISP;
         private SqlConnection connection;
         private SqlCommand command;
         private SqlCommand commandInsertNOK;
@@ -44,6 +45,7 @@ namespace GUI
         private SqlCommand commandDelete;
         private SqlCommand commandGetPic;
         private SqlCommand commandAddISP;
+        private SqlCommand commandDeleteISP;
         private MemoryStream ms = new MemoryStream();
         private int x;
 
@@ -61,7 +63,8 @@ namespace GUI
             deleteNOK = "DELETE FROM NEXT_OF_KIN WHERE PERSON_ID = @PERSON_ID AND NAME = @NAME AND NOK_ADDRESS = @NOK_ADDRESS AND PHONE = @PHONE";
             insertEC = "INSERT INTO EMERGENCY_CONTACT (PERSON_ID, NAME, EC_ADDRESS, PHONE)VALUES (@PERSON_ID, @NAME, @EC_ADDRESS, @PHONE)";
             deleteEC = "DELETE FROM EMERGENCY_CONTACT WHERE PERSON_ID = @PERSON_ID AND NAME = @NAME AND EC_ADDRESS = @EC_ADDRESS AND PHONE = @PHONE";
-            addISP = "INSERT INTO PERSON_ISP (PERSON_ID, ISP)VALUES (@PERSON_ID, @ISP)";
+            addISP = "INSERT INTO PERSON_ISP (PERSON_ID, ISPNAME, ISP)VALUES (@PERSON_ID, @ISPNAME, @ISP)";
+            deleteISP = "DELETE FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = @ISPNAME";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
             getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
             connection = new SqlConnection(theConnectionString);
@@ -78,6 +81,7 @@ namespace GUI
             commandDeleteEC = new SqlCommand(deleteEC, connection);
             commandGetPic = new SqlCommand(getPic, connection);
             commandAddISP = new SqlCommand(addISP, connection);
+            commandDeleteISP = new SqlCommand(deleteISP, connection);
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)
@@ -260,7 +264,8 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
-            picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            if(picClient.Image != null)
+                picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             connection.Open();
             commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
             commandUpdate.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
@@ -399,6 +404,7 @@ namespace GUI
                 
                 connection.Open();
                 commandAddISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandAddISP.Parameters.AddWithValue("@ISPNAME", dialogFileOpenISP.FileName.ToString());
                 commandAddISP.Parameters.AddWithValue("@ISP", buffer);
                 commandAddISP.ExecuteNonQuery();
                 commandAddISP.Parameters.Clear();
@@ -414,6 +420,16 @@ namespace GUI
 
         private void btnRemoveISP_Click(object sender, EventArgs e)
         {
+
+            connection.Open();
+            commandDeleteISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+            commandDeleteISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
+
+            commandDeleteISP.ExecuteNonQuery();
+            commandDeleteISP.Parameters.Clear();
+            connection.Close();
+
+            this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
         }
 
         private void btnRemoveNextOfKin_Click(object sender, EventArgs e)

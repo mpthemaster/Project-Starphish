@@ -553,13 +553,13 @@
             // lstISP
             // 
             this.lstISP.DataSource = this.pERSONISPPERSONFKBindingSource;
-            this.lstISP.DisplayMember = "ISPCOUNTER";
+            this.lstISP.DisplayMember = "ISPNAME";
             this.lstISP.FormattingEnabled = true;
             this.lstISP.Location = new System.Drawing.Point(13, 19);
             this.lstISP.Name = "lstISP";
             this.lstISP.Size = new System.Drawing.Size(120, 95);
             this.lstISP.TabIndex = 0;
-            this.lstISP.ValueMember = "PERSON_ID";
+            this.lstISP.ValueMember = "ISPNAME";
             // 
             // pERSONISPPERSONFKBindingSource
             // 
@@ -2359,6 +2359,7 @@
             this.tableAdapterManager.NEXT_OF_KINTableAdapter = this.nEXT_OF_KINTableAdapter;
             this.tableAdapterManager.PERSON_ISPTableAdapter = null;
             this.tableAdapterManager.PERSONTableAdapter = this.pERSONTableAdapter;
+            this.tableAdapterManager.SIGNINTableAdapter = null;
             this.tableAdapterManager.STAFF_INTERVIEW_ANTECEDENTTableAdapter = null;
             this.tableAdapterManager.STAFF_INTERVIEW_BEHAVIORTableAdapter = null;
             this.tableAdapterManager.STAFF_INTERVIEW_QABFTableAdapter = null;
