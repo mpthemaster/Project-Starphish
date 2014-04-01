@@ -2,24 +2,20 @@
 
 namespace GUI
 {
-    internal class TotalBehavior
+    internal class BehaviorsOccured
     {
         public string Behavior { get; set; }
-
-        public DateTime Date { get; set; }
 
         public int Occurences { get; set; }
 
         /// <summary>
-        /// Creates a new behavior.
+        /// Keeps track of how many times each behavior has occured.
         /// </summary>  
         /// <param name="behavior">The behavior that occured.</param>
-        /// <param name="date">The date the behavior occured on.</param>
-        public TotalBehavior(string Behavior, DateTime date)
+        public BehaviorsOccured(string Behavior)
         {
             this.Behavior = Behavior;
-            this.Date = date;
-            Occurences = 0;
+            Occurences = 1;
         }
     }
 }

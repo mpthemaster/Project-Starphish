@@ -49,9 +49,10 @@
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
@@ -1885,7 +1886,7 @@
             this.datePickerBeginGraphs.Name = "datePickerBeginGraphs";
             this.datePickerBeginGraphs.Size = new System.Drawing.Size(200, 20);
             this.datePickerBeginGraphs.TabIndex = 37;
-            this.datePickerBeginGraphs.Value = new System.DateTime(2014, 3, 12, 0, 0, 0, 0);
+            this.datePickerBeginGraphs.Value = new System.DateTime(2014, 4, 1, 0, 0, 0, 0);
             // 
             // label67
             // 
@@ -1964,8 +1965,13 @@
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
             series4.Name = "Series1";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Name = "TrendLine";
             this.chartTotalBehaviors.Series.Add(series4);
+            this.chartTotalBehaviors.Series.Add(series5);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartTotalBehaviors.TabIndex = 32;
             this.chartTotalBehaviors.Text = "chart2";
@@ -1990,9 +1996,6 @@
             // listBehaviorsToGraph
             // 
             this.listBehaviorsToGraph.FormattingEnabled = true;
-            this.listBehaviorsToGraph.Items.AddRange(new object[] {
-            "Arguing",
-            "Lethargic"});
             this.listBehaviorsToGraph.Location = new System.Drawing.Point(3, 107);
             this.listBehaviorsToGraph.Name = "listBehaviorsToGraph";
             this.listBehaviorsToGraph.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
@@ -2036,9 +2039,9 @@
             this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
             this.chartQABFAnalysis.Name = "chartQABFAnalysis";
             this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ChartArea = "ChartArea1";
-            series5.IsXValueIndexed = true;
-            series5.Name = "Series1";
+            series6.ChartArea = "ChartArea1";
+            series6.IsXValueIndexed = true;
+            series6.Name = "Series1";
             dataPoint1.AxisLabel = "Attention";
             dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
             dataPoint1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -2062,13 +2065,13 @@
             dataPoint5.AxisLabel = "Tangible";
             dataPoint5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             dataPoint5.Label = "1.6";
-            series5.Points.Add(dataPoint1);
-            series5.Points.Add(dataPoint2);
-            series5.Points.Add(dataPoint3);
-            series5.Points.Add(dataPoint4);
-            series5.Points.Add(dataPoint5);
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chartQABFAnalysis.Series.Add(series5);
+            series6.Points.Add(dataPoint1);
+            series6.Points.Add(dataPoint2);
+            series6.Points.Add(dataPoint3);
+            series6.Points.Add(dataPoint4);
+            series6.Points.Add(dataPoint5);
+            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chartQABFAnalysis.Series.Add(series6);
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
             this.chartQABFAnalysis.TabIndex = 0;
             this.chartQABFAnalysis.Text = "chart1";
