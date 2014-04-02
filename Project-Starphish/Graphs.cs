@@ -14,18 +14,19 @@ namespace GUI
         private bool firstTime = true;
 
         //This list holds all of the actual behaviors that occured
-        List<DailyBehavior> dailyBehaviors = new List<DailyBehavior>();
+        private List<DailyBehavior> dailyBehaviors = new List<DailyBehavior>();
 
         //This list holds how many behaviors occured on a specific date
-        List<BehaviorsOnSpecifiedDate> behaviorsOnSpecifiedDate = new List<BehaviorsOnSpecifiedDate>();
+        private List<BehaviorsOnSpecifiedDate> behaviorsOnSpecifiedDate = new List<BehaviorsOnSpecifiedDate>();
 
         //This tallys up how many times each behavior that is listed occured, which is
         //used for detemining the top 5 behaviors
-        List<BehaviorsOccured> timesBehaviorsOccured = new List<BehaviorsOccured>();
+        private List<BehaviorsOccured> timesBehaviorsOccured = new List<BehaviorsOccured>();
 
         //These are used to denote the beginning and end dates of what behaviors to graph
-        DateTime startDate = new DateTime();
-        DateTime endDate = new DateTime();
+        private DateTime startDate = new DateTime();
+
+        private DateTime endDate = new DateTime();
 
         /// <summary>
         /// This function accesses the database and puts all of the behaviors into the
@@ -67,7 +68,7 @@ namespace GUI
         private void mainGraph()
         {
             //Getting the behaviors from the database
-            retrieveDailyBehavior(); 
+            retrieveDailyBehavior();
 
             //adding all of the behaviors to the list box
             for (int i = 0; i < dailyBehaviors.Count; i++)
@@ -78,7 +79,7 @@ namespace GUI
             }
 
             if (firstTime)
-            {            
+            {
                 //Setting the two combo boxes in the graph tab to have default selections
                 comboPickTimeGraphs.SelectedIndex = 0;//last 30 days
                 comboBehaviorsToGraph.SelectedIndex = 1;//top 5 behaviors
@@ -185,7 +186,7 @@ namespace GUI
                     FillDateList();
                     getBehaviors();
                     createGraphs();
-                }         
+                }
             }
             else if (radUseCustomQuarters.Checked)
             {
@@ -202,6 +203,7 @@ namespace GUI
                     MessageBox.Show("Error: No Quarter was Selected");
                 else
                 {
+                    clear();
 
                     //Based on the current quarter, this array holds the start dates for the current quarters and
                     //the previous quarters
@@ -251,10 +253,8 @@ namespace GUI
                         dateTime[3] = new DateTime(DateTime.Today.Year, 4, 1);
                     }
 
-
                     if (chkQuarter1.Checked)
                     {//July August September
-
                         startDate = dateTime[0];
                         if (quarter == 1)
                         {
@@ -264,10 +264,8 @@ namespace GUI
                         {
                             endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
                         }
-                        clear();
                         FillDateList();
                         getBehaviors();
-                        createGraphs();
                     }
                     if (chkQuarter2.Checked)
                     {
@@ -280,10 +278,8 @@ namespace GUI
                         {
                             endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
                         }
-                        clear();
                         FillDateList();
                         getBehaviors();
-                        createGraphs();
                     }
                     if (chkQuarter3.Checked)
                     {
@@ -296,10 +292,8 @@ namespace GUI
                         {
                             endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
                         }
-                        clear();
                         FillDateList();
                         getBehaviors();
-                        createGraphs();
                     }
                     if (chkQuarter4.Checked)
                     {
@@ -312,17 +306,16 @@ namespace GUI
                         {
                             endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
                         }
-                        clear();
                         FillDateList();
                         getBehaviors();
-                        createGraphs();
                     }
+                    createGraphs();
                 }
             }
         }
 
         /// <summary>
-        /// This gets all of the behaviors from the dailyBehaviors list and calculates how many 
+        /// This gets all of the behaviors from the dailyBehaviors list and calculates how many
         /// behaviors occured on each date in the selected range and puts them in the behaviorsOnSpecificDate
         /// list, as well as calculates how many times each behavior occured, and puts it into the timesBehaviorsOccured
         /// list
@@ -333,8 +326,8 @@ namespace GUI
             List<BehaviorsOnSpecifiedDate> behaviorsOnSpecifedDate = behaviorsOnSpecifiedDate.OrderBy(o => o.Date).ToList();
 
             ////////////This is to populate timesBehaviorOccured, which tracks how many times each behavior that occured occured
-            for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior 
-            {    
+            for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior
+            {
                 //this checks to see if the behavior is between the allowed start and end date
                 if (dailyBehaviors[i].Date >= startDate && dailyBehaviors[i].Date <= endDate)
                 {
@@ -362,19 +355,18 @@ namespace GUI
             }
             ////////////
 
-            //Sorting the list of behaviors that occured so that it is in order of most to least, 
+            //Sorting the list of behaviors that occured so that it is in order of most to least,
             //which is necessary for picking out the top 5 behaviors
             timesBehaviorsOccured = timesBehaviorsOccured.OrderByDescending(o => o.Occurences).ToList();
 
-
             ///////////Populates behaviorsOnSpecificDate, which keeps track of how many behaviors the
             //consumer has had on each day
-            for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior 
+            for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior
             {
                 //this checks to see if the behavior is between the allowed start and end date
                 if (dailyBehaviors[i].Date >= startDate && dailyBehaviors[i].Date <= endDate)
                 {
-                //go through the list of dates and increment the number of behaviors occured on a specific date
+                    //go through the list of dates and increment the number of behaviors occured on a specific date
                     for (int x = 0; x < behaviorsOnSpecifedDate.Count(); x++)
                     {
                         //When it finds the date that matches up with the behavior
@@ -422,7 +414,7 @@ namespace GUI
 
         /// <summary>
         /// This function is what actually creates the graphs. It just makes the totalBehaviors graph on the left
-        /// without any checking because that information is already formatted, and graphs the two 
+        /// without any checking because that information is already formatted, and graphs the two
         /// on the right depending on which behaviors were selected to be graphed
         /// </summary>
         private void createGraphs()
@@ -430,9 +422,9 @@ namespace GUI
             //This controls whether the charts have their values shown as numbers or not
             chartPieDailyOccurences.Series[0].IsValueShownAsLabel = true;
             chartPyramidOccurences.Series[0].IsValueShownAsLabel = true;
-           // chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 5; 
+            //chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 5;
 
-            for(int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
+            for (int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
             {
                 chartTotalBehaviors.Series[0].Points.AddXY(
                     behaviorsOnSpecifiedDate[i].Date.Month +
@@ -466,11 +458,10 @@ namespace GUI
                     chartPieDailyOccurences.Series[0].Points.AddXY(
                         timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
                 }
-                
             }
             else if (comboBehaviorsToGraph.SelectedIndex == 2)//custom
             {
-                for(int i = 0; i < timesBehaviorsOccured.Count; i++)
+                for (int i = 0; i < timesBehaviorsOccured.Count; i++)
                 {
                     for (int x = 0; x < listBehaviorsToGraph.SelectedItems.Count; x++)
                     {
@@ -515,13 +506,13 @@ namespace GUI
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // chart1.SaveImage("dfgdfg.png", ChartImageFormat.Png);
+            // chart1.SaveImage("dfgdfg.png", ChartImageFormat.Png);
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (MemoryStream ms = new MemoryStream())
-            {          
+            {
                 chartTotalBehaviors.SaveImage(ms, ChartImageFormat.Bmp);
                 Bitmap bm = new Bitmap(ms);
                 Clipboard.SetImage(bm);
@@ -533,7 +524,7 @@ namespace GUI
         /// value of 0, it is in its own seperate function because of the checkboxes
         /// </summary>
         private void FillDateList()
-        {          
+        {
             DateTime currentDate = startDate;
 
             //Adds every single date in the range to the totalBehaviors object
