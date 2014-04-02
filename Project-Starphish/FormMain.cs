@@ -90,7 +90,7 @@ namespace GUI
             {
                 if (txtSocialSecurityNum.Text != "" && txtLastName.Text != "")
                 {
-                    if(picClient.Image != null)
+                    if (picClient.Image != null)
                         picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                     connection.Open();
                     command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
@@ -150,7 +150,7 @@ namespace GUI
                     MessageBox.Show("You must input a Social Security Number and Last Name.");
             }
             else
-               MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
+                MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -168,7 +168,7 @@ namespace GUI
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON' table. You can move, or remove it, as needed.
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             comboRace.SelectedIndex = 3;
-            personId = Convert.ToInt32(txtSocialSecurityNum.Text);
+            int.TryParse(txtSocialSecurityNum.Text, out personId);
             dialogFileOpenImage.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|Bitmap Files (*.bmp)|*.bmp";
         }
 
@@ -249,7 +249,6 @@ namespace GUI
                     connection.Close();
                 }
             }
-                
         }
 
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
@@ -264,7 +263,7 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
-            if(picClient.Image != null)
+            if (picClient.Image != null)
                 picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             connection.Open();
             commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
@@ -401,7 +400,7 @@ namespace GUI
                 byte[] buffer = new byte[st.Length];
                 st.Read(buffer, 0, (int)st.Length);
                 st.Close();
-                
+
                 connection.Open();
                 commandAddISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
                 commandAddISP.Parameters.AddWithValue("@ISPNAME", dialogFileOpenISP.FileName.ToString());
@@ -420,7 +419,6 @@ namespace GUI
 
         private void btnRemoveISP_Click(object sender, EventArgs e)
         {
-
             connection.Open();
             commandDeleteISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
             commandDeleteISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
