@@ -99,12 +99,8 @@ namespace GUI
 
         private void btnGenerateGraphs_Click(object sender, EventArgs e)
         {
-            //This function gets the time constaints for the behaviors, and fills the two above arrays
-            //with the data needed to make the graphs
+            //This function gets the time constaints for the behaviors
             getGraphRange();
-
-            //The function to create the graphs
-            createGraphs();
         }
 
         /// <summary>
@@ -122,6 +118,7 @@ namespace GUI
                     clear();
                     FillDateList();
                     getBehaviors();
+                    createGraphs();
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 1)//last 60 days
                 {
@@ -131,6 +128,7 @@ namespace GUI
                     clear();
                     FillDateList();
                     getBehaviors();
+                    createGraphs();
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 2)//current quarter
                 {
@@ -168,11 +166,11 @@ namespace GUI
                     clear();
                     FillDateList();
                     getBehaviors();
+                    createGraphs();
                 }
             }
             else if (radUseCustomDates.Checked)
             {
-
                 startDate = new DateTime(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month, 1);
                 endDate = new DateTime(datePickerEndGraphs.Value.Year, datePickerEndGraphs.Value.Month, DateTime.DaysInMonth(datePickerEndGraphs.Value.Year, datePickerEndGraphs.Value.Month));
 
@@ -186,6 +184,7 @@ namespace GUI
                     clear();
                     FillDateList();
                     getBehaviors();
+                    createGraphs();
                 }         
             }
             else if (radUseCustomQuarters.Checked)
@@ -268,6 +267,7 @@ namespace GUI
                         clear();
                         FillDateList();
                         getBehaviors();
+                        createGraphs();
                     }
                     if (chkQuarter2.Checked)
                     {
@@ -283,6 +283,7 @@ namespace GUI
                         clear();
                         FillDateList();
                         getBehaviors();
+                        createGraphs();
                     }
                     if (chkQuarter3.Checked)
                     {
@@ -298,6 +299,7 @@ namespace GUI
                         clear();
                         FillDateList();
                         getBehaviors();
+                        createGraphs();
                     }
                     if (chkQuarter4.Checked)
                     {
@@ -313,6 +315,7 @@ namespace GUI
                         clear();
                         FillDateList();
                         getBehaviors();
+                        createGraphs();
                     }
                 }
             }
