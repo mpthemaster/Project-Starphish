@@ -60,6 +60,7 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSearchClients = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnModifyClient = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -165,8 +166,6 @@
             this.txtSocialSecurityNum = new System.Windows.Forms.TextBox();
             this.comboGender = new System.Windows.Forms.ComboBox();
             this.comboRace = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSearchClient = new System.Windows.Forms.TextBox();
             this.listClients = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -318,6 +317,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnSearchClients);
             this.tabPage1.Controls.Add(this.btnCancel);
             this.tabPage1.Controls.Add(this.btnModifyClient);
             this.tabPage1.Controls.Add(this.groupBox17);
@@ -329,8 +329,6 @@
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.txtSearchClient);
             this.tabPage1.Controls.Add(this.listClients);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -339,6 +337,17 @@
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Client";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchClients
+            // 
+            this.btnSearchClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchClients.Location = new System.Drawing.Point(9, 475);
+            this.btnSearchClients.Name = "btnSearchClients";
+            this.btnSearchClients.Size = new System.Drawing.Size(214, 45);
+            this.btnSearchClients.TabIndex = 51;
+            this.btnSearchClients.Text = "Search";
+            this.btnSearchClients.UseVisualStyleBackColor = true;
+            this.btnSearchClients.Click += new System.EventHandler(this.btnSearchClients_Click);
             // 
             // btnCancel
             // 
@@ -1351,23 +1360,6 @@
             this.comboRace.Size = new System.Drawing.Size(109, 21);
             this.comboRace.TabIndex = 13;
             this.comboRace.SelectedIndexChanged += new System.EventHandler(this.comboRace_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Search by Name";
-            // 
-            // txtSearchClient
-            // 
-            this.txtSearchClient.Location = new System.Drawing.Point(6, 27);
-            this.txtSearchClient.Name = "txtSearchClient";
-            this.txtSearchClient.Size = new System.Drawing.Size(214, 20);
-            this.txtSearchClient.TabIndex = 1;
-            this.txtSearchClient.TextChanged += new System.EventHandler(this.txtSearchClient_TextChanged);
             // 
             // listClients
             // 
@@ -2436,7 +2428,6 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eMERGENCY_CONTACTBindingSource)).EndInit();
@@ -2496,8 +2487,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ListBox listClients;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSearchClient;
         private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtZipCode;
@@ -2693,6 +2682,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuSaveGraphs;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.Button btnSearchClients;
     }
 }
 

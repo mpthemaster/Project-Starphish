@@ -17,6 +17,7 @@ namespace GUI
     public partial class FormMain : Form
     {
         private int personId;
+        public static string searchName;
         private string theConnectionString;
         private string insertStatement;
         private string insertNOK;
@@ -200,7 +201,6 @@ namespace GUI
             clearForm();
             listClients.ClearSelected();
             listClients.Enabled = false;
-            txtSearchClient.Enabled = false;
             btnRemoveNextOfKin.Enabled = false;
             btnAddNextOfKin.Enabled = false;
             lstNextOfKin.Enabled = false;
@@ -215,6 +215,7 @@ namespace GUI
             txtEmergencyContactTelephoneNum.Enabled = false;
             txtEmergencyContactAddress.Enabled = false;
             btnAddISP.Enabled = false;
+            btnSearchClients.Enabled = false;
             btnViewISP.Enabled = false;
             btnRemoveISP.Enabled = false;
             btnSaveClient.Enabled = true;
@@ -521,7 +522,7 @@ namespace GUI
             clearForm();
             listClients.ClearSelected();
             listClients.Enabled = true;
-            txtSearchClient.Enabled = true;
+            btnSearchClients.Enabled = true;
             btnRemoveNextOfKin.Enabled = true;
             btnAddNextOfKin.Enabled = true;
             lstNextOfKin.Enabled = true;
@@ -614,6 +615,15 @@ namespace GUI
         {
             if (pdfMade)
                 File.Delete("c:\\temp.pdf");
+        }
+
+        private void btnSearchClients_Click(object sender, EventArgs e)
+        {
+            Search searchClient = new Search();
+            if (searchClient.ShowDialog() == DialogResult.OK)
+            {
+                listClients.SelectedItem = searchClient;
+            }
         }
     }
 }
