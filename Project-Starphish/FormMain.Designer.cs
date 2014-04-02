@@ -212,6 +212,9 @@
             this.datePickerBeginGraphs = new System.Windows.Forms.DateTimePicker();
             this.label67 = new System.Windows.Forms.Label();
             this.chartPyramidOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.contextMenuSaveGraphs = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chartSumOfBehaviors = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPieDailyOccurences = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTotalBehaviors = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -282,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDailyBehaviorTracking)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPyramidOccurences)).BeginInit();
+            this.contextMenuSaveGraphs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSumOfBehaviors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPieDailyOccurences)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).BeginInit();
@@ -1901,6 +1905,7 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.chartPyramidOccurences.ChartAreas.Add(chartArea1);
+            this.chartPyramidOccurences.ContextMenuStrip = this.contextMenuSaveGraphs;
             legend1.Name = "Legend1";
             this.chartPyramidOccurences.Legends.Add(legend1);
             this.chartPyramidOccurences.Location = new System.Drawing.Point(624, 325);
@@ -1916,6 +1921,28 @@
             title1.Name = "Title1";
             title1.Text = "# Daily Occurences";
             this.chartPyramidOccurences.Titles.Add(title1);
+            // 
+            // contextMenuSaveGraphs
+            // 
+            this.contextMenuSaveGraphs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.copyToolStripMenuItem});
+            this.contextMenuSaveGraphs.Name = "contextMenuSaveGraphs";
+            this.contextMenuSaveGraphs.Size = new System.Drawing.Size(103, 48);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // chartSumOfBehaviors
             // 
@@ -1940,6 +1967,7 @@
             chartArea3.Area3DStyle.Inclination = 60;
             chartArea3.Name = "ChartArea1";
             this.chartPieDailyOccurences.ChartAreas.Add(chartArea3);
+            this.chartPieDailyOccurences.ContextMenuStrip = this.contextMenuSaveGraphs;
             legend2.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder;
             legend2.Name = "Legend1";
             this.chartPieDailyOccurences.Legends.Add(legend2);
@@ -1961,6 +1989,7 @@
             // 
             chartArea4.Name = "ChartArea1";
             this.chartTotalBehaviors.ChartAreas.Add(chartArea4);
+            this.chartTotalBehaviors.ContextMenuStrip = this.contextMenuSaveGraphs;
             this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
             series4.ChartArea = "ChartArea1";
@@ -1973,6 +2002,7 @@
             this.chartTotalBehaviors.Series.Add(series4);
             this.chartTotalBehaviors.Series.Add(series5);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
+            this.chartTotalBehaviors.SuppressExceptions = true;
             this.chartTotalBehaviors.TabIndex = 32;
             this.chartTotalBehaviors.Text = "chart2";
             title4.Name = "Title1";
@@ -2430,6 +2460,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPyramidOccurences)).EndInit();
+            this.contextMenuSaveGraphs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartSumOfBehaviors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPieDailyOccurences)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTotalBehaviors)).EndInit();
@@ -2656,6 +2687,9 @@
         private System.Windows.Forms.BindingSource pERSONISPBindingSource;
         private ProjectStarphishDataSetTableAdapters.PERSON_ISPTableAdapter pERSON_ISPTableAdapter;
         private System.Windows.Forms.BindingSource pERSONISPPERSONFKBindingSource;
+        private System.Windows.Forms.ContextMenuStrip contextMenuSaveGraphs;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
     }
 }
 

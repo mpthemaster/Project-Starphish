@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -88,10 +89,9 @@ namespace GUI
 
                 //likewise, the list box for custom behaviors is disabled by default
                 //because it defaults to use the top 5 behaviors
-                listBehaviorsToGraph.Enabled = false;           
+                listBehaviorsToGraph.Enabled = false;
 
                 getGraphRange();
-                createGraphs();
 
                 firstTime = false;
             }
@@ -430,7 +430,8 @@ namespace GUI
             //This controls whether the charts have their values shown as numbers or not
             chartPieDailyOccurences.Series[0].IsValueShownAsLabel = true;
             chartPyramidOccurences.Series[0].IsValueShownAsLabel = true;
-            
+           // chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 5; 
+
             for(int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
             {
                 chartTotalBehaviors.Series[0].Points.AddXY(
@@ -509,6 +510,21 @@ namespace GUI
                 // Create Forecasting Series.
                 chartTotalBehaviors.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTotalBehaviors.Series[0], chartTotalBehaviors.Series["TrendLine"]);
                 /////////////////////////
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // chart1.SaveImage("dfgdfg.png", ChartImageFormat.Png);
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {          
+                chartTotalBehaviors.SaveImage(ms, ChartImageFormat.Bmp);
+                Bitmap bm = new Bitmap(ms);
+                Clipboard.SetImage(bm);
             }
         }
 
