@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -13,16 +11,30 @@ namespace GUI
     public partial class FormMain
     {
         private bool firstTime = true;
-        private List<DailyBehavior> dailyBehaviors = new List<DailyBehavior>();
-        private List<BehaviorsOnSpecifiedDate> behaviorsOnSpecifiedDate = new List<BehaviorsOnSpecifiedDate>();
-        private List<BehaviorsOccured> timesBehaviorsOccured = new List<BehaviorsOccured>();
 
+        //This list holds all of the actual behaviors that occured
+        List<DailyBehavior> dailyBehaviors = new List<DailyBehavior>();
+
+        //This list holds how many behaviors occured on a specific date
+        List<BehaviorsOnSpecifiedDate> behaviorsOnSpecifiedDate = new List<BehaviorsOnSpecifiedDate>();
+
+        //This tallys up how many times each behavior that is listed occured, which is
+        //used for detemining the top 5 behaviors
+        List<BehaviorsOccured> timesBehaviorsOccured = new List<BehaviorsOccured>();
+
+        //These are used to denote the beginning and end dates of what behaviors to graph
         DateTime startDate = new DateTime();
         DateTime endDate = new DateTime();
 
-
+        /// <summary>
+        /// This function accesses the database and puts all of the behaviors into the
+        /// dailyBehaviors list
+        /// </summary>
         private void retrieveDailyBehavior()
         {
+            //Clears the previous list of dailyBehaviors now that a new one will be gotten
+            dailyBehaviors.Clear();
+
             //Connect to the database.
             SqlDataReader reader;
             SqlCommand command;
@@ -46,23 +58,26 @@ namespace GUI
             }
             reader.Close();
             connection.Close();
-
-            foreach (DailyBehavior dailyBehavior in dailyBehaviors)
-            {
-                // MessageBox.Show(dailyBehavior.Behavior + dailyBehavior.Date.ToShortDateString() + dailyBehavior.Shift);
-                // listBehaviorsToGraph.Items.Contains
-            }
         }
 
         /// <summary>
-        /// The function that starts the graphing tab
+        /// This is the function that is called whenever the graphing tab is opened
         /// </summary>
         private void mainGraph()
         {
-            retrieveDailyBehavior();
+            //Getting the behaviors from the database
+            retrieveDailyBehavior(); 
+
+            //adding all of the behaviors to the list box
+            for (int i = 0; i < dailyBehaviors.Count; i++)
+            {
+                //if the behavior is not already in the list box, add it
+                if (!listBehaviorsToGraph.Items.Contains(dailyBehaviors[i].Behavior))
+                    listBehaviorsToGraph.Items.Add(dailyBehaviors[i].Behavior);
+            }
 
             if (firstTime)
-            {
+            {            
                 //Setting the two combo boxes in the graph tab to have default selections
                 comboPickTimeGraphs.SelectedIndex = 0;//last 30 days
                 comboBehaviorsToGraph.SelectedIndex = 1;//top 5 behaviors
@@ -73,23 +88,27 @@ namespace GUI
 
                 //likewise, the list box for custom behaviors is disabled by default
                 //because it defaults to use the top 5 behaviors
-                listBehaviorsToGraph.Enabled = false;
-
-                for (int i = 0; i < dailyBehaviors.Count; i++)
-                {
-                    //if the behavior is not already in the list box, add it
-                    if (!listBehaviorsToGraph.Items.Contains(dailyBehaviors[i].Behavior))
-                        listBehaviorsToGraph.Items.Add(dailyBehaviors[i].Behavior);
-                }
+                listBehaviorsToGraph.Enabled = false;           
 
                 getGraphRange();
+                createGraphs();
+
                 firstTime = false;
             }
         }
 
+        private void btnGenerateGraphs_Click(object sender, EventArgs e)
+        {
+            //This function gets the time constaints for the behaviors, and fills the two above arrays
+            //with the data needed to make the graphs
+            getGraphRange();
+
+            //The function to create the graphs
+            createGraphs();
+        }
+
         /// <summary>
-        /// Checks to see which behaviors are selected to be graphed, how far
-        /// back the graph should go, and then calls the function to graph them
+        /// Checks to see the range of dates the graph should be between
         /// </summary>
         private void getGraphRange()
         {
@@ -100,16 +119,18 @@ namespace GUI
                     startDate = DateTime.Today.AddDays(-30);
                     endDate = DateTime.Today;
 
+                    clear();
                     FillDateList();
-                    getBehaviors(startDate, endDate);
+                    getBehaviors();
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 1)//last 60 days
                 {
                     startDate = DateTime.Today.AddDays(-60);
                     endDate = DateTime.Today;
 
+                    clear();
                     FillDateList();
-                    getBehaviors(startDate, endDate);
+                    getBehaviors();
                 }
                 else if (comboPickTimeGraphs.SelectedIndex == 2)//current quarter
                 {
@@ -144,18 +165,28 @@ namespace GUI
                     {
                         startDate = new DateTime(DateTime.Today.Year, 04, 01);
                     }
-
+                    clear();
                     FillDateList();
-                    getBehaviors(startDate, endDate);
+                    getBehaviors();
                 }
             }
             else if (radUseCustomDates.Checked)
             {
+
                 startDate = new DateTime(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month, 1);
                 endDate = new DateTime(datePickerEndGraphs.Value.Year, datePickerEndGraphs.Value.Month, DateTime.DaysInMonth(datePickerEndGraphs.Value.Year, datePickerEndGraphs.Value.Month));
 
-                FillDateList();
-                getBehaviors(startDate, endDate);
+                //This is to prevent a start date that is after the end date
+                if (startDate > endDate)
+                {
+                    MessageBox.Show("Error: The start date must be before the end date");
+                }
+                else
+                {
+                    clear();
+                    FillDateList();
+                    getBehaviors();
+                }         
             }
             else if (radUseCustomQuarters.Checked)
             {
@@ -170,126 +201,130 @@ namespace GUI
                 //Checks to see if none of the checkboxes are checked
                 if (!chkQuarter1.Checked && !chkQuarter2.Checked && !chkQuarter3.Checked && !chkQuarter4.Checked)
                     MessageBox.Show("Error: No Quarter was Selected");
-
-                //Based on the current quarter, this array holds the start dates for the current quarters and
-                //the previous quarters
-                DateTime[] dateTime = new DateTime[4];
-
-                //July August September
-                if (DateTime.Today.Month == 07 || DateTime.Today.Month == 08 || DateTime.Today.Month == 09)
+                else
                 {
-                    quarter = 1;
 
-                    dateTime[0] = new DateTime(DateTime.Today.Year, 7, 1);
-                    dateTime[1] = new DateTime(DateTime.Today.Year - 1, 10, 1);
-                    dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
-                    dateTime[3] = new DateTime(DateTime.Today.Year, 4, 1);
-                }
+                    //Based on the current quarter, this array holds the start dates for the current quarters and
+                    //the previous quarters
+                    DateTime[] dateTime = new DateTime[4];
 
-                //October November December
-                else if (DateTime.Today.Month == 10 || DateTime.Today.Month == 11 || DateTime.Today.Month == 12)
-                {
-                    quarter = 2;
-
-                    dateTime[0] = new DateTime(DateTime.Today.Year, 7, 1);
-                    dateTime[1] = new DateTime(DateTime.Today.Year, 10, 1);
-                    dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
-                    dateTime[3] = new DateTime(DateTime.Today.Year, 4, 1);
-                }
-
-                //January February or March
-                else if (DateTime.Today.Month == 01 || DateTime.Today.Month == 02 || DateTime.Today.Month == 03)
-                {
-                    quarter = 3;
-
-                    dateTime[0] = new DateTime(DateTime.Today.Year - 1, 7, 1);
-                    dateTime[1] = new DateTime(DateTime.Today.Year - 1, 10, 1);
-                    dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
-                    dateTime[3] = new DateTime(DateTime.Today.Year - 1, 4, 1);
-                }
-
-                //April May June
-                else if (DateTime.Today.Month == 04 || DateTime.Today.Month == 05 || DateTime.Today.Month == 06)
-                {
-                    quarter = 4;
-
-                    dateTime[0] = new DateTime(DateTime.Today.Year - 1, 7, 1);
-                    dateTime[1] = new DateTime(DateTime.Today.Year - 1, 10, 1);
-                    dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
-                    dateTime[3] = new DateTime(DateTime.Today.Year, 4, 1);
-                }
-
-
-                if (chkQuarter1.Checked)
-                {//July August September
-
-                    startDate = dateTime[0];
-                    if (quarter == 1)
+                    //July August September
+                    if (DateTime.Today.Month == 07 || DateTime.Today.Month == 08 || DateTime.Today.Month == 09)
                     {
-                        endDate = DateTime.Today;
+                        quarter = 1;
+
+                        dateTime[0] = new DateTime(DateTime.Today.Year, 7, 1);
+                        dateTime[1] = new DateTime(DateTime.Today.Year - 1, 10, 1);
+                        dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
+                        dateTime[3] = new DateTime(DateTime.Today.Year, 4, 1);
                     }
-                    else
-                    {                  
-                        endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
+
+                    //October November December
+                    else if (DateTime.Today.Month == 10 || DateTime.Today.Month == 11 || DateTime.Today.Month == 12)
+                    {
+                        quarter = 2;
+
+                        dateTime[0] = new DateTime(DateTime.Today.Year, 7, 1);
+                        dateTime[1] = new DateTime(DateTime.Today.Year, 10, 1);
+                        dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
+                        dateTime[3] = new DateTime(DateTime.Today.Year, 4, 1);
                     }
-                    FillDateList();
-                    getBehaviors(startDate, endDate);
+
+                    //January February or March
+                    else if (DateTime.Today.Month == 01 || DateTime.Today.Month == 02 || DateTime.Today.Month == 03)
+                    {
+                        quarter = 3;
+
+                        dateTime[0] = new DateTime(DateTime.Today.Year - 1, 7, 1);
+                        dateTime[1] = new DateTime(DateTime.Today.Year - 1, 10, 1);
+                        dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
+                        dateTime[3] = new DateTime(DateTime.Today.Year - 1, 4, 1);
+                    }
+
+                    //April May June
+                    else if (DateTime.Today.Month == 04 || DateTime.Today.Month == 05 || DateTime.Today.Month == 06)
+                    {
+                        quarter = 4;
+
+                        dateTime[0] = new DateTime(DateTime.Today.Year - 1, 7, 1);
+                        dateTime[1] = new DateTime(DateTime.Today.Year - 1, 10, 1);
+                        dateTime[2] = new DateTime(DateTime.Today.Year, 1, 1);
+                        dateTime[3] = new DateTime(DateTime.Today.Year, 4, 1);
+                    }
+
+
+                    if (chkQuarter1.Checked)
+                    {//July August September
+
+                        startDate = dateTime[0];
+                        if (quarter == 1)
+                        {
+                            endDate = DateTime.Today;
+                        }
+                        else
+                        {
+                            endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
+                        }
+                        clear();
+                        FillDateList();
+                        getBehaviors();
+                    }
+                    if (chkQuarter2.Checked)
+                    {
+                        startDate = dateTime[1];
+                        if (quarter == 2)
+                        {
+                            endDate = DateTime.Today;
+                        }
+                        else
+                        {
+                            endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
+                        }
+                        clear();
+                        FillDateList();
+                        getBehaviors();
+                    }
+                    if (chkQuarter3.Checked)
+                    {
+                        startDate = dateTime[2];
+                        if (quarter == 3)
+                        {
+                            endDate = DateTime.Today;
+                        }
+                        else
+                        {
+                            endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
+                        }
+                        clear();
+                        FillDateList();
+                        getBehaviors();
+                    }
+                    if (chkQuarter4.Checked)
+                    {
+                        startDate = dateTime[3];
+                        if (quarter == 4)
+                        {
+                            endDate = DateTime.Today;
+                        }
+                        else
+                        {
+                            endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
+                        }
+                        clear();
+                        FillDateList();
+                        getBehaviors();
+                    }
                 }
-                if (chkQuarter2.Checked)
-                {
-                    startDate = dateTime[1];
-                    if (quarter == 2)
-                    {
-                        endDate = DateTime.Today;
-                    }
-                    else
-                    {
-                        endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
-                    }
-                    FillDateList();
-                    getBehaviors(startDate, endDate);
-                }
-                if (chkQuarter3.Checked)
-                {
-                    startDate = dateTime[2];
-                    if (quarter == 3)
-                    {
-                        endDate = DateTime.Today;
-                    }
-                    else
-                    {
-                        endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
-                    }
-                    FillDateList();
-                    getBehaviors(startDate, endDate);
-                }
-                if (chkQuarter4.Checked)
-                {
-                    startDate = dateTime[3];
-                    if (quarter == 4)
-                    {
-                        endDate = DateTime.Today;
-                    }
-                    else
-                    {
-                        endDate = new DateTime(startDate.Year, startDate.Month + 2, DateTime.DaysInMonth(startDate.Year, startDate.Month + 2));
-                    }
-                    FillDateList();
-                    getBehaviors(startDate, endDate);
-                }
-     
             }
-
         }
 
         /// <summary>
-        /// This gets all of the behaviors from the dailyBehaviors list and puts them into
-        /// a dictionary object(after culling them depending on the date of the behaviors and the
-        /// dates selected to be viewed)
+        /// This gets all of the behaviors from the dailyBehaviors list and calculates how many 
+        /// behaviors occured on each date in the selected range and puts them in the behaviorsOnSpecificDate
+        /// list, as well as calculates how many times each behavior occured, and puts it into the timesBehaviorsOccured
+        /// list
         /// </summary>
-        /// <param name="startDate">The beginning of the date range to be graphed</param>
-        /// <param name="endDate">The end of the date range to be graphed</param>
-        private void getBehaviors(DateTime startDate, DateTime endDate)
+        private void getBehaviors()
         {
             //sorts the array of dates and occurences on that day by the date
             List<BehaviorsOnSpecifiedDate> behaviorsOnSpecifedDate = behaviorsOnSpecifiedDate.OrderBy(o => o.Date).ToList();
@@ -323,14 +358,10 @@ namespace GUI
                 }
             }
             ////////////
-            //Sorting the list of behaviors that occured
+
+            //Sorting the list of behaviors that occured so that it is in order of most to least, 
+            //which is necessary for picking out the top 5 behaviors
             timesBehaviorsOccured = timesBehaviorsOccured.OrderByDescending(o => o.Occurences).ToList();
-
-            //for (int i = 0; i < timesBehaviorsOccured.Count(); i++)
-            //{
-            //    MessageBox.Show(timesBehaviorsOccured[i].Behavior + timesBehaviorsOccured[i].Occurences);
-            //}
-
 
 
             ///////////Populates behaviorsOnSpecificDate, which keeps track of how many behaviors the
@@ -387,9 +418,9 @@ namespace GUI
         }
 
         /// <summary>
-        /// This function is what actually creates the graphs. It clears the previous data in the graphs
-        /// so that information does not overlap, and graphs either every behavior, the top 5 behaviors,
-        /// or whichever ones you specifically select
+        /// This function is what actually creates the graphs. It just makes the totalBehaviors graph on the left
+        /// without any checking because that information is already formatted, and graphs the two 
+        /// on the right depending on which behaviors were selected to be graphed
         /// </summary>
         private void createGraphs()
         {
@@ -449,9 +480,13 @@ namespace GUI
                     }
                 }
             }
+
+            //this sorts the two charts on the right so that the largest values are at the top
             chartPyramidOccurences.Series[0].Sort(PointSortOrder.Ascending);
             chartPieDailyOccurences.Series[0].Sort(PointSortOrder.Ascending);
 
+            //Don't do this is there is 1 or 0 behaviors in the list, the program will crash because
+            //It cant create an average line with only 1 or 0 behaviors
             if (behaviorsOnSpecifiedDate.Count > 1)
             {
                 /////////////////////For calculating the Trend Line
@@ -472,8 +507,6 @@ namespace GUI
                 chartTotalBehaviors.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTotalBehaviors.Series[0], chartTotalBehaviors.Series["TrendLine"]);
                 /////////////////////////
             }
-
-
         }
 
         /// <summary>
@@ -481,7 +514,7 @@ namespace GUI
         /// value of 0, it is in its own seperate function because of the checkboxes
         /// </summary>
         private void FillDateList()
-        {
+        {          
             DateTime currentDate = startDate;
 
             //Adds every single date in the range to the totalBehaviors object
@@ -490,6 +523,56 @@ namespace GUI
                 behaviorsOnSpecifiedDate.Add(new BehaviorsOnSpecifiedDate(currentDate));
                 currentDate = currentDate.AddDays(1);
             }
+        }
+
+        /// <summary>
+        /// Clears out all of the data so that information doesn't overlap when a new graph is made
+        /// </summary>
+        private void clear()
+        {
+            //This clears all the previous data in the charts
+            chartPieDailyOccurences.Series[0].Points.Clear();
+            chartPyramidOccurences.Series[0].Points.Clear();
+            chartTotalBehaviors.Series[0].Points.Clear();
+
+            //This clears all of the Lists of objects except for the list of behaviors that occured,
+            //that will be cleared whenever a new list is gotten
+            timesBehaviorsOccured.Clear();
+            behaviorsOnSpecifiedDate.Clear();
+        }
+
+        /// <summary>
+        /// Sets all the graph options to be disabled so that they don't need to be written out like that
+        /// specifically every time a radio button selection changes
+        /// </summary>
+        private void everythingDisabled()
+        {
+            comboPickTimeGraphs.Enabled = false;
+            chkQuarter1.Enabled = false;
+            chkQuarter2.Enabled = false;
+            chkQuarter3.Enabled = false;
+            chkQuarter4.Enabled = false;
+            datePickerBeginGraphs.Enabled = false;
+            datePickerEndGraphs.Enabled = false;
+        }
+
+        /// <summary>
+        /// Disables the controls depending on which radio button is pressed
+        /// </summary>
+        private void comboBehaviorsToGraph_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBehaviorsToGraph.SelectedIndex == 0)
+            {
+                listBehaviorsToGraph.Enabled = false;
+                listBehaviorsToGraph.ClearSelected();
+            }
+            if (comboBehaviorsToGraph.SelectedIndex == 1)
+            {
+                listBehaviorsToGraph.Enabled = false;
+                listBehaviorsToGraph.ClearSelected();
+            }
+            if (comboBehaviorsToGraph.SelectedIndex == 2)
+                listBehaviorsToGraph.Enabled = true;
         }
 
         private void radUseTimeFrames_Click(object sender, EventArgs e)
@@ -512,54 +595,6 @@ namespace GUI
             chkQuarter2.Enabled = true;
             chkQuarter3.Enabled = true;
             chkQuarter4.Enabled = true;
-        }
-
-        /// <summary>
-        /// Sets all the graph options to be disabled so that they don't need to be written out like that
-        /// specifically every time a radio button selection changes
-        /// </summary>
-        private void everythingDisabled()
-        {
-            comboPickTimeGraphs.Enabled = false;
-            chkQuarter1.Enabled = false;
-            chkQuarter2.Enabled = false;
-            chkQuarter3.Enabled = false;
-            chkQuarter4.Enabled = false;
-            datePickerBeginGraphs.Enabled = false;
-            datePickerEndGraphs.Enabled = false;
-        }
-
-        private void btnGenerateGraphs_Click(object sender, EventArgs e)
-        {
-            //This clears all the previous data in the charts
-            chartPieDailyOccurences.Series[0].Points.Clear();
-            chartPyramidOccurences.Series[0].Points.Clear();
-            chartTotalBehaviors.Series[0].Points.Clear();
-
-            timesBehaviorsOccured.Clear();
-            behaviorsOnSpecifiedDate.Clear();
-
-            getGraphRange();
-
-            //The function to create the graphs, the behaviors are passed in the
-            //dictionary object 'tags'
-            createGraphs();
-        }
-
-        private void comboBehaviorsToGraph_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBehaviorsToGraph.SelectedIndex == 0)
-            {
-                listBehaviorsToGraph.Enabled = false;
-                listBehaviorsToGraph.ClearSelected();
-            }
-            if (comboBehaviorsToGraph.SelectedIndex == 1)
-            {
-                listBehaviorsToGraph.Enabled = false;
-                listBehaviorsToGraph.ClearSelected();
-            }
-            if (comboBehaviorsToGraph.SelectedIndex == 2)
-                listBehaviorsToGraph.Enabled = true;
         }
     }
 }

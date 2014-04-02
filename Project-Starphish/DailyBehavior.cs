@@ -1,4 +1,5 @@
-﻿//Holds information about a behavior.
+﻿//This is the class that will keep track of what behavior happened and when it happened, it will get
+//these values directly from the database
 using System;
 
 namespace GUI

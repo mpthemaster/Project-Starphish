@@ -1,4 +1,5 @@
-﻿//Holds information about a behavior.
+﻿//This class keeps track of how many behaviors occured on a specific day, for use in the totalBehaviors
+//Graph
 using System;
 
 namespace GUI
@@ -12,7 +13,6 @@ namespace GUI
         /// <summary>
         /// Creates a new behavior.
         /// </summary>  
-        /// <param name="behavior">The behavior that occured.</param>
         /// <param name="date">The date the behavior occured on.</param>
         public BehaviorsOnSpecifiedDate(DateTime date)
         {
