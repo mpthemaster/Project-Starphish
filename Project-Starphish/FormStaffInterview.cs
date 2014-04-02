@@ -462,8 +462,18 @@ namespace GUI
         /// </summary>
         private void btnQABFs_Click(object sender, EventArgs e)
         {
-            FormQABF formQABF = new FormQABF(behaviors.ToArray());
-            formQABF.ShowDialog();
+            //If behaviors exist, show the QABFS Form.
+            //Else behaviors don't exist, so show an error message telling the user that a behavior needs to be added first.
+            if (behaviors.Count > 0)
+            {
+                FormQABF formQABF = new FormQABF(behaviors.ToArray());
+                formQABF.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("At least one behavior needs to be added before a QABF can be created.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBehavior.Focus();
+            }
         }
 
         private void comboBehavior_SelectedIndexChanged(object sender, EventArgs e)
@@ -642,8 +652,9 @@ namespace GUI
                 {
                     if (behavior.Name == treeViewBehaviors.SelectedNode.Name)
                     {
-                        behaviors.Remove(behavior);
                         treeViewBehaviors.Nodes.Remove(treeViewBehaviors.SelectedNode);
+                        treeViewAntecedents.Nodes.RemoveByKey(behavior.Name);
+                        behaviors.Remove(behavior);
                         break;
                     }
                 }

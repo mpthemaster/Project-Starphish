@@ -13,6 +13,11 @@ namespace GUI
         /// </summary>
         public QuestionQABF[] questions = new QuestionQABF[25];
 
+        /// <summary>
+        /// Temporary answers made to questions before the user saves.
+        /// </summary>
+        public string[] TempAnswers { get; set; }
+
         public bool Completed { get; set; }
 
         /// <summary>
@@ -21,6 +26,7 @@ namespace GUI
         public QABF()
         {
             Completed = false;
+            TempAnswers = new string[25];
 
             questions[0] = new QuestionQABF("1. Engages in the behavior to get attention.");
             questions[1] = new QuestionQABF("2. Engages in behavior to escape work or learning situations.");
@@ -47,6 +53,37 @@ namespace GUI
             questions[22] = new QuestionQABF("23. Does he/she seem to enjoy the behavior, even if no one is around?");
             questions[23] = new QuestionQABF("24. Does the behavior seem to indicate to you that he/she is not feeling well?");
             questions[24] = new QuestionQABF("25. Does he/she seem to be saying, \"give me that (toy, food, item)\" when engaging in the behavior?");
+
+            //Sets all the TempAnswers to initially match the initial values.
+            resetTempAnswers();
+        }
+
+        /// <summary>
+        /// Completely resets the QABF answers to the default answers;
+        /// </summary>
+        public void reset()
+        {
+            foreach (QuestionQABF question in questions)
+                question.Answer = "Doesn't Apply";
+            resetTempAnswers();
+        }
+
+        /// <summary>
+        /// Resets tempAnswers so that they match the previously saved answers.
+        /// </summary>
+        public void resetTempAnswers()
+        {
+            for (int i = 0; i < questions.GetLength(0); i++)
+                TempAnswers[i] = questions[i].Answer;
+        }
+
+        /// <summary>
+        /// Saves temporary answers (i.e. makes them permenent).
+        /// </summary>
+        public void saveTempAnswers()
+        {
+            for (int i = 0; i < questions.GetLength(0); i++)
+                questions[i].Answer = TempAnswers[i];
         }
     }
 }

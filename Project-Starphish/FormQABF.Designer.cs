@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Uncompleted");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Completed");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Uncompleted");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Completed");
             this.lblStaffInterviewee = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnSaveOneQABF = new System.Windows.Forms.Button();
             this.btnResetQABF = new System.Windows.Forms.Button();
             this.lblPageNum = new System.Windows.Forms.Label();
             this.btnNextPage = new System.Windows.Forms.Button();
@@ -69,12 +70,12 @@
             this.lblQ6 = new System.Windows.Forms.Label();
             this.lblQ5 = new System.Windows.Forms.Label();
             this.lblQ4 = new System.Windows.Forms.Label();
-            this.btnSaveQABF = new System.Windows.Forms.Button();
+            this.btnSaveQABFs = new System.Windows.Forms.Button();
             this.treeViewQABFs = new System.Windows.Forms.TreeView();
             this.lblQ3 = new System.Windows.Forms.Label();
             this.lblQ2 = new System.Windows.Forms.Label();
             this.lblQ1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClearTempChanges = new System.Windows.Forms.Button();
             this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +90,8 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.button1);
+            this.groupBox11.Controls.Add(this.btnClearTempChanges);
+            this.groupBox11.Controls.Add(this.btnSaveOneQABF);
             this.groupBox11.Controls.Add(this.btnResetQABF);
             this.groupBox11.Controls.Add(this.lblPageNum);
             this.groupBox11.Controls.Add(this.btnNextPage);
@@ -127,7 +129,7 @@
             this.groupBox11.Controls.Add(this.lblQ6);
             this.groupBox11.Controls.Add(this.lblQ5);
             this.groupBox11.Controls.Add(this.lblQ4);
-            this.groupBox11.Controls.Add(this.btnSaveQABF);
+            this.groupBox11.Controls.Add(this.btnSaveQABFs);
             this.groupBox11.Controls.Add(this.treeViewQABFs);
             this.groupBox11.Controls.Add(this.lblQ3);
             this.groupBox11.Controls.Add(this.lblQ2);
@@ -139,6 +141,16 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Part 4: QABF";
             // 
+            // btnSaveOneQABF
+            // 
+            this.btnSaveOneQABF.Location = new System.Drawing.Point(87, 19);
+            this.btnSaveOneQABF.Name = "btnSaveOneQABF";
+            this.btnSaveOneQABF.Size = new System.Drawing.Size(86, 23);
+            this.btnSaveOneQABF.TabIndex = 101;
+            this.btnSaveOneQABF.Text = "Save QABF";
+            this.btnSaveOneQABF.UseVisualStyleBackColor = true;
+            this.btnSaveOneQABF.Click += new System.EventHandler(this.btnSaveOneQABF_Click);
+            // 
             // btnResetQABF
             // 
             this.btnResetQABF.Location = new System.Drawing.Point(6, 19);
@@ -147,6 +159,7 @@
             this.btnResetQABF.TabIndex = 100;
             this.btnResetQABF.Text = "Reset";
             this.btnResetQABF.UseVisualStyleBackColor = true;
+            this.btnResetQABF.Click += new System.EventHandler(this.btnResetQABF_Click);
             // 
             // lblPageNum
             // 
@@ -229,6 +242,7 @@
             this.comboScore18.Name = "comboScore18";
             this.comboScore18.Size = new System.Drawing.Size(110, 21);
             this.comboScore18.TabIndex = 92;
+            this.comboScore18.SelectedIndexChanged += new System.EventHandler(this.comboScore18_SelectedIndexChanged);
             // 
             // comboScore17
             // 
@@ -244,6 +258,7 @@
             this.comboScore17.Name = "comboScore17";
             this.comboScore17.Size = new System.Drawing.Size(110, 21);
             this.comboScore17.TabIndex = 91;
+            this.comboScore17.SelectedIndexChanged += new System.EventHandler(this.comboScore17_SelectedIndexChanged);
             // 
             // comboScore16
             // 
@@ -259,6 +274,7 @@
             this.comboScore16.Name = "comboScore16";
             this.comboScore16.Size = new System.Drawing.Size(110, 21);
             this.comboScore16.TabIndex = 90;
+            this.comboScore16.SelectedIndexChanged += new System.EventHandler(this.comboScore16_SelectedIndexChanged);
             // 
             // comboScore15
             // 
@@ -274,6 +290,7 @@
             this.comboScore15.Name = "comboScore15";
             this.comboScore15.Size = new System.Drawing.Size(110, 21);
             this.comboScore15.TabIndex = 89;
+            this.comboScore15.SelectedIndexChanged += new System.EventHandler(this.comboScore15_SelectedIndexChanged);
             // 
             // comboScore14
             // 
@@ -289,6 +306,7 @@
             this.comboScore14.Name = "comboScore14";
             this.comboScore14.Size = new System.Drawing.Size(110, 21);
             this.comboScore14.TabIndex = 88;
+            this.comboScore14.SelectedIndexChanged += new System.EventHandler(this.comboScore14_SelectedIndexChanged);
             // 
             // comboScore13
             // 
@@ -304,6 +322,7 @@
             this.comboScore13.Name = "comboScore13";
             this.comboScore13.Size = new System.Drawing.Size(110, 21);
             this.comboScore13.TabIndex = 87;
+            this.comboScore13.SelectedIndexChanged += new System.EventHandler(this.comboScore13_SelectedIndexChanged);
             // 
             // comboScore12
             // 
@@ -319,6 +338,7 @@
             this.comboScore12.Name = "comboScore12";
             this.comboScore12.Size = new System.Drawing.Size(110, 21);
             this.comboScore12.TabIndex = 86;
+            this.comboScore12.SelectedIndexChanged += new System.EventHandler(this.comboScore12_SelectedIndexChanged);
             // 
             // comboScore11
             // 
@@ -334,6 +354,7 @@
             this.comboScore11.Name = "comboScore11";
             this.comboScore11.Size = new System.Drawing.Size(110, 21);
             this.comboScore11.TabIndex = 85;
+            this.comboScore11.SelectedIndexChanged += new System.EventHandler(this.comboScore11_SelectedIndexChanged);
             // 
             // comboScore10
             // 
@@ -349,6 +370,7 @@
             this.comboScore10.Name = "comboScore10";
             this.comboScore10.Size = new System.Drawing.Size(110, 21);
             this.comboScore10.TabIndex = 84;
+            this.comboScore10.SelectedIndexChanged += new System.EventHandler(this.comboScore10_SelectedIndexChanged);
             // 
             // comboScore9
             // 
@@ -364,6 +386,7 @@
             this.comboScore9.Name = "comboScore9";
             this.comboScore9.Size = new System.Drawing.Size(110, 21);
             this.comboScore9.TabIndex = 83;
+            this.comboScore9.SelectedIndexChanged += new System.EventHandler(this.comboScore9_SelectedIndexChanged);
             // 
             // comboScore8
             // 
@@ -379,6 +402,7 @@
             this.comboScore8.Name = "comboScore8";
             this.comboScore8.Size = new System.Drawing.Size(110, 21);
             this.comboScore8.TabIndex = 82;
+            this.comboScore8.SelectedIndexChanged += new System.EventHandler(this.comboScore8_SelectedIndexChanged);
             // 
             // comboScore7
             // 
@@ -394,6 +418,7 @@
             this.comboScore7.Name = "comboScore7";
             this.comboScore7.Size = new System.Drawing.Size(110, 21);
             this.comboScore7.TabIndex = 81;
+            this.comboScore7.SelectedIndexChanged += new System.EventHandler(this.comboScore7_SelectedIndexChanged);
             // 
             // comboScore6
             // 
@@ -409,6 +434,7 @@
             this.comboScore6.Name = "comboScore6";
             this.comboScore6.Size = new System.Drawing.Size(110, 21);
             this.comboScore6.TabIndex = 80;
+            this.comboScore6.SelectedIndexChanged += new System.EventHandler(this.comboScore6_SelectedIndexChanged);
             // 
             // comboScore5
             // 
@@ -424,6 +450,7 @@
             this.comboScore5.Name = "comboScore5";
             this.comboScore5.Size = new System.Drawing.Size(110, 21);
             this.comboScore5.TabIndex = 79;
+            this.comboScore5.SelectedIndexChanged += new System.EventHandler(this.comboScore5_SelectedIndexChanged);
             // 
             // comboScore4
             // 
@@ -439,6 +466,7 @@
             this.comboScore4.Name = "comboScore4";
             this.comboScore4.Size = new System.Drawing.Size(110, 21);
             this.comboScore4.TabIndex = 78;
+            this.comboScore4.SelectedIndexChanged += new System.EventHandler(this.comboScore4_SelectedIndexChanged);
             // 
             // comboScore3
             // 
@@ -454,6 +482,7 @@
             this.comboScore3.Name = "comboScore3";
             this.comboScore3.Size = new System.Drawing.Size(110, 21);
             this.comboScore3.TabIndex = 77;
+            this.comboScore3.SelectedIndexChanged += new System.EventHandler(this.comboScore3_SelectedIndexChanged);
             // 
             // comboScore2
             // 
@@ -469,6 +498,7 @@
             this.comboScore2.Name = "comboScore2";
             this.comboScore2.Size = new System.Drawing.Size(110, 21);
             this.comboScore2.TabIndex = 76;
+            this.comboScore2.SelectedIndexChanged += new System.EventHandler(this.comboScore2_SelectedIndexChanged);
             // 
             // comboScore1
             // 
@@ -484,6 +514,7 @@
             this.comboScore1.Name = "comboScore1";
             this.comboScore1.Size = new System.Drawing.Size(110, 21);
             this.comboScore1.TabIndex = 75;
+            this.comboScore1.SelectedIndexChanged += new System.EventHandler(this.comboScore1_SelectedIndexChanged);
             // 
             // lblQ14
             // 
@@ -587,27 +618,27 @@
             this.lblQ4.TabIndex = 64;
             this.lblQ4.Text = "4. Engages in the behavior because he/she is in pain.";
             // 
-            // btnSaveQABF
+            // btnSaveQABFs
             // 
-            this.btnSaveQABF.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveQABF.Location = new System.Drawing.Point(6, 410);
-            this.btnSaveQABF.Name = "btnSaveQABF";
-            this.btnSaveQABF.Size = new System.Drawing.Size(167, 126);
-            this.btnSaveQABF.TabIndex = 63;
-            this.btnSaveQABF.Text = "Save All and Exit";
-            this.btnSaveQABF.UseVisualStyleBackColor = true;
+            this.btnSaveQABFs.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveQABFs.Location = new System.Drawing.Point(6, 410);
+            this.btnSaveQABFs.Name = "btnSaveQABFs";
+            this.btnSaveQABFs.Size = new System.Drawing.Size(167, 126);
+            this.btnSaveQABFs.TabIndex = 63;
+            this.btnSaveQABFs.Text = "Save All and Exit";
+            this.btnSaveQABFs.UseVisualStyleBackColor = true;
             // 
             // treeViewQABFs
             // 
-            this.treeViewQABFs.Location = new System.Drawing.Point(6, 48);
+            this.treeViewQABFs.Location = new System.Drawing.Point(6, 83);
             this.treeViewQABFs.Name = "treeViewQABFs";
-            treeNode1.Name = "NodeQABFsUncompleted";
-            treeNode1.Text = "Uncompleted";
-            treeNode2.Name = "NodeQABFsCompleted";
-            treeNode2.Text = "Completed";
+            treeNode5.Name = "NodeQABFsUncompleted";
+            treeNode5.Text = "Uncompleted";
+            treeNode6.Name = "NodeQABFsCompleted";
+            treeNode6.Text = "Completed";
             this.treeViewQABFs.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
+            treeNode5,
+            treeNode6});
             this.treeViewQABFs.Size = new System.Drawing.Size(167, 281);
             this.treeViewQABFs.TabIndex = 62;
             this.treeViewQABFs.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewQABFs_AfterSelect);
@@ -639,14 +670,15 @@
             this.lblQ1.TabIndex = 27;
             this.lblQ1.Text = "1. Engages in the behavior to get attention.";
             // 
-            // button1
+            // btnClearTempChanges
             // 
-            this.button1.Location = new System.Drawing.Point(87, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 101;
-            this.button1.Text = "Save QABF";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClearTempChanges.Location = new System.Drawing.Point(42, 48);
+            this.btnClearTempChanges.Name = "btnClearTempChanges";
+            this.btnClearTempChanges.Size = new System.Drawing.Size(95, 23);
+            this.btnClearTempChanges.TabIndex = 102;
+            this.btnClearTempChanges.Text = "Clear Changes";
+            this.btnClearTempChanges.UseVisualStyleBackColor = true;
+            this.btnClearTempChanges.Click += new System.EventHandler(this.btnClearTempChanges_Click);
             // 
             // FormQABF
             // 
@@ -705,11 +737,12 @@
         private System.Windows.Forms.Label lblQ6;
         private System.Windows.Forms.Label lblQ5;
         private System.Windows.Forms.Label lblQ4;
-        private System.Windows.Forms.Button btnSaveQABF;
+        private System.Windows.Forms.Button btnSaveQABFs;
         private System.Windows.Forms.TreeView treeViewQABFs;
         private System.Windows.Forms.Label lblQ3;
         private System.Windows.Forms.Label lblQ2;
         private System.Windows.Forms.Label lblQ1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveOneQABF;
+        private System.Windows.Forms.Button btnClearTempChanges;
     }
 }

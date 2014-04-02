@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Things Left to Do: Add a lbl that says what the selected behavior QABF is and the ability to save and exit.
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,6 +70,7 @@ namespace GUI
             lblPageNum.Text = "Page 2";
             btnNextPage.Enabled = false;
             btnPreviousPage.Enabled = true;
+            firstPage = false;
             hideExtraQuestions();
             displayPage2();
         }
@@ -134,11 +137,20 @@ namespace GUI
 
         private void btnPreviousPage_Click(object sender, EventArgs e)
         {
+            getFirstPageSetUp();
+            displayPage1();
+        }
+
+        /// <summary>
+        /// Makes the page display change from the second page to the first one.
+        /// </summary>
+        private void getFirstPageSetUp()
+        {
             lblPageNum.Text = "Page 1";
             btnNextPage.Enabled = true;
             btnPreviousPage.Enabled = false;
+            firstPage = true;
             showExtraQuestions();
-            displayPage1();
         }
 
         /// <summary>
@@ -147,6 +159,7 @@ namespace GUI
         private void displayPage1()
         {
             QuestionQABF[] questions = selectedBehavior.Qabf.questions;
+            string[] answers = selectedBehavior.Qabf.TempAnswers;
 
             lblQ1.Text = questions[0].Question;
             lblQ2.Text = questions[1].Question;
@@ -159,7 +172,7 @@ namespace GUI
             lblQ9.Text = questions[8].Question;
             lblQ10.Text = questions[9].Question;
             lblQ11.Text = questions[10].Question;
-            lblQ2.Text = questions[11].Question;
+            lblQ12.Text = questions[11].Question;
             lblQ13.Text = questions[12].Question;
             lblQ14.Text = questions[13].Question;
             lblQ15.Text = questions[14].Question;
@@ -167,24 +180,24 @@ namespace GUI
             lblQ17.Text = questions[16].Question;
             lblQ18.Text = questions[17].Question;
 
-            comboScore1.SelectedIndex = comboScore1.Items.IndexOf(questions[0].Answer);
-            comboScore2.SelectedIndex = comboScore2.Items.IndexOf(questions[1].Answer);
-            comboScore3.SelectedIndex = comboScore3.Items.IndexOf(questions[2].Answer);
-            comboScore4.SelectedIndex = comboScore4.Items.IndexOf(questions[3].Answer);
-            comboScore5.SelectedIndex = comboScore5.Items.IndexOf(questions[4].Answer);
-            comboScore6.SelectedIndex = comboScore6.Items.IndexOf(questions[5].Answer);
-            comboScore7.SelectedIndex = comboScore7.Items.IndexOf(questions[6].Answer);
-            comboScore8.SelectedIndex = comboScore8.Items.IndexOf(questions[7].Answer);
-            comboScore9.SelectedIndex = comboScore9.Items.IndexOf(questions[8].Answer);
-            comboScore10.SelectedIndex = comboScore10.Items.IndexOf(questions[9].Answer);
-            comboScore11.SelectedIndex = comboScore11.Items.IndexOf(questions[10].Answer);
-            comboScore12.SelectedIndex = comboScore12.Items.IndexOf(questions[11].Answer);
-            comboScore13.SelectedIndex = comboScore13.Items.IndexOf(questions[12].Answer);
-            comboScore14.SelectedIndex = comboScore14.Items.IndexOf(questions[13].Answer);
-            comboScore15.SelectedIndex = comboScore15.Items.IndexOf(questions[14].Answer);
-            comboScore16.SelectedIndex = comboScore16.Items.IndexOf(questions[15].Answer);
-            comboScore17.SelectedIndex = comboScore17.Items.IndexOf(questions[16].Answer);
-            comboScore18.SelectedIndex = comboScore18.Items.IndexOf(questions[17].Answer);
+            comboScore1.SelectedIndex = comboScore1.Items.IndexOf(answers[0]);
+            comboScore2.SelectedIndex = comboScore2.Items.IndexOf(answers[1]);
+            comboScore3.SelectedIndex = comboScore3.Items.IndexOf(answers[2]);
+            comboScore4.SelectedIndex = comboScore4.Items.IndexOf(answers[3]);
+            comboScore5.SelectedIndex = comboScore5.Items.IndexOf(answers[4]);
+            comboScore6.SelectedIndex = comboScore6.Items.IndexOf(answers[5]);
+            comboScore7.SelectedIndex = comboScore7.Items.IndexOf(answers[6]);
+            comboScore8.SelectedIndex = comboScore8.Items.IndexOf(answers[7]);
+            comboScore9.SelectedIndex = comboScore9.Items.IndexOf(answers[8]);
+            comboScore10.SelectedIndex = comboScore10.Items.IndexOf(answers[9]);
+            comboScore11.SelectedIndex = comboScore11.Items.IndexOf(answers[10]);
+            comboScore12.SelectedIndex = comboScore12.Items.IndexOf(answers[11]);
+            comboScore13.SelectedIndex = comboScore13.Items.IndexOf(answers[12]);
+            comboScore14.SelectedIndex = comboScore14.Items.IndexOf(answers[13]);
+            comboScore15.SelectedIndex = comboScore15.Items.IndexOf(answers[14]);
+            comboScore16.SelectedIndex = comboScore16.Items.IndexOf(answers[15]);
+            comboScore17.SelectedIndex = comboScore17.Items.IndexOf(answers[16]);
+            comboScore18.SelectedIndex = comboScore18.Items.IndexOf(answers[17]);
         }
 
         /// <summary>
@@ -193,6 +206,7 @@ namespace GUI
         private void displayPage2()
         {
             QuestionQABF[] questions = selectedBehavior.Qabf.questions;
+            string[] answers = selectedBehavior.Qabf.TempAnswers;
 
             lblQ1.Text = questions[18].Question;
             lblQ2.Text = questions[19].Question;
@@ -202,13 +216,13 @@ namespace GUI
             lblQ6.Text = questions[23].Question;
             lblQ7.Text = questions[24].Question;
 
-            comboScore1.SelectedIndex = comboScore1.Items.IndexOf(questions[18].Answer);
-            comboScore2.SelectedIndex = comboScore2.Items.IndexOf(questions[19].Answer);
-            comboScore3.SelectedIndex = comboScore3.Items.IndexOf(questions[20].Answer);
-            comboScore4.SelectedIndex = comboScore4.Items.IndexOf(questions[21].Answer);
-            comboScore5.SelectedIndex = comboScore5.Items.IndexOf(questions[22].Answer);
-            comboScore6.SelectedIndex = comboScore6.Items.IndexOf(questions[23].Answer);
-            comboScore7.SelectedIndex = comboScore7.Items.IndexOf(questions[24].Answer);
+            comboScore1.SelectedIndex = comboScore1.Items.IndexOf(answers[18]);
+            comboScore2.SelectedIndex = comboScore2.Items.IndexOf(answers[19]);
+            comboScore3.SelectedIndex = comboScore3.Items.IndexOf(answers[20]);
+            comboScore4.SelectedIndex = comboScore4.Items.IndexOf(answers[21]);
+            comboScore5.SelectedIndex = comboScore5.Items.IndexOf(answers[22]);
+            comboScore6.SelectedIndex = comboScore6.Items.IndexOf(answers[23]);
+            comboScore7.SelectedIndex = comboScore7.Items.IndexOf(answers[24]);
         }
 
         private void treeViewQABFs_AfterSelect(object sender, TreeViewEventArgs e)
@@ -232,6 +246,214 @@ namespace GUI
                 else
                     displayPage2();
             }
+        }
+
+        private void btnSaveOneQABF_Click(object sender, EventArgs e)
+        {
+            //Save all the temp answers as permenent.
+            selectedBehavior.Qabf.saveTempAnswers();
+
+            //If this behavior wasn't saved previously, mark this behavior's QABF as completed, and display this properly in the treeview.
+            if (!selectedBehavior.Qabf.Completed)
+            {
+                selectedBehavior.Qabf.Completed = true;
+                string name = selectedBehavior.Name;
+                treeViewQABFs.Nodes[1].Nodes.Add(name, name);
+                treeViewQABFs.Nodes[0].Nodes.RemoveByKey(selectedBehavior.Name);
+                treeViewQABFs.Nodes[1].ExpandAll();
+                treeViewQABFs.SelectedNode = treeViewQABFs.Nodes[1].Nodes.Find(name, false)[0]; //Finds the newly created mode to select it.
+            }
+        }
+
+        private void comboScore1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 1,
+            //Else the user is on the second page, so update the temporary answer for question 19.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[0] = (string)comboScore1.SelectedItem;
+            else
+                selectedBehavior.Qabf.TempAnswers[18] = (string)comboScore1.SelectedItem;
+        }
+
+        private void comboScore2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 2,
+            //Else the user is on the second page, so update the temporary answer for question 20.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[1] = (string)comboScore2.SelectedItem;
+            else
+                selectedBehavior.Qabf.TempAnswers[19] = (string)comboScore2.SelectedItem;
+        }
+
+        private void comboScore3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 3,
+            //Else the user is on the second page, so update the temporary answer for question 21.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[2] = (string)comboScore3.SelectedItem;
+            else
+                selectedBehavior.Qabf.TempAnswers[20] = (string)comboScore3.SelectedItem;
+        }
+
+        private void comboScore4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 4,
+            //Else the user is on the second page, so update the temporary answer for question 22.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[3] = (string)comboScore4.SelectedItem;
+            else
+                selectedBehavior.Qabf.TempAnswers[21] = (string)comboScore4.SelectedItem;
+        }
+
+        private void comboScore5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 5,
+            //Else the user is on the second page, so update the temporary answer for question 23.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[4] = (string)comboScore5.SelectedItem;
+            else
+                selectedBehavior.Qabf.TempAnswers[22] = (string)comboScore5.SelectedItem;
+        }
+
+        private void comboScore6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 6,
+            //Else the user is on the second page, so update the temporary answer for question 24.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[5] = (string)comboScore6.SelectedItem;
+            else
+                selectedBehavior.Qabf.TempAnswers[23] = (string)comboScore6.SelectedItem;
+        }
+
+        private void comboScore7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 7,
+            //Else the user is on the second page, so update the temporary answer for question 25.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[6] = (string)comboScore7.SelectedItem;
+            else
+                selectedBehavior.Qabf.TempAnswers[24] = (string)comboScore7.SelectedItem;
+        }
+
+        private void comboScore8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 8,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[7] = (string)comboScore8.SelectedItem;
+        }
+
+        private void comboScore9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 9,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[8] = (string)comboScore9.SelectedItem;
+        }
+
+        private void comboScore10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 10,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[9] = (string)comboScore10.SelectedItem;
+        }
+
+        private void comboScore11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 11,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[10] = (string)comboScore11.SelectedItem;
+        }
+
+        private void comboScore12_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 12,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[11] = (string)comboScore12.SelectedItem;
+        }
+
+        private void comboScore13_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 13,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[12] = (string)comboScore13.SelectedItem;
+        }
+
+        private void comboScore14_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 14,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[13] = (string)comboScore14.SelectedItem;
+        }
+
+        private void comboScore15_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 15,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[14] = (string)comboScore15.SelectedItem;
+        }
+
+        private void comboScore16_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 16,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[15] = (string)comboScore16.SelectedItem;
+        }
+
+        private void comboScore17_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 17,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[16] = (string)comboScore17.SelectedItem;
+        }
+
+        private void comboScore18_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //If the user is on the first page, update the temporary answer for question 18,
+            //Else the user is on the second page, so there is no information to display.
+            if (firstPage)
+                selectedBehavior.Qabf.TempAnswers[17] = (string)comboScore18.SelectedItem;
+        }
+
+        private void btnClearTempChanges_Click(object sender, EventArgs e)
+        {
+            //Resets all temp answers to a behavior's QABF saved answers and updates this to the screen.
+            selectedBehavior.Qabf.resetTempAnswers();
+
+            //If the second page of QABF questions and answers is showing, then make the first page display.
+            if (!firstPage)
+                getFirstPageSetUp();
+            displayPage1();
+        }
+
+        private void btnResetQABF_Click(object sender, EventArgs e)
+        {
+            selectedBehavior.Qabf.reset();
+
+            //If the behavior's QABF has previously beens saved, change the node's parent and set its status to uncomplete.
+            if (selectedBehavior.Qabf.Completed)
+            {
+                selectedBehavior.Qabf.Completed = false;
+
+                string name = selectedBehavior.Name;
+                treeViewQABFs.Nodes[0].Nodes.Add(name, name);
+                treeViewQABFs.Nodes[1].Nodes.RemoveByKey(selectedBehavior.Name);
+                treeViewQABFs.Nodes[0].ExpandAll();
+                treeViewQABFs.SelectedNode = treeViewQABFs.Nodes[0].Nodes.Find(name, false)[0]; //Finds the newly created mode to select it.
+            }
+
+            //If the second page of QABF questions and answers is showing, then make the first page display.
+            if (!firstPage)
+                getFirstPageSetUp();
+            displayPage1();
         }
     }
 }
