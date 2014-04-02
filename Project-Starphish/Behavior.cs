@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GUI
 {
-    internal class Behavior
+    public class Behavior
     {
         public string Name { get; set; }
 
@@ -12,6 +12,8 @@ namespace GUI
         public string Frequency { get; set; }
 
         public Dictionary<string, string> Antecedents;
+
+        public QABF Qabf { get; set; }
 
         /// <summary>
         /// Creates a new behavior.

@@ -80,6 +80,8 @@
       <DependentUpon>ProjectStarphishDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QABF.cs" />
+    <Compile Include="QuestionQABF.cs" />
     <Compile Include="StaffInterviewsTab.cs">
       <SubType>Form</SubType>
     </Compile>

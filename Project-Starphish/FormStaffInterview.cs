@@ -462,7 +462,7 @@ namespace GUI
         /// </summary>
         private void btnQABFs_Click(object sender, EventArgs e)
         {
-            FormQABF formQABF = new FormQABF();
+            FormQABF formQABF = new FormQABF(behaviors.ToArray());
             formQABF.ShowDialog();
         }
 
