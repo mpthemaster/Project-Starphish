@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
+
 namespace GUI
 {
     public partial class FormMain : Form
@@ -31,6 +32,7 @@ namespace GUI
         private string getPic;
         private string addISP;
         private string deleteISP;
+        private string selectISP;
         private SqlConnection connection;
         private SqlCommand command;
         private SqlCommand commandInsertNOK;
@@ -46,8 +48,10 @@ namespace GUI
         private SqlCommand commandGetPic;
         private SqlCommand commandAddISP;
         private SqlCommand commandDeleteISP;
+        private SqlCommand commandViewISP;
         private MemoryStream ms = new MemoryStream();
         private int x;
+        private bool pdfMade = false;
 
         public FormMain()
         {
@@ -66,6 +70,7 @@ namespace GUI
             addISP = "INSERT INTO PERSON_ISP (PERSON_ID, ISPNAME, ISP)VALUES (@PERSON_ID, @ISPNAME, @ISP)";
             deleteISP = "DELETE FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = @ISPNAME";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
+            selectISP = "SELECT ISP FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = ISPNAME";
             getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
             connection = new SqlConnection(theConnectionString);
             command = new SqlCommand(insertStatement, connection);
@@ -82,6 +87,7 @@ namespace GUI
             commandGetPic = new SqlCommand(getPic, connection);
             commandAddISP = new SqlCommand(addISP, connection);
             commandDeleteISP = new SqlCommand(deleteISP, connection);
+            commandViewISP = new SqlCommand(selectISP, connection);
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)
@@ -415,6 +421,20 @@ namespace GUI
 
         private void btnViewISP_Click(object sender, EventArgs e)
         {
+            connection.Open();
+            commandViewISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+            commandViewISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
+            byte[] buffer = (byte[])commandViewISP.ExecuteScalar();
+            connection.Close();
+            FileStream fs = new FileStream(@"C:\temp.pdf", FileMode.Create);
+            fs.Write(buffer, 0, buffer.Length);
+            fs.Close();
+            System.Diagnostics.Process.Start(@"c:\\temp.pdf");
+
+            pdfMade = true;
+
+            
+            
         }
 
         private void btnRemoveISP_Click(object sender, EventArgs e)
@@ -588,6 +608,12 @@ namespace GUI
 
         private void txtSearchClient_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (pdfMade)
+                File.Delete("c:\\temp.pdf");
         }
     }
 }

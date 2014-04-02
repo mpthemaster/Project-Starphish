@@ -2377,6 +2377,8 @@
             // dialogFileOpenImage
             // 
             this.dialogFileOpenImage.FileName = "openFileDialog1";
+            this.dialogFileOpenImage.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Fi" +
+    "les (*.gif)|*.gif|Bitmap Files (*.bmp)|*.bmp";
             // 
             // dialogFileOpenISP
             // 
@@ -2430,6 +2432,7 @@
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Sky Pie - Michael Petruzzello";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
