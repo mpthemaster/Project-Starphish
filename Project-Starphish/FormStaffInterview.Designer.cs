@@ -911,6 +911,7 @@
             this.MaximizeBox = false;
             this.Name = "FormStaffInterview";
             this.Text = "Sky Pie - Staff Interview for Michael Petruzzello";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormStaffInterview_FormClosing);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox9.ResumeLayout(false);

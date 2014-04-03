@@ -1,6 +1,4 @@
-﻿//Things Left to Do: Add a lbl that says what the selected behavior QABF is and the ability to save and exit.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,9 +23,10 @@ namespace GUI
         /// Creates a new QABF Form.
         /// </summary>
         /// <param name="behaviors">All the behaviors from a staff interview.</param>
-        public FormQABF(Behavior[] behaviors)
+        public FormQABF(Behavior[] behaviors, string intervieweeName)
         {
             InitializeComponent();
+            lblStaffInterviewee.Text = intervieweeName + " Interviewed";
             this.behaviors = behaviors;
 
             TreeNode uncompletedNode = treeViewQABFs.Nodes[0];
@@ -236,6 +235,7 @@ namespace GUI
                     if (behavior.Name == treeViewQABFs.SelectedNode.Name)
                     {
                         selectedBehavior = behavior;
+                        lblSelectedBehavior.Text = "Current Selection: " + selectedBehavior.Name;
                         break;
                     }
 
@@ -425,35 +425,51 @@ namespace GUI
 
         private void btnClearTempChanges_Click(object sender, EventArgs e)
         {
-            //Resets all temp answers to a behavior's QABF saved answers and updates this to the screen.
-            selectedBehavior.Qabf.resetTempAnswers();
+            //If the user is sure that he wants to undo all the QABF data changes since the last save for a specific behavior, then do that.
+            //Else do nothing.
+            if (MessageBox.Show("Are you sure you want undo all of your QABF data changes since your last save for " + selectedBehavior.Name + "?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                //Resets all temp answers to a behavior's QABF saved answers and updates this to the screen.
+                selectedBehavior.Qabf.resetTempAnswers();
 
-            //If the second page of QABF questions and answers is showing, then make the first page display.
-            if (!firstPage)
-                getFirstPageSetUp();
-            displayPage1();
+                //If the second page of QABF questions and answers is showing, then make the first page display.
+                if (!firstPage)
+                    getFirstPageSetUp();
+                displayPage1();
+            }
         }
 
         private void btnResetQABF_Click(object sender, EventArgs e)
         {
-            selectedBehavior.Qabf.reset();
-
-            //If the behavior's QABF has previously beens saved, change the node's parent and set its status to uncomplete.
-            if (selectedBehavior.Qabf.Completed)
+            //If the user is sure that he wants to remove all the QABF data for a specific behavior, then do that.
+            //Else do nothing.
+            if (MessageBox.Show("Are you sure you want erase all of your QABF data for " + selectedBehavior.Name + "?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                selectedBehavior.Qabf.Completed = false;
+                selectedBehavior.Qabf.reset();
 
-                string name = selectedBehavior.Name;
-                treeViewQABFs.Nodes[0].Nodes.Add(name, name);
-                treeViewQABFs.Nodes[1].Nodes.RemoveByKey(selectedBehavior.Name);
-                treeViewQABFs.Nodes[0].ExpandAll();
-                treeViewQABFs.SelectedNode = treeViewQABFs.Nodes[0].Nodes.Find(name, false)[0]; //Finds the newly created mode to select it.
+                //If the behavior's QABF has previously beens saved, change the node's parent and set its status to uncomplete.
+                if (selectedBehavior.Qabf.Completed)
+                {
+                    selectedBehavior.Qabf.Completed = false;
+
+                    string name = selectedBehavior.Name;
+                    treeViewQABFs.Nodes[0].Nodes.Add(name, name);
+                    treeViewQABFs.Nodes[1].Nodes.RemoveByKey(selectedBehavior.Name);
+                    treeViewQABFs.Nodes[0].ExpandAll();
+                    treeViewQABFs.SelectedNode = treeViewQABFs.Nodes[0].Nodes.Find(name, false)[0]; //Finds the newly created mode to select it.
+                }
+
+                //If the second page of QABF questions and answers is showing, then make the first page display.
+                if (!firstPage)
+                    getFirstPageSetUp();
+                displayPage1();
             }
+        }
 
-            //If the second page of QABF questions and answers is showing, then make the first page display.
-            if (!firstPage)
-                getFirstPageSetUp();
-            displayPage1();
+        private void FormQABF_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                e.Cancel = true;
         }
     }
 }

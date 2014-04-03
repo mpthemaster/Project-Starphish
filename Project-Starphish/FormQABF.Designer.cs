@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Uncompleted");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Completed");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Uncompleted");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Completed");
             this.lblStaffInterviewee = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.btnClearTempChanges = new System.Windows.Forms.Button();
@@ -76,20 +76,22 @@
             this.lblQ3 = new System.Windows.Forms.Label();
             this.lblQ2 = new System.Windows.Forms.Label();
             this.lblQ1 = new System.Windows.Forms.Label();
+            this.lblSelectedBehavior = new System.Windows.Forms.Label();
             this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblStaffInterviewee
             // 
-            this.lblStaffInterviewee.AutoSize = true;
-            this.lblStaffInterviewee.Location = new System.Drawing.Point(369, 9);
+            this.lblStaffInterviewee.Location = new System.Drawing.Point(12, 9);
             this.lblStaffInterviewee.Name = "lblStaffInterviewee";
-            this.lblStaffInterviewee.Size = new System.Drawing.Size(127, 13);
+            this.lblStaffInterviewee.Size = new System.Drawing.Size(783, 13);
             this.lblStaffInterviewee.TabIndex = 10;
             this.lblStaffInterviewee.Text = "Shaun Burke Interviewed";
+            this.lblStaffInterviewee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.lblSelectedBehavior);
             this.groupBox11.Controls.Add(this.btnClearTempChanges);
             this.groupBox11.Controls.Add(this.btnSaveOneQABF);
             this.groupBox11.Controls.Add(this.btnResetQABF);
@@ -640,15 +642,15 @@
             // 
             // treeViewQABFs
             // 
-            this.treeViewQABFs.Location = new System.Drawing.Point(6, 83);
+            this.treeViewQABFs.Location = new System.Drawing.Point(6, 96);
             this.treeViewQABFs.Name = "treeViewQABFs";
-            treeNode1.Name = "NodeQABFsUncompleted";
-            treeNode1.Text = "Uncompleted";
-            treeNode2.Name = "NodeQABFsCompleted";
-            treeNode2.Text = "Completed";
+            treeNode3.Name = "NodeQABFsUncompleted";
+            treeNode3.Text = "Uncompleted";
+            treeNode4.Name = "NodeQABFsCompleted";
+            treeNode4.Text = "Completed";
             this.treeViewQABFs.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
+            treeNode3,
+            treeNode4});
             this.treeViewQABFs.Size = new System.Drawing.Size(167, 281);
             this.treeViewQABFs.TabIndex = 62;
             this.treeViewQABFs.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewQABFs_AfterSelect);
@@ -680,6 +682,15 @@
             this.lblQ1.TabIndex = 27;
             this.lblQ1.Text = "1. Engages in the behavior to get attention.";
             // 
+            // lblSelectedBehavior
+            // 
+            this.lblSelectedBehavior.Location = new System.Drawing.Point(6, 74);
+            this.lblSelectedBehavior.Name = "lblSelectedBehavior";
+            this.lblSelectedBehavior.Size = new System.Drawing.Size(167, 19);
+            this.lblSelectedBehavior.TabIndex = 103;
+            this.lblSelectedBehavior.Text = "behavior Selected";
+            this.lblSelectedBehavior.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormQABF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,10 +701,10 @@
             this.MaximizeBox = false;
             this.Name = "FormQABF";
             this.Text = "Sky Pie - QABFs for Michael Petruzzello";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormQABF_FormClosing);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -745,5 +756,6 @@
         private System.Windows.Forms.Label lblQ1;
         private System.Windows.Forms.Button btnSaveOneQABF;
         private System.Windows.Forms.Button btnClearTempChanges;
+        private System.Windows.Forms.Label lblSelectedBehavior;
     }
 }

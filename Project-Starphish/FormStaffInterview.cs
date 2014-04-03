@@ -466,7 +466,7 @@ namespace GUI
             //Else behaviors don't exist, so show an error message telling the user that a behavior needs to be added first.
             if (behaviors.Count > 0)
             {
-                FormQABF formQABF = new FormQABF(behaviors.ToArray());
+                FormQABF formQABF = new FormQABF(behaviors.ToArray(), txtStaffIntervieweeName.Text);
                 formQABF.ShowDialog();
             }
             else
@@ -1115,6 +1115,12 @@ namespace GUI
             }
             else
                 MessageBox.Show("An Antecedent needs to be selected before it can be removed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void FormStaffInterview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                e.Cancel = true;
         }
     }
 }

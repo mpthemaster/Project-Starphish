@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
-
 namespace GUI
 {
     public partial class FormMain : Form
@@ -433,9 +432,6 @@ namespace GUI
             System.Diagnostics.Process.Start(@"c:\\temp.pdf");
 
             pdfMade = true;
-
-            
-            
         }
 
         private void btnRemoveISP_Click(object sender, EventArgs e)
@@ -624,6 +620,12 @@ namespace GUI
             {
                 listClients.SelectedItem = searchClient;
             }
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit Sky Pie? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                e.Cancel = true;
         }
     }
 }
