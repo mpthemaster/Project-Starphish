@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +18,18 @@ namespace GUI
         private SqlConnection connection;
         private SqlCommand command;
         private string[] arrClient;
-        
 
-        public FormSearch()
+        /// <summary>
+        /// Creates a Form for searching for a client in the db.
+        /// </summary>
+        /// <param name="nameToSearchFor">The name of the client to search for.</param>
+        public FormSearch(string nameToSearchFor)
         {
-            InitializeComponent(); 
+            InitializeComponent();
+
+            //Set the name in the searchbox to the name already entered in the search box. Use this for the initial search.
+            txtSearchBox.Text = nameToSearchFor;
+
             theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
             searchStatement = "SELECT * FROM PERSON";
             connection = new SqlConnection(theConnectionString);
@@ -61,7 +68,6 @@ namespace GUI
             {
                 listClientSearch.Items.Add(arrClient[j]);
             }
-            
         }
 
         private void listClientSearch_SelectedIndexChanged(object sender, EventArgs e)

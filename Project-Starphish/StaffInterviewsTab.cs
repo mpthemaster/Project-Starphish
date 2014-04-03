@@ -99,39 +99,42 @@ namespace GUI
         private void btnRemoveInterview_Click(object sender, EventArgs e)
         {
             //If a staff interview is selected and the user confirms the removal, then remove the staff interview.
-            if (lstInterviews.SelectedItem != null && MessageBox.Show("Are you sure you want to remove the selected staff interview? The data contained within cannot be retrieved after being removed.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (lstInterviews.SelectedItem != null)
             {
-                string name;
-                DateTime date;
-                getInterviewInfo(out name, out date);
-                connection.Open();
+                if (MessageBox.Show("Are you sure you want to remove the selected staff interview? The data contained within cannot be retrieved after being removed.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    string name;
+                    DateTime date;
+                    getInterviewInfo(out name, out date);
+                    connection.Open();
 
-                //Remove all strength data associated with the staff interview.
-                string statement = "DELETE FROM STAFF_INTERVIEW_STRENGTH WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
-                SqlCommand command = new SqlCommand(statement, connection);
-                command.ExecuteNonQuery();
+                    //Remove all strength data associated with the staff interview.
+                    string statement = "DELETE FROM STAFF_INTERVIEW_STRENGTH WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                    SqlCommand command = new SqlCommand(statement, connection);
+                    command.ExecuteNonQuery();
 
-                //Remove all antecedent data associated with the staff interview.
-                statement = "DELETE FROM STAFF_INTERVIEW_ANTECEDENT WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
-                command = new SqlCommand(statement, connection);
-                command.ExecuteNonQuery();
+                    //Remove all antecedent data associated with the staff interview.
+                    statement = "DELETE FROM STAFF_INTERVIEW_ANTECEDENT WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                    command = new SqlCommand(statement, connection);
+                    command.ExecuteNonQuery();
 
-                //Remove all behavior data associated with the staff interview.
-                statement = "DELETE FROM STAFF_INTERVIEW_BEHAVIOR WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
-                command = new SqlCommand(statement, connection);
-                command.ExecuteNonQuery();
+                    //Remove all behavior data associated with the staff interview.
+                    statement = "DELETE FROM STAFF_INTERVIEW_BEHAVIOR WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                    command = new SqlCommand(statement, connection);
+                    command.ExecuteNonQuery();
 
-                //Remove all interview data associated with the staff interview.
-                statement = "DELETE FROM STAFF_INTERVIEW WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
-                command = new SqlCommand(statement, connection);
-                command.ExecuteNonQuery();
+                    //Remove all interview data associated with the staff interview.
+                    statement = "DELETE FROM STAFF_INTERVIEW WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + date + "' AND STAFF_INTERVIEWED='" + name + "'";
+                    command = new SqlCommand(statement, connection);
+                    command.ExecuteNonQuery();
 
-                connection.Close();
-                mainStaffInterview();
+                    connection.Close();
+                    mainStaffInterview();
 
-                //Disable the remove and view buttons because no interview is selected now.
-                btnRemoveInterview.Enabled = false;
-                btnViewInterview.Enabled = false;
+                    //Disable the remove and view buttons because no interview is selected now.
+                    btnRemoveInterview.Enabled = false;
+                    btnViewInterview.Enabled = false;
+                }
             }
             else
                 MessageBox.Show("An interview needs to be selected before one can be removed.", "Error - No Interview Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);

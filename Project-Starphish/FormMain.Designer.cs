@@ -29,38 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2.75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnSearchClients = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnModifyClient = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -263,6 +262,9 @@
             this.nEW_LIGHT_SUPPORTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter();
             this.nEXT_OF_KINTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter();
             this.pERSON_ISPTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSON_ISPTableAdapter();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchClients = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -317,7 +319,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.btnSearchClients);
+            this.tabPage1.Controls.Add(this.txtSearch);
             this.tabPage1.Controls.Add(this.btnCancel);
             this.tabPage1.Controls.Add(this.btnModifyClient);
             this.tabPage1.Controls.Add(this.groupBox17);
@@ -337,17 +341,6 @@
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Client";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchClients
-            // 
-            this.btnSearchClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchClients.Location = new System.Drawing.Point(9, 475);
-            this.btnSearchClients.Name = "btnSearchClients";
-            this.btnSearchClients.Size = new System.Drawing.Size(214, 45);
-            this.btnSearchClients.TabIndex = 51;
-            this.btnSearchClients.Text = "Search";
-            this.btnSearchClients.UseVisualStyleBackColor = true;
-            this.btnSearchClients.Click += new System.EventHandler(this.btnSearchClients_Click);
             // 
             // btnCancel
             // 
@@ -1534,14 +1527,14 @@
             this.dataGridViewDailyBehaviorTracking.AllowUserToOrderColumns = true;
             this.dataGridViewDailyBehaviorTracking.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridViewDailyBehaviorTracking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDailyBehaviorTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewDailyBehaviorTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
             this.ColumnShift,
@@ -1557,17 +1550,17 @@
             // 
             // ColumnDate
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnDate.HeaderText = "Date";
             this.ColumnDate.Name = "ColumnDate";
             this.ColumnDate.ReadOnly = true;
             // 
             // ColumnShift
             // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle10;
             this.ColumnShift.HeaderText = "Shift";
             this.ColumnShift.Items.AddRange(new object[] {
             "7a-3p",
@@ -1581,8 +1574,8 @@
             // ColumnBehavior
             // 
             this.ColumnBehavior.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.NullValue = "Not Occurred";
-            this.ColumnBehavior.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.NullValue = "Not Occurred";
+            this.ColumnBehavior.DefaultCellStyle = dataGridViewCellStyle11;
             this.ColumnBehavior.HeaderText = "Behavior";
             this.ColumnBehavior.Name = "ColumnBehavior";
             this.ColumnBehavior.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1590,8 +1583,8 @@
             // ColumnSeverity
             // 
             this.ColumnSeverity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.NullValue = "Moderate";
-            this.ColumnSeverity.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.NullValue = "Moderate";
+            this.ColumnSeverity.DefaultCellStyle = dataGridViewCellStyle12;
             this.ColumnSeverity.HeaderText = "Severity";
             this.ColumnSeverity.Items.AddRange(new object[] {
             "Not Ocurred",
@@ -1605,17 +1598,17 @@
             // ColumnShiftTotal
             // 
             this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Format = "N0";
+            dataGridViewCellStyle13.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColumnShiftTotal.HeaderText = "Shift Total";
             this.ColumnShiftTotal.Name = "ColumnShiftTotal";
             // 
             // ColumnStaffNames
             // 
             this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle14;
             this.ColumnStaffNames.HeaderText = "Staff Name(s)";
             this.ColumnStaffNames.MinimumWidth = 100;
             this.ColumnStaffNames.Name = "ColumnStaffNames";
@@ -1895,24 +1888,24 @@
             // 
             // chartPyramidOccurences
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartPyramidOccurences.ChartAreas.Add(chartArea1);
+            chartArea6.Name = "ChartArea1";
+            this.chartPyramidOccurences.ChartAreas.Add(chartArea6);
             this.chartPyramidOccurences.ContextMenuStrip = this.contextMenuSaveGraphs;
-            legend1.Name = "Legend1";
-            this.chartPyramidOccurences.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chartPyramidOccurences.Legends.Add(legend3);
             this.chartPyramidOccurences.Location = new System.Drawing.Point(624, 325);
             this.chartPyramidOccurences.Name = "chartPyramidOccurences";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartPyramidOccurences.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chartPyramidOccurences.Series.Add(series7);
             this.chartPyramidOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPyramidOccurences.TabIndex = 35;
             this.chartPyramidOccurences.Text = "chart5";
-            title1.Name = "Title1";
-            title1.Text = "# Daily Occurences";
-            this.chartPyramidOccurences.Titles.Add(title1);
+            title5.Name = "Title1";
+            title5.Text = "# Daily Occurences";
+            this.chartPyramidOccurences.Titles.Add(title5);
             // 
             // contextMenuSaveGraphs
             // 
@@ -1938,68 +1931,68 @@
             // 
             // chartSumOfBehaviors
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartSumOfBehaviors.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartSumOfBehaviors.ChartAreas.Add(chartArea1);
             this.chartSumOfBehaviors.Location = new System.Drawing.Point(151, 325);
             this.chartSumOfBehaviors.Name = "chartSumOfBehaviors";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.chartSumOfBehaviors.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.chartSumOfBehaviors.Series.Add(series1);
             this.chartSumOfBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartSumOfBehaviors.TabIndex = 34;
             this.chartSumOfBehaviors.Text = "chart4";
-            title2.Name = "Title1";
-            title2.Text = "Sum of Arguing";
-            this.chartSumOfBehaviors.Titles.Add(title2);
+            title1.Name = "Title1";
+            title1.Text = "Sum of Arguing";
+            this.chartSumOfBehaviors.Titles.Add(title1);
             // 
             // chartPieDailyOccurences
             // 
-            chartArea3.Area3DStyle.Enable3D = true;
-            chartArea3.Area3DStyle.Inclination = 60;
-            chartArea3.Name = "ChartArea1";
-            this.chartPieDailyOccurences.ChartAreas.Add(chartArea3);
+            chartArea7.Area3DStyle.Enable3D = true;
+            chartArea7.Area3DStyle.Inclination = 60;
+            chartArea7.Name = "ChartArea1";
+            this.chartPieDailyOccurences.ChartAreas.Add(chartArea7);
             this.chartPieDailyOccurences.ContextMenuStrip = this.contextMenuSaveGraphs;
-            legend2.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder;
-            legend2.Name = "Legend1";
-            this.chartPieDailyOccurences.Legends.Add(legend2);
+            legend1.LegendItemOrder = System.Windows.Forms.DataVisualization.Charting.LegendItemOrder.SameAsSeriesOrder;
+            legend1.Name = "Legend1";
+            this.chartPieDailyOccurences.Legends.Add(legend1);
             this.chartPieDailyOccurences.Location = new System.Drawing.Point(624, 64);
             this.chartPieDailyOccurences.Name = "chartPieDailyOccurences";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartPieDailyOccurences.Series.Add(series3);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartPieDailyOccurences.Series.Add(series8);
             this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
             this.chartPieDailyOccurences.TabIndex = 33;
             this.chartPieDailyOccurences.Text = "chart3";
-            title3.Name = "Title1";
-            title3.Text = "# Daily Occurences";
-            this.chartPieDailyOccurences.Titles.Add(title3);
+            title6.Name = "Title1";
+            title6.Text = "# Daily Occurences";
+            this.chartPieDailyOccurences.Titles.Add(title6);
             // 
             // chartTotalBehaviors
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartTotalBehaviors.ChartAreas.Add(chartArea4);
+            chartArea3.Name = "ChartArea1";
+            this.chartTotalBehaviors.ChartAreas.Add(chartArea3);
             this.chartTotalBehaviors.ContextMenuStrip = this.contextMenuSaveGraphs;
             this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 64);
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
-            series4.Name = "Series1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Name = "TrendLine";
-            this.chartTotalBehaviors.Series.Add(series4);
-            this.chartTotalBehaviors.Series.Add(series5);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series3.Name = "Series1";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Name = "TrendLine";
+            this.chartTotalBehaviors.Series.Add(series3);
+            this.chartTotalBehaviors.Series.Add(series9);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(381, 255);
             this.chartTotalBehaviors.SuppressExceptions = true;
             this.chartTotalBehaviors.TabIndex = 32;
             this.chartTotalBehaviors.Text = "chart2";
-            title4.Name = "Title1";
-            title4.Text = "Total Behaviors";
-            this.chartTotalBehaviors.Titles.Add(title4);
+            title3.Name = "Title1";
+            title3.Text = "Total Behaviors";
+            this.chartTotalBehaviors.Titles.Add(title3);
             // 
             // comboBehaviorsToGraph
             // 
@@ -2053,47 +2046,47 @@
             // 
             // chartQABFAnalysis
             // 
-            chartArea5.Area3DStyle.IsRightAngleAxes = false;
-            chartArea5.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea5.Area3DStyle.Rotation = 10;
-            chartArea5.Name = "ChartArea1";
-            this.chartQABFAnalysis.ChartAreas.Add(chartArea5);
+            chartArea4.Area3DStyle.IsRightAngleAxes = false;
+            chartArea4.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea4.Area3DStyle.Rotation = 10;
+            chartArea4.Name = "ChartArea1";
+            this.chartQABFAnalysis.ChartAreas.Add(chartArea4);
             this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
             this.chartQABFAnalysis.Name = "chartQABFAnalysis";
             this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.ChartArea = "ChartArea1";
-            series6.IsXValueIndexed = true;
-            series6.Name = "Series1";
-            dataPoint1.AxisLabel = "Attention";
-            dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataPoint1.IsValueShownAsLabel = false;
-            dataPoint1.IsVisibleInLegend = true;
-            dataPoint1.Label = "2.75";
-            dataPoint1.LabelAngle = 0;
-            dataPoint1.LabelBorderColor = System.Drawing.Color.Transparent;
-            dataPoint1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint1.LabelBorderWidth = 1;
-            dataPoint1.LegendText = "";
-            dataPoint2.AxisLabel = "Escape";
-            dataPoint2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataPoint2.Label = "2";
-            dataPoint3.AxisLabel = "Non-Social";
-            dataPoint3.Color = System.Drawing.Color.Gray;
-            dataPoint3.Label = "1.6";
-            dataPoint4.AxisLabel = "Physical";
-            dataPoint4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataPoint4.Label = "1.2";
-            dataPoint5.AxisLabel = "Tangible";
-            dataPoint5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataPoint5.Label = "1.6";
-            series6.Points.Add(dataPoint1);
-            series6.Points.Add(dataPoint2);
-            series6.Points.Add(dataPoint3);
-            series6.Points.Add(dataPoint4);
-            series6.Points.Add(dataPoint5);
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chartQABFAnalysis.Series.Add(series6);
+            series4.ChartArea = "ChartArea1";
+            series4.IsXValueIndexed = true;
+            series4.Name = "Series1";
+            dataPoint6.AxisLabel = "Attention";
+            dataPoint6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataPoint6.IsValueShownAsLabel = false;
+            dataPoint6.IsVisibleInLegend = true;
+            dataPoint6.Label = "2.75";
+            dataPoint6.LabelAngle = 0;
+            dataPoint6.LabelBorderColor = System.Drawing.Color.Transparent;
+            dataPoint6.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint6.LabelBorderWidth = 1;
+            dataPoint6.LegendText = "";
+            dataPoint7.AxisLabel = "Escape";
+            dataPoint7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint7.Label = "2";
+            dataPoint8.AxisLabel = "Non-Social";
+            dataPoint8.Color = System.Drawing.Color.Gray;
+            dataPoint8.Label = "1.6";
+            dataPoint9.AxisLabel = "Physical";
+            dataPoint9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataPoint9.Label = "1.2";
+            dataPoint10.AxisLabel = "Tangible";
+            dataPoint10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataPoint10.Label = "1.6";
+            series4.Points.Add(dataPoint6);
+            series4.Points.Add(dataPoint7);
+            series4.Points.Add(dataPoint8);
+            series4.Points.Add(dataPoint9);
+            series4.Points.Add(dataPoint10);
+            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chartQABFAnalysis.Series.Add(series4);
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
             this.chartQABFAnalysis.TabIndex = 0;
             this.chartQABFAnalysis.Text = "chart1";
@@ -2414,6 +2407,32 @@
             // 
             this.pERSON_ISPTableAdapter.ClearBeforeFill = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(6, 27);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(136, 20);
+            this.txtSearch.TabIndex = 52;
+            // 
+            // btnSearchClients
+            // 
+            this.btnSearchClients.Location = new System.Drawing.Point(148, 24);
+            this.btnSearchClients.Name = "btnSearchClients";
+            this.btnSearchClients.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchClients.TabIndex = 53;
+            this.btnSearchClients.Text = "Search";
+            this.btnSearchClients.UseVisualStyleBackColor = true;
+            this.btnSearchClients.Click += new System.EventHandler(this.btnSearchClients_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Search for a Client";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2429,6 +2448,7 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eMERGENCY_CONTACTBindingSource)).EndInit();
@@ -2684,6 +2704,8 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.Button btnSearchClients;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
     }
 }
 

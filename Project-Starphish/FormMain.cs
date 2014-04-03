@@ -613,6 +613,7 @@ namespace GUI
                 File.Delete("c:\\temp.pdf");
         }
 
+        //Uh, Ken, you're not even getting a variable from searchClient. You're just setting the listbox equal to the searchClient. X D
         private void btnSearchClients_Click(object sender, EventArgs e)
         {
             FormSearch searchClient = new FormSearch();
