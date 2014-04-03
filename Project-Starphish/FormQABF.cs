@@ -482,7 +482,7 @@ namespace GUI
             //If the user pressed the exit box, check if there are any unsaved changes.
             if (!saveAll)
                 for (int i = 0; i < behaviors.Length; i++)
-                    if (behaviors[i].Qabf.isModified() || behaviors[i].Qabf.Completed != originalBehaviors[i].Qabf.Completed)
+                    if (behaviors[i].Qabf.isModified() || (originalBehaviors[i].Qabf != null && behaviors[i].Qabf.Completed != originalBehaviors[i].Qabf.Completed))
                     {
                         unsavedModification = true;
                         break;

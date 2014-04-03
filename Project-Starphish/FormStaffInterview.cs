@@ -119,6 +119,7 @@ namespace GUI
                     saveAntecedents();
 
                     //Now save an entry into the STAFF_INTERVIEW_QABF table.
+                    saveQABFs();
 
                     connection.Close();
                     form.mainStaffInterview();
@@ -243,6 +244,35 @@ namespace GUI
                     command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
                     command.Parameters.AddWithValue("@ANTECEDENT", key);
                     command.Parameters.AddWithValue("@CATEGORY", behavior.Antecedents[key]);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Saves all the behaviors' QABFs into the database.
+        /// </summary>
+        private void saveQABFs()
+        {
+            //Connect to the database.
+            string statement;
+            SqlCommand command;
+
+            statement = "INSERT INTO STAFF_INTERVIEW_QABF (PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, QABF_STATUS, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q20, Q21, Q22, Q23, Q24, Q25) VALUES       (@PERSON_ID, @INTERVIEW_DATE, @STAFF_INTERVIEWED, @BEHAVIOR, @QABF_STATUS, @Q1, @Q2, @Q3, @Q4, @Q5, @Q6, @Q7, @Q8, @Q9, @Q10, @Q11, @Q12, @Q13, @Q14, @Q15, @Q16, @Q17, @Q18, @Q19, @Q20, @Q21, @Q22, @Q23, @Q24, @Q25)";
+            command = new SqlCommand(statement, connection);
+            foreach (Behavior behavior in behaviors)
+            {
+                if (behavior.Qabf != null)
+                {
+                    command.Parameters.AddWithValue("@PERSON_ID", personId);
+                    command.Parameters.Add("@INTERVIEW_DATE", SqlDbType.DateTime).Value = datePickerStaffInterview.Value;
+                    command.Parameters.AddWithValue("@STAFF_INTERVIEWED", txtStaffIntervieweeName.Text);
+                    command.Parameters.AddWithValue("@BEHAVIOR", behavior.Name);
+                    command.Parameters.AddWithValue("@QABF_STATUS", behavior.Qabf.Completed);
+
+                    for (int i = 0; i < behavior.Qabf.questions.Length; i++)
+                        command.Parameters.AddWithValue("@Q" + (i + 1), behavior.Qabf.questions[i].Answer);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
                 }
