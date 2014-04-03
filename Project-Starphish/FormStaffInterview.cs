@@ -1,5 +1,7 @@
 ﻿/*
- *  Remove and Add buttons for Parts I and III should be disabled and enabled as appropriate, though error code is in place if I don't have the time to do this.
+ *  //statement =
+                //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
+                //command = new SqlCommand(statement, connection);
  *
  * Possible Bug: While not causing any problems right now, it should be known that behaviors can have a frequency called "Less Often" while the parent node for that
  *              is called "LessOften". Any comparisons of these two and this issue will need to be fixed.
@@ -17,6 +19,9 @@ namespace GUI
     {
         //Allows the form to have its interview list box appropriately updated.
         private FormMain form;
+
+        //Whether the form is being closed and everything has been saved.
+        private bool saveAll = false;
 
         //All behaviors that have been added in an interview.
         private List<Behavior> behaviors = new List<Behavior>();
@@ -117,6 +122,7 @@ namespace GUI
 
                     connection.Close();
                     form.mainStaffInterview();
+                    saveAll = true;
                     this.Close();
                 }
             }
@@ -127,12 +133,10 @@ namespace GUI
                 updateBehaviors();
                 updateStaffInterview();
 
+                saveAll = true;
                 connection.Close();
                 form.mainStaffInterview();
                 this.Close();
-                //statement =
-                //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
-                //command = new SqlCommand(statement, connection);
             }
         }
 
@@ -1119,7 +1123,7 @@ namespace GUI
 
         private void FormStaffInterview_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+            if (!saveAll && MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 e.Cancel = true;
         }
     }

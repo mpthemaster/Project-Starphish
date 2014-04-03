@@ -85,5 +85,35 @@ namespace GUI
             for (int i = 0; i < questions.GetLength(0); i++)
                 questions[i].Answer = TempAnswers[i];
         }
+
+        /// <summary>
+        /// Performs a deep copy of the QABF.
+        /// </summary>
+        /// <returns>Returns a deep copy of the QABF.</returns>
+        public QABF copy()
+        {
+            QABF copy = new QABF();
+            copy.Completed = Completed;
+
+            //Makes a deep copy of the questions' answers.
+            for (int i = 0; i < questions.Length; i++)
+                copy.questions[i].Answer = questions[i].Answer;
+            copy.resetTempAnswers();
+            return copy;
+        }
+
+        /// <summary>
+        /// Checks if this QABF has any unsaved changes.
+        /// </summary>
+        /// <returns></returns>
+        public bool isModified()
+        {
+            //If a temp answer doesn't match a saved answer, then there is an unsaved modification, so return true.
+            //Else return false.
+            for (int i = 0; i < TempAnswers.Length; i++)
+                if (TempAnswers[i] != questions[i].Answer)
+                    return true;
+            return false;
+        }
     }
 }

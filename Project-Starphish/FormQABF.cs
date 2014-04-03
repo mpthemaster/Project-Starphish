@@ -12,10 +12,10 @@ namespace GUI
 {
     public partial class FormQABF : Form
     {
-        //Whether or not the questions are on the first page.
-        private bool firstPage = true;
+        //Whether or not the questions are on the first page. Whether or not all changes made should be saved when the form is closed.
+        private bool firstPage = true, saveAll = false;
 
-        private Behavior[] behaviors;
+        private Behavior[] originalBehaviors, behaviors; //The original behaviors stay unchanged unless their copies' (behaviors) changes are saved.
 
         private Behavior selectedBehavior; //The currently selected behavior from the list of nodes.
 
@@ -23,11 +23,20 @@ namespace GUI
         /// Creates a new QABF Form.
         /// </summary>
         /// <param name="behaviors">All the behaviors from a staff interview.</param>
-        public FormQABF(Behavior[] behaviors, string intervieweeName)
+        public FormQABF(Behavior[] originalBehavior, string intervieweeName)
         {
             InitializeComponent();
             lblStaffInterviewee.Text = intervieweeName + " Interviewed";
-            this.behaviors = behaviors;
+            originalBehaviors = originalBehavior;
+
+            //Make a copy of each behavior so that changes aren't automatically saved to them.
+            behaviors = new Behavior[originalBehaviors.Length];
+            for (int i = 0; i < behaviors.Length; i++)
+            {
+                behaviors[i] = new Behavior(originalBehaviors[i].Name, originalBehaviors[i].Severity, originalBehaviors[i].Frequency);
+                if (originalBehaviors[i].Qabf != null)
+                    behaviors[i].Qabf = originalBehaviors[i].Qabf.copy();
+            }
 
             TreeNode uncompletedNode = treeViewQABFs.Nodes[0];
             TreeNode completedNode = treeViewQABFs.Nodes[1];
@@ -468,8 +477,35 @@ namespace GUI
 
         private void FormQABF_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+            bool unsavedModification = false;
+
+            //If the user pressed the exit box, check if there are any unsaved changes.
+            if (!saveAll)
+                for (int i = 0; i < behaviors.Length; i++)
+                    if (behaviors[i].Qabf.isModified() || behaviors[i].Qabf.Completed != originalBehaviors[i].Qabf.Completed)
+                    {
+                        unsavedModification = true;
+                        break;
+                    }
+
+            if (unsavedModification && unsavedModification && MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 e.Cancel = true;
+        }
+
+        private void btnSaveQABFs_Click(object sender, EventArgs e)
+        {
+            //Save any unsaved modifications to the copies and then to the actual behaviors from the copies.
+            for (int i = 0; i < behaviors.Length; i++)
+            {
+                if (behaviors[i].Qabf.isModified())
+                {
+                    behaviors[i].Qabf.Completed = true;
+                    behaviors[i].Qabf.saveTempAnswers();
+                }
+                originalBehaviors[i].Qabf = behaviors[i].Qabf;
+            }
+            saveAll = true;
+            this.Close();
         }
     }
 }

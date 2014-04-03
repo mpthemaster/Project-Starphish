@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Uncompleted");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Completed");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Uncompleted");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Completed");
             this.lblStaffInterviewee = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.lblSelectedBehavior = new System.Windows.Forms.Label();
             this.btnClearTempChanges = new System.Windows.Forms.Button();
             this.btnSaveOneQABF = new System.Windows.Forms.Button();
             this.btnResetQABF = new System.Windows.Forms.Button();
@@ -76,7 +77,6 @@
             this.lblQ3 = new System.Windows.Forms.Label();
             this.lblQ2 = new System.Windows.Forms.Label();
             this.lblQ1 = new System.Windows.Forms.Label();
-            this.lblSelectedBehavior = new System.Windows.Forms.Label();
             this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,6 +142,15 @@
             this.groupBox11.TabIndex = 9;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Part 4: QABF";
+            // 
+            // lblSelectedBehavior
+            // 
+            this.lblSelectedBehavior.Location = new System.Drawing.Point(6, 74);
+            this.lblSelectedBehavior.Name = "lblSelectedBehavior";
+            this.lblSelectedBehavior.Size = new System.Drawing.Size(167, 19);
+            this.lblSelectedBehavior.TabIndex = 103;
+            this.lblSelectedBehavior.Text = "behavior Selected";
+            this.lblSelectedBehavior.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClearTempChanges
             // 
@@ -639,18 +648,19 @@
             this.btnSaveQABFs.TabIndex = 63;
             this.btnSaveQABFs.Text = "Save All and Exit";
             this.btnSaveQABFs.UseVisualStyleBackColor = true;
+            this.btnSaveQABFs.Click += new System.EventHandler(this.btnSaveQABFs_Click);
             // 
             // treeViewQABFs
             // 
             this.treeViewQABFs.Location = new System.Drawing.Point(6, 96);
             this.treeViewQABFs.Name = "treeViewQABFs";
-            treeNode3.Name = "NodeQABFsUncompleted";
-            treeNode3.Text = "Uncompleted";
-            treeNode4.Name = "NodeQABFsCompleted";
-            treeNode4.Text = "Completed";
+            treeNode1.Name = "NodeQABFsUncompleted";
+            treeNode1.Text = "Uncompleted";
+            treeNode2.Name = "NodeQABFsCompleted";
+            treeNode2.Text = "Completed";
             this.treeViewQABFs.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
+            treeNode1,
+            treeNode2});
             this.treeViewQABFs.Size = new System.Drawing.Size(167, 281);
             this.treeViewQABFs.TabIndex = 62;
             this.treeViewQABFs.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewQABFs_AfterSelect);
@@ -681,15 +691,6 @@
             this.lblQ1.Size = new System.Drawing.Size(211, 13);
             this.lblQ1.TabIndex = 27;
             this.lblQ1.Text = "1. Engages in the behavior to get attention.";
-            // 
-            // lblSelectedBehavior
-            // 
-            this.lblSelectedBehavior.Location = new System.Drawing.Point(6, 74);
-            this.lblSelectedBehavior.Name = "lblSelectedBehavior";
-            this.lblSelectedBehavior.Size = new System.Drawing.Size(167, 19);
-            this.lblSelectedBehavior.TabIndex = 103;
-            this.lblSelectedBehavior.Text = "behavior Selected";
-            this.lblSelectedBehavior.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormQABF
             // 
