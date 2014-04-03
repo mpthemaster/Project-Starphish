@@ -619,7 +619,7 @@ namespace GUI
 
         private void btnSearchClients_Click(object sender, EventArgs e)
         {
-            Search searchClient = new Search();
+            FormSearch searchClient = new FormSearch();
             if (searchClient.ShowDialog() == DialogResult.OK)
             {
                 listClients.SelectedItem = searchClient;

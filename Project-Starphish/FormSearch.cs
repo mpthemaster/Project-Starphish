@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Search : Form
+    public partial class FormSearch : Form
     {
         private string theConnectionString;
         private string searchStatement;
@@ -20,7 +20,7 @@ namespace GUI
         private string[] arrClient;
         
 
-        public Search()
+        public FormSearch()
         {
             InitializeComponent(); 
             theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";

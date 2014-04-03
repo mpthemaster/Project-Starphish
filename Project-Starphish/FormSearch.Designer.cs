@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Search
+    partial class FormSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 13);
+            this.label1.Size = new System.Drawing.Size(207, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Search for a person by their Last Name.";
+            this.label1.Text = "Search for a person by his/her Last Name.";
             // 
             // listClientSearch
             // 
@@ -91,6 +91,7 @@
             this.Controls.Add(this.btnSearchOk);
             this.Controls.Add(this.listClientSearch);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "Search";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Search_Load);

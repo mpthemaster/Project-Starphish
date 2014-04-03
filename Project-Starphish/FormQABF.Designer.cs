@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Uncompleted");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Completed");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Uncompleted");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Completed");
             this.lblStaffInterviewee = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnClearTempChanges = new System.Windows.Forms.Button();
             this.btnSaveOneQABF = new System.Windows.Forms.Button();
             this.btnResetQABF = new System.Windows.Forms.Button();
             this.lblPageNum = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.lblQ3 = new System.Windows.Forms.Label();
             this.lblQ2 = new System.Windows.Forms.Label();
             this.lblQ1 = new System.Windows.Forms.Label();
-            this.btnClearTempChanges = new System.Windows.Forms.Button();
             this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,6 +140,16 @@
             this.groupBox11.TabIndex = 9;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Part 4: QABF";
+            // 
+            // btnClearTempChanges
+            // 
+            this.btnClearTempChanges.Location = new System.Drawing.Point(42, 48);
+            this.btnClearTempChanges.Name = "btnClearTempChanges";
+            this.btnClearTempChanges.Size = new System.Drawing.Size(95, 23);
+            this.btnClearTempChanges.TabIndex = 102;
+            this.btnClearTempChanges.Text = "Clear Changes";
+            this.btnClearTempChanges.UseVisualStyleBackColor = true;
+            this.btnClearTempChanges.Click += new System.EventHandler(this.btnClearTempChanges_Click);
             // 
             // btnSaveOneQABF
             // 
@@ -632,13 +642,13 @@
             // 
             this.treeViewQABFs.Location = new System.Drawing.Point(6, 83);
             this.treeViewQABFs.Name = "treeViewQABFs";
-            treeNode5.Name = "NodeQABFsUncompleted";
-            treeNode5.Text = "Uncompleted";
-            treeNode6.Name = "NodeQABFsCompleted";
-            treeNode6.Text = "Completed";
+            treeNode1.Name = "NodeQABFsUncompleted";
+            treeNode1.Text = "Uncompleted";
+            treeNode2.Name = "NodeQABFsCompleted";
+            treeNode2.Text = "Completed";
             this.treeViewQABFs.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
+            treeNode1,
+            treeNode2});
             this.treeViewQABFs.Size = new System.Drawing.Size(167, 281);
             this.treeViewQABFs.TabIndex = 62;
             this.treeViewQABFs.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewQABFs_AfterSelect);
@@ -670,16 +680,6 @@
             this.lblQ1.TabIndex = 27;
             this.lblQ1.Text = "1. Engages in the behavior to get attention.";
             // 
-            // btnClearTempChanges
-            // 
-            this.btnClearTempChanges.Location = new System.Drawing.Point(42, 48);
-            this.btnClearTempChanges.Name = "btnClearTempChanges";
-            this.btnClearTempChanges.Size = new System.Drawing.Size(95, 23);
-            this.btnClearTempChanges.TabIndex = 102;
-            this.btnClearTempChanges.Text = "Clear Changes";
-            this.btnClearTempChanges.UseVisualStyleBackColor = true;
-            this.btnClearTempChanges.Click += new System.EventHandler(this.btnClearTempChanges_Click);
-            // 
             // FormQABF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,6 +687,7 @@
             this.ClientSize = new System.Drawing.Size(810, 573);
             this.Controls.Add(this.lblStaffInterviewee);
             this.Controls.Add(this.groupBox11);
+            this.MaximizeBox = false;
             this.Name = "FormQABF";
             this.Text = "Sky Pie - QABFs for Michael Petruzzello";
             this.groupBox11.ResumeLayout(false);
