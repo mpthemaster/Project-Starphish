@@ -132,6 +132,7 @@ namespace GUI
                 updateStrengths();
                 updateAntecedents();
                 updateBehaviors();
+                updateQABFs();
                 updateStaffInterview();
 
                 saveAll = true;
@@ -311,6 +312,7 @@ namespace GUI
             loadStrengths();
             loadBehaviors();
             loadAntecedents();
+            loadQABFs();
             connection.Close();
         }
 
@@ -438,6 +440,45 @@ namespace GUI
                             if (!behaviorNode[0].Nodes.ContainsKey(behaviorCategory))
                                 behaviorNode[0].Nodes.Add(behaviorCategory, behaviorCategory);
                             behaviorNode[0].Nodes[behaviorNode[0].Nodes.IndexOfKey(behaviorCategory)].Nodes.Add(behaviorAntecedent, behaviorAntecedent);
+                            break;
+                        }
+                }
+            reader.Close();
+        }
+
+        /// <summary>
+        /// Loads and displays the staff interview's behaviors' QABFs.
+        /// </summary>
+        private void loadQABFs()
+        {
+            //Connect to the database.
+            SqlDataReader reader;
+            SqlCommand command;
+            string statement;
+
+            statement = "SELECT PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED, BEHAVIOR, QABF_STATUS, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q20, Q21, Q22, Q23, Q24, Q25 FROM STAFF_INTERVIEW_QABF";
+            command = new SqlCommand(statement, connection);
+            reader = command.ExecuteReader();
+
+            //Get the information from the Staff Interview and display it.
+            while (reader.Read())
+                if ((int)reader["PERSON_ID"] == personId && ((DateTime)reader["INTERVIEW_DATE"]) == interviewDate && (string)reader["STAFF_INTERVIEWED"] == intervieweeName)
+                {
+                    string behaviorName = (string)reader["BEHAVIOR"];
+
+                    //Figure out what behavior this QABF belongs to, and then add it to it.
+                    foreach (Behavior behavior in behaviors)
+                        if (behavior.Name == behaviorName)
+                        {
+                            behavior.Qabf = new QABF();
+                            if ((string)reader["QABF_STATUS"] == "false")
+                                behavior.Qabf.Completed = false;
+                            else
+                                behavior.Qabf.Completed = true;
+
+                            for (int i = 0; i < behavior.Qabf.questions.Length; i++)
+                                behavior.Qabf.questions[i].Answer = (string)reader["Q" + (i + 1)];
+                            break;
                         }
                 }
             reader.Close();
@@ -477,6 +518,17 @@ namespace GUI
         }
 
         /// <summary>
+        /// Updates the database's QABF data with the modified data by first deleting all existing records and then adding all the ones from the form in.
+        /// </summary>
+        private void updateQABFs()
+        {
+            //Connect to the database.
+            string statement = "DELETE FROM STAFF_INTERVIEW_QABF WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
+            SqlCommand command = new SqlCommand(statement, connection);
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
         /// Updates the database's behaviors data with the modified data by first deleting all existing records and then adding all the ones from the form in.
         /// </summary>
         private void updateStaffInterview()
@@ -489,6 +541,7 @@ namespace GUI
             saveStrengths();
             saveBehaviors();
             saveAntecedents();
+            saveQABFs();
         }
 
         /// <summary>
