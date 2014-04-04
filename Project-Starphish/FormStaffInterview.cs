@@ -129,16 +129,20 @@ namespace GUI
             }
             else
             {
-                updateStrengths();
-                updateAntecedents();
-                updateBehaviors();
-                updateQABFs();
-                updateStaffInterview();
+                //If the staff interview has not been renamed to an existing one, save everything.
+                if (saveStaffInterview())
+                {
+                    updateStrengths();
+                    updateBehaviors();
+                    updateAntecedents();
+                    updateQABFs();
+                    updateStaffInterview();
 
-                saveAll = true;
-                connection.Close();
-                form.mainStaffInterview();
-                this.Close();
+                    saveAll = true;
+                    connection.Close();
+                    form.mainStaffInterview();
+                    this.Close();
+                }
             }
         }
 
@@ -493,6 +497,7 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_STRENGTH WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
+            saveStrengths();
         }
 
         /// <summary>
@@ -504,6 +509,7 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_ANTECEDENT WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
+            saveAntecedents();
         }
 
         /// <summary>
@@ -515,6 +521,7 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_BEHAVIOR WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
+            saveBehaviors();
         }
 
         /// <summary>
@@ -526,10 +533,11 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_QABF WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
+            saveQABFs();
         }
 
         /// <summary>
-        /// Updates the database's behaviors data with the modified data by first deleting all existing records and then adding all the ones from the form in.
+        /// Updates the database's staff interview data by removing the pre-existing information (the new information has already been saved).
         /// </summary>
         private void updateStaffInterview()
         {
@@ -537,11 +545,6 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
-            saveStaffInterview();
-            saveStrengths();
-            saveBehaviors();
-            saveAntecedents();
-            saveQABFs();
         }
 
         /// <summary>
