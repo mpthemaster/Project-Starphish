@@ -168,6 +168,8 @@ namespace GUI
             }
             catch (Exception)
             {
+                //If this error is caused by trying to change the current staff interview info would replace a different staff interview, prevent that from happening.
+                //Else a staff interview is trying to update itself, so specify that saving needs to occur again.
                 if (intervieweeName != txtStaffIntervieweeName.Text || interviewDate.CompareTo(datePickerStaffInterview.Value) != 0)
                 {
                     MessageBox.Show("An interview with " + txtStaffIntervieweeName.Text + " on " + datePickerStaffInterview.Value.ToShortDateString() + " has already been recorded. Either delete or modify the pre-existing interview.",
@@ -477,7 +479,7 @@ namespace GUI
                         if (behavior.Name == behaviorName)
                         {
                             behavior.Qabf = new QABF();
-                            if ((string)reader["QABF_STATUS"] == "false")
+                            if ((string)reader["QABF_STATUS"] == "0")
                                 behavior.Qabf.Completed = false;
                             else
                                 behavior.Qabf.Completed = true;
@@ -544,6 +546,7 @@ namespace GUI
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
 
+            //If updating an existing staff interview, the original saving failed, so save it again.
             if (trySavingAgain)
                 saveStaffInterview();
             saveStrengths();
