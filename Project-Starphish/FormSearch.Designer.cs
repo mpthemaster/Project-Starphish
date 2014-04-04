@@ -56,6 +56,7 @@
             // btnSearchOk
             // 
             this.btnSearchOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSearchOk.Enabled = false;
             this.btnSearchOk.Location = new System.Drawing.Point(16, 191);
             this.btnSearchOk.Name = "btnSearchOk";
             this.btnSearchOk.Size = new System.Drawing.Size(93, 23);

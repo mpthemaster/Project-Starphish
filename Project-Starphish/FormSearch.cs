@@ -73,11 +73,13 @@ namespace GUI
         private void listClientSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             FormMain.searchName = listClientSearch.SelectedItem.ToString();
+            btnSearchOk.Enabled = true;
         }
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
             listClientSearch.Items.Clear();
+            btnSearchOk.Enabled = false;
             for (int i = 0; i < arrClient.Length; i++)
             {
                 if (arrClient[i].Contains(txtSearchBox.Text))

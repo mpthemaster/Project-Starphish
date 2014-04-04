@@ -33,6 +33,7 @@ namespace GUI
         private string addISP;
         private string deleteISP;
         private string selectISP;
+        private string search;
         private SqlConnection connection;
         private SqlCommand command;
         private SqlCommand commandInsertNOK;
@@ -49,9 +50,12 @@ namespace GUI
         private SqlCommand commandAddISP;
         private SqlCommand commandDeleteISP;
         private SqlCommand commandViewISP;
+        private SqlCommand commandSearch;
         private MemoryStream ms = new MemoryStream();
         private int x;
         private bool pdfMade = false;
+        private int tempFilesCount = 0;
+        private bool searched = false;
 
         public FormMain()
         {
@@ -70,6 +74,7 @@ namespace GUI
             addISP = "INSERT INTO PERSON_ISP (PERSON_ID, ISPNAME, ISP)VALUES (@PERSON_ID, @ISPNAME, @ISP)";
             deleteISP = "DELETE FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = @ISPNAME";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
+            search = "SELECT * FROM PERSON WHERE LNAME = @LNAME";
             selectISP = "SELECT ISP FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = ISPNAME";
             getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
             connection = new SqlConnection(theConnectionString);
@@ -88,6 +93,7 @@ namespace GUI
             commandAddISP = new SqlCommand(addISP, connection);
             commandDeleteISP = new SqlCommand(deleteISP, connection);
             commandViewISP = new SqlCommand(selectISP, connection);
+            commandSearch = new SqlCommand(search, connection);
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)
@@ -232,6 +238,12 @@ namespace GUI
             if (listClients.SelectedItem != null)
             {
                 int.TryParse(txtSocialSecurityNum.Text, out personId);
+                if (searched)
+                {
+                    commandSearch.Parameters.Clear();
+                    connection.Close();
+                    searched = false;
+                }
                 commandGetPic.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
                 connection.Open();
                 using (SqlDataReader reader = commandGetPic.ExecuteReader())
@@ -425,11 +437,13 @@ namespace GUI
             commandViewISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
             commandViewISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
             byte[] buffer = (byte[])commandViewISP.ExecuteScalar();
+            commandViewISP.Parameters.Clear();
             connection.Close();
-            FileStream fs = new FileStream(@"C:\temp.pdf", FileMode.Create);
+            FileStream fs = new FileStream(@"C:\temp" + tempFilesCount + ".pdf", FileMode.Create);
             fs.Write(buffer, 0, buffer.Length);
             fs.Close();
-            System.Diagnostics.Process.Start(@"c:\\temp.pdf");
+            System.Diagnostics.Process.Start(@"C:\temp" + tempFilesCount + ".pdf");
+            tempFilesCount++;
 
             pdfMade = true;
         }
@@ -610,7 +624,8 @@ namespace GUI
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (pdfMade)
-                File.Delete("c:\\temp.pdf");
+                for(int i = 0; i <= tempFilesCount; i++)
+                    File.Delete(@"C:\temp" + i + ".pdf");
         }
 
         //Uh, Ken, you're not even getting a variable from searchClient. You're just setting the listbox equal to the searchClient form.
@@ -618,8 +633,13 @@ namespace GUI
         {                                                                           //|
             FormSearch searchClient = new FormSearch(txtSearch.Text);               //|
             if (searchClient.ShowDialog() == DialogResult.OK)                       //|
-            {                                                                       //|
-                listClients.SelectedItem = searchClient;  //<--------------------------
+            {
+                searched = true;
+                commandSearch.Parameters.AddWithValue("@LNAME", searchName);
+                connection.Open();
+                SqlDataReader reader = commandSearch.ExecuteReader();
+                reader.Read();
+                listClients.SelectedValue = reader["SSN"];
             }
         }
 
