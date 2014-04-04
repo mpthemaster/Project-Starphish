@@ -1,8 +1,4 @@
 ﻿/*
- *  //statement =
-                //UPDATE PERSON SET  FNAME = @FNAME, //For updating an existing person.
-                //command = new SqlCommand(statement, connection);
- *
  * Possible Bug: While not causing any problems right now, it should be known that behaviors can have a frequency called "Less Often" while the parent node for that
  *              is called "LessOften". Any comparisons of these two and this issue will need to be fixed.
  */
@@ -35,6 +31,7 @@ namespace GUI
         private string intervieweeName; //The name of the interviewee.
         private DateTime interviewDate; //The date of the interview.
         private bool newInterview; //Whether this is a new interview (putting a new row into the table) or retreiving an interview from the database.
+        private bool trySavingAgain = false; //Whether updating failed the first time and needs to be tried again.
 
         /// <summary>
         /// Assumes a new staff interview is being created.
@@ -133,9 +130,9 @@ namespace GUI
                 if (saveStaffInterview())
                 {
                     updateStrengths();
-                    updateBehaviors();
                     updateAntecedents();
                     updateQABFs();
+                    updateBehaviors();
                     updateStaffInterview();
 
                     saveAll = true;
@@ -171,10 +168,15 @@ namespace GUI
             }
             catch (Exception)
             {
-                MessageBox.Show("An interview with " + txtStaffIntervieweeName.Text + " on " + datePickerStaffInterview.Value.ToShortDateString() + " has already been recorded. Either delete or modify the pre-existing interview.",
-                    "Fatal Error - Duplicate Interview", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                connection.Close();
-                return false;
+                if (intervieweeName != txtStaffIntervieweeName.Text || interviewDate.CompareTo(datePickerStaffInterview.Value) != 0)
+                {
+                    MessageBox.Show("An interview with " + txtStaffIntervieweeName.Text + " on " + datePickerStaffInterview.Value.ToShortDateString() + " has already been recorded. Either delete or modify the pre-existing interview.",
+                        "Fatal Error - Duplicate Interview", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                    return false;
+                }
+                else
+                    trySavingAgain = true;
             }
             return true;
         }
@@ -497,7 +499,6 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_STRENGTH WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
-            saveStrengths();
         }
 
         /// <summary>
@@ -509,7 +510,6 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_ANTECEDENT WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
-            saveAntecedents();
         }
 
         /// <summary>
@@ -521,7 +521,6 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_BEHAVIOR WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
-            saveBehaviors();
         }
 
         /// <summary>
@@ -533,7 +532,6 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW_QABF WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
-            saveQABFs();
         }
 
         /// <summary>
@@ -545,6 +543,13 @@ namespace GUI
             string statement = "DELETE FROM STAFF_INTERVIEW WHERE PERSON_ID='" + personId + "' AND INTERVIEW_DATE='" + interviewDate + "' AND STAFF_INTERVIEWED='" + intervieweeName + "'";
             SqlCommand command = new SqlCommand(statement, connection);
             command.ExecuteNonQuery();
+
+            if (trySavingAgain)
+                saveStaffInterview();
+            saveStrengths();
+            saveBehaviors();
+            saveAntecedents();
+            saveQABFs();
         }
 
         /// <summary>
