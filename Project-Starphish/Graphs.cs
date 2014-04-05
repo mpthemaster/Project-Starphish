@@ -109,6 +109,7 @@ namespace GUI
         /// </summary>
         private void getGraphRange()
         {
+            #region"Time Frames"
             if (radUseTimeFrames.Checked)
             {
                 if (comboPickTimeGraphs.SelectedIndex == 0)//last 30 days
@@ -170,6 +171,8 @@ namespace GUI
                     createGraphs();
                 }
             }
+            #endregion
+            #region"Custom Dates"
             else if (radUseCustomDates.Checked)
             {
                 startDate = new DateTime(datePickerBeginGraphs.Value.Year, datePickerBeginGraphs.Value.Month, 1);
@@ -188,6 +191,8 @@ namespace GUI
                     createGraphs();
                 }
             }
+            #endregion
+            #region"Custom Quarters"
             else if (radUseCustomQuarters.Checked)
             {
                 int quarter = 0;
@@ -312,6 +317,7 @@ namespace GUI
                     createGraphs();
                 }
             }
+            #endregion
         }
 
         /// <summary>
@@ -325,6 +331,7 @@ namespace GUI
             //sorts the array of dates and occurences on that day by the date
             List<BehaviorsOnSpecifiedDate> behaviorsOnSpecifedDate = behaviorsOnSpecifiedDate.OrderBy(o => o.Date).ToList();
 
+            #region"Populate timesBehaviorsOccured for right graphs"
             ////////////This is to populate timesBehaviorOccured, which tracks how many times each behavior that occured occured
             for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior
             {
@@ -342,6 +349,7 @@ namespace GUI
                         {
                             timesBehaviorsOccured[x].Occurences++;
                             behaviorPresent = true;
+                            break;
                         }
                     }
 
@@ -354,11 +362,13 @@ namespace GUI
                 }
             }
             ////////////
+            #endregion
 
             //Sorting the list of behaviors that occured so that it is in order of most to least,
             //which is necessary for picking out the top 5 behaviors
             timesBehaviorsOccured = timesBehaviorsOccured.OrderByDescending(o => o.Occurences).ToList();
 
+            #region"Populate behaviorsOnSpecificDate for left graph"
             ///////////Populates behaviorsOnSpecificDate, which keeps track of how many behaviors the
             //consumer has had on each day
             for (int i = 0; i < dailyBehaviors.Count(); i++)//for every behavior
@@ -410,6 +420,7 @@ namespace GUI
                 }
             }
             ////////////////
+            #endregion
         }
 
         /// <summary>
@@ -422,8 +433,27 @@ namespace GUI
             //This controls whether the charts have their values shown as numbers or not
             chartPieDailyOccurences.Series[0].IsValueShownAsLabel = true;
             chartPyramidOccurences.Series[0].IsValueShownAsLabel = true;
-            //chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 5;
 
+            //changes the number of values displayed at the bottom of the left graph depending
+            //on how many data points there are
+            if (behaviorsOnSpecifiedDate.Count >= 600)
+                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 60;
+            else if (behaviorsOnSpecifiedDate.Count >= 250)
+                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 30;
+            else if (behaviorsOnSpecifiedDate.Count >= 85)
+                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 10;
+            else if (behaviorsOnSpecifiedDate.Count >= 55)
+                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 4;
+            else if (behaviorsOnSpecifiedDate.Count >= 15)
+                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 2;
+            else
+                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 1;
+
+            chartTotalBehaviors.Series[0].Color = Color.Black;
+            chartTotalBehaviors.Series[0].BorderWidth = 2;
+
+            //Creates the left graph, doesn't need any if statements because the list is already
+            //formatted correctly
             for (int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
             {
                 chartTotalBehaviors.Series[0].Points.AddXY(
@@ -486,7 +516,7 @@ namespace GUI
             {
                 /////////////////////For calculating the Trend Line
                 chartTotalBehaviors.Series["TrendLine"].ChartType = SeriesChartType.Line;
-                chartTotalBehaviors.Series["TrendLine"].BorderWidth = 2;
+                chartTotalBehaviors.Series["TrendLine"].BorderWidth = 5;
                 chartTotalBehaviors.Series["TrendLine"].Color = Color.Red;
                 // Line of best fit is linear
                 string typeRegression = "Linear";//"Exponential";//
@@ -500,7 +530,7 @@ namespace GUI
                 string parameters = typeRegression + ',' + forecasting + ',' + error + ',' + forecastingError;
                 // Create Forecasting Series.
                 chartTotalBehaviors.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTotalBehaviors.Series[0], chartTotalBehaviors.Series["TrendLine"]);
-                /////////////////////////
+                /////////////////////////              
             }
         }
 
@@ -511,12 +541,16 @@ namespace GUI
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Chart copyitem = sender as Chart;
+
+           // MessageBox.Show(copyitem.ToString());
             using (MemoryStream ms = new MemoryStream())
             {
-                chartTotalBehaviors.SaveImage(ms, ChartImageFormat.Bmp);
+                copyitem.SaveImage(ms, ChartImageFormat.Bmp);
                 Bitmap bm = new Bitmap(ms);
                 Clipboard.SetImage(bm);
             }
+            
         }
 
         /// <summary>
@@ -566,6 +600,7 @@ namespace GUI
             datePickerEndGraphs.Enabled = false;
         }
 
+        #region"Radio buttons"
         /// <summary>
         /// Disables the controls depending on which radio button is pressed
         /// </summary>
@@ -607,4 +642,5 @@ namespace GUI
             chkQuarter4.Enabled = true;
         }
     }
+        #endregion
 }
