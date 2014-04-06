@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -52,12 +58,6 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -180,6 +180,12 @@
             this.comboPickTimeDailyBehavior = new System.Windows.Forms.ComboBox();
             this.datePickerEndDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewDailyBehaviorTracking = new System.Windows.Forms.DataGridView();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnShift = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnBehavior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSeverity = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnShiftTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStaffNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datePickerBeginDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnGenerateGraphs = new System.Windows.Forms.Button();
@@ -251,12 +257,6 @@
             this.nEW_LIGHT_SUPPORTTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEW_LIGHT_SUPPORTTableAdapter();
             this.nEXT_OF_KINTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.NEXT_OF_KINTableAdapter();
             this.pERSON_ISPTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSON_ISPTableAdapter();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnShift = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnBehavior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSeverity = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnShiftTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStaffNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -896,7 +896,7 @@
             this.lstNextOfKin.Name = "lstNextOfKin";
             this.lstNextOfKin.Size = new System.Drawing.Size(120, 82);
             this.lstNextOfKin.TabIndex = 0;
-            this.lstNextOfKin.ValueMember = "PERSON_ID";
+            this.lstNextOfKin.ValueMember = "UNIQUEID";
             // 
             // txtNextOfKinName
             // 
@@ -1519,6 +1519,69 @@
             this.dataGridViewDailyBehaviorTracking.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDailyBehaviorTracking.Size = new System.Drawing.Size(1069, 541);
             this.dataGridViewDailyBehaviorTracking.TabIndex = 10;
+            // 
+            // ColumnDate
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnDate.HeaderText = "Date";
+            this.ColumnDate.Name = "ColumnDate";
+            // 
+            // ColumnShift
+            // 
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnShift.HeaderText = "Shift";
+            this.ColumnShift.Items.AddRange(new object[] {
+            "7a-3p",
+            "3p-11p",
+            "11p-7a"});
+            this.ColumnShift.Name = "ColumnShift";
+            this.ColumnShift.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnShift.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnBehavior
+            // 
+            this.ColumnBehavior.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.NullValue = "Not Occurred";
+            this.ColumnBehavior.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColumnBehavior.HeaderText = "Behavior";
+            this.ColumnBehavior.Name = "ColumnBehavior";
+            this.ColumnBehavior.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnSeverity
+            // 
+            this.ColumnSeverity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.NullValue = "Moderate";
+            this.ColumnSeverity.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColumnSeverity.HeaderText = "Severity";
+            this.ColumnSeverity.Items.AddRange(new object[] {
+            "Not Ocurred",
+            "Mild",
+            "Moderate",
+            "Severe"});
+            this.ColumnSeverity.Name = "ColumnSeverity";
+            this.ColumnSeverity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnSeverity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnShiftTotal
+            // 
+            this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnShiftTotal.HeaderText = "Shift Total";
+            this.ColumnShiftTotal.Name = "ColumnShiftTotal";
+            // 
+            // ColumnStaffNames
+            // 
+            this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ColumnStaffNames.HeaderText = "Staff Name(s)";
+            this.ColumnStaffNames.MinimumWidth = 100;
+            this.ColumnStaffNames.Name = "ColumnStaffNames";
             // 
             // datePickerBeginDailyBehavior
             // 
@@ -2246,69 +2309,6 @@
             // pERSON_ISPTableAdapter
             // 
             this.pERSON_ISPTableAdapter.ClearBeforeFill = true;
-            // 
-            // ColumnDate
-            // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnDate.HeaderText = "Date";
-            this.ColumnDate.Name = "ColumnDate";
-            // 
-            // ColumnShift
-            // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnShift.HeaderText = "Shift";
-            this.ColumnShift.Items.AddRange(new object[] {
-            "7a-3p",
-            "3p-11p",
-            "11p-7a"});
-            this.ColumnShift.Name = "ColumnShift";
-            this.ColumnShift.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnShift.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnBehavior
-            // 
-            this.ColumnBehavior.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.NullValue = "Not Occurred";
-            this.ColumnBehavior.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColumnBehavior.HeaderText = "Behavior";
-            this.ColumnBehavior.Name = "ColumnBehavior";
-            this.ColumnBehavior.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnSeverity
-            // 
-            this.ColumnSeverity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.NullValue = "Moderate";
-            this.ColumnSeverity.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnSeverity.HeaderText = "Severity";
-            this.ColumnSeverity.Items.AddRange(new object[] {
-            "Not Ocurred",
-            "Mild",
-            "Moderate",
-            "Severe"});
-            this.ColumnSeverity.Name = "ColumnSeverity";
-            this.ColumnSeverity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnSeverity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnShiftTotal
-            // 
-            this.ColumnShiftTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.ColumnShiftTotal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColumnShiftTotal.HeaderText = "Shift Total";
-            this.ColumnShiftTotal.Name = "ColumnShiftTotal";
-            // 
-            // ColumnStaffNames
-            // 
-            this.ColumnStaffNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnStaffNames.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ColumnStaffNames.HeaderText = "Staff Name(s)";
-            this.ColumnStaffNames.MinimumWidth = 100;
-            this.ColumnStaffNames.Name = "ColumnStaffNames";
             // 
             // FormMain
             // 
