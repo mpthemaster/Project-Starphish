@@ -116,6 +116,7 @@
     </EmbeddedResource>
     <None Include="ProjectStarphishDataSet.xsc">
       <DependentUpon>ProjectStarphishDataSet.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ProjectStarphishDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>

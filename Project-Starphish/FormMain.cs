@@ -639,6 +639,6 @@ namespace GUI
             }
 
             
-        }  
+        }
     }
 }

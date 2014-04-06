@@ -18,13 +18,14 @@ namespace GUI
 
         private void MainAddBehaviors()
         {
-            //MessageBox.Show("Sff");
             if (behaviorFirstTime)
             {
                 behaviorFirstTime = false;
-                RetrieveBehaviorsFromDatabase();
-                comboPickTimeDailyBehavior.SelectedIndex = 0;               
+                comboPickTimeDailyBehavior.SelectedIndex = 0;                  
             }
+            RetrieveBehaviorsFromDatabase();
+            SetDates();
+            DisplayData();
         }
 
         private void RetrieveBehaviorsFromDatabase()
@@ -172,5 +173,10 @@ namespace GUI
             SetDates();
             DisplayData();
         }
+
+        private void btnAddBehavior_Click(object sender, EventArgs e)
+        {
+            dataGridViewDailyBehaviorTracking.ClearSelection();
+        }  
     }
 }
