@@ -11,7 +11,7 @@ namespace GUI
 {
     public partial class FormMain
     {
-        private bool firstTime = true;
+        private bool graphFirstTime = true;
 
         //This list holds all of the actual behaviors that occured
         private List<DailyBehavior> dailyBehaviors = new List<DailyBehavior>();
@@ -78,7 +78,7 @@ namespace GUI
                     listBehaviorsToGraph.Items.Add(dailyBehaviors[i].Behavior);
             }
 
-            if (firstTime)
+            if (graphFirstTime)
             {
                 //Setting the two combo boxes in the graph tab to have default selections
                 comboPickTimeGraphs.SelectedIndex = 0;//last 30 days
@@ -94,7 +94,7 @@ namespace GUI
 
                 getGraphRange();
 
-                firstTime = false;
+                graphFirstTime = false;
             }
         }
 

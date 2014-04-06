@@ -184,21 +184,6 @@ namespace GUI
             int.TryParse(txtSocialSecurityNum.Text, out personId);
         }
 
-        //Delete the following after this is noticed and/or fixed.
-        /****************************************************************************************************************************************************
-         * BUG ALERT|  Error:   Originally crashed. I fixed that, but there is another issue. No selected client has its info updated.               |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|  Occurs: Add a new client, and then cancel.                                                                                    |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         * BUG ALERT|                                                                                                                                |BUG ALERT
-         ******************************************************************************************************************************************************/
-
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
@@ -272,10 +257,11 @@ namespace GUI
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
         {
             //if (tabControl1.SelectedIndex == 0)
-            // if (tabControl1.SelectedIndex == 1)
-            if (tabControl1.SelectedIndex == 2)
+            if (tabControl1.SelectedIndex == 1)
+                MainAddBehaviors();
+            else if (tabControl1.SelectedIndex == 2)
                 mainGraph();
-            if (tabControl1.SelectedIndex == 3)
+            else if (tabControl1.SelectedIndex == 3)
                 mainStaffInterview();
         }
 
@@ -653,6 +639,6 @@ namespace GUI
             }
 
             
-        }
+        }  
     }
 }
