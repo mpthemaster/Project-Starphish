@@ -181,7 +181,6 @@ namespace GUI
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             comboRace.SelectedIndex = 3;
             int.TryParse(txtSocialSecurityNum.Text, out personId);
-            dialogFileOpenImage.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|Bitmap Files (*.bmp)|*.bmp";
         }
 
         //Delete the following after this is noticed and/or fixed.
@@ -465,9 +464,7 @@ namespace GUI
         {
             connection.Open();
             commandDeleteNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-            commandDeleteNOK.Parameters.AddWithValue("@NAME", txtNextOfKinName.Text);
-            commandDeleteNOK.Parameters.AddWithValue("@NOK_ADDRESS", txtNextOfKinAddress.Text);
-            commandDeleteNOK.Parameters.AddWithValue("@PHONE", txtNextOfKinTelephoneNum.Text);
+            commandDeleteNOK.Parameters.AddWithValue("@UNIQUEID", lstNextOfKin.SelectedValue);
             commandDeleteNOK.ExecuteNonQuery();
             commandDeleteNOK.Parameters.Clear();
             connection.Close();
@@ -479,9 +476,7 @@ namespace GUI
         {
             connection.Open();
             commandInsertNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-            commandInsertNOK.Parameters.AddWithValue("@NAME", txtNextOfKinName.Text);
-            commandInsertNOK.Parameters.AddWithValue("@NOK_ADDRESS", txtNextOfKinAddress.Text);
-            commandInsertNOK.Parameters.AddWithValue("@PHONE", txtNextOfKinTelephoneNum.Text);
+            commandInsertNOK.Parameters.AddWithValue("@UNIQUEID", lstEmergencyContacts.SelectedValue);
 
             commandInsertNOK.ExecuteNonQuery();
             commandInsertNOK.Parameters.Clear();
@@ -621,13 +616,6 @@ namespace GUI
         {
         }
 
-        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (pdfMade)
-                for(int i = 0; i <= tempFilesCount; i++)
-                    File.Delete(@"C:\temp" + i + ".pdf");
-        }
-
         //Uh, Ken, you're not even getting a variable from searchClient. You're just setting the listbox equal to the searchClient form.
         private void btnSearchClients_Click(object sender, EventArgs e)             //|
         {                                                                           //|
@@ -650,6 +638,20 @@ namespace GUI
             //  Else continue closing the form.
             if ((tabControl1.SelectedIndex == 0 || tabControl1.SelectedIndex == 1) && MessageBox.Show("Are you sure you want to exit Sky Pie? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 e.Cancel = true;
+
+            try
+            {
+                if (pdfMade)
+                    for (int i = 0; i <= tempFilesCount; i++)
+                        File.Delete(@"C:\temp" + i + ".pdf");
+            }
+            catch (System.Exception exception)
+            {
+                MessageBox.Show(exception.Message + " Please close all open ISP files.");
+                e.Cancel = true;
+            }
+
+            
         }
     }
 }
