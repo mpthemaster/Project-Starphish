@@ -182,6 +182,8 @@ namespace GUI
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             comboRace.SelectedIndex = 3;
             int.TryParse(txtSocialSecurityNum.Text, out personId);
+            EventArgs x = new EventArgs();
+            listClients_SelectedIndexChanged(this, x);
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -251,6 +253,8 @@ namespace GUI
                     commandGetPic.Parameters.Clear();
                     connection.Close();
                 }
+
+                this.Text = "Sky Pie - " + txtFirstName.Text + ' ' + txtLastName.Text;
             }
         }
 
