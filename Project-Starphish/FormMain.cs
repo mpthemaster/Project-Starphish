@@ -407,7 +407,7 @@ namespace GUI
 
                 connection.Open();
                 commandAddISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-                commandAddISP.Parameters.AddWithValue("@ISPNAME", dialogFileOpenISP.FileName.ToString());
+                commandAddISP.Parameters.AddWithValue("@ISPNAME", Path.GetFileName(dialogFileOpenISP.FileName));
                 commandAddISP.Parameters.AddWithValue("@ISP", buffer);
                 commandAddISP.ExecuteNonQuery();
                 commandAddISP.Parameters.Clear();
