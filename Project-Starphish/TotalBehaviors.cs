@@ -13,6 +13,8 @@ namespace GUI
 
         public string Shift { get; set; }
 
+        public int shiftTotal { get; set; }
+
         public string Staff { get; set; }
 
         /// <summary>
@@ -20,12 +22,13 @@ namespace GUI
         /// </summary>  
         /// <param name="behavior">The behavior that occured.</param>
         /// <param name="date">The date the behavior occured on.</param>
-        public TotalBehaviors(string Behavior, string Severity, DateTime date, string Shift, string Staff)
+        public TotalBehaviors(string Behavior, string Severity, DateTime date, string Shift, int shiftTotal, string Staff)
         {
             this.Behavior = Behavior;
             this.Severity = Severity;
             this.Date = date;
             this.Shift = Shift;
+            this.shiftTotal = shiftTotal;
             this.Staff = Staff;
         }
     }

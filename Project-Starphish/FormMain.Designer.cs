@@ -515,7 +515,7 @@
             this.picClient.Location = new System.Drawing.Point(530, 11);
             this.picClient.Name = "picClient";
             this.picClient.Size = new System.Drawing.Size(275, 206);
-            this.picClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picClient.TabIndex = 35;
             this.picClient.TabStop = false;
             // 

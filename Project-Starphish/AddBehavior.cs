@@ -39,7 +39,7 @@ namespace GUI
 
             //Get the information from the Staff Interview and display it.
             connection.Open();
-            statement = "SELECT PERSON_ID, BEHAVIOR, SEVERITY, BEHAVIOR_DATE, BEHAVIOR_SHIFT, STAFF_NAME FROM BEHAVIOR";
+            statement = "SELECT PERSON_ID, BEHAVIOR, SEVERITY, BEHAVIOR_DATE, BEHAVIOR_SHIFT, SHIFT_TOTAL, STAFF_NAME FROM BEHAVIOR";
             command = new SqlCommand(statement, connection);
             reader = command.ExecuteReader();
 
@@ -51,9 +51,10 @@ namespace GUI
                     string behaviorSeverity = (string)reader["SEVERITY"];
                     DateTime behaviorDate = (DateTime)reader["BEHAVIOR_DATE"];
                     string behaviorShift = (string)reader["BEHAVIOR_SHIFT"];
+                    int shiftTotal = (int)reader["SHIFT_TOTAL"];
                     string behaviorStaffName = (string)reader["STAFF_NAME"];
 
-                    databaseBehaviors.Add(new TotalBehaviors(behaviorName, behaviorSeverity, behaviorDate, behaviorShift, behaviorStaffName));
+                    databaseBehaviors.Add(new TotalBehaviors(behaviorName, behaviorSeverity, behaviorDate, behaviorShift, shiftTotal, behaviorStaffName));
                 }
             }
             reader.Close();
@@ -65,26 +66,31 @@ namespace GUI
         /// </summary>
         private void DisplayData()
         {
-            dataGridViewDailyBehaviorTracking.Rows.Clear();
+            //dataGridViewDailyBehaviorTracking.Rows.Clear();
 
 
-            for (int i = 0; i < databaseBehaviors.Count; i++)
+            MessageBox.Show(databaseBehaviors.Count().ToString());
+            for (int i = 0; i < databaseBehaviors.Count(); i++)
             {
-                if (databaseBehaviors[i].Date >= startDate && databaseBehaviors[i].Date <= endDate)
+                /*if (databaseBehaviors[i].Date >= startDate && databaseBehaviors[i].Date <= endDate)
                 {
-                    this.dataGridViewDailyBehaviorTracking.Rows.Add(
-                        databaseBehaviors[i].Date,
-                        databaseBehaviors[i].Shift,
-                        databaseBehaviors[i].Behavior,
-                        databaseBehaviors[i].Severity,
-                        "1",
-                        databaseBehaviors[i].Staff);
-                }
+                    
+                    //this.dataGridViewDailyBehaviorTracking.Rows.Add(
+                    //    databaseBehaviors[i].Date,
+                    //    databaseBehaviors[i].Shift,
+                    //    databaseBehaviors[i].Behavior,
+                    //    databaseBehaviors[i].Severity,
+                    //    databaseBehaviors[i].shiftTotal,
+                    //    databaseBehaviors[i].Staff); 
+                } */
+                dataGridViewDailyBehaviorTracking.DataSource = databaseBehaviors;
+                
             }
+            
         }
 
         private void SetDates()
-        {
+        {    
             if (chkUseCustomDatesDailyBehavior.Checked == false)
             {
                 if (comboPickTimeDailyBehavior.SelectedIndex == 0)//last 30 days
@@ -177,6 +183,34 @@ namespace GUI
         private void btnAddBehavior_Click(object sender, EventArgs e)
         {
             dataGridViewDailyBehaviorTracking.ClearSelection();
-        }  
+        }
+
+        private void SaveBehaviors()
+        {
+            string deleteBehaviors = "DELETE FROM BEHAVIOR WHERE PERSON_ID = @PERSON_ID";
+            string addBehaviors = "INSERT INTO BEHAVIOR (PERSON_ID, BEHAVIOR, SEVERITY, BEHAVIOR_DATE, BEHAVIOR_SHIFT, SHIFT_TOTAL, STAFF_NAME)VALUES (@PERSON_ID, @BEHAVIOR, @SEVERITY, @BEHAVIOR_DATE, @BEHAVIOR_SHIFT, @SHIFT_TOTAL, @STAFF_NAME)";
+            SqlCommand cmdDeleteBehaviors = new SqlCommand(deleteBehaviors, connection);
+            SqlCommand cmdAddBehaviors = new SqlCommand(addBehaviors, connection);
+            connection.Open();
+            cmdDeleteBehaviors.Parameters.AddWithValue("@PERSON_ID", personId);
+            cmdDeleteBehaviors.ExecuteNonQuery();
+            cmdDeleteBehaviors.Parameters.Clear();
+            connection.Close();
+
+            connection.Open();
+            for (int i = 0; i < databaseBehaviors.Count(); i++)
+            {
+                cmdAddBehaviors.Parameters.AddWithValue("@PERSON_ID", personId);
+                cmdAddBehaviors.Parameters.AddWithValue("@BEHAVIOR", databaseBehaviors[i].Behavior);
+                cmdAddBehaviors.Parameters.AddWithValue("@SEVERITY", databaseBehaviors[i].Severity);
+                cmdAddBehaviors.Parameters.AddWithValue("@BEHAVIOR_DATE", databaseBehaviors[i].Date);
+                cmdAddBehaviors.Parameters.AddWithValue("@BEHAVIOR_SHIFT", databaseBehaviors[i].Shift);
+                cmdAddBehaviors.Parameters.AddWithValue("@SHIFT_TOTAL", databaseBehaviors[i].shiftTotal);
+                cmdAddBehaviors.Parameters.AddWithValue("@STAFF_NAME", databaseBehaviors[i].Staff);
+                cmdAddBehaviors.ExecuteNonQuery();
+                cmdAddBehaviors.Parameters.Clear();
+            }
+            connection.Close();
+        }
     }
 }
