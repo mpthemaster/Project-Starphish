@@ -28,7 +28,7 @@ namespace GUI
             string statement;
 
             connection.Open();
-            statement = "SELECT PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED FROM STAFF_INTERVIEW";
+            statement = "SELECT PERSON_ID, INTERVIEW_DATE, STAFF_INTERVIEWED FROM STAFF_INTERVIEW ORDER BY INTERVIEW_DATE DESC";
             command = new SqlCommand(statement, connection);
             reader = command.ExecuteReader();
 
