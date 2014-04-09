@@ -34,6 +34,7 @@ namespace GUI
         private string addISP;
         private string deleteISP;
         private string selectISP;
+        private string selectBehaviors;
         private string search;
         private SqlConnection connection;
         private SqlCommand command;
@@ -53,6 +54,7 @@ namespace GUI
         private SqlCommand commandDeleteISP;
         private SqlCommand commandViewISP;
         private SqlCommand commandSearch;
+        private SqlCommand commandSelectBehaviors;
         private MemoryStream ms = new MemoryStream();
         private int x;
         private bool pdfMade = false;
@@ -79,6 +81,7 @@ namespace GUI
             deleteISP = "DELETE FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = @ISPNAME";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
             search = "SELECT * FROM PERSON WHERE LNAME = @LNAME";
+            selectBehaviors = "SELECT BEHAVIOR_DATE AS Date, BEHAVIOR_SHIFT AS Shift, BEHAVIOR AS Behavior, SEVERITY AS Severity, SHIFT_TOTAL AS Shift_Total, STAFF_NAME AS Staff FROM BEHAVIOR WHERE PERSON_ID = 0";
             selectISP = "SELECT ISP FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = ISPNAME";
             getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
             connection = new SqlConnection(theConnectionString);
@@ -99,6 +102,7 @@ namespace GUI
             commandViewISP = new SqlCommand(selectISP, connection);
             commandSearch = new SqlCommand(search, connection);
             commandNoPic = new SqlCommand(updateStatementNoPic, connection);
+            commandSelectBehaviors = new SqlCommand(selectBehaviors, connection);
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)
@@ -172,6 +176,8 @@ namespace GUI
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectStarphishDataSet.BEHAVIOR' table. You can move, or remove it, as needed.
+            this.bEHAVIORTableAdapter.Fill(this.projectStarphishDataSet.BEHAVIOR);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON_ISP' table. You can move, or remove it, as needed.
             this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.EMERGENCY_CONTACT' table. You can move, or remove it, as needed.
@@ -494,10 +500,10 @@ namespace GUI
             byte[] buffer = (byte[])commandViewISP.ExecuteScalar();
             commandViewISP.Parameters.Clear();
             connection.Close();
-            FileStream fs = new FileStream(@"C:\temp" + tempFilesCount + ".pdf", FileMode.Create);
+            FileStream fs = new FileStream(@"temp" + tempFilesCount + ".pdf", FileMode.Create);
             fs.Write(buffer, 0, buffer.Length);
             fs.Close();
-            System.Diagnostics.Process.Start(@"C:\temp" + tempFilesCount + ".pdf");
+            System.Diagnostics.Process.Start(@"temp" + tempFilesCount + ".pdf");
             tempFilesCount++;
 
             pdfMade = true;
@@ -682,8 +688,11 @@ namespace GUI
                 commandSearch.Parameters.AddWithValue("@LNAME", searchName);
                 connection.Open();
                 SqlDataReader reader = commandSearch.ExecuteReader();
+                commandSearch.Parameters.Clear();
                 reader.Read();
                 listClients.SelectedValue = reader["SSN"];
+                reader.Close();
+                connection.Close();
             }
         }
 
@@ -699,7 +708,7 @@ namespace GUI
             {
                 if (pdfMade)
                     for (int i = 0; i <= tempFilesCount; i++)
-                        File.Delete(@"C:\temp" + i + ".pdf");
+                        File.Delete(@"temp" + i + ".pdf");
             }
             catch (System.Exception exception)
             {

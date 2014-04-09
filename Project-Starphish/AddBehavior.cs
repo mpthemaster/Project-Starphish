@@ -12,53 +12,16 @@ namespace GUI
     public partial class FormMain
     {
         private bool behaviorFirstTime = true;
-
-        //This Stores all of the behaviors for the specified client in a List, it is a different 
-        private List<TotalBehaviors> databaseBehaviors = new List<TotalBehaviors>();
-
+   
         private void MainAddBehaviors()
         {
             if (behaviorFirstTime)
             {
                 behaviorFirstTime = false;
                 comboPickTimeDailyBehavior.SelectedIndex = 0;                  
-            }
-            RetrieveBehaviorsFromDatabase();
+            }          
             SetDates();
             DisplayData();
-        }
-
-        private void RetrieveBehaviorsFromDatabase()
-        {
-            databaseBehaviors.Clear();
-
-            //Connect to the database.
-            SqlDataReader reader;
-            SqlCommand command;
-            string statement;
-
-            //Get the information from the Staff Interview and display it.
-            connection.Open();
-            statement = "SELECT PERSON_ID, BEHAVIOR, SEVERITY, BEHAVIOR_DATE, BEHAVIOR_SHIFT, SHIFT_TOTAL, STAFF_NAME FROM BEHAVIOR";
-            command = new SqlCommand(statement, connection);
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                if ((int)reader["PERSON_ID"] == personId)
-                {
-                    string behaviorName = (string)reader["BEHAVIOR"];
-                    string behaviorSeverity = (string)reader["SEVERITY"];
-                    DateTime behaviorDate = (DateTime)reader["BEHAVIOR_DATE"];
-                    string behaviorShift = (string)reader["BEHAVIOR_SHIFT"];
-                    int shiftTotal = (int)reader["SHIFT_TOTAL"];
-                    string behaviorStaffName = (string)reader["STAFF_NAME"];
-
-                    databaseBehaviors.Add(new TotalBehaviors(behaviorName, behaviorSeverity, behaviorDate, behaviorShift, shiftTotal, behaviorStaffName));
-                }
-            }
-            reader.Close();
-            connection.Close();
         }
 
         /// <summary>
@@ -66,27 +29,16 @@ namespace GUI
         /// </summary>
         private void DisplayData()
         {
-            //dataGridViewDailyBehaviorTracking.Rows.Clear();
 
+            SqlDataAdapter behaviorDataAdapter = new SqlDataAdapter(selectBehaviors, theConnectionString);
 
-            MessageBox.Show(databaseBehaviors.Count().ToString());
-            for (int i = 0; i < databaseBehaviors.Count(); i++)
-            {
-                /*if (databaseBehaviors[i].Date >= startDate && databaseBehaviors[i].Date <= endDate)
-                {
-                    
-                    //this.dataGridViewDailyBehaviorTracking.Rows.Add(
-                    //    databaseBehaviors[i].Date,
-                    //    databaseBehaviors[i].Shift,
-                    //    databaseBehaviors[i].Behavior,
-                    //    databaseBehaviors[i].Severity,
-                    //    databaseBehaviors[i].shiftTotal,
-                    //    databaseBehaviors[i].Staff); 
-                } */
-                dataGridViewDailyBehaviorTracking.DataSource = databaseBehaviors;
-                
-            }
-            
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(behaviorDataAdapter);
+
+            DataTable table = new DataTable();
+            behaviorDataAdapter.Fill(table);
+            bEHAVIORBindingSource.DataSource = table;
+
+            dataGridViewDailyBehaviorTracking.DataSource = bEHAVIORBindingSource;
         }
 
         private void SetDates()
@@ -180,37 +132,22 @@ namespace GUI
             DisplayData();
         }
 
-        private void btnAddBehavior_Click(object sender, EventArgs e)
+        private void btnSaveDailyBehavior_Click(object sender, EventArgs e)
         {
-            dataGridViewDailyBehaviorTracking.ClearSelection();
-        }
-
-        private void SaveBehaviors()
-        {
-            string deleteBehaviors = "DELETE FROM BEHAVIOR WHERE PERSON_ID = @PERSON_ID";
-            string addBehaviors = "INSERT INTO BEHAVIOR (PERSON_ID, BEHAVIOR, SEVERITY, BEHAVIOR_DATE, BEHAVIOR_SHIFT, SHIFT_TOTAL, STAFF_NAME)VALUES (@PERSON_ID, @BEHAVIOR, @SEVERITY, @BEHAVIOR_DATE, @BEHAVIOR_SHIFT, @SHIFT_TOTAL, @STAFF_NAME)";
-            SqlCommand cmdDeleteBehaviors = new SqlCommand(deleteBehaviors, connection);
-            SqlCommand cmdAddBehaviors = new SqlCommand(addBehaviors, connection);
-            connection.Open();
-            cmdDeleteBehaviors.Parameters.AddWithValue("@PERSON_ID", personId);
-            cmdDeleteBehaviors.ExecuteNonQuery();
-            cmdDeleteBehaviors.Parameters.Clear();
-            connection.Close();
-
-            connection.Open();
-            for (int i = 0; i < databaseBehaviors.Count(); i++)
+            this.Validate();
+            
+            this.tableAdapterManager.UpdateAll(this.projectStarphishDataSet);
+            try
             {
-                cmdAddBehaviors.Parameters.AddWithValue("@PERSON_ID", personId);
-                cmdAddBehaviors.Parameters.AddWithValue("@BEHAVIOR", databaseBehaviors[i].Behavior);
-                cmdAddBehaviors.Parameters.AddWithValue("@SEVERITY", databaseBehaviors[i].Severity);
-                cmdAddBehaviors.Parameters.AddWithValue("@BEHAVIOR_DATE", databaseBehaviors[i].Date);
-                cmdAddBehaviors.Parameters.AddWithValue("@BEHAVIOR_SHIFT", databaseBehaviors[i].Shift);
-                cmdAddBehaviors.Parameters.AddWithValue("@SHIFT_TOTAL", databaseBehaviors[i].shiftTotal);
-                cmdAddBehaviors.Parameters.AddWithValue("@STAFF_NAME", databaseBehaviors[i].Staff);
-                cmdAddBehaviors.ExecuteNonQuery();
-                cmdAddBehaviors.Parameters.Clear();
+                this.Validate();
+                this.bEHAVIORBindingSource.EndEdit();
+                this.bEHAVIORTableAdapter.Update(this.projectStarphishDataSet.BEHAVIOR);
+                MessageBox.Show("Update successful");
             }
-            connection.Close();
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Update failed" + ex.ToString());
+            }
         }
     }
 }

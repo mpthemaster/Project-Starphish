@@ -449,14 +449,14 @@ namespace GUI
             else
                 chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 1;
 
-            chartTotalBehaviors.Series[0].Color = Color.Black;
-            chartTotalBehaviors.Series[0].BorderWidth = 2;
+            chartTotalBehaviors.Series[1].Color = Color.Black;
+            chartTotalBehaviors.Series[1].BorderWidth = 2;
 
             //Creates the left graph, doesn't need any if statements because the list is already
             //formatted correctly
             for (int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
             {
-                chartTotalBehaviors.Series[0].Points.AddXY(
+                chartTotalBehaviors.Series[1].Points.AddXY(
                     behaviorsOnSpecifiedDate[i].Date.Month +
                     "/" +
                     behaviorsOnSpecifiedDate[i].Date.Day,
@@ -529,7 +529,7 @@ namespace GUI
                 // Formula parameters
                 string parameters = typeRegression + ',' + forecasting + ',' + error + ',' + forecastingError;
                 // Create Forecasting Series.
-                chartTotalBehaviors.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTotalBehaviors.Series[0], chartTotalBehaviors.Series["TrendLine"]);
+                chartTotalBehaviors.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTotalBehaviors.Series[1], chartTotalBehaviors.Series["TrendLine"]);
                 /////////////////////////              
             }
         }
@@ -577,7 +577,7 @@ namespace GUI
             //This clears all the previous data in the charts
             chartPieDailyOccurences.Series[0].Points.Clear();
             chartPyramidOccurences.Series[0].Points.Clear();
-            chartTotalBehaviors.Series[0].Points.Clear();
+            chartTotalBehaviors.Series[1].Points.Clear();
 
             //This clears all of the Lists of objects except for the list of behaviors that occured,
             //that will be cleared whenever a new list is gotten
