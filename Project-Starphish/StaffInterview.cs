@@ -12,10 +12,10 @@ namespace GUI
         private SqlConnection connection;
         private int personID;
 
-        public int PersonID { get { return personID; } }
-
         private DateTime interviewDate;
         private string intervieweeName;
+
+        public string IntervieweeName { get { return intervieweeName; } }
 
         private List<Behavior> behaviors = new List<Behavior>();
 

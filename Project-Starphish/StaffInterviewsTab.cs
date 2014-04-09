@@ -13,6 +13,7 @@ namespace GUI
     partial class FormMain
     {
         private List<StaffInterview> staffInterviews = new List<StaffInterview>();
+        private List<StaffInterview> selectedInterviews = new List<StaffInterview>();
 
         /// <summary>
         /// Loads up the pre-existing staff interviews to view.
@@ -99,16 +100,55 @@ namespace GUI
                 btnRemoveInterview.Enabled = true;
                 btnViewInterview.Enabled = true;
 
-                //Figure out what staff interviews are selected and display their results.
+                selectedInterviews.Clear();
+
+                //Figure out what staff interviews are selected.
                 ListBox.SelectedObjectCollection collection = lstInterviews.SelectedItems;
                 foreach (Object selectedPerson in collection)
-                {
-                }
+                    foreach (StaffInterview staffInterview in staffInterviews)
+                        if (staffInterview.IntervieweeName == ((string)selectedPerson).Substring(0, ((string)selectedPerson).IndexOf('-') - 1))
+                        {
+                            selectedInterviews.Add(staffInterview);
+                            break;
+                        }
+
+                //Display the selected staff interviews' results.
+                calculateStrengths();
             }
             else
             {
                 btnRemoveInterview.Enabled = false;
                 btnViewInterview.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Calculates the strengths from the selected staff interviews.
+        /// </summary>
+        private void calculateStrengths()
+        {
+            Dictionary<string, int> strengths = new Dictionary<string, int>(); //Holds each distinct strength and the number of staff interviews that said it.
+
+            //Foreach staff interview, go through its list of strengths.
+            //  For all the strengths in a given staff interview, check if it has already been added to the strengths dictionary.
+            //      If it hasn't been added, add it.
+            //      Else it has been added, so increase the value that holds how many staff interviews specified this strength by 1.
+            foreach (StaffInterview staffInterview in selectedInterviews)
+                for (int i = 0; i < staffInterview.Strengths.Count; i++)
+                    if (!strengths.ContainsKey(staffInterview.Strengths[i]))
+                        strengths.Add(staffInterview.Strengths[i], 1);
+                    else
+                        strengths[staffInterview.Strengths[i]]++;
+
+            //Calculate the average for each strength and display it if it rounds up to 1.
+            foreach (String strength in strengths.Keys)
+            {
+                double average = strengths[strength] / (double)staffInterviews.Count;
+
+                if (average >= .5)
+                {
+                    dataGridViewStrengths.Rows.Add(strength, average);
+                }
             }
         }
 
