@@ -23,10 +23,11 @@ namespace GUI
         /// Creates a new QABF Form.
         /// </summary>
         /// <param name="behaviors">All the behaviors from a staff interview.</param>
-        public FormQABF(Behavior[] originalBehavior, string intervieweeName)
+        public FormQABF(Behavior[] originalBehavior, string intervieweeName, string formTitle)
         {
             InitializeComponent();
             lblStaffInterviewee.Text = intervieweeName + " Interviewed";
+            this.Text = "QABFs - " + formTitle;
             originalBehaviors = originalBehavior;
 
             //Make a copy of each behavior so that changes aren't automatically saved to them.

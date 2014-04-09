@@ -46,6 +46,7 @@ namespace GUI
             newInterview = true;
             this.form = form;
             setToDefaultOptions();
+            this.Text = "Staff Interview - " + form.Text;
         }
 
         /// <summary>
@@ -564,7 +565,7 @@ namespace GUI
             //Else behaviors don't exist, so show an error message telling the user that a behavior needs to be added first.
             if (behaviors.Count > 0)
             {
-                FormQABF formQABF = new FormQABF(behaviors.ToArray(), txtStaffIntervieweeName.Text);
+                FormQABF formQABF = new FormQABF(behaviors.ToArray(), txtStaffIntervieweeName.Text, this.Text);
                 formQABF.ShowDialog();
             }
             else

@@ -12,11 +12,15 @@ namespace GUI
 {
     partial class FormMain
     {
+        private List<StaffInterview> staffInterviews = new List<StaffInterview>();
+
         /// <summary>
         /// Loads up the pre-existing staff interviews to view.
         /// </summary>
         public void mainStaffInterview()
         {
+            staffInterviews.Clear();
+
             //Connect to the database.
             SqlDataReader reader;
             SqlCommand command;
@@ -35,9 +39,15 @@ namespace GUI
                 {
                     DateTime interviewDate = (DateTime)reader["INTERVIEW_DATE"];
                     lstInterviews.Items.Add((string)reader["STAFF_INTERVIEWED"] + " - " + interviewDate.ToShortDateString());
+
+                    staffInterviews.Add(new StaffInterview(connection, personId, interviewDate, (string)reader["STAFF_INTERVIEWED"]));
                 }
             reader.Close();
             connection.Close();
+
+            //Loads up all the data from the staff interviews in the DB.
+            foreach (StaffInterview staffInterview in staffInterviews)
+                staffInterview.retrieveData();
         }
 
         private void btnViewInterview_Click(object sender, EventArgs e)
@@ -88,6 +98,12 @@ namespace GUI
             {
                 btnRemoveInterview.Enabled = true;
                 btnViewInterview.Enabled = true;
+
+                //Figure out what staff interviews are selected and display their results.
+                ListBox.SelectedObjectCollection collection = lstInterviews.SelectedItems;
+                foreach (Object selectedPerson in collection)
+                {
+                }
             }
             else
             {
