@@ -1868,7 +1868,7 @@
             chartArea3.Name = "ChartArea1";
             this.chartTotalBehaviors.ChartAreas.Add(chartArea3);
             this.chartTotalBehaviors.ContextMenuStrip = this.contextMenuTotalBehaviors;
-            this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 107);
+            this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 116);
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -2147,7 +2147,7 @@
             this.dataGridViewStrengths.Location = new System.Drawing.Point(6, 19);
             this.dataGridViewStrengths.Name = "dataGridViewStrengths";
             this.dataGridViewStrengths.ReadOnly = true;
-            this.dataGridViewStrengths.Size = new System.Drawing.Size(266, 260);
+            this.dataGridViewStrengths.Size = new System.Drawing.Size(266, 276);
             this.dataGridViewStrengths.TabIndex = 6;
             // 
             // Column7
@@ -2155,12 +2155,14 @@
             this.Column7.HeaderText = "Strengths";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            this.Column7.Width = 170;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Average";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.Width = 50;
             // 
             // btnViewInterview
             // 
@@ -2462,8 +2464,6 @@
         private System.Windows.Forms.TextBox txtAdmittanceDate;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.DataGridView dataGridViewStrengths;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.DataGridView dataGridViewBehaviorsStaffInterviews;
         private System.Windows.Forms.GroupBox groupBox15;
@@ -2603,6 +2603,8 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
 
