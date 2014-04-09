@@ -93,14 +93,15 @@ namespace GUI
 
         private void lstInterviews_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridViewStrengths.Rows.Clear();
+            selectedInterviews.Clear();
+
             //If an interview is selected, enable the buttons to view and remove it.
             //Else an interview isn't selected, so disable the buttons to view and remove interviews.
             if (lstInterviews.SelectedItem != null)
             {
                 btnRemoveInterview.Enabled = true;
                 btnViewInterview.Enabled = true;
-
-                selectedInterviews.Clear();
 
                 //Figure out what staff interviews are selected.
                 ListBox.SelectedObjectCollection collection = lstInterviews.SelectedItems;
@@ -143,7 +144,7 @@ namespace GUI
             //Calculate the average for each strength and display it if it rounds up to 1.
             foreach (String strength in strengths.Keys)
             {
-                double average = strengths[strength] / (double)staffInterviews.Count;
+                double average = strengths[strength] / (double)selectedInterviews.Count;
 
                 if (average >= .5)
                 {
