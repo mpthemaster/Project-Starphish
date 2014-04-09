@@ -534,25 +534,6 @@ namespace GUI
             }
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // chart1.SaveImage("dfgdfg.png", ChartImageFormat.Png);
-        }
-
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Chart copyitem = sender as Chart;
-
-           // MessageBox.Show(copyitem.ToString());
-            using (MemoryStream ms = new MemoryStream())
-            {
-                copyitem.SaveImage(ms, ChartImageFormat.Bmp);
-                Bitmap bm = new Bitmap(ms);
-                Clipboard.SetImage(bm);
-            }
-            
-        }
-
         /// <summary>
         /// This adds every date in the chosen range to the behaviorsOnSpecifiedDate list with a default
         /// value of 0, it is in its own seperate function because of the checkboxes

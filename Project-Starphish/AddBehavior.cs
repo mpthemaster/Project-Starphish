@@ -29,16 +29,22 @@ namespace GUI
         /// </summary>
         private void DisplayData()
         {
+            //SqlDataAdapter behaviorDataAdapter = new SqlDataAdapter(selectBehaviors, theConnectionString);
 
-            SqlDataAdapter behaviorDataAdapter = new SqlDataAdapter(selectBehaviors, theConnectionString);
+            //SqlCommandBuilder commandBuilder = new SqlCommandBuilder(bEHAVIORTableAdapter);
 
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(behaviorDataAdapter);
-
-            DataTable table = new DataTable();
-            behaviorDataAdapter.Fill(table);
-            bEHAVIORBindingSource.DataSource = table;
-
-            dataGridViewDailyBehaviorTracking.DataSource = bEHAVIORBindingSource;
+            //DataTable table = new DataTable();
+            //behaviorDataAdapter.Fill(table);
+            //bEHAVIORBindingSource.DataSource = table;
+            try
+            {
+                this.bEHAVIORTableAdapter.FillBy(this.projectStarphishDataSet.BEHAVIOR, personId);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+//            dataGridViewDailyBehaviorTracking.DataSource = bEHAVIORBindingSource;
         }
 
         private void SetDates()

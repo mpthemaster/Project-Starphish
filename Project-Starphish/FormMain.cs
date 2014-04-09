@@ -718,5 +718,91 @@ namespace GUI
 
             
         }
+
+        /// <summary>
+        /// The copy button for the line chart on the graphs page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                chartTotalBehaviors.SaveImage(ms, ChartImageFormat.Bmp);
+                Bitmap bm = new Bitmap(ms);
+                Clipboard.SetImage(bm);
+            }
+        }
+
+        /// <summary>
+        /// The save button for the line chart on the graphs page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                chartTotalBehaviors.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
+            }
+        }
+
+        /// <summary>
+        /// The Copy button for the pie chart on the graphs page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void copyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                chartPieDailyOccurences.SaveImage(ms, ChartImageFormat.Bmp);
+                Bitmap bm = new Bitmap(ms);
+                Clipboard.SetImage(bm);
+            }
+        }
+
+        /// <summary>
+        /// Save button for the pie chart on the graphs page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                 chartPieDailyOccurences.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
+            }
+
+        }
+
+        /// <summary>
+        /// Copy button for the pyramid chart on the graphs page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void copyToolStripMenuItem2_Click(object sender, EventArgs e)
+        {   
+            using (MemoryStream ms = new MemoryStream())
+            {
+                chartPyramidOccurences.SaveImage(ms, ChartImageFormat.Bmp);
+                Bitmap bm = new Bitmap(ms);
+                Clipboard.SetImage(bm);
+            }
+        }
+
+        /// <summary>
+        /// Save button for the pyramid chart on the graphs page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveToolStripMenuItem2_Click(object sender, EventArgs e)
+        {          
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                chartPyramidOccurences.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
+            }
+        }
+
     }
 }
