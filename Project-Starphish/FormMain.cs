@@ -803,6 +803,5 @@ namespace GUI
                 chartPyramidOccurences.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
             }
         }
-
     }
 }

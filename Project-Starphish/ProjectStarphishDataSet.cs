@@ -2,6 +2,9 @@
     
     
     public partial class ProjectStarphishDataSet {
+        partial class BEHAVIORDataTable
+        {
+        }
     }
 }
 

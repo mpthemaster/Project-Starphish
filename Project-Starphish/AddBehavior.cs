@@ -29,16 +29,10 @@ namespace GUI
         /// </summary>
         private void DisplayData()
         {
-            //SqlDataAdapter behaviorDataAdapter = new SqlDataAdapter(selectBehaviors, theConnectionString);
-
-            //SqlCommandBuilder commandBuilder = new SqlCommandBuilder(bEHAVIORTableAdapter);
-
-            //DataTable table = new DataTable();
-            //behaviorDataAdapter.Fill(table);
-            //bEHAVIORBindingSource.DataSource = table;
             try
             {
-                this.bEHAVIORTableAdapter.FillBy(this.projectStarphishDataSet.BEHAVIOR, personId);
+                this.bEHAVIORTableAdapter.FillBy(this.projectStarphishDataSet.BEHAVIOR, personId, startDate.ToString(), endDate.ToString());
+                
             }
             catch (System.Exception ex)
             {
@@ -143,6 +137,7 @@ namespace GUI
             this.Validate();
             
             this.tableAdapterManager.UpdateAll(this.projectStarphishDataSet);
+
             try
             {
                 this.Validate();
@@ -154,6 +149,15 @@ namespace GUI
             {
                 MessageBox.Show("Update failed" + ex.ToString());
             }
+
+            SetDates();
+            DisplayData();
         }
+
+        private void dataGridViewDailyBehaviorTracking_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            e.Row.Cells["pERSONIDDataGridViewTextBoxColumn"].Value = personId;
+        }
+
     }
 }

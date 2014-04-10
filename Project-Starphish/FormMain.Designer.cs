@@ -49,6 +49,7 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.6D);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -171,12 +172,6 @@
             this.comboPickTimeDailyBehavior = new System.Windows.Forms.ComboBox();
             this.datePickerEndDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewDailyBehaviorTracking = new System.Windows.Forms.DataGridView();
-            this.bEHAVIORDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bEHAVIORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sEVERITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTAFFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pERSONIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bEHAVIORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datePickerBeginDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -256,6 +251,13 @@
             this.pERSON_ISPTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSON_ISPTableAdapter();
             this.bEHAVIORTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.bEHAVIORDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bEHAVIORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEVERITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SHIFT_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTAFFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pERSONIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -1518,6 +1520,7 @@
             this.bEHAVIORSHIFTDataGridViewTextBoxColumn,
             this.bEHAVIORDataGridViewTextBoxColumn,
             this.sEVERITYDataGridViewTextBoxColumn,
+            this.SHIFT_TOTAL,
             this.sTAFFNAMEDataGridViewTextBoxColumn,
             this.pERSONIDDataGridViewTextBoxColumn});
             this.dataGridViewDailyBehaviorTracking.DataSource = this.bEHAVIORBindingSource;
@@ -1526,43 +1529,7 @@
             this.dataGridViewDailyBehaviorTracking.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDailyBehaviorTracking.Size = new System.Drawing.Size(1069, 541);
             this.dataGridViewDailyBehaviorTracking.TabIndex = 10;
-            // 
-            // bEHAVIORDATEDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_DATE";
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.Name = "bEHAVIORDATEDataGridViewTextBoxColumn";
-            // 
-            // bEHAVIORSHIFTDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_SHIFT";
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.HeaderText = "Shift";
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.Name = "bEHAVIORSHIFTDataGridViewTextBoxColumn";
-            // 
-            // bEHAVIORDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR";
-            this.bEHAVIORDataGridViewTextBoxColumn.HeaderText = "Behavior";
-            this.bEHAVIORDataGridViewTextBoxColumn.Name = "bEHAVIORDataGridViewTextBoxColumn";
-            // 
-            // sEVERITYDataGridViewTextBoxColumn
-            // 
-            this.sEVERITYDataGridViewTextBoxColumn.DataPropertyName = "SEVERITY";
-            this.sEVERITYDataGridViewTextBoxColumn.HeaderText = "Severity";
-            this.sEVERITYDataGridViewTextBoxColumn.Name = "sEVERITYDataGridViewTextBoxColumn";
-            // 
-            // sTAFFNAMEDataGridViewTextBoxColumn
-            // 
-            this.sTAFFNAMEDataGridViewTextBoxColumn.DataPropertyName = "STAFF_NAME";
-            this.sTAFFNAMEDataGridViewTextBoxColumn.HeaderText = "Staff";
-            this.sTAFFNAMEDataGridViewTextBoxColumn.Name = "sTAFFNAMEDataGridViewTextBoxColumn";
-            // 
-            // pERSONIDDataGridViewTextBoxColumn
-            // 
-            this.pERSONIDDataGridViewTextBoxColumn.DataPropertyName = "PERSON_ID";
-            this.pERSONIDDataGridViewTextBoxColumn.HeaderText = "PERSON_ID";
-            this.pERSONIDDataGridViewTextBoxColumn.Name = "pERSONIDDataGridViewTextBoxColumn";
-            this.pERSONIDDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewDailyBehaviorTracking.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridViewDailyBehaviorTracking_DefaultValuesNeeded);
             // 
             // bEHAVIORBindingSource
             // 
@@ -2331,6 +2298,51 @@
             // 
             this.bEHAVIORTableAdapter.ClearBeforeFill = true;
             // 
+            // bEHAVIORDATEDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_DATE";
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.Name = "bEHAVIORDATEDataGridViewTextBoxColumn";
+            // 
+            // bEHAVIORSHIFTDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_SHIFT";
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.HeaderText = "Shift";
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.Name = "bEHAVIORSHIFTDataGridViewTextBoxColumn";
+            // 
+            // bEHAVIORDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR";
+            this.bEHAVIORDataGridViewTextBoxColumn.HeaderText = "Behavior";
+            this.bEHAVIORDataGridViewTextBoxColumn.Name = "bEHAVIORDataGridViewTextBoxColumn";
+            // 
+            // sEVERITYDataGridViewTextBoxColumn
+            // 
+            this.sEVERITYDataGridViewTextBoxColumn.DataPropertyName = "SEVERITY";
+            this.sEVERITYDataGridViewTextBoxColumn.HeaderText = "Severity";
+            this.sEVERITYDataGridViewTextBoxColumn.Name = "sEVERITYDataGridViewTextBoxColumn";
+            // 
+            // SHIFT_TOTAL
+            // 
+            this.SHIFT_TOTAL.DataPropertyName = "SHIFT_TOTAL";
+            this.SHIFT_TOTAL.HeaderText = "Shift Total";
+            this.SHIFT_TOTAL.Name = "SHIFT_TOTAL";
+            // 
+            // sTAFFNAMEDataGridViewTextBoxColumn
+            // 
+            this.sTAFFNAMEDataGridViewTextBoxColumn.DataPropertyName = "STAFF_NAME";
+            this.sTAFFNAMEDataGridViewTextBoxColumn.HeaderText = "Staff";
+            this.sTAFFNAMEDataGridViewTextBoxColumn.Name = "sTAFFNAMEDataGridViewTextBoxColumn";
+            // 
+            // pERSONIDDataGridViewTextBoxColumn
+            // 
+            this.pERSONIDDataGridViewTextBoxColumn.DataPropertyName = "PERSON_ID";
+            dataGridViewCellStyle2.NullValue = "personId";
+            this.pERSONIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.pERSONIDDataGridViewTextBoxColumn.HeaderText = "PERSON_ID";
+            this.pERSONIDDataGridViewTextBoxColumn.Name = "pERSONIDDataGridViewTextBoxColumn";
+            this.pERSONIDDataGridViewTextBoxColumn.Visible = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2587,12 +2599,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bEHAVIORBindingSource;
         private ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter bEHAVIORTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORSHIFTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sEVERITYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTAFFNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pERSONIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.ContextMenuStrip contextMenuTotalBehaviors;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
@@ -2605,6 +2611,13 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORSHIFTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sEVERITYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SHIFT_TOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTAFFNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pERSONIDDataGridViewTextBoxColumn;
     }
 }
 
