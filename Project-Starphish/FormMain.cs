@@ -166,6 +166,8 @@ namespace GUI
                     connection.Close();
                     revertForm();
                     this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+                    this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
+                    this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
                 }
                 else
                     MessageBox.Show("You must input a Social Security Number and Last Name.");
@@ -393,6 +395,8 @@ namespace GUI
                 connection.Close();
             }
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+            this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
+            this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
         }
 
         private void clearForm()

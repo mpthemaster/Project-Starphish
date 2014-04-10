@@ -147,7 +147,7 @@ namespace GUI
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Update failed" + ex.ToString());
+                MessageBox.Show("Update failed");
             }
 
             SetDates();
