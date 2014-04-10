@@ -712,7 +712,16 @@ namespace GUI
             {
                 if (pdfMade)
                     for (int i = 0; i <= tempFilesCount; i++)
-                        File.Delete(@"temp" + i + ".pdf");
+                    {
+                        try
+                        {
+                            File.Delete(@"temp" + i + ".pdf");
+                        }
+                        catch (System.Exception ex2)
+                        {
+                            MessageBox.Show("A PDF is missing and will not be deleted.");
+                        }
+                    }
             }
             catch (System.Exception exception)
             {
