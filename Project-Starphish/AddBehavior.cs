@@ -94,6 +94,11 @@ namespace GUI
             {
                 startDate = new DateTime(datePickerBeginDailyBehavior.Value.Year, datePickerBeginDailyBehavior.Value.Month, 1);
                 endDate = new DateTime(datePickerEndDailyBehavior.Value.Year, datePickerEndDailyBehavior.Value.Month, DateTime.DaysInMonth(datePickerEndDailyBehavior.Value.Year, datePickerEndDailyBehavior.Value.Month));
+
+                if (startDate > endDate)
+                {
+                    MessageBox.Show("Error: The start date must be before the end date.");
+                }
             }
         }
 

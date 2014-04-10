@@ -268,6 +268,7 @@ namespace GUI
                 }
 
                 this.Text = "Sky Pie - " + txtFirstName.Text + ' ' + txtLastName.Text;
+                graphFirstTime = true;
             }
         }
 
@@ -479,6 +480,8 @@ namespace GUI
             //If the user doesn't cancel the ISP file selection, save it and display it in the listbox.
             if (dialogFileOpenISP.ShowDialog() != DialogResult.Cancel)
             {
+                int nameAdendum = 2;
+                bool ready = false;
                 FileStream st = new FileStream(dialogFileOpenISP.FileName, FileMode.Open);
                 byte[] buffer = new byte[st.Length];
                 st.Read(buffer, 0, (int)st.Length);
@@ -487,8 +490,44 @@ namespace GUI
                 connection.Open();
                 commandAddISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
                 commandAddISP.Parameters.AddWithValue("@ISPNAME", Path.GetFileName(dialogFileOpenISP.FileName));
+                    //while (!ready)
+                    //{
+                    //    try
+                    //    {
+                    //        commandAddISP.Parameters.AddWithValue("@ISPNAME", Path.GetFileName(dialogFileOpenISP.FileName + "_" + nameAdendum.ToString()));
+                    //        ready = true;
+                    //    }
+                    //    catch
+                    //    {
+                    //        ready = false;
+                    //        nameAdendum++;
+                    //    }
+                    //}
                 commandAddISP.Parameters.AddWithValue("@ISP", buffer);
-                commandAddISP.ExecuteNonQuery();
+                try
+                {
+                    commandAddISP.ExecuteNonQuery();
+                }
+                catch 
+                {
+                    while (!ready)
+                    {
+                        try
+                        {
+                            commandAddISP.Parameters.Clear();
+                            commandAddISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                            commandAddISP.Parameters.AddWithValue("@ISPNAME", Path.GetFileName(dialogFileOpenISP.FileName + "_" + nameAdendum.ToString()));
+                            commandAddISP.Parameters.AddWithValue("@ISP", buffer);
+                            commandAddISP.ExecuteNonQuery();
+                            ready = true;
+                        }
+                        catch
+                        {
+                            ready = false;
+                            nameAdendum++;
+                        }
+                    }
+                }
                 commandAddISP.Parameters.Clear();
                 connection.Close();
 
