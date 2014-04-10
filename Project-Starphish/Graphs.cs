@@ -430,107 +430,136 @@ namespace GUI
         /// </summary>
         private void createGraphs()
         {
-            //This controls whether the charts have their values shown as numbers or not
-            chartPieDailyOccurences.Series[0].IsValueShownAsLabel = true;
-            chartPyramidOccurences.Series[0].IsValueShownAsLabel = true;
+            //guilty until proven innocent
+            bool noBehaviors = true;
 
-            //changes the number of values displayed at the bottom of the left graph depending
-            //on how many data points there are
-            if (behaviorsOnSpecifiedDate.Count >= 600)
-                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 60;
-            else if (behaviorsOnSpecifiedDate.Count >= 250)
-                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 30;
-            else if (behaviorsOnSpecifiedDate.Count >= 85)
-                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 10;
-            else if (behaviorsOnSpecifiedDate.Count >= 55)
-                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 4;
-            else if (behaviorsOnSpecifiedDate.Count >= 15)
-                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 2;
-            else
-                chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 1;
-
-            chartTotalBehaviors.Series[1].Color = Color.Black;
-            chartTotalBehaviors.Series[1].BorderWidth = 2;
-
-            //Creates the left graph, doesn't need any if statements because the list is already
-            //formatted correctly
+            //goes through the behaviorsOnSpecificDate list, if there are no behaviors at all sets all the graphs to be invisible and says so
             for (int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
             {
-                chartTotalBehaviors.Series[1].Points.AddXY(
-                    behaviorsOnSpecifiedDate[i].Date.Month +
-                    "/" +
-                    behaviorsOnSpecifiedDate[i].Date.Day,
-                    behaviorsOnSpecifiedDate[i].Occurences);
-            }
-
-            if (comboBehaviorsToGraph.SelectedIndex == 0)//Graph all
-            {
-                for (int i = 0; i < timesBehaviorsOccured.Count; i++)
+                if (behaviorsOnSpecifiedDate[i].Occurences > 0)
                 {
-                    chartPyramidOccurences.Series[0].Points.AddXY(
-                        timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
-                    chartPieDailyOccurences.Series[0].Points.AddXY(
-                        timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                    noBehaviors = false;
+                    break;
                 }
             }
-            else if (comboBehaviorsToGraph.SelectedIndex == 1)//top 5
+
+            if (noBehaviors)
             {
-                int totalTop = 5;
-
-                if (timesBehaviorsOccured.Count < 5)
-                    totalTop = timesBehaviorsOccured.Count;
-
-                //only add it if it is one of the top 5 behaviors
-                for (int i = 0; i < totalTop; i++)
-                {
-                    chartPyramidOccurences.Series[0].Points.AddXY(
-                        timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
-                    chartPieDailyOccurences.Series[0].Points.AddXY(
-                        timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
-                }
+                lblNoBehaviors.Visible = true;
+                chartPyramidOccurences.Visible = false;
+                chartPieDailyOccurences.Visible = false;
+                chartTotalBehaviors.Visible = false;
             }
-            else if (comboBehaviorsToGraph.SelectedIndex == 2)//custom
+            else
             {
-                for (int i = 0; i < timesBehaviorsOccured.Count; i++)
+                lblNoBehaviors.Visible = false;
+                chartPyramidOccurences.Visible = true;
+                chartPieDailyOccurences.Visible = true;
+                chartTotalBehaviors.Visible = true;
+
+                //This controls whether the charts have their values shown as numbers or not
+                chartPieDailyOccurences.Series[0].IsValueShownAsLabel = true;
+                chartPyramidOccurences.Series[0].IsValueShownAsLabel = true;
+
+                //changes the number of values displayed at the bottom of the left graph depending
+                //on how many data points there are
+                if (behaviorsOnSpecifiedDate.Count >= 600)
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 60;
+                else if (behaviorsOnSpecifiedDate.Count >= 250)
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 30;
+                else if (behaviorsOnSpecifiedDate.Count >= 85)
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 10;
+                else if (behaviorsOnSpecifiedDate.Count >= 55)
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 4;
+                else if (behaviorsOnSpecifiedDate.Count >= 15)
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 2;
+                else
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 1;
+
+                chartTotalBehaviors.Series[1].Color = Color.Black;
+                chartTotalBehaviors.Series[1].BorderWidth = 2;
+
+
+                //Creates the left graph, doesn't need any if statements because the list is already
+                //formatted correctly
+                for (int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
                 {
-                    for (int x = 0; x < listBehaviorsToGraph.SelectedItems.Count; x++)
+                    chartTotalBehaviors.Series[1].Points.AddXY(
+                        behaviorsOnSpecifiedDate[i].Date.Month +
+                        "/" +
+                        behaviorsOnSpecifiedDate[i].Date.Day,
+                        behaviorsOnSpecifiedDate[i].Occurences);
+                }
+
+                if (comboBehaviorsToGraph.SelectedIndex == 0)//Graph all
+                {
+                    for (int i = 0; i < timesBehaviorsOccured.Count; i++)
                     {
-                        if (listBehaviorsToGraph.SelectedItems[x].ToString() == timesBehaviorsOccured[i].Behavior)
+                        chartPyramidOccurences.Series[0].Points.AddXY(
+                            timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                        chartPieDailyOccurences.Series[0].Points.AddXY(
+                            timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                    }
+                }
+                else if (comboBehaviorsToGraph.SelectedIndex == 1)//top 5
+                {
+                    int totalTop = 5;
+
+                    if (timesBehaviorsOccured.Count < 5)
+                        totalTop = timesBehaviorsOccured.Count;
+
+                    //only add it if it is one of the top 5 behaviors
+                    for (int i = 0; i < totalTop; i++)
+                    {
+                        chartPyramidOccurences.Series[0].Points.AddXY(
+                            timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                        chartPieDailyOccurences.Series[0].Points.AddXY(
+                            timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                    }
+                }
+                else if (comboBehaviorsToGraph.SelectedIndex == 2)//custom
+                {
+                    for (int i = 0; i < timesBehaviorsOccured.Count; i++)
+                    {
+                        for (int x = 0; x < listBehaviorsToGraph.SelectedItems.Count; x++)
                         {
-                            chartPyramidOccurences.Series[0].Points.AddXY(
-                                timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
-                            chartPieDailyOccurences.Series[0].Points.AddXY(
-                                timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                            if (listBehaviorsToGraph.SelectedItems[x].ToString() == timesBehaviorsOccured[i].Behavior)
+                            {
+                                chartPyramidOccurences.Series[0].Points.AddXY(
+                                    timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                                chartPieDailyOccurences.Series[0].Points.AddXY(
+                                    timesBehaviorsOccured[i].Behavior, timesBehaviorsOccured[i].Occurences);
+                            }
                         }
                     }
                 }
-            }
 
-            //this sorts the two charts on the right so that the largest values are at the top
-            chartPyramidOccurences.Series[0].Sort(PointSortOrder.Ascending);
-            chartPieDailyOccurences.Series[0].Sort(PointSortOrder.Ascending);
+                //this sorts the two charts on the right so that the largest values are at the top
+                chartPyramidOccurences.Series[0].Sort(PointSortOrder.Ascending);
+                chartPieDailyOccurences.Series[0].Sort(PointSortOrder.Ascending);
 
-            //Don't do this is there is 1 or 0 behaviors in the list, the program will crash because
-            //It cant create an average line with only 1 or 0 behaviors
-            if (behaviorsOnSpecifiedDate.Count > 1)
-            {
-                /////////////////////For calculating the Trend Line
-                chartTotalBehaviors.Series["TrendLine"].ChartType = SeriesChartType.Line;
-                chartTotalBehaviors.Series["TrendLine"].BorderWidth = 5;
-                chartTotalBehaviors.Series["TrendLine"].Color = Color.Red;
-                // Line of best fit is linear
-                string typeRegression = "Linear";//"Exponential";//
-                // The number of days for Forecasting
-                string forecasting = "1";
-                // Show Error as a range chart.
-                string error = "false";
-                // Show Forecasting Error as a range chart.
-                string forecastingError = "false";
-                // Formula parameters
-                string parameters = typeRegression + ',' + forecasting + ',' + error + ',' + forecastingError;
-                // Create Forecasting Series.
-                chartTotalBehaviors.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTotalBehaviors.Series[1], chartTotalBehaviors.Series["TrendLine"]);
-                /////////////////////////              
+                //Don't do this is there is 1 or 0 behaviors in the list, the program will crash because
+                //It cant create an average line with only 1 or 0 behaviors
+                if (behaviorsOnSpecifiedDate.Count > 1)
+                {
+                    /////////////////////For calculating the Trend Line
+                    chartTotalBehaviors.Series["TrendLine"].ChartType = SeriesChartType.Line;
+                    chartTotalBehaviors.Series["TrendLine"].BorderWidth = 5;
+                    chartTotalBehaviors.Series["TrendLine"].Color = Color.Red;
+                    // Line of best fit is linear
+                    string typeRegression = "Linear";//"Exponential";//
+                    // The number of days for Forecasting
+                    string forecasting = "1";
+                    // Show Error as a range chart.
+                    string error = "false";
+                    // Show Forecasting Error as a range chart.
+                    string forecastingError = "false";
+                    // Formula parameters
+                    string parameters = typeRegression + ',' + forecasting + ',' + error + ',' + forecastingError;
+                    // Create Forecasting Series.
+                    chartTotalBehaviors.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chartTotalBehaviors.Series[1], chartTotalBehaviors.Series["TrendLine"]);
+                    /////////////////////////              
+                }
             }
         }
 
