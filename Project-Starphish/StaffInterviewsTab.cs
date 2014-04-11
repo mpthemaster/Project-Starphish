@@ -97,8 +97,7 @@ namespace GUI
             dataGridViewStrengths.Rows.Clear();
             dataGridViewBehaviorsStaffInterviews.Rows.Clear();
             dataGridViewAntecedents.Rows.Clear();
-            chartQABFAnalysis.Series.Clear();
-            chartQABFAnalysis.Update();
+            chartQABFAnalysis.Series[0].Points.Clear();
             selectedInterviews.Clear();
             selectedQABFBehavior = false;
 
@@ -137,17 +136,96 @@ namespace GUI
         /// </summary>
         private void calculateQABFs()
         {
+            //If a behavior is selected, display the QABF chart for it.
             if (selectedQABFBehavior)
             {
+                List<int> answers = new List<int>();
+
+                //Foreach staff interview, go through its list of strengths.
+                //  Foreach behavior in a given staff interview, check if it matches the selected behavior for QABF analysis.
+                //      If it matches the selected behavior, add its answers for totaling.
+                //      Else check the next behavior to see if it matches the selected behavior.
                 foreach (StaffInterview staffInterview in selectedInterviews)
                     foreach (Behavior behavior in staffInterview.Behaviors)
                         if (behavior.Name == (string)dataGridViewBehaviorsStaffInterviews.SelectedRows[0].Cells[0].Value)
                         {
-                            MessageBox.Show("This worked.");
+                            if (behavior.Qabf != null)
+                            {
+                                //If the list has not had any answers added to it yet, add the answers for the first time.
+                                //Else the list has had answers added to it, so add the answers to the pre-existing totals.
+                                if (answers.Count == 0)
+                                    for (int i = 0; i < behavior.Qabf.questions.Length; i++)
+                                        answers.Add(qabfTextToNum(behavior.Qabf.questions[i].Answer));
+                                else
+                                    for (int i = 0; i < behavior.Qabf.questions.Length; i++)
+                                        answers[i] += qabfTextToNum(behavior.Qabf.questions[i].Answer);
+                            }
+                            break;
                         }
-            }
-            else
-            {
+
+                double attentionAnswer = 0, escapeAnswer = 0, nonsocialAnswer = 0, physicalAnswer = 0, tangibleAnswer = 0;
+
+                for (int i = 0; i < answers.Count; i++)
+                {
+                    double answerAverage = answers[i] / (double)selectedInterviews.Count;
+
+                    switch (i + 1)
+                    {
+                        //Answers for the Attention category.
+                        case 1:
+                        case 6:
+                        case 11:
+                        case 16:
+                        case 21:
+                            attentionAnswer += answerAverage;
+                            break;
+
+                        //Answers for the Escape category.
+                        case 2:
+                        case 7:
+                        case 12:
+                        case 17:
+                        case 22:
+                            escapeAnswer += answerAverage;
+                            break;
+
+                        //Answers for the Non-Social category.
+                        case 3:
+                        case 8:
+                        case 13:
+                        case 18:
+                        case 23:
+                            nonsocialAnswer += answerAverage;
+                            break;
+
+                        //Answers for the Physical category.
+                        case 4:
+                        case 9:
+                        case 14:
+                        case 19:
+                        case 24:
+                            physicalAnswer += answerAverage;
+                            break;
+
+                        //Answers for the Tangible category.
+                        case 5:
+                        case 10:
+                        case 15:
+                        case 20:
+                        case 25:
+                            tangibleAnswer += answerAverage;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                chartQABFAnalysis.Series[0].Points.Clear();
+                chartQABFAnalysis.Series[0].Points.AddXY("Attention", attentionAnswer / 5);
+                chartQABFAnalysis.Series[0].Points.AddXY("Escape", escapeAnswer / 5);
+                chartQABFAnalysis.Series[0].Points.AddXY("Non-Social", nonsocialAnswer / 5);
+                chartQABFAnalysis.Series[0].Points.AddXY("Physical", physicalAnswer / 5);
+                chartQABFAnalysis.Series[0].Points.AddXY("Tangible", tangibleAnswer / 5);
             }
         }
 
@@ -158,8 +236,8 @@ namespace GUI
         {
             Dictionary<string, int[]> antecedents = new Dictionary<string, int[]>();
 
-            //Foreach staff interview, go through its list of strengths.
-            //  For reach behavior in a given staff interview, check if it has already been added to the dictionaries,
+            //Foreach staff interview, go through its list of behaviors.
+            //  Foreach behavior in a given staff interview, check if it has already been added to the dictionaries,
             //      If it hasn't been added, add it.
             //      Else it has been added, so increase the value in each dictionary by the values contained within the antecedents.
             foreach (StaffInterview staffInterview in selectedInterviews)
@@ -247,8 +325,8 @@ namespace GUI
             Dictionary<string, int> behaviorFrequency = new Dictionary<string, int>();
             Dictionary<string, int> behaviorSeverity = new Dictionary<string, int>();
 
-            //Foreach staff interview, go through its list of strengths.
-            //  For reach behavior in a given staff interview, check if its frequencies and severities have already been added to the dictionaries,
+            //Foreach staff interview, go through its list of behaviorss.
+            //  Foreach behavior in a given staff interview, check if its frequencies and severities have already been added to the dictionaries,
             //      If they haven't been added, add them.
             //      Else they have been added, so increase the value in each dictionary by the values contained within the Behavior.
             foreach (StaffInterview staffInterview in selectedInterviews)
@@ -311,9 +389,36 @@ namespace GUI
         }
 
         /// <summary>
+        /// Converts the qabf answer to corresponding number values for calculations.
+        /// </summary>
+        /// <param name="qabfText">The qabf answer.</param>
+        /// <returns>The number value for a specific qabf answer.</returns>
+        private int qabfTextToNum(string qabfText)
+        {
+            switch (qabfText)
+            {
+                case "Doesn't Apply":
+                case "Never ":
+                    return 0;
+
+                case "Rarely":
+                    return 1;
+
+                case "Some":
+                    return 2;
+
+                case "Often":
+                    return 3;
+
+                default:
+                    return -1;
+            }
+        }
+
+        /// <summary>
         /// Converts the severity text options to corresponding number values for calculations.
         /// </summary>
-        /// <param name="severityText"></param>
+        /// <param name="severityText">The severity option.</param>
         /// <returns>The number value for a specific severity text.</returns>
         private int severityTextToNum(string severityText)
         {
@@ -336,7 +441,7 @@ namespace GUI
         /// <summary>
         /// Converts the frequency text options to corresponding number values for calculations.
         /// </summary>
-        /// <param name="frequencyText"></param>
+        /// <param name="frequencyText">The frequency option.</param>
         /// <returns>The number value for a specific frequency text.</returns>
         private int frequencyTextToNum(string frequencyText)
         {
