@@ -94,6 +94,7 @@ namespace GUI
         private void lstInterviews_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridViewStrengths.Rows.Clear();
+            dataGridViewBehaviorsStaffInterviews.Rows.Clear();
             selectedInterviews.Clear();
 
             //If an interview is selected, enable the buttons to view and remove it.
@@ -115,12 +116,59 @@ namespace GUI
 
                 //Display the selected staff interviews' results.
                 calculateStrengths();
+                calculateBehaviors();
             }
             else
             {
                 btnRemoveInterview.Enabled = false;
                 btnViewInterview.Enabled = false;
             }
+        }
+
+        /// <summary>
+        /// Calcuates information about the behaviors from the selected staff interviews.
+        /// </summary>
+        private void calculateBehaviors()
+        {
+            Dictionary<string, int> behaviorFrequency = new Dictionary<string, int>();
+            Dictionary<string, int> behaviorSeverity = new Dictionary<string, int>();
+
+            //Foreach staff interview, go through its list of strengths.
+            //  For reach behavior in a given staff interview, check if its frequencies and severities have already been added to the dictionaries,
+            //      If they haven't been added, add them.
+            //      Else they have been added, so increase the value in each dictionary by the values contained within the Behavior.
+            foreach (StaffInterview staffInterview in selectedInterviews)
+                foreach (Behavior behavior in staffInterview.Behaviors)
+                    if (!behaviorFrequency.ContainsKey(behavior.Name))
+                    {
+                        behaviorFrequency.Add(behavior.Name, frequencyTextToNum(behavior.Frequency));
+                        behaviorSeverity.Add(behavior.Name, severityTextToNum(behavior.Severity));
+                    }
+                    else
+                    {
+                        behaviorFrequency[behavior.Name] += frequencyTextToNum(behavior.Frequency);
+                        behaviorSeverity[behavior.Name] += severityTextToNum(behavior.Severity);
+                    }
+
+            // List<DataGridViewRow> rows = new List<DataGridViewRow>();
+            foreach (string behavior in behaviorFrequency.Keys)
+            {
+                double frequencyAverage = behaviorFrequency[behavior] / (double)selectedInterviews.Count;
+                double severityAverage = behaviorSeverity[behavior] / (double)selectedInterviews.Count;
+                double totalAverage = frequencyAverage + severityAverage;
+
+                //DataGridViewRow test = new DataGridViewRow();
+                //test.SetValues(behavior, frequencyAverage.ToString("0.##"), severityAverage.ToString("0.##"), totalAverage.ToString("0.##"));
+                //rows.Add(test);
+                dataGridViewBehaviorsStaffInterviews.Rows.Add(behavior, frequencyAverage.ToString("0.##"), severityAverage.ToString("0.##"), totalAverage.ToString("0.##"));
+            }
+            dataGridViewBehaviorsStaffInterviews.Sort(dataGridViewBehaviorsStaffInterviews.Columns[dataGridViewBehaviorsStaffInterviews.Columns.Count - 2], System.ComponentModel.ListSortDirection.Descending);
+
+            //DataGridViewRow row in dataGridViewBehaviorsStaffInterviews.Rows
+            for (int i = 0; i < dataGridViewBehaviorsStaffInterviews.Rows.Count - 1; i++)
+                dataGridViewBehaviorsStaffInterviews.Rows[i].Cells[dataGridViewBehaviorsStaffInterviews.Columns.Count - 1].Value = i + 1;
+
+            //dataGridViewBehaviorsStaffInterviews.Rows.AddRange(rows.ToArray());
         }
 
         /// <summary>
@@ -142,14 +190,63 @@ namespace GUI
                         strengths[staffInterview.Strengths[i]]++;
 
             //Calculate the average for each strength and display it if it rounds up to 1.
-            foreach (String strength in strengths.Keys)
+            foreach (string strength in strengths.Keys)
             {
                 double average = strengths[strength] / (double)selectedInterviews.Count;
 
                 if (average >= .5)
                 {
-                    dataGridViewStrengths.Rows.Add(strength, average);
+                    dataGridViewStrengths.Rows.Add(strength, average.ToString("0.##"));
                 }
+            }
+        }
+
+        /// <summary>
+        /// Converts the severity text options to corresponding number values for calculations.
+        /// </summary>
+        /// <param name="severityText"></param>
+        /// <returns>The number value for a specific severity text.</returns>
+        private int severityTextToNum(string severityText)
+        {
+            switch (severityText)
+            {
+                case "Mild":
+                    return 1;
+
+                case "Moderate":
+                    return 2;
+
+                case "Severe":
+                    return 3;
+
+                default:
+                    return 0;
+            }
+        }
+
+        /// <summary>
+        /// Converts the frequency text options to corresponding number values for calculations.
+        /// </summary>
+        /// <param name="frequencyText"></param>
+        /// <returns>The number value for a specific frequency text.</returns>
+        private int frequencyTextToNum(string frequencyText)
+        {
+            switch (frequencyText)
+            {
+                case "Hourly":
+                    return 4;
+
+                case "Daily":
+                    return 3;
+
+                case "Weekly":
+                    return 2;
+
+                case "Less Often":
+                    return 1;
+
+                default:
+                    return 0;
             }
         }
 

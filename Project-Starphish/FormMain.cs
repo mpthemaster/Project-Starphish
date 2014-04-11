@@ -112,7 +112,7 @@ namespace GUI
                 if (txtSocialSecurityNum.Text != "" && txtLastName.Text != "")
                 {
                     if (picClient.Image != null)
-                        picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);  
+                        picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                     connection.Open();
                     command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
                     command.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
@@ -490,25 +490,25 @@ namespace GUI
                 connection.Open();
                 commandAddISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
                 commandAddISP.Parameters.AddWithValue("@ISPNAME", Path.GetFileName(dialogFileOpenISP.FileName));
-                    //while (!ready)
-                    //{
-                    //    try
-                    //    {
-                    //        commandAddISP.Parameters.AddWithValue("@ISPNAME", Path.GetFileName(dialogFileOpenISP.FileName + "_" + nameAdendum.ToString()));
-                    //        ready = true;
-                    //    }
-                    //    catch
-                    //    {
-                    //        ready = false;
-                    //        nameAdendum++;
-                    //    }
-                    //}
+                //while (!ready)
+                //{
+                //    try
+                //    {
+                //        commandAddISP.Parameters.AddWithValue("@ISPNAME", Path.GetFileName(dialogFileOpenISP.FileName + "_" + nameAdendum.ToString()));
+                //        ready = true;
+                //    }
+                //    catch
+                //    {
+                //        ready = false;
+                //        nameAdendum++;
+                //    }
+                //}
                 commandAddISP.Parameters.AddWithValue("@ISP", buffer);
                 try
                 {
                     commandAddISP.ExecuteNonQuery();
                 }
-                catch 
+                catch
                 {
                     while (!ready)
                     {
@@ -756,7 +756,7 @@ namespace GUI
                         {
                             File.Delete(@"temp" + i + ".pdf");
                         }
-                        catch (System.Exception ex2)
+                        catch (System.Exception)
                         {
                             MessageBox.Show("A PDF is missing and will not be deleted.");
                         }
@@ -767,8 +767,6 @@ namespace GUI
                 MessageBox.Show(exception.Message + " Please close all open ISP files.");
                 e.Cancel = true;
             }
-
-            
         }
 
         /// <summary>
@@ -823,9 +821,8 @@ namespace GUI
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                 chartPieDailyOccurences.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
+                chartPieDailyOccurences.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
             }
-
         }
 
         /// <summary>
@@ -834,7 +831,7 @@ namespace GUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void copyToolStripMenuItem2_Click(object sender, EventArgs e)
-        {   
+        {
             using (MemoryStream ms = new MemoryStream())
             {
                 chartPyramidOccurences.SaveImage(ms, ChartImageFormat.Bmp);
@@ -849,7 +846,7 @@ namespace GUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void saveToolStripMenuItem2_Click(object sender, EventArgs e)
-        {          
+        {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 chartPyramidOccurences.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
