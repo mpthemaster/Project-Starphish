@@ -440,10 +440,6 @@ namespace GUI
             txtSupportsCoordinatorTelephoneNum.Text = "";
         }
 
-        private void dataGridViewBehaviorsStaffInterviews_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }

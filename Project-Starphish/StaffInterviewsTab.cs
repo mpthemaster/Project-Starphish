@@ -14,6 +14,7 @@ namespace GUI
     {
         private List<StaffInterview> staffInterviews = new List<StaffInterview>();
         private List<StaffInterview> selectedInterviews = new List<StaffInterview>();
+        private bool selectedQABFBehavior = false;
 
         /// <summary>
         /// Loads up the pre-existing staff interviews to view.
@@ -99,6 +100,7 @@ namespace GUI
             chartQABFAnalysis.Series.Clear();
             chartQABFAnalysis.Update();
             selectedInterviews.Clear();
+            selectedQABFBehavior = false;
 
             //If an interview is selected, enable the buttons to view and remove it.
             //Else an interview isn't selected, so disable the buttons to view and remove interviews.
@@ -135,7 +137,18 @@ namespace GUI
         /// </summary>
         private void calculateQABFs()
         {
-            //foreach (StaffInterview staffInterview in selectedInterviews)
+            if (selectedQABFBehavior)
+            {
+                foreach (StaffInterview staffInterview in selectedInterviews)
+                    foreach (Behavior behavior in staffInterview.Behaviors)
+                        if (behavior.Name == (string)dataGridViewBehaviorsStaffInterviews.SelectedRows[0].Cells[0].Value)
+                        {
+                            MessageBox.Show("This worked.");
+                        }
+            }
+            else
+            {
+            }
         }
 
         /// <summary>
@@ -388,6 +401,20 @@ namespace GUI
             }
             else
                 MessageBox.Show("An interview needs to be selected before one can be removed.", "Error - No Interview Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void dataGridViewBehaviorsStaffInterviews_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewBehaviorsStaffInterviews.SelectedRows.Count > 0)
+                selectedQABFBehavior = true;
+            else
+                selectedQABFBehavior = false;
+
+            calculateQABFs();
+        }
+
+        private void dataGridViewBehaviorsStaffInterviews_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }
