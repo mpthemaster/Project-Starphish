@@ -95,6 +95,9 @@ namespace GUI
         {
             dataGridViewStrengths.Rows.Clear();
             dataGridViewBehaviorsStaffInterviews.Rows.Clear();
+            dataGridViewAntecedents.Rows.Clear();
+            chartQABFAnalysis.Series.Clear();
+            chartQABFAnalysis.Update();
             selectedInterviews.Clear();
 
             //If an interview is selected, enable the buttons to view and remove it.
@@ -117,11 +120,109 @@ namespace GUI
                 //Display the selected staff interviews' results.
                 calculateStrengths();
                 calculateBehaviors();
+                calculateAntecedents();
+                calculateQABFs();
             }
             else
             {
                 btnRemoveInterview.Enabled = false;
                 btnViewInterview.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Calculates information about the QABFs from the selected staff interviews.
+        /// </summary>
+        private void calculateQABFs()
+        {
+            //foreach (StaffInterview staffInterview in selectedInterviews)
+        }
+
+        /// <summary>
+        /// Calculates information about the antecedents from the selected staff interviews.
+        /// </summary>
+        private void calculateAntecedents()
+        {
+            Dictionary<string, int[]> antecedents = new Dictionary<string, int[]>();
+
+            //Foreach staff interview, go through its list of strengths.
+            //  For reach behavior in a given staff interview, check if it has already been added to the dictionaries,
+            //      If it hasn't been added, add it.
+            //      Else it has been added, so increase the value in each dictionary by the values contained within the antecedents.
+            foreach (StaffInterview staffInterview in selectedInterviews)
+                foreach (Behavior behavior in staffInterview.Behaviors)
+                    if (!antecedents.ContainsKey(behavior.Name))
+                    {
+                        int[] ants = new int[4];
+
+                        //Add up the number of each type of antecedents.
+                        foreach (string antecedent in behavior.Antecedents.Keys)
+                            switch (behavior.Antecedents[antecedent])
+                            {
+                                case "Physiological Causes":
+                                    ants[0]++;
+                                    break;
+
+                                case "Environmental Causes":
+                                    ants[1]++;
+                                    break;
+
+                                case "Psychological Causes":
+                                    ants[2]++;
+                                    break;
+
+                                case "Social Causes":
+                                    ants[3]++;
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                        antecedents.Add(behavior.Name, ants);
+                    }
+                    else
+                    {
+                        //Add up the number of each type of antecedents.
+                        int[] ants = antecedents[behavior.Name];
+                        foreach (string antecedent in behavior.Antecedents.Keys)
+                            switch (behavior.Antecedents[antecedent])
+                            {
+                                case "Physiological Causes":
+                                    ants[0]++;
+                                    break;
+
+                                case "Environmental Causes":
+                                    ants[1]++;
+                                    break;
+
+                                case "Psychological Causes":
+                                    ants[2]++;
+                                    break;
+
+                                case "Social Causes":
+                                    ants[3]++;
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                    }
+
+            //Calculate the averages for each behavior's types of antecedents, and the combined average of all the antecedents and display them.
+            foreach (string behavior in antecedents.Keys)
+            {
+                double physiologicalAverage = antecedents[behavior][0] / (double)selectedInterviews.Count;
+                double environmentalAverage = antecedents[behavior][1] / (double)selectedInterviews.Count;
+                double psychologicalAverage = antecedents[behavior][2] / (double)selectedInterviews.Count;
+                double socialAverage = antecedents[behavior][3] / (double)selectedInterviews.Count;
+
+                //Calculates the total average.
+                double total = 0;
+                for (int i = 0; i < antecedents[behavior].Length; i++)
+                    total += antecedents[behavior][i];
+                total /= (double)selectedInterviews.Count;
+
+                dataGridViewAntecedents.Rows.Add(behavior, total.ToString("0.##"), physiologicalAverage.ToString("0.##"), environmentalAverage.ToString("0.##"), psychologicalAverage.ToString("0.##"), socialAverage.ToString("0.##"));
             }
         }
 
@@ -150,25 +251,20 @@ namespace GUI
                         behaviorSeverity[behavior.Name] += severityTextToNum(behavior.Severity);
                     }
 
-            // List<DataGridViewRow> rows = new List<DataGridViewRow>();
+            //Calculate the averages for each behavior's frequency, severity, and combined total and display them.
             foreach (string behavior in behaviorFrequency.Keys)
             {
                 double frequencyAverage = behaviorFrequency[behavior] / (double)selectedInterviews.Count;
                 double severityAverage = behaviorSeverity[behavior] / (double)selectedInterviews.Count;
                 double totalAverage = frequencyAverage + severityAverage;
 
-                //DataGridViewRow test = new DataGridViewRow();
-                //test.SetValues(behavior, frequencyAverage.ToString("0.##"), severityAverage.ToString("0.##"), totalAverage.ToString("0.##"));
-                //rows.Add(test);
                 dataGridViewBehaviorsStaffInterviews.Rows.Add(behavior, frequencyAverage.ToString("0.##"), severityAverage.ToString("0.##"), totalAverage.ToString("0.##"));
             }
-            dataGridViewBehaviorsStaffInterviews.Sort(dataGridViewBehaviorsStaffInterviews.Columns[dataGridViewBehaviorsStaffInterviews.Columns.Count - 2], System.ComponentModel.ListSortDirection.Descending);
 
-            //DataGridViewRow row in dataGridViewBehaviorsStaffInterviews.Rows
+            //Sort the rows and give them rank based on the combined total of frequency and severity.
+            dataGridViewBehaviorsStaffInterviews.Sort(dataGridViewBehaviorsStaffInterviews.Columns[dataGridViewBehaviorsStaffInterviews.Columns.Count - 2], System.ComponentModel.ListSortDirection.Descending);
             for (int i = 0; i < dataGridViewBehaviorsStaffInterviews.Rows.Count - 1; i++)
                 dataGridViewBehaviorsStaffInterviews.Rows[i].Cells[dataGridViewBehaviorsStaffInterviews.Columns.Count - 1].Value = i + 1;
-
-            //dataGridViewBehaviorsStaffInterviews.Rows.AddRange(rows.ToArray());
         }
 
         /// <summary>
