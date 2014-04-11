@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -149,6 +150,7 @@ namespace GUI
                     foreach (Behavior behavior in staffInterview.Behaviors)
                         if (behavior.Name == (string)dataGridViewBehaviorsStaffInterviews.SelectedRows[0].Cells[0].Value)
                         {
+                            //If the behavior doesn't have a qabf, then just break because there is nothing to use.
                             if (behavior.Qabf != null)
                             {
                                 //If the list has not had any answers added to it yet, add the answers for the first time.
@@ -165,6 +167,7 @@ namespace GUI
 
                 double attentionAnswer = 0, escapeAnswer = 0, nonsocialAnswer = 0, physicalAnswer = 0, tangibleAnswer = 0;
 
+                //Score the QABF results.
                 for (int i = 0; i < answers.Count; i++)
                 {
                     double answerAverage = answers[i] / (double)selectedInterviews.Count;
@@ -220,12 +223,34 @@ namespace GUI
                             break;
                     }
                 }
+
+                //Find the average of each answer category.
+                attentionAnswer /= 5;
+                escapeAnswer /= 5;
+                nonsocialAnswer /= 5;
+                physicalAnswer /= 5;
+                tangibleAnswer /= 5;
+
+                //Display the results.
                 chartQABFAnalysis.Series[0].Points.Clear();
-                chartQABFAnalysis.Series[0].Points.AddXY("Attention", attentionAnswer / 5);
-                chartQABFAnalysis.Series[0].Points.AddXY("Escape", escapeAnswer / 5);
-                chartQABFAnalysis.Series[0].Points.AddXY("Non-Social", nonsocialAnswer / 5);
-                chartQABFAnalysis.Series[0].Points.AddXY("Physical", physicalAnswer / 5);
-                chartQABFAnalysis.Series[0].Points.AddXY("Tangible", tangibleAnswer / 5);
+                chartQABFAnalysis.Series[0].Points.AddXY("Attention", attentionAnswer);
+                chartQABFAnalysis.Series[0].Points.AddXY("Escape", escapeAnswer);
+                chartQABFAnalysis.Series[0].Points.AddXY("Non-Social", nonsocialAnswer);
+                chartQABFAnalysis.Series[0].Points.AddXY("Physical", physicalAnswer);
+                chartQABFAnalysis.Series[0].Points.AddXY("Tangible", tangibleAnswer);
+                chartQABFAnalysis.Series[0].Points[0].Color = Color.Aqua;
+                chartQABFAnalysis.Series[0].Points[1].Color = Color.DarkOrange;
+                chartQABFAnalysis.Series[0].Points[2].Color = Color.Gray;
+                chartQABFAnalysis.Series[0].Points[3].Color = Color.Gold;
+                chartQABFAnalysis.Series[0].Points[4].Color = Color.Blue;
+                chartQABFAnalysis.Series[0].Points[0].Label = attentionAnswer.ToString("0.##");
+                chartQABFAnalysis.Series[0].Points[1].Label = escapeAnswer.ToString("0.##");
+                chartQABFAnalysis.Series[0].Points[2].Label = nonsocialAnswer.ToString("0.##");
+                chartQABFAnalysis.Series[0].Points[3].Label = physicalAnswer.ToString("0.##");
+                chartQABFAnalysis.Series[0].Points[4].Label = tangibleAnswer.ToString("0.##");
+
+                //for (int i = 0; i < chartQABFAnalysis.Series[0].Points.Count; i++)
+                //chartQABFAnalysis.Series[0].Points[i].;
             }
         }
 
