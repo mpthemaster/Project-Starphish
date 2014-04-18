@@ -118,18 +118,22 @@ namespace GUI
             statement = "SELECT * FROM SIGNIN";
             command = new SqlCommand(statement, connection);
             reader = command.ExecuteReader();
-            int userCount = 0;
+
+            string accountName = "", accountPassword, securityQuestion, securityAnswer;
 
             while (reader.Read())
             {
-                userCount++;
+                accountName = (string)reader["ACCOUNT_NAME"];
+                accountPassword = (string)reader["ACCOUNT_PASSWORD"];
+                securityQuestion = (string)reader["SECURITY_QUESTION"];
+                securityAnswer = (string)reader["SECURITY_ANSWER"];
             }
             reader.Close();
             connection.Close();
 
             //If there is a user in the db, get login information.
             //Else no user exists, so make the user create a login.
-            if (userCount > 0)
+            if (!String.IsNullOrEmpty(accountName))
             {
             }
             else
