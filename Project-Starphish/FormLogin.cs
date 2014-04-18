@@ -37,8 +37,17 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //Hashes input password and username to compare with the hashed info in the db.
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(txtPassword.Text);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hashPassword = System.Text.Encoding.ASCII.GetString(data);
+
+            data = System.Text.Encoding.ASCII.GetBytes(txtUsername.Text);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hashName = System.Text.Encoding.ASCII.GetString(data);
+
             //If the account information doesn't match, alert the user and don't exit the form.
-            if (accountName != txtUsername.Text || accountPassword != txtPassword.Text)
+            if (accountName != hashName || accountPassword != hashPassword)
             {
                 close = false;
                 MessageBox.Show("The username or password was incorrect.", "Incorrect Login Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -57,9 +66,14 @@ namespace GUI
 
         private void btnResetAccount_Click(object sender, EventArgs e)
         {
+            //Hashes input security answer to compare with the hashed info in the db.
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(txtSecurityAnswer.Text);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hashAnswer = System.Text.Encoding.ASCII.GetString(data);
+
             //If the security information doesn't match, alert the user and don't exit the form.
             //Else the security information does match, so allow the user to reset the account information.
-            if (securityAnswer != txtSecurityAnswer.Text)
+            if (securityAnswer != hashAnswer)
             {
                 close = false;
                 MessageBox.Show("The security answer was incorrect.", "Incorrect Reset Information", MessageBoxButtons.OK, MessageBoxIcon.Error);

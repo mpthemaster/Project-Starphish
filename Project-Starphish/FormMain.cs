@@ -173,12 +173,25 @@ namespace GUI
                         command.ExecuteNonQuery();
                     }
 
+                    //Hashes all sensitive information that could be used to login or answer the security question.
+                    byte[] data = System.Text.Encoding.ASCII.GetBytes(formCreateLogin.AccountPassword);
+                    data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+                    String hashPassword = System.Text.Encoding.ASCII.GetString(data);
+
+                    data = System.Text.Encoding.ASCII.GetBytes(formCreateLogin.SecurityAnswer);
+                    data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+                    String hashAnswer = System.Text.Encoding.ASCII.GetString(data);
+
+                    data = System.Text.Encoding.ASCII.GetBytes(formCreateLogin.AccountName);
+                    data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+                    String hashName = System.Text.Encoding.ASCII.GetString(data);
+
                     statement = "INSERT INTO SIGNIN (ACCOUNT_NAME, ACCOUNT_PASSWORD, SECURITY_QUESTION, SECURITY_ANSWER) VALUES        (@ACCOUNT_NAME, @ACCOUNT_PASSWORD, @SECURITY_QUESTION, @SECURITY_ANSWER)";
                     command = new SqlCommand(statement, connection);
-                    command.Parameters.AddWithValue("@ACCOUNT_NAME", formCreateLogin.AccountName);
+                    command.Parameters.AddWithValue("@ACCOUNT_NAME", hashName);
                     command.Parameters.AddWithValue("@SECURITY_QUESTION", formCreateLogin.SecurityQuestion);
-                    command.Parameters.AddWithValue("@SECURITY_ANSWER", formCreateLogin.SecurityAnswer);
-                    command.Parameters.AddWithValue("@ACCOUNT_PASSWORD", formCreateLogin.AccountPassword);
+                    command.Parameters.AddWithValue("@SECURITY_ANSWER", hashAnswer);
+                    command.Parameters.AddWithValue("@ACCOUNT_PASSWORD", hashPassword);
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
