@@ -120,12 +120,14 @@
             // 
             // btnResetAccount
             // 
+            this.btnResetAccount.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnResetAccount.Location = new System.Drawing.Point(98, 288);
             this.btnResetAccount.Name = "btnResetAccount";
             this.btnResetAccount.Size = new System.Drawing.Size(88, 23);
             this.btnResetAccount.TabIndex = 23;
             this.btnResetAccount.Text = "Reset Account";
             this.btnResetAccount.UseVisualStyleBackColor = true;
+            this.btnResetAccount.Click += new System.EventHandler(this.btnResetAccount_Click);
             // 
             // FormLogin
             // 

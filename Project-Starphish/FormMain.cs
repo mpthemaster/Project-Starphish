@@ -132,17 +132,30 @@ namespace GUI
             connection.Close();
 
             //If there is a user in the db, get login information.
-            //Else no user exists, so make the user create a login.
+            bool reset = false;
             if (!String.IsNullOrEmpty(accountName))
             {
+                FormLogin formLogin = new FormLogin(accountName, accountPassword, securityQuestion, securityAnswer);
+
                 //If the login form is cancelled, exit.
-                //Else the user is logged in.
-                if (new FormLogin(accountName, accountPassword, securityQuestion, securityAnswer).ShowDialog() != DialogResult.OK)
+                //Else the user is logged in or wants to reset.
+                if (formLogin.ShowDialog() != DialogResult.OK)
                     Environment.Exit(1001);
+                else
+                    reset = formLogin.Reset;
             }
-            else
+
+            //If no user exists or the user wants to reset account information, make the user create a login or reset an ex.
+            if (String.IsNullOrEmpty(accountName) || reset)
             {
-                FormCreateLogin formCreateLogin = new FormCreateLogin();
+                FormCreateLogin formCreateLogin;
+
+                //If the user wants to reset account information, pass the creation form a security question and security answer.
+                //Else the user doesn't want to reset account information, so just instantiate the creation form as normal.
+                if (reset)
+                    formCreateLogin = new FormCreateLogin(securityQuestion, securityAnswer);
+                else
+                    formCreateLogin = new FormCreateLogin();
 
                 //If the user doesn't create a new account, exit.
                 //Else the user created a new account, so save it to the db.
@@ -151,6 +164,15 @@ namespace GUI
                 else
                 {
                     connection.Open();
+
+                    //If the user wants to reset account information, delete the existing account information before adding the new information.
+                    if (reset)
+                    {
+                        statement = "DELETE FROM SIGNIN";
+                        command = new SqlCommand(statement, connection);
+                        command.ExecuteNonQuery();
+                    }
+
                     statement = "INSERT INTO SIGNIN (ACCOUNT_NAME, ACCOUNT_PASSWORD, SECURITY_QUESTION, SECURITY_ANSWER) VALUES        (@ACCOUNT_NAME, @ACCOUNT_PASSWORD, @SECURITY_QUESTION, @SECURITY_ANSWER)";
                     command = new SqlCommand(statement, connection);
                     command.Parameters.AddWithValue("@ACCOUNT_NAME", formCreateLogin.AccountName);

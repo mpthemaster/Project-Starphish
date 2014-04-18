@@ -30,9 +30,25 @@ namespace GUI
 
         public string SecurityAnswer { get { return securityAnswer; } }
 
+        /// <summary>
+        /// Creates a new user account.
+        /// </summary>
         public FormCreateLogin()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Creates a new user account when an existing one is being reset.
+        /// </summary>
+        /// <param name="securityQuestion">The existing security question.</param>
+        /// <param name="securityAnswer">The existing answer to the secuirty question.</param>
+        public FormCreateLogin(string securityQuestion, string securityAnswer)
+        {
+            InitializeComponent();
+
+            txtSecurityAnswer.Text = securityAnswer;
+            txtSecurityQuestion.Text = securityQuestion;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

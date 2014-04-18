@@ -14,6 +14,9 @@ namespace GUI
     {
         private string accountName, accountPassword, securityAnswer;
         private bool close = true; //Whether of not the form should close. It shouldn't close when there is a validation error.
+        private bool reset = false; //Whether the user account info needs to be reset.
+
+        public bool Reset { get { return reset; } }
 
         /// <summary>
         /// Creates a form for the user to login.
@@ -50,6 +53,19 @@ namespace GUI
                 e.Cancel = true;
                 close = true;
             }
+        }
+
+        private void btnResetAccount_Click(object sender, EventArgs e)
+        {
+            //If the security information doesn't match, alert the user and don't exit the form.
+            //Else the security information does match, so allow the user to reset the account information.
+            if (securityAnswer != txtSecurityAnswer.Text)
+            {
+                close = false;
+                MessageBox.Show("The security answer was incorrect.", "Incorrect Reset Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                reset = true;
         }
     }
 }
