@@ -153,7 +153,7 @@ namespace GUI
                 //If the user wants to reset account information, pass the creation form a security question and security answer.
                 //Else the user doesn't want to reset account information, so just instantiate the creation form as normal.
                 if (reset)
-                    formCreateLogin = new FormCreateLogin(securityQuestion, securityAnswer);
+                    formCreateLogin = new FormCreateLogin(securityQuestion);
                 else
                     formCreateLogin = new FormCreateLogin();
 

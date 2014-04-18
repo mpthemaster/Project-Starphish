@@ -42,8 +42,7 @@ namespace GUI
         /// Creates a new user account when an existing one is being reset.
         /// </summary>
         /// <param name="securityQuestion">The existing security question.</param>
-        /// <param name="securityAnswer">The existing answer to the secuirty question.</param>
-        public FormCreateLogin(string securityQuestion, string securityAnswer)
+        public FormCreateLogin(string securityQuestion)
         {
             InitializeComponent();
 
