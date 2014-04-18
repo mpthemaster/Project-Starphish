@@ -12,9 +12,44 @@ namespace GUI
 {
     public partial class FormLogin : Form
     {
-        public FormLogin()
+        private string accountName, accountPassword, securityAnswer;
+        private bool close = true; //Whether of not the form should close. It shouldn't close when there is a validation error.
+
+        /// <summary>
+        /// Creates a form for the user to login.
+        /// </summary>
+        /// <param name="accountName">The name of the account stored in the db.</param>
+        /// <param name="accountPassword">The password of the account stored in the db.</param>
+        /// <param name="securityQuestion">The security question for the account stored in the db.</param>
+        /// <param name="securityAnswer">The answer to the security question for the account stored in the db.</param>
+        public FormLogin(string accountName, string accountPassword, string securityQuestion, string securityAnswer)
         {
             InitializeComponent();
+
+            this.accountName = accountName;
+            this.accountPassword = accountPassword;
+            this.securityAnswer = securityAnswer;
+            lblSecurityQuestion.Text = securityQuestion;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            //If the account information doesn't match, alert the user and don't exit the form.
+            if (accountName != txtUsername.Text || accountPassword != txtPassword.Text)
+            {
+                close = false;
+                MessageBox.Show("The username or password was incorrect.", "Incorrect Login Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //If the form shouldn't close because invalidate information was entered, stop it from closing.
+            if (!close)
+            {
+                e.Cancel = true;
+                close = true;
+            }
         }
     }
 }

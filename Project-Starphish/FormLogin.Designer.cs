@@ -109,12 +109,14 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnLogin.Location = new System.Drawing.Point(107, 77);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 22;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnResetAccount
             // 
@@ -144,6 +146,7 @@
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.Text = "Sky Pie - Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

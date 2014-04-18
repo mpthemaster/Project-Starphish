@@ -119,7 +119,7 @@ namespace GUI
             command = new SqlCommand(statement, connection);
             reader = command.ExecuteReader();
 
-            string accountName = "", accountPassword, securityQuestion, securityAnswer;
+            string accountName = "", accountPassword = "", securityQuestion = "", securityAnswer = "";
 
             while (reader.Read())
             {
@@ -135,6 +135,10 @@ namespace GUI
             //Else no user exists, so make the user create a login.
             if (!String.IsNullOrEmpty(accountName))
             {
+                //If the login form is cancelled, exit.
+                //Else the user is logged in.
+                if (new FormLogin(accountName, accountPassword, securityQuestion, securityAnswer).ShowDialog() != DialogResult.OK)
+                    Environment.Exit(1001);
             }
             else
             {
