@@ -105,6 +105,40 @@ namespace GUI
             commandSelectBehaviors = new SqlCommand(selectBehaviors, connection);
         }
 
+        private void userLogin()
+        {
+            //Get user info from the db.
+            //Connect to the database.
+            SqlDataReader reader;
+            SqlCommand command;
+            string statement;
+
+            //Get the information from the Staff Interview and display it.
+            connection.Open();
+            statement = "SELECT * FROM SIGNIN";
+            command = new SqlCommand(statement, connection);
+            reader = command.ExecuteReader();
+            int userCount = 0;
+
+            while (reader.Read())
+            {
+                userCount++;
+            }
+            reader.Close();
+            connection.Close();
+
+            //If there is a user in the db, get login information.
+            //Else no user exists, so make the user create a login.
+            if (userCount > 0)
+            {
+            }
+            else
+                //If the user doesn't create a new account, exit.
+                //Else the user created a new account, so save it to the db.
+                if (new FormCreateLogin().ShowDialog() != DialogResult.OK)
+                    Environment.Exit(1001);
+        }
+
         private void btnSaveClient_Click(object sender, EventArgs e)
         {
             if (Int32.TryParse(txtSocialSecurityNum.Text, out personId))
@@ -178,6 +212,9 @@ namespace GUI
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            //Make the user login or set up login info.
+            userLogin();
+
             // TODO: This line of code loads data into the 'projectStarphishDataSet.BEHAVIOR' table. You can move, or remove it, as needed.
             this.bEHAVIORTableAdapter.Fill(this.projectStarphishDataSet.BEHAVIOR);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON_ISP' table. You can move, or remove it, as needed.
@@ -737,6 +774,10 @@ namespace GUI
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //If the form is closing because the user didn't create an account, just close (stops unauthorized access).
+            if (Environment.ExitCode == 1001)
+                return;
+
             //If on a tab with data that could need to be saved, then prompt the user about possible data lose,
             //  If the user doesn't want to continue exiting, stop the form from closing.
             //  Else continue closing the form.
