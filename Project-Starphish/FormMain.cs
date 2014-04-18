@@ -133,10 +133,26 @@ namespace GUI
             {
             }
             else
+            {
+                FormCreateLogin formCreateLogin = new FormCreateLogin();
+
                 //If the user doesn't create a new account, exit.
                 //Else the user created a new account, so save it to the db.
-                if (new FormCreateLogin().ShowDialog() != DialogResult.OK)
+                if (formCreateLogin.ShowDialog() != DialogResult.OK)
                     Environment.Exit(1001);
+                else
+                {
+                    connection.Open();
+                    statement = "INSERT INTO SIGNIN (ACCOUNT_NAME, ACCOUNT_PASSWORD, SECURITY_QUESTION, SECURITY_ANSWER) VALUES        (@ACCOUNT_NAME, @ACCOUNT_PASSWORD, @SECURITY_QUESTION, @SECURITY_ANSWER)";
+                    command = new SqlCommand(statement, connection);
+                    command.Parameters.AddWithValue("@ACCOUNT_NAME", formCreateLogin.AccountName);
+                    command.Parameters.AddWithValue("@SECURITY_QUESTION", formCreateLogin.SecurityQuestion);
+                    command.Parameters.AddWithValue("@SECURITY_ANSWER", formCreateLogin.SecurityAnswer);
+                    command.Parameters.AddWithValue("@ACCOUNT_PASSWORD", formCreateLogin.AccountPassword);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
         }
 
         private void btnSaveClient_Click(object sender, EventArgs e)

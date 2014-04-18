@@ -141,6 +141,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormCreateLogin
             // 
@@ -162,6 +163,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCreateLogin";
             this.Text = "Sky Pie - Login Creation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCreateLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
