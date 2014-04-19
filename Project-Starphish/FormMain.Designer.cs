@@ -158,6 +158,7 @@
             this.listClients = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.lblDatabaseUpdated = new System.Windows.Forms.Label();
             this.btnSaveDailyBehavior = new System.Windows.Forms.Button();
             this.label65 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
@@ -254,6 +255,7 @@
             this.pERSON_ISPTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSON_ISPTableAdapter();
             this.bEHAVIORTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -1396,6 +1398,7 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.lblDatabaseUpdated);
             this.groupBox12.Controls.Add(this.btnSaveDailyBehavior);
             this.groupBox12.Controls.Add(this.label65);
             this.groupBox12.Controls.Add(this.label63);
@@ -1412,6 +1415,17 @@
             this.groupBox12.TabIndex = 10;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Behaviors";
+            // 
+            // lblDatabaseUpdated
+            // 
+            this.lblDatabaseUpdated.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatabaseUpdated.Location = new System.Drawing.Point(893, 16);
+            this.lblDatabaseUpdated.Name = "lblDatabaseUpdated";
+            this.lblDatabaseUpdated.Size = new System.Drawing.Size(182, 45);
+            this.lblDatabaseUpdated.TabIndex = 37;
+            this.lblDatabaseUpdated.Text = "Update Successful.";
+            this.lblDatabaseUpdated.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDatabaseUpdated.Visible = false;
             // 
             // btnSaveDailyBehavior
             // 
@@ -1525,6 +1539,7 @@
             this.dataGridViewDailyBehaviorTracking.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDailyBehaviorTracking.Size = new System.Drawing.Size(1069, 541);
             this.dataGridViewDailyBehaviorTracking.TabIndex = 10;
+            this.dataGridViewDailyBehaviorTracking.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewDailyBehaviorTracking_DataError);
             this.dataGridViewDailyBehaviorTracking.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridViewDailyBehaviorTracking_DefaultValuesNeeded);
             // 
             // bEHAVIORDATEDataGridViewTextBoxColumn
@@ -1623,6 +1638,7 @@
             // lblNoBehaviors
             // 
             this.lblNoBehaviors.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoBehaviors.ForeColor = System.Drawing.Color.Gray;
             this.lblNoBehaviors.Location = new System.Drawing.Point(171, 189);
             this.lblNoBehaviors.Name = "lblNoBehaviors";
             this.lblNoBehaviors.Size = new System.Drawing.Size(883, 118);
@@ -2326,6 +2342,11 @@
             // 
             this.bEHAVIORTableAdapter.ClearBeforeFill = true;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2602,6 +2623,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.Label lblDatabaseUpdated;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

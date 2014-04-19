@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -18,7 +19,9 @@ namespace GUI
             if (behaviorFirstTime)
             {
                 behaviorFirstTime = false;
-                comboPickTimeDailyBehavior.SelectedIndex = 0;                  
+                comboPickTimeDailyBehavior.SelectedIndex = 0;
+                //sorts the grid view by the date by default
+                dataGridViewDailyBehaviorTracking.Sort(dataGridViewDailyBehaviorTracking.Columns[0], ListSortDirection.Ascending);
             }          
             SetDates();
             DisplayData();
@@ -28,18 +31,38 @@ namespace GUI
         /// Displays the data from the database in the grid view
         /// </summary>
         private void DisplayData()
-        {
+        {    
             try
             {
                 this.bEHAVIORTableAdapter.FillBy(this.projectStarphishDataSet.BEHAVIOR, personId, startDate.ToString(), endDate.ToString());
-                
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-//            dataGridViewDailyBehaviorTracking.DataSource = bEHAVIORBindingSource;
         }
+
+        private void dataGridViewDailyBehaviorTracking_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        {
+            //MessageBox.Show(anError.Context.ToString());
+            if (anError.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                MessageBox.Show("A commit error has occured, make sure that only properly formatted data is entered, the first three fields " 
+                 + "all have data in them, and that the data is not a duplicate of previously entered data.");
+            }
+            if (anError.Context == DataGridViewDataErrorContexts.CurrentCellChange)
+            {
+                MessageBox.Show("This Cell has an error in it");
+            }
+            if (anError.Context == DataGridViewDataErrorContexts.Parsing)
+            {
+                MessageBox.Show("This data could not be parsed correctly, please enter it again");
+            }
+            if (anError.Context == DataGridViewDataErrorContexts.LeaveControl)
+            {
+                MessageBox.Show("leave control error");
+            }
+        } 
 
         private void SetDates()
         {    
@@ -148,7 +171,8 @@ namespace GUI
                 this.Validate();
                 this.bEHAVIORBindingSource.EndEdit();
                 this.bEHAVIORTableAdapter.Update(this.projectStarphishDataSet.BEHAVIOR);
-                MessageBox.Show("Update successful");
+                lblDatabaseUpdated.Visible = true;
+                timer1.Enabled = true;
             }
             catch (System.Exception ex)
             {
@@ -157,6 +181,12 @@ namespace GUI
 
             SetDates();
             DisplayData();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDatabaseUpdated.Visible = false;
+            timer1.Enabled = false;
         }
 
         private void dataGridViewDailyBehaviorTracking_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
