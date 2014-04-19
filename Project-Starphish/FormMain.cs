@@ -298,7 +298,8 @@ namespace GUI
             // TODO: This line of code loads data into the 'projectStarphishDataSet.NEW_LIGHT_SUPPORT' table. You can move, or remove it, as needed.
             this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON' table. You can move, or remove it, as needed.
-            //projectStarphishDataSet.Tables["PERSON"].Columns.Add("NAME", typeof(string), "FNAME + LNAME");
+            if(!login)
+                projectStarphishDataSet.Tables["PERSON"].Columns.Add("NAME", typeof(string), "FNAME + LNAME");
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             comboRace.SelectedIndex = 3;
             int.TryParse(txtSocialSecurityNum.Text, out personId);
@@ -587,6 +588,12 @@ namespace GUI
                 commandDelete.Parameters.Clear();
                 connection.Close();
                 this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+                this.bEHAVIORTableAdapter.Fill(this.projectStarphishDataSet.BEHAVIOR);
+                this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
+                this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
+                this.nEXT_OF_KINTableAdapter.Fill(this.projectStarphishDataSet.NEXT_OF_KIN);
+                this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
+                this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
                 if (listClients.Items.Count > 0)
                 {
                     listClients_SelectedIndexChanged(this, e);
