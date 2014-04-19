@@ -200,73 +200,80 @@ namespace GUI
 
         private void btnSaveClient_Click(object sender, EventArgs e)
         {
-            if (Int32.TryParse(txtSocialSecurityNum.Text, out personId))
+            try
             {
-                if (txtSocialSecurityNum.Text != "" && txtLastName.Text != "")
+                if (Int32.TryParse(txtSocialSecurityNum.Text, out personId))
                 {
-                    if (picClient.Image != null)
-                        picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    connection.Open();
-                    command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
-                    command.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
-                    command.Parameters.AddWithValue("@LNAME", txtLastName.Text);
-                    command.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
-                    command.Parameters.AddWithValue("@PHOTO", ms.ToArray());
-                    command.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
-                    command.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
-                    command.Parameters.AddWithValue("@PHONE", txtTelephoneNum.Text);
-                    command.Parameters.AddWithValue("@ADMITTANCE_DATE", txtAdmittanceDate.Text);
-                    command.Parameters.AddWithValue("@ZIP", txtZipCode.Text);
-                    command.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
-                    command.Parameters.AddWithValue("@AGE", txtAge.Text);
-                    command.Parameters.AddWithValue("@GENDER", comboGender.Text);
-                    if (comboRace.Text == "Other")
-                        command.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
+                    if (txtSocialSecurityNum.Text != "" && txtLastName.Text != "")
+                    {
+                        if (picClient.Image != null)
+                            picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        connection.Open();
+                        command.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
+                        command.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
+                        command.Parameters.AddWithValue("@LNAME", txtLastName.Text);
+                        command.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
+                        command.Parameters.AddWithValue("@PHOTO", ms.ToArray());
+                        command.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
+                        command.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
+                        command.Parameters.AddWithValue("@PHONE", txtTelephoneNum.Text);
+                        command.Parameters.AddWithValue("@ADMITTANCE_DATE", txtAdmittanceDate.Text);
+                        command.Parameters.AddWithValue("@ZIP", txtZipCode.Text);
+                        command.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
+                        command.Parameters.AddWithValue("@AGE", txtAge.Text);
+                        command.Parameters.AddWithValue("@GENDER", comboGender.Text);
+                        if (comboRace.Text == "Other")
+                            command.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
+                        else
+                            command.Parameters.AddWithValue("@RACE", comboRace.Text);
+                        command.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
+                        command.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
+                        command.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
+                        command.Parameters.AddWithValue("@BSU", txtBSUNum.Text);
+                        command.Parameters.AddWithValue("@MCI", txtMCINum.Text);
+                        command.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
+                        command.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
+                        command.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtManagedCareCompany.Text);
+                        command.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
+
+                        commandNLS.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                        commandNLS.Parameters.AddWithValue("@SITE_SUPERVISOR_NAME", txtSiteSupervisorName.Text);
+                        commandNLS.Parameters.AddWithValue("@SITE_SUPERVISOR_PHONE", txtSiteSupervisorTelephoneNum.Text);
+                        commandNLS.Parameters.AddWithValue("@PROGRAM_COORDINATOR_NAME", txtProgramCoordinatorName.Text);
+                        commandNLS.Parameters.AddWithValue("@PROGRAM_COORDINATOR_PHONE", txtProgramCoordinatorTelephoneNum.Text);
+                        commandNLS.Parameters.AddWithValue("@PROGRAM_SPECIALIST_NAME", txtProgramSpecialistName.Text);
+                        commandNLS.Parameters.AddWithValue("@PROGRAM_SPECIALIST_PHONE", txtProgramSpecialistPhoneNum.Text);
+
+                        commandCR.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                        commandCR.Parameters.AddWithValue("@COUNTY_NAME", txtCountyResponsible.Text);
+                        commandCR.Parameters.AddWithValue("@Supports_Coordinator_Name", txtSupportsCoordinatorName.Text);
+                        commandCR.Parameters.AddWithValue("@Supports_Coordinator_Address", txtSupportsCoordinatorAddress.Text);
+                        commandCR.Parameters.AddWithValue("@SC_PHONE", txtSupportsCoordinatorTelephoneNum.Text);
+
+                        command.ExecuteNonQuery();
+                        commandNLS.ExecuteNonQuery();
+                        commandCR.ExecuteNonQuery();
+
+                        command.Parameters.Clear();
+                        commandNLS.Parameters.Clear();
+                        commandCR.Parameters.Clear();
+
+                        connection.Close();
+                        revertForm();
+                        this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+                        this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
+                        this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
+                    }
                     else
-                        command.Parameters.AddWithValue("@RACE", comboRace.Text);
-                    command.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
-                    command.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
-                    command.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
-                    command.Parameters.AddWithValue("@BSU", txtBSUNum.Text);
-                    command.Parameters.AddWithValue("@MCI", txtMCINum.Text);
-                    command.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
-                    command.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
-                    command.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtManagedCareCompany.Text);
-                    command.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
-
-                    commandNLS.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-                    commandNLS.Parameters.AddWithValue("@SITE_SUPERVISOR_NAME", txtSiteSupervisorName.Text);
-                    commandNLS.Parameters.AddWithValue("@SITE_SUPERVISOR_PHONE", txtSiteSupervisorTelephoneNum.Text);
-                    commandNLS.Parameters.AddWithValue("@PROGRAM_COORDINATOR_NAME", txtProgramCoordinatorName.Text);
-                    commandNLS.Parameters.AddWithValue("@PROGRAM_COORDINATOR_PHONE", txtProgramCoordinatorTelephoneNum.Text);
-                    commandNLS.Parameters.AddWithValue("@PROGRAM_SPECIALIST_NAME", txtProgramSpecialistName.Text);
-                    commandNLS.Parameters.AddWithValue("@PROGRAM_SPECIALIST_PHONE", txtProgramSpecialistPhoneNum.Text);
-
-                    commandCR.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-                    commandCR.Parameters.AddWithValue("@COUNTY_NAME", txtCountyResponsible.Text);
-                    commandCR.Parameters.AddWithValue("@Supports_Coordinator_Name", txtSupportsCoordinatorName.Text);
-                    commandCR.Parameters.AddWithValue("@Supports_Coordinator_Address", txtSupportsCoordinatorAddress.Text);
-                    commandCR.Parameters.AddWithValue("@SC_PHONE", txtSupportsCoordinatorTelephoneNum.Text);
-
-                    command.ExecuteNonQuery();
-                    commandNLS.ExecuteNonQuery();
-                    commandCR.ExecuteNonQuery();
-
-                    command.Parameters.Clear();
-                    commandNLS.Parameters.Clear();
-                    commandCR.Parameters.Clear();
-
-                    connection.Close();
-                    revertForm();
-                    this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
-                    this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
-                    this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
+                        MessageBox.Show("You must input a Social Security Number and Last Name.");
                 }
                 else
-                    MessageBox.Show("You must input a Social Security Number and Last Name.");
+                    MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
             }
-            else
-                MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
+            catch (Exception ff)
+            {
+                MessageBox.Show("Something has gone wrong. This person cannot be saved. Please make sure their Social Security Number is unique.");
+            }
         }
 
         private void FormMain_Load(object sender, EventArgs e)
