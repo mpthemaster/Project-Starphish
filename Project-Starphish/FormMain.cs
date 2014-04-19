@@ -61,6 +61,7 @@ namespace GUI
         private int tempFilesCount = 0;
         private bool searched = false;
         private bool changedPic = false;
+        private bool login = false;
 
         public FormMain()
         {
@@ -279,8 +280,11 @@ namespace GUI
         private void FormMain_Load(object sender, EventArgs e)
         {
             //Make the user login or set up login info.
-            userLogin();
-
+            if (!login)
+            {
+                userLogin();
+                login = true;
+            }
             // TODO: This line of code loads data into the 'projectStarphishDataSet.BEHAVIOR' table. You can move, or remove it, as needed.
             this.bEHAVIORTableAdapter.Fill(this.projectStarphishDataSet.BEHAVIOR);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON_ISP' table. You can move, or remove it, as needed.
@@ -294,7 +298,7 @@ namespace GUI
             // TODO: This line of code loads data into the 'projectStarphishDataSet.NEW_LIGHT_SUPPORT' table. You can move, or remove it, as needed.
             this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON' table. You can move, or remove it, as needed.
-            projectStarphishDataSet.Tables["PERSON"].Columns.Add("NAME", typeof(string), "FNAME + LNAME");
+            //projectStarphishDataSet.Tables["PERSON"].Columns.Add("NAME", typeof(string), "FNAME + LNAME");
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             comboRace.SelectedIndex = 3;
             int.TryParse(txtSocialSecurityNum.Text, out personId);
@@ -787,6 +791,7 @@ namespace GUI
             if (MessageBox.Show("This will delete all unsaved changes. Are you sure you wish to continue?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 revertForm();
+                FormMain_Load(this, e);
             }
         }
 
