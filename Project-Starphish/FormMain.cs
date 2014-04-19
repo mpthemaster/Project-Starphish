@@ -333,6 +333,7 @@ namespace GUI
         {
             if (listClients.SelectedItem != null)
             {
+
                 int.TryParse(txtSocialSecurityNum.Text, out personId);
                 if (searched)
                 {
@@ -357,7 +358,9 @@ namespace GUI
                             }
                         }
                         else if (picData == null || picData.Length == 0)
+                        {
                             picClient.Image = null;
+                        }
                     }
                     commandGetPic.Parameters.Clear();
                     connection.Close();
@@ -386,12 +389,13 @@ namespace GUI
                 changedPic = false;
                 if (picClient.Image != null)
                     picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                connection.Close();
                 connection.Open();
                 commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
                 commandUpdate.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
                 commandUpdate.Parameters.AddWithValue("@LNAME", txtLastName.Text);
                 commandUpdate.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
-                command.Parameters.AddWithValue("@PHOTO", ms.ToArray());
+                commandUpdate.Parameters.AddWithValue("@PHOTO", ms.ToArray());
                 commandUpdate.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
                 commandUpdate.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
                 commandUpdate.Parameters.AddWithValue("@ZIP", txtZipCode.Text);
@@ -563,6 +567,7 @@ namespace GUI
             if (dialogFileOpenImage.ShowDialog() != DialogResult.Cancel)
             {
                 picClient.Image = new Bitmap(dialogFileOpenImage.FileName);
+                picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 changedPic = true;
             }
         }
@@ -629,32 +634,46 @@ namespace GUI
 
         private void btnViewISP_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            commandViewISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-            commandViewISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
-            byte[] buffer = (byte[])commandViewISP.ExecuteScalar();
-            commandViewISP.Parameters.Clear();
-            connection.Close();
-            FileStream fs = new FileStream(@"temp" + tempFilesCount + ".pdf", FileMode.Create);
-            fs.Write(buffer, 0, buffer.Length);
-            fs.Close();
-            System.Diagnostics.Process.Start(@"temp" + tempFilesCount + ".pdf");
-            tempFilesCount++;
+            try
+            {
+                connection.Open();
+                commandViewISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandViewISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
+                byte[] buffer = (byte[])commandViewISP.ExecuteScalar();
+                commandViewISP.Parameters.Clear();
+                connection.Close();
+                FileStream fs = new FileStream(@"temp" + tempFilesCount + ".pdf", FileMode.Create);
+                fs.Write(buffer, 0, buffer.Length);
+                fs.Close();
+                System.Diagnostics.Process.Start(@"temp" + tempFilesCount + ".pdf");
+                tempFilesCount++;
 
-            pdfMade = true;
+                pdfMade = true;
+            }
+            catch
+            {
+                MessageBox.Show("No ISP to view");
+            }
         }
 
         private void btnRemoveISP_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            commandDeleteISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-            commandDeleteISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
+            try
+            {
+                connection.Open();
+                commandDeleteISP.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandDeleteISP.Parameters.AddWithValue("@ISPNAME", lstISP.SelectedValue);
 
-            commandDeleteISP.ExecuteNonQuery();
-            commandDeleteISP.Parameters.Clear();
-            connection.Close();
+                commandDeleteISP.ExecuteNonQuery();
+                commandDeleteISP.Parameters.Clear();
+                connection.Close();
 
-            this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
+                this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
+            }
+            catch 
+            {
+                MessageBox.Show("No ISP to remove.");
+            }
         }
 
         private void btnRemoveNextOfKin_Click(object sender, EventArgs e)
