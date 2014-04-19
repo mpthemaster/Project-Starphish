@@ -292,7 +292,17 @@ namespace GUI
             comboRace.SelectedIndex = 3;
             int.TryParse(txtSocialSecurityNum.Text, out personId);
             EventArgs x = new EventArgs();
-            listClients_SelectedIndexChanged(this, x);
+            if (listClients.Items.Count > 0)
+            {
+                listClients_SelectedIndexChanged(this, x);
+            }
+            else
+            {
+                addClientToolStripMenuItem_Click(this, x);
+                btnCancel.Visible = false;
+            }
+
+            
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -326,6 +336,11 @@ namespace GUI
             btnCancel.Enabled = true;
             btnCancel.Visible = true;
             txtSocialSecurityNum.Enabled = true;
+            addClientToolStripMenuItem.Enabled = false;
+            removeClientToolStripMenuItem.Enabled = false;
+            ((Control)tabPage2).Enabled = false;
+            ((Control)tabPage3).Enabled = false;
+            ((Control)tabPage4).Enabled = false;
         }
 
         //Michael - I updated this to TryParse so that it doesn't fail when none is selected. This is a bug. Delete this when fixed.
@@ -554,6 +569,15 @@ namespace GUI
                 commandDelete.Parameters.Clear();
                 connection.Close();
                 this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+                if (listClients.Items.Count > 0)
+                {
+                    listClients_SelectedIndexChanged(this, e);
+                }
+                else
+                {
+                    addClientToolStripMenuItem_Click(this, e);
+                    btnCancel.Visible = false;
+                }
             }
         }
 
@@ -767,6 +791,11 @@ namespace GUI
             btnCancel.Enabled = false;
             btnCancel.Visible = false;
             txtSocialSecurityNum.Enabled = false;
+            addClientToolStripMenuItem.Enabled = true;
+            removeClientToolStripMenuItem.Enabled = true;
+            ((Control)tabPage2).Enabled = true;
+            ((Control)tabPage3).Enabled = true;
+            ((Control)tabPage4).Enabled = true;
         }
 
         private void comboRace_SelectedIndexChanged(object sender, EventArgs e)
