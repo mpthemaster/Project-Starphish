@@ -709,14 +709,21 @@ namespace GUI
 
         private void btnRemoveNextOfKin_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            commandDeleteNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-            commandDeleteNOK.Parameters.AddWithValue("@UNIQUEID", lstNextOfKin.SelectedValue);
-            commandDeleteNOK.ExecuteNonQuery();
-            commandDeleteNOK.Parameters.Clear();
-            connection.Close();
+            try
+            {
+                connection.Open();
+                commandDeleteNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandDeleteNOK.Parameters.AddWithValue("@UNIQUEID", lstNextOfKin.SelectedValue);
+                commandDeleteNOK.ExecuteNonQuery();
+                commandDeleteNOK.Parameters.Clear();
+                connection.Close();
 
-            this.nEXT_OF_KINTableAdapter.Fill(this.projectStarphishDataSet.NEXT_OF_KIN);
+                this.nEXT_OF_KINTableAdapter.Fill(this.projectStarphishDataSet.NEXT_OF_KIN);
+            }
+            catch
+            {
+                MessageBox.Show("No Next of Kin has been selected to remove.");
+            }
         }
 
         private void btnAddNextOfKin_Click(object sender, EventArgs e)
@@ -736,14 +743,21 @@ namespace GUI
 
         private void btnRemoveEmergencyContact_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            commandDeleteEC.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-            commandDeleteEC.Parameters.AddWithValue("@UNIQUEID", lstEmergencyContacts.SelectedValue);
-            commandDeleteEC.ExecuteNonQuery();
-            commandDeleteEC.Parameters.Clear();
-            connection.Close();
+            try
+            {
+                connection.Open();
+                commandDeleteEC.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandDeleteEC.Parameters.AddWithValue("@UNIQUEID", lstEmergencyContacts.SelectedValue);
+                commandDeleteEC.ExecuteNonQuery();
+                commandDeleteEC.Parameters.Clear();
+                connection.Close();
 
-            this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
+                this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
+            }
+            catch
+            {
+                MessageBox.Show("No Emergency Contact has been selected to remove.");
+            }
         }
 
         private void btnAddEmergencyContact_Click(object sender, EventArgs e)
