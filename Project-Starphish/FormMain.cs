@@ -406,120 +406,127 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
-            if (changedPic)
+            if (txtLastName.Text != "" && txtLastName.Text != " " && txtLastName.Text != null)
             {
-                changedPic = false;
-                if (picClient.Image != null)
-                    picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                connection.Close();
-                connection.Open();
-                commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
-                commandUpdate.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
-                commandUpdate.Parameters.AddWithValue("@LNAME", txtLastName.Text);
-                commandUpdate.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
-                commandUpdate.Parameters.AddWithValue("@PHOTO", ms.ToArray());
-                commandUpdate.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
-                commandUpdate.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
-                commandUpdate.Parameters.AddWithValue("@ZIP", txtZipCode.Text);
-                commandUpdate.Parameters.AddWithValue("@PHONE", txtTelephoneNum.Text);
-                commandUpdate.Parameters.AddWithValue("@ADMITTANCE_DATE", txtAdmittanceDate.Text);
-                commandUpdate.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
-                commandUpdate.Parameters.AddWithValue("@AGE", txtAge.Text);
-                commandUpdate.Parameters.AddWithValue("@GENDER", comboGender.Text);
-                if (comboRace.Text == "Other")
-                    commandUpdate.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
-                else
-                    commandUpdate.Parameters.AddWithValue("@RACE", comboRace.Text);
-                commandUpdate.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
-                commandUpdate.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
-                commandUpdate.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
-                commandUpdate.Parameters.AddWithValue("@BSU", txtBSUNum.Text);
-                commandUpdate.Parameters.AddWithValue("@MCI", txtMCINum.Text);
-                commandUpdate.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
-                commandUpdate.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
-                commandUpdate.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtManagedCareCompany.Text);
-                commandUpdate.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
+                if (changedPic)
+                {
+                    changedPic = false;
+                    if (picClient.Image != null)
+                        picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    connection.Close();
+                    connection.Open();
+                    commandUpdate.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
+                    commandUpdate.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
+                    commandUpdate.Parameters.AddWithValue("@LNAME", txtLastName.Text);
+                    commandUpdate.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
+                    commandUpdate.Parameters.AddWithValue("@PHOTO", ms.ToArray());
+                    commandUpdate.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
+                    commandUpdate.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
+                    commandUpdate.Parameters.AddWithValue("@ZIP", txtZipCode.Text);
+                    commandUpdate.Parameters.AddWithValue("@PHONE", txtTelephoneNum.Text);
+                    commandUpdate.Parameters.AddWithValue("@ADMITTANCE_DATE", txtAdmittanceDate.Text);
+                    commandUpdate.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
+                    commandUpdate.Parameters.AddWithValue("@AGE", txtAge.Text);
+                    commandUpdate.Parameters.AddWithValue("@GENDER", comboGender.Text);
+                    if (comboRace.Text == "Other")
+                        commandUpdate.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
+                    else
+                        commandUpdate.Parameters.AddWithValue("@RACE", comboRace.Text);
+                    commandUpdate.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
+                    commandUpdate.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
+                    commandUpdate.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
+                    commandUpdate.Parameters.AddWithValue("@BSU", txtBSUNum.Text);
+                    commandUpdate.Parameters.AddWithValue("@MCI", txtMCINum.Text);
+                    commandUpdate.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
+                    commandUpdate.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
+                    commandUpdate.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtManagedCareCompany.Text);
+                    commandUpdate.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
 
-                commandNLSUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_NAME", txtSiteSupervisorName.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_PHONE", txtSiteSupervisorTelephoneNum.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_NAME", txtProgramCoordinatorName.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_PHONE", txtProgramCoordinatorTelephoneNum.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_NAME", txtProgramSpecialistName.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_PHONE", txtProgramSpecialistPhoneNum.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_NAME", txtSiteSupervisorName.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_PHONE", txtSiteSupervisorTelephoneNum.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_NAME", txtProgramCoordinatorName.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_PHONE", txtProgramCoordinatorTelephoneNum.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_NAME", txtProgramSpecialistName.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_PHONE", txtProgramSpecialistPhoneNum.Text);
 
-                commandCRUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-                commandCRUpdate.Parameters.AddWithValue("@COUNTY_NAME", txtCountyResponsible.Text);
-                commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Name", txtSupportsCoordinatorName.Text);
-                commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Address", txtSupportsCoordinatorAddress.Text);
-                commandCRUpdate.Parameters.AddWithValue("@SC_PHONE", txtSupportsCoordinatorTelephoneNum.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@COUNTY_NAME", txtCountyResponsible.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Name", txtSupportsCoordinatorName.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Address", txtSupportsCoordinatorAddress.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@SC_PHONE", txtSupportsCoordinatorTelephoneNum.Text);
 
-                commandUpdate.ExecuteNonQuery();
-                commandNLSUpdate.ExecuteNonQuery();
-                commandCRUpdate.ExecuteNonQuery();
+                    commandUpdate.ExecuteNonQuery();
+                    commandNLSUpdate.ExecuteNonQuery();
+                    commandCRUpdate.ExecuteNonQuery();
 
-                commandUpdate.Parameters.Clear();
-                commandNLSUpdate.Parameters.Clear();
-                commandCRUpdate.Parameters.Clear();
+                    commandUpdate.Parameters.Clear();
+                    commandNLSUpdate.Parameters.Clear();
+                    commandCRUpdate.Parameters.Clear();
 
-                connection.Close();
+                    connection.Close();
+                }
+                else if (!changedPic)
+                {
+                    connection.Open();
+                    commandNoPic.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
+                    commandNoPic.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
+                    commandNoPic.Parameters.AddWithValue("@LNAME", txtLastName.Text);
+                    commandNoPic.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
+                    commandNoPic.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
+                    commandNoPic.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
+                    commandNoPic.Parameters.AddWithValue("@ZIP", txtZipCode.Text);
+                    commandNoPic.Parameters.AddWithValue("@PHONE", txtTelephoneNum.Text);
+                    commandNoPic.Parameters.AddWithValue("@ADMITTANCE_DATE", txtAdmittanceDate.Text);
+                    commandNoPic.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
+                    commandNoPic.Parameters.AddWithValue("@AGE", txtAge.Text);
+                    commandNoPic.Parameters.AddWithValue("@GENDER", comboGender.Text);
+                    if (comboRace.Text == "Other")
+                        commandNoPic.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
+                    else
+                        commandNoPic.Parameters.AddWithValue("@RACE", comboRace.Text);
+                    commandNoPic.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
+                    commandNoPic.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
+                    commandNoPic.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
+                    commandNoPic.Parameters.AddWithValue("@BSU", txtBSUNum.Text);
+                    commandNoPic.Parameters.AddWithValue("@MCI", txtMCINum.Text);
+                    commandNoPic.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
+                    commandNoPic.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
+                    commandNoPic.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtManagedCareCompany.Text);
+                    commandNoPic.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
+
+                    commandNLSUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_NAME", txtSiteSupervisorName.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_PHONE", txtSiteSupervisorTelephoneNum.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_NAME", txtProgramCoordinatorName.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_PHONE", txtProgramCoordinatorTelephoneNum.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_NAME", txtProgramSpecialistName.Text);
+                    commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_PHONE", txtProgramSpecialistPhoneNum.Text);
+
+                    commandCRUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@COUNTY_NAME", txtCountyResponsible.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Name", txtSupportsCoordinatorName.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Address", txtSupportsCoordinatorAddress.Text);
+                    commandCRUpdate.Parameters.AddWithValue("@SC_PHONE", txtSupportsCoordinatorTelephoneNum.Text);
+
+                    commandNoPic.ExecuteNonQuery();
+                    commandNLSUpdate.ExecuteNonQuery();
+                    commandCRUpdate.ExecuteNonQuery();
+
+                    commandNoPic.Parameters.Clear();
+                    commandNLSUpdate.Parameters.Clear();
+                    commandCRUpdate.Parameters.Clear();
+
+                    connection.Close();
+                }
+                this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+                this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
+                this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
             }
-            else if (!changedPic)
+            else
             {
-                connection.Open();
-                commandNoPic.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
-                commandNoPic.Parameters.AddWithValue("@MNAME", txtMiddleName.Text);
-                commandNoPic.Parameters.AddWithValue("@LNAME", txtLastName.Text);
-                commandNoPic.Parameters.AddWithValue("@IDENTIFYING_MARKS", txtIdentifyingMarks.Text);
-                commandNoPic.Parameters.AddWithValue("@AGENCY_NAME", txtAgencyName.Text);
-                commandNoPic.Parameters.AddWithValue("@P_ADDRESS", txtAddress.Text);
-                commandNoPic.Parameters.AddWithValue("@ZIP", txtZipCode.Text);
-                commandNoPic.Parameters.AddWithValue("@PHONE", txtTelephoneNum.Text);
-                commandNoPic.Parameters.AddWithValue("@ADMITTANCE_DATE", txtAdmittanceDate.Text);
-                commandNoPic.Parameters.AddWithValue("@DATE_OF_BIRTH", txtDateOfBirth.Text);
-                commandNoPic.Parameters.AddWithValue("@AGE", txtAge.Text);
-                commandNoPic.Parameters.AddWithValue("@GENDER", comboGender.Text);
-                if (comboRace.Text == "Other")
-                    commandNoPic.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
-                else
-                    commandNoPic.Parameters.AddWithValue("@RACE", comboRace.Text);
-                commandNoPic.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
-                commandNoPic.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
-                commandNoPic.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
-                commandNoPic.Parameters.AddWithValue("@BSU", txtBSUNum.Text);
-                commandNoPic.Parameters.AddWithValue("@MCI", txtMCINum.Text);
-                commandNoPic.Parameters.AddWithValue("@INSURANCE_CARRIER", txtInsuranceCarrier.Text);
-                commandNoPic.Parameters.AddWithValue("@POLICY_NUM", txtPolicyNum.Text);
-                commandNoPic.Parameters.AddWithValue("@MANAGED_CARE_COMPANY", txtManagedCareCompany.Text);
-                commandNoPic.Parameters.AddWithValue("@SSN", txtSocialSecurityNum.Text);
-
-                commandNLSUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_NAME", txtSiteSupervisorName.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@SITE_SUPERVISOR_PHONE", txtSiteSupervisorTelephoneNum.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_NAME", txtProgramCoordinatorName.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_COORDINATOR_PHONE", txtProgramCoordinatorTelephoneNum.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_NAME", txtProgramSpecialistName.Text);
-                commandNLSUpdate.Parameters.AddWithValue("@PROGRAM_SPECIALIST_PHONE", txtProgramSpecialistPhoneNum.Text);
-
-                commandCRUpdate.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
-                commandCRUpdate.Parameters.AddWithValue("@COUNTY_NAME", txtCountyResponsible.Text);
-                commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Name", txtSupportsCoordinatorName.Text);
-                commandCRUpdate.Parameters.AddWithValue("@Supports_Coordinator_Address", txtSupportsCoordinatorAddress.Text);
-                commandCRUpdate.Parameters.AddWithValue("@SC_PHONE", txtSupportsCoordinatorTelephoneNum.Text);
-
-                commandNoPic.ExecuteNonQuery();
-                commandNLSUpdate.ExecuteNonQuery();
-                commandCRUpdate.ExecuteNonQuery();
-
-                commandNoPic.Parameters.Clear();
-                commandNLSUpdate.Parameters.Clear();
-                commandCRUpdate.Parameters.Clear();
-
-                connection.Close();
+                MessageBox.Show("You can't save a person with no last name.");
             }
-            this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
-            this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
-            this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
         }
 
         private void clearForm()
