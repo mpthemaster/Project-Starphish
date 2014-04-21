@@ -248,6 +248,11 @@ namespace GUI
                 chartQABFAnalysis.Series[0].Points[2].Label = nonsocialAnswer.ToString("0.##");
                 chartQABFAnalysis.Series[0].Points[3].Label = physicalAnswer.ToString("0.##");
                 chartQABFAnalysis.Series[0].Points[4].Label = tangibleAnswer.ToString("0.##");
+                chartQABFAnalysis.Series[0].Points[0].LabelBackColor = Color.White;
+                chartQABFAnalysis.Series[0].Points[1].LabelBackColor = Color.White;
+                chartQABFAnalysis.Series[0].Points[2].LabelBackColor = Color.White;
+                chartQABFAnalysis.Series[0].Points[3].LabelBackColor = Color.White;
+                chartQABFAnalysis.Series[0].Points[4].LabelBackColor = Color.White;
 
                 //for (int i = 0; i < chartQABFAnalysis.Series[0].Points.Count; i++)
                 //chartQABFAnalysis.Series[0].Points[i].;

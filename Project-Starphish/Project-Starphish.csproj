@@ -190,6 +190,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\sky pie big.png" />
     <None Include="bin\Debug\Icon.ico" />
     <Content Include="Icon.ico" />
   </ItemGroup>
