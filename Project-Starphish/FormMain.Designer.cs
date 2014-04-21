@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -45,6 +44,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -169,13 +169,6 @@
             this.comboPickTimeDailyBehavior = new System.Windows.Forms.ComboBox();
             this.datePickerEndDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewDailyBehaviorTracking = new System.Windows.Forms.DataGridView();
-            this.bEHAVIORDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bEHAVIORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sEVERITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SHIFT_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTAFFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pERSONIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bEHAVIORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datePickerBeginDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -256,6 +249,13 @@
             this.bEHAVIORTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.bEHAVIORDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bEHAVIORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEVERITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SHIFT_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTAFFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pERSONIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -436,6 +436,7 @@
             // 
             this.txtEmergencyContactTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "PHONE", true));
             this.txtEmergencyContactTelephoneNum.Location = new System.Drawing.Point(132, 103);
+            this.txtEmergencyContactTelephoneNum.MaxLength = 14;
             this.txtEmergencyContactTelephoneNum.Name = "txtEmergencyContactTelephoneNum";
             this.txtEmergencyContactTelephoneNum.Size = new System.Drawing.Size(93, 20);
             this.txtEmergencyContactTelephoneNum.TabIndex = 450;
@@ -488,6 +489,7 @@
             // 
             this.txtEmergencyContactName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "NAME", true));
             this.txtEmergencyContactName.Location = new System.Drawing.Point(132, 64);
+            this.txtEmergencyContactName.MaxLength = 20;
             this.txtEmergencyContactName.Name = "txtEmergencyContactName";
             this.txtEmergencyContactName.Size = new System.Drawing.Size(131, 20);
             this.txtEmergencyContactName.TabIndex = 440;
@@ -496,6 +498,7 @@
             // 
             this.txtEmergencyContactAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "EC_ADDRESS", true));
             this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 150);
+            this.txtEmergencyContactAddress.MaxLength = 60;
             this.txtEmergencyContactAddress.Name = "txtEmergencyContactAddress";
             this.txtEmergencyContactAddress.Size = new System.Drawing.Size(186, 20);
             this.txtEmergencyContactAddress.TabIndex = 460;
@@ -671,6 +674,7 @@
             // 
             this.txtProgramSpecialistName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_SPECIALIST_NAME", true));
             this.txtProgramSpecialistName.Location = new System.Drawing.Point(6, 110);
+            this.txtProgramSpecialistName.MaxLength = 63;
             this.txtProgramSpecialistName.Name = "txtProgramSpecialistName";
             this.txtProgramSpecialistName.Size = new System.Drawing.Size(134, 20);
             this.txtProgramSpecialistName.TabIndex = 290;
@@ -684,6 +688,7 @@
             // 
             this.txtProgramSpecialistPhoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_SPECIALIST_PHONE", true));
             this.txtProgramSpecialistPhoneNum.Location = new System.Drawing.Point(146, 110);
+            this.txtProgramSpecialistPhoneNum.MaxLength = 14;
             this.txtProgramSpecialistPhoneNum.Name = "txtProgramSpecialistPhoneNum";
             this.txtProgramSpecialistPhoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtProgramSpecialistPhoneNum.TabIndex = 300;
@@ -692,6 +697,7 @@
             // 
             this.txtProgramCoordinatorName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_COORDINATOR_NAME", true));
             this.txtProgramCoordinatorName.Location = new System.Drawing.Point(6, 71);
+            this.txtProgramCoordinatorName.MaxLength = 63;
             this.txtProgramCoordinatorName.Name = "txtProgramCoordinatorName";
             this.txtProgramCoordinatorName.Size = new System.Drawing.Size(134, 20);
             this.txtProgramCoordinatorName.TabIndex = 270;
@@ -700,6 +706,7 @@
             // 
             this.txtProgramCoordinatorTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "PROGRAM_COORDINATOR_PHONE", true));
             this.txtProgramCoordinatorTelephoneNum.Location = new System.Drawing.Point(146, 71);
+            this.txtProgramCoordinatorTelephoneNum.MaxLength = 14;
             this.txtProgramCoordinatorTelephoneNum.Name = "txtProgramCoordinatorTelephoneNum";
             this.txtProgramCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtProgramCoordinatorTelephoneNum.TabIndex = 280;
@@ -708,6 +715,7 @@
             // 
             this.txtSiteSupervisorName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "SITE_SUPERVISOR_NAME", true));
             this.txtSiteSupervisorName.Location = new System.Drawing.Point(6, 32);
+            this.txtSiteSupervisorName.MaxLength = 63;
             this.txtSiteSupervisorName.Name = "txtSiteSupervisorName";
             this.txtSiteSupervisorName.Size = new System.Drawing.Size(134, 20);
             this.txtSiteSupervisorName.TabIndex = 250;
@@ -716,6 +724,7 @@
             // 
             this.txtSiteSupervisorTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEW_LIGHT_SUPPORTBindingSource, "SITE_SUPERVISOR_PHONE", true));
             this.txtSiteSupervisorTelephoneNum.Location = new System.Drawing.Point(146, 32);
+            this.txtSiteSupervisorTelephoneNum.MaxLength = 14;
             this.txtSiteSupervisorTelephoneNum.Name = "txtSiteSupervisorTelephoneNum";
             this.txtSiteSupervisorTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtSiteSupervisorTelephoneNum.TabIndex = 260;
@@ -777,6 +786,7 @@
             // 
             this.txtCountyResponsible.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "COUNTY_NAME", true));
             this.txtCountyResponsible.Location = new System.Drawing.Point(6, 32);
+            this.txtCountyResponsible.MaxLength = 50;
             this.txtCountyResponsible.Name = "txtCountyResponsible";
             this.txtCountyResponsible.Size = new System.Drawing.Size(100, 20);
             this.txtCountyResponsible.TabIndex = 310;
@@ -790,6 +800,7 @@
             // 
             this.txtSupportsCoordinatorTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "SC_PHONE", true));
             this.txtSupportsCoordinatorTelephoneNum.Location = new System.Drawing.Point(181, 73);
+            this.txtSupportsCoordinatorTelephoneNum.MaxLength = 14;
             this.txtSupportsCoordinatorTelephoneNum.Name = "txtSupportsCoordinatorTelephoneNum";
             this.txtSupportsCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtSupportsCoordinatorTelephoneNum.TabIndex = 340;
@@ -798,6 +809,7 @@
             // 
             this.txtSupportsCoordinatorName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "Supports_Coordinator_Name", true));
             this.txtSupportsCoordinatorName.Location = new System.Drawing.Point(112, 32);
+            this.txtSupportsCoordinatorName.MaxLength = 63;
             this.txtSupportsCoordinatorName.Name = "txtSupportsCoordinatorName";
             this.txtSupportsCoordinatorName.Size = new System.Drawing.Size(134, 20);
             this.txtSupportsCoordinatorName.TabIndex = 320;
@@ -806,6 +818,7 @@
             // 
             this.txtSupportsCoordinatorAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cOUNTY_RESPONSIBLEBindingSource, "Supports_Coordinator_Address", true));
             this.txtSupportsCoordinatorAddress.Location = new System.Drawing.Point(6, 71);
+            this.txtSupportsCoordinatorAddress.MaxLength = 60;
             this.txtSupportsCoordinatorAddress.Name = "txtSupportsCoordinatorAddress";
             this.txtSupportsCoordinatorAddress.Size = new System.Drawing.Size(167, 20);
             this.txtSupportsCoordinatorAddress.TabIndex = 330;
@@ -851,6 +864,7 @@
             // 
             this.txtNextOfKinTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "PHONE", true));
             this.txtNextOfKinTelephoneNum.Location = new System.Drawing.Point(132, 103);
+            this.txtNextOfKinTelephoneNum.MaxLength = 14;
             this.txtNextOfKinTelephoneNum.Name = "txtNextOfKinTelephoneNum";
             this.txtNextOfKinTelephoneNum.Size = new System.Drawing.Size(93, 20);
             this.txtNextOfKinTelephoneNum.TabIndex = 390;
@@ -903,6 +917,7 @@
             // 
             this.txtNextOfKinName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "NAME", true));
             this.txtNextOfKinName.Location = new System.Drawing.Point(132, 64);
+            this.txtNextOfKinName.MaxLength = 20;
             this.txtNextOfKinName.Name = "txtNextOfKinName";
             this.txtNextOfKinName.Size = new System.Drawing.Size(131, 20);
             this.txtNextOfKinName.TabIndex = 380;
@@ -911,6 +926,7 @@
             // 
             this.txtNextOfKinAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "NOK_ADDRESS", true));
             this.txtNextOfKinAddress.Location = new System.Drawing.Point(6, 149);
+            this.txtNextOfKinAddress.MaxLength = 16;
             this.txtNextOfKinAddress.Name = "txtNextOfKinAddress";
             this.txtNextOfKinAddress.Size = new System.Drawing.Size(186, 20);
             this.txtNextOfKinAddress.TabIndex = 400;
@@ -973,6 +989,7 @@
             // 
             this.txtFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "FNAME", true));
             this.txtFirstName.Location = new System.Drawing.Point(93, 32);
+            this.txtFirstName.MaxLength = 20;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(67, 20);
             this.txtFirstName.TabIndex = 30;
@@ -982,6 +999,7 @@
             this.txtRaceOther.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "RACE", true));
             this.txtRaceOther.Enabled = false;
             this.txtRaceOther.Location = new System.Drawing.Point(198, 227);
+            this.txtRaceOther.MaxLength = 16;
             this.txtRaceOther.Name = "txtRaceOther";
             this.txtRaceOther.Size = new System.Drawing.Size(94, 20);
             this.txtRaceOther.TabIndex = 150;
@@ -1197,6 +1215,7 @@
             // 
             this.txtLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "LNAME", true));
             this.txtLastName.Location = new System.Drawing.Point(6, 32);
+            this.txtLastName.MaxLength = 20;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(79, 20);
             this.txtLastName.TabIndex = 20;
@@ -1205,6 +1224,7 @@
             // 
             this.txtManagedCareCompany.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "MANAGED_CARE_COMPANY", true));
             this.txtManagedCareCompany.Location = new System.Drawing.Point(6, 451);
+            this.txtManagedCareCompany.MaxLength = 30;
             this.txtManagedCareCompany.Name = "txtManagedCareCompany";
             this.txtManagedCareCompany.Size = new System.Drawing.Size(137, 20);
             this.txtManagedCareCompany.TabIndex = 240;
@@ -1213,6 +1233,7 @@
             // 
             this.txtPolicyNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "POLICY_NUM", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtPolicyNum.Location = new System.Drawing.Point(124, 412);
+            this.txtPolicyNum.MaxLength = 4;
             this.txtPolicyNum.Name = "txtPolicyNum";
             this.txtPolicyNum.Size = new System.Drawing.Size(114, 20);
             this.txtPolicyNum.TabIndex = 230;
@@ -1222,6 +1243,7 @@
             // 
             this.txtMiddleName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "MNAME", true));
             this.txtMiddleName.Location = new System.Drawing.Point(166, 32);
+            this.txtMiddleName.MaxLength = 20;
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(72, 20);
             this.txtMiddleName.TabIndex = 40;
@@ -1230,6 +1252,7 @@
             // 
             this.txtInsuranceCarrier.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "INSURANCE_CARRIER", true));
             this.txtInsuranceCarrier.Location = new System.Drawing.Point(6, 412);
+            this.txtInsuranceCarrier.MaxLength = 40;
             this.txtInsuranceCarrier.Name = "txtInsuranceCarrier";
             this.txtInsuranceCarrier.Size = new System.Drawing.Size(112, 20);
             this.txtInsuranceCarrier.TabIndex = 220;
@@ -1238,6 +1261,7 @@
             // 
             this.txtAgencyName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "AGENCY_NAME", true));
             this.txtAgencyName.Location = new System.Drawing.Point(6, 71);
+            this.txtAgencyName.MaxLength = 50;
             this.txtAgencyName.Name = "txtAgencyName";
             this.txtAgencyName.Size = new System.Drawing.Size(132, 20);
             this.txtAgencyName.TabIndex = 50;
@@ -1246,6 +1270,7 @@
             // 
             this.txtMCINum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "MCI", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtMCINum.Location = new System.Drawing.Point(118, 373);
+            this.txtMCINum.MaxLength = 4;
             this.txtMCINum.Name = "txtMCINum";
             this.txtMCINum.Size = new System.Drawing.Size(100, 20);
             this.txtMCINum.TabIndex = 210;
@@ -1255,6 +1280,7 @@
             // 
             this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "P_ADDRESS", true));
             this.txtAddress.Location = new System.Drawing.Point(6, 110);
+            this.txtAddress.MaxLength = 60;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(188, 20);
             this.txtAddress.TabIndex = 70;
@@ -1263,6 +1289,7 @@
             // 
             this.txtBSUNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "BSU", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtBSUNum.Location = new System.Drawing.Point(6, 373);
+            this.txtBSUNum.MaxLength = 4;
             this.txtBSUNum.Name = "txtBSUNum";
             this.txtBSUNum.Size = new System.Drawing.Size(106, 20);
             this.txtBSUNum.TabIndex = 200;
@@ -1271,6 +1298,7 @@
             // txtZipCode
             // 
             this.txtZipCode.Location = new System.Drawing.Point(200, 110);
+            this.txtZipCode.MaxLength = 15;
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(38, 20);
             this.txtZipCode.TabIndex = 80;
@@ -1279,6 +1307,7 @@
             // 
             this.txtIdentifyingMarks.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "IDENTIFYING_MARKS", true));
             this.txtIdentifyingMarks.Location = new System.Drawing.Point(6, 306);
+            this.txtIdentifyingMarks.MaxLength = 300;
             this.txtIdentifyingMarks.Multiline = true;
             this.txtIdentifyingMarks.Name = "txtIdentifyingMarks";
             this.txtIdentifyingMarks.Size = new System.Drawing.Size(232, 48);
@@ -1288,6 +1317,7 @@
             // 
             this.txtTelephoneNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "PHONE", true));
             this.txtTelephoneNum.Location = new System.Drawing.Point(6, 149);
+            this.txtTelephoneNum.MaxLength = 14;
             this.txtTelephoneNum.Name = "txtTelephoneNum";
             this.txtTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtTelephoneNum.TabIndex = 90;
@@ -1296,6 +1326,7 @@
             // 
             this.txtHairColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "HAIR_COLOR", true));
             this.txtHairColor.Location = new System.Drawing.Point(6, 267);
+            this.txtHairColor.MaxLength = 8;
             this.txtHairColor.Name = "txtHairColor";
             this.txtHairColor.Size = new System.Drawing.Size(71, 20);
             this.txtHairColor.TabIndex = 160;
@@ -1312,6 +1343,7 @@
             // 
             this.txtWeight.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "P_WEIGHT", true));
             this.txtWeight.Location = new System.Drawing.Point(124, 267);
+            this.txtWeight.MaxLength = 11;
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(68, 20);
             this.txtWeight.TabIndex = 180;
@@ -1320,6 +1352,7 @@
             // 
             this.txtAge.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "AGE", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtAge.Location = new System.Drawing.Point(79, 188);
+            this.txtAge.MaxLength = 3;
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(36, 20);
             this.txtAge.TabIndex = 120;
@@ -1329,6 +1362,7 @@
             // 
             this.txtHeight.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "HEIGHT", true));
             this.txtHeight.Location = new System.Drawing.Point(83, 267);
+            this.txtHeight.MaxLength = 6;
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(35, 20);
             this.txtHeight.TabIndex = 170;
@@ -1338,6 +1372,7 @@
             this.txtSocialSecurityNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "SSN", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtSocialSecurityNum.Enabled = false;
             this.txtSocialSecurityNum.Location = new System.Drawing.Point(109, 149);
+            this.txtSocialSecurityNum.MaxLength = 9;
             this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
             this.txtSocialSecurityNum.Size = new System.Drawing.Size(84, 20);
             this.txtSocialSecurityNum.TabIndex = 100;
@@ -1541,51 +1576,6 @@
             this.dataGridViewDailyBehaviorTracking.TabIndex = 60;
             this.dataGridViewDailyBehaviorTracking.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewDailyBehaviorTracking_DataError);
             this.dataGridViewDailyBehaviorTracking.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridViewDailyBehaviorTracking_DefaultValuesNeeded);
-            // 
-            // bEHAVIORDATEDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_DATE";
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.Name = "bEHAVIORDATEDataGridViewTextBoxColumn";
-            // 
-            // bEHAVIORSHIFTDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_SHIFT";
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.HeaderText = "Shift";
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.Name = "bEHAVIORSHIFTDataGridViewTextBoxColumn";
-            // 
-            // bEHAVIORDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR";
-            this.bEHAVIORDataGridViewTextBoxColumn.HeaderText = "Behavior";
-            this.bEHAVIORDataGridViewTextBoxColumn.Name = "bEHAVIORDataGridViewTextBoxColumn";
-            // 
-            // sEVERITYDataGridViewTextBoxColumn
-            // 
-            this.sEVERITYDataGridViewTextBoxColumn.DataPropertyName = "SEVERITY";
-            this.sEVERITYDataGridViewTextBoxColumn.HeaderText = "Severity";
-            this.sEVERITYDataGridViewTextBoxColumn.Name = "sEVERITYDataGridViewTextBoxColumn";
-            // 
-            // SHIFT_TOTAL
-            // 
-            this.SHIFT_TOTAL.DataPropertyName = "SHIFT_TOTAL";
-            this.SHIFT_TOTAL.HeaderText = "Shift Total";
-            this.SHIFT_TOTAL.Name = "SHIFT_TOTAL";
-            // 
-            // sTAFFNAMEDataGridViewTextBoxColumn
-            // 
-            this.sTAFFNAMEDataGridViewTextBoxColumn.DataPropertyName = "STAFF_NAME";
-            this.sTAFFNAMEDataGridViewTextBoxColumn.HeaderText = "Staff";
-            this.sTAFFNAMEDataGridViewTextBoxColumn.Name = "sTAFFNAMEDataGridViewTextBoxColumn";
-            // 
-            // pERSONIDDataGridViewTextBoxColumn
-            // 
-            this.pERSONIDDataGridViewTextBoxColumn.DataPropertyName = "PERSON_ID";
-            dataGridViewCellStyle2.NullValue = "personId";
-            this.pERSONIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.pERSONIDDataGridViewTextBoxColumn.HeaderText = "PERSON_ID";
-            this.pERSONIDDataGridViewTextBoxColumn.Name = "pERSONIDDataGridViewTextBoxColumn";
-            this.pERSONIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // bEHAVIORBindingSource
             // 
@@ -2274,7 +2264,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -2340,6 +2330,56 @@
             // 
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // bEHAVIORDATEDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_DATE";
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.Name = "bEHAVIORDATEDataGridViewTextBoxColumn";
+            // 
+            // bEHAVIORSHIFTDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_SHIFT";
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.HeaderText = "Shift";
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.MaxInputLength = 10;
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.Name = "bEHAVIORSHIFTDataGridViewTextBoxColumn";
+            // 
+            // bEHAVIORDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR";
+            this.bEHAVIORDataGridViewTextBoxColumn.HeaderText = "Behavior";
+            this.bEHAVIORDataGridViewTextBoxColumn.MaxInputLength = 50;
+            this.bEHAVIORDataGridViewTextBoxColumn.Name = "bEHAVIORDataGridViewTextBoxColumn";
+            // 
+            // sEVERITYDataGridViewTextBoxColumn
+            // 
+            this.sEVERITYDataGridViewTextBoxColumn.DataPropertyName = "SEVERITY";
+            this.sEVERITYDataGridViewTextBoxColumn.HeaderText = "Severity";
+            this.sEVERITYDataGridViewTextBoxColumn.MaxInputLength = 20;
+            this.sEVERITYDataGridViewTextBoxColumn.Name = "sEVERITYDataGridViewTextBoxColumn";
+            // 
+            // SHIFT_TOTAL
+            // 
+            this.SHIFT_TOTAL.DataPropertyName = "SHIFT_TOTAL";
+            this.SHIFT_TOTAL.HeaderText = "Shift Total";
+            this.SHIFT_TOTAL.MaxInputLength = 4;
+            this.SHIFT_TOTAL.Name = "SHIFT_TOTAL";
+            // 
+            // sTAFFNAMEDataGridViewTextBoxColumn
+            // 
+            this.sTAFFNAMEDataGridViewTextBoxColumn.DataPropertyName = "STAFF_NAME";
+            this.sTAFFNAMEDataGridViewTextBoxColumn.HeaderText = "Staff";
+            this.sTAFFNAMEDataGridViewTextBoxColumn.MaxInputLength = 63;
+            this.sTAFFNAMEDataGridViewTextBoxColumn.Name = "sTAFFNAMEDataGridViewTextBoxColumn";
+            // 
+            // pERSONIDDataGridViewTextBoxColumn
+            // 
+            this.pERSONIDDataGridViewTextBoxColumn.DataPropertyName = "PERSON_ID";
+            dataGridViewCellStyle2.NullValue = "personId";
+            this.pERSONIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.pERSONIDDataGridViewTextBoxColumn.HeaderText = "PERSON_ID";
+            this.pERSONIDDataGridViewTextBoxColumn.Name = "pERSONIDDataGridViewTextBoxColumn";
+            this.pERSONIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // FormMain
             // 
@@ -2604,13 +2644,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORSHIFTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sEVERITYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SHIFT_TOTAL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTAFFNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pERSONIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblNoBehaviors;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
@@ -2619,6 +2652,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Label lblDatabaseUpdated;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORSHIFTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bEHAVIORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sEVERITYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SHIFT_TOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTAFFNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pERSONIDDataGridViewTextBoxColumn;
     }
 }
 

@@ -213,6 +213,7 @@
             // 
             this.txtSocialCauseOther.Enabled = false;
             this.txtSocialCauseOther.Location = new System.Drawing.Point(494, 161);
+            this.txtSocialCauseOther.MaxLength = 60;
             this.txtSocialCauseOther.Name = "txtSocialCauseOther";
             this.txtSocialCauseOther.Size = new System.Drawing.Size(100, 20);
             this.txtSocialCauseOther.TabIndex = 360;
@@ -221,6 +222,7 @@
             // 
             this.txtPsychologicalCauseOther.Enabled = false;
             this.txtPsychologicalCauseOther.Location = new System.Drawing.Point(494, 119);
+            this.txtPsychologicalCauseOther.MaxLength = 60;
             this.txtPsychologicalCauseOther.Name = "txtPsychologicalCauseOther";
             this.txtPsychologicalCauseOther.Size = new System.Drawing.Size(100, 20);
             this.txtPsychologicalCauseOther.TabIndex = 330;
@@ -229,6 +231,7 @@
             // 
             this.txtEnvironmentalCauseOther.Enabled = false;
             this.txtEnvironmentalCauseOther.Location = new System.Drawing.Point(494, 76);
+            this.txtEnvironmentalCauseOther.MaxLength = 60;
             this.txtEnvironmentalCauseOther.Name = "txtEnvironmentalCauseOther";
             this.txtEnvironmentalCauseOther.Size = new System.Drawing.Size(100, 20);
             this.txtEnvironmentalCauseOther.TabIndex = 300;
@@ -237,6 +240,7 @@
             // 
             this.txtPhysiologicalCauseOther.Enabled = false;
             this.txtPhysiologicalCauseOther.Location = new System.Drawing.Point(494, 34);
+            this.txtPhysiologicalCauseOther.MaxLength = 60;
             this.txtPhysiologicalCauseOther.Name = "txtPhysiologicalCauseOther";
             this.txtPhysiologicalCauseOther.Size = new System.Drawing.Size(100, 20);
             this.txtPhysiologicalCauseOther.TabIndex = 270;
@@ -541,6 +545,7 @@
             // 
             this.txtBehaviorOther.Enabled = false;
             this.txtBehaviorOther.Location = new System.Drawing.Point(298, 32);
+            this.txtBehaviorOther.MaxLength = 60;
             this.txtBehaviorOther.Name = "txtBehaviorOther";
             this.txtBehaviorOther.Size = new System.Drawing.Size(100, 20);
             this.txtBehaviorOther.TabIndex = 200;
@@ -623,6 +628,7 @@
             // txtOtherStrength
             // 
             this.txtOtherStrength.Location = new System.Drawing.Point(258, 200);
+            this.txtOtherStrength.MaxLength = 60;
             this.txtOtherStrength.Name = "txtOtherStrength";
             this.txtOtherStrength.Size = new System.Drawing.Size(165, 20);
             this.txtOtherStrength.TabIndex = 160;
@@ -808,6 +814,7 @@
             // txtStaffRole
             // 
             this.txtStaffRole.Location = new System.Drawing.Point(401, 64);
+            this.txtStaffRole.MaxLength = 20;
             this.txtStaffRole.Name = "txtStaffRole";
             this.txtStaffRole.Size = new System.Drawing.Size(100, 20);
             this.txtStaffRole.TabIndex = 4;
@@ -822,6 +829,7 @@
             // txtStaffIntervieweeName
             // 
             this.txtStaffIntervieweeName.Location = new System.Drawing.Point(280, 64);
+            this.txtStaffIntervieweeName.MaxLength = 63;
             this.txtStaffIntervieweeName.Name = "txtStaffIntervieweeName";
             this.txtStaffIntervieweeName.Size = new System.Drawing.Size(115, 20);
             this.txtStaffIntervieweeName.TabIndex = 3;
@@ -829,6 +837,7 @@
             // txtInterviewerName
             // 
             this.txtInterviewerName.Location = new System.Drawing.Point(280, 25);
+            this.txtInterviewerName.MaxLength = 63;
             this.txtInterviewerName.Name = "txtInterviewerName";
             this.txtInterviewerName.Size = new System.Drawing.Size(100, 20);
             this.txtInterviewerName.TabIndex = 1;
