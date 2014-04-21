@@ -271,7 +271,7 @@ namespace GUI
                 else
                     MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
             }
-            catch (Exception ff)
+            catch (Exception)
             {
                 MessageBox.Show("Something has gone wrong. This person cannot be saved. Please make sure their Social Security Number is unique.");
             }
@@ -298,7 +298,7 @@ namespace GUI
             // TODO: This line of code loads data into the 'projectStarphishDataSet.NEW_LIGHT_SUPPORT' table. You can move, or remove it, as needed.
             this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON' table. You can move, or remove it, as needed.
-            if(!login)
+            if (!login)
                 projectStarphishDataSet.Tables["PERSON"].Columns.Add("NAME", typeof(string), "FNAME + LNAME");
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
             comboRace.SelectedIndex = 3;
@@ -313,8 +313,6 @@ namespace GUI
                 addClientToolStripMenuItem_Click(this, x);
                 btnCancel.Visible = false;
             }
-
-            
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -360,7 +358,6 @@ namespace GUI
         {
             if (listClients.SelectedItem != null)
             {
-
                 int.TryParse(txtSocialSecurityNum.Text, out personId);
                 if (searched)
                 {
@@ -719,7 +716,7 @@ namespace GUI
 
                 this.pERSON_ISPTableAdapter.Fill(this.projectStarphishDataSet.PERSON_ISP);
             }
-            catch 
+            catch
             {
                 MessageBox.Show("No ISP to remove.");
             }
