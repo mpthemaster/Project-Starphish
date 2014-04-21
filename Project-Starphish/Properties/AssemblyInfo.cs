@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Sky Pie")]
-[assembly: AssemblyDescription("An interface with a custom designed database to hold client information.")]
+[assembly: AssemblyDescription("Sky Pie was created by Stefanos Loss, Michael J. Petruzzello, and Ken Vinton as part of a project for Clarion University. This program aids Project Starphish in holding and analyzing data about its consumers.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Clarion university")]
+[assembly: AssemblyCompany("Clarion University of Pennsylvania")]
 [assembly: AssemblyProduct("Sky Pie")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
