@@ -308,7 +308,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1095, 649);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabIndex = 10000;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
@@ -1993,7 +1993,7 @@
             this.groupBox16.Location = new System.Drawing.Point(698, 386);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(386, 231);
-            this.groupBox16.TabIndex = 8;
+            this.groupBox16.TabIndex = 800;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "QABF Analysis";
             // 
@@ -2022,7 +2022,7 @@
             this.groupBox15.Location = new System.Drawing.Point(12, 386);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(680, 225);
-            this.groupBox15.TabIndex = 7;
+            this.groupBox15.TabIndex = 700;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Antecedents";
             // 
@@ -2085,7 +2085,7 @@
             this.groupBox14.Location = new System.Drawing.Point(501, 72);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(577, 301);
-            this.groupBox14.TabIndex = 6;
+            this.groupBox14.TabIndex = 600;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Behaviors";
             // 
@@ -2145,7 +2145,7 @@
             this.groupBox13.Location = new System.Drawing.Point(183, 72);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(312, 301);
-            this.groupBox13.TabIndex = 5;
+            this.groupBox13.TabIndex = 500;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Strengths";
             // 
