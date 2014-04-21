@@ -349,7 +349,7 @@
             this.btnSearchClients.Location = new System.Drawing.Point(148, 24);
             this.btnSearchClients.Name = "btnSearchClients";
             this.btnSearchClients.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchClients.TabIndex = 14;
+            this.btnSearchClients.TabIndex = 10;
             this.btnSearchClients.Text = "Search";
             this.btnSearchClients.UseVisualStyleBackColor = true;
             this.btnSearchClients.Click += new System.EventHandler(this.btnSearchClients_Click);
@@ -359,7 +359,8 @@
             this.txtSearch.Location = new System.Drawing.Point(6, 27);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(136, 20);
-            this.txtSearch.TabIndex = 10;
+            this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnCancel
             // 
@@ -380,7 +381,7 @@
             this.btnModifyClient.Location = new System.Drawing.Point(9, 492);
             this.btnModifyClient.Name = "btnModifyClient";
             this.btnModifyClient.Size = new System.Drawing.Size(214, 125);
-            this.btnModifyClient.TabIndex = 17;
+            this.btnModifyClient.TabIndex = 5000;
             this.btnModifyClient.Text = "Save";
             this.btnModifyClient.UseVisualStyleBackColor = true;
             this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
@@ -530,7 +531,7 @@
             this.btnSaveClient.Location = new System.Drawing.Point(9, 491);
             this.btnSaveClient.Name = "btnSaveClient";
             this.btnSaveClient.Size = new System.Drawing.Size(214, 60);
-            this.btnSaveClient.TabIndex = 5000;
+            this.btnSaveClient.TabIndex = 950;
             this.btnSaveClient.Text = "Save";
             this.btnSaveClient.UseVisualStyleBackColor = true;
             this.btnSaveClient.Visible = false;
@@ -981,7 +982,7 @@
             this.groupBox1.Location = new System.Drawing.Point(229, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 478);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Demographics";
             // 
@@ -1416,7 +1417,7 @@
             this.listClients.Location = new System.Drawing.Point(6, 53);
             this.listClients.Name = "listClients";
             this.listClients.Size = new System.Drawing.Size(217, 433);
-            this.listClients.TabIndex = 16;
+            this.listClients.TabIndex = 12;
             this.listClients.ValueMember = "SSN";
             this.listClients.SelectedIndexChanged += new System.EventHandler(this.listClients_SelectedIndexChanged);
             // 
