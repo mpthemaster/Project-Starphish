@@ -13,7 +13,7 @@ namespace GUI
     public partial class FormMain
     {
         private bool behaviorFirstTime = true;
-   
+
         private void MainAddBehaviors()
         {
             if (behaviorFirstTime)
@@ -22,7 +22,7 @@ namespace GUI
                 comboPickTimeDailyBehavior.SelectedIndex = 0;
                 //sorts the grid view by the date by default
                 dataGridViewDailyBehaviorTracking.Sort(dataGridViewDailyBehaviorTracking.Columns[0], ListSortDirection.Ascending);
-            }          
+            }
             SetDates();
             DisplayData();
         }
@@ -31,7 +31,7 @@ namespace GUI
         /// Displays the data from the database in the grid view
         /// </summary>
         private void DisplayData()
-        {    
+        {
             try
             {
                 this.bEHAVIORTableAdapter.FillBy(this.projectStarphishDataSet.BEHAVIOR, personId, startDate.ToString(), endDate.ToString());
@@ -42,30 +42,31 @@ namespace GUI
             }
         }
 
-        private void dataGridViewDailyBehaviorTracking_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        private void dataGridViewDailyBehaviorTracking_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            //MessageBox.Show(anError.Context.ToString());
-            if (anError.Context == DataGridViewDataErrorContexts.Commit)
+            //Get what cell has an error.
+            int errorRow = e.RowIndex + 1;
+            string errorColumn = (sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.HeaderText;
+
+            //If the error is because no data is entered, display that to the user.
+            //Else if the error is an incorrect format (e.g. string for int), display that to the user and clear the new input for the original.
+            //Else if the exception is due to duplicating information, left the user know.
+            if (e.Exception is NoNullAllowedException)
+                MessageBox.Show("The cell under the " + errorColumn + " Column and on Row #" + errorRow + " must not be empty.");
+            else if (e.Exception is FormatException)
             {
-                MessageBox.Show("A commit error has occured, make sure that only properly formatted data is entered, the first three fields " 
-                 + "all have data in them, and that the data is not a duplicate of previously entered data.");
+                if (e.ColumnIndex == 0)
+                    MessageBox.Show("The cell under the " + errorColumn + " Column and Row #" + errorRow + " must be correctly formatted as a date (e.g. 11/23/14).");
+                else
+                    MessageBox.Show("The cell under the " + errorColumn + " Column and Row #" + errorRow + " must be an integer.");
+                (sender as DataGridView).CancelEdit();
             }
-            if (anError.Context == DataGridViewDataErrorContexts.CurrentCellChange)
-            {
-                MessageBox.Show("This Cell has an error in it");
-            }
-            if (anError.Context == DataGridViewDataErrorContexts.Parsing)
-            {
-                MessageBox.Show("This data could not be parsed correctly, please enter it again");
-            }
-            if (anError.Context == DataGridViewDataErrorContexts.LeaveControl)
-            {
-                MessageBox.Show("leave control error");
-            }
-        } 
+            else if (e.Exception is ConstraintException)
+                MessageBox.Show("The Row #" + errorRow + " must have a unique date, shift time, or behavior name that is different from a currently existing row.");
+        }
 
         private void SetDates()
-        {    
+        {
             if (chkUseCustomDatesDailyBehavior.Checked == false)
             {
                 if (comboPickTimeDailyBehavior.SelectedIndex == 0)//last 30 days
@@ -163,7 +164,7 @@ namespace GUI
         private void btnSaveDailyBehavior_Click(object sender, EventArgs e)
         {
             this.Validate();
-            
+
             this.tableAdapterManager.UpdateAll(this.projectStarphishDataSet);
 
             try
@@ -193,6 +194,5 @@ namespace GUI
         {
             e.Row.Cells["pERSONIDDataGridViewTextBoxColumn"].Value = personId;
         }
-
     }
 }
