@@ -242,7 +242,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pERSONTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.PERSONTableAdapter();
@@ -2243,32 +2242,26 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addClientToolStripMenuItem,
-            this.removeClientToolStripMenuItem,
-            this.saveAllToolStripMenuItem});
+            this.removeClientToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // addClientToolStripMenuItem
             // 
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
-            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.addClientToolStripMenuItem.Text = "Add Client";
+            this.addClientToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.addClientToolStripMenuItem.Text = "&Add Client";
             this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
             // removeClientToolStripMenuItem
             // 
             this.removeClientToolStripMenuItem.Name = "removeClientToolStripMenuItem";
-            this.removeClientToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.removeClientToolStripMenuItem.Text = "Remove Client";
+            this.removeClientToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.removeClientToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.removeClientToolStripMenuItem.Text = "&Remove Client";
             this.removeClientToolStripMenuItem.Click += new System.EventHandler(this.removeClientToolStripMenuItem_Click);
-            // 
-            // saveAllToolStripMenuItem
-            // 
-            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
-            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.saveAllToolStripMenuItem.Text = "Save All";
-            this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -2276,13 +2269,13 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // pERSONTableAdapter
@@ -2551,7 +2544,6 @@
         private System.Windows.Forms.Button btnAddNextOfKin;
         private System.Windows.Forms.Button btnAddEmergencyContact;
         private System.Windows.Forms.Button btnRemoveNextOfKin;
-        private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label61;
