@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -44,7 +45,6 @@
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -169,6 +169,13 @@
             this.comboPickTimeDailyBehavior = new System.Windows.Forms.ComboBox();
             this.datePickerEndDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewDailyBehaviorTracking = new System.Windows.Forms.DataGridView();
+            this.bEHAVIORDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bEHAVIORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEVERITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SHIFT_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTAFFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pERSONIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bEHAVIORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datePickerBeginDailyBehavior = new System.Windows.Forms.DateTimePicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -249,13 +256,6 @@
             this.bEHAVIORTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bEHAVIORDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bEHAVIORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sEVERITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SHIFT_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTAFFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pERSONIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -1577,6 +1577,56 @@
             this.dataGridViewDailyBehaviorTracking.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewDailyBehaviorTracking_DataError);
             this.dataGridViewDailyBehaviorTracking.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridViewDailyBehaviorTracking_DefaultValuesNeeded);
             // 
+            // bEHAVIORDATEDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_DATE";
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.bEHAVIORDATEDataGridViewTextBoxColumn.Name = "bEHAVIORDATEDataGridViewTextBoxColumn";
+            // 
+            // bEHAVIORSHIFTDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_SHIFT";
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.HeaderText = "Shift";
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.MaxInputLength = 10;
+            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.Name = "bEHAVIORSHIFTDataGridViewTextBoxColumn";
+            // 
+            // bEHAVIORDataGridViewTextBoxColumn
+            // 
+            this.bEHAVIORDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR";
+            this.bEHAVIORDataGridViewTextBoxColumn.HeaderText = "Behavior";
+            this.bEHAVIORDataGridViewTextBoxColumn.MaxInputLength = 50;
+            this.bEHAVIORDataGridViewTextBoxColumn.Name = "bEHAVIORDataGridViewTextBoxColumn";
+            // 
+            // sEVERITYDataGridViewTextBoxColumn
+            // 
+            this.sEVERITYDataGridViewTextBoxColumn.DataPropertyName = "SEVERITY";
+            this.sEVERITYDataGridViewTextBoxColumn.HeaderText = "Severity";
+            this.sEVERITYDataGridViewTextBoxColumn.MaxInputLength = 20;
+            this.sEVERITYDataGridViewTextBoxColumn.Name = "sEVERITYDataGridViewTextBoxColumn";
+            // 
+            // SHIFT_TOTAL
+            // 
+            this.SHIFT_TOTAL.DataPropertyName = "SHIFT_TOTAL";
+            this.SHIFT_TOTAL.HeaderText = "Shift Total";
+            this.SHIFT_TOTAL.MaxInputLength = 4;
+            this.SHIFT_TOTAL.Name = "SHIFT_TOTAL";
+            // 
+            // sTAFFNAMEDataGridViewTextBoxColumn
+            // 
+            this.sTAFFNAMEDataGridViewTextBoxColumn.DataPropertyName = "STAFF_NAME";
+            this.sTAFFNAMEDataGridViewTextBoxColumn.HeaderText = "Staff";
+            this.sTAFFNAMEDataGridViewTextBoxColumn.MaxInputLength = 63;
+            this.sTAFFNAMEDataGridViewTextBoxColumn.Name = "sTAFFNAMEDataGridViewTextBoxColumn";
+            // 
+            // pERSONIDDataGridViewTextBoxColumn
+            // 
+            this.pERSONIDDataGridViewTextBoxColumn.DataPropertyName = "PERSON_ID";
+            dataGridViewCellStyle2.NullValue = "personId";
+            this.pERSONIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.pERSONIDDataGridViewTextBoxColumn.HeaderText = "PERSON_ID";
+            this.pERSONIDDataGridViewTextBoxColumn.Name = "pERSONIDDataGridViewTextBoxColumn";
+            this.pERSONIDDataGridViewTextBoxColumn.Visible = false;
+            // 
             // bEHAVIORBindingSource
             // 
             this.bEHAVIORBindingSource.DataMember = "BEHAVIOR";
@@ -2330,56 +2380,6 @@
             // 
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // bEHAVIORDATEDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_DATE";
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.bEHAVIORDATEDataGridViewTextBoxColumn.Name = "bEHAVIORDATEDataGridViewTextBoxColumn";
-            // 
-            // bEHAVIORSHIFTDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR_SHIFT";
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.HeaderText = "Shift";
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.bEHAVIORSHIFTDataGridViewTextBoxColumn.Name = "bEHAVIORSHIFTDataGridViewTextBoxColumn";
-            // 
-            // bEHAVIORDataGridViewTextBoxColumn
-            // 
-            this.bEHAVIORDataGridViewTextBoxColumn.DataPropertyName = "BEHAVIOR";
-            this.bEHAVIORDataGridViewTextBoxColumn.HeaderText = "Behavior";
-            this.bEHAVIORDataGridViewTextBoxColumn.MaxInputLength = 50;
-            this.bEHAVIORDataGridViewTextBoxColumn.Name = "bEHAVIORDataGridViewTextBoxColumn";
-            // 
-            // sEVERITYDataGridViewTextBoxColumn
-            // 
-            this.sEVERITYDataGridViewTextBoxColumn.DataPropertyName = "SEVERITY";
-            this.sEVERITYDataGridViewTextBoxColumn.HeaderText = "Severity";
-            this.sEVERITYDataGridViewTextBoxColumn.MaxInputLength = 20;
-            this.sEVERITYDataGridViewTextBoxColumn.Name = "sEVERITYDataGridViewTextBoxColumn";
-            // 
-            // SHIFT_TOTAL
-            // 
-            this.SHIFT_TOTAL.DataPropertyName = "SHIFT_TOTAL";
-            this.SHIFT_TOTAL.HeaderText = "Shift Total";
-            this.SHIFT_TOTAL.MaxInputLength = 4;
-            this.SHIFT_TOTAL.Name = "SHIFT_TOTAL";
-            // 
-            // sTAFFNAMEDataGridViewTextBoxColumn
-            // 
-            this.sTAFFNAMEDataGridViewTextBoxColumn.DataPropertyName = "STAFF_NAME";
-            this.sTAFFNAMEDataGridViewTextBoxColumn.HeaderText = "Staff";
-            this.sTAFFNAMEDataGridViewTextBoxColumn.MaxInputLength = 63;
-            this.sTAFFNAMEDataGridViewTextBoxColumn.Name = "sTAFFNAMEDataGridViewTextBoxColumn";
-            // 
-            // pERSONIDDataGridViewTextBoxColumn
-            // 
-            this.pERSONIDDataGridViewTextBoxColumn.DataPropertyName = "PERSON_ID";
-            dataGridViewCellStyle2.NullValue = "personId";
-            this.pERSONIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.pERSONIDDataGridViewTextBoxColumn.HeaderText = "PERSON_ID";
-            this.pERSONIDDataGridViewTextBoxColumn.Name = "pERSONIDDataGridViewTextBoxColumn";
-            this.pERSONIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // FormMain
             // 
