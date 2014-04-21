@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,7 @@ namespace GUI
         private SqlConnection connection;
         private SqlCommand command;
         private string[] arrClient;
+        private string carriedOver;
 
         /// <summary>
         /// Creates a Form for searching for a client in the db.
@@ -27,8 +29,8 @@ namespace GUI
         {
             InitializeComponent();
 
-            //Set the name in the searchbox to the name already entered in the search box. Use this for the initial search.
-            txtSearchBox.Text = nameToSearchFor;
+            carriedOver = nameToSearchFor;
+            
 
             theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
             searchStatement = "SELECT * FROM PERSON";
@@ -39,6 +41,7 @@ namespace GUI
         private void Search_Load(object sender, EventArgs e)
         {
             PopulateListBox();
+            txtSearchBox.Text = carriedOver;
         }
 
         private void PopulateListBox()

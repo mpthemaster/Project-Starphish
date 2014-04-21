@@ -62,6 +62,7 @@ namespace GUI
         private bool searched = false;
         private bool changedPic = false;
         private bool login = false;
+        public static string searchString = ""; 
 
         public FormMain()
         {
@@ -907,11 +908,10 @@ namespace GUI
         {
         }
 
-        //Uh, Ken, you're not even getting a variable from searchClient. You're just setting the listbox equal to the searchClient form.
-        private void btnSearchClients_Click(object sender, EventArgs e)             //|
-        {                                                                           //|
-            FormSearch searchClient = new FormSearch(txtSearch.Text);               //|
-            if (searchClient.ShowDialog() == DialogResult.OK)                       //|
+        private void btnSearchClients_Click(object sender, EventArgs e)             
+        {                                                                           
+            FormSearch searchClient = new FormSearch(txtSearch.Text);               
+            if (searchClient.ShowDialog() == DialogResult.OK)                       
             {
                 searched = true;
                 commandSearch.Parameters.AddWithValue("@LNAME", searchName);
@@ -1041,6 +1041,11 @@ namespace GUI
             {
                 chartPyramidOccurences.SaveImage(saveFileDialog1.FileName, ChartImageFormat.Png);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            searchString = txtSearch.Text;
         }
     }
 }
