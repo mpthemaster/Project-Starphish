@@ -55,7 +55,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(152, 20);
-            this.txtPassword.TabIndex = 15;
+            this.txtPassword.TabIndex = 20;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label2
             // 
@@ -71,7 +72,8 @@
             this.txtUsername.Location = new System.Drawing.Point(79, 25);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(152, 20);
-            this.txtUsername.TabIndex = 13;
+            this.txtUsername.TabIndex = 10;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // label1
             // 
@@ -88,7 +90,8 @@
             this.txtSecurityAnswer.Multiline = true;
             this.txtSecurityAnswer.Name = "txtSecurityAnswer";
             this.txtSecurityAnswer.Size = new System.Drawing.Size(260, 52);
-            this.txtSecurityAnswer.TabIndex = 20;
+            this.txtSecurityAnswer.TabIndex = 40;
+            this.txtSecurityAnswer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSecurityAnswer_KeyDown);
             // 
             // lblSecurityQuestion
             // 
@@ -113,7 +116,7 @@
             this.btnLogin.Location = new System.Drawing.Point(107, 77);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 22;
+            this.btnLogin.TabIndex = 30;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -124,7 +127,7 @@
             this.btnResetAccount.Location = new System.Drawing.Point(98, 288);
             this.btnResetAccount.Name = "btnResetAccount";
             this.btnResetAccount.Size = new System.Drawing.Size(88, 23);
-            this.btnResetAccount.TabIndex = 23;
+            this.btnResetAccount.TabIndex = 50;
             this.btnResetAccount.Text = "Reset Account";
             this.btnResetAccount.UseVisualStyleBackColor = true;
             this.btnResetAccount.Click += new System.EventHandler(this.btnResetAccount_Click);

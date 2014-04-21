@@ -45,6 +45,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -307,7 +308,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1095, 649);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
@@ -349,7 +350,7 @@
             this.btnSearchClients.Location = new System.Drawing.Point(148, 24);
             this.btnSearchClients.Name = "btnSearchClients";
             this.btnSearchClients.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchClients.TabIndex = 53;
+            this.btnSearchClients.TabIndex = 14;
             this.btnSearchClients.Text = "Search";
             this.btnSearchClients.UseVisualStyleBackColor = true;
             this.btnSearchClients.Click += new System.EventHandler(this.btnSearchClients_Click);
@@ -359,7 +360,7 @@
             this.txtSearch.Location = new System.Drawing.Point(6, 27);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(136, 20);
-            this.txtSearch.TabIndex = 52;
+            this.txtSearch.TabIndex = 10;
             // 
             // btnCancel
             // 
@@ -368,7 +369,7 @@
             this.btnCancel.Location = new System.Drawing.Point(9, 557);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(214, 60);
-            this.btnCancel.TabIndex = 50;
+            this.btnCancel.TabIndex = 1000;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
@@ -380,7 +381,7 @@
             this.btnModifyClient.Location = new System.Drawing.Point(9, 492);
             this.btnModifyClient.Name = "btnModifyClient";
             this.btnModifyClient.Size = new System.Drawing.Size(214, 125);
-            this.btnModifyClient.TabIndex = 49;
+            this.btnModifyClient.TabIndex = 17;
             this.btnModifyClient.Text = "Save";
             this.btnModifyClient.UseVisualStyleBackColor = true;
             this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
@@ -408,7 +409,7 @@
             this.btnAddEmergencyContact.Location = new System.Drawing.Point(107, 19);
             this.btnAddEmergencyContact.Name = "btnAddEmergencyContact";
             this.btnAddEmergencyContact.Size = new System.Drawing.Size(75, 23);
-            this.btnAddEmergencyContact.TabIndex = 48;
+            this.btnAddEmergencyContact.TabIndex = 420;
             this.btnAddEmergencyContact.Text = "Add Contact";
             this.btnAddEmergencyContact.UseVisualStyleBackColor = true;
             this.btnAddEmergencyContact.Click += new System.EventHandler(this.btnAddEmergencyContact_Click);
@@ -418,7 +419,7 @@
             this.btnRemoveEmergencyContact.Location = new System.Drawing.Point(6, 19);
             this.btnRemoveEmergencyContact.Name = "btnRemoveEmergencyContact";
             this.btnRemoveEmergencyContact.Size = new System.Drawing.Size(95, 23);
-            this.btnRemoveEmergencyContact.TabIndex = 46;
+            this.btnRemoveEmergencyContact.TabIndex = 410;
             this.btnRemoveEmergencyContact.Text = "Remove Contact";
             this.btnRemoveEmergencyContact.UseVisualStyleBackColor = true;
             this.btnRemoveEmergencyContact.Click += new System.EventHandler(this.btnRemoveEmergencyContact_Click);
@@ -438,7 +439,7 @@
             this.txtEmergencyContactTelephoneNum.Location = new System.Drawing.Point(132, 103);
             this.txtEmergencyContactTelephoneNum.Name = "txtEmergencyContactTelephoneNum";
             this.txtEmergencyContactTelephoneNum.Size = new System.Drawing.Size(93, 20);
-            this.txtEmergencyContactTelephoneNum.TabIndex = 38;
+            this.txtEmergencyContactTelephoneNum.TabIndex = 450;
             // 
             // eMERGENCY_CONTACTBindingSource
             // 
@@ -481,7 +482,7 @@
             this.lstEmergencyContacts.Location = new System.Drawing.Point(6, 48);
             this.lstEmergencyContacts.Name = "lstEmergencyContacts";
             this.lstEmergencyContacts.Size = new System.Drawing.Size(120, 82);
-            this.lstEmergencyContacts.TabIndex = 0;
+            this.lstEmergencyContacts.TabIndex = 430;
             this.lstEmergencyContacts.ValueMember = "UNIQUEID";
             // 
             // txtEmergencyContactName
@@ -490,7 +491,7 @@
             this.txtEmergencyContactName.Location = new System.Drawing.Point(132, 64);
             this.txtEmergencyContactName.Name = "txtEmergencyContactName";
             this.txtEmergencyContactName.Size = new System.Drawing.Size(131, 20);
-            this.txtEmergencyContactName.TabIndex = 37;
+            this.txtEmergencyContactName.TabIndex = 440;
             // 
             // txtEmergencyContactAddress
             // 
@@ -498,14 +499,14 @@
             this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 150);
             this.txtEmergencyContactAddress.Name = "txtEmergencyContactAddress";
             this.txtEmergencyContactAddress.Size = new System.Drawing.Size(186, 20);
-            this.txtEmergencyContactAddress.TabIndex = 39;
+            this.txtEmergencyContactAddress.TabIndex = 460;
             // 
             // btnSelectImage
             // 
             this.btnSelectImage.Location = new System.Drawing.Point(622, 223);
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new System.Drawing.Size(97, 23);
-            this.btnSelectImage.TabIndex = 33;
+            this.btnSelectImage.TabIndex = 510;
             this.btnSelectImage.Text = "Select Image";
             this.btnSelectImage.UseVisualStyleBackColor = true;
             this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
@@ -527,7 +528,7 @@
             this.btnSaveClient.Location = new System.Drawing.Point(9, 491);
             this.btnSaveClient.Name = "btnSaveClient";
             this.btnSaveClient.Size = new System.Drawing.Size(214, 60);
-            this.btnSaveClient.TabIndex = 34;
+            this.btnSaveClient.TabIndex = 5000;
             this.btnSaveClient.Text = "Save";
             this.btnSaveClient.UseVisualStyleBackColor = true;
             this.btnSaveClient.Visible = false;
@@ -542,7 +543,7 @@
             this.groupBox6.Location = new System.Drawing.Point(844, 375);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(237, 114);
-            this.groupBox6.TabIndex = 31;
+            this.groupBox6.TabIndex = 60;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ISP";
             // 
@@ -551,7 +552,7 @@
             this.btnViewISP.Location = new System.Drawing.Point(139, 48);
             this.btnViewISP.Name = "btnViewISP";
             this.btnViewISP.Size = new System.Drawing.Size(75, 23);
-            this.btnViewISP.TabIndex = 42;
+            this.btnViewISP.TabIndex = 490;
             this.btnViewISP.Text = "View ISP";
             this.btnViewISP.UseVisualStyleBackColor = true;
             this.btnViewISP.Click += new System.EventHandler(this.btnViewISP_Click);
@@ -561,7 +562,7 @@
             this.btnRemoveISP.Location = new System.Drawing.Point(139, 77);
             this.btnRemoveISP.Name = "btnRemoveISP";
             this.btnRemoveISP.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveISP.TabIndex = 43;
+            this.btnRemoveISP.TabIndex = 500;
             this.btnRemoveISP.Text = "Remove ISP";
             this.btnRemoveISP.UseVisualStyleBackColor = true;
             this.btnRemoveISP.Click += new System.EventHandler(this.btnRemoveISP_Click);
@@ -571,7 +572,7 @@
             this.btnAddISP.Location = new System.Drawing.Point(139, 19);
             this.btnAddISP.Name = "btnAddISP";
             this.btnAddISP.Size = new System.Drawing.Size(75, 23);
-            this.btnAddISP.TabIndex = 40;
+            this.btnAddISP.TabIndex = 480;
             this.btnAddISP.Text = "Add ISP";
             this.btnAddISP.UseVisualStyleBackColor = true;
             this.btnAddISP.Click += new System.EventHandler(this.btnAddISP_Click);
@@ -584,7 +585,7 @@
             this.lstISP.Location = new System.Drawing.Point(13, 13);
             this.lstISP.Name = "lstISP";
             this.lstISP.Size = new System.Drawing.Size(120, 95);
-            this.lstISP.TabIndex = 0;
+            this.lstISP.TabIndex = 470;
             this.lstISP.ValueMember = "ISPNAME";
             // 
             // pERSONISPPERSONFKBindingSource
@@ -609,7 +610,7 @@
             this.groupBox5.Location = new System.Drawing.Point(547, 252);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(253, 135);
-            this.groupBox5.TabIndex = 32;
+            this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "New Light Support";
             // 
@@ -673,7 +674,7 @@
             this.txtProgramSpecialistName.Location = new System.Drawing.Point(6, 110);
             this.txtProgramSpecialistName.Name = "txtProgramSpecialistName";
             this.txtProgramSpecialistName.Size = new System.Drawing.Size(134, 20);
-            this.txtProgramSpecialistName.TabIndex = 27;
+            this.txtProgramSpecialistName.TabIndex = 290;
             // 
             // nEW_LIGHT_SUPPORTBindingSource
             // 
@@ -686,7 +687,7 @@
             this.txtProgramSpecialistPhoneNum.Location = new System.Drawing.Point(146, 110);
             this.txtProgramSpecialistPhoneNum.Name = "txtProgramSpecialistPhoneNum";
             this.txtProgramSpecialistPhoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtProgramSpecialistPhoneNum.TabIndex = 28;
+            this.txtProgramSpecialistPhoneNum.TabIndex = 300;
             // 
             // txtProgramCoordinatorName
             // 
@@ -694,7 +695,7 @@
             this.txtProgramCoordinatorName.Location = new System.Drawing.Point(6, 71);
             this.txtProgramCoordinatorName.Name = "txtProgramCoordinatorName";
             this.txtProgramCoordinatorName.Size = new System.Drawing.Size(134, 20);
-            this.txtProgramCoordinatorName.TabIndex = 25;
+            this.txtProgramCoordinatorName.TabIndex = 270;
             // 
             // txtProgramCoordinatorTelephoneNum
             // 
@@ -702,7 +703,7 @@
             this.txtProgramCoordinatorTelephoneNum.Location = new System.Drawing.Point(146, 71);
             this.txtProgramCoordinatorTelephoneNum.Name = "txtProgramCoordinatorTelephoneNum";
             this.txtProgramCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtProgramCoordinatorTelephoneNum.TabIndex = 26;
+            this.txtProgramCoordinatorTelephoneNum.TabIndex = 280;
             // 
             // txtSiteSupervisorName
             // 
@@ -710,7 +711,7 @@
             this.txtSiteSupervisorName.Location = new System.Drawing.Point(6, 32);
             this.txtSiteSupervisorName.Name = "txtSiteSupervisorName";
             this.txtSiteSupervisorName.Size = new System.Drawing.Size(134, 20);
-            this.txtSiteSupervisorName.TabIndex = 23;
+            this.txtSiteSupervisorName.TabIndex = 250;
             // 
             // txtSiteSupervisorTelephoneNum
             // 
@@ -718,7 +719,7 @@
             this.txtSiteSupervisorTelephoneNum.Location = new System.Drawing.Point(146, 32);
             this.txtSiteSupervisorTelephoneNum.Name = "txtSiteSupervisorTelephoneNum";
             this.txtSiteSupervisorTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtSiteSupervisorTelephoneNum.TabIndex = 24;
+            this.txtSiteSupervisorTelephoneNum.TabIndex = 260;
             // 
             // groupBox4
             // 
@@ -733,7 +734,7 @@
             this.groupBox4.Location = new System.Drawing.Point(546, 390);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(292, 99);
-            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "County Responsible";
             // 
@@ -779,7 +780,7 @@
             this.txtCountyResponsible.Location = new System.Drawing.Point(6, 32);
             this.txtCountyResponsible.Name = "txtCountyResponsible";
             this.txtCountyResponsible.Size = new System.Drawing.Size(100, 20);
-            this.txtCountyResponsible.TabIndex = 29;
+            this.txtCountyResponsible.TabIndex = 310;
             // 
             // cOUNTY_RESPONSIBLEBindingSource
             // 
@@ -792,7 +793,7 @@
             this.txtSupportsCoordinatorTelephoneNum.Location = new System.Drawing.Point(181, 73);
             this.txtSupportsCoordinatorTelephoneNum.Name = "txtSupportsCoordinatorTelephoneNum";
             this.txtSupportsCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtSupportsCoordinatorTelephoneNum.TabIndex = 32;
+            this.txtSupportsCoordinatorTelephoneNum.TabIndex = 340;
             // 
             // txtSupportsCoordinatorName
             // 
@@ -800,7 +801,7 @@
             this.txtSupportsCoordinatorName.Location = new System.Drawing.Point(112, 32);
             this.txtSupportsCoordinatorName.Name = "txtSupportsCoordinatorName";
             this.txtSupportsCoordinatorName.Size = new System.Drawing.Size(134, 20);
-            this.txtSupportsCoordinatorName.TabIndex = 30;
+            this.txtSupportsCoordinatorName.TabIndex = 320;
             // 
             // txtSupportsCoordinatorAddress
             // 
@@ -808,7 +809,7 @@
             this.txtSupportsCoordinatorAddress.Location = new System.Drawing.Point(6, 71);
             this.txtSupportsCoordinatorAddress.Name = "txtSupportsCoordinatorAddress";
             this.txtSupportsCoordinatorAddress.Size = new System.Drawing.Size(167, 20);
-            this.txtSupportsCoordinatorAddress.TabIndex = 31;
+            this.txtSupportsCoordinatorAddress.TabIndex = 330;
             // 
             // groupBox3
             // 
@@ -824,7 +825,7 @@
             this.groupBox3.Location = new System.Drawing.Point(811, 11);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(270, 176);
-            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Next of Kin";
             // 
@@ -833,7 +834,7 @@
             this.btnRemoveNextOfKin.Location = new System.Drawing.Point(6, 19);
             this.btnRemoveNextOfKin.Name = "btnRemoveNextOfKin";
             this.btnRemoveNextOfKin.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveNextOfKin.TabIndex = 44;
+            this.btnRemoveNextOfKin.TabIndex = 350;
             this.btnRemoveNextOfKin.Text = "Remove Kin";
             this.btnRemoveNextOfKin.UseVisualStyleBackColor = true;
             this.btnRemoveNextOfKin.Click += new System.EventHandler(this.btnRemoveNextOfKin_Click);
@@ -853,7 +854,7 @@
             this.txtNextOfKinTelephoneNum.Location = new System.Drawing.Point(132, 103);
             this.txtNextOfKinTelephoneNum.Name = "txtNextOfKinTelephoneNum";
             this.txtNextOfKinTelephoneNum.Size = new System.Drawing.Size(93, 20);
-            this.txtNextOfKinTelephoneNum.TabIndex = 35;
+            this.txtNextOfKinTelephoneNum.TabIndex = 390;
             // 
             // nEXT_OF_KINBindingSource
             // 
@@ -865,7 +866,7 @@
             this.btnAddNextOfKin.Location = new System.Drawing.Point(91, 19);
             this.btnAddNextOfKin.Name = "btnAddNextOfKin";
             this.btnAddNextOfKin.Size = new System.Drawing.Size(75, 23);
-            this.btnAddNextOfKin.TabIndex = 45;
+            this.btnAddNextOfKin.TabIndex = 360;
             this.btnAddNextOfKin.Text = "Add Kin";
             this.btnAddNextOfKin.UseVisualStyleBackColor = true;
             this.btnAddNextOfKin.Click += new System.EventHandler(this.btnAddNextOfKin_Click);
@@ -896,7 +897,7 @@
             this.lstNextOfKin.Location = new System.Drawing.Point(6, 48);
             this.lstNextOfKin.Name = "lstNextOfKin";
             this.lstNextOfKin.Size = new System.Drawing.Size(120, 82);
-            this.lstNextOfKin.TabIndex = 0;
+            this.lstNextOfKin.TabIndex = 370;
             this.lstNextOfKin.ValueMember = "UNIQUEID";
             // 
             // txtNextOfKinName
@@ -905,7 +906,7 @@
             this.txtNextOfKinName.Location = new System.Drawing.Point(132, 64);
             this.txtNextOfKinName.Name = "txtNextOfKinName";
             this.txtNextOfKinName.Size = new System.Drawing.Size(131, 20);
-            this.txtNextOfKinName.TabIndex = 34;
+            this.txtNextOfKinName.TabIndex = 380;
             // 
             // txtNextOfKinAddress
             // 
@@ -913,7 +914,7 @@
             this.txtNextOfKinAddress.Location = new System.Drawing.Point(6, 149);
             this.txtNextOfKinAddress.Name = "txtNextOfKinAddress";
             this.txtNextOfKinAddress.Size = new System.Drawing.Size(186, 20);
-            this.txtNextOfKinAddress.TabIndex = 36;
+            this.txtNextOfKinAddress.TabIndex = 400;
             // 
             // groupBox1
             // 
@@ -965,7 +966,7 @@
             this.groupBox1.Location = new System.Drawing.Point(229, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 478);
-            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Demographics";
             // 
@@ -975,7 +976,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(93, 32);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(67, 20);
-            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.TabIndex = 30;
             // 
             // txtRaceOther
             // 
@@ -984,7 +985,7 @@
             this.txtRaceOther.Location = new System.Drawing.Point(198, 227);
             this.txtRaceOther.Name = "txtRaceOther";
             this.txtRaceOther.Size = new System.Drawing.Size(94, 20);
-            this.txtRaceOther.TabIndex = 47;
+            this.txtRaceOther.TabIndex = 150;
             this.txtRaceOther.Visible = false;
             // 
             // label44
@@ -1191,7 +1192,7 @@
             this.txtAdmittanceDate.Location = new System.Drawing.Point(144, 71);
             this.txtAdmittanceDate.Name = "txtAdmittanceDate";
             this.txtAdmittanceDate.Size = new System.Drawing.Size(79, 20);
-            this.txtAdmittanceDate.TabIndex = 5;
+            this.txtAdmittanceDate.TabIndex = 60;
             // 
             // txtLastName
             // 
@@ -1199,7 +1200,7 @@
             this.txtLastName.Location = new System.Drawing.Point(6, 32);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(79, 20);
-            this.txtLastName.TabIndex = 1;
+            this.txtLastName.TabIndex = 20;
             // 
             // txtManagedCareCompany
             // 
@@ -1207,7 +1208,7 @@
             this.txtManagedCareCompany.Location = new System.Drawing.Point(6, 451);
             this.txtManagedCareCompany.Name = "txtManagedCareCompany";
             this.txtManagedCareCompany.Size = new System.Drawing.Size(137, 20);
-            this.txtManagedCareCompany.TabIndex = 22;
+            this.txtManagedCareCompany.TabIndex = 240;
             // 
             // txtPolicyNum
             // 
@@ -1215,7 +1216,7 @@
             this.txtPolicyNum.Location = new System.Drawing.Point(124, 412);
             this.txtPolicyNum.Name = "txtPolicyNum";
             this.txtPolicyNum.Size = new System.Drawing.Size(114, 20);
-            this.txtPolicyNum.TabIndex = 21;
+            this.txtPolicyNum.TabIndex = 230;
             this.txtPolicyNum.TextChanged += new System.EventHandler(this.txtPolicyNum_TextChanged);
             // 
             // txtMiddleName
@@ -1224,7 +1225,7 @@
             this.txtMiddleName.Location = new System.Drawing.Point(166, 32);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(72, 20);
-            this.txtMiddleName.TabIndex = 3;
+            this.txtMiddleName.TabIndex = 40;
             // 
             // txtInsuranceCarrier
             // 
@@ -1232,7 +1233,7 @@
             this.txtInsuranceCarrier.Location = new System.Drawing.Point(6, 412);
             this.txtInsuranceCarrier.Name = "txtInsuranceCarrier";
             this.txtInsuranceCarrier.Size = new System.Drawing.Size(112, 20);
-            this.txtInsuranceCarrier.TabIndex = 20;
+            this.txtInsuranceCarrier.TabIndex = 220;
             // 
             // txtAgencyName
             // 
@@ -1240,7 +1241,7 @@
             this.txtAgencyName.Location = new System.Drawing.Point(6, 71);
             this.txtAgencyName.Name = "txtAgencyName";
             this.txtAgencyName.Size = new System.Drawing.Size(132, 20);
-            this.txtAgencyName.TabIndex = 4;
+            this.txtAgencyName.TabIndex = 50;
             // 
             // txtMCINum
             // 
@@ -1248,7 +1249,7 @@
             this.txtMCINum.Location = new System.Drawing.Point(118, 373);
             this.txtMCINum.Name = "txtMCINum";
             this.txtMCINum.Size = new System.Drawing.Size(100, 20);
-            this.txtMCINum.TabIndex = 19;
+            this.txtMCINum.TabIndex = 210;
             this.txtMCINum.TextChanged += new System.EventHandler(this.txtMCINum_TextChanged);
             // 
             // txtAddress
@@ -1257,7 +1258,7 @@
             this.txtAddress.Location = new System.Drawing.Point(6, 110);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(188, 20);
-            this.txtAddress.TabIndex = 6;
+            this.txtAddress.TabIndex = 70;
             // 
             // txtBSUNum
             // 
@@ -1265,7 +1266,7 @@
             this.txtBSUNum.Location = new System.Drawing.Point(6, 373);
             this.txtBSUNum.Name = "txtBSUNum";
             this.txtBSUNum.Size = new System.Drawing.Size(106, 20);
-            this.txtBSUNum.TabIndex = 18;
+            this.txtBSUNum.TabIndex = 200;
             this.txtBSUNum.TextChanged += new System.EventHandler(this.txtBSUNum_TextChanged);
             // 
             // txtZipCode
@@ -1273,7 +1274,7 @@
             this.txtZipCode.Location = new System.Drawing.Point(200, 110);
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(38, 20);
-            this.txtZipCode.TabIndex = 7;
+            this.txtZipCode.TabIndex = 80;
             // 
             // txtIdentifyingMarks
             // 
@@ -1282,7 +1283,7 @@
             this.txtIdentifyingMarks.Multiline = true;
             this.txtIdentifyingMarks.Name = "txtIdentifyingMarks";
             this.txtIdentifyingMarks.Size = new System.Drawing.Size(232, 48);
-            this.txtIdentifyingMarks.TabIndex = 17;
+            this.txtIdentifyingMarks.TabIndex = 190;
             // 
             // txtTelephoneNum
             // 
@@ -1290,7 +1291,7 @@
             this.txtTelephoneNum.Location = new System.Drawing.Point(6, 149);
             this.txtTelephoneNum.Name = "txtTelephoneNum";
             this.txtTelephoneNum.Size = new System.Drawing.Size(97, 20);
-            this.txtTelephoneNum.TabIndex = 8;
+            this.txtTelephoneNum.TabIndex = 90;
             // 
             // txtHairColor
             // 
@@ -1298,7 +1299,7 @@
             this.txtHairColor.Location = new System.Drawing.Point(6, 267);
             this.txtHairColor.Name = "txtHairColor";
             this.txtHairColor.Size = new System.Drawing.Size(71, 20);
-            this.txtHairColor.TabIndex = 14;
+            this.txtHairColor.TabIndex = 160;
             // 
             // txtDateOfBirth
             // 
@@ -1306,7 +1307,7 @@
             this.txtDateOfBirth.Location = new System.Drawing.Point(6, 188);
             this.txtDateOfBirth.Name = "txtDateOfBirth";
             this.txtDateOfBirth.Size = new System.Drawing.Size(67, 20);
-            this.txtDateOfBirth.TabIndex = 10;
+            this.txtDateOfBirth.TabIndex = 110;
             // 
             // txtWeight
             // 
@@ -1314,7 +1315,7 @@
             this.txtWeight.Location = new System.Drawing.Point(124, 267);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(68, 20);
-            this.txtWeight.TabIndex = 16;
+            this.txtWeight.TabIndex = 180;
             // 
             // txtAge
             // 
@@ -1322,7 +1323,7 @@
             this.txtAge.Location = new System.Drawing.Point(79, 188);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(36, 20);
-            this.txtAge.TabIndex = 11;
+            this.txtAge.TabIndex = 120;
             this.txtAge.TextChanged += new System.EventHandler(this.txtAge_TextChanged);
             // 
             // txtHeight
@@ -1331,7 +1332,7 @@
             this.txtHeight.Location = new System.Drawing.Point(83, 267);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(35, 20);
-            this.txtHeight.TabIndex = 15;
+            this.txtHeight.TabIndex = 170;
             // 
             // txtSocialSecurityNum
             // 
@@ -1340,7 +1341,7 @@
             this.txtSocialSecurityNum.Location = new System.Drawing.Point(109, 149);
             this.txtSocialSecurityNum.Name = "txtSocialSecurityNum";
             this.txtSocialSecurityNum.Size = new System.Drawing.Size(84, 20);
-            this.txtSocialSecurityNum.TabIndex = 9;
+            this.txtSocialSecurityNum.TabIndex = 100;
             this.txtSocialSecurityNum.TextChanged += new System.EventHandler(this.txtSocialSecurityNum_TextChanged);
             // 
             // comboGender
@@ -1355,7 +1356,7 @@
             this.comboGender.Location = new System.Drawing.Point(6, 227);
             this.comboGender.Name = "comboGender";
             this.comboGender.Size = new System.Drawing.Size(71, 21);
-            this.comboGender.TabIndex = 12;
+            this.comboGender.TabIndex = 130;
             // 
             // comboRace
             // 
@@ -1370,7 +1371,7 @@
             this.comboRace.Location = new System.Drawing.Point(83, 227);
             this.comboRace.Name = "comboRace";
             this.comboRace.Size = new System.Drawing.Size(109, 21);
-            this.comboRace.TabIndex = 13;
+            this.comboRace.TabIndex = 140;
             this.comboRace.SelectedIndexChanged += new System.EventHandler(this.comboRace_SelectedIndexChanged);
             // 
             // listClients
@@ -1381,7 +1382,7 @@
             this.listClients.Location = new System.Drawing.Point(6, 53);
             this.listClients.Name = "listClients";
             this.listClients.Size = new System.Drawing.Size(217, 433);
-            this.listClients.TabIndex = 0;
+            this.listClients.TabIndex = 16;
             this.listClients.ValueMember = "SSN";
             this.listClients.SelectedIndexChanged += new System.EventHandler(this.listClients_SelectedIndexChanged);
             // 
@@ -1433,7 +1434,7 @@
             this.btnSaveDailyBehavior.Location = new System.Drawing.Point(6, 19);
             this.btnSaveDailyBehavior.Name = "btnSaveDailyBehavior";
             this.btnSaveDailyBehavior.Size = new System.Drawing.Size(137, 42);
-            this.btnSaveDailyBehavior.TabIndex = 36;
+            this.btnSaveDailyBehavior.TabIndex = 10;
             this.btnSaveDailyBehavior.Text = "Save";
             this.btnSaveDailyBehavior.UseVisualStyleBackColor = true;
             this.btnSaveDailyBehavior.Click += new System.EventHandler(this.btnSaveDailyBehavior_Click);
@@ -1480,7 +1481,7 @@
             this.chkUseCustomDatesDailyBehavior.Location = new System.Drawing.Point(634, 35);
             this.chkUseCustomDatesDailyBehavior.Name = "chkUseCustomDatesDailyBehavior";
             this.chkUseCustomDatesDailyBehavior.Size = new System.Drawing.Size(114, 17);
-            this.chkUseCustomDatesDailyBehavior.TabIndex = 27;
+            this.chkUseCustomDatesDailyBehavior.TabIndex = 40;
             this.chkUseCustomDatesDailyBehavior.Text = "Use Custom Dates";
             this.chkUseCustomDatesDailyBehavior.UseVisualStyleBackColor = true;
             this.chkUseCustomDatesDailyBehavior.CheckedChanged += new System.EventHandler(this.chkUseCustomDatesDailyBehavior_CheckedChanged);
@@ -1496,7 +1497,7 @@
             this.comboPickTimeDailyBehavior.Location = new System.Drawing.Point(754, 31);
             this.comboPickTimeDailyBehavior.Name = "comboPickTimeDailyBehavior";
             this.comboPickTimeDailyBehavior.Size = new System.Drawing.Size(121, 21);
-            this.comboPickTimeDailyBehavior.TabIndex = 26;
+            this.comboPickTimeDailyBehavior.TabIndex = 50;
             this.comboPickTimeDailyBehavior.SelectedIndexChanged += new System.EventHandler(this.comboPickTimeDailyBehavior_SelectedIndexChanged);
             // 
             // datePickerEndDailyBehavior
@@ -1507,7 +1508,7 @@
             this.datePickerEndDailyBehavior.Location = new System.Drawing.Point(428, 32);
             this.datePickerEndDailyBehavior.Name = "datePickerEndDailyBehavior";
             this.datePickerEndDailyBehavior.Size = new System.Drawing.Size(200, 20);
-            this.datePickerEndDailyBehavior.TabIndex = 25;
+            this.datePickerEndDailyBehavior.TabIndex = 30;
             this.datePickerEndDailyBehavior.Value = new System.DateTime(2014, 4, 6, 16, 1, 53, 0);
             this.datePickerEndDailyBehavior.ValueChanged += new System.EventHandler(this.datePickerEndDailyBehavior_ValueChanged);
             // 
@@ -1538,7 +1539,7 @@
             this.dataGridViewDailyBehaviorTracking.Name = "dataGridViewDailyBehaviorTracking";
             this.dataGridViewDailyBehaviorTracking.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDailyBehaviorTracking.Size = new System.Drawing.Size(1069, 541);
-            this.dataGridViewDailyBehaviorTracking.TabIndex = 10;
+            this.dataGridViewDailyBehaviorTracking.TabIndex = 60;
             this.dataGridViewDailyBehaviorTracking.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewDailyBehaviorTracking_DataError);
             this.dataGridViewDailyBehaviorTracking.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridViewDailyBehaviorTracking_DefaultValuesNeeded);
             // 
@@ -1600,7 +1601,7 @@
             this.datePickerBeginDailyBehavior.Location = new System.Drawing.Point(200, 32);
             this.datePickerBeginDailyBehavior.Name = "datePickerBeginDailyBehavior";
             this.datePickerBeginDailyBehavior.Size = new System.Drawing.Size(200, 20);
-            this.datePickerBeginDailyBehavior.TabIndex = 0;
+            this.datePickerBeginDailyBehavior.TabIndex = 20;
             this.datePickerBeginDailyBehavior.Value = new System.DateTime(2014, 4, 6, 0, 0, 0, 0);
             this.datePickerBeginDailyBehavior.ValueChanged += new System.EventHandler(this.datePickerBeginDailyBehavior_ValueChanged);
             // 
@@ -1642,7 +1643,7 @@
             this.lblNoBehaviors.Location = new System.Drawing.Point(171, 189);
             this.lblNoBehaviors.Name = "lblNoBehaviors";
             this.lblNoBehaviors.Size = new System.Drawing.Size(883, 118);
-            this.lblNoBehaviors.TabIndex = 53;
+            this.lblNoBehaviors.TabIndex = 800;
             this.lblNoBehaviors.Text = "No behaviors to graph.";
             this.lblNoBehaviors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNoBehaviors.Visible = false;
@@ -1653,7 +1654,7 @@
             this.btnGenerateGraphs.Location = new System.Drawing.Point(3, 325);
             this.btnGenerateGraphs.Name = "btnGenerateGraphs";
             this.btnGenerateGraphs.Size = new System.Drawing.Size(142, 89);
-            this.btnGenerateGraphs.TabIndex = 52;
+            this.btnGenerateGraphs.TabIndex = 130;
             this.btnGenerateGraphs.Text = "Generate Graphs";
             this.btnGenerateGraphs.UseVisualStyleBackColor = true;
             this.btnGenerateGraphs.Click += new System.EventHandler(this.btnGenerateGraphs_Click);
@@ -1665,7 +1666,7 @@
             this.radUseTimeFrames.Location = new System.Drawing.Point(437, 11);
             this.radUseTimeFrames.Name = "radUseTimeFrames";
             this.radUseTimeFrames.Size = new System.Drawing.Size(107, 17);
-            this.radUseTimeFrames.TabIndex = 51;
+            this.radUseTimeFrames.TabIndex = 30;
             this.radUseTimeFrames.TabStop = true;
             this.radUseTimeFrames.Text = "Use Time Frames";
             this.radUseTimeFrames.UseVisualStyleBackColor = true;
@@ -1677,7 +1678,7 @@
             this.radUseCustomQuarters.Location = new System.Drawing.Point(684, 34);
             this.radUseCustomQuarters.Name = "radUseCustomQuarters";
             this.radUseCustomQuarters.Size = new System.Drawing.Size(125, 17);
-            this.radUseCustomQuarters.TabIndex = 50;
+            this.radUseCustomQuarters.TabIndex = 60;
             this.radUseCustomQuarters.Text = "Use Custom Quarters";
             this.radUseCustomQuarters.UseVisualStyleBackColor = true;
             this.radUseCustomQuarters.Click += new System.EventHandler(this.radUseCustomQuarters_Click);
@@ -1688,7 +1689,7 @@
             this.radUseCustomDates.Location = new System.Drawing.Point(437, 34);
             this.radUseCustomDates.Name = "radUseCustomDates";
             this.radUseCustomDates.Size = new System.Drawing.Size(113, 17);
-            this.radUseCustomDates.TabIndex = 49;
+            this.radUseCustomDates.TabIndex = 40;
             this.radUseCustomDates.Text = "Use Custom Dates";
             this.radUseCustomDates.UseVisualStyleBackColor = true;
             this.radUseCustomDates.Click += new System.EventHandler(this.radUseCustomDates_Click);
@@ -1699,7 +1700,7 @@
             this.chkQuarter4.Location = new System.Drawing.Point(903, 36);
             this.chkQuarter4.Name = "chkQuarter4";
             this.chkQuarter4.Size = new System.Drawing.Size(79, 17);
-            this.chkQuarter4.TabIndex = 48;
+            this.chkQuarter4.TabIndex = 100;
             this.chkQuarter4.Text = "4th Quarter";
             this.chkQuarter4.UseVisualStyleBackColor = true;
             // 
@@ -1709,7 +1710,7 @@
             this.chkQuarter3.Location = new System.Drawing.Point(903, 13);
             this.chkQuarter3.Name = "chkQuarter3";
             this.chkQuarter3.Size = new System.Drawing.Size(79, 17);
-            this.chkQuarter3.TabIndex = 47;
+            this.chkQuarter3.TabIndex = 90;
             this.chkQuarter3.Text = "3rd Quarter";
             this.chkQuarter3.UseVisualStyleBackColor = true;
             // 
@@ -1719,7 +1720,7 @@
             this.chkQuarter2.Location = new System.Drawing.Point(815, 36);
             this.chkQuarter2.Name = "chkQuarter2";
             this.chkQuarter2.Size = new System.Drawing.Size(82, 17);
-            this.chkQuarter2.TabIndex = 46;
+            this.chkQuarter2.TabIndex = 80;
             this.chkQuarter2.Text = "2nd Quarter";
             this.chkQuarter2.UseVisualStyleBackColor = true;
             // 
@@ -1729,7 +1730,7 @@
             this.chkQuarter1.Location = new System.Drawing.Point(815, 13);
             this.chkQuarter1.Name = "chkQuarter1";
             this.chkQuarter1.Size = new System.Drawing.Size(78, 17);
-            this.chkQuarter1.TabIndex = 45;
+            this.chkQuarter1.TabIndex = 70;
             this.chkQuarter1.Text = "1st Quarter";
             this.chkQuarter1.UseVisualStyleBackColor = true;
             // 
@@ -1780,7 +1781,7 @@
             this.comboPickTimeGraphs.Location = new System.Drawing.Point(557, 32);
             this.comboPickTimeGraphs.Name = "comboPickTimeGraphs";
             this.comboPickTimeGraphs.Size = new System.Drawing.Size(121, 21);
-            this.comboPickTimeGraphs.TabIndex = 39;
+            this.comboPickTimeGraphs.TabIndex = 50;
             // 
             // datePickerEndGraphs
             // 
@@ -1789,7 +1790,7 @@
             this.datePickerEndGraphs.Location = new System.Drawing.Point(231, 32);
             this.datePickerEndGraphs.Name = "datePickerEndGraphs";
             this.datePickerEndGraphs.Size = new System.Drawing.Size(200, 20);
-            this.datePickerEndGraphs.TabIndex = 38;
+            this.datePickerEndGraphs.TabIndex = 20;
             // 
             // datePickerBeginGraphs
             // 
@@ -1798,7 +1799,7 @@
             this.datePickerBeginGraphs.Location = new System.Drawing.Point(3, 33);
             this.datePickerBeginGraphs.Name = "datePickerBeginGraphs";
             this.datePickerBeginGraphs.Size = new System.Drawing.Size(200, 20);
-            this.datePickerBeginGraphs.TabIndex = 37;
+            this.datePickerBeginGraphs.TabIndex = 10;
             this.datePickerBeginGraphs.Value = new System.DateTime(2014, 4, 1, 0, 0, 0, 0);
             // 
             // label67
@@ -1825,7 +1826,7 @@
             series1.Name = "Series1";
             this.chartPyramidOccurences.Series.Add(series1);
             this.chartPyramidOccurences.Size = new System.Drawing.Size(381, 255);
-            this.chartPyramidOccurences.TabIndex = 35;
+            this.chartPyramidOccurences.TabIndex = 700;
             this.chartPyramidOccurences.Text = "chart5";
             title1.Name = "Title1";
             title1.Text = "# Daily Occurences";
@@ -1871,7 +1872,7 @@
             series2.Name = "Series1";
             this.chartPieDailyOccurences.Series.Add(series2);
             this.chartPieDailyOccurences.Size = new System.Drawing.Size(381, 255);
-            this.chartPieDailyOccurences.TabIndex = 33;
+            this.chartPieDailyOccurences.TabIndex = 600;
             this.chartPieDailyOccurences.Text = "chart3";
             title2.Name = "Title1";
             title2.Text = "# Daily Occurences";
@@ -1918,7 +1919,7 @@
             this.chartTotalBehaviors.Series.Add(series4);
             this.chartTotalBehaviors.Size = new System.Drawing.Size(435, 390);
             this.chartTotalBehaviors.SuppressExceptions = true;
-            this.chartTotalBehaviors.TabIndex = 32;
+            this.chartTotalBehaviors.TabIndex = 500;
             this.chartTotalBehaviors.Text = "chart2";
             title3.Name = "Title1";
             title3.Text = "Total Occurences";
@@ -1957,7 +1958,7 @@
             this.comboBehaviorsToGraph.Location = new System.Drawing.Point(3, 80);
             this.comboBehaviorsToGraph.Name = "comboBehaviorsToGraph";
             this.comboBehaviorsToGraph.Size = new System.Drawing.Size(142, 21);
-            this.comboBehaviorsToGraph.TabIndex = 1;
+            this.comboBehaviorsToGraph.TabIndex = 110;
             this.comboBehaviorsToGraph.SelectedIndexChanged += new System.EventHandler(this.comboBehaviorsToGraph_SelectedIndexChanged);
             // 
             // listBehaviorsToGraph
@@ -1967,7 +1968,7 @@
             this.listBehaviorsToGraph.Name = "listBehaviorsToGraph";
             this.listBehaviorsToGraph.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBehaviorsToGraph.Size = new System.Drawing.Size(142, 212);
-            this.listBehaviorsToGraph.TabIndex = 0;
+            this.listBehaviorsToGraph.TabIndex = 120;
             // 
             // tabPage4
             // 
@@ -2012,7 +2013,7 @@
             series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             this.chartQABFAnalysis.Series.Add(series5);
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
-            this.chartQABFAnalysis.TabIndex = 0;
+            this.chartQABFAnalysis.TabIndex = 80;
             this.chartQABFAnalysis.Text = "chart1";
             // 
             // groupBox15
@@ -2040,7 +2041,7 @@
             this.dataGridViewAntecedents.Name = "dataGridViewAntecedents";
             this.dataGridViewAntecedents.ReadOnly = true;
             this.dataGridViewAntecedents.Size = new System.Drawing.Size(666, 200);
-            this.dataGridViewAntecedents.TabIndex = 0;
+            this.dataGridViewAntecedents.TabIndex = 70;
             // 
             // Column14
             // 
@@ -2102,7 +2103,7 @@
             this.dataGridViewBehaviorsStaffInterviews.Name = "dataGridViewBehaviorsStaffInterviews";
             this.dataGridViewBehaviorsStaffInterviews.ReadOnly = true;
             this.dataGridViewBehaviorsStaffInterviews.Size = new System.Drawing.Size(565, 276);
-            this.dataGridViewBehaviorsStaffInterviews.TabIndex = 0;
+            this.dataGridViewBehaviorsStaffInterviews.TabIndex = 60;
             this.dataGridViewBehaviorsStaffInterviews.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBehaviorsStaffInterviews_RowEnter);
             this.dataGridViewBehaviorsStaffInterviews.SelectionChanged += new System.EventHandler(this.dataGridViewBehaviorsStaffInterviews_SelectionChanged);
             // 
@@ -2159,7 +2160,7 @@
             this.dataGridViewStrengths.Name = "dataGridViewStrengths";
             this.dataGridViewStrengths.ReadOnly = true;
             this.dataGridViewStrengths.Size = new System.Drawing.Size(300, 276);
-            this.dataGridViewStrengths.TabIndex = 6;
+            this.dataGridViewStrengths.TabIndex = 50;
             // 
             // Column7
             // 
@@ -2178,10 +2179,10 @@
             // btnViewInterview
             // 
             this.btnViewInterview.Enabled = false;
-            this.btnViewInterview.Location = new System.Drawing.Point(41, 43);
+            this.btnViewInterview.Location = new System.Drawing.Point(12, 43);
             this.btnViewInterview.Name = "btnViewInterview";
-            this.btnViewInterview.Size = new System.Drawing.Size(107, 23);
-            this.btnViewInterview.TabIndex = 4;
+            this.btnViewInterview.Size = new System.Drawing.Size(105, 23);
+            this.btnViewInterview.TabIndex = 30;
             this.btnViewInterview.Text = "View Interview";
             this.btnViewInterview.UseVisualStyleBackColor = true;
             this.btnViewInterview.Click += new System.EventHandler(this.btnViewInterview_Click);
@@ -2189,10 +2190,10 @@
             // btnRemoveInterview
             // 
             this.btnRemoveInterview.Enabled = false;
-            this.btnRemoveInterview.Location = new System.Drawing.Point(109, 14);
+            this.btnRemoveInterview.Location = new System.Drawing.Point(123, 14);
             this.btnRemoveInterview.Name = "btnRemoveInterview";
             this.btnRemoveInterview.Size = new System.Drawing.Size(105, 23);
-            this.btnRemoveInterview.TabIndex = 3;
+            this.btnRemoveInterview.TabIndex = 20;
             this.btnRemoveInterview.Text = "Remove Interview";
             this.btnRemoveInterview.UseVisualStyleBackColor = true;
             this.btnRemoveInterview.Click += new System.EventHandler(this.btnRemoveInterview_Click);
@@ -2201,8 +2202,8 @@
             // 
             this.btnAddInterview.Location = new System.Drawing.Point(12, 14);
             this.btnAddInterview.Name = "btnAddInterview";
-            this.btnAddInterview.Size = new System.Drawing.Size(91, 23);
-            this.btnAddInterview.TabIndex = 1;
+            this.btnAddInterview.Size = new System.Drawing.Size(105, 23);
+            this.btnAddInterview.TabIndex = 10;
             this.btnAddInterview.Text = "Add Interview";
             this.btnAddInterview.UseVisualStyleBackColor = true;
             this.btnAddInterview.Click += new System.EventHandler(this.btnAddInterview_Click);
@@ -2214,7 +2215,7 @@
             this.lstInterviews.Name = "lstInterviews";
             this.lstInterviews.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstInterviews.Size = new System.Drawing.Size(165, 303);
-            this.lstInterviews.TabIndex = 0;
+            this.lstInterviews.TabIndex = 40;
             this.lstInterviews.SelectedIndexChanged += new System.EventHandler(this.lstInterviews_SelectedIndexChanged);
             // 
             // pERSONISPBindingSource
@@ -2354,6 +2355,7 @@
             this.ClientSize = new System.Drawing.Size(1127, 696);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Sky Pie - Michael Petruzzello";

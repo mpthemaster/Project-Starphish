@@ -271,7 +271,7 @@ namespace GUI
                 else
                     MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
             }
-            catch (Exception ff)
+            catch (Exception ex)
             {
                 MessageBox.Show("Something has gone wrong. This person cannot be saved. Please make sure their Social Security Number is unique.");
             }

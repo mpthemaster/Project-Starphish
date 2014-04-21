@@ -81,5 +81,20 @@ namespace GUI
             else
                 reset = true;
         }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.AcceptButton = btnLogin;
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.AcceptButton = btnLogin;
+        }
+
+        private void txtSecurityAnswer_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.AcceptButton = btnResetAccount;
+        }
     }
 }
