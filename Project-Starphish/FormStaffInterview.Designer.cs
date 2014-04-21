@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Hourly");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Daily");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Weekly");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Less Often");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Strengths of Emotion");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Strengths of Will");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Other Strengths");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Hourly");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Daily");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Weekly");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Less Often");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Strengths of Emotion");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Strengths of Will");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Rational and Civic Strengths");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Strengths of Tolerance");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Other Strengths");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStaffInterview));
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -471,19 +472,19 @@
             // 
             this.treeViewBehaviors.Location = new System.Drawing.Point(6, 48);
             this.treeViewBehaviors.Name = "treeViewBehaviors";
-            treeNode10.Name = "Hourly";
-            treeNode10.Text = "Hourly";
-            treeNode11.Name = "Daily";
-            treeNode11.Text = "Daily";
-            treeNode12.Name = "Weekly";
-            treeNode12.Text = "Weekly";
-            treeNode13.Name = "LessOften";
-            treeNode13.Text = "Less Often";
+            treeNode1.Name = "Hourly";
+            treeNode1.Text = "Hourly";
+            treeNode2.Name = "Daily";
+            treeNode2.Text = "Daily";
+            treeNode3.Name = "Weekly";
+            treeNode3.Text = "Weekly";
+            treeNode4.Name = "LessOften";
+            treeNode4.Text = "Less Often";
             this.treeViewBehaviors.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
             this.treeViewBehaviors.Size = new System.Drawing.Size(170, 203);
             this.treeViewBehaviors.TabIndex = 180;
             this.treeViewBehaviors.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewBehaviors_AfterSelect);
@@ -785,22 +786,22 @@
             // 
             this.treeViewStrengths.Location = new System.Drawing.Point(6, 52);
             this.treeViewStrengths.Name = "treeViewStrengths";
-            treeNode14.Name = "NodeStrengthsOfEmotion";
-            treeNode14.Text = "Strengths of Emotion";
-            treeNode15.Name = "NodeStrengthsOfWill";
-            treeNode15.Text = "Strengths of Will";
-            treeNode16.Name = "NodeRationalCivicStrengths";
-            treeNode16.Text = "Rational and Civic Strengths";
-            treeNode17.Name = "NodeStrengthsOfTolerance";
-            treeNode17.Text = "Strengths of Tolerance";
-            treeNode18.Name = "NodeOtherStrengths";
-            treeNode18.Text = "Other Strengths";
+            treeNode5.Name = "NodeStrengthsOfEmotion";
+            treeNode5.Text = "Strengths of Emotion";
+            treeNode6.Name = "NodeStrengthsOfWill";
+            treeNode6.Text = "Strengths of Will";
+            treeNode7.Name = "NodeRationalCivicStrengths";
+            treeNode7.Text = "Rational and Civic Strengths";
+            treeNode8.Name = "NodeStrengthsOfTolerance";
+            treeNode8.Text = "Strengths of Tolerance";
+            treeNode9.Name = "NodeOtherStrengths";
+            treeNode9.Text = "Other Strengths";
             this.treeViewStrengths.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14,
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18});
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
             this.treeViewStrengths.Size = new System.Drawing.Size(165, 168);
             this.treeViewStrengths.TabIndex = 60;
             // 
@@ -908,6 +909,7 @@
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.txtStaffIntervieweeName);
             this.Controls.Add(this.txtInterviewerName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormStaffInterview";
             this.Text = "Sky Pie - Staff Interview for Michael Petruzzello";

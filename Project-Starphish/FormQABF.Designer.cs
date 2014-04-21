@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Uncompleted");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Completed");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQABF));
             this.lblStaffInterviewee = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.lblSelectedBehavior = new System.Windows.Forms.Label();
@@ -699,6 +700,7 @@
             this.ClientSize = new System.Drawing.Size(810, 573);
             this.Controls.Add(this.lblStaffInterviewee);
             this.Controls.Add(this.groupBox11);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormQABF";
             this.Text = "Sky Pie - QABFs for Michael Petruzzello";
