@@ -115,7 +115,15 @@ namespace GUI
             string statement;
 
             //Get the information from the Staff Interview and display it.
-            connection.Open();
+            try
+            {
+                connection.Open();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("No server found. The program will now exit.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(1001);
+            }
             statement = "SELECT * FROM SIGNIN";
             command = new SqlCommand(statement, connection);
             reader = command.ExecuteReader();
