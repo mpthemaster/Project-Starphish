@@ -328,6 +328,9 @@ namespace GUI
                 addClientToolStripMenuItem_Click(this, x);
                 btnCancel.Visible = false;
             }
+
+            if (String.IsNullOrEmpty(comboRace.Text))
+                comboRace.SelectedIndex = comboRace.Items.Count - 1;
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -863,6 +866,9 @@ namespace GUI
                 txtRaceOther.Enabled = false;
                 txtRaceOther.Visible = false;
             }
+
+            if (String.IsNullOrEmpty(comboGender.Text))
+                comboGender.SelectedIndex = comboGender.Items.Count - 1;
         }
 
         private void txtSocialSecurityNum_TextChanged(object sender, EventArgs e)
