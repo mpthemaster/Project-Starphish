@@ -62,7 +62,7 @@ namespace GUI
         private bool searched = false;
         private bool changedPic = false;
         private bool login = false;
-        public static string searchString = ""; 
+        public static string searchString = "";
 
         public FormMain()
         {
@@ -592,7 +592,7 @@ namespace GUI
 
         private void removeClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("This will delete all record of this person. This cannot be undone. Are you sure you wish to continue?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (listClients.SelectedItem != null && MessageBox.Show("This will delete all record of this person. This cannot be undone. Are you sure you wish to continue?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 connection.Open();
                 commandDelete.Parameters.AddWithValue("@SSN", Convert.ToInt32(txtSocialSecurityNum.Text));
@@ -914,10 +914,10 @@ namespace GUI
         {
         }
 
-        private void btnSearchClients_Click(object sender, EventArgs e)             
-        {                                                                           
-            FormSearch searchClient = new FormSearch(txtSearch.Text);               
-            if (searchClient.ShowDialog() == DialogResult.OK)                       
+        private void btnSearchClients_Click(object sender, EventArgs e)
+        {
+            FormSearch searchClient = new FormSearch(txtSearch.Text);
+            if (searchClient.ShowDialog() == DialogResult.OK)
             {
                 searched = true;
                 commandSearch.Parameters.AddWithValue("@NAME", searchName);
@@ -1060,18 +1060,13 @@ namespace GUI
 
             if (txtTelephoneNum.Text.Length == 10 && ulong.TryParse(txtTelephoneNum.Text, out num))
             {
-
                 string pn = txtTelephoneNum.Text;
 
                 txtTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-
             }
-
             else
             {
-
                 txtTelephoneNum.Focus();
-
             }
         }
 
@@ -1081,18 +1076,13 @@ namespace GUI
 
             if (txtNextOfKinTelephoneNum.Text.Length == 10 && ulong.TryParse(txtNextOfKinTelephoneNum.Text, out num))
             {
-
                 string pn = txtNextOfKinTelephoneNum.Text;
 
                 txtNextOfKinTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-
             }
-
             else
             {
-
                 txtNextOfKinTelephoneNum.Focus();
-
             }
         }
 
@@ -1102,18 +1092,13 @@ namespace GUI
 
             if (txtEmergencyContactTelephoneNum.Text.Length == 10 && ulong.TryParse(txtEmergencyContactTelephoneNum.Text, out num))
             {
-
                 string pn = txtEmergencyContactTelephoneNum.Text;
 
                 txtEmergencyContactTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-
             }
-
             else
             {
-
                 txtEmergencyContactTelephoneNum.Focus();
-
             }
         }
 
@@ -1123,18 +1108,13 @@ namespace GUI
 
             if (txtSiteSupervisorTelephoneNum.Text.Length == 10 && ulong.TryParse(txtSiteSupervisorTelephoneNum.Text, out num))
             {
-
                 string pn = txtSiteSupervisorTelephoneNum.Text;
 
                 txtSiteSupervisorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-
             }
-
             else
             {
-
                 txtSiteSupervisorTelephoneNum.Focus();
-
             }
         }
 
@@ -1144,18 +1124,13 @@ namespace GUI
 
             if (txtProgramCoordinatorTelephoneNum.Text.Length == 10 && ulong.TryParse(txtProgramCoordinatorTelephoneNum.Text, out num))
             {
-
                 string pn = txtProgramCoordinatorTelephoneNum.Text;
 
                 txtProgramCoordinatorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-
             }
-
             else
             {
-
                 txtProgramCoordinatorTelephoneNum.Focus();
-
             }
         }
 
@@ -1165,18 +1140,13 @@ namespace GUI
 
             if (txtProgramSpecialistPhoneNum.Text.Length == 10 && ulong.TryParse(txtProgramSpecialistPhoneNum.Text, out num))
             {
-
                 string pn = txtProgramSpecialistPhoneNum.Text;
 
                 txtProgramSpecialistPhoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-
             }
-
             else
             {
-
                 txtProgramSpecialistPhoneNum.Focus();
-
             }
         }
 
@@ -1186,18 +1156,13 @@ namespace GUI
 
             if (txtSupportsCoordinatorTelephoneNum.Text.Length == 10 && ulong.TryParse(txtSupportsCoordinatorTelephoneNum.Text, out num))
             {
-
                 string pn = txtSupportsCoordinatorTelephoneNum.Text;
 
                 txtSupportsCoordinatorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-
             }
-
             else
             {
-
                 txtSupportsCoordinatorTelephoneNum.Focus();
-
             }
         }
 
@@ -1207,24 +1172,18 @@ namespace GUI
 
             if (txtAdmittanceDate.Text.Length == 8 && ulong.TryParse(txtAdmittanceDate.Text, out num))
             {
-
                 string pn = txtAdmittanceDate.Text;
 
                 txtAdmittanceDate.Text = String.Format("{0}/{1}/{2}", pn.Substring(0, 2), pn.Substring(2, 2), pn.Substring(4));
-
             }
-
             else if (txtAdmittanceDate.Text.Length == 10 || txtAdmittanceDate.Text.Length == 9 || txtAdmittanceDate.Text.Length == 8)
             {
             }
-
             else
             {
-
                 MessageBox.Show("Invalid date, please use the format mmddyyyy.");
 
                 txtAdmittanceDate.Focus();
-
             }
         }
 
@@ -1234,24 +1193,18 @@ namespace GUI
 
             if (txtDateOfBirth.Text.Length == 8 && ulong.TryParse(txtDateOfBirth.Text, out num))
             {
-
                 string pn = txtAdmittanceDate.Text;
 
                 txtDateOfBirth.Text = String.Format("{0}/{1}/{2}", pn.Substring(0, 2), pn.Substring(2, 2), pn.Substring(4));
-
             }
-
             else if (txtDateOfBirth.Text.Length == 10 || txtDateOfBirth.Text.Length == 9 || txtDateOfBirth.Text.Length == 8)
             {
             }
-
             else
             {
-
                 MessageBox.Show("Invalid date, please use the format mmddyyyy.");
 
                 txtDateOfBirth.Focus();
-
             }
         }
     }
