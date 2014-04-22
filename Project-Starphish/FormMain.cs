@@ -1053,11 +1053,150 @@ namespace GUI
             searchString = txtSearch.Text;
         }
 
-        private void txtRaceOther_Leave(object sender, EventArgs e)
+        private void txtTelephoneNum_Leave(object sender, EventArgs e)
         {
-            if (this.Text.Length == 7)
+            ulong num;
+
+            if (txtTelephoneNum.Text.Length == 10 && ulong.TryParse(txtTelephoneNum.Text, out num))
             {
-                ;
+
+                string pn = txtTelephoneNum.Text;
+
+                txtTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
+
+            }
+
+            else
+            {
+
+                txtTelephoneNum.Focus();
+
+            }
+        }
+
+        private void txtNextOfKinTelephoneNum_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtNextOfKinTelephoneNum.Text.Length == 10 && ulong.TryParse(txtNextOfKinTelephoneNum.Text, out num))
+            {
+
+                string pn = txtNextOfKinTelephoneNum.Text;
+
+                txtNextOfKinTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
+
+            }
+
+            else
+            {
+
+                txtNextOfKinTelephoneNum.Focus();
+
+            }
+        }
+
+        private void txtEmergencyContactTelephoneNum_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtEmergencyContactTelephoneNum.Text.Length == 10 && ulong.TryParse(txtEmergencyContactTelephoneNum.Text, out num))
+            {
+
+                string pn = txtEmergencyContactTelephoneNum.Text;
+
+                txtEmergencyContactTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
+
+            }
+
+            else
+            {
+
+                txtEmergencyContactTelephoneNum.Focus();
+
+            }
+        }
+
+        private void txtSiteSupervisorTelephoneNum_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtSiteSupervisorTelephoneNum.Text.Length == 10 && ulong.TryParse(txtSiteSupervisorTelephoneNum.Text, out num))
+            {
+
+                string pn = txtSiteSupervisorTelephoneNum.Text;
+
+                txtSiteSupervisorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
+
+            }
+
+            else
+            {
+
+                txtSiteSupervisorTelephoneNum.Focus();
+
+            }
+        }
+
+        private void txtProgramCoordinatorTelephoneNum_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtProgramCoordinatorTelephoneNum.Text.Length == 10 && ulong.TryParse(txtProgramCoordinatorTelephoneNum.Text, out num))
+            {
+
+                string pn = txtProgramCoordinatorTelephoneNum.Text;
+
+                txtProgramCoordinatorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
+
+            }
+
+            else
+            {
+
+                txtProgramCoordinatorTelephoneNum.Focus();
+
+            }
+        }
+
+        private void txtProgramSpecialistPhoneNum_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtProgramSpecialistPhoneNum.Text.Length == 10 && ulong.TryParse(txtProgramSpecialistPhoneNum.Text, out num))
+            {
+
+                string pn = txtProgramSpecialistPhoneNum.Text;
+
+                txtProgramSpecialistPhoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
+
+            }
+
+            else
+            {
+
+                txtProgramSpecialistPhoneNum.Focus();
+
+            }
+        }
+
+        private void txtSupportsCoordinatorTelephoneNum_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtSupportsCoordinatorTelephoneNum.Text.Length == 10 && ulong.TryParse(txtSupportsCoordinatorTelephoneNum.Text, out num))
+            {
+
+                string pn = txtSupportsCoordinatorTelephoneNum.Text;
+
+                txtSupportsCoordinatorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
+
+            }
+
+            else
+            {
+
+                txtSupportsCoordinatorTelephoneNum.Focus();
+
             }
         }
     }

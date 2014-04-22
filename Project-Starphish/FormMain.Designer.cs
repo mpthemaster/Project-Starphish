@@ -441,6 +441,7 @@
             this.txtEmergencyContactTelephoneNum.Name = "txtEmergencyContactTelephoneNum";
             this.txtEmergencyContactTelephoneNum.Size = new System.Drawing.Size(93, 20);
             this.txtEmergencyContactTelephoneNum.TabIndex = 450;
+            this.txtEmergencyContactTelephoneNum.Leave += new System.EventHandler(this.txtEmergencyContactTelephoneNum_Leave);
             // 
             // eMERGENCY_CONTACTBindingSource
             // 
@@ -693,6 +694,7 @@
             this.txtProgramSpecialistPhoneNum.Name = "txtProgramSpecialistPhoneNum";
             this.txtProgramSpecialistPhoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtProgramSpecialistPhoneNum.TabIndex = 300;
+            this.txtProgramSpecialistPhoneNum.Leave += new System.EventHandler(this.txtProgramSpecialistPhoneNum_Leave);
             // 
             // txtProgramCoordinatorName
             // 
@@ -711,6 +713,7 @@
             this.txtProgramCoordinatorTelephoneNum.Name = "txtProgramCoordinatorTelephoneNum";
             this.txtProgramCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtProgramCoordinatorTelephoneNum.TabIndex = 280;
+            this.txtProgramCoordinatorTelephoneNum.Leave += new System.EventHandler(this.txtProgramCoordinatorTelephoneNum_Leave);
             // 
             // txtSiteSupervisorName
             // 
@@ -729,6 +732,7 @@
             this.txtSiteSupervisorTelephoneNum.Name = "txtSiteSupervisorTelephoneNum";
             this.txtSiteSupervisorTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtSiteSupervisorTelephoneNum.TabIndex = 260;
+            this.txtSiteSupervisorTelephoneNum.Leave += new System.EventHandler(this.txtSiteSupervisorTelephoneNum_Leave);
             // 
             // groupBox4
             // 
@@ -805,6 +809,7 @@
             this.txtSupportsCoordinatorTelephoneNum.Name = "txtSupportsCoordinatorTelephoneNum";
             this.txtSupportsCoordinatorTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtSupportsCoordinatorTelephoneNum.TabIndex = 340;
+            this.txtSupportsCoordinatorTelephoneNum.Leave += new System.EventHandler(this.txtSupportsCoordinatorTelephoneNum_Leave);
             // 
             // txtSupportsCoordinatorName
             // 
@@ -869,6 +874,7 @@
             this.txtNextOfKinTelephoneNum.Name = "txtNextOfKinTelephoneNum";
             this.txtNextOfKinTelephoneNum.Size = new System.Drawing.Size(93, 20);
             this.txtNextOfKinTelephoneNum.TabIndex = 390;
+            this.txtNextOfKinTelephoneNum.Leave += new System.EventHandler(this.txtNextOfKinTelephoneNum_Leave);
             // 
             // nEXT_OF_KINBindingSource
             // 
@@ -1005,7 +1011,6 @@
             this.txtRaceOther.Size = new System.Drawing.Size(94, 20);
             this.txtRaceOther.TabIndex = 150;
             this.txtRaceOther.Visible = false;
-            this.txtRaceOther.Leave += new System.EventHandler(this.txtRaceOther_Leave);
             // 
             // label44
             // 
@@ -1323,6 +1328,7 @@
             this.txtTelephoneNum.Name = "txtTelephoneNum";
             this.txtTelephoneNum.Size = new System.Drawing.Size(97, 20);
             this.txtTelephoneNum.TabIndex = 90;
+            this.txtTelephoneNum.Leave += new System.EventHandler(this.txtTelephoneNum_Leave);
             // 
             // txtHairColor
             // 
