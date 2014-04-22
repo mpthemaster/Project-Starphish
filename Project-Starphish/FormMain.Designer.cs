@@ -1005,6 +1005,7 @@
             this.txtRaceOther.Size = new System.Drawing.Size(94, 20);
             this.txtRaceOther.TabIndex = 150;
             this.txtRaceOther.Visible = false;
+            this.txtRaceOther.Leave += new System.EventHandler(this.txtRaceOther_Leave);
             // 
             // label44
             // 

@@ -63,7 +63,7 @@ namespace GUI
             //Putting clients into the array.
             while (reader2.Read())
             {
-                arrClient[i++] = reader2["LNAME"].ToString();
+                arrClient[i++] = reader2["FNAME"].ToString() + ' ' + reader2["LNAME"].ToString();
             }
             connection.Close();
             //Printing the full client list to the array.

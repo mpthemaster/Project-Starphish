@@ -82,7 +82,7 @@ namespace GUI
             addISP = "INSERT INTO PERSON_ISP (PERSON_ID, ISPNAME, ISP)VALUES (@PERSON_ID, @ISPNAME, @ISP)";
             deleteISP = "DELETE FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = @ISPNAME";
             deleteStatement = "DELETE FROM PERSON WHERE SSN = @SSN";
-            search = "SELECT * FROM PERSON WHERE LNAME = @LNAME";
+            search = "SELECT * FROM PERSON WHERE FNAME + ' ' + LNAME = @NAME";
             selectBehaviors = "SELECT BEHAVIOR_DATE AS Date, BEHAVIOR_SHIFT AS Shift, BEHAVIOR AS Behavior, SEVERITY AS Severity, SHIFT_TOTAL AS Shift_Total, STAFF_NAME AS Staff FROM BEHAVIOR WHERE PERSON_ID = 0";
             selectISP = "SELECT ISP FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = ISPNAME";
             getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
@@ -919,7 +919,7 @@ namespace GUI
             if (searchClient.ShowDialog() == DialogResult.OK)                       
             {
                 searched = true;
-                commandSearch.Parameters.AddWithValue("@LNAME", searchName);
+                commandSearch.Parameters.AddWithValue("@NAME", searchName);
                 connection.Open();
                 SqlDataReader reader = commandSearch.ExecuteReader();
                 commandSearch.Parameters.Clear();
@@ -1051,6 +1051,14 @@ namespace GUI
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             searchString = txtSearch.Text;
+        }
+
+        private void txtRaceOther_Leave(object sender, EventArgs e)
+        {
+            if (this.Text.Length == 7)
+            {
+                ;
+            }
         }
     }
 }
