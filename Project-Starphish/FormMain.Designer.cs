@@ -1217,6 +1217,7 @@
             this.txtAdmittanceDate.Name = "txtAdmittanceDate";
             this.txtAdmittanceDate.Size = new System.Drawing.Size(79, 20);
             this.txtAdmittanceDate.TabIndex = 60;
+            this.txtAdmittanceDate.Leave += new System.EventHandler(this.txtAdmittanceDate_Leave);
             // 
             // txtLastName
             // 
@@ -1346,6 +1347,7 @@
             this.txtDateOfBirth.Name = "txtDateOfBirth";
             this.txtDateOfBirth.Size = new System.Drawing.Size(67, 20);
             this.txtDateOfBirth.TabIndex = 110;
+            this.txtDateOfBirth.Leave += new System.EventHandler(this.txtDateOfBirth_Leave);
             // 
             // txtWeight
             // 

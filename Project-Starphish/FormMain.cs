@@ -1199,5 +1199,59 @@ namespace GUI
 
             }
         }
+
+        private void txtAdmittanceDate_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtAdmittanceDate.Text.Length == 8 && ulong.TryParse(txtAdmittanceDate.Text, out num))
+            {
+
+                string pn = txtAdmittanceDate.Text;
+
+                txtAdmittanceDate.Text = String.Format("{0}/{1}/{2}", pn.Substring(0, 2), pn.Substring(2, 2), pn.Substring(4));
+
+            }
+
+            else if (txtAdmittanceDate.Text.Length == 10 || txtAdmittanceDate.Text.Length == 9 || txtAdmittanceDate.Text.Length == 8)
+            {
+            }
+
+            else
+            {
+
+                MessageBox.Show("Invalid date, please use the format mmddyyyy.");
+
+                txtAdmittanceDate.Focus();
+
+            }
+        }
+
+        private void txtDateOfBirth_Leave(object sender, EventArgs e)
+        {
+            ulong num;
+
+            if (txtDateOfBirth.Text.Length == 8 && ulong.TryParse(txtDateOfBirth.Text, out num))
+            {
+
+                string pn = txtAdmittanceDate.Text;
+
+                txtDateOfBirth.Text = String.Format("{0}/{1}/{2}", pn.Substring(0, 2), pn.Substring(2, 2), pn.Substring(4));
+
+            }
+
+            else if (txtDateOfBirth.Text.Length == 10 || txtDateOfBirth.Text.Length == 9 || txtDateOfBirth.Text.Length == 8)
+            {
+            }
+
+            else
+            {
+
+                MessageBox.Show("Invalid date, please use the format mmddyyyy.");
+
+                txtDateOfBirth.Focus();
+
+            }
+        }
     }
 }
