@@ -212,9 +212,9 @@ namespace GUI
         {
             try
             {
-                if (Int32.TryParse(txtSocialSecurityNum.Text, out personId))
+                if (!String.IsNullOrEmpty(txtSocialSecurityNum.Text) && !String.IsNullOrEmpty(txtLastName.Text) && !String.IsNullOrEmpty(txtFirstName.Text))
                 {
-                    if (txtSocialSecurityNum.Text != "" && txtLastName.Text != "")
+                    if (Int32.TryParse(txtSocialSecurityNum.Text, out personId))
                     {
                         if (picClient.Image != null)
                             picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -275,14 +275,15 @@ namespace GUI
                         this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
                     }
                     else
-                        MessageBox.Show("You must input a Social Security Number and Last Name.");
+                        MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
                 }
                 else
-                    MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
+                    MessageBox.Show("You must input a Social Security Number, Last Name, and First Name.");
             }
             catch (Exception)
             {
-                MessageBox.Show("Something has gone wrong. This person cannot be saved. Please make sure their Social Security Number is unique.");
+                MessageBox.Show("Something has gone wrong. This person cannot be saved. Please make sure the Social Security Number is unique.");
+                connection.Close();
             }
         }
 
@@ -315,7 +316,7 @@ namespace GUI
             listClients.DataSource = pERSONBindingSource;
             listClients.ValueMember = "SSN";
             listClients.DisplayMember = "NAME";
-            comboRace.SelectedIndex = 3;
+
             int.TryParse(txtSocialSecurityNum.Text, out personId);
             EventArgs x = new EventArgs();
             if (listClients.Items.Count > 0)
@@ -367,7 +368,6 @@ namespace GUI
             ((Control)tabPage4).Enabled = false;
         }
 
-        //Michael - I updated this to TryParse so that it doesn't fail when none is selected. This is a bug. Delete this when fixed.
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listClients.SelectedItem != null)
@@ -422,7 +422,7 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
-            if (txtLastName.Text != "" && txtLastName.Text != " " && txtLastName.Text != null)
+            if (!String.IsNullOrEmpty(txtLastName.Text) && !String.IsNullOrEmpty(txtFirstName.Text))
             {
                 if (changedPic)
                 {
@@ -541,7 +541,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("You can't save a person with no last name.");
+                MessageBox.Show("You can't save a person with no last name and/or no first name.");
             }
         }
 
