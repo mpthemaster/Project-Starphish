@@ -30,7 +30,6 @@ namespace GUI
             InitializeComponent();
 
             carriedOver = nameToSearchFor;
-            
 
             theConnectionString = "Data Source=localhost\\PROJECTSTARPHISH;Initial Catalog=ProjectStarphish;Integrated Security=True";
             searchStatement = "SELECT * FROM PERSON";
@@ -75,8 +74,11 @@ namespace GUI
 
         private void listClientSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FormMain.searchName = listClientSearch.SelectedItem.ToString();
-            btnSearchOk.Enabled = true;
+            if (listClientSearch.SelectedItem != null)
+            {
+                FormMain.searchName = listClientSearch.SelectedItem.ToString();
+                btnSearchOk.Enabled = true;
+            }
         }
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
