@@ -1411,14 +1411,11 @@
             // 
             // listClients
             // 
-            this.listClients.DataSource = this.pERSONBindingSource;
-            this.listClients.DisplayMember = "LNAME";
             this.listClients.FormattingEnabled = true;
             this.listClients.Location = new System.Drawing.Point(6, 53);
             this.listClients.Name = "listClients";
             this.listClients.Size = new System.Drawing.Size(217, 433);
             this.listClients.TabIndex = 12;
-            this.listClients.ValueMember = "SSN";
             this.listClients.SelectedIndexChanged += new System.EventHandler(this.listClients_SelectedIndexChanged);
             // 
             // tabPage2

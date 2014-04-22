@@ -292,7 +292,6 @@ namespace GUI
             if (!login)
             {
                 userLogin();
-                login = true;
             }
             // TODO: This line of code loads data into the 'projectStarphishDataSet.BEHAVIOR' table. You can move, or remove it, as needed.
             this.bEHAVIORTableAdapter.Fill(this.projectStarphishDataSet.BEHAVIOR);
@@ -308,8 +307,14 @@ namespace GUI
             this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
             // TODO: This line of code loads data into the 'projectStarphishDataSet.PERSON' table. You can move, or remove it, as needed.
             if (!login)
-                projectStarphishDataSet.Tables["PERSON"].Columns.Add("NAME", typeof(string), "FNAME + LNAME");
+            {
+                projectStarphishDataSet.Tables["PERSON"].Columns.Add("NAME", typeof(string), "FNAME + ' ' + LNAME");
+                login = true;
+            }
             this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
+            listClients.DataSource = pERSONBindingSource;
+            listClients.ValueMember = "SSN";
+            listClients.DisplayMember = "NAME";
             comboRace.SelectedIndex = 3;
             int.TryParse(txtSocialSecurityNum.Text, out personId);
             EventArgs x = new EventArgs();
