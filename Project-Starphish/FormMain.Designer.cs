@@ -100,6 +100,8 @@
             this.txtSupportsCoordinatorName = new System.Windows.Forms.TextBox();
             this.txtSupportsCoordinatorAddress = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblRelation = new System.Windows.Forms.Label();
+            this.txtRelation = new System.Windows.Forms.TextBox();
             this.btnRemoveNextOfKin = new System.Windows.Forms.Button();
             this.label57 = new System.Windows.Forms.Label();
             this.txtNextOfKinTelephoneNum = new System.Windows.Forms.TextBox();
@@ -831,6 +833,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblRelation);
+            this.groupBox3.Controls.Add(this.txtRelation);
             this.groupBox3.Controls.Add(this.btnRemoveNextOfKin);
             this.groupBox3.Controls.Add(this.label57);
             this.groupBox3.Controls.Add(this.txtNextOfKinTelephoneNum);
@@ -846,6 +850,23 @@
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Next of Kin";
+            // 
+            // lblRelation
+            // 
+            this.lblRelation.AutoSize = true;
+            this.lblRelation.Location = new System.Drawing.Point(161, 130);
+            this.lblRelation.Name = "lblRelation";
+            this.lblRelation.Size = new System.Drawing.Size(46, 13);
+            this.lblRelation.TabIndex = 402;
+            this.lblRelation.Text = "Relation";
+            // 
+            // txtRelation
+            // 
+            this.txtRelation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "RELATIONSHIP", true));
+            this.txtRelation.Location = new System.Drawing.Point(164, 149);
+            this.txtRelation.Name = "txtRelation";
+            this.txtRelation.Size = new System.Drawing.Size(100, 20);
+            this.txtRelation.TabIndex = 405;
             // 
             // btnRemoveNextOfKin
             // 
@@ -935,7 +956,7 @@
             this.txtNextOfKinAddress.Location = new System.Drawing.Point(6, 149);
             this.txtNextOfKinAddress.MaxLength = 16;
             this.txtNextOfKinAddress.Name = "txtNextOfKinAddress";
-            this.txtNextOfKinAddress.Size = new System.Drawing.Size(186, 20);
+            this.txtNextOfKinAddress.Size = new System.Drawing.Size(152, 20);
             this.txtNextOfKinAddress.TabIndex = 400;
             // 
             // groupBox1
@@ -2666,6 +2687,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SHIFT_TOTAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTAFFNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pERSONIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblRelation;
+        private System.Windows.Forms.TextBox txtRelation;
     }
 }
 
