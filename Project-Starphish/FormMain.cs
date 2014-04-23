@@ -406,8 +406,7 @@ namespace GUI
                     commandGetPic.Parameters.Clear();
                     connection.Close();
                 }
-                string race = txtRaceOther.Text;
-                if (txtRaceOther.Text == "Caucasion")
+                if (txtRaceOther.Text == "Caucasian")
                     comboRace.SelectedIndex = 0;
                 else if (txtRaceOther.Text == "African-American")
                     comboRace.SelectedIndex = 1;
@@ -416,7 +415,6 @@ namespace GUI
                 else
                 {
                     comboRace.SelectedIndex = 3;
-                    txtRaceOther.Text = race;
                 }
 
                 this.Text = "Sky Pie - " + txtFirstName.Text + ' ' + txtLastName.Text;

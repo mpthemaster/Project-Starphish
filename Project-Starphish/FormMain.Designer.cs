@@ -1428,7 +1428,7 @@
             this.comboRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRace.FormattingEnabled = true;
             this.comboRace.Items.AddRange(new object[] {
-            "Caucasion",
+            "Caucasian",
             "African-American",
             "Latino",
             "Other"});
