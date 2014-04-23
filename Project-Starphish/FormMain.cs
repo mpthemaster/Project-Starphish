@@ -55,7 +55,7 @@ namespace GUI
         private SqlCommand commandViewISP;
         private SqlCommand commandSearch;
         private SqlCommand commandSelectBehaviors;
-        private MemoryStream ms = new MemoryStream();
+        //private MemoryStream ms = new MemoryStream();
         private int x;
         private bool pdfMade = false;
         private int tempFilesCount = 0;
@@ -210,6 +210,7 @@ namespace GUI
 
         private void btnSaveClient_Click(object sender, EventArgs e)
         {
+            MemoryStream ms = new MemoryStream();
             try
             {
                 if (!String.IsNullOrEmpty(txtSocialSecurityNum.Text) && !String.IsNullOrEmpty(txtLastName.Text) && !String.IsNullOrEmpty(txtFirstName.Text))
@@ -285,6 +286,8 @@ namespace GUI
                 MessageBox.Show("Something has gone wrong. This person cannot be saved. Please make sure the Social Security Number is unique.");
                 connection.Close();
             }
+
+            ms.Dispose();
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -425,6 +428,7 @@ namespace GUI
 
         private void btnModifyClient_Click(object sender, EventArgs e)
         {
+            MemoryStream ms = new MemoryStream();
             if (!String.IsNullOrEmpty(txtLastName.Text) && !String.IsNullOrEmpty(txtFirstName.Text))
             {
                 if (changedPic)
@@ -546,6 +550,10 @@ namespace GUI
             {
                 MessageBox.Show("You can't save a person with no last name and/or no first name.");
             }
+            ms.Close();
+
+            listClients.SelectedIndex = 0;
+            listClients_SelectedIndexChanged(this, e);
         }
 
         private void clearForm()
@@ -627,6 +635,7 @@ namespace GUI
 
         private void btnSelectImage_Click(object sender, EventArgs e)
         {
+            MemoryStream ms = new MemoryStream();
             //If the user doesn't cancel the image file selection, save it and display it picbox.
             if (dialogFileOpenImage.ShowDialog() != DialogResult.Cancel)
             {
@@ -634,6 +643,7 @@ namespace GUI
                 picClient.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 changedPic = true;
             }
+            ms.Close();
         }
 
         private void btnAddISP_Click(object sender, EventArgs e)
@@ -1070,10 +1080,6 @@ namespace GUI
 
                 txtTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
             }
-            else
-            {
-                txtTelephoneNum.Focus();
-            }
         }
 
         private void txtNextOfKinTelephoneNum_Leave(object sender, EventArgs e)
@@ -1085,10 +1091,6 @@ namespace GUI
                 string pn = txtNextOfKinTelephoneNum.Text;
 
                 txtNextOfKinTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-            }
-            else
-            {
-                txtNextOfKinTelephoneNum.Focus();
             }
         }
 
@@ -1102,10 +1104,6 @@ namespace GUI
 
                 txtEmergencyContactTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
             }
-            else
-            {
-                txtEmergencyContactTelephoneNum.Focus();
-            }
         }
 
         private void txtSiteSupervisorTelephoneNum_Leave(object sender, EventArgs e)
@@ -1117,10 +1115,6 @@ namespace GUI
                 string pn = txtSiteSupervisorTelephoneNum.Text;
 
                 txtSiteSupervisorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-            }
-            else
-            {
-                txtSiteSupervisorTelephoneNum.Focus();
             }
         }
 
@@ -1134,10 +1128,6 @@ namespace GUI
 
                 txtProgramCoordinatorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
             }
-            else
-            {
-                txtProgramCoordinatorTelephoneNum.Focus();
-            }
         }
 
         private void txtProgramSpecialistPhoneNum_Leave(object sender, EventArgs e)
@@ -1150,10 +1140,6 @@ namespace GUI
 
                 txtProgramSpecialistPhoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
             }
-            else
-            {
-                txtProgramSpecialistPhoneNum.Focus();
-            }
         }
 
         private void txtSupportsCoordinatorTelephoneNum_Leave(object sender, EventArgs e)
@@ -1165,10 +1151,6 @@ namespace GUI
                 string pn = txtSupportsCoordinatorTelephoneNum.Text;
 
                 txtSupportsCoordinatorTelephoneNum.Text = String.Format("({0}) {1}-{2}", pn.Substring(0, 3), pn.Substring(3, 3), pn.Substring(6));
-            }
-            else
-            {
-                txtSupportsCoordinatorTelephoneNum.Focus();
             }
         }
 
@@ -1199,7 +1181,7 @@ namespace GUI
 
             if (txtDateOfBirth.Text.Length == 8 && ulong.TryParse(txtDateOfBirth.Text, out num))
             {
-                string pn = txtAdmittanceDate.Text;
+                string pn = txtDateOfBirth.Text;
 
                 txtDateOfBirth.Text = String.Format("{0}/{1}/{2}", pn.Substring(0, 2), pn.Substring(2, 2), pn.Substring(4));
             }
