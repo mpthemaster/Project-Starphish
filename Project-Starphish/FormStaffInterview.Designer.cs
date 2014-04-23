@@ -921,7 +921,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormStaffInterview";
-            this.Text = "Sky Pie - Staff Interview for Michael Petruzzello";
+            this.Text = "Sky Pie - Staff Interview for";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormStaffInterview_FormClosing);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();

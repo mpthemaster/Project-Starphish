@@ -532,6 +532,11 @@ namespace GUI
                     //Disable the remove and view buttons because no interview is selected now.
                     btnRemoveInterview.Enabled = false;
                     btnViewInterview.Enabled = false;
+
+                    if (lstInterviews.Items.Count != 0)
+                        lstInterviews.SelectedIndex = 0;
+                    else
+                        lstInterviews_SelectedIndexChanged(this, new EventArgs());
                 }
             }
             else

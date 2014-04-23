@@ -703,7 +703,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormQABF";
-            this.Text = "Sky Pie - QABFs for Michael Petruzzello";
+            this.Text = "Sky Pie - QABFs for";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormQABF_FormClosing);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();

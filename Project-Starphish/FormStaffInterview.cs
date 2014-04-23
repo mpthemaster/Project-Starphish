@@ -712,7 +712,7 @@ namespace GUI
 
             //If the node to remove isn't a top level node (e.g. "Strength of Emotions"), then remove it.
             //Else display an error message to let the user know.
-            if (nodeToRemove.Parent != null)
+            if (nodeToRemove != null && nodeToRemove.Parent != null)
                 nodeToRemove.Remove();
             else
                 MessageBox.Show("Category names cannot be removed.", "Error - Illegal Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
