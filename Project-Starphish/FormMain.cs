@@ -365,6 +365,8 @@ namespace GUI
             btnAddEmergencyContact.Enabled = false;
             txtEmergencyContactName.Enabled = false;
             txtEmergencyContactTelephoneNum.Enabled = false;
+            btnEditEC.Enabled = false;
+            btnEditNOK.Enabled = false;
             txtEmergencyContactAddress.Enabled = false;
             btnAddISP.Enabled = false;
             btnSearchClients.Enabled = false;
@@ -885,6 +887,8 @@ namespace GUI
             ((Control)tabPage2).Enabled = true;
             ((Control)tabPage3).Enabled = true;
             ((Control)tabPage4).Enabled = true;
+            btnEditEC.Enabled = true;
+            btnEditNOK.Enabled = true;
         }
 
         private void comboRace_SelectedIndexChanged(object sender, EventArgs e)
