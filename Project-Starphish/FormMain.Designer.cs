@@ -501,7 +501,7 @@
             // txtEmergencyContactAddress
             // 
             this.txtEmergencyContactAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "EC_ADDRESS", true));
-            this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 150);
+            this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 146);
             this.txtEmergencyContactAddress.MaxLength = 60;
             this.txtEmergencyContactAddress.Name = "txtEmergencyContactAddress";
             this.txtEmergencyContactAddress.Size = new System.Drawing.Size(186, 20);
@@ -864,6 +864,7 @@
             // 
             this.txtRelation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "RELATIONSHIP", true));
             this.txtRelation.Location = new System.Drawing.Point(164, 149);
+            this.txtRelation.MaxLength = 30;
             this.txtRelation.Name = "txtRelation";
             this.txtRelation.Size = new System.Drawing.Size(100, 20);
             this.txtRelation.TabIndex = 405;
@@ -954,7 +955,7 @@
             // 
             this.txtNextOfKinAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nEXT_OF_KINBindingSource, "NOK_ADDRESS", true));
             this.txtNextOfKinAddress.Location = new System.Drawing.Point(6, 149);
-            this.txtNextOfKinAddress.MaxLength = 16;
+            this.txtNextOfKinAddress.MaxLength = 60;
             this.txtNextOfKinAddress.Name = "txtNextOfKinAddress";
             this.txtNextOfKinAddress.Size = new System.Drawing.Size(152, 20);
             this.txtNextOfKinAddress.TabIndex = 400;
@@ -1262,7 +1263,7 @@
             // 
             this.txtPolicyNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "POLICY_NUM", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtPolicyNum.Location = new System.Drawing.Point(124, 412);
-            this.txtPolicyNum.MaxLength = 4;
+            this.txtPolicyNum.MaxLength = 15;
             this.txtPolicyNum.Name = "txtPolicyNum";
             this.txtPolicyNum.Size = new System.Drawing.Size(114, 20);
             this.txtPolicyNum.TabIndex = 230;
@@ -1299,7 +1300,7 @@
             // 
             this.txtMCINum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "MCI", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtMCINum.Location = new System.Drawing.Point(118, 373);
-            this.txtMCINum.MaxLength = 4;
+            this.txtMCINum.MaxLength = 15;
             this.txtMCINum.Name = "txtMCINum";
             this.txtMCINum.Size = new System.Drawing.Size(100, 20);
             this.txtMCINum.TabIndex = 210;
@@ -1318,7 +1319,7 @@
             // 
             this.txtBSUNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "BSU", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.txtBSUNum.Location = new System.Drawing.Point(6, 373);
-            this.txtBSUNum.MaxLength = 4;
+            this.txtBSUNum.MaxLength = 15;
             this.txtBSUNum.Name = "txtBSUNum";
             this.txtBSUNum.Size = new System.Drawing.Size(106, 20);
             this.txtBSUNum.TabIndex = 200;
