@@ -331,9 +331,6 @@ namespace GUI
                 addClientToolStripMenuItem_Click(this, x);
                 btnCancel.Visible = false;
             }
-
-            if (String.IsNullOrEmpty(comboRace.Text))
-                comboRace.SelectedIndex = comboRace.Items.Count - 1;
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -409,9 +406,22 @@ namespace GUI
                     commandGetPic.Parameters.Clear();
                     connection.Close();
                 }
+                string race = txtRaceOther.Text;
+                if (txtRaceOther.Text == "Caucasion")
+                    comboRace.SelectedIndex = 0;
+                else if (txtRaceOther.Text == "African-American")
+                    comboRace.SelectedIndex = 1;
+                else if (txtRaceOther.Text == "Latino")
+                    comboRace.SelectedIndex = 2;
+                else
+                {
+                    comboRace.SelectedIndex = 3;
+                    txtRaceOther.Text = race;
+                }
 
                 this.Text = "Sky Pie - " + txtFirstName.Text + ' ' + txtLastName.Text;
                 graphFirstTime = true;
+
             }
         }
 
@@ -876,9 +886,6 @@ namespace GUI
                 txtRaceOther.Enabled = false;
                 txtRaceOther.Visible = false;
             }
-
-            if (String.IsNullOrEmpty(comboGender.Text))
-                comboGender.SelectedIndex = comboGender.Items.Count - 1;
         }
 
         private void txtSocialSecurityNum_TextChanged(object sender, EventArgs e)

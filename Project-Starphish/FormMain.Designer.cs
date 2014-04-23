@@ -102,10 +102,10 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblRelation = new System.Windows.Forms.Label();
             this.txtRelation = new System.Windows.Forms.TextBox();
+            this.nEXT_OF_KINBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRemoveNextOfKin = new System.Windows.Forms.Button();
             this.label57 = new System.Windows.Forms.Label();
             this.txtNextOfKinTelephoneNum = new System.Windows.Forms.TextBox();
-            this.nEXT_OF_KINBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddNextOfKin = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
@@ -868,6 +868,11 @@
             this.txtRelation.Size = new System.Drawing.Size(100, 20);
             this.txtRelation.TabIndex = 405;
             // 
+            // nEXT_OF_KINBindingSource
+            // 
+            this.nEXT_OF_KINBindingSource.DataMember = "NEXT_OF_KIN_PERSON_FK";
+            this.nEXT_OF_KINBindingSource.DataSource = this.pERSONBindingSource;
+            // 
             // btnRemoveNextOfKin
             // 
             this.btnRemoveNextOfKin.Location = new System.Drawing.Point(6, 19);
@@ -896,11 +901,6 @@
             this.txtNextOfKinTelephoneNum.Size = new System.Drawing.Size(93, 20);
             this.txtNextOfKinTelephoneNum.TabIndex = 390;
             this.txtNextOfKinTelephoneNum.Leave += new System.EventHandler(this.txtNextOfKinTelephoneNum_Leave);
-            // 
-            // nEXT_OF_KINBindingSource
-            // 
-            this.nEXT_OF_KINBindingSource.DataMember = "NEXT_OF_KIN_PERSON_FK";
-            this.nEXT_OF_KINBindingSource.DataSource = this.pERSONBindingSource;
             // 
             // btnAddNextOfKin
             // 
@@ -1425,7 +1425,6 @@
             // 
             // comboRace
             // 
-            this.comboRace.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "RACE", true));
             this.comboRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRace.FormattingEnabled = true;
             this.comboRace.Items.AddRange(new object[] {
