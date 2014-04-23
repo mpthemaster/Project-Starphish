@@ -220,6 +220,8 @@ namespace GUI
             }
         }
 
+        //private string raceName = "";
+
         private void btnSaveClient_Click(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream();
@@ -246,9 +248,15 @@ namespace GUI
                         command.Parameters.AddWithValue("@AGE", txtAge.Text);
                         command.Parameters.AddWithValue("@GENDER", comboGender.Text);
                         if (comboRace.Text == "Other")
+                        {
                             command.Parameters.AddWithValue("@RACE", txtRaceOther.Text);
+                            //raceName = txtRaceOther.Text;
+                        }
                         else
+                        {
                             command.Parameters.AddWithValue("@RACE", comboRace.Text);
+                            //raceName = comboRace.Text;
+                        }
                         command.Parameters.AddWithValue("@HAIR_COLOR", txtHairColor.Text);
                         command.Parameters.AddWithValue("@HEIGHT", txtHeight.Text);
                         command.Parameters.AddWithValue("@P_WEIGHT", txtWeight.Text);
@@ -282,6 +290,8 @@ namespace GUI
                         commandCR.Parameters.Clear();
 
                         connection.Close();
+
+                        //int.TryParse(txtSocialSecurityNum.Text, out tempPersonId);
                         revertForm();
                         this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
                         this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
@@ -386,6 +396,8 @@ namespace GUI
             ((Control)tabPage4).Enabled = false;
         }
 
+        private int tempPersonId;
+
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listClients.SelectedItem != null)
@@ -421,17 +433,27 @@ namespace GUI
                     commandGetPic.Parameters.Clear();
                     connection.Close();
                 }
-                if (txtRaceOther.Text == "Caucasian")
-                    comboRace.SelectedIndex = 0;
-                else if (txtRaceOther.Text == "African-American")
-                    comboRace.SelectedIndex = 1;
-                else if (txtRaceOther.Text == "Latino")
-                    comboRace.SelectedIndex = 2;
-                else
-                {
-                    comboRace.SelectedIndex = 3;
-                }
 
+                //if (personId < tempPersonId)
+                {
+                    string race;
+
+                    //if (txtRaceOther.Text != "")
+                    race = txtRaceOther.Text;
+                    //else
+                    //race = raceName;
+
+                    if (race == "Caucasian")
+                        comboRace.SelectedIndex = 0;
+                    else if (race == "African-American")
+                        comboRace.SelectedIndex = 1;
+                    else if (race == "Latino")
+                        comboRace.SelectedIndex = 2;
+                    else
+                    {
+                        comboRace.SelectedIndex = 3;
+                    }
+                }
                 this.Text = "Sky Pie - " + txtFirstName.Text + ' ' + txtLastName.Text;
                 graphFirstTime = true;
             }
