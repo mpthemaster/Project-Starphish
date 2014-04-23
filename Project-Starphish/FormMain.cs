@@ -55,8 +55,10 @@ namespace GUI
         private SqlCommand commandViewISP;
         private SqlCommand commandSearch;
         private SqlCommand commandSelectBehaviors;
+
         //private MemoryStream ms = new MemoryStream();
         private int x;
+
         private bool pdfMade = false;
         private int tempFilesCount = 0;
         private bool searched = false;
@@ -419,7 +421,6 @@ namespace GUI
 
                 this.Text = "Sky Pie - " + txtFirstName.Text + ' ' + txtLastName.Text;
                 graphFirstTime = true;
-
             }
         }
 
@@ -755,6 +756,7 @@ namespace GUI
             catch
             {
                 MessageBox.Show("No ISP to remove.");
+                connection.Close();
             }
         }
 
@@ -774,6 +776,7 @@ namespace GUI
             catch
             {
                 MessageBox.Show("No Next of Kin has been selected to remove.");
+                connection.Close();
             }
         }
 
@@ -809,6 +812,7 @@ namespace GUI
             catch
             {
                 MessageBox.Show("No Emergency Contact has been selected to remove.");
+                connection.Close();
             }
         }
 
