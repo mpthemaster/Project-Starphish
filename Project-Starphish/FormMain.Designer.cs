@@ -501,7 +501,7 @@
             // txtEmergencyContactAddress
             // 
             this.txtEmergencyContactAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMERGENCY_CONTACTBindingSource, "EC_ADDRESS", true));
-            this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 146);
+            this.txtEmergencyContactAddress.Location = new System.Drawing.Point(6, 150);
             this.txtEmergencyContactAddress.MaxLength = 60;
             this.txtEmergencyContactAddress.Name = "txtEmergencyContactAddress";
             this.txtEmergencyContactAddress.Size = new System.Drawing.Size(186, 20);
@@ -854,7 +854,7 @@
             // lblRelation
             // 
             this.lblRelation.AutoSize = true;
-            this.lblRelation.Location = new System.Drawing.Point(161, 130);
+            this.lblRelation.Location = new System.Drawing.Point(161, 133);
             this.lblRelation.Name = "lblRelation";
             this.lblRelation.Size = new System.Drawing.Size(46, 13);
             this.lblRelation.TabIndex = 402;
