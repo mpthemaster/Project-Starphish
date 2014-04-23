@@ -1236,6 +1236,7 @@ namespace GUI
             catch
             {
                 MessageBox.Show("No Next of Kin has been selected to edit.");
+                connection.Close();
             }
         }
 
@@ -1258,8 +1259,8 @@ namespace GUI
             catch
             {
                 MessageBox.Show("No Emergency Contact has been selected to edit.");
+                connection.Close();
             }
-
         }
     }
 }
