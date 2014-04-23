@@ -36,6 +36,11 @@ namespace GUI
         private string selectISP;
         private string selectBehaviors;
         private string search;
+        private string updateNOK;
+        private string updateEC;
+
+        private SqlCommand commandUpdateNOK;
+        private SqlCommand commandUpdateEC;
         private SqlConnection connection;
         private SqlCommand command;
         private SqlCommand commandNoPic;
@@ -88,6 +93,11 @@ namespace GUI
             selectBehaviors = "SELECT BEHAVIOR_DATE AS Date, BEHAVIOR_SHIFT AS Shift, BEHAVIOR AS Behavior, SEVERITY AS Severity, SHIFT_TOTAL AS Shift_Total, STAFF_NAME AS Staff FROM BEHAVIOR WHERE PERSON_ID = 0";
             selectISP = "SELECT ISP FROM PERSON_ISP WHERE PERSON_ID = @PERSON_ID AND ISPNAME = ISPNAME";
             getPic = "SELECT PHOTO FROM PERSON WHERE SSN = @SSN";
+            updateNOK = "UPDATE NEXT_OF_KIN SET NAME = @NAME, NOK_ADDRESS = @NOK_ADDRESS, PHONE = @PHONE, RELATIONSHIP = @RELATIONSHIP WHERE PERSON_ID = @PERSON_ID AND UNIQUEID = @UNIQUEID";
+            updateEC = "UPDATE EMERGENCY_CONTACT SET NAME = @NAME, EC_ADDRESS = @EC_ADDRESS, PHONE = @PHONE WHERE PERSON_ID = @PERSON_ID AND UNIQUEID = @UNIQUEID";
+
+            commandUpdateNOK = new SqlCommand(updateNOK, connection);
+            commandUpdateEC = new SqlCommand(updateEC, connection);
             connection = new SqlConnection(theConnectionString);
             command = new SqlCommand(insertStatement, connection);
             commandNLS = new SqlCommand(insertStatementNLS, connection);
@@ -1203,6 +1213,52 @@ namespace GUI
 
                 txtDateOfBirth.Focus();
             }
+        }
+
+        private void btnEditNOK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                commandUpdateNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandUpdateNOK.Parameters.AddWithValue("@UNIQUEID", lstNextOfKin.SelectedValue);
+                commandUpdateNOK.Parameters.AddWithValue("@NAME", txtNextOfKinName.Text);
+                commandUpdateNOK.Parameters.AddWithValue("@PHONE", txtNextOfKinTelephoneNum.Text);
+                commandUpdateNOK.Parameters.AddWithValue("@ADDRESS", txtNextOfKinAddress.Text);
+                commandUpdateNOK.Parameters.AddWithValue("@RELATION", txtRelation.Text);
+                commandUpdateNOK.ExecuteNonQuery();
+                commandUpdateNOK.Parameters.Clear();
+                connection.Close();
+
+                this.nEXT_OF_KINTableAdapter.Fill(this.projectStarphishDataSet.NEXT_OF_KIN);
+            }
+            catch
+            {
+                MessageBox.Show("No Next of Kin has been selected to edit.");
+            }
+        }
+
+        private void btnEditContact_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                commandUpdateEC.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
+                commandUpdateEC.Parameters.AddWithValue("@UNIQUEID", lstEmergencyContacts.SelectedValue);
+                commandUpdateEC.Parameters.AddWithValue("@NAME", txtEmergencyContactName.Text);
+                commandUpdateEC.Parameters.AddWithValue("@PHONE", txtEmergencyContactTelephoneNum.Text);
+                commandUpdateEC.Parameters.AddWithValue("@ADDRESS", txtEmergencyContactAddress.Text);
+                commandUpdateEC.ExecuteNonQuery();
+                commandUpdateEC.Parameters.Clear();
+                connection.Close();
+
+                this.eMERGENCY_CONTACTTableAdapter.Fill(this.projectStarphishDataSet.EMERGENCY_CONTACT);
+            }
+            catch
+            {
+                MessageBox.Show("No Emergency Contact has been selected to edit.");
+            }
+
         }
     }
 }

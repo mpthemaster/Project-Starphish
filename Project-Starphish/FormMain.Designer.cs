@@ -258,6 +258,8 @@
             this.bEHAVIORTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnEditNOK = new System.Windows.Forms.Button();
+            this.btnEditEC = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -390,6 +392,7 @@
             // 
             // groupBox17
             // 
+            this.groupBox17.Controls.Add(this.btnEditEC);
             this.groupBox17.Controls.Add(this.btnAddEmergencyContact);
             this.groupBox17.Controls.Add(this.btnRemoveEmergencyContact);
             this.groupBox17.Controls.Add(this.label58);
@@ -833,6 +836,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnEditNOK);
             this.groupBox3.Controls.Add(this.lblRelation);
             this.groupBox3.Controls.Add(this.txtRelation);
             this.groupBox3.Controls.Add(this.btnRemoveNextOfKin);
@@ -2410,6 +2414,26 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnEditNOK
+            // 
+            this.btnEditNOK.Location = new System.Drawing.Point(178, 19);
+            this.btnEditNOK.Name = "btnEditNOK";
+            this.btnEditNOK.Size = new System.Drawing.Size(75, 23);
+            this.btnEditNOK.TabIndex = 365;
+            this.btnEditNOK.Text = "Edit Kin";
+            this.btnEditNOK.UseVisualStyleBackColor = true;
+            this.btnEditNOK.Click += new System.EventHandler(this.btnEditNOK_Click);
+            // 
+            // btnEditEC
+            // 
+            this.btnEditEC.Location = new System.Drawing.Point(189, 19);
+            this.btnEditEC.Name = "btnEditEC";
+            this.btnEditEC.Size = new System.Drawing.Size(75, 23);
+            this.btnEditEC.TabIndex = 425;
+            this.btnEditEC.Text = "Edit Contact";
+            this.btnEditEC.UseVisualStyleBackColor = true;
+            this.btnEditEC.Click += new System.EventHandler(this.btnEditEC_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2690,6 +2714,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pERSONIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblRelation;
         private System.Windows.Forms.TextBox txtRelation;
+        private System.Windows.Forms.Button btnEditEC;
+        private System.Windows.Forms.Button btnEditNOK;
     }
 }
 
