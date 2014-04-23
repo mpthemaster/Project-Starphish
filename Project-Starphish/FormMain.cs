@@ -286,6 +286,7 @@ namespace GUI
                         this.pERSONTableAdapter.Fill(this.projectStarphishDataSet.PERSON);
                         this.cOUNTY_RESPONSIBLETableAdapter.Fill(this.projectStarphishDataSet.COUNTY_RESPONSIBLE);
                         this.nEW_LIGHT_SUPPORTTableAdapter.Fill(this.projectStarphishDataSet.NEW_LIGHT_SUPPORT);
+                        listClients_SelectedIndexChanged(this, e);
                     }
                     else
                         MessageBox.Show("Social Security must be a number with no special chacters or spaces.");
