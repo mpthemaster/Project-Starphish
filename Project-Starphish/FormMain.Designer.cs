@@ -1327,6 +1327,7 @@
             // 
             // txtZipCode
             // 
+            this.txtZipCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONBindingSource, "ZIP", true));
             this.txtZipCode.Location = new System.Drawing.Point(200, 110);
             this.txtZipCode.MaxLength = 15;
             this.txtZipCode.Name = "txtZipCode";
