@@ -96,8 +96,7 @@ namespace GUI
             updateNOK = "UPDATE NEXT_OF_KIN SET NAME = @NAME, NOK_ADDRESS = @NOK_ADDRESS, PHONE = @PHONE, RELATIONSHIP = @RELATIONSHIP WHERE PERSON_ID = @PERSON_ID AND UNIQUEID = @UNIQUEID";
             updateEC = "UPDATE EMERGENCY_CONTACT SET NAME = @NAME, EC_ADDRESS = @EC_ADDRESS, PHONE = @PHONE WHERE PERSON_ID = @PERSON_ID AND UNIQUEID = @UNIQUEID";
 
-            commandUpdateNOK = new SqlCommand(updateNOK, connection);
-            commandUpdateEC = new SqlCommand(updateEC, connection);
+            
             connection = new SqlConnection(theConnectionString);
             command = new SqlCommand(insertStatement, connection);
             commandNLS = new SqlCommand(insertStatementNLS, connection);
@@ -117,6 +116,8 @@ namespace GUI
             commandSearch = new SqlCommand(search, connection);
             commandNoPic = new SqlCommand(updateStatementNoPic, connection);
             commandSelectBehaviors = new SqlCommand(selectBehaviors, connection);
+            commandUpdateNOK = new SqlCommand(updateNOK, connection);
+            commandUpdateEC = new SqlCommand(updateEC, connection);
         }
 
         private void userLogin()
@@ -1246,13 +1247,13 @@ namespace GUI
         {
             try
             {
-                connection.Open();
                 commandUpdateNOK.Parameters.AddWithValue("@PERSON_ID", txtSocialSecurityNum.Text);
                 commandUpdateNOK.Parameters.AddWithValue("@UNIQUEID", lstNextOfKin.SelectedValue);
                 commandUpdateNOK.Parameters.AddWithValue("@NAME", txtNextOfKinName.Text);
                 commandUpdateNOK.Parameters.AddWithValue("@PHONE", txtNextOfKinTelephoneNum.Text);
-                commandUpdateNOK.Parameters.AddWithValue("@ADDRESS", txtNextOfKinAddress.Text);
-                commandUpdateNOK.Parameters.AddWithValue("@RELATION", txtRelation.Text);
+                commandUpdateNOK.Parameters.AddWithValue("@NOK_ADDRESS", txtNextOfKinAddress.Text);
+                commandUpdateNOK.Parameters.AddWithValue("@RELATIONSHIP", txtRelation.Text);
+                connection.Open();
                 commandUpdateNOK.ExecuteNonQuery();
                 commandUpdateNOK.Parameters.Clear();
                 connection.Close();
@@ -1275,7 +1276,7 @@ namespace GUI
                 commandUpdateEC.Parameters.AddWithValue("@UNIQUEID", lstEmergencyContacts.SelectedValue);
                 commandUpdateEC.Parameters.AddWithValue("@NAME", txtEmergencyContactName.Text);
                 commandUpdateEC.Parameters.AddWithValue("@PHONE", txtEmergencyContactTelephoneNum.Text);
-                commandUpdateEC.Parameters.AddWithValue("@ADDRESS", txtEmergencyContactAddress.Text);
+                commandUpdateEC.Parameters.AddWithValue("@EC_ADDRESS", txtEmergencyContactAddress.Text);
                 commandUpdateEC.ExecuteNonQuery();
                 commandUpdateEC.Parameters.Clear();
                 connection.Close();
