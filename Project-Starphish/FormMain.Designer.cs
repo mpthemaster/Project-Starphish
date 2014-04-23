@@ -2432,7 +2432,7 @@
             this.btnEditEC.TabIndex = 425;
             this.btnEditEC.Text = "Edit Contact";
             this.btnEditEC.UseVisualStyleBackColor = true;
-            this.btnEditEC.Click += new System.EventHandler(this.btnEditEC_Click);
+            this.btnEditEC.Click += new System.EventHandler(this.btnEditContact_Click);
             // 
             // FormMain
             // 
