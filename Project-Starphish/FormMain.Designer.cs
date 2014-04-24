@@ -2176,7 +2176,6 @@
             this.dataGridViewBehaviorsStaffInterviews.ReadOnly = true;
             this.dataGridViewBehaviorsStaffInterviews.Size = new System.Drawing.Size(565, 276);
             this.dataGridViewBehaviorsStaffInterviews.TabIndex = 60;
-            this.dataGridViewBehaviorsStaffInterviews.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBehaviorsStaffInterviews_RowEnter);
             this.dataGridViewBehaviorsStaffInterviews.SelectionChanged += new System.EventHandler(this.dataGridViewBehaviorsStaffInterviews_SelectionChanged);
             // 
             // Column9

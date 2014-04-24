@@ -552,9 +552,5 @@ namespace GUI
 
             calculateQABFs();
         }
-
-        private void dataGridViewBehaviorsStaffInterviews_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-        }
     }
 }
