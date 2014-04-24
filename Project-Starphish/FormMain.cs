@@ -96,7 +96,6 @@ namespace GUI
             updateNOK = "UPDATE NEXT_OF_KIN SET NAME = @NAME, NOK_ADDRESS = @NOK_ADDRESS, PHONE = @PHONE, RELATIONSHIP = @RELATIONSHIP WHERE PERSON_ID = @PERSON_ID AND UNIQUEID = @UNIQUEID";
             updateEC = "UPDATE EMERGENCY_CONTACT SET NAME = @NAME, EC_ADDRESS = @EC_ADDRESS, PHONE = @PHONE WHERE PERSON_ID = @PERSON_ID AND UNIQUEID = @UNIQUEID";
 
-            
             connection = new SqlConnection(theConnectionString);
             command = new SqlCommand(insertStatement, connection);
             commandNLS = new SqlCommand(insertStatementNLS, connection);
@@ -397,7 +396,7 @@ namespace GUI
             ((Control)tabPage4).Enabled = false;
         }
 
-        private int tempPersonId;
+        //private int tempPersonId;
 
         private void listClients_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -273,6 +273,14 @@ namespace GUI
                 treeViewQABFs.Nodes[1].ExpandAll();
                 treeViewQABFs.SelectedNode = treeViewQABFs.Nodes[1].Nodes.Find(name, false)[0]; //Finds the newly created mode to select it.
             }
+
+            //Save the QABF to the original behavior.
+            for (int i = 0; i < behaviors.Length; i++)
+                if (behaviors[i] == selectedBehavior)
+                {
+                    originalBehaviors[i].Qabf = behaviors[i].Qabf;
+                    break;
+                }
         }
 
         private void comboScore1_SelectedIndexChanged(object sender, EventArgs e)
@@ -489,7 +497,7 @@ namespace GUI
                         break;
                     }
 
-            if (unsavedModification && unsavedModification && MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+            if (unsavedModification && MessageBox.Show("Are you sure you want to leave? You will lose all unsaved data.", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 e.Cancel = true;
         }
 
