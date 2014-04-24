@@ -428,7 +428,7 @@ namespace GUI
             switch (qabfText)
             {
                 case "Doesn't Apply":
-                case "Never ":
+                case "Never":
                     return 0;
 
                 case "Rarely":
