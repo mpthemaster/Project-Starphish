@@ -54,6 +54,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnModifyClient = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.btnEditEC = new System.Windows.Forms.Button();
             this.btnAddEmergencyContact = new System.Windows.Forms.Button();
             this.btnRemoveEmergencyContact = new System.Windows.Forms.Button();
             this.label58 = new System.Windows.Forms.Label();
@@ -100,6 +101,7 @@
             this.txtSupportsCoordinatorName = new System.Windows.Forms.TextBox();
             this.txtSupportsCoordinatorAddress = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEditNOK = new System.Windows.Forms.Button();
             this.lblRelation = new System.Windows.Forms.Label();
             this.txtRelation = new System.Windows.Forms.TextBox();
             this.nEXT_OF_KINBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -258,8 +260,9 @@
             this.bEHAVIORTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnEditNOK = new System.Windows.Forms.Button();
-            this.btnEditEC = new System.Windows.Forms.Button();
+            this.contextMenuQABF = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saveToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -299,6 +302,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pERSONISPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuQABF.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -408,6 +412,16 @@
             this.groupBox17.TabIndex = 50;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Emergency Contacts";
+            // 
+            // btnEditEC
+            // 
+            this.btnEditEC.Location = new System.Drawing.Point(189, 19);
+            this.btnEditEC.Name = "btnEditEC";
+            this.btnEditEC.Size = new System.Drawing.Size(75, 23);
+            this.btnEditEC.TabIndex = 425;
+            this.btnEditEC.Text = "Edit Contact";
+            this.btnEditEC.UseVisualStyleBackColor = true;
+            this.btnEditEC.Click += new System.EventHandler(this.btnEditContact_Click);
             // 
             // btnAddEmergencyContact
             // 
@@ -854,6 +868,16 @@
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Next of Kin";
+            // 
+            // btnEditNOK
+            // 
+            this.btnEditNOK.Location = new System.Drawing.Point(178, 19);
+            this.btnEditNOK.Name = "btnEditNOK";
+            this.btnEditNOK.Size = new System.Drawing.Size(75, 23);
+            this.btnEditNOK.TabIndex = 365;
+            this.btnEditNOK.Text = "Edit Kin";
+            this.btnEditNOK.UseVisualStyleBackColor = true;
+            this.btnEditNOK.Click += new System.EventHandler(this.btnEditNOK_Click);
             // 
             // lblRelation
             // 
@@ -2076,6 +2100,7 @@
             chartArea4.Area3DStyle.Rotation = 10;
             chartArea4.Name = "ChartArea1";
             this.chartQABFAnalysis.ChartAreas.Add(chartArea4);
+            this.chartQABFAnalysis.ContextMenuStrip = this.contextMenuQABF;
             this.chartQABFAnalysis.Location = new System.Drawing.Point(6, 17);
             this.chartQABFAnalysis.Name = "chartQABFAnalysis";
             this.chartQABFAnalysis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
@@ -2413,25 +2438,27 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnEditNOK
+            // contextMenuQABF
             // 
-            this.btnEditNOK.Location = new System.Drawing.Point(178, 19);
-            this.btnEditNOK.Name = "btnEditNOK";
-            this.btnEditNOK.Size = new System.Drawing.Size(75, 23);
-            this.btnEditNOK.TabIndex = 365;
-            this.btnEditNOK.Text = "Edit Kin";
-            this.btnEditNOK.UseVisualStyleBackColor = true;
-            this.btnEditNOK.Click += new System.EventHandler(this.btnEditNOK_Click);
+            this.contextMenuQABF.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem3,
+            this.copyToolStripMenuItem3});
+            this.contextMenuQABF.Name = "contextMenuQABF";
+            this.contextMenuQABF.Size = new System.Drawing.Size(103, 48);
             // 
-            // btnEditEC
+            // saveToolStripMenuItem3
             // 
-            this.btnEditEC.Location = new System.Drawing.Point(189, 19);
-            this.btnEditEC.Name = "btnEditEC";
-            this.btnEditEC.Size = new System.Drawing.Size(75, 23);
-            this.btnEditEC.TabIndex = 425;
-            this.btnEditEC.Text = "Edit Contact";
-            this.btnEditEC.UseVisualStyleBackColor = true;
-            this.btnEditEC.Click += new System.EventHandler(this.btnEditContact_Click);
+            this.saveToolStripMenuItem3.Name = "saveToolStripMenuItem3";
+            this.saveToolStripMenuItem3.Size = new System.Drawing.Size(102, 22);
+            this.saveToolStripMenuItem3.Text = "Save";
+            this.saveToolStripMenuItem3.Click += new System.EventHandler(this.saveToolStripMenuItem3_Click);
+            // 
+            // copyToolStripMenuItem3
+            // 
+            this.copyToolStripMenuItem3.Name = "copyToolStripMenuItem3";
+            this.copyToolStripMenuItem3.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem3.Text = "Copy";
+            this.copyToolStripMenuItem3.Click += new System.EventHandler(this.copyToolStripMenuItem3_Click);
             // 
             // FormMain
             // 
@@ -2494,6 +2521,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuQABF.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2715,6 +2743,9 @@
         private System.Windows.Forms.TextBox txtRelation;
         private System.Windows.Forms.Button btnEditEC;
         private System.Windows.Forms.Button btnEditNOK;
+        private System.Windows.Forms.ContextMenuStrip contextMenuQABF;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem3;
     }
 }
 
