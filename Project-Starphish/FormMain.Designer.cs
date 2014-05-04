@@ -166,9 +166,9 @@
             this.lblDatabaseUpdated = new System.Windows.Forms.Label();
             this.btnSaveDailyBehavior = new System.Windows.Forms.Button();
             this.label65 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.lblEndDateBeh = new System.Windows.Forms.Label();
+            this.lblStartDateBeh = new System.Windows.Forms.Label();
             this.chkUseCustomDatesDailyBehavior = new System.Windows.Forms.CheckBox();
             this.comboPickTimeDailyBehavior = new System.Windows.Forms.ComboBox();
             this.datePickerEndDailyBehavior = new System.Windows.Forms.DateTimePicker();
@@ -192,10 +192,9 @@
             this.chkQuarter3 = new System.Windows.Forms.CheckBox();
             this.chkQuarter2 = new System.Windows.Forms.CheckBox();
             this.chkQuarter1 = new System.Windows.Forms.CheckBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
+            this.lblTimeFrame = new System.Windows.Forms.Label();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.lblStartDate = new System.Windows.Forms.Label();
             this.comboPickTimeGraphs = new System.Windows.Forms.ComboBox();
             this.datePickerEndGraphs = new System.Windows.Forms.DateTimePicker();
             this.datePickerBeginGraphs = new System.Windows.Forms.DateTimePicker();
@@ -217,6 +216,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.chartQABFAnalysis = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.contextMenuQABF = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saveToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dataGridViewAntecedents = new System.Windows.Forms.DataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -260,9 +262,6 @@
             this.bEHAVIORTableAdapter = new GUI.ProjectStarphishDataSetTableAdapters.BEHAVIORTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.contextMenuQABF = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.saveToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -293,6 +292,7 @@
             this.tabPage4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartQABFAnalysis)).BeginInit();
+            this.contextMenuQABF.SuspendLayout();
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAntecedents)).BeginInit();
             this.groupBox14.SuspendLayout();
@@ -302,7 +302,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pERSONISPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.contextMenuQABF.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1493,9 +1492,9 @@
             this.groupBox12.Controls.Add(this.lblDatabaseUpdated);
             this.groupBox12.Controls.Add(this.btnSaveDailyBehavior);
             this.groupBox12.Controls.Add(this.label65);
-            this.groupBox12.Controls.Add(this.label63);
-            this.groupBox12.Controls.Add(this.label62);
-            this.groupBox12.Controls.Add(this.label61);
+            this.groupBox12.Controls.Add(this.lblTo);
+            this.groupBox12.Controls.Add(this.lblEndDateBeh);
+            this.groupBox12.Controls.Add(this.lblStartDateBeh);
             this.groupBox12.Controls.Add(this.chkUseCustomDatesDailyBehavior);
             this.groupBox12.Controls.Add(this.comboPickTimeDailyBehavior);
             this.groupBox12.Controls.Add(this.datePickerEndDailyBehavior);
@@ -1533,43 +1532,46 @@
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(747, 15);
+            this.label65.Location = new System.Drawing.Point(149, 16);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(134, 13);
             this.label65.TabIndex = 32;
             this.label65.Text = "Pick a Daily Behavior Time";
             // 
-            // label63
+            // lblTo
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(406, 35);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(16, 13);
-            this.label63.TabIndex = 30;
-            this.label63.Text = "to";
+            this.lblTo.AutoSize = true;
+            this.lblTo.Location = new System.Drawing.Point(634, 37);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(16, 13);
+            this.lblTo.TabIndex = 30;
+            this.lblTo.Text = "to";
+            this.lblTo.Visible = false;
             // 
-            // label62
+            // lblEndDateBeh
             // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(502, 16);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(52, 13);
-            this.label62.TabIndex = 29;
-            this.label62.Text = "End Date";
+            this.lblEndDateBeh.AutoSize = true;
+            this.lblEndDateBeh.Location = new System.Drawing.Point(730, 18);
+            this.lblEndDateBeh.Name = "lblEndDateBeh";
+            this.lblEndDateBeh.Size = new System.Drawing.Size(52, 13);
+            this.lblEndDateBeh.TabIndex = 29;
+            this.lblEndDateBeh.Text = "End Date";
+            this.lblEndDateBeh.Visible = false;
             // 
-            // label61
+            // lblStartDateBeh
             // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(273, 16);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(55, 13);
-            this.label61.TabIndex = 28;
-            this.label61.Text = "Start Date";
+            this.lblStartDateBeh.AutoSize = true;
+            this.lblStartDateBeh.Location = new System.Drawing.Point(501, 18);
+            this.lblStartDateBeh.Name = "lblStartDateBeh";
+            this.lblStartDateBeh.Size = new System.Drawing.Size(55, 13);
+            this.lblStartDateBeh.TabIndex = 28;
+            this.lblStartDateBeh.Text = "Start Date";
+            this.lblStartDateBeh.Visible = false;
             // 
             // chkUseCustomDatesDailyBehavior
             // 
             this.chkUseCustomDatesDailyBehavior.AutoSize = true;
-            this.chkUseCustomDatesDailyBehavior.Location = new System.Drawing.Point(634, 35);
+            this.chkUseCustomDatesDailyBehavior.Location = new System.Drawing.Point(302, 39);
             this.chkUseCustomDatesDailyBehavior.Name = "chkUseCustomDatesDailyBehavior";
             this.chkUseCustomDatesDailyBehavior.Size = new System.Drawing.Size(114, 17);
             this.chkUseCustomDatesDailyBehavior.TabIndex = 40;
@@ -1585,7 +1587,7 @@
             "Last 30 Days",
             "Last 60 Days",
             "Current Quarter"});
-            this.comboPickTimeDailyBehavior.Location = new System.Drawing.Point(754, 31);
+            this.comboPickTimeDailyBehavior.Location = new System.Drawing.Point(149, 35);
             this.comboPickTimeDailyBehavior.Name = "comboPickTimeDailyBehavior";
             this.comboPickTimeDailyBehavior.Size = new System.Drawing.Size(121, 21);
             this.comboPickTimeDailyBehavior.TabIndex = 50;
@@ -1594,13 +1596,13 @@
             // datePickerEndDailyBehavior
             // 
             this.datePickerEndDailyBehavior.CustomFormat = "MMMMyyyy";
-            this.datePickerEndDailyBehavior.Enabled = false;
             this.datePickerEndDailyBehavior.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerEndDailyBehavior.Location = new System.Drawing.Point(428, 32);
+            this.datePickerEndDailyBehavior.Location = new System.Drawing.Point(656, 34);
             this.datePickerEndDailyBehavior.Name = "datePickerEndDailyBehavior";
             this.datePickerEndDailyBehavior.Size = new System.Drawing.Size(200, 20);
             this.datePickerEndDailyBehavior.TabIndex = 30;
             this.datePickerEndDailyBehavior.Value = new System.DateTime(2014, 4, 6, 16, 1, 53, 0);
+            this.datePickerEndDailyBehavior.Visible = false;
             this.datePickerEndDailyBehavior.ValueChanged += new System.EventHandler(this.datePickerEndDailyBehavior_ValueChanged);
             // 
             // dataGridViewDailyBehaviorTracking
@@ -1692,13 +1694,13 @@
             // datePickerBeginDailyBehavior
             // 
             this.datePickerBeginDailyBehavior.CustomFormat = "MMMM,yyyy";
-            this.datePickerBeginDailyBehavior.Enabled = false;
             this.datePickerBeginDailyBehavior.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerBeginDailyBehavior.Location = new System.Drawing.Point(200, 32);
+            this.datePickerBeginDailyBehavior.Location = new System.Drawing.Point(428, 34);
             this.datePickerBeginDailyBehavior.Name = "datePickerBeginDailyBehavior";
             this.datePickerBeginDailyBehavior.Size = new System.Drawing.Size(200, 20);
             this.datePickerBeginDailyBehavior.TabIndex = 20;
             this.datePickerBeginDailyBehavior.Value = new System.DateTime(2014, 4, 6, 0, 0, 0, 0);
+            this.datePickerBeginDailyBehavior.Visible = false;
             this.datePickerBeginDailyBehavior.ValueChanged += new System.EventHandler(this.datePickerBeginDailyBehavior_ValueChanged);
             // 
             // tabPage3
@@ -1712,10 +1714,9 @@
             this.tabPage3.Controls.Add(this.chkQuarter3);
             this.tabPage3.Controls.Add(this.chkQuarter2);
             this.tabPage3.Controls.Add(this.chkQuarter1);
-            this.tabPage3.Controls.Add(this.label68);
-            this.tabPage3.Controls.Add(this.label69);
-            this.tabPage3.Controls.Add(this.label70);
-            this.tabPage3.Controls.Add(this.label71);
+            this.tabPage3.Controls.Add(this.lblTimeFrame);
+            this.tabPage3.Controls.Add(this.lblEndDate);
+            this.tabPage3.Controls.Add(this.lblStartDate);
             this.tabPage3.Controls.Add(this.comboPickTimeGraphs);
             this.tabPage3.Controls.Add(this.datePickerEndGraphs);
             this.tabPage3.Controls.Add(this.datePickerBeginGraphs);
@@ -1747,7 +1748,7 @@
             // btnGenerateGraphs
             // 
             this.btnGenerateGraphs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateGraphs.Location = new System.Drawing.Point(3, 325);
+            this.btnGenerateGraphs.Location = new System.Drawing.Point(13, 363);
             this.btnGenerateGraphs.Name = "btnGenerateGraphs";
             this.btnGenerateGraphs.Size = new System.Drawing.Size(142, 89);
             this.btnGenerateGraphs.TabIndex = 130;
@@ -1759,7 +1760,7 @@
             // 
             this.radUseTimeFrames.AutoSize = true;
             this.radUseTimeFrames.Checked = true;
-            this.radUseTimeFrames.Location = new System.Drawing.Point(437, 11);
+            this.radUseTimeFrames.Location = new System.Drawing.Point(15, 12);
             this.radUseTimeFrames.Name = "radUseTimeFrames";
             this.radUseTimeFrames.Size = new System.Drawing.Size(107, 17);
             this.radUseTimeFrames.TabIndex = 30;
@@ -1771,7 +1772,7 @@
             // radUseCustomQuarters
             // 
             this.radUseCustomQuarters.AutoSize = true;
-            this.radUseCustomQuarters.Location = new System.Drawing.Point(684, 34);
+            this.radUseCustomQuarters.Location = new System.Drawing.Point(15, 58);
             this.radUseCustomQuarters.Name = "radUseCustomQuarters";
             this.radUseCustomQuarters.Size = new System.Drawing.Size(125, 17);
             this.radUseCustomQuarters.TabIndex = 60;
@@ -1782,7 +1783,7 @@
             // radUseCustomDates
             // 
             this.radUseCustomDates.AutoSize = true;
-            this.radUseCustomDates.Location = new System.Drawing.Point(437, 34);
+            this.radUseCustomDates.Location = new System.Drawing.Point(15, 35);
             this.radUseCustomDates.Name = "radUseCustomDates";
             this.radUseCustomDates.Size = new System.Drawing.Size(113, 17);
             this.radUseCustomDates.TabIndex = 40;
@@ -1793,7 +1794,7 @@
             // chkQuarter4
             // 
             this.chkQuarter4.AutoSize = true;
-            this.chkQuarter4.Location = new System.Drawing.Point(903, 36);
+            this.chkQuarter4.Location = new System.Drawing.Point(263, 102);
             this.chkQuarter4.Name = "chkQuarter4";
             this.chkQuarter4.Size = new System.Drawing.Size(79, 17);
             this.chkQuarter4.TabIndex = 100;
@@ -1803,7 +1804,7 @@
             // chkQuarter3
             // 
             this.chkQuarter3.AutoSize = true;
-            this.chkQuarter3.Location = new System.Drawing.Point(903, 13);
+            this.chkQuarter3.Location = new System.Drawing.Point(263, 79);
             this.chkQuarter3.Name = "chkQuarter3";
             this.chkQuarter3.Size = new System.Drawing.Size(79, 17);
             this.chkQuarter3.TabIndex = 90;
@@ -1813,7 +1814,7 @@
             // chkQuarter2
             // 
             this.chkQuarter2.AutoSize = true;
-            this.chkQuarter2.Location = new System.Drawing.Point(815, 36);
+            this.chkQuarter2.Location = new System.Drawing.Point(175, 102);
             this.chkQuarter2.Name = "chkQuarter2";
             this.chkQuarter2.Size = new System.Drawing.Size(82, 17);
             this.chkQuarter2.TabIndex = 80;
@@ -1823,48 +1824,39 @@
             // chkQuarter1
             // 
             this.chkQuarter1.AutoSize = true;
-            this.chkQuarter1.Location = new System.Drawing.Point(815, 13);
+            this.chkQuarter1.Location = new System.Drawing.Point(175, 79);
             this.chkQuarter1.Name = "chkQuarter1";
             this.chkQuarter1.Size = new System.Drawing.Size(78, 17);
             this.chkQuarter1.TabIndex = 70;
             this.chkQuarter1.Text = "1st Quarter";
             this.chkQuarter1.UseVisualStyleBackColor = true;
             // 
-            // label68
+            // lblTimeFrame
             // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(556, 17);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(92, 13);
-            this.label68.TabIndex = 44;
-            this.label68.Text = "Pick a Time frame";
+            this.lblTimeFrame.AutoSize = true;
+            this.lblTimeFrame.Location = new System.Drawing.Point(422, 63);
+            this.lblTimeFrame.Name = "lblTimeFrame";
+            this.lblTimeFrame.Size = new System.Drawing.Size(62, 13);
+            this.lblTimeFrame.TabIndex = 44;
+            this.lblTimeFrame.Text = "Time Frame";
             // 
-            // label69
+            // lblEndDate
             // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(209, 36);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(16, 13);
-            this.label69.TabIndex = 43;
-            this.label69.Text = "to";
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Location = new System.Drawing.Point(464, 13);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(52, 13);
+            this.lblEndDate.TabIndex = 42;
+            this.lblEndDate.Text = "End Date";
             // 
-            // label70
+            // lblStartDate
             // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(305, 17);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(52, 13);
-            this.label70.TabIndex = 42;
-            this.label70.Text = "End Date";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(76, 17);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(55, 13);
-            this.label71.TabIndex = 41;
-            this.label71.Text = "Start Date";
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Location = new System.Drawing.Point(236, 12);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(55, 13);
+            this.lblStartDate.TabIndex = 41;
+            this.lblStartDate.Text = "Start Date";
             // 
             // comboPickTimeGraphs
             // 
@@ -1874,7 +1866,7 @@
             "Last 30 Days",
             "Last 60 Days",
             "Current Quarter"});
-            this.comboPickTimeGraphs.Location = new System.Drawing.Point(557, 32);
+            this.comboPickTimeGraphs.Location = new System.Drawing.Point(391, 79);
             this.comboPickTimeGraphs.Name = "comboPickTimeGraphs";
             this.comboPickTimeGraphs.Size = new System.Drawing.Size(121, 21);
             this.comboPickTimeGraphs.TabIndex = 50;
@@ -1883,7 +1875,7 @@
             // 
             this.datePickerEndGraphs.CustomFormat = "MMMMyyyy";
             this.datePickerEndGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerEndGraphs.Location = new System.Drawing.Point(231, 32);
+            this.datePickerEndGraphs.Location = new System.Drawing.Point(391, 29);
             this.datePickerEndGraphs.Name = "datePickerEndGraphs";
             this.datePickerEndGraphs.Size = new System.Drawing.Size(200, 20);
             this.datePickerEndGraphs.TabIndex = 20;
@@ -1892,7 +1884,7 @@
             // 
             this.datePickerBeginGraphs.CustomFormat = "MMMM,yyyy";
             this.datePickerBeginGraphs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerBeginGraphs.Location = new System.Drawing.Point(3, 33);
+            this.datePickerBeginGraphs.Location = new System.Drawing.Point(163, 29);
             this.datePickerBeginGraphs.Name = "datePickerBeginGraphs";
             this.datePickerBeginGraphs.Size = new System.Drawing.Size(200, 20);
             this.datePickerBeginGraphs.TabIndex = 10;
@@ -1901,7 +1893,7 @@
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(25, 64);
+            this.label67.Location = new System.Drawing.Point(35, 102);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(98, 13);
             this.label67.TabIndex = 36;
@@ -1998,10 +1990,12 @@
             // 
             // chartTotalBehaviors
             // 
+            chartArea3.AxisY.Minimum = 0D;
+            chartArea3.AxisY2.Minimum = 0D;
             chartArea3.Name = "ChartArea1";
             this.chartTotalBehaviors.ChartAreas.Add(chartArea3);
             this.chartTotalBehaviors.ContextMenuStrip = this.contextMenuTotalBehaviors;
-            this.chartTotalBehaviors.Location = new System.Drawing.Point(151, 116);
+            this.chartTotalBehaviors.Location = new System.Drawing.Point(163, 102);
             this.chartTotalBehaviors.Name = "chartTotalBehaviors";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -2051,7 +2045,7 @@
             "Graph All Behaviors",
             "Graph Top 5 Behaviors",
             "Graph Custom Selection"});
-            this.comboBehaviorsToGraph.Location = new System.Drawing.Point(3, 80);
+            this.comboBehaviorsToGraph.Location = new System.Drawing.Point(13, 118);
             this.comboBehaviorsToGraph.Name = "comboBehaviorsToGraph";
             this.comboBehaviorsToGraph.Size = new System.Drawing.Size(142, 21);
             this.comboBehaviorsToGraph.TabIndex = 110;
@@ -2060,7 +2054,7 @@
             // listBehaviorsToGraph
             // 
             this.listBehaviorsToGraph.FormattingEnabled = true;
-            this.listBehaviorsToGraph.Location = new System.Drawing.Point(3, 107);
+            this.listBehaviorsToGraph.Location = new System.Drawing.Point(13, 145);
             this.listBehaviorsToGraph.Name = "listBehaviorsToGraph";
             this.listBehaviorsToGraph.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBehaviorsToGraph.Size = new System.Drawing.Size(142, 212);
@@ -2112,6 +2106,28 @@
             this.chartQABFAnalysis.Size = new System.Drawing.Size(374, 208);
             this.chartQABFAnalysis.TabIndex = 80;
             this.chartQABFAnalysis.Text = "chart1";
+            // 
+            // contextMenuQABF
+            // 
+            this.contextMenuQABF.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem3,
+            this.copyToolStripMenuItem3});
+            this.contextMenuQABF.Name = "contextMenuQABF";
+            this.contextMenuQABF.Size = new System.Drawing.Size(103, 48);
+            // 
+            // saveToolStripMenuItem3
+            // 
+            this.saveToolStripMenuItem3.Name = "saveToolStripMenuItem3";
+            this.saveToolStripMenuItem3.Size = new System.Drawing.Size(102, 22);
+            this.saveToolStripMenuItem3.Text = "Save";
+            this.saveToolStripMenuItem3.Click += new System.EventHandler(this.saveToolStripMenuItem3_Click);
+            // 
+            // copyToolStripMenuItem3
+            // 
+            this.copyToolStripMenuItem3.Name = "copyToolStripMenuItem3";
+            this.copyToolStripMenuItem3.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem3.Text = "Copy";
+            this.copyToolStripMenuItem3.Click += new System.EventHandler(this.copyToolStripMenuItem3_Click);
             // 
             // groupBox15
             // 
@@ -2438,28 +2454,6 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // contextMenuQABF
-            // 
-            this.contextMenuQABF.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem3,
-            this.copyToolStripMenuItem3});
-            this.contextMenuQABF.Name = "contextMenuQABF";
-            this.contextMenuQABF.Size = new System.Drawing.Size(103, 48);
-            // 
-            // saveToolStripMenuItem3
-            // 
-            this.saveToolStripMenuItem3.Name = "saveToolStripMenuItem3";
-            this.saveToolStripMenuItem3.Size = new System.Drawing.Size(102, 22);
-            this.saveToolStripMenuItem3.Text = "Save";
-            this.saveToolStripMenuItem3.Click += new System.EventHandler(this.saveToolStripMenuItem3_Click);
-            // 
-            // copyToolStripMenuItem3
-            // 
-            this.copyToolStripMenuItem3.Name = "copyToolStripMenuItem3";
-            this.copyToolStripMenuItem3.Size = new System.Drawing.Size(102, 22);
-            this.copyToolStripMenuItem3.Text = "Copy";
-            this.copyToolStripMenuItem3.Click += new System.EventHandler(this.copyToolStripMenuItem3_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2511,6 +2505,7 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartQABFAnalysis)).EndInit();
+            this.contextMenuQABF.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAntecedents)).EndInit();
             this.groupBox14.ResumeLayout(false);
@@ -2521,7 +2516,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nEXTOFKINPERSONFKBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.contextMenuQABF.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2664,16 +2658,15 @@
         private System.Windows.Forms.Button btnAddNextOfKin;
         private System.Windows.Forms.Button btnAddEmergencyContact;
         private System.Windows.Forms.Button btnRemoveNextOfKin;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label lblTo;
+        private System.Windows.Forms.Label lblEndDateBeh;
+        private System.Windows.Forms.Label lblStartDateBeh;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Button btnSaveDailyBehavior;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label lblTimeFrame;
+        private System.Windows.Forms.Label lblEndDate;
+        private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.ComboBox comboPickTimeGraphs;
         private System.Windows.Forms.DateTimePicker datePickerEndGraphs;
         private System.Windows.Forms.DateTimePicker datePickerBeginGraphs;

@@ -7,6 +7,15 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
+//For anyone who may be working on this in the future, the three classes used may be able to be moved into one
+//class with overloaded constructors, and the firsttime bool is reset every time a new person is selected. 
+
+//A button was used to generate the graphs instead of it changing automatically like on the daily behaviors tab because
+//I was afraid that with all the looping to format the data correctly and plotting points on the graphs that if the
+//consumers had to many behaviors put in it would give a noticeable lag between controls, because every time you touched the
+//controls the graphs would have to update, and giving a second or two of lag when your just trying to select what you actually
+//want would be annoying, also Shaun said they he almost always does top 5 last 30 days anyway so it shouldn't matter much
+
 namespace GUI
 {
     public partial class FormMain
@@ -86,7 +95,19 @@ namespace GUI
 
                 //Only the combo box that selects the date is enabled by default
                 everythingDisabled();
-                comboPickTimeGraphs.Enabled = true;
+                comboPickTimeGraphs.Visible = true;
+                lblTimeFrame.Visible = true;
+
+                //The location of the check buttons are changed here so that they can actually be seen on the form and
+                //not just stacked ontop of eachother
+                chkQuarter1.Location = new Point(155, 15);
+                chkQuarter2.Location = new Point(155, 40);
+                chkQuarter3.Location = new Point(244, 15);
+                chkQuarter4.Location = new Point(244, 40);
+
+                //likewise
+                lblTimeFrame.Location = new Point(192, 11);
+                comboPickTimeGraphs.Location = new Point(161, 27);
 
                 //likewise, the list box for custom behaviors is disabled by default
                 //because it defaults to use the top 5 behaviors
@@ -434,6 +455,8 @@ namespace GUI
             bool noBehaviors = true;
 
             //goes through the behaviorsOnSpecificDate list, if there are no behaviors at all sets all the graphs to be invisible and says so
+            //looking back on this when I'm not so tired, it could probably be done more efficiently, like checking timesbehaviorsoccured
+            //for anything in it or something not as stupid as checking every single day
             for (int i = 0; i < behaviorsOnSpecifiedDate.Count(); i++)
             {
                 if (behaviorsOnSpecifiedDate[i].Occurences > 0)
@@ -463,7 +486,11 @@ namespace GUI
 
                 //changes the number of values displayed at the bottom of the left graph depending
                 //on how many data points there are
-                if (behaviorsOnSpecifiedDate.Count >= 600)
+                if (behaviorsOnSpecifiedDate.Count >= 2000)
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 200;
+                else if (behaviorsOnSpecifiedDate.Count >= 1000)
+                    chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 100;
+                else if (behaviorsOnSpecifiedDate.Count >= 600)
                     chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 60;
                 else if (behaviorsOnSpecifiedDate.Count >= 250)
                     chartTotalBehaviors.ChartAreas[0].AxisX.Interval = 30;
@@ -601,13 +628,16 @@ namespace GUI
         /// </summary>
         private void everythingDisabled()
         {
-            comboPickTimeGraphs.Enabled = false;
-            chkQuarter1.Enabled = false;
-            chkQuarter2.Enabled = false;
-            chkQuarter3.Enabled = false;
-            chkQuarter4.Enabled = false;
-            datePickerBeginGraphs.Enabled = false;
-            datePickerEndGraphs.Enabled = false;
+            comboPickTimeGraphs.Visible = false;
+            chkQuarter1.Visible = false;
+            chkQuarter2.Visible = false;
+            chkQuarter3.Visible = false;
+            chkQuarter4.Visible = false;
+            datePickerBeginGraphs.Visible = false;
+            datePickerEndGraphs.Visible = false;
+            lblStartDate.Visible = false;
+            lblEndDate.Visible = false;
+            lblTimeFrame.Visible = false;
         }
 
         #region"Radio buttons"
@@ -633,23 +663,26 @@ namespace GUI
         private void radUseTimeFrames_Click(object sender, EventArgs e)
         {
             everythingDisabled();
-            comboPickTimeGraphs.Enabled = true;
+            comboPickTimeGraphs.Visible = true;
+            lblTimeFrame.Visible = true;
         }
 
         private void radUseCustomDates_Click(object sender, EventArgs e)
         {
             everythingDisabled();
-            datePickerBeginGraphs.Enabled = true;
-            datePickerEndGraphs.Enabled = true;
+            datePickerBeginGraphs.Visible = true;
+            datePickerEndGraphs.Visible = true;
+            lblStartDate.Visible = true;
+            lblEndDate.Visible = true;
         }
 
         private void radUseCustomQuarters_Click(object sender, EventArgs e)
         {
             everythingDisabled();
-            chkQuarter1.Enabled = true;
-            chkQuarter2.Enabled = true;
-            chkQuarter3.Enabled = true;
-            chkQuarter4.Enabled = true;
+            chkQuarter1.Visible = true;
+            chkQuarter2.Visible = true;
+            chkQuarter3.Visible = true;
+            chkQuarter4.Visible = true;
         }
         #endregion
 

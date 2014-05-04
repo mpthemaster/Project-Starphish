@@ -34,6 +34,10 @@ namespace GUI
         {
             try
             {
+                //Filling in the grid view with the database table. 
+                //We also added the table in as a datasource with the little triangle in the upper right corner of the grid view
+                //Thats where we change the names to be not exactly what the database names were, and make it so the ID does not display
+                //The ID could not be first because apparently the first thing in the table must display, even if you set it not to. 
                 this.bEHAVIORTableAdapter.FillBy(this.projectStarphishDataSet.BEHAVIOR, personId, startDate.ToString(), endDate.ToString());
             }
             catch (System.Exception ex)
@@ -136,13 +140,19 @@ namespace GUI
         {
             if (chkUseCustomDatesDailyBehavior.Checked == true)
             {
-                datePickerBeginDailyBehavior.Enabled = true;
-                datePickerEndDailyBehavior.Enabled = true;
+                datePickerBeginDailyBehavior.Visible = true;
+                datePickerEndDailyBehavior.Visible = true;
+                lblStartDateBeh.Visible = true;
+                lblEndDateBeh.Visible = true;
+                lblTo.Visible = true;
             }
             else
             {
-                datePickerBeginDailyBehavior.Enabled = false;
-                datePickerEndDailyBehavior.Enabled = false;
+                datePickerBeginDailyBehavior.Visible = false;
+                datePickerEndDailyBehavior.Visible = false;
+                lblStartDateBeh.Visible = false;
+                lblEndDateBeh.Visible = false;
+                lblTo.Visible = false;
             }
 
             SetDates();
