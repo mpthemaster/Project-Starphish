@@ -5,16 +5,37 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Starphish", "Project-Starphish\Project-Starphish.csproj", "{E3C1CCB9-7315-40C8-AD92-09B28A895F43}"
 EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Setup1", "Setup1\Setup1.isproj", "{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C1CCB9-7315-40C8-AD92-09B28A895F43}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.Debug|Any CPU.ActiveCfg = DVD-5
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.Debug|Any CPU.Build.0 = DVD-5
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.DVD-5|Any CPU.Build.0 = DVD-5
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.Release|Any CPU.ActiveCfg = SingleImage
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.Release|Any CPU.Build.0 = SingleImage
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{F5BE8E00-B4BF-4EE1-BC9F-A76D9437788E}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
